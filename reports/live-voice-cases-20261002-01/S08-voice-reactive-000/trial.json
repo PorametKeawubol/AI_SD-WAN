@@ -1,0 +1,22 @@
+{
+  "phase": "assessment",
+  "packet_measurement_started": true,
+  "packet_measurement_completed": true,
+  "baseline_journal_id": "trial-baseline-af25471858c24857ac8370e817a524f4",
+  "evidence_level": "real_packets",
+  "packet_artifacts": [
+    "packets.json",
+    "wan1.pcap",
+    "wan2.pcap"
+  ],
+  "observed_packet_intervals": 170,
+  "status": "completed",
+  "error_type": null,
+  "cleanup_errors": [],
+  "state_observations": 34,
+  "result": {
+    "valid": false,
+    "passed": false,
+    "reason": "Healthy baseline was not established"
+  }
+}

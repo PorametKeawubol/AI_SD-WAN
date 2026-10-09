@@ -1,0 +1,50 @@
+{
+  "evidence_level": "real_packets",
+  "complete": true,
+  "coverage": {
+    "reactive": {
+      "handled_cases_observed": [
+        "S05",
+        "S08"
+      ],
+      "handled_count": 2,
+      "restored_count": 2,
+      "all_16_all_3_profiles_evaluated": false
+    }
+  },
+  "summary": [
+    {
+      "scenario": "S05",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 1,
+      "pass_rate": 1.0,
+      "wilson_95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "profile_passed": true
+    },
+    {
+      "scenario": "S08",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 1,
+      "pass_rate": 1.0,
+      "wilson_95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "profile_passed": true
+    }
+  ],
+  "native_qbr_evaluated": false
+}

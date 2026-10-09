@@ -1,0 +1,13 @@
+{
+  "phase": "packet_measurement",
+  "packet_measurement_started": true,
+  "packet_measurement_completed": false,
+  "baseline_journal_id": "trial-baseline-539782e279454b61ab5120ec77bb8094",
+  "evidence_level": "live_lab_attempt",
+  "packet_artifacts": [],
+  "status": "failed",
+  "error_type": "RuntimeError",
+  "cleanup_errors": [],
+  "state_observations": 14,
+  "result": null
+}

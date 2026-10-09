@@ -1,0 +1,281 @@
+{
+  "Verified": true,
+  "ExperimentalSyntheticForecast": true,
+  "FrozenLinuxModelHashesVerified": true,
+  "ManualMode": true,
+  "Observations": [
+    {
+      "ObservedAt": "2026-10-08T00:13:06.9523759+07:00",
+      "Ready": true,
+      "Health": {
+        "status": "ok",
+        "backend": "flexiwan",
+        "model_loaded": true,
+        "storage": "timescaledb"
+      },
+      "State": {
+        "mode": "manual",
+        "profile": "voice",
+        "backend": "flexiwan",
+        "route_evidence": "agent_configuration",
+        "observing_native_qbr": false,
+        "confirmed_path": "wan2",
+        "network_available": true,
+        "model_loaded": true,
+        "model_error": "Experimental synthetic forecast enabled on real probes; live validation pending",
+        "forecast_sampling": "causal_linear_5s",
+        "telemetry": {
+          "wan1": {
+            "link_id": "wan1",
+            "timestamp": 1791393185.863302,
+            "up": true,
+            "latency_ms": 24.697,
+            "jitter_ms": 4.514497867980447,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.03827503309214235,
+            "fresh": true,
+            "age_seconds": 1.4253568649291992
+          },
+          "wan2": {
+            "link_id": "wan2",
+            "timestamp": 1791393185.863302,
+            "up": true,
+            "latency_ms": 40.013,
+            "jitter_ms": 7.004407969271921,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.0485643808673505,
+            "fresh": true,
+            "age_seconds": 1.4253568649291992
+          },
+          "wan3": {
+            "link_id": "wan3",
+            "timestamp": 1791393185.863302,
+            "up": true,
+            "latency_ms": 67.18,
+            "jitter_ms": 9.730703982754793,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.12950501564626798,
+            "fresh": true,
+            "age_seconds": 1.4253568649291992
+          }
+        },
+        "pending": null,
+        "apply_inflight": null,
+        "last_decision": {
+          "action": "hold",
+          "source": "wan2",
+          "target": "wan2",
+          "reason": "Improvement below hysteresis margin",
+          "scores": {
+            "wan1": 0.13188213632922963,
+            "wan2": 0.19451702710907925,
+            "wan3": 0.32185009542851595
+          },
+          "predicted": {
+            "wan1": [
+              31.355480194091797,
+              6.3754377365112305,
+              0.0,
+              2.261866331100464
+            ],
+            "wan2": [
+              46.3599853515625,
+              7.746377944946289,
+              0.0,
+              2.2864537239074707
+            ],
+            "wan3": [
+              72.50224304199219,
+              11.131031036376953,
+              0.0,
+              2.4731202125549316
+            ]
+          },
+          "degraded": false
+        }
+      }
+    },
+    {
+      "ObservedAt": "2026-10-08T00:13:16.0753258+07:00",
+      "Ready": true,
+      "Health": {
+        "status": "ok",
+        "backend": "flexiwan",
+        "model_loaded": true,
+        "storage": "timescaledb"
+      },
+      "State": {
+        "mode": "manual",
+        "profile": "voice",
+        "backend": "flexiwan",
+        "route_evidence": "agent_configuration",
+        "observing_native_qbr": false,
+        "confirmed_path": "wan2",
+        "network_available": true,
+        "model_loaded": true,
+        "model_error": "Experimental synthetic forecast enabled on real probes; live validation pending",
+        "forecast_sampling": "causal_linear_5s",
+        "telemetry": {
+          "wan1": {
+            "link_id": "wan1",
+            "timestamp": 1791393195.845073,
+            "up": true,
+            "latency_ms": 24.783,
+            "jitter_ms": 3.2920223267772655,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.03968537995990438,
+            "fresh": true,
+            "age_seconds": 0.5460889339447021
+          },
+          "wan2": {
+            "link_id": "wan2",
+            "timestamp": 1791393195.845073,
+            "up": true,
+            "latency_ms": 39.952,
+            "jitter_ms": 7.482412445194398,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.049966193971256415,
+            "fresh": true,
+            "age_seconds": 0.5460889339447021
+          },
+          "wan3": {
+            "link_id": "wan3",
+            "timestamp": 1791393195.845073,
+            "up": true,
+            "latency_ms": 64.941,
+            "jitter_ms": 9.725781151146677,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.1303217848924856,
+            "fresh": true,
+            "age_seconds": 0.5460889339447021
+          }
+        },
+        "pending": null,
+        "apply_inflight": null,
+        "last_decision": {
+          "action": "hold",
+          "source": "wan2",
+          "target": "wan2",
+          "reason": "Improvement below hysteresis margin",
+          "scores": {
+            "wan1": 0.1239016605846631,
+            "wan2": 0.1978261637044904,
+            "wan3": 0.3151518126035713
+          },
+          "predicted": {
+            "wan1": [
+              31.20425796508789,
+              5.214670181274414,
+              0.0,
+              2.2874629497528076
+            ],
+            "wan2": [
+              46.93526840209961,
+              8.038551330566406,
+              0.0,
+              2.4054768085479736
+            ],
+            "wan3": [
+              70.31194305419922,
+              11.094754219055176,
+              0.0,
+              2.5977067947387695
+            ]
+          },
+          "degraded": false
+        }
+      }
+    },
+    {
+      "ObservedAt": "2026-10-08T00:13:25.1630934+07:00",
+      "Ready": true,
+      "Health": {
+        "status": "ok",
+        "backend": "flexiwan",
+        "model_loaded": true,
+        "storage": "timescaledb"
+      },
+      "State": {
+        "mode": "manual",
+        "profile": "voice",
+        "backend": "flexiwan",
+        "route_evidence": "agent_configuration",
+        "observing_native_qbr": false,
+        "confirmed_path": "wan2",
+        "network_available": true,
+        "model_loaded": true,
+        "model_error": "Experimental synthetic forecast enabled on real probes; live validation pending",
+        "forecast_sampling": "causal_linear_5s",
+        "telemetry": {
+          "wan1": {
+            "link_id": "wan1",
+            "timestamp": 1791393200.9500847,
+            "up": true,
+            "latency_ms": 24.423,
+            "jitter_ms": 4.165593715186348,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.03906196331158498,
+            "fresh": true,
+            "age_seconds": 4.428293228149414
+          },
+          "wan2": {
+            "link_id": "wan2",
+            "timestamp": 1791393200.9500847,
+            "up": true,
+            "latency_ms": 42.664,
+            "jitter_ms": 6.8693452380849225,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.04790459847705117,
+            "fresh": true,
+            "age_seconds": 4.428293228149414
+          },
+          "wan3": {
+            "link_id": "wan3",
+            "timestamp": 1791393200.9500847,
+            "up": true,
+            "latency_ms": 65.577,
+            "jitter_ms": 8.819284041236001,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.12821541336694933,
+            "fresh": true,
+            "age_seconds": 4.428293228149414
+          }
+        },
+        "pending": null,
+        "apply_inflight": null,
+        "last_decision": {
+          "action": "hold",
+          "source": "wan2",
+          "target": "wan2",
+          "reason": "Improvement below hysteresis margin",
+          "scores": {
+            "wan1": 0.12803486553137228,
+            "wan2": 0.20030953442574595,
+            "wan3": 0.31104883424936347
+          },
+          "predicted": {
+            "wan1": [
+              30.92289161682129,
+              5.806567192077637,
+              0.0,
+              2.227027416229248
+            ],
+            "wan2": [
+              48.16551208496094,
+              7.4395222663879395,
+              0.0,
+              2.3365750312805176
+            ],
+            "wan3": [
+              70.94794464111328,
+              10.25822925567627,
+              0.0,
+              2.377159833908081
+            ]
+          },
+          "degraded": false
+        }
+      }
+    }
+  ]
+}

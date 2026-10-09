@@ -1,0 +1,16 @@
+scenario,profile,strategy,trials,measured_trials,valid_trials,invalid_trials,passed_trials,pass_rate,wilson_95,profile_passed
+S02,voice,reactive,1,1,1,0,1,1.0,"[0.20654931437723745, 1.0]",True
+S03,voice,reactive,1,1,1,0,1,1.0,"[0.20654931437723745, 1.0]",True
+S04,voice,reactive,1,1,1,0,1,1.0,"[0.20654931437723745, 1.0]",True
+S05,voice,reactive,1,1,0,1,0,,,False
+S06,voice,reactive,1,1,1,0,1,1.0,"[0.20654931437723745, 1.0]",True
+S07,voice,reactive,1,1,1,0,0,0.0,"[0.0, 0.7934506856227626]",False
+S08,voice,reactive,1,1,0,1,0,,,False
+S09,voice,reactive,1,1,1,0,1,1.0,"[0.20654931437723745, 1.0]",True
+S10,voice,reactive,1,1,1,0,1,1.0,"[0.20654931437723745, 1.0]",True
+S11,voice,reactive,1,1,1,0,1,1.0,"[0.20654931437723745, 1.0]",True
+S12,voice,reactive,1,1,1,0,0,0.0,"[0.0, 0.7934506856227626]",False
+S13,voice,reactive,1,1,1,0,1,1.0,"[0.20654931437723745, 1.0]",True
+S14,voice,reactive,1,1,1,0,1,1.0,"[0.20654931437723745, 1.0]",True
+S15,voice,reactive,1,1,1,0,1,1.0,"[0.20654931437723745, 1.0]",True
+S16,voice,reactive,1,1,1,0,1,1.0,"[0.20654931437723745, 1.0]",True

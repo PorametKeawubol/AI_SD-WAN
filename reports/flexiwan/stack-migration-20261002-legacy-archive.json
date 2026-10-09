@@ -1,0 +1,29 @@
+{
+  "observed_at_utc": "2026-10-02T08:37:42.421849+00:00",
+  "files": [
+    {
+      "source": "data/flexiwan.sqlite3",
+      "archive": "lab/runtime/observability/legacy-state/flexiwan.sqlite3",
+      "sha256": "01abb73173143ca82cb8e694a4b8cfece005572de4a42a7586f86a2248cdb400",
+      "preserved": true
+    },
+    {
+      "source": "data/flexiwan.sqlite3-wal",
+      "archive": "lab/runtime/observability/legacy-state/flexiwan.sqlite3-wal",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "preserved": true
+    },
+    {
+      "source": "data/flexiwan.sqlite3-shm",
+      "archive": "lab/runtime/observability/legacy-state/flexiwan.sqlite3-shm",
+      "sha256": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+      "preserved": true
+    }
+  ],
+  "legacy_dashboard_removed": [
+    "sdwan/static/index.html",
+    "sdwan/static/app.js",
+    "sdwan/static/style.css",
+    "scripts/verify_local.py"
+  ]
+}

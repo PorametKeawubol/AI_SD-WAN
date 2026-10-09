@@ -1,0 +1,40 @@
+﻿{
+    "observed_at_utc":  "2026-10-02T02:26:58.4342398Z",
+    "affected_experiment":  "live-s01-tuned-20261002-01",
+    "clock_events":  [
+                         {
+                             "clock_fields":  {
+                                                  "OldTime":  "2026-10-01T19:28:20.7228278Z",
+                                                  "Reason":  "2",
+                                                  "NewTime":  "2026-10-02T02:13:43.5000000Z"
+                                              },
+                             "id":  1,
+                             "record_id":  206007
+                         },
+                         {
+                             "clock_fields":  {
+                                                  "OldTime":  "2026-10-01T18:28:07.5597592Z",
+                                                  "Reason":  "1",
+                                                  "NewTime":  "2026-10-01T18:28:07.5604055Z"
+                                              },
+                             "id":  1,
+                             "record_id":  205981
+                         }
+                     ],
+    "note":  "Interrupted trials retained; guests subsequently synchronized to the owned WSL host.",
+    "power_events":  [
+                         {
+                             "time_utc":  "2026-10-01T19:28:20.7230293Z",
+                             "message":  "The system has resumed from sleep.",
+                             "id":  107,
+                             "record_id":  206006
+                         },
+                         {
+                             "time_utc":  "2026-10-01T19:28:13.8187841Z",
+                             "message":  "The system is entering sleep.\r\n\r\nSleep Reason: Hibernate from Sleep - Fixed Timeout",
+                             "id":  42,
+                             "record_id":  206001
+                         }
+                     ],
+    "evidence_level":  "real_windows_system_events"
+}

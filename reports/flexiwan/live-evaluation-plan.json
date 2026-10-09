@@ -1,0 +1,49 @@
+{
+  "trials": 576,
+  "minimum_minutes": 1632.0,
+  "seconds_per_trial": 170,
+  "baseline_seconds": 70,
+  "order_seed": 91001,
+  "native_qbr": "Same explicit UDP application classifier; AI observes without policy writes",
+  "measurement": "actual UDP echo + per-WAN PCAP",
+  "cases": [
+    [
+      "S08",
+      "interactive",
+      "native_priority",
+      1
+    ],
+    [
+      "S11",
+      "interactive",
+      "native_priority",
+      1
+    ],
+    [
+      "S03",
+      "bulk",
+      "predictive_synthetic_lab",
+      2
+    ],
+    [
+      "S09",
+      "bulk",
+      "native_qbr",
+      2
+    ],
+    [
+      "S04",
+      "voice",
+      "predictive_synthetic_lab",
+      1
+    ],
+    [
+      "S14",
+      "bulk",
+      "reactive",
+      1
+    ]
+  ],
+  "executed": false,
+  "edge_packet_results": null
+}

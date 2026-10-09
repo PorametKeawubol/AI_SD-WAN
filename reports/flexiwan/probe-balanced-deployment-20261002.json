@@ -1,0 +1,25 @@
+{
+  "evidence_level": "actual_owned_edge_helper_deployment_and_interpreter_fixture_checks",
+  "edges": [
+    {
+      "hostname": "sdw-edge-a",
+      "site": 1,
+      "previous_sha256": "5f63e718de7d1845cc986dedbd59760bdb3f65cf3669e62b4a98c7be74bd4d80",
+      "deployed_sha256": "754f765a6a3b8b863a7b2fdde7025790fdb814fa3ec61ba911d2f174e1abd906",
+      "owned_identity_verified": true,
+      "python38_fault_scope_fixture_checks": true,
+      "actual_faults_injected": false,
+      "observed_at": 1790934210.041204
+    },
+    {
+      "hostname": "sdw-edge-b",
+      "site": 2,
+      "previous_sha256": "5f63e718de7d1845cc986dedbd59760bdb3f65cf3669e62b4a98c7be74bd4d80",
+      "deployed_sha256": "754f765a6a3b8b863a7b2fdde7025790fdb814fa3ec61ba911d2f174e1abd906",
+      "owned_identity_verified": true,
+      "python38_fault_scope_fixture_checks": true,
+      "actual_faults_injected": false,
+      "observed_at": 1790934210.7994113
+    }
+  ]
+}

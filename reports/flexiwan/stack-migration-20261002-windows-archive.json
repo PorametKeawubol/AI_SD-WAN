@@ -1,0 +1,6 @@
+{
+  "source": "data/lab.sqlite3",
+  "archive": ".work/stack-before-timescale-grafana-20261002/legacy-data/lab.sqlite3",
+  "sha256": "e4f540ad5451b693617dae65613dca6b8e1e69d4f7c14dd45fb5dd524827affa",
+  "preserved": true
+}

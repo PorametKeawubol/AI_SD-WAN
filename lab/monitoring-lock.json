@@ -1,0 +1,16 @@
+{
+  "timescaledb": {
+    "repository": "timescale/timescaledb",
+    "tag": "2.30.2-pg17",
+    "digest": "sha256:b346edcdb51a1fd6020e3965e0bd1c9f3406fa6d5fbce1e28f4852587ef934e2",
+    "linux_amd64": true,
+    "registry_verified_at": 1790927104.2273304
+  },
+  "grafana": {
+    "repository": "grafana/grafana",
+    "tag": "13.2.3",
+    "digest": "sha256:b28bae15e219c998fb0e0424ed724930cc61b1f61fb404d47c862f9a23f9e572",
+    "linux_amd64": true,
+    "registry_verified_at": 1790927106.0280814
+  }
+}

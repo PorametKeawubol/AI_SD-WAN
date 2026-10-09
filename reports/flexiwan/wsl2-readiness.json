@@ -1,0 +1,29 @@
+{
+    "timestamp_utc":  "2026-10-02T03:58:29.1381479Z",
+    "last_boot_utc":  "2026-10-01T14:34:37.2568000Z",
+    "administrator":  true,
+    "hypervisor_present":  true,
+    "features":  [
+                     {
+                         "Name":  "VirtualMachinePlatform",
+                         "InstallState":  1
+                     },
+                     {
+                         "Name":  "Microsoft-Windows-Subsystem-Linux",
+                         "InstallState":  1
+                     }
+                 ],
+    "detailed_features":  [
+                              {
+                                  "name":  "VirtualMachinePlatform",
+                                  "state":  "Enabled"
+                              },
+                              {
+                                  "name":  "Microsoft-Windows-Subsystem-Linux",
+                                  "state":  "Enabled"
+                              }
+                          ],
+    "servicing_reboot_pending":  false,
+    "linux_hypervisor_ready":  true,
+    "automatic_reboot_performed":  false
+}

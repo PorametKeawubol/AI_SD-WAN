@@ -1,0 +1,40 @@
+{
+  "timestamp": 1790871456.1789193,
+  "evidence_level": "real_edges",
+  "edge_version": "6.3.35",
+  "devices": [
+    "6abe7c7c789d0cff1fc2f5da",
+    "6abe7cce789d0c1558c2f610"
+  ],
+  "tunnels": 3,
+  "agent_readback": true,
+  "actual_probes": [
+    {
+      "link_id": "wan1",
+      "timestamp": 1790871456.0661209,
+      "up": true,
+      "latency_ms": 24.179,
+      "jitter_ms": 3.9083319971568433,
+      "loss_pct": 0.0,
+      "utilization_pct": 0.03701120570585194
+    },
+    {
+      "link_id": "wan2",
+      "timestamp": 1790871456.0661209,
+      "up": true,
+      "latency_ms": 40.505,
+      "jitter_ms": 7.5290553856376965,
+      "loss_pct": 0.0,
+      "utilization_pct": 0.04533568885713165
+    },
+    {
+      "link_id": "wan3",
+      "timestamp": 1790871456.0661209,
+      "up": true,
+      "latency_ms": 66.69200000000001,
+      "jitter_ms": 9.771352823432384,
+      "loss_pct": 0.0,
+      "utilization_pct": 0.12089517028568442
+    }
+  ]
+}

@@ -1,0 +1,1687 @@
+{
+  "evidence_level": "real_edge_observations",
+  "read_only": true,
+  "sampling": "after each new five-second API state; query latency recorded",
+  "frames": [
+    {
+      "reference_state_second": 0.0026404869986436097,
+      "reference_state_written_at": 1790877269.0962129,
+      "edges": {
+        "a": {
+          "observed_at": 1790877269.7767951,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=13, delay=21, jitter=0\n    path-list:[51] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:51 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.5 loop1\n      [@0]: ipv4 via 10.100.0.5 loop1: mtu:1500 next:9 020027fd0005020027fd00040800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=30, jitter=0\n    path-list:[63] locks:1 flags:shared, uPRF-list:68 len:1 itfs:[11, ]\n      path:[79] pl-index:63 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.7 loop3\n      [@0]: ipv4 via 10.100.0.7 loop3: mtu:1500 next:13 020027fd0007020027fd00060800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=68, jitter=0\n    path-list:[80] locks:1 flags:shared, uPRF-list:84 len:1 itfs:[15, ]\n      path:[100] pl-index:80 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.9 loop5\n      [@0]: ipv4 via 10.100.0.9 loop5: mtu:1500 next:12 020027fd0009020027fd00080800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:158 applied:158 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.20.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"nhid\":331,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.5\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.7\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.9\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.12\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":22769,\n        \"deadTimeMsecs\":34944,\n        \"routerDeadIntervalTimerDueMsec\":34944,\n        \"upTime\":\"22.769s\",\n        \"deadTime\":\"34.944s\",\n        \"address\":\"10.100.0.5\",\n        \"ifaceAddress\":\"10.100.0.5\",\n        \"ifaceName\":\"vpp7:10.100.0.4\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7000084,\n        \"deadTimeMsecs\":29994,\n        \"routerDeadIntervalTimerDueMsec\":29994,\n        \"upTime\":\"1h56m40s\",\n        \"deadTime\":\"29.994s\",\n        \"address\":\"10.100.0.7\",\n        \"ifaceAddress\":\"10.100.0.7\",\n        \"ifaceName\":\"vpp11:10.100.0.6\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":6998095,\n        \"deadTimeMsecs\":33508,\n        \"routerDeadIntervalTimerDueMsec\":33508,\n        \"upTime\":\"1h56m38s\",\n        \"deadTime\":\"33.508s\",\n        \"address\":\"10.100.0.9\",\n        \"ifaceAddress\":\"10.100.0.9\",\n        \"ifaceName\":\"vpp15:10.100.0.8\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.2524977940011013
+        },
+        "b": {
+          "observed_at": 1790877269.9196866,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=7, delay=32, jitter=0\n    path-list:[30] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:30 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.4 loop1\n      [@0]: ipv4 via 10.100.0.4 loop1: mtu:1500 next:11 020027fd0004020027fd00050800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=31, jitter=0\n    path-list:[62] locks:1 flags:shared, uPRF-list:67 len:1 itfs:[11, ]\n      path:[78] pl-index:62 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.6 loop3\n      [@0]: ipv4 via 10.100.0.6 loop3: mtu:1500 next:10 020027fd0006020027fd00070800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=61, jitter=0\n    path-list:[76] locks:1 flags:shared, uPRF-list:81 len:1 itfs:[15, ]\n      path:[96] pl-index:76 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.8 loop5\n      [@0]: ipv4 via 10.100.0.8 loop5: mtu:1500 next:13 020027fd0008020027fd00090800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:183 applied:183 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"nhid\":173,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.4\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.6\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.8\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.30.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.11\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":22900,\n        \"deadTimeMsecs\":37044,\n        \"routerDeadIntervalTimerDueMsec\":37044,\n        \"upTime\":\"22.900s\",\n        \"deadTime\":\"37.044s\",\n        \"address\":\"10.100.0.4\",\n        \"ifaceAddress\":\"10.100.0.4\",\n        \"ifaceName\":\"vpp7:10.100.0.5\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7000209,\n        \"deadTimeMsecs\":30032,\n        \"routerDeadIntervalTimerDueMsec\":30032,\n        \"upTime\":\"1h56m40s\",\n        \"deadTime\":\"30.032s\",\n        \"address\":\"10.100.0.6\",\n        \"ifaceAddress\":\"10.100.0.6\",\n        \"ifaceName\":\"vpp11:10.100.0.7\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":6998216,\n        \"deadTimeMsecs\":31821,\n        \"routerDeadIntervalTimerDueMsec\":31821,\n        \"upTime\":\"1h56m38s\",\n        \"deadTime\":\"31.821s\",\n        \"address\":\"10.100.0.8\",\n        \"ifaceAddress\":\"10.100.0.8\",\n        \"ifaceName\":\"vpp15:10.100.0.9\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.3969430899996951
+        }
+      }
+    },
+    {
+      "reference_state_second": 5.002438694999,
+      "reference_state_written_at": 1790877274.0961297,
+      "edges": {
+        "a": {
+          "observed_at": 1790877274.2307806,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=23, jitter=0\n    path-list:[51] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:51 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.5 loop1\n      [@0]: ipv4 via 10.100.0.5 loop1: mtu:1500 next:9 020027fd0005020027fd00040800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=30, jitter=0\n    path-list:[63] locks:1 flags:shared, uPRF-list:68 len:1 itfs:[11, ]\n      path:[79] pl-index:63 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.7 loop3\n      [@0]: ipv4 via 10.100.0.7 loop3: mtu:1500 next:13 020027fd0007020027fd00060800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=68, jitter=0\n    path-list:[80] locks:1 flags:shared, uPRF-list:84 len:1 itfs:[15, ]\n      path:[100] pl-index:80 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.9 loop5\n      [@0]: ipv4 via 10.100.0.9 loop5: mtu:1500 next:12 020027fd0009020027fd00080800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:1044 applied:1044 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.20.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"nhid\":331,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.5\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.7\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.9\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.12\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":27236,\n        \"deadTimeMsecs\":30477,\n        \"routerDeadIntervalTimerDueMsec\":30477,\n        \"upTime\":\"27.236s\",\n        \"deadTime\":\"30.477s\",\n        \"address\":\"10.100.0.5\",\n        \"ifaceAddress\":\"10.100.0.5\",\n        \"ifaceName\":\"vpp7:10.100.0.4\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7004552,\n        \"deadTimeMsecs\":35541,\n        \"routerDeadIntervalTimerDueMsec\":35541,\n        \"upTime\":\"1h56m44s\",\n        \"deadTime\":\"35.541s\",\n        \"address\":\"10.100.0.7\",\n        \"ifaceAddress\":\"10.100.0.7\",\n        \"ifaceName\":\"vpp11:10.100.0.6\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7002562,\n        \"deadTimeMsecs\":39044,\n        \"routerDeadIntervalTimerDueMsec\":39044,\n        \"upTime\":\"1h56m42s\",\n        \"deadTime\":\"39.044s\",\n        \"address\":\"10.100.0.9\",\n        \"ifaceAddress\":\"10.100.0.9\",\n        \"ifaceName\":\"vpp15:10.100.0.8\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.2864621779990557
+        },
+        "b": {
+          "observed_at": 1790877274.2350867,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=32, jitter=0\n    path-list:[30] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:30 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.4 loop1\n      [@0]: ipv4 via 10.100.0.4 loop1: mtu:1500 next:11 020027fd0004020027fd00050800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=31, jitter=0\n    path-list:[62] locks:1 flags:shared, uPRF-list:67 len:1 itfs:[11, ]\n      path:[78] pl-index:62 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.6 loop3\n      [@0]: ipv4 via 10.100.0.6 loop3: mtu:1500 next:10 020027fd0006020027fd00070800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=61, jitter=0\n    path-list:[76] locks:1 flags:shared, uPRF-list:81 len:1 itfs:[15, ]\n      path:[96] pl-index:76 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.8 loop5\n      [@0]: ipv4 via 10.100.0.8 loop5: mtu:1500 next:13 020027fd0008020027fd00090800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:1043 applied:1043 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"nhid\":173,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.4\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.6\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.8\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.30.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.11\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":27231,\n        \"deadTimeMsecs\":32712,\n        \"routerDeadIntervalTimerDueMsec\":32712,\n        \"upTime\":\"27.231s\",\n        \"deadTime\":\"32.712s\",\n        \"address\":\"10.100.0.4\",\n        \"ifaceAddress\":\"10.100.0.4\",\n        \"ifaceName\":\"vpp7:10.100.0.5\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7004541,\n        \"deadTimeMsecs\":35692,\n        \"routerDeadIntervalTimerDueMsec\":35692,\n        \"upTime\":\"1h56m44s\",\n        \"deadTime\":\"35.692s\",\n        \"address\":\"10.100.0.6\",\n        \"ifaceAddress\":\"10.100.0.6\",\n        \"ifaceName\":\"vpp11:10.100.0.7\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7002548,\n        \"deadTimeMsecs\":37494,\n        \"routerDeadIntervalTimerDueMsec\":37494,\n        \"upTime\":\"1h56m42s\",\n        \"deadTime\":\"37.494s\",\n        \"address\":\"10.100.0.8\",\n        \"ifaceAddress\":\"10.100.0.8\",\n        \"ifaceName\":\"vpp15:10.100.0.9\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.29677730000003066
+        }
+      }
+    },
+    {
+      "reference_state_second": 10.00320323699998,
+      "reference_state_written_at": 1790877279.0969195,
+      "edges": {
+        "a": {
+          "observed_at": 1790877279.5148306,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=23, jitter=0\n    path-list:[51] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:51 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.5 loop1\n      [@0]: ipv4 via 10.100.0.5 loop1: mtu:1500 next:9 020027fd0005020027fd00040800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=30, jitter=0\n    path-list:[63] locks:1 flags:shared, uPRF-list:68 len:1 itfs:[11, ]\n      path:[79] pl-index:63 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.7 loop3\n      [@0]: ipv4 via 10.100.0.7 loop3: mtu:1500 next:13 020027fd0007020027fd00060800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=68, jitter=0\n    path-list:[80] locks:1 flags:shared, uPRF-list:84 len:1 itfs:[15, ]\n      path:[100] pl-index:80 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.9 loop5\n      [@0]: ipv4 via 10.100.0.9 loop5: mtu:1500 next:12 020027fd0009020027fd00080800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:2103 applied:2103 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.20.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"nhid\":331,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.5\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.7\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.9\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.12\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":32506,\n        \"deadTimeMsecs\":35206,\n        \"routerDeadIntervalTimerDueMsec\":35206,\n        \"upTime\":\"32.506s\",\n        \"deadTime\":\"35.206s\",\n        \"address\":\"10.100.0.5\",\n        \"ifaceAddress\":\"10.100.0.5\",\n        \"ifaceName\":\"vpp7:10.100.0.4\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7009821,\n        \"deadTimeMsecs\":30271,\n        \"routerDeadIntervalTimerDueMsec\":30271,\n        \"upTime\":\"1h56m49s\",\n        \"deadTime\":\"30.271s\",\n        \"address\":\"10.100.0.7\",\n        \"ifaceAddress\":\"10.100.0.7\",\n        \"ifaceName\":\"vpp11:10.100.0.6\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7007832,\n        \"deadTimeMsecs\":33775,\n        \"routerDeadIntervalTimerDueMsec\":33775,\n        \"upTime\":\"1h56m47s\",\n        \"deadTime\":\"33.775s\",\n        \"address\":\"10.100.0.9\",\n        \"ifaceAddress\":\"10.100.0.9\",\n        \"ifaceName\":\"vpp15:10.100.0.8\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.2546100870004011
+        },
+        "b": {
+          "observed_at": 1790877279.5219867,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=32, jitter=0\n    path-list:[30] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:30 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.4 loop1\n      [@0]: ipv4 via 10.100.0.4 loop1: mtu:1500 next:11 020027fd0004020027fd00050800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=31, jitter=0\n    path-list:[62] locks:1 flags:shared, uPRF-list:67 len:1 itfs:[11, ]\n      path:[78] pl-index:62 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.6 loop3\n      [@0]: ipv4 via 10.100.0.6 loop3: mtu:1500 next:10 020027fd0006020027fd00070800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=61, jitter=0\n    path-list:[76] locks:1 flags:shared, uPRF-list:81 len:1 itfs:[15, ]\n      path:[96] pl-index:76 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.8 loop5\n      [@0]: ipv4 via 10.100.0.8 loop5: mtu:1500 next:13 020027fd0008020027fd00090800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:2101 applied:2101 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"nhid\":173,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.4\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.6\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.8\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.30.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.11\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":32493,\n        \"deadTimeMsecs\":37453,\n        \"routerDeadIntervalTimerDueMsec\":37453,\n        \"upTime\":\"32.493s\",\n        \"deadTime\":\"37.453s\",\n        \"address\":\"10.100.0.4\",\n        \"ifaceAddress\":\"10.100.0.4\",\n        \"ifaceName\":\"vpp7:10.100.0.5\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7009802,\n        \"deadTimeMsecs\":30431,\n        \"routerDeadIntervalTimerDueMsec\":30431,\n        \"upTime\":\"1h56m49s\",\n        \"deadTime\":\"30.431s\",\n        \"address\":\"10.100.0.6\",\n        \"ifaceAddress\":\"10.100.0.6\",\n        \"ifaceName\":\"vpp11:10.100.0.7\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7007810,\n        \"deadTimeMsecs\":32232,\n        \"routerDeadIntervalTimerDueMsec\":32232,\n        \"upTime\":\"1h56m47s\",\n        \"deadTime\":\"32.232s\",\n        \"address\":\"10.100.0.8\",\n        \"ifaceAddress\":\"10.100.0.8\",\n        \"ifaceName\":\"vpp15:10.100.0.9\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.255924122999204
+        }
+      }
+    },
+    {
+      "reference_state_second": 15.002987690999362,
+      "reference_state_written_at": 1790877284.0967453,
+      "edges": {
+        "a": {
+          "observed_at": 1790877284.7690806,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=23, jitter=0\n    path-list:[51] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:51 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.5 loop1\n      [@0]: ipv4 via 10.100.0.5 loop1: mtu:1500 next:9 020027fd0005020027fd00040800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=30, jitter=0\n    path-list:[63] locks:1 flags:shared, uPRF-list:68 len:1 itfs:[11, ]\n      path:[79] pl-index:63 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.7 loop3\n      [@0]: ipv4 via 10.100.0.7 loop3: mtu:1500 next:13 020027fd0007020027fd00060800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=68, jitter=0\n    path-list:[80] locks:1 flags:shared, uPRF-list:84 len:1 itfs:[15, ]\n      path:[100] pl-index:80 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.9 loop5\n      [@0]: ipv4 via 10.100.0.9 loop5: mtu:1500 next:12 020027fd0009020027fd00080800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:3161 applied:3161 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.20.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"nhid\":331,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.5\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.7\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.9\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.12\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":37763,\n        \"deadTimeMsecs\":39951,\n        \"routerDeadIntervalTimerDueMsec\":39951,\n        \"upTime\":\"37.763s\",\n        \"deadTime\":\"39.951s\",\n        \"address\":\"10.100.0.5\",\n        \"ifaceAddress\":\"10.100.0.5\",\n        \"ifaceName\":\"vpp7:10.100.0.4\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7015079,\n        \"deadTimeMsecs\":35012,\n        \"routerDeadIntervalTimerDueMsec\":35012,\n        \"upTime\":\"1h56m55s\",\n        \"deadTime\":\"35.012s\",\n        \"address\":\"10.100.0.7\",\n        \"ifaceAddress\":\"10.100.0.7\",\n        \"ifaceName\":\"vpp11:10.100.0.6\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7013089,\n        \"deadTimeMsecs\":38519,\n        \"routerDeadIntervalTimerDueMsec\":38519,\n        \"upTime\":\"1h56m53s\",\n        \"deadTime\":\"38.519s\",\n        \"address\":\"10.100.0.9\",\n        \"ifaceAddress\":\"10.100.0.9\",\n        \"ifaceName\":\"vpp15:10.100.0.8\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.2774620660002256
+        },
+        "b": {
+          "observed_at": 1790877284.7787554,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=32, jitter=0\n    path-list:[30] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:30 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.4 loop1\n      [@0]: ipv4 via 10.100.0.4 loop1: mtu:1500 next:11 020027fd0004020027fd00050800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=31, jitter=0\n    path-list:[62] locks:1 flags:shared, uPRF-list:67 len:1 itfs:[11, ]\n      path:[78] pl-index:62 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.6 loop3\n      [@0]: ipv4 via 10.100.0.6 loop3: mtu:1500 next:10 020027fd0006020027fd00070800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=61, jitter=0\n    path-list:[76] locks:1 flags:shared, uPRF-list:81 len:1 itfs:[15, ]\n      path:[96] pl-index:76 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.8 loop5\n      [@0]: ipv4 via 10.100.0.8 loop5: mtu:1500 next:13 020027fd0008020027fd00090800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:3159 applied:3159 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"nhid\":173,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.4\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.6\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.8\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.30.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.11\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":37758,\n        \"deadTimeMsecs\":32188,\n        \"routerDeadIntervalTimerDueMsec\":32188,\n        \"upTime\":\"37.758s\",\n        \"deadTime\":\"32.188s\",\n        \"address\":\"10.100.0.4\",\n        \"ifaceAddress\":\"10.100.0.4\",\n        \"ifaceName\":\"vpp7:10.100.0.5\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7015067,\n        \"deadTimeMsecs\":35168,\n        \"routerDeadIntervalTimerDueMsec\":35168,\n        \"upTime\":\"1h56m55s\",\n        \"deadTime\":\"35.168s\",\n        \"address\":\"10.100.0.6\",\n        \"ifaceAddress\":\"10.100.0.6\",\n        \"ifaceName\":\"vpp11:10.100.0.7\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7013075,\n        \"deadTimeMsecs\":36957,\n        \"routerDeadIntervalTimerDueMsec\":36957,\n        \"upTime\":\"1h56m53s\",\n        \"deadTime\":\"36.957s\",\n        \"address\":\"10.100.0.8\",\n        \"ifaceAddress\":\"10.100.0.8\",\n        \"ifaceName\":\"vpp15:10.100.0.9\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.2872965970000223
+        }
+      }
+    },
+    {
+      "reference_state_second": 20.003157911000017,
+      "reference_state_written_at": 1790877289.096957,
+      "edges": {
+        "a": {
+          "observed_at": 1790877290.0374784,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=23, jitter=0\n    path-list:[51] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:51 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.5 loop1\n      [@0]: ipv4 via 10.100.0.5 loop1: mtu:1500 next:9 020027fd0005020027fd00040800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=30, jitter=0\n    path-list:[63] locks:1 flags:shared, uPRF-list:68 len:1 itfs:[11, ]\n      path:[79] pl-index:63 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.7 loop3\n      [@0]: ipv4 via 10.100.0.7 loop3: mtu:1500 next:13 020027fd0007020027fd00060800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=68, jitter=0\n    path-list:[80] locks:1 flags:shared, uPRF-list:84 len:1 itfs:[15, ]\n      path:[100] pl-index:80 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.9 loop5\n      [@0]: ipv4 via 10.100.0.9 loop5: mtu:1500 next:12 020027fd0009020027fd00080800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:4225 applied:4225 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.20.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"nhid\":331,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.5\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.7\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.9\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.12\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":43031,\n        \"deadTimeMsecs\":34684,\n        \"routerDeadIntervalTimerDueMsec\":34684,\n        \"upTime\":\"43.031s\",\n        \"deadTime\":\"34.684s\",\n        \"address\":\"10.100.0.5\",\n        \"ifaceAddress\":\"10.100.0.5\",\n        \"ifaceName\":\"vpp7:10.100.0.4\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7020346,\n        \"deadTimeMsecs\":39743,\n        \"routerDeadIntervalTimerDueMsec\":39743,\n        \"upTime\":\"1h57m00s\",\n        \"deadTime\":\"39.743s\",\n        \"address\":\"10.100.0.7\",\n        \"ifaceAddress\":\"10.100.0.7\",\n        \"ifaceName\":\"vpp11:10.100.0.6\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7018356,\n        \"deadTimeMsecs\":33251,\n        \"routerDeadIntervalTimerDueMsec\":33251,\n        \"upTime\":\"1h56m58s\",\n        \"deadTime\":\"33.251s\",\n        \"address\":\"10.100.0.9\",\n        \"ifaceAddress\":\"10.100.0.9\",\n        \"ifaceName\":\"vpp15:10.100.0.8\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.29311093899923435
+        },
+        "b": {
+          "observed_at": 1790877290.02975,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=32, jitter=0\n    path-list:[30] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:30 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.4 loop1\n      [@0]: ipv4 via 10.100.0.4 loop1: mtu:1500 next:11 020027fd0004020027fd00050800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=31, jitter=0\n    path-list:[62] locks:1 flags:shared, uPRF-list:67 len:1 itfs:[11, ]\n      path:[78] pl-index:62 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.6 loop3\n      [@0]: ipv4 via 10.100.0.6 loop3: mtu:1500 next:10 020027fd0006020027fd00070800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=61, jitter=0\n    path-list:[76] locks:1 flags:shared, uPRF-list:81 len:1 itfs:[15, ]\n      path:[96] pl-index:76 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.8 loop5\n      [@0]: ipv4 via 10.100.0.8 loop5: mtu:1500 next:13 020027fd0008020027fd00090800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:4219 applied:4219 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"nhid\":173,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.4\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.6\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.8\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.30.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.11\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":43006,\n        \"deadTimeMsecs\":36939,\n        \"routerDeadIntervalTimerDueMsec\":36939,\n        \"upTime\":\"43.006s\",\n        \"deadTime\":\"36.939s\",\n        \"address\":\"10.100.0.4\",\n        \"ifaceAddress\":\"10.100.0.4\",\n        \"ifaceName\":\"vpp7:10.100.0.5\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7020315,\n        \"deadTimeMsecs\":39917,\n        \"routerDeadIntervalTimerDueMsec\":39917,\n        \"upTime\":\"1h57m00s\",\n        \"deadTime\":\"39.917s\",\n        \"address\":\"10.100.0.6\",\n        \"ifaceAddress\":\"10.100.0.6\",\n        \"ifaceName\":\"vpp11:10.100.0.7\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7018322,\n        \"deadTimeMsecs\":31709,\n        \"routerDeadIntervalTimerDueMsec\":31709,\n        \"upTime\":\"1h56m58s\",\n        \"deadTime\":\"31.709s\",\n        \"address\":\"10.100.0.8\",\n        \"ifaceAddress\":\"10.100.0.8\",\n        \"ifaceName\":\"vpp15:10.100.0.9\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.28228267999838863
+        }
+      }
+    },
+    {
+      "reference_state_second": 25.00289341200005,
+      "reference_state_written_at": 1790877294.0968308,
+      "edges": {
+        "a": {
+          "observed_at": 1790877294.2907534,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=23, jitter=0\n    path-list:[51] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:51 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.5 loop1\n      [@0]: ipv4 via 10.100.0.5 loop1: mtu:1500 next:9 020027fd0005020027fd00040800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=30, jitter=0\n    path-list:[63] locks:1 flags:shared, uPRF-list:68 len:1 itfs:[11, ]\n      path:[79] pl-index:63 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.7 loop3\n      [@0]: ipv4 via 10.100.0.7 loop3: mtu:1500 next:13 020027fd0007020027fd00060800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=68, jitter=0\n    path-list:[80] locks:1 flags:shared, uPRF-list:84 len:1 itfs:[15, ]\n      path:[100] pl-index:80 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.9 loop5\n      [@0]: ipv4 via 10.100.0.9 loop5: mtu:1500 next:12 020027fd0009020027fd00080800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:5083 applied:5083 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.20.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"nhid\":331,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.5\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.7\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.9\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.12\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":47285,\n        \"deadTimeMsecs\":30429,\n        \"routerDeadIntervalTimerDueMsec\":30429,\n        \"upTime\":\"47.285s\",\n        \"deadTime\":\"30.429s\",\n        \"address\":\"10.100.0.5\",\n        \"ifaceAddress\":\"10.100.0.5\",\n        \"ifaceName\":\"vpp7:10.100.0.4\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7024601,\n        \"deadTimeMsecs\":35489,\n        \"routerDeadIntervalTimerDueMsec\":35489,\n        \"upTime\":\"1h57m04s\",\n        \"deadTime\":\"35.489s\",\n        \"address\":\"10.100.0.7\",\n        \"ifaceAddress\":\"10.100.0.7\",\n        \"ifaceName\":\"vpp11:10.100.0.6\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7022611,\n        \"deadTimeMsecs\":38996,\n        \"routerDeadIntervalTimerDueMsec\":38996,\n        \"upTime\":\"1h57m02s\",\n        \"deadTime\":\"38.996s\",\n        \"address\":\"10.100.0.9\",\n        \"ifaceAddress\":\"10.100.0.9\",\n        \"ifaceName\":\"vpp15:10.100.0.8\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.28299260800122283
+        },
+        "b": {
+          "observed_at": 1790877294.307302,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=32, jitter=0\n    path-list:[30] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:30 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.4 loop1\n      [@0]: ipv4 via 10.100.0.4 loop1: mtu:1500 next:11 020027fd0004020027fd00050800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=31, jitter=0\n    path-list:[62] locks:1 flags:shared, uPRF-list:67 len:1 itfs:[11, ]\n      path:[78] pl-index:62 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.6 loop3\n      [@0]: ipv4 via 10.100.0.6 loop3: mtu:1500 next:10 020027fd0006020027fd00070800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=61, jitter=0\n    path-list:[76] locks:1 flags:shared, uPRF-list:81 len:1 itfs:[15, ]\n      path:[96] pl-index:76 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.8 loop5\n      [@0]: ipv4 via 10.100.0.8 loop5: mtu:1500 next:13 020027fd0008020027fd00090800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:5083 applied:5083 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"nhid\":173,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.4\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.6\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.8\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.30.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.11\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":47280,\n        \"deadTimeMsecs\":32665,\n        \"routerDeadIntervalTimerDueMsec\":32665,\n        \"upTime\":\"47.280s\",\n        \"deadTime\":\"32.665s\",\n        \"address\":\"10.100.0.4\",\n        \"ifaceAddress\":\"10.100.0.4\",\n        \"ifaceName\":\"vpp7:10.100.0.5\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7024589,\n        \"deadTimeMsecs\":35643,\n        \"routerDeadIntervalTimerDueMsec\":35643,\n        \"upTime\":\"1h57m04s\",\n        \"deadTime\":\"35.643s\",\n        \"address\":\"10.100.0.6\",\n        \"ifaceAddress\":\"10.100.0.6\",\n        \"ifaceName\":\"vpp11:10.100.0.7\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7022596,\n        \"deadTimeMsecs\":37418,\n        \"routerDeadIntervalTimerDueMsec\":37418,\n        \"upTime\":\"1h57m02s\",\n        \"deadTime\":\"37.418s\",\n        \"address\":\"10.100.0.8\",\n        \"ifaceAddress\":\"10.100.0.8\",\n        \"ifaceName\":\"vpp15:10.100.0.9\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.29158688400093524
+        }
+      }
+    },
+    {
+      "reference_state_second": 30.00309393200041,
+      "reference_state_written_at": 1790877299.042515,
+      "edges": {
+        "a": {
+          "observed_at": 1790877299.8257043,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=23, jitter=0\n    path-list:[51] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:51 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.5 loop1\n      [@0]: ipv4 via 10.100.0.5 loop1: mtu:1500 next:9 020027fd0005020027fd00040800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=30, jitter=0\n    path-list:[63] locks:1 flags:shared, uPRF-list:68 len:1 itfs:[11, ]\n      path:[79] pl-index:63 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.7 loop3\n      [@0]: ipv4 via 10.100.0.7 loop3: mtu:1500 next:13 020027fd0007020027fd00060800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=68, jitter=0\n    path-list:[80] locks:1 flags:shared, uPRF-list:84 len:1 itfs:[15, ]\n      path:[100] pl-index:80 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.9 loop5\n      [@0]: ipv4 via 10.100.0.9 loop5: mtu:1500 next:12 020027fd0009020027fd00080800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:6183 applied:6183 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.20.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"nhid\":331,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.5\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.7\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.9\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.12\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":52823,\n        \"deadTimeMsecs\":34890,\n        \"routerDeadIntervalTimerDueMsec\":34890,\n        \"upTime\":\"52.823s\",\n        \"deadTime\":\"34.890s\",\n        \"address\":\"10.100.0.5\",\n        \"ifaceAddress\":\"10.100.0.5\",\n        \"ifaceName\":\"vpp7:10.100.0.4\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7030138,\n        \"deadTimeMsecs\":39949,\n        \"routerDeadIntervalTimerDueMsec\":39949,\n        \"upTime\":\"1h57m10s\",\n        \"deadTime\":\"39.949s\",\n        \"address\":\"10.100.0.7\",\n        \"ifaceAddress\":\"10.100.0.7\",\n        \"ifaceName\":\"vpp11:10.100.0.6\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7028148,\n        \"deadTimeMsecs\":33459,\n        \"routerDeadIntervalTimerDueMsec\":33459,\n        \"upTime\":\"1h57m08s\",\n        \"deadTime\":\"33.459s\",\n        \"address\":\"10.100.0.9\",\n        \"ifaceAddress\":\"10.100.0.9\",\n        \"ifaceName\":\"vpp15:10.100.0.8\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.47719448799944075
+        },
+        "b": {
+          "observed_at": 1790877299.6089382,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=32, jitter=0\n    path-list:[30] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:30 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.4 loop1\n      [@0]: ipv4 via 10.100.0.4 loop1: mtu:1500 next:11 020027fd0004020027fd00050800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=31, jitter=0\n    path-list:[62] locks:1 flags:shared, uPRF-list:67 len:1 itfs:[11, ]\n      path:[78] pl-index:62 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.6 loop3\n      [@0]: ipv4 via 10.100.0.6 loop3: mtu:1500 next:10 020027fd0006020027fd00070800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=61, jitter=0\n    path-list:[76] locks:1 flags:shared, uPRF-list:81 len:1 itfs:[15, ]\n      path:[96] pl-index:76 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.8 loop5\n      [@0]: ipv4 via 10.100.0.8 loop5: mtu:1500 next:13 020027fd0008020027fd00090800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:6136 applied:6136 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"nhid\":173,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.4\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.6\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.8\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.30.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.11\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":52582,\n        \"deadTimeMsecs\":37368,\n        \"routerDeadIntervalTimerDueMsec\":37368,\n        \"upTime\":\"52.582s\",\n        \"deadTime\":\"37.368s\",\n        \"address\":\"10.100.0.4\",\n        \"ifaceAddress\":\"10.100.0.4\",\n        \"ifaceName\":\"vpp7:10.100.0.5\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7029891,\n        \"deadTimeMsecs\":30341,\n        \"routerDeadIntervalTimerDueMsec\":30341,\n        \"upTime\":\"1h57m09s\",\n        \"deadTime\":\"30.341s\",\n        \"address\":\"10.100.0.6\",\n        \"ifaceAddress\":\"10.100.0.6\",\n        \"ifaceName\":\"vpp11:10.100.0.7\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7027898,\n        \"deadTimeMsecs\":32116,\n        \"routerDeadIntervalTimerDueMsec\":32116,\n        \"upTime\":\"1h57m07s\",\n        \"deadTime\":\"32.116s\",\n        \"address\":\"10.100.0.8\",\n        \"ifaceAddress\":\"10.100.0.8\",\n        \"ifaceName\":\"vpp15:10.100.0.9\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.252713527999731
+        }
+      }
+    },
+    {
+      "reference_state_second": 35.00333714499902,
+      "reference_state_written_at": 1790877304.0426266,
+      "edges": {
+        "a": {
+          "observed_at": 1790877305.1402137,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=23, jitter=0\n    path-list:[51] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:51 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.5 loop1\n      [@0]: ipv4 via 10.100.0.5 loop1: mtu:1500 next:9 020027fd0005020027fd00040800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=30, jitter=0\n    path-list:[63] locks:1 flags:shared, uPRF-list:68 len:1 itfs:[11, ]\n      path:[79] pl-index:63 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.7 loop3\n      [@0]: ipv4 via 10.100.0.7 loop3: mtu:1500 next:13 020027fd0007020027fd00060800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=68, jitter=0\n    path-list:[80] locks:1 flags:shared, uPRF-list:84 len:1 itfs:[15, ]\n      path:[100] pl-index:80 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.9 loop5\n      [@0]: ipv4 via 10.100.0.9 loop5: mtu:1500 next:12 020027fd0009020027fd00080800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:7249 applied:7249 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.20.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"nhid\":331,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.5\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.7\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.9\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.12\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":58165,\n        \"deadTimeMsecs\":39549,\n        \"routerDeadIntervalTimerDueMsec\":39549,\n        \"upTime\":\"58.165s\",\n        \"deadTime\":\"39.549s\",\n        \"address\":\"10.100.0.5\",\n        \"ifaceAddress\":\"10.100.0.5\",\n        \"ifaceName\":\"vpp7:10.100.0.4\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7035480,\n        \"deadTimeMsecs\":34606,\n        \"routerDeadIntervalTimerDueMsec\":34606,\n        \"upTime\":\"1h57m15s\",\n        \"deadTime\":\"34.606s\",\n        \"address\":\"10.100.0.7\",\n        \"ifaceAddress\":\"10.100.0.7\",\n        \"ifaceName\":\"vpp11:10.100.0.6\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7033491,\n        \"deadTimeMsecs\":38120,\n        \"routerDeadIntervalTimerDueMsec\":38120,\n        \"upTime\":\"1h57m13s\",\n        \"deadTime\":\"38.120s\",\n        \"address\":\"10.100.0.9\",\n        \"ifaceAddress\":\"10.100.0.9\",\n        \"ifaceName\":\"vpp15:10.100.0.8\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.33128291699904366
+        },
+        "b": {
+          "observed_at": 1790877305.095669,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=32, jitter=0\n    path-list:[30] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:30 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.4 loop1\n      [@0]: ipv4 via 10.100.0.4 loop1: mtu:1500 next:11 020027fd0004020027fd00050800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=31, jitter=0\n    path-list:[62] locks:1 flags:shared, uPRF-list:67 len:1 itfs:[11, ]\n      path:[78] pl-index:62 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.6 loop3\n      [@0]: ipv4 via 10.100.0.6 loop3: mtu:1500 next:10 020027fd0006020027fd00070800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=61, jitter=0\n    path-list:[76] locks:1 flags:shared, uPRF-list:81 len:1 itfs:[15, ]\n      path:[96] pl-index:76 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.8 loop5\n      [@0]: ipv4 via 10.100.0.8 loop5: mtu:1500 next:13 020027fd0008020027fd00090800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:7236 applied:7236 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"nhid\":173,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.4\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.6\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.8\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.30.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.11\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":58069,\n        \"deadTimeMsecs\":31880,\n        \"routerDeadIntervalTimerDueMsec\":31880,\n        \"upTime\":\"58.069s\",\n        \"deadTime\":\"31.880s\",\n        \"address\":\"10.100.0.4\",\n        \"ifaceAddress\":\"10.100.0.4\",\n        \"ifaceName\":\"vpp7:10.100.0.5\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7035379,\n        \"deadTimeMsecs\":34853,\n        \"routerDeadIntervalTimerDueMsec\":34853,\n        \"upTime\":\"1h57m15s\",\n        \"deadTime\":\"34.853s\",\n        \"address\":\"10.100.0.6\",\n        \"ifaceAddress\":\"10.100.0.6\",\n        \"ifaceName\":\"vpp11:10.100.0.7\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7033386,\n        \"deadTimeMsecs\":36641,\n        \"routerDeadIntervalTimerDueMsec\":36641,\n        \"upTime\":\"1h57m13s\",\n        \"deadTime\":\"36.641s\",\n        \"address\":\"10.100.0.8\",\n        \"ifaceAddress\":\"10.100.0.8\",\n        \"ifaceName\":\"vpp15:10.100.0.9\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.25277108199952636
+        }
+      }
+    },
+    {
+      "reference_state_second": 40.00372117799998,
+      "reference_state_written_at": 1790877309.0430427,
+      "edges": {
+        "a": {
+          "observed_at": 1790877309.456842,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=23, jitter=0\n    path-list:[51] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:51 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.5 loop1\n      [@0]: ipv4 via 10.100.0.5 loop1: mtu:1500 next:9 020027fd0005020027fd00040800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=30, jitter=0\n    path-list:[63] locks:1 flags:shared, uPRF-list:68 len:1 itfs:[11, ]\n      path:[79] pl-index:63 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.7 loop3\n      [@0]: ipv4 via 10.100.0.7 loop3: mtu:1500 next:13 020027fd0007020027fd00060800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=68, jitter=0\n    path-list:[80] locks:1 flags:shared, uPRF-list:84 len:1 itfs:[15, ]\n      path:[100] pl-index:80 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.9 loop5\n      [@0]: ipv4 via 10.100.0.9 loop5: mtu:1500 next:12 020027fd0009020027fd00080800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:8116 applied:8116 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.20.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"nhid\":331,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.5\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.7\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.9\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.12\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":62450,\n        \"deadTimeMsecs\":35263,\n        \"routerDeadIntervalTimerDueMsec\":35263,\n        \"upTime\":\"1m02s\",\n        \"deadTime\":\"35.263s\",\n        \"address\":\"10.100.0.5\",\n        \"ifaceAddress\":\"10.100.0.5\",\n        \"ifaceName\":\"vpp7:10.100.0.4\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7039766,\n        \"deadTimeMsecs\":30321,\n        \"routerDeadIntervalTimerDueMsec\":30321,\n        \"upTime\":\"1h57m19s\",\n        \"deadTime\":\"30.321s\",\n        \"address\":\"10.100.0.7\",\n        \"ifaceAddress\":\"10.100.0.7\",\n        \"ifaceName\":\"vpp11:10.100.0.6\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7037776,\n        \"deadTimeMsecs\":33835,\n        \"routerDeadIntervalTimerDueMsec\":33835,\n        \"upTime\":\"1h57m17s\",\n        \"deadTime\":\"33.835s\",\n        \"address\":\"10.100.0.9\",\n        \"ifaceAddress\":\"10.100.0.9\",\n        \"ifaceName\":\"vpp15:10.100.0.8\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.298810042999321
+        },
+        "b": {
+          "observed_at": 1790877309.4503484,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=32, jitter=0\n    path-list:[30] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:30 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.4 loop1\n      [@0]: ipv4 via 10.100.0.4 loop1: mtu:1500 next:11 020027fd0004020027fd00050800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=31, jitter=0\n    path-list:[62] locks:1 flags:shared, uPRF-list:67 len:1 itfs:[11, ]\n      path:[78] pl-index:62 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.6 loop3\n      [@0]: ipv4 via 10.100.0.6 loop3: mtu:1500 next:10 020027fd0006020027fd00070800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=61, jitter=0\n    path-list:[76] locks:1 flags:shared, uPRF-list:81 len:1 itfs:[15, ]\n      path:[96] pl-index:76 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.8 loop5\n      [@0]: ipv4 via 10.100.0.8 loop5: mtu:1500 next:13 020027fd0008020027fd00090800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:8111 applied:8111 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"nhid\":173,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.4\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.6\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.8\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.30.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.11\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":62425,\n        \"deadTimeMsecs\":37522,\n        \"routerDeadIntervalTimerDueMsec\":37522,\n        \"upTime\":\"1m02s\",\n        \"deadTime\":\"37.522s\",\n        \"address\":\"10.100.0.4\",\n        \"ifaceAddress\":\"10.100.0.4\",\n        \"ifaceName\":\"vpp7:10.100.0.5\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7039735,\n        \"deadTimeMsecs\":30497,\n        \"routerDeadIntervalTimerDueMsec\":30497,\n        \"upTime\":\"1h57m19s\",\n        \"deadTime\":\"30.497s\",\n        \"address\":\"10.100.0.6\",\n        \"ifaceAddress\":\"10.100.0.6\",\n        \"ifaceName\":\"vpp11:10.100.0.7\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7037742,\n        \"deadTimeMsecs\":32285,\n        \"routerDeadIntervalTimerDueMsec\":32285,\n        \"upTime\":\"1h57m17s\",\n        \"deadTime\":\"32.285s\",\n        \"address\":\"10.100.0.8\",\n        \"ifaceAddress\":\"10.100.0.8\",\n        \"ifaceName\":\"vpp15:10.100.0.9\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.28873934100010956
+        }
+      }
+    },
+    {
+      "reference_state_second": 45.00388368200038,
+      "reference_state_written_at": 1790877314.0433538,
+      "edges": {
+        "a": {
+          "observed_at": 1790877314.7006016,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=23, jitter=0\n    path-list:[51] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:51 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.5 loop1\n      [@0]: ipv4 via 10.100.0.5 loop1: mtu:1500 next:9 020027fd0005020027fd00040800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=30, jitter=0\n    path-list:[63] locks:1 flags:shared, uPRF-list:68 len:1 itfs:[11, ]\n      path:[79] pl-index:63 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.7 loop3\n      [@0]: ipv4 via 10.100.0.7 loop3: mtu:1500 next:13 020027fd0007020027fd00060800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=68, jitter=0\n    path-list:[80] locks:1 flags:shared, uPRF-list:84 len:1 itfs:[15, ]\n      path:[100] pl-index:80 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.9 loop5\n      [@0]: ipv4 via 10.100.0.9 loop5: mtu:1500 next:12 020027fd0009020027fd00080800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:9173 applied:9173 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.20.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"nhid\":331,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.5\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.7\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.9\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.12\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":67695,\n        \"deadTimeMsecs\":30019,\n        \"routerDeadIntervalTimerDueMsec\":30019,\n        \"upTime\":\"1m07s\",\n        \"deadTime\":\"30.019s\",\n        \"address\":\"10.100.0.5\",\n        \"ifaceAddress\":\"10.100.0.5\",\n        \"ifaceName\":\"vpp7:10.100.0.4\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7045010,\n        \"deadTimeMsecs\":35078,\n        \"routerDeadIntervalTimerDueMsec\":35078,\n        \"upTime\":\"1h57m25s\",\n        \"deadTime\":\"35.078s\",\n        \"address\":\"10.100.0.7\",\n        \"ifaceAddress\":\"10.100.0.7\",\n        \"ifaceName\":\"vpp11:10.100.0.6\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7043020,\n        \"deadTimeMsecs\":38571,\n        \"routerDeadIntervalTimerDueMsec\":38571,\n        \"upTime\":\"1h57m23s\",\n        \"deadTime\":\"38.571s\",\n        \"address\":\"10.100.0.9\",\n        \"ifaceAddress\":\"10.100.0.9\",\n        \"ifaceName\":\"vpp15:10.100.0.8\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.2696765580003557
+        },
+        "b": {
+          "observed_at": 1790877314.6915212,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=32, jitter=0\n    path-list:[30] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:30 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.4 loop1\n      [@0]: ipv4 via 10.100.0.4 loop1: mtu:1500 next:11 020027fd0004020027fd00050800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=31, jitter=0\n    path-list:[62] locks:1 flags:shared, uPRF-list:67 len:1 itfs:[11, ]\n      path:[78] pl-index:62 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.6 loop3\n      [@0]: ipv4 via 10.100.0.6 loop3: mtu:1500 next:10 020027fd0006020027fd00070800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=61, jitter=0\n    path-list:[76] locks:1 flags:shared, uPRF-list:81 len:1 itfs:[15, ]\n      path:[96] pl-index:76 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.8 loop5\n      [@0]: ipv4 via 10.100.0.8 loop5: mtu:1500 next:13 020027fd0008020027fd00090800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:9168 applied:9168 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"nhid\":173,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.4\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.6\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.8\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.30.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.11\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":67664,\n        \"deadTimeMsecs\":32283,\n        \"routerDeadIntervalTimerDueMsec\":32283,\n        \"upTime\":\"1m07s\",\n        \"deadTime\":\"32.283s\",\n        \"address\":\"10.100.0.4\",\n        \"ifaceAddress\":\"10.100.0.4\",\n        \"ifaceName\":\"vpp7:10.100.0.5\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7044974,\n        \"deadTimeMsecs\":35265,\n        \"routerDeadIntervalTimerDueMsec\":35265,\n        \"upTime\":\"1h57m24s\",\n        \"deadTime\":\"35.265s\",\n        \"address\":\"10.100.0.6\",\n        \"ifaceAddress\":\"10.100.0.6\",\n        \"ifaceName\":\"vpp11:10.100.0.7\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7042981,\n        \"deadTimeMsecs\":37044,\n        \"routerDeadIntervalTimerDueMsec\":37044,\n        \"upTime\":\"1h57m22s\",\n        \"deadTime\":\"37.044s\",\n        \"address\":\"10.100.0.8\",\n        \"ifaceAddress\":\"10.100.0.8\",\n        \"ifaceName\":\"vpp15:10.100.0.9\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.2566742580002028
+        }
+      }
+    },
+    {
+      "reference_state_second": 50.00359037399903,
+      "reference_state_written_at": 1790877319.0430233,
+      "edges": {
+        "a": {
+          "observed_at": 1790877319.9597807,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=23, jitter=0\n    path-list:[51] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:51 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.5 loop1\n      [@0]: ipv4 via 10.100.0.5 loop1: mtu:1500 next:9 020027fd0005020027fd00040800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=30, jitter=0\n    path-list:[63] locks:1 flags:shared, uPRF-list:68 len:1 itfs:[11, ]\n      path:[79] pl-index:63 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.7 loop3\n      [@0]: ipv4 via 10.100.0.7 loop3: mtu:1500 next:13 020027fd0007020027fd00060800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=68, jitter=0\n    path-list:[80] locks:1 flags:shared, uPRF-list:84 len:1 itfs:[15, ]\n      path:[100] pl-index:80 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.9 loop5\n      [@0]: ipv4 via 10.100.0.9 loop5: mtu:1500 next:12 020027fd0009020027fd00080800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:10237 applied:10237 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.20.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"nhid\":331,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.5\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.7\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.9\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.12\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":72967,\n        \"deadTimeMsecs\":34744,\n        \"routerDeadIntervalTimerDueMsec\":34744,\n        \"upTime\":\"1m12s\",\n        \"deadTime\":\"34.744s\",\n        \"address\":\"10.100.0.5\",\n        \"ifaceAddress\":\"10.100.0.5\",\n        \"ifaceName\":\"vpp7:10.100.0.4\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7050283,\n        \"deadTimeMsecs\":39800,\n        \"routerDeadIntervalTimerDueMsec\":39800,\n        \"upTime\":\"1h57m30s\",\n        \"deadTime\":\"39.800s\",\n        \"address\":\"10.100.0.7\",\n        \"ifaceAddress\":\"10.100.0.7\",\n        \"ifaceName\":\"vpp11:10.100.0.6\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7048293,\n        \"deadTimeMsecs\":33299,\n        \"routerDeadIntervalTimerDueMsec\":33299,\n        \"upTime\":\"1h57m28s\",\n        \"deadTime\":\"33.299s\",\n        \"address\":\"10.100.0.9\",\n        \"ifaceAddress\":\"10.100.0.9\",\n        \"ifaceName\":\"vpp15:10.100.0.8\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.3035023259999434
+        },
+        "b": {
+          "observed_at": 1790877320.1117582,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=32, jitter=0\n    path-list:[30] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:30 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.4 loop1\n      [@0]: ipv4 via 10.100.0.4 loop1: mtu:1500 next:11 020027fd0004020027fd00050800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=31, jitter=0\n    path-list:[62] locks:1 flags:shared, uPRF-list:67 len:1 itfs:[11, ]\n      path:[78] pl-index:62 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.6 loop3\n      [@0]: ipv4 via 10.100.0.6 loop3: mtu:1500 next:10 020027fd0006020027fd00070800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=61, jitter=0\n    path-list:[76] locks:1 flags:shared, uPRF-list:81 len:1 itfs:[15, ]\n      path:[96] pl-index:76 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.8 loop5\n      [@0]: ipv4 via 10.100.0.8 loop5: mtu:1500 next:13 020027fd0008020027fd00090800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:10261 applied:10261 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"nhid\":173,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.4\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.6\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.8\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.30.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.11\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":73085,\n        \"deadTimeMsecs\":36861,\n        \"routerDeadIntervalTimerDueMsec\":36861,\n        \"upTime\":\"1m13s\",\n        \"deadTime\":\"36.861s\",\n        \"address\":\"10.100.0.4\",\n        \"ifaceAddress\":\"10.100.0.4\",\n        \"ifaceName\":\"vpp7:10.100.0.5\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7050394,\n        \"deadTimeMsecs\":39833,\n        \"routerDeadIntervalTimerDueMsec\":39833,\n        \"upTime\":\"1h57m30s\",\n        \"deadTime\":\"39.833s\",\n        \"address\":\"10.100.0.6\",\n        \"ifaceAddress\":\"10.100.0.6\",\n        \"ifaceName\":\"vpp11:10.100.0.7\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7048401,\n        \"deadTimeMsecs\":31624,\n        \"routerDeadIntervalTimerDueMsec\":31624,\n        \"upTime\":\"1h57m28s\",\n        \"deadTime\":\"31.624s\",\n        \"address\":\"10.100.0.8\",\n        \"ifaceAddress\":\"10.100.0.8\",\n        \"ifaceName\":\"vpp15:10.100.0.9\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.43946199099991645
+        }
+      }
+    },
+    {
+      "reference_state_second": 55.004117397998925,
+      "reference_state_written_at": 1790877324.043717,
+      "edges": {
+        "a": {
+          "observed_at": 1790877324.3549044,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=23, jitter=0\n    path-list:[51] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:51 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.5 loop1\n      [@0]: ipv4 via 10.100.0.5 loop1: mtu:1500 next:9 020027fd0005020027fd00040800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=30, jitter=0\n    path-list:[63] locks:1 flags:shared, uPRF-list:68 len:1 itfs:[11, ]\n      path:[79] pl-index:63 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.7 loop3\n      [@0]: ipv4 via 10.100.0.7 loop3: mtu:1500 next:13 020027fd0007020027fd00060800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=68, jitter=0\n    path-list:[80] locks:1 flags:shared, uPRF-list:84 len:1 itfs:[15, ]\n      path:[100] pl-index:80 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.9 loop5\n      [@0]: ipv4 via 10.100.0.9 loop5: mtu:1500 next:12 020027fd0009020027fd00080800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:11122 applied:11122 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.20.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"nhid\":331,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.5\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.7\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.9\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.12\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":77347,\n        \"deadTimeMsecs\":30364,\n        \"routerDeadIntervalTimerDueMsec\":30364,\n        \"upTime\":\"1m17s\",\n        \"deadTime\":\"30.364s\",\n        \"address\":\"10.100.0.5\",\n        \"ifaceAddress\":\"10.100.0.5\",\n        \"ifaceName\":\"vpp7:10.100.0.4\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7054663,\n        \"deadTimeMsecs\":35420,\n        \"routerDeadIntervalTimerDueMsec\":35420,\n        \"upTime\":\"1h57m34s\",\n        \"deadTime\":\"35.420s\",\n        \"address\":\"10.100.0.7\",\n        \"ifaceAddress\":\"10.100.0.7\",\n        \"ifaceName\":\"vpp11:10.100.0.6\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7052673,\n        \"deadTimeMsecs\":38921,\n        \"routerDeadIntervalTimerDueMsec\":38921,\n        \"upTime\":\"1h57m32s\",\n        \"deadTime\":\"38.921s\",\n        \"address\":\"10.100.0.9\",\n        \"ifaceAddress\":\"10.100.0.9\",\n        \"ifaceName\":\"vpp15:10.100.0.8\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.271534088999033
+        },
+        "b": {
+          "observed_at": 1790877324.3844259,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=32, jitter=0\n    path-list:[30] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:30 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.4 loop1\n      [@0]: ipv4 via 10.100.0.4 loop1: mtu:1500 next:11 020027fd0004020027fd00050800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=31, jitter=0\n    path-list:[62] locks:1 flags:shared, uPRF-list:67 len:1 itfs:[11, ]\n      path:[78] pl-index:62 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.6 loop3\n      [@0]: ipv4 via 10.100.0.6 loop3: mtu:1500 next:10 020027fd0006020027fd00070800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=61, jitter=0\n    path-list:[76] locks:1 flags:shared, uPRF-list:81 len:1 itfs:[15, ]\n      path:[96] pl-index:76 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.8 loop5\n      [@0]: ipv4 via 10.100.0.8 loop5: mtu:1500 next:13 020027fd0008020027fd00090800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:11123 applied:11123 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"nhid\":173,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.4\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.6\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.8\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.30.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.11\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":77359,\n        \"deadTimeMsecs\":32587,\n        \"routerDeadIntervalTimerDueMsec\":32587,\n        \"upTime\":\"1m17s\",\n        \"deadTime\":\"32.587s\",\n        \"address\":\"10.100.0.4\",\n        \"ifaceAddress\":\"10.100.0.4\",\n        \"ifaceName\":\"vpp7:10.100.0.5\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7054668,\n        \"deadTimeMsecs\":35559,\n        \"routerDeadIntervalTimerDueMsec\":35559,\n        \"upTime\":\"1h57m34s\",\n        \"deadTime\":\"35.559s\",\n        \"address\":\"10.100.0.6\",\n        \"ifaceAddress\":\"10.100.0.6\",\n        \"ifaceName\":\"vpp11:10.100.0.7\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7052675,\n        \"deadTimeMsecs\":37361,\n        \"routerDeadIntervalTimerDueMsec\":37361,\n        \"upTime\":\"1h57m32s\",\n        \"deadTime\":\"37.361s\",\n        \"address\":\"10.100.0.8\",\n        \"ifaceAddress\":\"10.100.0.8\",\n        \"ifaceName\":\"vpp15:10.100.0.9\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.29832042699854355
+        }
+      }
+    },
+    {
+      "reference_state_second": 60.00436214699948,
+      "reference_state_written_at": 1790877328.453237,
+      "edges": {
+        "a": {
+          "observed_at": 1790877329.6076472,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=23, jitter=0\n    path-list:[51] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:51 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.5 loop1\n      [@0]: ipv4 via 10.100.0.5 loop1: mtu:1500 next:9 020027fd0005020027fd00040800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=30, jitter=0\n    path-list:[63] locks:1 flags:shared, uPRF-list:68 len:1 itfs:[11, ]\n      path:[79] pl-index:63 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.7 loop3\n      [@0]: ipv4 via 10.100.0.7 loop3: mtu:1500 next:13 020027fd0007020027fd00060800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=68, jitter=0\n    path-list:[80] locks:1 flags:shared, uPRF-list:84 len:1 itfs:[15, ]\n      path:[100] pl-index:80 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.9 loop5\n      [@0]: ipv4 via 10.100.0.9 loop5: mtu:1500 next:12 020027fd0009020027fd00080800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:12183 applied:12183 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.20.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"nhid\":331,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.5\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.7\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.9\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.12\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":82605,\n        \"deadTimeMsecs\":35107,\n        \"routerDeadIntervalTimerDueMsec\":35107,\n        \"upTime\":\"1m22s\",\n        \"deadTime\":\"35.107s\",\n        \"address\":\"10.100.0.5\",\n        \"ifaceAddress\":\"10.100.0.5\",\n        \"ifaceName\":\"vpp7:10.100.0.4\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7059920,\n        \"deadTimeMsecs\":30163,\n        \"routerDeadIntervalTimerDueMsec\":30163,\n        \"upTime\":\"1h57m39s\",\n        \"deadTime\":\"30.163s\",\n        \"address\":\"10.100.0.7\",\n        \"ifaceAddress\":\"10.100.0.7\",\n        \"ifaceName\":\"vpp11:10.100.0.6\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7057930,\n        \"deadTimeMsecs\":33663,\n        \"routerDeadIntervalTimerDueMsec\":33663,\n        \"upTime\":\"1h57m37s\",\n        \"deadTime\":\"33.663s\",\n        \"address\":\"10.100.0.9\",\n        \"ifaceAddress\":\"10.100.0.9\",\n        \"ifaceName\":\"vpp15:10.100.0.8\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.2660247610001534
+        },
+        "b": {
+          "observed_at": 1790877329.6389117,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=32, jitter=0\n    path-list:[30] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:30 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.4 loop1\n      [@0]: ipv4 via 10.100.0.4 loop1: mtu:1500 next:11 020027fd0004020027fd00050800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=31, jitter=0\n    path-list:[62] locks:1 flags:shared, uPRF-list:67 len:1 itfs:[11, ]\n      path:[78] pl-index:62 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.6 loop3\n      [@0]: ipv4 via 10.100.0.6 loop3: mtu:1500 next:10 020027fd0006020027fd00070800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=61, jitter=0\n    path-list:[76] locks:1 flags:shared, uPRF-list:81 len:1 itfs:[15, ]\n      path:[96] pl-index:76 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.8 loop5\n      [@0]: ipv4 via 10.100.0.8 loop5: mtu:1500 next:13 020027fd0008020027fd00090800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:12186 applied:12186 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"nhid\":173,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.4\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.6\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.8\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.30.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.11\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":82619,\n        \"deadTimeMsecs\":37326,\n        \"routerDeadIntervalTimerDueMsec\":37326,\n        \"upTime\":\"1m22s\",\n        \"deadTime\":\"37.326s\",\n        \"address\":\"10.100.0.4\",\n        \"ifaceAddress\":\"10.100.0.4\",\n        \"ifaceName\":\"vpp7:10.100.0.5\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7059928,\n        \"deadTimeMsecs\":30299,\n        \"routerDeadIntervalTimerDueMsec\":30299,\n        \"upTime\":\"1h57m39s\",\n        \"deadTime\":\"30.299s\",\n        \"address\":\"10.100.0.6\",\n        \"ifaceAddress\":\"10.100.0.6\",\n        \"ifaceName\":\"vpp11:10.100.0.7\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7057935,\n        \"deadTimeMsecs\":32101,\n        \"routerDeadIntervalTimerDueMsec\":32101,\n        \"upTime\":\"1h57m37s\",\n        \"deadTime\":\"32.101s\",\n        \"address\":\"10.100.0.8\",\n        \"ifaceAddress\":\"10.100.0.8\",\n        \"ifaceName\":\"vpp15:10.100.0.9\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.3010204029997112
+        }
+      }
+    },
+    {
+      "reference_state_second": 65.00409980999939,
+      "reference_state_written_at": 1790877333.452923,
+      "edges": {
+        "a": {
+          "observed_at": 1790877333.892793,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=23, jitter=0\n    path-list:[51] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:51 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.5 loop1\n      [@0]: ipv4 via 10.100.0.5 loop1: mtu:1500 next:9 020027fd0005020027fd00040800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=30, jitter=0\n    path-list:[63] locks:1 flags:shared, uPRF-list:68 len:1 itfs:[11, ]\n      path:[79] pl-index:63 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.7 loop3\n      [@0]: ipv4 via 10.100.0.7 loop3: mtu:1500 next:13 020027fd0007020027fd00060800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=68, jitter=0\n    path-list:[80] locks:1 flags:shared, uPRF-list:84 len:1 itfs:[15, ]\n      path:[100] pl-index:80 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.9 loop5\n      [@0]: ipv4 via 10.100.0.9 loop5: mtu:1500 next:12 020027fd0009020027fd00080800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:13048 applied:13048 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.20.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"nhid\":331,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.5\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.7\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.9\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.12\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":86883,\n        \"deadTimeMsecs\":30828,\n        \"routerDeadIntervalTimerDueMsec\":30828,\n        \"upTime\":\"1m26s\",\n        \"deadTime\":\"30.828s\",\n        \"address\":\"10.100.0.5\",\n        \"ifaceAddress\":\"10.100.0.5\",\n        \"ifaceName\":\"vpp7:10.100.0.4\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7064199,\n        \"deadTimeMsecs\":35894,\n        \"routerDeadIntervalTimerDueMsec\":35894,\n        \"upTime\":\"1h57m44s\",\n        \"deadTime\":\"35.894s\",\n        \"address\":\"10.100.0.7\",\n        \"ifaceAddress\":\"10.100.0.7\",\n        \"ifaceName\":\"vpp11:10.100.0.6\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7062209,\n        \"deadTimeMsecs\":39398,\n        \"routerDeadIntervalTimerDueMsec\":39398,\n        \"upTime\":\"1h57m42s\",\n        \"deadTime\":\"39.398s\",\n        \"address\":\"10.100.0.9\",\n        \"ifaceAddress\":\"10.100.0.9\",\n        \"ifaceName\":\"vpp15:10.100.0.8\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.2741949459996249
+        },
+        "b": {
+          "observed_at": 1790877333.8930676,
+          "commands": [
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "link"
+              ],
+              "returncode": 0,
+              "output": " loop1: sw_if_index=7, label=0, adj=27, loss=0, delay=32, jitter=0\n    path-list:[30] locks:1 flags:shared, uPRF-list:56 len:1 itfs:[7, ]\n      path:[63] pl-index:30 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.4 loop1\n      [@0]: ipv4 via 10.100.0.4 loop1: mtu:1500 next:11 020027fd0004020027fd00050800\n loop3: sw_if_index=11, label=1, adj=36, loss=0, delay=31, jitter=0\n    path-list:[62] locks:1 flags:shared, uPRF-list:67 len:1 itfs:[11, ]\n      path:[78] pl-index:62 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.6 loop3\n      [@0]: ipv4 via 10.100.0.6 loop3: mtu:1500 next:10 020027fd0006020027fd00070800\n loop5: sw_if_index=15, label=2, adj=45, loss=0, delay=61, jitter=0\n    path-list:[76] locks:1 flags:shared, uPRF-list:81 len:1 itfs:[15, ]\n      path:[96] pl-index:76 ip4 weight=1 pref=0 attached-nexthop:  oper-flags:resolved,\n        10.100.0.8 loop5\n      [@0]: ipv4 via 10.100.0.8 loop5: mtu:1500 next:13 020027fd0008020027fd00090800\n"
+            },
+            {
+              "command": [
+                "vppctl",
+                "show",
+                "fwabf",
+                "policy"
+              ],
+              "returncode": 0,
+              "output": "fwabf:[0]: policy:14 acl:212 override_default_route:1\n counters: matched:13045 applied:13045 fallback:0 dropped:0\n action:\n  fallback:drop select_group:priority\n  group[0]: order:priority labels:0\n  group[1]: order:priority labels:1\n  group[2]: order:priority labels:2\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.20.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.20.0.0/24\",\"nhid\":173,\"protocol\":\"ospf\",\"metric\":20,\"flags\":[],\"nexthops\":[{\"gateway\":\"10.100.0.4\",\"dev\":\"vpp7\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.6\",\"dev\":\"vpp11\",\"weight\":1,\"flags\":[]},{\"gateway\":\"10.100.0.8\",\"dev\":\"vpp15\",\"weight\":1,\"flags\":[]}]}]\n"
+            },
+            {
+              "command": [
+                "ip",
+                "-json",
+                "route",
+                "show",
+                "10.30.0.0/24"
+              ],
+              "returncode": 0,
+              "output": "[{\"dst\":\"10.30.0.0/24\",\"dev\":\"eth4\",\"protocol\":\"kernel\",\"scope\":\"link\",\"prefsrc\":\"10.30.0.1\",\"flags\":[]}]\n"
+            },
+            {
+              "command": [
+                "vtysh",
+                "-c",
+                "show ip ospf neighbor json"
+              ],
+              "returncode": 0,
+              "output": "{\n  \"neighbors\":{\n    \"192.168.56.11\":[\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":86864,\n        \"deadTimeMsecs\":33080,\n        \"routerDeadIntervalTimerDueMsec\":33080,\n        \"upTime\":\"1m26s\",\n        \"deadTime\":\"33.080s\",\n        \"address\":\"10.100.0.4\",\n        \"ifaceAddress\":\"10.100.0.4\",\n        \"ifaceName\":\"vpp7:10.100.0.5\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7064173,\n        \"deadTimeMsecs\":36063,\n        \"routerDeadIntervalTimerDueMsec\":36063,\n        \"upTime\":\"1h57m44s\",\n        \"deadTime\":\"36.063s\",\n        \"address\":\"10.100.0.6\",\n        \"ifaceAddress\":\"10.100.0.6\",\n        \"ifaceName\":\"vpp11:10.100.0.7\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      },\n      {\n        \"priority\":1,\n        \"state\":\"Full\\/-\",\n        \"nbrPriority\":1,\n        \"nbrState\":\"Full\\/-\",\n        \"converged\":\"Full\",\n        \"role\":\"DROther\",\n        \"upTimeInMsec\":7062181,\n        \"deadTimeMsecs\":37841,\n        \"routerDeadIntervalTimerDueMsec\":37841,\n        \"upTime\":\"1h57m42s\",\n        \"deadTime\":\"37.841s\",\n        \"address\":\"10.100.0.8\",\n        \"ifaceAddress\":\"10.100.0.8\",\n        \"ifaceName\":\"vpp15:10.100.0.9\",\n        \"retransmitCounter\":0,\n        \"linkStateRetransmissionListCounter\":0,\n        \"requestCounter\":0,\n        \"linkStateRequestListCounter\":0,\n        \"dbSummaryCounter\":0,\n        \"databaseSummaryListCounter\":0\n      }\n    ]\n  }\n}\n"
+            }
+          ],
+          "query_seconds": 0.27000091899935796
+        }
+      }
+    }
+  ]
+}

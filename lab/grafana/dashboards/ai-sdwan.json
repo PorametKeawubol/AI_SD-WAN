@@ -1,0 +1,974 @@
+{
+  "uid": "ai-sdwan",
+  "title": "AI SD-WAN",
+  "tags": [
+    "SD-WAN",
+    "flexiWAN",
+    "TimescaleDB"
+  ],
+  "schemaVersion": 41,
+  "version": 1,
+  "editable": false,
+  "timezone": "browser",
+  "refresh": "5s",
+  "links": [
+    {
+      "title": "Control and approvals",
+      "type": "link",
+      "url": "/d/ai-sdwan?var-stream=__latest_live__&viewPanel=15",
+      "targetBlank": false
+    }
+  ],
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "templating": {
+    "list": [
+      {
+        "name": "stream",
+        "label": "Data stream",
+        "type": "query",
+        "datasource": {
+          "type": "grafana-postgresql-datasource",
+          "uid": "sdwan-timescale"
+        },
+        "query": "SELECT __text,__value FROM (SELECT 'Latest live' AS __text,'__latest_live__' AS __value,0 AS priority UNION ALL SELECT DISTINCT stream AS __text,stream AS __value,1 AS priority FROM telemetry) AS streams ORDER BY priority,__text",
+        "refresh": 1,
+        "multi": false,
+        "includeAll": false,
+        "current": {
+          "text": "Latest live",
+          "value": "__latest_live__"
+        }
+      }
+    ]
+  },
+  "panels": [
+    {
+      "id": 1,
+      "title": "WAN1 health",
+      "type": "stat",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT CASE WHEN observed_at < now()-INTERVAL '10 seconds' THEN 2 WHEN up THEN 1 ELSE 0 END AS status\nFROM telemetry WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND link_id='wan1' ORDER BY observed_at DESC LIMIT 1",
+          "format": "table",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red"
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green"
+                },
+                "2": {
+                  "text": "STALE",
+                  "color": "orange"
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "WAN2 health",
+      "type": "stat",
+      "gridPos": {
+        "x": 8,
+        "y": 0,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT CASE WHEN observed_at < now()-INTERVAL '10 seconds' THEN 2 WHEN up THEN 1 ELSE 0 END AS status\nFROM telemetry WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND link_id='wan2' ORDER BY observed_at DESC LIMIT 1",
+          "format": "table",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red"
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green"
+                },
+                "2": {
+                  "text": "STALE",
+                  "color": "orange"
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "WAN3 health",
+      "type": "stat",
+      "gridPos": {
+        "x": 16,
+        "y": 0,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT CASE WHEN observed_at < now()-INTERVAL '10 seconds' THEN 2 WHEN up THEN 1 ELSE 0 END AS status\nFROM telemetry WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND link_id='wan3' ORDER BY observed_at DESC LIMIT 1",
+          "format": "table",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [
+            {
+              "type": "value",
+              "options": {
+                "0": {
+                  "text": "DOWN",
+                  "color": "red"
+                },
+                "1": {
+                  "text": "UP",
+                  "color": "green"
+                },
+                "2": {
+                  "text": "STALE",
+                  "color": "orange"
+                }
+              }
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Configured priority",
+      "type": "stat",
+      "gridPos": {
+        "x": 0,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT payload->>'confirmed_path' AS value FROM state WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND key='service_status'",
+          "format": "table",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Control mode",
+      "type": "stat",
+      "gridPos": {
+        "x": 6,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT payload->>'mode' AS value FROM state WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND key='service_status'",
+          "format": "table",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Application profile",
+      "type": "stat",
+      "gridPos": {
+        "x": 12,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT payload->>'profile' AS value FROM state WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND key='service_status'",
+          "format": "table",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "ML model active",
+      "type": "stat",
+      "gridPos": {
+        "x": 18,
+        "y": 4,
+        "w": 6,
+        "h": 4
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT payload->>'model_loaded' AS value FROM state WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND key='service_status'",
+          "format": "table",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Latency",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 16,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT time_bucket('5 seconds', observed_at) AS time, link_id AS metric, avg(latency_ms) AS value\nFROM telemetry WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND $__timeFilter(observed_at) GROUP BY 1,2 ORDER BY 1,2",
+          "format": "time_series",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ms",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "spanNulls": false,
+            "showPoints": "never"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Jitter",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 16,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT time_bucket('5 seconds', observed_at) AS time, link_id AS metric, avg(jitter_ms) AS value\nFROM telemetry WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND $__timeFilter(observed_at) GROUP BY 1,2 ORDER BY 1,2",
+          "format": "time_series",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ms",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "spanNulls": false,
+            "showPoints": "never"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Packet loss",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 24,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT time_bucket('5 seconds', observed_at) AS time, link_id AS metric, avg(loss_pct) AS value\nFROM telemetry WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND $__timeFilter(observed_at) GROUP BY 1,2 ORDER BY 1,2",
+          "format": "time_series",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "spanNulls": false,
+            "showPoints": "never"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "WAN utilization",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 24,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT time_bucket('5 seconds', observed_at) AS time, link_id AS metric, avg(utilization_pct) AS value\nFROM telemetry WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND $__timeFilter(observed_at) GROUP BY 1,2 ORDER BY 1,2",
+          "format": "time_series",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "spanNulls": false,
+            "showPoints": "never"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "Decision and approval audit",
+      "type": "table",
+      "gridPos": {
+        "x": 0,
+        "y": 32,
+        "w": 24,
+        "h": 8
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT observed_at AS time, kind AS event, payload::text AS detail\nFROM events WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND $__timeFilter(observed_at) ORDER BY id DESC LIMIT 100",
+          "format": "table",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "Pending recommendation",
+      "type": "stat",
+      "gridPos": {
+        "x": 16,
+        "y": 8,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT COALESCE(payload->'pending'->>'target','None') AS target FROM state WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND key='service_status'",
+          "format": "table",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 14,
+      "title": "Decision service heartbeat",
+      "type": "stat",
+      "gridPos": {
+        "x": 16,
+        "y": 12,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT extract(epoch from now()-updated_at)::double precision AS age FROM state WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND key='service_status'",
+          "format": "table",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 15,
+      "title": "Control and approvals",
+      "type": "aisdwan-controls-panel",
+      "gridPos": {
+        "x": 0,
+        "y": 8,
+        "w": 16,
+        "h": 8
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) AS live_stream",
+          "format": "table",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": []
+      },
+      "options": {}
+    }
+  ]
+}

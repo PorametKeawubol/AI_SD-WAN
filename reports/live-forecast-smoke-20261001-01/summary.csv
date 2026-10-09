@@ -1,0 +1,2 @@
+scenario,profile,strategy,trials,measured_trials,valid_trials,invalid_trials,passed_trials,pass_rate,wilson_95,profile_passed
+S01,voice,predictive_synthetic_lab,1,1,1,0,1,1.0,"[0.20654931437723745, 1.0]",True

@@ -1,0 +1,30 @@
+{
+  "node": {
+    "repository": "library/node",
+    "tag": "24.14.1-bookworm-slim",
+    "digest": "sha256:b506e7321f176aae77317f99d67a24b272c1f09f1d10f1761f2773447d8da26c",
+    "linux_amd64": true,
+    "registry_verified_at": 1790859937.8549018
+  },
+  "mongo": {
+    "repository": "library/mongo",
+    "tag": "6.0.28",
+    "digest": "sha256:8b6d8f5bbedb25cb73517b65cf99f13aeb75ad5b157a56c479287a840bbad3ac",
+    "linux_amd64": true,
+    "registry_verified_at": 1790859938.7427657
+  },
+  "redis": {
+    "repository": "library/redis",
+    "tag": "7.2.12-alpine",
+    "digest": "sha256:65748f2ea686cb0e37a008cbe7024324db1d84abf57e917e1c2ec92b5e50f602",
+    "linux_amd64": true,
+    "registry_verified_at": 1790859939.3776398
+  },
+  "mailpit": {
+    "repository": "axllent/mailpit",
+    "tag": "v1.27.8",
+    "digest": "sha256:6abc8e633df15eaf785cfcf38bae48e66f64beecdc03121e249d0f9ec15f0707",
+    "linux_amd64": true,
+    "registry_verified_at": 1790859939.979279
+  }
+}

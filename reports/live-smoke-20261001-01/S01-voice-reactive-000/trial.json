@@ -1,0 +1,26 @@
+{
+  "phase": "assessment",
+  "packet_measurement_started": true,
+  "packet_measurement_completed": true,
+  "baseline_journal_id": "trial-baseline-af8def85dd8b41eb8872bd7c04cb8e42",
+  "evidence_level": "real_packets",
+  "packet_artifacts": [
+    "packets.json",
+    "wan1.pcap",
+    "wan2.pcap"
+  ],
+  "observed_packet_intervals": 170,
+  "status": "completed",
+  "error_type": null,
+  "cleanup_errors": [],
+  "state_observations": 34,
+  "result": {
+    "valid": true,
+    "passed": false,
+    "restored": false,
+    "sla_interval_ratio": 0.9571428571428572,
+    "recovery_seconds": 13,
+    "udp_rtt_is_latency_proxy": true,
+    "udp_rtt_stddev_is_jitter_proxy": true
+  }
+}

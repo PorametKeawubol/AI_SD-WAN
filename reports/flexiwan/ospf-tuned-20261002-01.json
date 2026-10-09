@@ -1,0 +1,165 @@
+{
+  "observed_at": 1790878432.156255,
+  "evidence_level": "real_edge_observations",
+  "mode": "tune",
+  "changes": [
+    {
+      "site": 1,
+      "changed": true,
+      "before": {
+        "wan1": {
+          "interface": "vpp7",
+          "address": "10.100.0.4",
+          "hello_seconds": 10.0,
+          "dead_seconds": 40,
+          "adjacent_neighbors": 1
+        },
+        "wan2": {
+          "interface": "vpp11",
+          "address": "10.100.0.6",
+          "hello_seconds": 10.0,
+          "dead_seconds": 40,
+          "adjacent_neighbors": 1
+        },
+        "wan3": {
+          "interface": "vpp15",
+          "address": "10.100.0.8",
+          "hello_seconds": 10.0,
+          "dead_seconds": 40,
+          "adjacent_neighbors": 1
+        }
+      },
+      "interfaces": {
+        "wan1": {
+          "interface": "vpp7",
+          "address": "10.100.0.4",
+          "hello_seconds": 1.0,
+          "dead_seconds": 4,
+          "adjacent_neighbors": 1
+        },
+        "wan2": {
+          "interface": "vpp11",
+          "address": "10.100.0.6",
+          "hello_seconds": 1.0,
+          "dead_seconds": 4,
+          "adjacent_neighbors": 1
+        },
+        "wan3": {
+          "interface": "vpp15",
+          "address": "10.100.0.8",
+          "hello_seconds": 1.0,
+          "dead_seconds": 4,
+          "adjacent_neighbors": 1
+        }
+      }
+    },
+    {
+      "site": 2,
+      "changed": true,
+      "before": {
+        "wan1": {
+          "interface": "vpp7",
+          "address": "10.100.0.5",
+          "hello_seconds": 10.0,
+          "dead_seconds": 40,
+          "adjacent_neighbors": 1
+        },
+        "wan2": {
+          "interface": "vpp11",
+          "address": "10.100.0.7",
+          "hello_seconds": 10.0,
+          "dead_seconds": 40,
+          "adjacent_neighbors": 1
+        },
+        "wan3": {
+          "interface": "vpp15",
+          "address": "10.100.0.9",
+          "hello_seconds": 10.0,
+          "dead_seconds": 40,
+          "adjacent_neighbors": 1
+        }
+      },
+      "interfaces": {
+        "wan1": {
+          "interface": "vpp7",
+          "address": "10.100.0.5",
+          "hello_seconds": 1.0,
+          "dead_seconds": 4,
+          "adjacent_neighbors": 1
+        },
+        "wan2": {
+          "interface": "vpp11",
+          "address": "10.100.0.7",
+          "hello_seconds": 1.0,
+          "dead_seconds": 4,
+          "adjacent_neighbors": 1
+        },
+        "wan3": {
+          "interface": "vpp15",
+          "address": "10.100.0.9",
+          "hello_seconds": 1.0,
+          "dead_seconds": 4,
+          "adjacent_neighbors": 1
+        }
+      }
+    }
+  ],
+  "verified": [
+    {
+      "site": 1,
+      "changed": false,
+      "interfaces": {
+        "wan1": {
+          "interface": "vpp7",
+          "address": "10.100.0.4",
+          "hello_seconds": 1.0,
+          "dead_seconds": 4,
+          "adjacent_neighbors": 1
+        },
+        "wan2": {
+          "interface": "vpp11",
+          "address": "10.100.0.6",
+          "hello_seconds": 1.0,
+          "dead_seconds": 4,
+          "adjacent_neighbors": 1
+        },
+        "wan3": {
+          "interface": "vpp15",
+          "address": "10.100.0.8",
+          "hello_seconds": 1.0,
+          "dead_seconds": 4,
+          "adjacent_neighbors": 1
+        }
+      }
+    },
+    {
+      "site": 2,
+      "changed": false,
+      "interfaces": {
+        "wan1": {
+          "interface": "vpp7",
+          "address": "10.100.0.5",
+          "hello_seconds": 1.0,
+          "dead_seconds": 4,
+          "adjacent_neighbors": 1
+        },
+        "wan2": {
+          "interface": "vpp11",
+          "address": "10.100.0.7",
+          "hello_seconds": 1.0,
+          "dead_seconds": 4,
+          "adjacent_neighbors": 1
+        },
+        "wan3": {
+          "interface": "vpp15",
+          "address": "10.100.0.9",
+          "hello_seconds": 1.0,
+          "dead_seconds": 4,
+          "adjacent_neighbors": 1
+        }
+      }
+    }
+  ],
+  "scope": "Three generated tunnel interfaces per edge; all strategies share these timers",
+  "persistence": "FRR write memory; verify after edge/controller reconfiguration or reboot"
+}

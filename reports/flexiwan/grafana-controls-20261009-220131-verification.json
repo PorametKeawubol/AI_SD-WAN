@@ -1,0 +1,44 @@
+{
+  "checks": {
+    "native_control_panel_provisioned": true,
+    "aisdwan-controls-app_javascript_loads": true,
+    "aisdwan-controls-panel_javascript_loads": true,
+    "plugins_registered": true,
+    "token_encrypted_and_hidden": true,
+    "proxy_returns_live_state": true,
+    "real_telemetry_fresh": true,
+    "stale_approval_rejected_by_api": true,
+    "invalid_mode_rejected_by_api": true,
+    "admin_configuration_roundtrip": true,
+    "sql_reader_preserved": true,
+    "viewer_can_read_state": true,
+    "viewer_cannot_change_mode": true,
+    "viewer_cannot_approve": true,
+    "temporary_viewer_removed": true,
+    "live_auto_ml_preserved": true,
+    "unexposed_api_endpoint_blocked": true,
+    "anonymous_cannot_read_proxy": true,
+    "cookie_session_can_read_proxy": true,
+    "cross_origin_cookie_write_blocked": true
+  },
+  "observations": {
+    "dashboard_version": 5,
+    "before": {
+      "mode": "auto",
+      "profile": "voice",
+      "confirmed_path": "wan1",
+      "model_loaded": true,
+      "pending": null,
+      "apply_inflight": null
+    },
+    "after": {
+      "mode": "auto",
+      "profile": "voice",
+      "confirmed_path": "wan1",
+      "model_loaded": true,
+      "pending": null,
+      "apply_inflight": null
+    }
+  },
+  "all_checks_passed": true
+}

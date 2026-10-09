@@ -1,0 +1,9 @@
+apiVersion: 1
+apps:
+  - type: aisdwan-controls-app
+    org_id: 1
+    disabled: false
+    jsonData:
+      apiUrl: https://localhost:8000
+    secureJsonData:
+      apiToken: $SDWAN_CONTROL_API_TOKEN

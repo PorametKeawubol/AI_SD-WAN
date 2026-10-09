@@ -1,0 +1,18 @@
+{
+  "timestamp": 1790861210.4930632,
+  "automated_tests": 82,
+  "failures": 0,
+  "errors": 0,
+  "ruff": "passed",
+  "javascript_syntax": "passed",
+  "compose_configuration": "passed",
+  "container_registry_manifests": "verified_linux_amd64",
+  "pip_check": "passed",
+  "actual_controller_api": "passed",
+  "edge_execution": "pending_windows_reboot",
+  "virtual_machine_platform_state": "EnablePending",
+  "elevated_repair_exit_code": 0,
+  "live_trials_executed": 0,
+  "synthetic_trials_preserved": 7650,
+  "interactive_browser_qa": "unavailable"
+}

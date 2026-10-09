@@ -1,0 +1,37 @@
+{
+  "evidence_level": "actual_windows_http_readback",
+  "responses": {
+    "/": {
+      "status": 200,
+      "bytes": 3442
+    },
+    "/health": {
+      "status": 200,
+      "bytes": 57
+    },
+    "/api/state": {
+      "status": 200,
+      "bytes": 1264
+    },
+    "/app.js": {
+      "status": 200,
+      "bytes": 6558
+    },
+    "/style.css": {
+      "status": 200,
+      "bytes": 3531
+    }
+  },
+  "health": {
+    "status": "ok",
+    "backend": "flexiwan",
+    "model_loaded": false
+  },
+  "mode": "manual",
+  "configured_priority": "wan2",
+  "fresh_wans": [
+    "wan1",
+    "wan2",
+    "wan3"
+  ]
+}

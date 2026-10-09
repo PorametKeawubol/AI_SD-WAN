@@ -1,0 +1,535 @@
+{
+  "suite": "balanced",
+  "version": 2,
+  "case_count": 38,
+  "full_suite_case_count": 38,
+  "full_suite_fault_count": 37,
+  "fault_case_count": 37,
+  "recoverable_fault_count": 36,
+  "group_counts": {
+    "availability": 8,
+    "quality": 15,
+    "stability": 3,
+    "mixed": 6,
+    "telemetry": 6
+  },
+  "complete_suite_selected": true,
+  "initial_priority": "wan1",
+  "scope": "Balanced v2 covers all 8 binary Up/Down states. Other impairments are selected tests. Legacy v1 retains the original definitions.",
+  "cases": [
+    {
+      "id": "CONTROL",
+      "name": "Normal control",
+      "kind": "normal",
+      "links": [],
+      "recoverable": true,
+      "group": "availability",
+      "affected_links": []
+    },
+    {
+      "id": "S01",
+      "name": "WAN1 down",
+      "kind": "down",
+      "links": [
+        "wan1"
+      ],
+      "recoverable": true,
+      "group": "availability",
+      "affected_links": [
+        "wan1"
+      ]
+    },
+    {
+      "id": "S02",
+      "name": "WAN2 down",
+      "kind": "down",
+      "links": [
+        "wan2"
+      ],
+      "recoverable": true,
+      "group": "availability",
+      "affected_links": [
+        "wan2"
+      ]
+    },
+    {
+      "id": "S03",
+      "name": "WAN3 down",
+      "kind": "down",
+      "links": [
+        "wan3"
+      ],
+      "recoverable": true,
+      "group": "availability",
+      "affected_links": [
+        "wan3"
+      ]
+    },
+    {
+      "id": "S04",
+      "name": "WAN1 + WAN2 down",
+      "kind": "down",
+      "links": [
+        "wan1",
+        "wan2"
+      ],
+      "recoverable": true,
+      "group": "availability",
+      "affected_links": [
+        "wan1",
+        "wan2"
+      ]
+    },
+    {
+      "id": "S05",
+      "name": "WAN1 + WAN3 down",
+      "kind": "down",
+      "links": [
+        "wan1",
+        "wan3"
+      ],
+      "recoverable": true,
+      "group": "availability",
+      "affected_links": [
+        "wan1",
+        "wan3"
+      ]
+    },
+    {
+      "id": "S06",
+      "name": "WAN2 + WAN3 down",
+      "kind": "down",
+      "links": [
+        "wan2",
+        "wan3"
+      ],
+      "recoverable": true,
+      "group": "availability",
+      "affected_links": [
+        "wan2",
+        "wan3"
+      ]
+    },
+    {
+      "id": "S07",
+      "name": "All links down",
+      "kind": "down",
+      "links": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "recoverable": false,
+      "group": "availability",
+      "affected_links": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ]
+    },
+    {
+      "id": "S08",
+      "name": "High latency",
+      "kind": "latency",
+      "links": [
+        "wan1"
+      ],
+      "recoverable": true,
+      "group": "quality",
+      "affected_links": [
+        "wan1"
+      ]
+    },
+    {
+      "id": "S08-wan2",
+      "name": "WAN2: High latency",
+      "kind": "latency",
+      "links": [
+        "wan2"
+      ],
+      "recoverable": true,
+      "group": "quality",
+      "affected_links": [
+        "wan2"
+      ]
+    },
+    {
+      "id": "S08-wan3",
+      "name": "WAN3: High latency",
+      "kind": "latency",
+      "links": [
+        "wan3"
+      ],
+      "recoverable": true,
+      "group": "quality",
+      "affected_links": [
+        "wan3"
+      ]
+    },
+    {
+      "id": "S09",
+      "name": "High jitter",
+      "kind": "jitter",
+      "links": [
+        "wan1"
+      ],
+      "recoverable": true,
+      "group": "quality",
+      "affected_links": [
+        "wan1"
+      ]
+    },
+    {
+      "id": "S09-wan2",
+      "name": "WAN2: High jitter",
+      "kind": "jitter",
+      "links": [
+        "wan2"
+      ],
+      "recoverable": true,
+      "group": "quality",
+      "affected_links": [
+        "wan2"
+      ]
+    },
+    {
+      "id": "S09-wan3",
+      "name": "WAN3: High jitter",
+      "kind": "jitter",
+      "links": [
+        "wan3"
+      ],
+      "recoverable": true,
+      "group": "quality",
+      "affected_links": [
+        "wan3"
+      ]
+    },
+    {
+      "id": "S10",
+      "name": "Packet loss",
+      "kind": "loss",
+      "links": [
+        "wan1"
+      ],
+      "recoverable": true,
+      "group": "quality",
+      "affected_links": [
+        "wan1"
+      ]
+    },
+    {
+      "id": "S10-wan2",
+      "name": "WAN2: Packet loss",
+      "kind": "loss",
+      "links": [
+        "wan2"
+      ],
+      "recoverable": true,
+      "group": "quality",
+      "affected_links": [
+        "wan2"
+      ]
+    },
+    {
+      "id": "S10-wan3",
+      "name": "WAN3: Packet loss",
+      "kind": "loss",
+      "links": [
+        "wan3"
+      ],
+      "recoverable": true,
+      "group": "quality",
+      "affected_links": [
+        "wan3"
+      ]
+    },
+    {
+      "id": "S11",
+      "name": "Saturation",
+      "kind": "saturation",
+      "links": [
+        "wan1"
+      ],
+      "recoverable": true,
+      "group": "quality",
+      "affected_links": [
+        "wan1"
+      ]
+    },
+    {
+      "id": "S11-wan2",
+      "name": "WAN2: Saturation",
+      "kind": "saturation",
+      "links": [
+        "wan2"
+      ],
+      "recoverable": true,
+      "group": "quality",
+      "affected_links": [
+        "wan2"
+      ]
+    },
+    {
+      "id": "S11-wan3",
+      "name": "WAN3: Saturation",
+      "kind": "saturation",
+      "links": [
+        "wan3"
+      ],
+      "recoverable": true,
+      "group": "quality",
+      "affected_links": [
+        "wan3"
+      ]
+    },
+    {
+      "id": "S12",
+      "name": "Progressive degradation",
+      "kind": "ramp",
+      "links": [
+        "wan1"
+      ],
+      "recoverable": true,
+      "group": "quality",
+      "affected_links": [
+        "wan1"
+      ]
+    },
+    {
+      "id": "S12-wan2",
+      "name": "WAN2: Progressive degradation",
+      "kind": "ramp",
+      "links": [
+        "wan2"
+      ],
+      "recoverable": true,
+      "group": "quality",
+      "affected_links": [
+        "wan2"
+      ]
+    },
+    {
+      "id": "S12-wan3",
+      "name": "WAN3: Progressive degradation",
+      "kind": "ramp",
+      "links": [
+        "wan3"
+      ],
+      "recoverable": true,
+      "group": "quality",
+      "affected_links": [
+        "wan3"
+      ]
+    },
+    {
+      "id": "S13",
+      "name": "Link flapping",
+      "kind": "flap",
+      "links": [
+        "wan1"
+      ],
+      "recoverable": true,
+      "group": "stability",
+      "affected_links": [
+        "wan1"
+      ]
+    },
+    {
+      "id": "S13-wan2",
+      "name": "WAN2: Link flapping",
+      "kind": "flap",
+      "links": [
+        "wan2"
+      ],
+      "recoverable": true,
+      "group": "stability",
+      "affected_links": [
+        "wan2"
+      ]
+    },
+    {
+      "id": "S13-wan3",
+      "name": "WAN3: Link flapping",
+      "kind": "flap",
+      "links": [
+        "wan3"
+      ],
+      "recoverable": true,
+      "group": "stability",
+      "affected_links": [
+        "wan3"
+      ]
+    },
+    {
+      "id": "S14",
+      "name": "Concurrent mixed impairments",
+      "kind": "mixed",
+      "links": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "recoverable": true,
+      "group": "mixed",
+      "affected_links": [
+        "wan1",
+        "wan2"
+      ]
+    },
+    {
+      "id": "S14-wan1-wan3",
+      "name": "WAN1 latency + WAN3 loss",
+      "kind": "mixed",
+      "links": [
+        "wan1",
+        "wan3"
+      ],
+      "recoverable": true,
+      "group": "mixed",
+      "affected_links": [
+        "wan1",
+        "wan3"
+      ]
+    },
+    {
+      "id": "S14-wan2-wan1",
+      "name": "WAN2 latency + WAN1 loss",
+      "kind": "mixed",
+      "links": [
+        "wan2",
+        "wan1"
+      ],
+      "recoverable": true,
+      "group": "mixed",
+      "affected_links": [
+        "wan2",
+        "wan1"
+      ]
+    },
+    {
+      "id": "S14-wan2-wan3",
+      "name": "WAN2 latency + WAN3 loss",
+      "kind": "mixed",
+      "links": [
+        "wan2",
+        "wan3"
+      ],
+      "recoverable": true,
+      "group": "mixed",
+      "affected_links": [
+        "wan2",
+        "wan3"
+      ]
+    },
+    {
+      "id": "S14-wan3-wan1",
+      "name": "WAN3 latency + WAN1 loss",
+      "kind": "mixed",
+      "links": [
+        "wan3",
+        "wan1"
+      ],
+      "recoverable": true,
+      "group": "mixed",
+      "affected_links": [
+        "wan3",
+        "wan1"
+      ]
+    },
+    {
+      "id": "S14-wan3-wan2",
+      "name": "WAN3 latency + WAN2 loss",
+      "kind": "mixed",
+      "links": [
+        "wan3",
+        "wan2"
+      ],
+      "recoverable": true,
+      "group": "mixed",
+      "affected_links": [
+        "wan3",
+        "wan2"
+      ]
+    },
+    {
+      "id": "S15",
+      "name": "Missing/stale telemetry",
+      "kind": "missing",
+      "links": [
+        "wan1"
+      ],
+      "recoverable": true,
+      "group": "telemetry",
+      "affected_links": [
+        "wan1"
+      ]
+    },
+    {
+      "id": "S15-wan2",
+      "name": "WAN2: Missing/stale telemetry",
+      "kind": "missing",
+      "links": [
+        "wan2"
+      ],
+      "recoverable": true,
+      "group": "telemetry",
+      "affected_links": [
+        "wan2"
+      ]
+    },
+    {
+      "id": "S15-wan3",
+      "name": "WAN3: Missing/stale telemetry",
+      "kind": "missing",
+      "links": [
+        "wan3"
+      ],
+      "recoverable": true,
+      "group": "telemetry",
+      "affected_links": [
+        "wan3"
+      ]
+    },
+    {
+      "id": "S16",
+      "name": "Corrupt telemetry",
+      "kind": "corrupt",
+      "links": [
+        "wan1"
+      ],
+      "recoverable": true,
+      "group": "telemetry",
+      "affected_links": [
+        "wan1"
+      ]
+    },
+    {
+      "id": "S16-wan2",
+      "name": "WAN2: Corrupt telemetry",
+      "kind": "corrupt",
+      "links": [
+        "wan2"
+      ],
+      "recoverable": true,
+      "group": "telemetry",
+      "affected_links": [
+        "wan2"
+      ]
+    },
+    {
+      "id": "S16-wan3",
+      "name": "WAN3: Corrupt telemetry",
+      "kind": "corrupt",
+      "links": [
+        "wan3"
+      ],
+      "recoverable": true,
+      "group": "telemetry",
+      "affected_links": [
+        "wan3"
+      ]
+    }
+  ],
+  "sha256": "26bf4eb4283d89ed44fa6c840956aaf9221232fc799bb2256247ba2a97d325bf"
+}

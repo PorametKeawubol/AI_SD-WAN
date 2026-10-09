@@ -1,0 +1,12 @@
+{
+  "phase": "controller_preflight",
+  "packet_measurement_started": false,
+  "packet_measurement_completed": false,
+  "evidence_level": "live_lab_attempt",
+  "packet_artifacts": [],
+  "status": "failed",
+  "error_type": "IntegrationError",
+  "cleanup_errors": [],
+  "state_observations": 0,
+  "result": null
+}

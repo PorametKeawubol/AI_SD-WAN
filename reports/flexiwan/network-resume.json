@@ -1,0 +1,16 @@
+{
+  "timestamp": 1790868457.6824868,
+  "existing_vm_count": 0,
+  "verified_inactive_empty_bridges_recreated": [
+    "sdw-lan-a",
+    "sdw-lan-b",
+    "sdw-mgmt",
+    "sdw-w1a",
+    "sdw-w1b",
+    "sdw-w2a",
+    "sdw-w2b",
+    "sdw-w3a",
+    "sdw-w3b"
+  ],
+  "network_definitions_preserved": true
+}

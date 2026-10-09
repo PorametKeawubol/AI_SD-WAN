@@ -1,0 +1,261 @@
+{
+  "evidence_level": "real_packets",
+  "complete": true,
+  "coverage": {
+    "reactive": {
+      "handled_cases_observed": [
+        "S02",
+        "S03",
+        "S04",
+        "S06",
+        "S09",
+        "S10",
+        "S11",
+        "S13",
+        "S14",
+        "S15",
+        "S16"
+      ],
+      "handled_count": 11,
+      "restored_count": 11,
+      "all_16_all_3_profiles_evaluated": false
+    }
+  },
+  "summary": [
+    {
+      "scenario": "S02",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 1,
+      "pass_rate": 1.0,
+      "wilson_95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "profile_passed": true
+    },
+    {
+      "scenario": "S03",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 1,
+      "pass_rate": 1.0,
+      "wilson_95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "profile_passed": true
+    },
+    {
+      "scenario": "S04",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 1,
+      "pass_rate": 1.0,
+      "wilson_95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "profile_passed": true
+    },
+    {
+      "scenario": "S05",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 0,
+      "invalid_trials": 1,
+      "passed_trials": 0,
+      "pass_rate": null,
+      "wilson_95": null,
+      "profile_passed": false
+    },
+    {
+      "scenario": "S06",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 1,
+      "pass_rate": 1.0,
+      "wilson_95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "profile_passed": true
+    },
+    {
+      "scenario": "S07",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 0,
+      "pass_rate": 0.0,
+      "wilson_95": [
+        0.0,
+        0.7934506856227626
+      ],
+      "profile_passed": false
+    },
+    {
+      "scenario": "S08",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 0,
+      "invalid_trials": 1,
+      "passed_trials": 0,
+      "pass_rate": null,
+      "wilson_95": null,
+      "profile_passed": false
+    },
+    {
+      "scenario": "S09",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 1,
+      "pass_rate": 1.0,
+      "wilson_95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "profile_passed": true
+    },
+    {
+      "scenario": "S10",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 1,
+      "pass_rate": 1.0,
+      "wilson_95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "profile_passed": true
+    },
+    {
+      "scenario": "S11",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 1,
+      "pass_rate": 1.0,
+      "wilson_95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "profile_passed": true
+    },
+    {
+      "scenario": "S12",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 0,
+      "pass_rate": 0.0,
+      "wilson_95": [
+        0.0,
+        0.7934506856227626
+      ],
+      "profile_passed": false
+    },
+    {
+      "scenario": "S13",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 1,
+      "pass_rate": 1.0,
+      "wilson_95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "profile_passed": true
+    },
+    {
+      "scenario": "S14",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 1,
+      "pass_rate": 1.0,
+      "wilson_95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "profile_passed": true
+    },
+    {
+      "scenario": "S15",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 1,
+      "pass_rate": 1.0,
+      "wilson_95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "profile_passed": true
+    },
+    {
+      "scenario": "S16",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 1,
+      "pass_rate": 1.0,
+      "wilson_95": [
+        0.20654931437723745,
+        1.0
+      ],
+      "profile_passed": true
+    }
+  ],
+  "native_qbr_evaluated": false
+}

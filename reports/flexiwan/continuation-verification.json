@@ -1,0 +1,420 @@
+{
+  "observed_at_utc": "2026-10-02T04:01:59.273803+00:00",
+  "evidence_level": "real_packets",
+  "windows_readiness": {
+    "timestamp_utc": "2026-10-02T03:58:29.1381479Z",
+    "last_boot_utc": "2026-10-01T14:34:37.2568000Z",
+    "administrator": true,
+    "hypervisor_present": true,
+    "features": [
+      {
+        "Name": "VirtualMachinePlatform",
+        "InstallState": 1
+      },
+      {
+        "Name": "Microsoft-Windows-Subsystem-Linux",
+        "InstallState": 1
+      }
+    ],
+    "detailed_features": [
+      {
+        "name": "VirtualMachinePlatform",
+        "state": "Enabled"
+      },
+      {
+        "name": "Microsoft-Windows-Subsystem-Linux",
+        "state": "Enabled"
+      }
+    ],
+    "servicing_reboot_pending": false,
+    "linux_hypervisor_ready": true,
+    "automatic_reboot_performed": false
+  },
+  "linux_kernel": "6.18.40.1-microsoft-standard-WSL2",
+  "kvm_available": true,
+  "controller_version": "6.3.37",
+  "verified_tls": true,
+  "devices": [
+    {
+      "hostname": "sdw-edge-a",
+      "machineId": "D507482B-CA39-4046-8DE8-9A30092A89A3",
+      "isApproved": true,
+      "isConnected": true,
+      "versions": {
+        "agent": "6.3.35",
+        "router": "02.08.27",
+        "device": "6.3.35",
+        "vpp": "21.01-rc0",
+        "frr": "8.3"
+      }
+    },
+    {
+      "hostname": "sdw-edge-b",
+      "machineId": "B5B676CC-D083-4DBA-97E1-6CFF611D23B5",
+      "isApproved": true,
+      "isConnected": true,
+      "versions": {
+        "agent": "6.3.35",
+        "router": "02.08.27",
+        "device": "6.3.35",
+        "vpp": "21.01-rc0",
+        "frr": "8.3"
+      }
+    }
+  ],
+  "tunnels": [
+    {
+      "num": 1,
+      "deviceAconf": true,
+      "deviceBconf": true,
+      "isPending": false
+    },
+    {
+      "num": 2,
+      "deviceAconf": true,
+      "deviceBconf": true,
+      "isPending": false
+    },
+    {
+      "num": 3,
+      "deviceAconf": true,
+      "deviceBconf": true,
+      "isPending": false
+    }
+  ],
+  "agent_policy_readback": true,
+  "unresolved_policy_intents": 0,
+  "dashboard": {
+    "url": "http://127.0.0.1:8000",
+    "health": {
+      "status": "ok",
+      "backend": "flexiwan",
+      "model_loaded": false
+    },
+    "mode": "manual",
+    "configured_priority": "wan2"
+  },
+  "fresh_probes": [
+    {
+      "link_id": "wan1",
+      "timestamp": 1790913715.8065603,
+      "up": true,
+      "latency_ms": 24.717,
+      "jitter_ms": 4.301373152843171,
+      "loss_pct": 0.0,
+      "utilization_pct": 0.037977814265234
+    },
+    {
+      "link_id": "wan2",
+      "timestamp": 1790913715.8065603,
+      "up": true,
+      "latency_ms": 40.819,
+      "jitter_ms": 7.079388321034523,
+      "loss_pct": 0.0,
+      "utilization_pct": 0.0474722678315425
+    },
+    {
+      "link_id": "wan3",
+      "timestamp": 1790913715.8065603,
+      "up": true,
+      "latency_ms": 68.357,
+      "jitter_ms": 8.597107129726837,
+      "loss_pct": 0.0,
+      "utilization_pct": 0.12659271421744667
+    }
+  ],
+  "final_lan_ping": {
+    "sent": 3,
+    "received": 3
+  },
+  "edge_execution": [
+    {
+      "site": 1,
+      "guest_epoch": 1790913718.5012796,
+      "disabled_plugins": [
+        "crypto_native_plugin.so",
+        "crypto_ipsecmb_plugin.so"
+      ],
+      "crypto_engines": "Name                Prio    Description\nopenssl             50      OpenSSL\nsw_scheduler        100     SW Scheduler Async Engine",
+      "tunnel_timers": {
+        "vpp7": {
+          "ipAddress": "10.100.0.4",
+          "timerMsecs": 1000,
+          "timerDeadSecs": 4,
+          "nbrAdjacentCount": 1
+        },
+        "vpp11": {
+          "ipAddress": "10.100.0.6",
+          "timerMsecs": 1000,
+          "timerDeadSecs": 4,
+          "nbrAdjacentCount": 1
+        },
+        "vpp15": {
+          "ipAddress": "10.100.0.8",
+          "timerMsecs": 1000,
+          "timerDeadSecs": 4,
+          "nbrAdjacentCount": 1
+        }
+      },
+      "host_readback_epoch": 1790913718.6430705,
+      "clock_offset_upper_bound_seconds": 0.14179086685180664
+    },
+    {
+      "site": 2,
+      "guest_epoch": 1790913719.0986247,
+      "disabled_plugins": [
+        "crypto_native_plugin.so",
+        "crypto_ipsecmb_plugin.so"
+      ],
+      "crypto_engines": "Name                Prio    Description\nopenssl             50      OpenSSL\nsw_scheduler        100     SW Scheduler Async Engine",
+      "tunnel_timers": {
+        "vpp7": {
+          "ipAddress": "10.100.0.5",
+          "timerMsecs": 1000,
+          "timerDeadSecs": 4,
+          "nbrAdjacentCount": 1
+        },
+        "vpp11": {
+          "ipAddress": "10.100.0.7",
+          "timerMsecs": 1000,
+          "timerDeadSecs": 4,
+          "nbrAdjacentCount": 1
+        },
+        "vpp15": {
+          "ipAddress": "10.100.0.9",
+          "timerMsecs": 1000,
+          "timerDeadSecs": 4,
+          "nbrAdjacentCount": 1
+        }
+      },
+      "host_readback_epoch": 1790913719.2425802,
+      "clock_offset_upper_bound_seconds": 0.14395546913146973
+    }
+  ],
+  "experiments": [
+    {
+      "name": "live-smoke-20261001-01",
+      "complete": true,
+      "attempts": 1,
+      "packet_completed": 1,
+      "valid": 1,
+      "passed": 0,
+      "invalid": 0
+    },
+    {
+      "name": "live-baselines-20261001-01",
+      "complete": true,
+      "attempts": 2,
+      "packet_completed": 2,
+      "valid": 2,
+      "passed": 0,
+      "invalid": 0
+    },
+    {
+      "name": "live-forecast-smoke-20261001-01",
+      "complete": true,
+      "attempts": 1,
+      "packet_completed": 1,
+      "valid": 1,
+      "passed": 1,
+      "invalid": 0
+    },
+    {
+      "name": "live-brownout-smoke-20261001-01",
+      "complete": true,
+      "attempts": 1,
+      "packet_completed": 1,
+      "valid": 1,
+      "passed": 1,
+      "invalid": 0
+    },
+    {
+      "name": "live-s01-repeats-20261002-01",
+      "complete": false,
+      "attempts": 5,
+      "packet_completed": 4,
+      "valid": 4,
+      "passed": 2,
+      "invalid": 1
+    },
+    {
+      "name": "live-s01-tuned-20261002-01",
+      "complete": false,
+      "attempts": 6,
+      "packet_completed": 5,
+      "valid": 4,
+      "passed": 4,
+      "invalid": 2
+    },
+    {
+      "name": "live-s01-resumed-20261002-01",
+      "complete": true,
+      "attempts": 12,
+      "packet_completed": 12,
+      "valid": 12,
+      "passed": 12,
+      "invalid": 0
+    },
+    {
+      "name": "live-voice-cases-20261002-01",
+      "complete": true,
+      "attempts": 15,
+      "packet_completed": 15,
+      "valid": 13,
+      "passed": 11,
+      "invalid": 2
+    },
+    {
+      "name": "live-voice-retry-20261002-01",
+      "complete": true,
+      "attempts": 2,
+      "packet_completed": 2,
+      "valid": 2,
+      "passed": 2,
+      "invalid": 0
+    }
+  ],
+  "totals": {
+    "attempts": 45,
+    "packet_completed": 43,
+    "valid": 40,
+    "passed": 33,
+    "invalid": 5
+  },
+  "pcap_sha256": {
+    "live-smoke-20261001-01/S01-voice-reactive-000/wan2.pcap": "b01f61c575550999add67f0a30ea5bcd1286407422648a65d0092774aab0b533",
+    "live-smoke-20261001-01/S01-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-smoke-20261001-01/S01-voice-reactive-000/wan1.pcap": "28cc27e3b480bec3242f094f39a7d69baa889d1c0366d072e53157e086be72e8",
+    "live-baselines-20261001-01/S01-voice-native_qbr-000/wan2.pcap": "d3ad4fefb3a01420f8bd15aa4872e79f03f616cdc95fc8579fe7e5c39d1b7d6b",
+    "live-baselines-20261001-01/S01-voice-native_qbr-000/wan3.pcap": "e1498ba87ec699416f7e124f313a60bc726613be07aef5faad3cb401fb0479a9",
+    "live-baselines-20261001-01/S01-voice-native_qbr-000/wan1.pcap": "0be130c3e57b627fa797136dd4b19baa1a6d47b94ed900414e92d0832e4882bb",
+    "live-baselines-20261001-01/S01-voice-native_priority-000/wan2.pcap": "2f10c8c2d9130fc8898e7205e91420b7ebc69f29f04679ab1c5f39b970305ee6",
+    "live-baselines-20261001-01/S01-voice-native_priority-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-baselines-20261001-01/S01-voice-native_priority-000/wan1.pcap": "26def48513df5d94ac128d368b498a0430c86501c2a642eb3f0c2f0389a6b9ba",
+    "live-forecast-smoke-20261001-01/S01-voice-predictive_synthetic_lab-000/wan2.pcap": "b0d1c0205f2b5d6833406cdf426b1d72eac9884166ace5310a2979794f7d2bfe",
+    "live-forecast-smoke-20261001-01/S01-voice-predictive_synthetic_lab-000/wan3.pcap": "0d6427998336fe1105cf8755aa9e7ccaba635a9047df889ec521f9c3dd52d2c1",
+    "live-forecast-smoke-20261001-01/S01-voice-predictive_synthetic_lab-000/wan1.pcap": "57ab2d84752a29b1db51a99a7a898b82528e85815f1307f42d9dd296029963e2",
+    "live-brownout-smoke-20261001-01/S08-voice-reactive-000/wan2.pcap": "8cd12cde5cea7199322d5eadab28f0bba8da7f55478f99bf9f7c7d2b635cf9ee",
+    "live-brownout-smoke-20261001-01/S08-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-brownout-smoke-20261001-01/S08-voice-reactive-000/wan1.pcap": "c545f852da87482c552a03df2424470523817b2e6573d4e4f569ea3de78fe02f",
+    "live-s01-repeats-20261002-01/S01-voice-native_qbr-002/wan2.pcap": "bd57b0486d0054bade7bd651aa92098a99fcf3253bfc365a8adbc05eda1962a8",
+    "live-s01-repeats-20261002-01/S01-voice-native_qbr-002/wan3.pcap": "4f3771a48e535f2db9079e96f926e01318abbeaa3c058b5fa5fd34c78b9fd725",
+    "live-s01-repeats-20261002-01/S01-voice-native_qbr-002/wan1.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-s01-repeats-20261002-01/S01-voice-predictive_synthetic_lab-001/wan2.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-s01-repeats-20261002-01/S01-voice-predictive_synthetic_lab-001/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-s01-repeats-20261002-01/S01-voice-predictive_synthetic_lab-001/wan1.pcap": "df2e732ce7f240a46cd851e357e49f781dda7864fc357dce1f551a5c510cf9fc",
+    "live-s01-repeats-20261002-01/S01-voice-native_qbr-001/wan2.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-s01-repeats-20261002-01/S01-voice-native_qbr-001/wan3.pcap": "277b968dc48cee3db4364f94dc349f897f2f1271d271cebc320351aa92ed7b8f",
+    "live-s01-repeats-20261002-01/S01-voice-native_qbr-001/wan1.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-s01-repeats-20261002-01/S01-voice-native_priority-001/wan2.pcap": "2c21343c33bdbccb2f7be5b735e69a1f5e0e53b53d52022ad0561b78351ea62d",
+    "live-s01-repeats-20261002-01/S01-voice-native_priority-001/wan3.pcap": "ad5443997be0f8fe1bd8767f4b5a0714ce70209326a8975add0f9abca87be25c",
+    "live-s01-repeats-20261002-01/S01-voice-native_priority-001/wan1.pcap": "c572656d2b53ae5edc328020684bf5d57724f1d9b1890a1076b470b207ed35f9",
+    "live-s01-repeats-20261002-01/S01-voice-reactive-001/wan2.pcap": "0acd73699f303a42ca910882afee4f5dbdd63404384243ce4645f2be37c83db8",
+    "live-s01-repeats-20261002-01/S01-voice-reactive-001/wan3.pcap": "d31ccaedf0d59adaeb54779b1b5fff89079e6eec4909e17b1d7d1791eab67823",
+    "live-s01-repeats-20261002-01/S01-voice-reactive-001/wan1.pcap": "5e497dde3147af8a8812f837631b7a93ea4d51c32202b89764136e95c5ffe823",
+    "live-s01-tuned-20261002-01/S01-voice-reactive-000/wan2.pcap": "77f8786c506c20b42749bd171ac997898d065b2d618bd3e0a4bad5a56405d45f",
+    "live-s01-tuned-20261002-01/S01-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-s01-tuned-20261002-01/S01-voice-reactive-000/wan1.pcap": "cc30ebe7feca778654bd0fd13de314ab1fe893c7d96ec2aae9bebf9bb3a50493",
+    "live-s01-tuned-20261002-01/S01-voice-predictive_synthetic_lab-002/wan2.pcap": "20f87cff6aca3aca14a55b4e8f934916cc5f0d720a5bd379a358a43dfc4ff2f2",
+    "live-s01-tuned-20261002-01/S01-voice-predictive_synthetic_lab-002/wan3.pcap": "7f7052fa5229a57587dbebbaee1b06696bab16509cc936cf2fec79f166924edf",
+    "live-s01-tuned-20261002-01/S01-voice-predictive_synthetic_lab-002/wan1.pcap": "b112621639af039b2b7913ce9b72a5968c7ef96d7152292238f32c7027481bb9",
+    "live-s01-tuned-20261002-01/S01-voice-native_priority-001/wan2.pcap": "64f135d49ead3a103448b6b663eedd0f9980925310ddd52e43ee0e566ac36245",
+    "live-s01-tuned-20261002-01/S01-voice-native_priority-001/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-s01-tuned-20261002-01/S01-voice-native_priority-001/wan1.pcap": "f7332b7da47eb7205c2f3275b40150d1a184c491b27d2d97f3d80627a468107e",
+    "live-s01-tuned-20261002-01/S01-voice-native_priority-002/wan2.pcap": "b31c378990f7dd28b8c3d0210c7dce403dce2548bb4c2627e23d26ae3324dcaf",
+    "live-s01-tuned-20261002-01/S01-voice-native_priority-002/wan3.pcap": "fc33ba622fcefbe63b2ed251657f51fbe05470affb4c63f14b8fa0bf75ddb50f",
+    "live-s01-tuned-20261002-01/S01-voice-native_priority-002/wan1.pcap": "e8d66feef883c10e115c922c2454e9c5855a0487c7426f59f95856217285d41e",
+    "live-s01-tuned-20261002-01/S01-voice-reactive-002/wan2.pcap": "aff0631a7c0cd9120947508df505e62705cc0fe5d36d351aea8c4bd469db45e3",
+    "live-s01-tuned-20261002-01/S01-voice-reactive-002/wan3.pcap": "e2ccb74e04af22bab6a5d776689e253562b5e2695b9a34747d9dcfb0f61c3de8",
+    "live-s01-tuned-20261002-01/S01-voice-reactive-002/wan1.pcap": "d061470abc4b43f0701773e7bc3559ea0c0c9af95ac1666210db0c7336838b99",
+    "live-s01-resumed-20261002-01/S01-voice-native_qbr-002/wan2.pcap": "2c62f81cfc9117e9f9bb7c2352a71f452ea66a5ce1b941e6bb5527f362e31f34",
+    "live-s01-resumed-20261002-01/S01-voice-native_qbr-002/wan3.pcap": "07359e00ec070a325e22fe629bca41410f614509b307861e708f516cd63d07de",
+    "live-s01-resumed-20261002-01/S01-voice-native_qbr-002/wan1.pcap": "5fa568b0cbba35114ab0b519bac0a114b83a06eab5930d052a7b542881eeba1c",
+    "live-s01-resumed-20261002-01/S01-voice-reactive-000/wan2.pcap": "d5d8612ce97a3da07bfb76fa758f9ef24b49e03ac102ccdcb885d1e613debf91",
+    "live-s01-resumed-20261002-01/S01-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-s01-resumed-20261002-01/S01-voice-reactive-000/wan1.pcap": "9a6704c72951a09f66c343799da78bd974502f8fc715a6142916bd14fdc3f89d",
+    "live-s01-resumed-20261002-01/S01-voice-predictive_synthetic_lab-001/wan2.pcap": "74b840a476b8029c4d294ec1b3c0aebd77181aa7cfdb6d3f5c1bc4d185c3ce70",
+    "live-s01-resumed-20261002-01/S01-voice-predictive_synthetic_lab-001/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-s01-resumed-20261002-01/S01-voice-predictive_synthetic_lab-001/wan1.pcap": "fbdb15c475f6c30e45a187dbdb5043835bea9177642a9cd14e0c280fba666675",
+    "live-s01-resumed-20261002-01/S01-voice-predictive_synthetic_lab-002/wan2.pcap": "c1aa7db9b23d64c8ab0d5c604ebbb7b72095c0da731e840b207d73115af4cf90",
+    "live-s01-resumed-20261002-01/S01-voice-predictive_synthetic_lab-002/wan3.pcap": "c172b1aea0973158755c3490b344c5ec87b3bc9ecf1ae92e4795e993ed475935",
+    "live-s01-resumed-20261002-01/S01-voice-predictive_synthetic_lab-002/wan1.pcap": "d1cb1363bd66a94a29cef8625dbcd51c2c2ac3a31199d6163beb18eb88fc90b4",
+    "live-s01-resumed-20261002-01/S01-voice-native_qbr-001/wan2.pcap": "b2ff47ccde50396d6082da320e474ac59578e5a83418e9106050f6d8f162476f",
+    "live-s01-resumed-20261002-01/S01-voice-native_qbr-001/wan3.pcap": "c5ae3a69230cdb908506ae0e03b7704e662964a2b80784b545ae6a05878cad55",
+    "live-s01-resumed-20261002-01/S01-voice-native_qbr-001/wan1.pcap": "b89ac57bf6146ca7a420eb19e881ae49b437ae3cfc59236db83330512b1b8a2c",
+    "live-s01-resumed-20261002-01/S01-voice-native_priority-001/wan2.pcap": "d75a95a0a34e3c4c41050b0f04cad9e7d127182ef297894a0c743b1b41bb3c84",
+    "live-s01-resumed-20261002-01/S01-voice-native_priority-001/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-s01-resumed-20261002-01/S01-voice-native_priority-001/wan1.pcap": "5b30e70575a2e4cce66a75a4b4a71b08575349ea4b19cc03ab5f700033355209",
+    "live-s01-resumed-20261002-01/S01-voice-predictive_synthetic_lab-000/wan2.pcap": "eb6aecd0ffc4b65ce72e5d14532131c44baffefa8a1a8cd661ca7922e86a630f",
+    "live-s01-resumed-20261002-01/S01-voice-predictive_synthetic_lab-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-s01-resumed-20261002-01/S01-voice-predictive_synthetic_lab-000/wan1.pcap": "60bea978feb7eb0db639111dfa74a81ac0d7f7135eeed69459a4f7a202433d6d",
+    "live-s01-resumed-20261002-01/S01-voice-native_qbr-000/wan2.pcap": "5c0f14de70c63aef41d4ce297adfc2779b77f4f146413884e5ef93defae3f3a7",
+    "live-s01-resumed-20261002-01/S01-voice-native_qbr-000/wan3.pcap": "83edd1c7d51987a7b9457acffb84fdffac2bb8f9c93fbcfe29bcb1bd866989d5",
+    "live-s01-resumed-20261002-01/S01-voice-native_qbr-000/wan1.pcap": "466d6b0724164fa8e93e76ab50eee17e7ab9137b31cccfbe8dc3fd1d2c2e95eb",
+    "live-s01-resumed-20261002-01/S01-voice-reactive-001/wan2.pcap": "4a9d849b9af0e39db27340116b5c3f240d62628ce770eea46256a475db6d79b1",
+    "live-s01-resumed-20261002-01/S01-voice-reactive-001/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-s01-resumed-20261002-01/S01-voice-reactive-001/wan1.pcap": "f42e6de8fb5d8a2449b3f0a3c73e7a89fcf8b158e426ebd76d6131de79ca1dff",
+    "live-s01-resumed-20261002-01/S01-voice-native_priority-002/wan2.pcap": "956db7e0188d34ae2bdf4f20542b3d209fd5f890bf0a4fcbfbed8c9908c3304d",
+    "live-s01-resumed-20261002-01/S01-voice-native_priority-002/wan3.pcap": "373984f6d3433ff0bdbd937b77aef724ae45da7c5dbf53209ae7559b58283cca",
+    "live-s01-resumed-20261002-01/S01-voice-native_priority-002/wan1.pcap": "384ddcd96ee1dff038f3bfedddd59f122fee719f6b6bc8588374ac359262942b",
+    "live-s01-resumed-20261002-01/S01-voice-native_priority-000/wan2.pcap": "4bdd65bf70f4ac7472517fe0873ad138b993ebd8f7e16d2f25f6fe3cf7d749ba",
+    "live-s01-resumed-20261002-01/S01-voice-native_priority-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-s01-resumed-20261002-01/S01-voice-native_priority-000/wan1.pcap": "121145496ebee567b7c64db1575492bdbdfd4ffb57f6c0ee6d0d64f0d131c927",
+    "live-s01-resumed-20261002-01/S01-voice-reactive-002/wan2.pcap": "6783a2defeea7fa7b69ed726f1191c2a8c4f6179372f9780c878a097c2849bc6",
+    "live-s01-resumed-20261002-01/S01-voice-reactive-002/wan3.pcap": "908a9df50ae063ef60ce2f8128193785b92bf65fb431bd2cf43b5e46aa966f09",
+    "live-s01-resumed-20261002-01/S01-voice-reactive-002/wan1.pcap": "786b0e0a1c267421e431763286da319c6a4fdcb18bc32d8bbf68b59aa7b01f2c",
+    "live-voice-cases-20261002-01/S04-voice-reactive-000/wan2.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S04-voice-reactive-000/wan3.pcap": "e06d60345c1688ff2910bf11383be35a36b73215b5687eb5326bd1d47033193e",
+    "live-voice-cases-20261002-01/S04-voice-reactive-000/wan1.pcap": "6d9e0d25fb6bd81740467c855ac065ede19e5e75c88f52638ba7dc9816a5e41e",
+    "live-voice-cases-20261002-01/S16-voice-reactive-000/wan2.pcap": "3b48cdda607f7a8c5c29d3c90efb596d8f4cf9318c14356df406806010323253",
+    "live-voice-cases-20261002-01/S16-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S16-voice-reactive-000/wan1.pcap": "b504b8b3657a406fe7bf1e5782ea666be0b9b9f53630d87ce4d6a6de10913922",
+    "live-voice-cases-20261002-01/S13-voice-reactive-000/wan2.pcap": "3c35316d85cbc4eafe159317ec5031ef0c1429ba409ea30505d87669e150d55d",
+    "live-voice-cases-20261002-01/S13-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S13-voice-reactive-000/wan1.pcap": "89448697460accfc80689828055df4aa93a24c0244edb0ca5787af6b185d13ff",
+    "live-voice-cases-20261002-01/S02-voice-reactive-000/wan2.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S02-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S02-voice-reactive-000/wan1.pcap": "7e244cecaf414ec5cda73dc8a7e908b7ed8b008d497bd4c35a2a22d249af19a0",
+    "live-voice-cases-20261002-01/S12-voice-reactive-000/wan2.pcap": "2ab4c7077c4a5a1774e1e7219e7dc979288d0b63db7d13991d0d41638b8edfa7",
+    "live-voice-cases-20261002-01/S12-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S12-voice-reactive-000/wan1.pcap": "5ef8a1bf67a22cfde9bdebc8f8b77f734c8e2539f1b4288946871d538e8a8cfd",
+    "live-voice-cases-20261002-01/S03-voice-reactive-000/wan2.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S03-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S03-voice-reactive-000/wan1.pcap": "a3010a179b908619563c2198446da929c0106464d23b7e62b858f7a6d858ad09",
+    "live-voice-cases-20261002-01/S08-voice-reactive-000/wan2.pcap": "d42ce9d36d29c56dc8d1db31b8a5622d45c365a4085db1f5183baf232644408f",
+    "live-voice-cases-20261002-01/S08-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S08-voice-reactive-000/wan1.pcap": "e383c7633e2ab5a927d3b963cc72cb350d2d9d9c9ef422d42195f3630833eb8d",
+    "live-voice-cases-20261002-01/S06-voice-reactive-000/wan2.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S06-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S06-voice-reactive-000/wan1.pcap": "8c68d0489c2a3521a4609eca60ddee2cb53b72ccfd8cd6ec59cf18f54f3dd074",
+    "live-voice-cases-20261002-01/S11-voice-reactive-000/wan2.pcap": "040fcda16f74cfbd95a75957a70f016e79d298fbadb58eb14ce0a87f3df3090d",
+    "live-voice-cases-20261002-01/S11-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S11-voice-reactive-000/wan1.pcap": "2827f35ad15e592b6b76c6924b3d9430a405a0348edfdce068ad89a1c6262464",
+    "live-voice-cases-20261002-01/S14-voice-reactive-000/wan2.pcap": "da437cc9bfa1c9078cdf0c63c92703ec400612b5bf74f9572dcde92f3c2f4dad",
+    "live-voice-cases-20261002-01/S14-voice-reactive-000/wan3.pcap": "f0419b43fea0edf2c4b38a12e55b07ff058ef3af67af901bc802ec4cce2c57ed",
+    "live-voice-cases-20261002-01/S14-voice-reactive-000/wan1.pcap": "05a4bfbafee4e52caf98208950227cdc4bfe416a85d87365226db31cb1fbb2da",
+    "live-voice-cases-20261002-01/S05-voice-reactive-000/wan2.pcap": "691446785da26dd43fa723517babd99b146355944dcd16c7dcb23c930f07d2fc",
+    "live-voice-cases-20261002-01/S05-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S05-voice-reactive-000/wan1.pcap": "64a2c3449db52c6ed8e1901ad5ada8b6a03ae5f9446b4ca66142612b261af7c4",
+    "live-voice-cases-20261002-01/S07-voice-reactive-000/wan2.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S07-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S07-voice-reactive-000/wan1.pcap": "e0dd58190e0f0cca2d669555de2d403b211093bef7a1d22684dab808c92a65fa",
+    "live-voice-cases-20261002-01/S15-voice-reactive-000/wan2.pcap": "a5699c32ec121fea05b2d1551bfa5d3b3e1a0e90a789ba8b61f64374e46a12f6",
+    "live-voice-cases-20261002-01/S15-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S15-voice-reactive-000/wan1.pcap": "2b20835f382035a416b08e06913f6aa6a70028acf7a2d29a2a9105058e319a9b",
+    "live-voice-cases-20261002-01/S09-voice-reactive-000/wan2.pcap": "77557e5fd72db56b4e0cf79810b7456442e10ae99a6ebe7bf73e74f5170751f1",
+    "live-voice-cases-20261002-01/S09-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S09-voice-reactive-000/wan1.pcap": "8dbcc38b497d2085013c0d5c68a0f6bb68b9152f040af85b8107198a0961e6cc",
+    "live-voice-cases-20261002-01/S10-voice-reactive-000/wan2.pcap": "6550e0e809087751f289642c539ac391dde4700be290ba44d8c5f890a1fc9b0d",
+    "live-voice-cases-20261002-01/S10-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-cases-20261002-01/S10-voice-reactive-000/wan1.pcap": "0064aaa466f21fc7822909b131df3597f7534a1c3fc939bad8b55cd4a173238f",
+    "live-voice-retry-20261002-01/S08-voice-reactive-000/wan2.pcap": "d46d315cfe4c383e116ed7c7c3ab938ccc2364035d1c1beb049861ae045987a1",
+    "live-voice-retry-20261002-01/S08-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-retry-20261002-01/S08-voice-reactive-000/wan1.pcap": "4f4fc6df75752b8c7edb39ffbbddf399b4eb098b30b947b16c6659ae950e01a3",
+    "live-voice-retry-20261002-01/S05-voice-reactive-000/wan2.pcap": "bb4c964948e497fa3dec13e493ff5b9c1877599bae4e7a0918917fff5480c47c",
+    "live-voice-retry-20261002-01/S05-voice-reactive-000/wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+    "live-voice-retry-20261002-01/S05-voice-reactive-000/wan1.pcap": "5b6156d548a2970a6b661c1031a419dddcb08788d2d7a178c8fb0f75a8c590fd"
+  },
+  "full_576_trial_grid_complete": false,
+  "model_validated_on_real_data": false
+}

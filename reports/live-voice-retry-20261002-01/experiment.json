@@ -1,0 +1,413 @@
+{
+  "evidence_level": "live_lab_plan",
+  "created_at": 1790913105.3935974,
+  "configuration": {
+    "base_url": "https://192.168.56.1:3443/api",
+    "organization_id": "6abe7acf789d0c05c1c2f554",
+    "device_ids": [
+      "6abe7c7c789d0cff1fc2f5da",
+      "6abe7cce789d0c1558c2f610"
+    ],
+    "policy_id": "6abe7acf789d0c762ec2f5a5",
+    "rule_id": "6abe7acf789d0c67d2c2f5a6",
+    "links": {
+      "wan1": {
+        "path_label_id": "6abe7acf789d0caf31c2f57b",
+        "capacity_mbps": 100.0
+      },
+      "wan2": {
+        "path_label_id": "6abe7acf789d0c9907c2f586",
+        "capacity_mbps": 80.0
+      },
+      "wan3": {
+        "path_label_id": "6abe7acf789d0cc7ecc2f591",
+        "capacity_mbps": 30.0
+      }
+    },
+    "access_key_env": "FLEXIWAN_ACCESS_KEY",
+    "ca_file": "/opt/ai-sdwan-lab/lab/runtime/certs/certificate.pem",
+    "expected_version": "6.3.37",
+    "request_timeout_seconds": 20.0,
+    "job_timeout_seconds": 180.0,
+    "poll_seconds": 1.0,
+    "journal_dir": "data/flexiwan-journal",
+    "telemetry_device_id": "6abe7c7c789d0cff1fc2f5da",
+    "probe_command": "python3 /opt/ai-sdwan/probe.py --config /etc/ai-sdwan/probe.json"
+  },
+  "strategies": [
+    "reactive"
+  ],
+  "profiles": {
+    "voice": {
+      "name": "voice",
+      "latency_ms": 100,
+      "jitter_ms": 30,
+      "loss_pct": 1,
+      "utilization_pct": 90,
+      "demand_mbps": 2
+    }
+  },
+  "baseline_seconds": 70,
+  "fault_seconds": 80,
+  "restore_seconds": 20,
+  "grace_seconds": 10,
+  "repetitions": 1,
+  "order_seed": 92002,
+  "flow_source_ports": [
+    42000
+  ],
+  "flow_assignment": "Same fixed UDP source port for each repetition across strategies/cases",
+  "forecast_sampling": "causal_linear_5s; measured intervals 4..6s; no gap/down filling or extrapolation",
+  "routing_evidence": {
+    "observed_at": 1790913105.2242987,
+    "evidence_level": "real_edge_observations",
+    "mode": "inspect",
+    "changes": [
+      {
+        "site": 1,
+        "changed": false,
+        "interfaces": {
+          "wan1": {
+            "interface": "vpp7",
+            "address": "10.100.0.4",
+            "hello_seconds": 1.0,
+            "dead_seconds": 4,
+            "adjacent_neighbors": 1
+          },
+          "wan2": {
+            "interface": "vpp11",
+            "address": "10.100.0.6",
+            "hello_seconds": 1.0,
+            "dead_seconds": 4,
+            "adjacent_neighbors": 1
+          },
+          "wan3": {
+            "interface": "vpp15",
+            "address": "10.100.0.8",
+            "hello_seconds": 1.0,
+            "dead_seconds": 4,
+            "adjacent_neighbors": 1
+          }
+        }
+      },
+      {
+        "site": 2,
+        "changed": false,
+        "interfaces": {
+          "wan1": {
+            "interface": "vpp7",
+            "address": "10.100.0.5",
+            "hello_seconds": 1.0,
+            "dead_seconds": 4,
+            "adjacent_neighbors": 1
+          },
+          "wan2": {
+            "interface": "vpp11",
+            "address": "10.100.0.7",
+            "hello_seconds": 1.0,
+            "dead_seconds": 4,
+            "adjacent_neighbors": 1
+          },
+          "wan3": {
+            "interface": "vpp15",
+            "address": "10.100.0.9",
+            "hello_seconds": 1.0,
+            "dead_seconds": 4,
+            "adjacent_neighbors": 1
+          }
+        }
+      }
+    ],
+    "verified": [
+      {
+        "site": 1,
+        "changed": false,
+        "interfaces": {
+          "wan1": {
+            "interface": "vpp7",
+            "address": "10.100.0.4",
+            "hello_seconds": 1.0,
+            "dead_seconds": 4,
+            "adjacent_neighbors": 1
+          },
+          "wan2": {
+            "interface": "vpp11",
+            "address": "10.100.0.6",
+            "hello_seconds": 1.0,
+            "dead_seconds": 4,
+            "adjacent_neighbors": 1
+          },
+          "wan3": {
+            "interface": "vpp15",
+            "address": "10.100.0.8",
+            "hello_seconds": 1.0,
+            "dead_seconds": 4,
+            "adjacent_neighbors": 1
+          }
+        }
+      },
+      {
+        "site": 2,
+        "changed": false,
+        "interfaces": {
+          "wan1": {
+            "interface": "vpp7",
+            "address": "10.100.0.5",
+            "hello_seconds": 1.0,
+            "dead_seconds": 4,
+            "adjacent_neighbors": 1
+          },
+          "wan2": {
+            "interface": "vpp11",
+            "address": "10.100.0.7",
+            "hello_seconds": 1.0,
+            "dead_seconds": 4,
+            "adjacent_neighbors": 1
+          },
+          "wan3": {
+            "interface": "vpp15",
+            "address": "10.100.0.9",
+            "hello_seconds": 1.0,
+            "dead_seconds": 4,
+            "adjacent_neighbors": 1
+          }
+        }
+      }
+    ],
+    "scope": "Three generated tunnel interfaces per edge; all strategies share these timers",
+    "persistence": "FRR write memory; verify after edge/controller reconfiguration or reboot"
+  },
+  "clock_evidence": {
+    "observed_at": 1790913104.1307487,
+    "evidence_level": "real_edge_clock_observations",
+    "applied": true,
+    "source": "Owned WSL host realtime clock",
+    "edges": [
+      {
+        "site": 1,
+        "changed": false,
+        "guest_before_epoch": 1790913103.473489,
+        "host_request_epoch": 1790913102.942629,
+        "guest_after_epoch": 1790913103.47349,
+        "before_offset_seconds": 0.5308599472045898,
+        "after_offset_upper_bound_seconds": 0.0743703842163086
+      },
+      {
+        "site": 2,
+        "changed": false,
+        "guest_before_epoch": 1790913104.0568082,
+        "host_request_epoch": 1790913103.547867,
+        "guest_after_epoch": 1790913104.056809,
+        "before_offset_seconds": 0.5089411735534668,
+        "after_offset_upper_bound_seconds": 0.07383346557617188
+      }
+    ]
+  },
+  "model_metadata": {
+    "schema": 2,
+    "feature_names": [
+      "latency_ms_current",
+      "latency_ms_lag1",
+      "latency_ms_lag3",
+      "latency_ms_mean",
+      "latency_ms_std",
+      "latency_ms_trend",
+      "jitter_ms_current",
+      "jitter_ms_lag1",
+      "jitter_ms_lag3",
+      "jitter_ms_mean",
+      "jitter_ms_std",
+      "jitter_ms_trend",
+      "loss_pct_current",
+      "loss_pct_lag1",
+      "loss_pct_lag3",
+      "loss_pct_mean",
+      "loss_pct_std",
+      "loss_pct_trend",
+      "utilization_pct_current",
+      "utilization_pct_lag1",
+      "utilization_pct_lag3",
+      "utilization_pct_mean",
+      "utilization_pct_std",
+      "utilization_pct_trend",
+      "up",
+      "history_fraction"
+    ],
+    "horizon_steps": 6,
+    "horizon_seconds": 30,
+    "window_steps": 12,
+    "interval_seconds": 5,
+    "training_rows": 32940,
+    "validation_rows": 8235,
+    "train_episodes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59
+    ],
+    "validation_episodes": [
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74
+    ],
+    "seed_offset": 1000,
+    "xgboost_version": "3.4.1",
+    "selection": "minimum validation MAE among max_depth 3 and 5; no benchmark access",
+    "split": "whole episodes in chronological order; histories and future targets never cross episodes",
+    "label": "actual metric at t+30 seconds (not scenario ID or future path label)",
+    "metrics": {
+      "latency_ms": {
+        "raw_xgboost_validation_mae": 39.4439582824707,
+        "deployed_validation_mae": 39.4439582824707,
+        "persistence_validation_mae": 42.8984489440918,
+        "xgboost_enabled": true,
+        "validation_r2": 0.7043554782867432
+      },
+      "jitter_ms": {
+        "raw_xgboost_validation_mae": 9.384944915771484,
+        "deployed_validation_mae": 9.384944915771484,
+        "persistence_validation_mae": 10.395895004272461,
+        "xgboost_enabled": true,
+        "validation_r2": 0.7005652189254761
+      },
+      "loss_pct": {
+        "raw_xgboost_validation_mae": 2.642460346221924,
+        "deployed_validation_mae": 2.679755687713623,
+        "persistence_validation_mae": 2.679755687713623,
+        "xgboost_enabled": false,
+        "validation_r2": 0.7341411113739014
+      },
+      "utilization_pct": {
+        "raw_xgboost_validation_mae": 2.9887683391571045,
+        "deployed_validation_mae": 2.9887683391571045,
+        "persistence_validation_mae": 3.6260881423950195,
+        "xgboost_enabled": true,
+        "validation_r2": 0.8324903845787048
+      }
+    },
+    "selected_parameters": {
+      "latency_ms": {
+        "max_depth": 5,
+        "best_iteration": 133
+      },
+      "jitter_ms": {
+        "max_depth": 5,
+        "best_iteration": 152
+      },
+      "loss_pct": {
+        "max_depth": 5,
+        "best_iteration": 99
+      },
+      "utilization_pct": {
+        "max_depth": 5,
+        "best_iteration": 239
+      }
+    },
+    "enabled_metrics": {
+      "latency_ms": true,
+      "jitter_ms": true,
+      "loss_pct": false,
+      "utilization_pct": true
+    },
+    "target_mode": "future metric minus current metric; MAE objective",
+    "deployment_gate": "XGBoost enabled per metric only if validation MAE improves persistence by >=2%; otherwise persistence",
+    "data_kind": "synthetic"
+  },
+  "model_files_sha256": {
+    "jitter_ms.json": "e0826303875d5a69aafbb4bbdad9fe167261f2cd865973c9d0fa109cb03f231e",
+    "latency_ms.json": "6669d036a13218bb454d396c56648064d75ae6b85c7d2680224ef53b22ee9654",
+    "loss_pct.json": "171093c21ffa3744feb5b0a725303d1c65b0368e91ae11c6e72bfa51f2309cf6",
+    "metadata.json": "076886af5bdf1332aa6b07b1f3a4e76f20b1e5d5c9365cc1ea01483c77aae1ba",
+    "utilization_pct.json": "9ff04ca1ef3529a7d2eea37fd8cbf2c0ad47efaf181eaebebc8302dbb61b0404"
+  },
+  "source_files_sha256": {
+    "lab/run_live_eval.py": "9c24324f481bd6dd9ea1e3771ff77b12be7d420823c265a5d6cc1bde49e060ed",
+    "lab/impairments.py": "8ebe6a17df88fe156f039ed24790fe61524d46b2761011642c400606db31246f",
+    "lab/traffic.py": "da367e1089db835bfe811f267404cbfc2c24833981f940253ba0ebe04350aeb3",
+    "lab/edge/probe.py": "5f63e718de7d1845cc986dedbd59760bdb3f65cf3669e62b4a98c7be74bd4d80",
+    "lab/edge/ospf.py": "fc5ac745cfdacbb363f6a39a64fe66aa45b5285ea359ee97dea7fe2e2d6bb32f",
+    "lab/edge/clock.py": "c65e5350ce85f1f3db6dabe3406f54a5080f58b5c8a97d1474e78f41d02e6301",
+    "lab/baselines.py": "7a265071b41a8ad73fa32ab1d53e836d78086da732cbdc7478197946b5f6156a",
+    "sdwan/model.py": "4b87e746d1dfbeb248e5c7dea45bee9eda363d7bb1518851f567aef675d6c630",
+    "sdwan/features.py": "809d1ba86299fe297856496c5958cf9930ee650e68a8eb86a05767b96bc12e70",
+    "sdwan/domain.py": "5b6ea60fec9649f80658b48f84488de8b38b16a0ff1a4287ebe7a33a1681057b",
+    "sdwan/collector.py": "af2aa79ba95db4dcb069da9c7a729f1a68b654ad04848359b86627e0824a8361",
+    "sdwan/service.py": "184253b71ad6b0e6e7a581680260b04fc59e853c315ea28cb251a1828e134137",
+    "sdwan/api.py": "b0837d7e8257b56594cb83484b81f49e9076a433d71b5fd75fd47fa005b26f2c",
+    "sdwan/storage.py": "01093114ea95b50f49a62ecebe6c2ca2c0d1b1e1ff318ab33fa2385417aa5150",
+    "sdwan/policy.py": "7c5d4ba80c0655f00824874e31aacadcc8677401c7f923b1704d111d3726ff4e",
+    "sdwan/adapters.py": "602ef4f43e6232f0920d7a4999f8d42aeed6531e6a1c92f1126beff1c1f498f7",
+    "sdwan/flexiwan.py": "7fb1957e392e2426d06abd0f1271198b3f2711455b43f1a3ee9753e42b19bd05",
+    "scripts/run_live_lab.py": "2b6494fea56ea0f9281045c6d3d8ef4ae5395650cb4a7505af2c67613a234ad4",
+    "scripts/sync_edge_clocks.py": "0c67f29dee03af037fa73ce8a630e193be399d11939803fe081a4bae83282b05",
+    "scripts/configure_lab_ospf.py": "9820deebe8a04f0d39e2c1025ebc8f9f335d5267c90666d8cfb6cb92c75a1f73"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "type": "app",
+  "name": "AI SD-WAN controls",
+  "id": "aisdwan-controls-app",
+  "info": {
+    "author": {"name": "AI SD-WAN Lab"},
+    "description": "Authenticated control API proxy for the isolated SD-WAN lab",
+    "logos": {"small": "logo.svg", "large": "logo.svg"},
+    "keywords": ["sd-wan"], "version": "0.1.0", "updated": "2026-10-09"
+  },
+  "dependencies": {"grafanaDependency": ">=13.2.3", "plugins": []},
+  "routes": [
+    {
+      "path": "state", "method": "GET", "reqRole": "Viewer", "reqSignedIn": true,
+      "url": "{{ .JsonData.apiUrl }}/api/state",
+      "headers": [
+        {"name": "Authorization", "content": "Bearer {{ .SecureJsonData.apiToken }}"},
+        {"name": "Origin", "content": "{{ .JsonData.apiUrl }}"}
+      ]
+    },
+    {
+      "path": "configuration", "method": "POST", "reqRole": "Admin", "reqSignedIn": true,
+      "url": "{{ .JsonData.apiUrl }}/api/configuration",
+      "headers": [
+        {"name": "Authorization", "content": "Bearer {{ .SecureJsonData.apiToken }}"},
+        {"name": "Origin", "content": "{{ .JsonData.apiUrl }}"}
+      ]
+    },
+    {
+      "path": "recommendations/*", "method": "POST", "reqRole": "Admin", "reqSignedIn": true,
+      "url": "{{ .JsonData.apiUrl }}/api/recommendations",
+      "headers": [
+        {"name": "Authorization", "content": "Bearer {{ .SecureJsonData.apiToken }}"},
+        {"name": "Origin", "content": "{{ .JsonData.apiUrl }}"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+﻿{
+    "timestamp":  1790859844,
+    "computer":  {
+                     "HypervisorPresent":  false
+                 },
+    "processor":  {
+                      "VirtualizationFirmwareEnabled":  true,
+                      "SecondLevelAddressTranslationExtensions":  true
+                  },
+    "features":  [
+                     {
+                         "Name":  "VirtualMachinePlatform",
+                         "InstallState":  2
+                     },
+                     {
+                         "Name":  "Microsoft-Windows-Subsystem-Linux",
+                         "InstallState":  1
+                     }
+                 ],
+    "admin":  false,
+    "listeners":  [
+                      {
+                          "LocalAddress":  "127.0.0.1",
+                          "LocalPort":  27027
+                      },
+                      {
+                          "LocalAddress":  "127.0.0.1",
+                          "LocalPort":  8000
+                      },
+                      {
+                          "LocalAddress":  "127.0.0.1",
+                          "LocalPort":  6389
+                      },
+                      {
+                          "LocalAddress":  "127.0.0.1",
+                          "LocalPort":  3443
+                      },
+                      {
+                          "LocalAddress":  "127.0.0.1",
+                          "LocalPort":  3080
+                      },
+                      {
+                          "LocalAddress":  "127.0.0.1",
+                          "LocalPort":  1025
+                      }
+                  ],
+    "wsl_restart_attempted":  true,
+    "docker_restart_attempted":  true,
+    "linux_start_error":  "HCS_E_SERVICE_NOT_AVAILABLE",
+    "real_controller_api_verified":  true,
+    "edge_execution_completed":  false,
+    "packet_forwarding_tested":  false
+}

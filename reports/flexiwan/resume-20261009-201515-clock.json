@@ -1,0 +1,26 @@
+{
+  "observed_at": 1791551717.4465716,
+  "evidence_level": "real_edge_clock_observations",
+  "applied": true,
+  "source": "Owned WSL host realtime clock",
+  "edges": [
+    {
+      "site": 1,
+      "changed": true,
+      "guest_before_epoch": 1791551716.4243624,
+      "host_request_epoch": 1791551716.027399,
+      "guest_after_epoch": 1791551716.0274656,
+      "before_offset_seconds": 0.39696335792541504,
+      "after_offset_upper_bound_seconds": 0.6722424030303955
+    },
+    {
+      "site": 2,
+      "changed": true,
+      "guest_before_epoch": 1791551716.704129,
+      "host_request_epoch": 1791551716.699715,
+      "guest_after_epoch": 1791551716.6998987,
+      "before_offset_seconds": 0.004414081573486328,
+      "after_offset_upper_bound_seconds": 0.74660325050354
+    }
+  ]
+}

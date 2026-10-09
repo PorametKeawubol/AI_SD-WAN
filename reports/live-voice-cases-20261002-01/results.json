@@ -1,0 +1,311 @@
+{
+  "evidence_level": "real_packets",
+  "complete": true,
+  "order_seed": 92001,
+  "trials": [
+    {
+      "scenario": "S08",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": false,
+      "passed": false,
+      "reason": "Healthy baseline was not established",
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap"
+      ],
+      "observed_packet_intervals": 170
+    },
+    {
+      "scenario": "S03",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": true,
+      "restored": true,
+      "sla_interval_ratio": 1.0,
+      "recovery_seconds": 0,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap"
+      ],
+      "observed_packet_intervals": 170
+    },
+    {
+      "scenario": "S15",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": true,
+      "restored": true,
+      "sla_interval_ratio": 1.0,
+      "recovery_seconds": 0,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap"
+      ],
+      "observed_packet_intervals": 170
+    },
+    {
+      "scenario": "S16",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": true,
+      "restored": true,
+      "sla_interval_ratio": 1.0,
+      "recovery_seconds": 9,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap"
+      ],
+      "observed_packet_intervals": 170
+    },
+    {
+      "scenario": "S02",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": true,
+      "restored": true,
+      "sla_interval_ratio": 1.0,
+      "recovery_seconds": 0,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap"
+      ],
+      "observed_packet_intervals": 170
+    },
+    {
+      "scenario": "S11",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": true,
+      "restored": true,
+      "sla_interval_ratio": 1.0,
+      "recovery_seconds": 8,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap"
+      ],
+      "observed_packet_intervals": 170
+    },
+    {
+      "scenario": "S04",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": true,
+      "restored": true,
+      "sla_interval_ratio": 1.0,
+      "recovery_seconds": 3,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan3.pcap"
+      ],
+      "observed_packet_intervals": 170
+    },
+    {
+      "scenario": "S09",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": true,
+      "restored": true,
+      "sla_interval_ratio": 1.0,
+      "recovery_seconds": 4,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap"
+      ],
+      "observed_packet_intervals": 170
+    },
+    {
+      "scenario": "S13",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": true,
+      "restored": true,
+      "sla_interval_ratio": 1.0,
+      "recovery_seconds": 3,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap"
+      ],
+      "observed_packet_intervals": 170
+    },
+    {
+      "scenario": "S06",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": true,
+      "restored": true,
+      "sla_interval_ratio": 1.0,
+      "recovery_seconds": 7,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap"
+      ],
+      "observed_packet_intervals": 170
+    },
+    {
+      "scenario": "S10",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": true,
+      "restored": true,
+      "sla_interval_ratio": 1.0,
+      "recovery_seconds": 3,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap"
+      ],
+      "observed_packet_intervals": 170
+    },
+    {
+      "scenario": "S05",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": false,
+      "passed": false,
+      "reason": "Healthy baseline was not established",
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap"
+      ],
+      "observed_packet_intervals": 170
+    },
+    {
+      "scenario": "S07",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": false,
+      "restored": false,
+      "no_path_detection_seconds": 10.00462802399852,
+      "packet_delivery_expected": false,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap"
+      ],
+      "observed_packet_intervals": 170
+    },
+    {
+      "scenario": "S14",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": true,
+      "restored": true,
+      "sla_interval_ratio": 1.0,
+      "recovery_seconds": 4,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap",
+        "wan3.pcap"
+      ],
+      "observed_packet_intervals": 170
+    },
+    {
+      "scenario": "S12",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": false,
+      "restored": false,
+      "sla_interval_ratio": 0.9714285714285714,
+      "recovery_seconds": 12,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap"
+      ],
+      "observed_packet_intervals": 170
+    }
+  ],
+  "packet_observed_trials": 15,
+  "native_qbr_evaluated": false
+}

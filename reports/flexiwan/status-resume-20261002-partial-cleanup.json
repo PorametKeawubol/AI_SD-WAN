@@ -1,0 +1,16 @@
+{
+  "observed_at_utc": "2026-10-02T06:24:21.646713+00:00",
+  "endpoint": "unix:///run/docker.sock",
+  "engine": "docker-desktop",
+  "removed_never_started_partial_containers": {
+    "mail": "0ec092c643bd1f6c2d618f75485ec7e4ddd9d2d0bc0c9736f917ca22ac7f840d",
+    "mongo": "010d94783d3bf681e4441d70a2023b03ba925bbd7bc412cb8de6b76ac0a0586e",
+    "redis": "ff0a3895efcf81f35288c756243fc17302e3fd949e25c6e802d98753992201be",
+    "mongo-init": "9f788e67af388846cc7a38ad4c3ac9c598f9982317ab9b583b1daa83109f5674"
+  },
+  "removed_new_volumes": [
+    "ai-sdwan-controller_mongo-data",
+    "ai-sdwan-controller_redis-data"
+  ],
+  "native_lab_engine_and_data_untouched": true
+}

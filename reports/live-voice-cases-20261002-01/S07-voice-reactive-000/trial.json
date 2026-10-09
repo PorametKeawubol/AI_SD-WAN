@@ -1,0 +1,23 @@
+{
+  "phase": "assessment",
+  "packet_measurement_started": true,
+  "packet_measurement_completed": true,
+  "baseline_journal_id": "trial-baseline-3d06c0f5e7f543fcbe41221c5d63832e",
+  "evidence_level": "real_packets",
+  "packet_artifacts": [
+    "packets.json",
+    "wan1.pcap"
+  ],
+  "observed_packet_intervals": 170,
+  "status": "completed",
+  "error_type": null,
+  "cleanup_errors": [],
+  "state_observations": 34,
+  "result": {
+    "valid": true,
+    "passed": false,
+    "restored": false,
+    "no_path_detection_seconds": 10.00462802399852,
+    "packet_delivery_expected": false
+  }
+}

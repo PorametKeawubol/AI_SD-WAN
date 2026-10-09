@@ -1,0 +1,35 @@
+{
+  "evidence_level": "real_isolated_namespace_tool_diagnostic",
+  "uses_actual_focal_ping_binary": true,
+  "uses_flexiwan_forwarding": false,
+  "host_kernel": "6.18.40.1-microsoft-standard-WSL2",
+  "version": "ping from iputils s20190709",
+  "conditions": [
+    {
+      "condition": "healthy",
+      "elapsed_seconds": 2.4251512280006864,
+      "returncode": 0,
+      "summary": "100 packets transmitted, 100 received",
+      "completes_within_four_seconds": true
+    },
+    {
+      "condition": "loss_warm_arp",
+      "elapsed_seconds": 3.4324846740000794,
+      "returncode": 1,
+      "summary": "100 packets transmitted, 0 received",
+      "completes_within_four_seconds": true
+    },
+    {
+      "condition": "loss_cold_arp",
+      "elapsed_seconds": 8.00213048599835,
+      "timeout": true
+    },
+    {
+      "condition": "loss_cold_arp_10ms",
+      "elapsed_seconds": 4.199360835000334,
+      "returncode": 1,
+      "summary": "100 packets transmitted, 0 received",
+      "completes_within_four_seconds": false
+    }
+  ]
+}

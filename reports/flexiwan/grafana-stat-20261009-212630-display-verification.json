@@ -1,0 +1,214 @@
+{
+  "observed_at_utc": "2026-10-09T14:30:24.438Z",
+  "verifier": "Actual @grafana/data 13.2.3 getFieldDisplayValues with frames returned by live Grafana SQL queries",
+  "interactive_browser_qa": false,
+  "before_dashboard_version": 3,
+  "after_dashboard_version": 4,
+  "before": [
+    {
+      "id": 1,
+      "title": "WAN1 health",
+      "fields": "",
+      "source_field_types": [
+        "number"
+      ],
+      "display_value_text": [
+        "UP"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "WAN2 health",
+      "fields": "",
+      "source_field_types": [
+        "number"
+      ],
+      "display_value_text": [
+        "UP"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "WAN3 health",
+      "fields": "",
+      "source_field_types": [
+        "number"
+      ],
+      "display_value_text": [
+        "UP"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Configured priority",
+      "fields": "",
+      "source_field_types": [
+        "string"
+      ],
+      "display_value_text": [
+        "NO DATA"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Control mode",
+      "fields": "",
+      "source_field_types": [
+        "string"
+      ],
+      "display_value_text": [
+        "NO DATA"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Application profile",
+      "fields": "",
+      "source_field_types": [
+        "string"
+      ],
+      "display_value_text": [
+        "NO DATA"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "ML model active",
+      "fields": "",
+      "source_field_types": [
+        "string"
+      ],
+      "display_value_text": [
+        "NO DATA"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Pending recommendation",
+      "fields": "",
+      "source_field_types": [
+        "string"
+      ],
+      "display_value_text": [
+        "NO DATA"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Decision service heartbeat",
+      "fields": "",
+      "source_field_types": [
+        "number"
+      ],
+      "display_value_text": [
+        "4.80"
+      ]
+    }
+  ],
+  "after": [
+    {
+      "id": 1,
+      "title": "WAN1 health",
+      "fields": "/.*/",
+      "source_field_types": [
+        "number"
+      ],
+      "display_value_text": [
+        "UP"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "WAN2 health",
+      "fields": "/.*/",
+      "source_field_types": [
+        "number"
+      ],
+      "display_value_text": [
+        "UP"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "WAN3 health",
+      "fields": "/.*/",
+      "source_field_types": [
+        "number"
+      ],
+      "display_value_text": [
+        "UP"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Configured priority",
+      "fields": "/.*/",
+      "source_field_types": [
+        "string"
+      ],
+      "display_value_text": [
+        "wan1"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Control mode",
+      "fields": "/.*/",
+      "source_field_types": [
+        "string"
+      ],
+      "display_value_text": [
+        "auto"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Application profile",
+      "fields": "/.*/",
+      "source_field_types": [
+        "string"
+      ],
+      "display_value_text": [
+        "voice"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "ML model active",
+      "fields": "/.*/",
+      "source_field_types": [
+        "string"
+      ],
+      "display_value_text": [
+        "true"
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Pending recommendation",
+      "fields": "/.*/",
+      "source_field_types": [
+        "string"
+      ],
+      "display_value_text": [
+        "None"
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Decision service heartbeat",
+      "fields": "/.*/",
+      "source_field_types": [
+        "number"
+      ],
+      "display_value_text": [
+        "4.39"
+      ]
+    }
+  ],
+  "previous_string_no_data_reproduced": true,
+  "all_five_string_status_values_correct": true,
+  "numeric_wan_health_displays_up": true,
+  "controls_available_near_status": true,
+  "all_checks_passed": true
+}

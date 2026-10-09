@@ -1,0 +1,13 @@
+.venv
+.git
+.work
+data
+artifacts
+reports
+vendor/flexiagent
+vendor/fleximanage/.git
+vendor/fleximanage/backend/node_modules
+vendor/fleximanage/backend/logs
+vendor/fleximanage/backend/bin/cert.ai-lab
+lab/runtime
+config/*.local.json

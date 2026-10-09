@@ -1,0 +1,1394 @@
+{
+  "experiment": "live-s01-repeats-20261002-01",
+  "evidence_level": "real_filtered_underlay_captures",
+  "trials": [
+    {
+      "trial": "S01-voice-native_priority-001",
+      "evidence_level": "real_filtered_underlay_captures",
+      "time_origin": {
+        "epoch": 1790876914.129027,
+        "method": "estimated_from_api_state_file_write_time",
+        "maximum_origin_deviation_seconds": 0.2733612060546875
+      },
+      "source_port": 60830,
+      "destination_port": 5209,
+      "phases": {
+        "healthy_baseline": {
+          "start_second": 10,
+          "end_second": 70,
+          "sent_udp_packets": 12000,
+          "received_udp_echoes": 11993,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 12042,
+              "b_to_a": 12042
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        },
+        "fault": {
+          "start_second": 70,
+          "end_second": 150,
+          "sent_udp_packets": 16000,
+          "received_udp_echoes": 9373,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 17,
+              "b_to_a": 17
+            },
+            "wan2": {
+              "a_to_b": 9867,
+              "b_to_a": 9414
+            },
+            "wan3": {
+              "a_to_b": 3677,
+              "b_to_a": 0
+            }
+          }
+        },
+        "post_grace": {
+          "start_second": 80,
+          "end_second": 150,
+          "sent_udp_packets": 14000,
+          "received_udp_echoes": 9373,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 9867,
+              "b_to_a": 9414
+            },
+            "wan3": {
+              "a_to_b": 3677,
+              "b_to_a": 0
+            }
+          }
+        },
+        "restoration": {
+          "start_second": 150,
+          "end_second": 170,
+          "sent_udp_packets": 4000,
+          "received_udp_echoes": 3994,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 3339,
+              "b_to_a": 3333
+            },
+            "wan2": {
+              "a_to_b": 620,
+              "b_to_a": 620
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        }
+      },
+      "five_second_segments": [
+        {
+          "start_second": 65,
+          "end_second": 70,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 993,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 999,
+              "b_to_a": 999
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 70,
+          "end_second": 75,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 0,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 17,
+              "b_to_a": 17
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 75,
+          "end_second": 80,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 0,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 80,
+          "end_second": 85,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 0,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 503,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 85,
+          "end_second": 90,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 0,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 999,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 90,
+          "end_second": 95,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 0,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 999,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 95,
+          "end_second": 100,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 0,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 1001,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 100,
+          "end_second": 105,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 373,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 829,
+              "b_to_a": 376
+            },
+            "wan3": {
+              "a_to_b": 175,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 105,
+          "end_second": 110,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 1001,
+              "b_to_a": 1001
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 110,
+          "end_second": 115,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 1022,
+              "b_to_a": 1022
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 115,
+          "end_second": 120,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 1002,
+              "b_to_a": 1002
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        }
+      ],
+      "wire_sizes_and_protocols": {
+        "wan1": [
+          {
+            "wire_bytes": 1436,
+            "ip_protocol": 17,
+            "frames": 34666
+          }
+        ],
+        "wan2": [
+          {
+            "wire_bytes": 1436,
+            "ip_protocol": 17,
+            "frames": 20521
+          }
+        ],
+        "wan3": [
+          {
+            "wire_bytes": 1436,
+            "ip_protocol": 17,
+            "frames": 3677
+          }
+        ]
+      },
+      "foreign_frames_ignored": {
+        "wan1": 0,
+        "wan2": 0,
+        "wan3": 0
+      },
+      "limitations": [
+        "Captures contain encrypted underlay frames; application payload/sequence cannot be read",
+        "One namespace capture interface per WAN; counts are observed frames, not end-to-end delivery",
+        "Both directional impairment and capture placement affect which drops are visible",
+        "UDP echo receipt in packets.json is the delivery and SLA evidence",
+        "Epoch PCAP timestamps and monotonic traffic bins can drift slightly; segment boundaries are approximate"
+      ]
+    },
+    {
+      "trial": "S01-voice-native_qbr-001",
+      "evidence_level": "real_filtered_underlay_captures",
+      "time_origin": {
+        "epoch": 1790877092.1419606,
+        "method": "estimated_from_api_state_file_write_time",
+        "maximum_origin_deviation_seconds": 0.25585365295410156
+      },
+      "source_port": 56159,
+      "destination_port": 5209,
+      "phases": {
+        "healthy_baseline": {
+          "start_second": 10,
+          "end_second": 70,
+          "sent_udp_packets": 12000,
+          "received_udp_echoes": 12000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 12041,
+              "b_to_a": 12041
+            }
+          }
+        },
+        "fault": {
+          "start_second": 70,
+          "end_second": 150,
+          "sent_udp_packets": 16000,
+          "received_udp_echoes": 16000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 16057,
+              "b_to_a": 16057
+            }
+          }
+        },
+        "post_grace": {
+          "start_second": 80,
+          "end_second": 150,
+          "sent_udp_packets": 14000,
+          "received_udp_echoes": 14000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 14059,
+              "b_to_a": 14059
+            }
+          }
+        },
+        "restoration": {
+          "start_second": 150,
+          "end_second": 170,
+          "sent_udp_packets": 4000,
+          "received_udp_echoes": 4000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 3964,
+              "b_to_a": 3964
+            }
+          }
+        }
+      },
+      "five_second_segments": [
+        {
+          "start_second": 65,
+          "end_second": 70,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 1000,
+              "b_to_a": 1000
+            }
+          }
+        },
+        {
+          "start_second": 70,
+          "end_second": 75,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 998,
+              "b_to_a": 998
+            }
+          }
+        },
+        {
+          "start_second": 75,
+          "end_second": 80,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 1000,
+              "b_to_a": 1000
+            }
+          }
+        },
+        {
+          "start_second": 80,
+          "end_second": 85,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 1021,
+              "b_to_a": 1021
+            }
+          }
+        },
+        {
+          "start_second": 85,
+          "end_second": 90,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 1000,
+              "b_to_a": 1000
+            }
+          }
+        },
+        {
+          "start_second": 90,
+          "end_second": 95,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 998,
+              "b_to_a": 998
+            }
+          }
+        },
+        {
+          "start_second": 95,
+          "end_second": 100,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 1003,
+              "b_to_a": 1003
+            }
+          }
+        },
+        {
+          "start_second": 100,
+          "end_second": 105,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 998,
+              "b_to_a": 998
+            }
+          }
+        },
+        {
+          "start_second": 105,
+          "end_second": 110,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 1002,
+              "b_to_a": 1002
+            }
+          }
+        },
+        {
+          "start_second": 110,
+          "end_second": 115,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 1020,
+              "b_to_a": 1020
+            }
+          }
+        },
+        {
+          "start_second": 115,
+          "end_second": 120,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 998,
+              "b_to_a": 998
+            }
+          }
+        }
+      ],
+      "wire_sizes_and_protocols": {
+        "wan1": [],
+        "wan2": [],
+        "wan3": [
+          {
+            "wire_bytes": 1436,
+            "ip_protocol": 17,
+            "frames": 68000
+          }
+        ]
+      },
+      "foreign_frames_ignored": {
+        "wan1": 0,
+        "wan2": 0,
+        "wan3": 0
+      },
+      "limitations": [
+        "Captures contain encrypted underlay frames; application payload/sequence cannot be read",
+        "One namespace capture interface per WAN; counts are observed frames, not end-to-end delivery",
+        "Both directional impairment and capture placement affect which drops are visible",
+        "UDP echo receipt in packets.json is the delivery and SLA evidence",
+        "Epoch PCAP timestamps and monotonic traffic bins can drift slightly; segment boundaries are approximate"
+      ]
+    },
+    {
+      "trial": "S01-voice-native_qbr-002",
+      "evidence_level": "real_filtered_underlay_captures",
+      "time_origin": {
+        "epoch": 1790876735.0286796,
+        "method": "estimated_from_api_state_file_write_time",
+        "maximum_origin_deviation_seconds": 0.2152388095855713
+      },
+      "source_port": 49011,
+      "destination_port": 5209,
+      "phases": {
+        "healthy_baseline": {
+          "start_second": 10,
+          "end_second": 70,
+          "sent_udp_packets": 12000,
+          "received_udp_echoes": 12000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 12036
+            },
+            "wan3": {
+              "a_to_b": 12036,
+              "b_to_a": 0
+            }
+          }
+        },
+        "fault": {
+          "start_second": 70,
+          "end_second": 150,
+          "sent_udp_packets": 16000,
+          "received_udp_echoes": 16000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 2416
+            },
+            "wan3": {
+              "a_to_b": 16025,
+              "b_to_a": 13609
+            }
+          }
+        },
+        "post_grace": {
+          "start_second": 80,
+          "end_second": 150,
+          "sent_udp_packets": 14000,
+          "received_udp_echoes": 14000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 1990
+            },
+            "wan3": {
+              "a_to_b": 14027,
+              "b_to_a": 12037
+            }
+          }
+        },
+        "restoration": {
+          "start_second": 150,
+          "end_second": 170,
+          "sent_udp_packets": 4000,
+          "received_udp_echoes": 4000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 3994,
+              "b_to_a": 3994
+            }
+          }
+        }
+      },
+      "five_second_segments": [
+        {
+          "start_second": 65,
+          "end_second": 70,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 1000
+            },
+            "wan3": {
+              "a_to_b": 1000,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 70,
+          "end_second": 75,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 426
+            },
+            "wan3": {
+              "a_to_b": 998,
+              "b_to_a": 572
+            }
+          }
+        },
+        {
+          "start_second": 75,
+          "end_second": 80,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 1000,
+              "b_to_a": 1000
+            }
+          }
+        },
+        {
+          "start_second": 80,
+          "end_second": 85,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 1017,
+              "b_to_a": 1017
+            }
+          }
+        },
+        {
+          "start_second": 85,
+          "end_second": 90,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 1000,
+              "b_to_a": 1000
+            }
+          }
+        },
+        {
+          "start_second": 90,
+          "end_second": 95,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 565
+            },
+            "wan3": {
+              "a_to_b": 1001,
+              "b_to_a": 436
+            }
+          }
+        },
+        {
+          "start_second": 95,
+          "end_second": 100,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 1000
+            },
+            "wan3": {
+              "a_to_b": 1000,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 100,
+          "end_second": 105,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 425
+            },
+            "wan3": {
+              "a_to_b": 998,
+              "b_to_a": 572
+            }
+          }
+        },
+        {
+          "start_second": 105,
+          "end_second": 110,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 998,
+              "b_to_a": 999
+            }
+          }
+        },
+        {
+          "start_second": 110,
+          "end_second": 115,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 1009,
+              "b_to_a": 1009
+            }
+          }
+        },
+        {
+          "start_second": 115,
+          "end_second": 120,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 998,
+              "b_to_a": 998
+            }
+          }
+        }
+      ],
+      "wire_sizes_and_protocols": {
+        "wan1": [],
+        "wan2": [
+          {
+            "wire_bytes": 1436,
+            "ip_protocol": 17,
+            "frames": 15339
+          }
+        ],
+        "wan3": [
+          {
+            "wire_bytes": 1436,
+            "ip_protocol": 17,
+            "frames": 52661
+          }
+        ]
+      },
+      "foreign_frames_ignored": {
+        "wan1": 0,
+        "wan2": 0,
+        "wan3": 0
+      },
+      "limitations": [
+        "Captures contain encrypted underlay frames; application payload/sequence cannot be read",
+        "One namespace capture interface per WAN; counts are observed frames, not end-to-end delivery",
+        "Both directional impairment and capture placement affect which drops are visible",
+        "UDP echo receipt in packets.json is the delivery and SLA evidence",
+        "Epoch PCAP timestamps and monotonic traffic bins can drift slightly; segment boundaries are approximate"
+      ]
+    },
+    {
+      "trial": "S01-voice-reactive-001",
+      "evidence_level": "real_filtered_underlay_captures",
+      "time_origin": {
+        "epoch": 1790876558.077726,
+        "method": "estimated_from_api_state_file_write_time",
+        "maximum_origin_deviation_seconds": 0.27513790130615234
+      },
+      "source_port": 56514,
+      "destination_port": 5209,
+      "phases": {
+        "healthy_baseline": {
+          "start_second": 10,
+          "end_second": 70,
+          "sent_udp_packets": 12000,
+          "received_udp_echoes": 11993,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 12037,
+              "b_to_a": 12037
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        },
+        "fault": {
+          "start_second": 70,
+          "end_second": 150,
+          "sent_udp_packets": 16000,
+          "received_udp_echoes": 12502,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 22,
+              "b_to_a": 22
+            },
+            "wan2": {
+              "a_to_b": 12528,
+              "b_to_a": 11181
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 1347
+            }
+          }
+        },
+        "post_grace": {
+          "start_second": 80,
+          "end_second": 150,
+          "sent_udp_packets": 14000,
+          "received_udp_echoes": 11039,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 11077,
+              "b_to_a": 9730
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 1347
+            }
+          }
+        },
+        "restoration": {
+          "start_second": 150,
+          "end_second": 170,
+          "sent_udp_packets": 4000,
+          "received_udp_echoes": 4000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 3974,
+              "b_to_a": 3974
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        }
+      },
+      "five_second_segments": [
+        {
+          "start_second": 65,
+          "end_second": 70,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 993,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 1001,
+              "b_to_a": 1001
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 70,
+          "end_second": 75,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 463,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 22,
+              "b_to_a": 22
+            },
+            "wan2": {
+              "a_to_b": 433,
+              "b_to_a": 433
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 75,
+          "end_second": 80,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 1018,
+              "b_to_a": 1018
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 80,
+          "end_second": 85,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 1001,
+              "b_to_a": 997
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 85,
+          "end_second": 90,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 1001,
+              "b_to_a": 542
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 463
+            }
+          }
+        },
+        {
+          "start_second": 90,
+          "end_second": 95,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 418,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 428,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 428
+            }
+          }
+        },
+        {
+          "start_second": 95,
+          "end_second": 100,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 0,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 100,
+          "end_second": 105,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 0,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 105,
+          "end_second": 110,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 621,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 627,
+              "b_to_a": 171
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 456
+            }
+          }
+        },
+        {
+          "start_second": 110,
+          "end_second": 115,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 1001,
+              "b_to_a": 1001
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        },
+        {
+          "start_second": 115,
+          "end_second": 120,
+          "sent_udp_packets": 1000,
+          "received_udp_echoes": 1000,
+          "captured_underlay_frames": {
+            "wan1": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            },
+            "wan2": {
+              "a_to_b": 1001,
+              "b_to_a": 1001
+            },
+            "wan3": {
+              "a_to_b": 0,
+              "b_to_a": 0
+            }
+          }
+        }
+      ],
+      "wire_sizes_and_protocols": {
+        "wan1": [
+          {
+            "wire_bytes": 1436,
+            "ip_protocol": 17,
+            "frames": 27992
+          }
+        ],
+        "wan2": [
+          {
+            "wire_bytes": 1436,
+            "ip_protocol": 17,
+            "frames": 31657
+          }
+        ],
+        "wan3": [
+          {
+            "wire_bytes": 1436,
+            "ip_protocol": 17,
+            "frames": 1347
+          }
+        ]
+      },
+      "foreign_frames_ignored": {
+        "wan1": 0,
+        "wan2": 0,
+        "wan3": 0
+      },
+      "limitations": [
+        "Captures contain encrypted underlay frames; application payload/sequence cannot be read",
+        "One namespace capture interface per WAN; counts are observed frames, not end-to-end delivery",
+        "Both directional impairment and capture placement affect which drops are visible",
+        "UDP echo receipt in packets.json is the delivery and SLA evidence",
+        "Epoch PCAP timestamps and monotonic traffic bins can drift slightly; segment boundaries are approximate"
+      ]
+    }
+  ],
+  "excluded_trials": [
+    {
+      "trial": "S01-voice-predictive_synthetic_lab-001",
+      "reason": "incomplete_packet_trial"
+    }
+  ]
+}

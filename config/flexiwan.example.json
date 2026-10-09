@@ -1,0 +1,19 @@
+{
+  "base_url": "https://192.168.56.1:3443/api",
+  "organization_id": "000000000000000000000001",
+  "device_ids": ["000000000000000000000002"],
+  "policy_id": "000000000000000000000003",
+  "rule_id": "000000000000000000000004",
+  "links": {
+    "wan1": {"path_label_id": "000000000000000000000005", "capacity_mbps": 100},
+    "wan2": {"path_label_id": "000000000000000000000006", "capacity_mbps": 80},
+    "wan3": {"path_label_id": "000000000000000000000007", "capacity_mbps": 30}
+  },
+  "access_key_env": "FLEXIWAN_ACCESS_KEY",
+  "ca_file": "lab/runtime/certs/certificate.pem",
+  "expected_version": "6.3.37",
+  "request_timeout_seconds": 20,
+  "job_timeout_seconds": 180,
+  "poll_seconds": 1,
+  "journal_dir": "data/flexiwan-journal"
+}

@@ -1,0 +1,62 @@
+name: ai-sdwan-observability
+services:
+  timescaledb:
+    image: timescale/timescaledb:2.30.2-pg17@sha256:b346edcdb51a1fd6020e3965e0bd1c9f3406fa6d5fbce1e28f4852587ef934e2
+    env_file: [runtime/observability/database.env]
+    command: ["postgres", "-c", "ssl=on", "-c", "ssl_cert_file=/certs/server.crt", "-c", "ssl_key_file=/certs/server.key", "-c", "shared_buffers=256MB", "-c", "max_connections=60"]
+    ports: ["127.0.0.1:5432:5432"]
+    volumes:
+      - timescale-data:/var/lib/postgresql/data
+      - ./runtime/observability/init.sql:/docker-entrypoint-initdb.d/20-sdwan.sql:ro
+      - ./runtime/observability/certs/database:/certs:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d sdwan"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+    restart: unless-stopped
+    networks: [observability]
+  grafana:
+    image: grafana/grafana:13.2.3@sha256:b28bae15e219c998fb0e0424ed724930cc61b1f61fb404d47c862f9a23f9e572
+    env_file: [runtime/observability/grafana.env]
+    environment:
+      GF_SERVER_PROTOCOL: https
+      GF_SERVER_HTTP_PORT: "3000"
+      GF_SERVER_HTTP_ADDR: 127.0.0.1
+      GF_SERVER_ROOT_URL: https://localhost:3000
+      GF_SERVER_CERT_FILE: /certs/server.crt
+      GF_SERVER_CERT_KEY: /certs/server.key
+      GF_SECURITY_COOKIE_SECURE: "true"
+      GF_SECURITY_COOKIE_SAMESITE: strict
+      GF_AUTH_ANONYMOUS_ENABLED: "false"
+      GF_USERS_ALLOW_SIGN_UP: "false"
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_ANALYTICS_CHECK_FOR_UPDATES: "false"
+      GF_ANALYTICS_CHECK_FOR_PLUGIN_UPDATES: "false"
+      GF_DATABASE_TYPE: postgres
+      GF_DATABASE_HOST: timescaledb:5432
+      GF_DATABASE_NAME: grafana
+      GF_DATABASE_USER: grafana_app
+      GF_DATABASE_SSL_MODE: verify-full
+      GF_DATABASE_CA_CERT_PATH: /certs/ca.crt
+      GF_DATABASE_SERVER_CERT_NAME: timescaledb
+      GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS: aisdwan-controls-app,aisdwan-controls-panel
+      SSL_CERT_FILE: /certs/ca.crt
+    # Native Linux host networking reaches the loopback-only decision API.
+    # Both Grafana and PostgreSQL remain bound to host loopback.
+    network_mode: host
+    extra_hosts: ["timescaledb:127.0.0.1"]
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/etc/grafana/dashboards:ro
+      - ./runtime/observability/certs/grafana:/certs:ro
+      - ./grafana/control-plugin/dist:/var/lib/grafana/plugins/aisdwan-controls-app:ro
+    depends_on:
+      timescaledb: {condition: service_healthy}
+    restart: unless-stopped
+volumes:
+  timescale-data:
+  grafana-data:
+networks:
+  observability: {}

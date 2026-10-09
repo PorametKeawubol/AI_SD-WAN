@@ -1,0 +1,11 @@
+{
+  "stream": "live-auto-20261009-201515",
+  "phase": "initial_windows_https_monitor",
+  "all_checks_passed": false,
+  "error_type": "httpx.RemoteProtocolError",
+  "message": "Server disconnected without sending a response.",
+  "partial_observations_saved": false,
+  "cause_verified": false,
+  "subsequent_readback": "The API process remained listening on port 8000; Windows trusted HTTPS health returned status=ok, backend=flexiwan, model_loaded=true and storage=timescaledb.",
+  "followup_verifier_change": "Use fresh HTTPS connections for each observation and retain failed observations. No lab services, TLS settings or telemetry freshness thresholds were changed."
+}

@@ -1,0 +1,11 @@
+apiVersion: 1
+providers:
+  - name: SD-WAN
+    orgId: 1
+    folder: SD-WAN
+    type: file
+    disableDeletion: false
+    allowUiUpdates: false
+    updateIntervalSeconds: 15
+    options:
+      path: /etc/grafana/dashboards

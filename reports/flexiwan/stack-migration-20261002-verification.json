@@ -1,0 +1,194 @@
+{
+  "observed_at_utc": "2026-10-02T08:29:24.821914+00:00",
+  "evidence_level": "actual_https_sql_controller_agent_and_lan_packet_readback",
+  "new_experiments_run": false,
+  "model_validated_on_real_data": false,
+  "decision_api": {
+    "url": "https://localhost:8000",
+    "health": {
+      "status": "ok",
+      "backend": "flexiwan",
+      "model_loaded": false,
+      "storage": "timescaledb"
+    },
+    "mode": "manual",
+    "configured_priority": "wan2",
+    "fresh_wans": {
+      "wan1": {
+        "link_id": "wan1",
+        "timestamp": 1790929762.4876342,
+        "up": true,
+        "latency_ms": 25.358999999999998,
+        "jitter_ms": 4.146856520305471,
+        "loss_pct": 0.0,
+        "utilization_pct": 0.03823738732776582,
+        "fresh": true,
+        "age_seconds": 2.384848117828369
+      },
+      "wan2": {
+        "link_id": "wan2",
+        "timestamp": 1790929762.4876342,
+        "up": true,
+        "latency_ms": 40.882,
+        "jitter_ms": 6.708746231599463,
+        "loss_pct": 0.0,
+        "utilization_pct": 0.04779673415970727,
+        "fresh": true,
+        "age_seconds": 2.384848117828369
+      },
+      "wan3": {
+        "link_id": "wan3",
+        "timestamp": 1790929762.4876342,
+        "up": true,
+        "latency_ms": 66.037,
+        "jitter_ms": 9.720829748534845,
+        "loss_pct": 0.0,
+        "utilization_pct": 0.1274579577592194,
+        "fresh": true,
+        "age_seconds": 2.384848117828369
+      }
+    },
+    "bearer_required": true,
+    "cross_origin_rejected": true,
+    "synthetic_injection_rejected": true,
+    "local_swagger_assets_verified": true,
+    "old_dashboard_routes_removed": true
+  },
+  "grafana": {
+    "url": "https://localhost:3000/d/ai-sdwan",
+    "version": "13.2.3",
+    "metadata_database": "postgres",
+    "datasource_health": "Database Connection OK",
+    "datasource_role": "sdwan_reader",
+    "datasource_read_only": true,
+    "database_tls_mode": "verify-full",
+    "panels_provisioned": 15,
+    "sql_panels_verified": [
+      {
+        "panel": "WAN1 health",
+        "frames": 1,
+        "rows": 1,
+        "status": "ok"
+      },
+      {
+        "panel": "WAN2 health",
+        "frames": 1,
+        "rows": 1,
+        "status": "ok"
+      },
+      {
+        "panel": "WAN3 health",
+        "frames": 1,
+        "rows": 1,
+        "status": "ok"
+      },
+      {
+        "panel": "Configured priority",
+        "frames": 1,
+        "rows": 1,
+        "status": "ok"
+      },
+      {
+        "panel": "Control mode",
+        "frames": 1,
+        "rows": 1,
+        "status": "ok"
+      },
+      {
+        "panel": "Application profile",
+        "frames": 1,
+        "rows": 1,
+        "status": "ok"
+      },
+      {
+        "panel": "ML model active",
+        "frames": 1,
+        "rows": 1,
+        "status": "ok"
+      },
+      {
+        "panel": "Latency",
+        "frames": 1,
+        "rows": 679,
+        "status": "ok"
+      },
+      {
+        "panel": "Jitter",
+        "frames": 1,
+        "rows": 679,
+        "status": "ok"
+      },
+      {
+        "panel": "Packet loss",
+        "frames": 1,
+        "rows": 679,
+        "status": "ok"
+      },
+      {
+        "panel": "WAN utilization",
+        "frames": 1,
+        "rows": 679,
+        "status": "ok"
+      },
+      {
+        "panel": "Decision and approval audit",
+        "frames": 1,
+        "rows": 100,
+        "status": "ok"
+      },
+      {
+        "panel": "Pending recommendation",
+        "frames": 1,
+        "rows": 1,
+        "status": "ok"
+      },
+      {
+        "panel": "Decision service heartbeat",
+        "frames": 1,
+        "rows": 1,
+        "status": "ok"
+      }
+    ],
+    "stream_selector_verified": true,
+    "html_and_assets_verified": 7
+  },
+  "timescaledb": {
+    "version": "2.30.2",
+    "hypertables": [
+      {
+        "hypertable_name": "telemetry"
+      }
+    ],
+    "tls": {
+      "ssl": true,
+      "version": "TLSv1.3"
+    },
+    "live_telemetry_rows": 7140
+  },
+  "flexiwan": {
+    "controller_version": "6.3.37",
+    "devices": [
+      {
+        "hostname": "sdw-edge-b",
+        "isApproved": true,
+        "isConnected": true
+      },
+      {
+        "hostname": "sdw-edge-a",
+        "isApproved": true,
+        "isConnected": true
+      }
+    ],
+    "agent_policy_readback": true,
+    "unresolved_policy_intents": 0,
+    "installed_tunnels": 3
+  },
+  "lan_ping": {
+    "sent": 3,
+    "received": 3
+  },
+  "visual_browser_qa": {
+    "verified": false,
+    "reason": "Native UI bridge unavailable; tool browser does not trust lab CA. No security warning bypassed."
+  }
+}

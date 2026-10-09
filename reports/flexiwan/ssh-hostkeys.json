@@ -1,0 +1,16 @@
+{
+  "timestamp": 1790868763.958191,
+  "verification": "VM console SHA256 fingerprint",
+  "hosts": [
+    {
+      "hostname": "sdw-edge-a",
+      "address": "192.168.56.11",
+      "fingerprint": "SHA256:5g9wrf17I61fa5JSUFxra5nrpQQgY9XrA7Ow++9XFLM"
+    },
+    {
+      "hostname": "sdw-edge-b",
+      "address": "192.168.56.12",
+      "fingerprint": "SHA256:stNKc0R1pP93Q6AKvSFhd00P9BjPp0hJAy6qEMNSDQ0"
+    }
+  ]
+}

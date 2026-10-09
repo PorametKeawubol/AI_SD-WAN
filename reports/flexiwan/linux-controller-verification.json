@@ -1,0 +1,95 @@
+{
+  "evidence_level": "real_controller_api",
+  "real_edge": false,
+  "checks": [
+    {
+      "method": "GET",
+      "path": "version",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "users/verify-account",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "users/login",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "organizations",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "organizations",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "accesstokens",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "pathlabels",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "pathlabels",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "pathlabels",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "pathlabels",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "mlpolicies",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "mlpolicies",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "tokens",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "mlpolicies/6abe7acf789d0c762ec2f5a5",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "pathlabels",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "devices",
+      "status": 200
+    }
+  ],
+  "version": "6.3.37",
+  "organization_id": "6abe7acf789d0c05c1c2f554",
+  "policy_id": "6abe7acf789d0c762ec2f5a5",
+  "labels_created": 3,
+  "policy_readback": true,
+  "device_count": 0,
+  "openapi_sha256": "4a95b529264a201d083176dfeada3707add1d5ceeba17a01518ab9a733466664",
+  "controller_commit": "62a168daedc785706808c7be2689e208d81bf77e",
+  "timestamp": 1790868176.3414137
+}

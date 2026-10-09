@@ -1,0 +1,6 @@
+{
+  "target": "172.16.1.1",
+  "sent_packets": 783996,
+  "actual_offered_mbps": 97.99904024485157,
+  "requested_mbps": 98.0
+}

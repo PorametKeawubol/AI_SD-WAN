@@ -1,0 +1,727 @@
+{
+  "observed_at_utc": "2026-10-02T06:27:19.416050+00:00",
+  "evidence_level": "actual_windows_http_30_second_observation",
+  "observations": [
+    {
+      "observed_at_utc": "2026-10-02T06:26:48.971983+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 0.23566389083862305,
+          "timestamp": 1790922408.7274585
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 0.23566389083862305,
+          "timestamp": 1790922408.7274585
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 0.23566389083862305,
+          "timestamp": 1790922408.7274585
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:26:49.995701+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 1.2481989860534668,
+          "timestamp": 1790922408.7274585
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 1.2481989860534668,
+          "timestamp": 1790922408.7274585
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 1.2481989860534668,
+          "timestamp": 1790922408.7274585
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:26:51.010335+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 2.2544538974761963,
+          "timestamp": 1790922408.7274585
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 2.2544538974761963,
+          "timestamp": 1790922408.7274585
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 2.2544538974761963,
+          "timestamp": 1790922408.7274585
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:26:52.037326+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.273057460784912,
+          "timestamp": 1790922408.7274585
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.273057460784912,
+          "timestamp": 1790922408.7274585
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.273057460784912,
+          "timestamp": 1790922408.7274585
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:26:53.051059+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.280573129653931,
+          "timestamp": 1790922408.7274585
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.280573129653931,
+          "timestamp": 1790922408.7274585
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.280573129653931,
+          "timestamp": 1790922408.7274585
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:26:54.064360+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 5.290123462677002,
+          "timestamp": 1790922408.7274585
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 5.290123462677002,
+          "timestamp": 1790922408.7274585
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 5.290123462677002,
+          "timestamp": 1790922408.7274585
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:26:55.069925+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 6.290701866149902,
+          "timestamp": 1790922408.7274585
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 6.290701866149902,
+          "timestamp": 1790922408.7274585
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 6.290701866149902,
+          "timestamp": 1790922408.7274585
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:26:56.091304+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 7.309270620346069,
+          "timestamp": 1790922408.7274585
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 7.309270620346069,
+          "timestamp": 1790922408.7274585
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 7.309270620346069,
+          "timestamp": 1790922408.7274585
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:26:57.106203+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 8.321327924728394,
+          "timestamp": 1790922408.7274585
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 8.321327924728394,
+          "timestamp": 1790922408.7274585
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 8.321327924728394,
+          "timestamp": 1790922408.7274585
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:26:58.122083+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 9.335696935653687,
+          "timestamp": 1790922408.7274585
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 9.335696935653687,
+          "timestamp": 1790922408.7274585
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 9.335696935653687,
+          "timestamp": 1790922408.7274585
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:26:59.149314+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": false,
+          "up": true,
+          "age_seconds": 10.361149311065674,
+          "timestamp": 1790922408.7274585
+        },
+        "wan2": {
+          "fresh": false,
+          "up": true,
+          "age_seconds": 10.361149311065674,
+          "timestamp": 1790922408.7274585
+        },
+        "wan3": {
+          "fresh": false,
+          "up": true,
+          "age_seconds": 10.361149311065674,
+          "timestamp": 1790922408.7274585
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:00.153751+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": false,
+          "up": true,
+          "age_seconds": 11.364692449569702,
+          "timestamp": 1790922408.7274585
+        },
+        "wan2": {
+          "fresh": false,
+          "up": true,
+          "age_seconds": 11.364692449569702,
+          "timestamp": 1790922408.7274585
+        },
+        "wan3": {
+          "fresh": false,
+          "up": true,
+          "age_seconds": 11.364692449569702,
+          "timestamp": 1790922408.7274585
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:01.176520+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": false,
+          "up": true,
+          "age_seconds": 12.387349605560303,
+          "timestamp": 1790922408.7274585
+        },
+        "wan2": {
+          "fresh": false,
+          "up": true,
+          "age_seconds": 12.387349605560303,
+          "timestamp": 1790922408.7274585
+        },
+        "wan3": {
+          "fresh": false,
+          "up": true,
+          "age_seconds": 12.387349605560303,
+          "timestamp": 1790922408.7274585
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:02.198751+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": false,
+          "up": true,
+          "age_seconds": 13.409506797790527,
+          "timestamp": 1790922408.7274585
+        },
+        "wan2": {
+          "fresh": false,
+          "up": true,
+          "age_seconds": 13.409506797790527,
+          "timestamp": 1790922408.7274585
+        },
+        "wan3": {
+          "fresh": false,
+          "up": true,
+          "age_seconds": 13.409506797790527,
+          "timestamp": 1790922408.7274585
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:03.227448+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": false,
+          "up": true,
+          "age_seconds": 14.438822507858276,
+          "timestamp": 1790922408.7274585
+        },
+        "wan2": {
+          "fresh": false,
+          "up": true,
+          "age_seconds": 14.438822507858276,
+          "timestamp": 1790922408.7274585
+        },
+        "wan3": {
+          "fresh": false,
+          "up": true,
+          "age_seconds": 14.438822507858276,
+          "timestamp": 1790922408.7274585
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:04.232772+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 0.5008866786956787,
+          "timestamp": 1790922423.6704254
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 0.5008866786956787,
+          "timestamp": 1790922423.6704254
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 0.5008866786956787,
+          "timestamp": 1790922423.6704254
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:05.236711+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 1.5063176155090332,
+          "timestamp": 1790922423.6704254
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 1.5063176155090332,
+          "timestamp": 1790922423.6704254
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 1.5063176155090332,
+          "timestamp": 1790922423.6704254
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:06.252004+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 2.5228078365325928,
+          "timestamp": 1790922423.6704254
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 2.5228078365325928,
+          "timestamp": 1790922423.6704254
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 2.5228078365325928,
+          "timestamp": 1790922423.6704254
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:07.268406+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.5404598712921143,
+          "timestamp": 1790922423.6704254
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.5404598712921143,
+          "timestamp": 1790922423.6704254
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.5404598712921143,
+          "timestamp": 1790922423.6704254
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:08.273967+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.546983003616333,
+          "timestamp": 1790922423.6704254
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.546983003616333,
+          "timestamp": 1790922423.6704254
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.546983003616333,
+          "timestamp": 1790922423.6704254
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:09.290955+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 0.5512740612030029,
+          "timestamp": 1790922428.6852555
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 0.5512740612030029,
+          "timestamp": 1790922428.6852555
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 0.5512740612030029,
+          "timestamp": 1790922428.6852555
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:10.295864+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 1.5578694343566895,
+          "timestamp": 1790922428.6852555
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 1.5578694343566895,
+          "timestamp": 1790922428.6852555
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 1.5578694343566895,
+          "timestamp": 1790922428.6852555
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:11.316674+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 2.5806193351745605,
+          "timestamp": 1790922428.6852555
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 2.5806193351745605,
+          "timestamp": 1790922428.6852555
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 2.5806193351745605,
+          "timestamp": 1790922428.6852555
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:12.333037+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.5984926223754883,
+          "timestamp": 1790922428.6852555
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.5984926223754883,
+          "timestamp": 1790922428.6852555
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.5984926223754883,
+          "timestamp": 1790922428.6852555
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:13.337845+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.60517954826355,
+          "timestamp": 1790922428.6852555
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.60517954826355,
+          "timestamp": 1790922428.6852555
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.60517954826355,
+          "timestamp": 1790922428.6852555
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:14.342433+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 0.621039628982544,
+          "timestamp": 1790922433.6762545
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 0.621039628982544,
+          "timestamp": 1790922433.6762545
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 0.621039628982544,
+          "timestamp": 1790922433.6762545
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:15.366587+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 1.6471543312072754,
+          "timestamp": 1790922433.6762545
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 1.6471543312072754,
+          "timestamp": 1790922433.6762545
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 1.6471543312072754,
+          "timestamp": 1790922433.6762545
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:16.393871+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 2.676908016204834,
+          "timestamp": 1790922433.6762545
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 2.676908016204834,
+          "timestamp": 1790922433.6762545
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 2.676908016204834,
+          "timestamp": 1790922433.6762545
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:17.409808+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.733347177505493,
+          "timestamp": 1790922433.6762545
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.733347177505493,
+          "timestamp": 1790922433.6762545
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.733347177505493,
+          "timestamp": 1790922433.6762545
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-02T06:27:18.415251+00:00",
+      "mode": "manual",
+      "wans": {
+        "wan1": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.730359792709351,
+          "timestamp": 1790922433.6762545
+        },
+        "wan2": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.730359792709351,
+          "timestamp": 1790922433.6762545
+        },
+        "wan3": {
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.730359792709351,
+          "timestamp": 1790922433.6762545
+        }
+      }
+    }
+  ],
+  "all_fresh_healthy": false
+}

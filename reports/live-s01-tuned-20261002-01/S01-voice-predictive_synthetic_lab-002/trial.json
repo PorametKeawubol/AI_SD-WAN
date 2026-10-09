@@ -1,0 +1,23 @@
+{
+  "phase": "assessment",
+  "packet_measurement_started": true,
+  "packet_measurement_completed": true,
+  "baseline_journal_id": "trial-baseline-a3802e6ca3384ae29d28dc5eb69d8822",
+  "evidence_level": "real_packets",
+  "packet_artifacts": [
+    "packets.json",
+    "wan1.pcap",
+    "wan2.pcap",
+    "wan3.pcap"
+  ],
+  "observed_packet_intervals": 170,
+  "status": "completed",
+  "error_type": null,
+  "cleanup_errors": [],
+  "state_observations": 34,
+  "result": {
+    "valid": false,
+    "passed": false,
+    "reason": "Traffic generator underdelivered; harness limitation"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "health": {
+    "status": "ok",
+    "backend": "dry_run",
+    "model_loaded": true
+  },
+  "static_assets": "HTTP 200",
+  "manual_reject": "passed",
+  "manual_approve": "passed",
+  "approval_replay": "HTTP 409",
+  "eval_trials": 7650,
+  "final_path": "wan1",
+  "visual_browser_qa": "unavailable: no connected browser"
+}

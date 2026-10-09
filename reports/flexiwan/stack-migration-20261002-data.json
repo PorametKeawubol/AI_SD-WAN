@@ -1,0 +1,15 @@
+{
+  "observed_at_utc": "2026-10-02T08:05:23.665322+00:00",
+  "source": "flexiwan.sqlite3",
+  "source_sha256": "01abb73173143ca82cb8e694a4b8cfece005572de4a42a7586f86a2248cdb400",
+  "destination": "timescaledb",
+  "stream": "live",
+  "counts": {
+    "telemetry": 6384,
+    "events": 2287,
+    "state": 2
+  },
+  "source_content_sha256": "ebc2bb8b6018d0cdc758bfe550f64b0a1d89414e5cda7bceeafe29427d84a61a",
+  "destination_content_sha256": "ebc2bb8b6018d0cdc758bfe550f64b0a1d89414e5cda7bceeafe29427d84a61a",
+  "content_verified": true
+}

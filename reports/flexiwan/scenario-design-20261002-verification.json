@@ -1,0 +1,217 @@
+{
+  "observed_at_utc": "2026-10-02T09:55:04.922415+00:00",
+  "suite": "balanced",
+  "case_count": 38,
+  "group_counts": {
+    "availability": 8,
+    "quality": 15,
+    "stability": 3,
+    "mixed": 6,
+    "telemetry": 6
+  },
+  "catalogue_sha256": "26bf4eb4283d89ed44fa6c840956aaf9221232fc799bb2256247ba2a97d325bf",
+  "legacy_trace_sha256_at_seed80000": "47186bbfcb0917443ed41fb41312f40575880daf98b68e7cf2da0b29fd006933",
+  "tests": {
+    "windows_unit": {
+      "tests": "175",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "12.715"
+    },
+    "linux_full": {
+      "tests": "183",
+      "failures": "0",
+      "errors": "0",
+      "skipped": "0",
+      "time": "10.209"
+    }
+  },
+  "synthetic_smoke": {
+    "repetitions": 1,
+    "seed": 80000,
+    "profiles": 3,
+    "strategies": 5,
+    "trials": 570,
+    "model_sha256": "b7b72bfa7c1f34be948b397c4aaebdc639093657c15b444992d8bef3b2bbfc7d",
+    "frozen_model_unchanged": true,
+    "counts": {
+      "priority": {
+        "handled_count": 28,
+        "fault_cases_total": 37,
+        "restored_count": 27,
+        "recoverable_cases_total": 36,
+        "normal_control_passed": true,
+        "by_group": {
+          "availability": {
+            "case_count": 8,
+            "passed_case_count": 8
+          },
+          "quality": {
+            "case_count": 15,
+            "passed_case_count": 10
+          },
+          "stability": {
+            "case_count": 3,
+            "passed_case_count": 3
+          },
+          "mixed": {
+            "case_count": 6,
+            "passed_case_count": 2
+          },
+          "telemetry": {
+            "case_count": 6,
+            "passed_case_count": 6
+          }
+        }
+      },
+      "reactive": {
+        "handled_count": 37,
+        "fault_cases_total": 37,
+        "restored_count": 36,
+        "recoverable_cases_total": 36,
+        "normal_control_passed": true,
+        "by_group": {
+          "availability": {
+            "case_count": 8,
+            "passed_case_count": 8
+          },
+          "quality": {
+            "case_count": 15,
+            "passed_case_count": 15
+          },
+          "stability": {
+            "case_count": 3,
+            "passed_case_count": 3
+          },
+          "mixed": {
+            "case_count": 6,
+            "passed_case_count": 6
+          },
+          "telemetry": {
+            "case_count": 6,
+            "passed_case_count": 6
+          }
+        }
+      },
+      "linear_trend": {
+        "handled_count": 37,
+        "fault_cases_total": 37,
+        "restored_count": 36,
+        "recoverable_cases_total": 36,
+        "normal_control_passed": true,
+        "by_group": {
+          "availability": {
+            "case_count": 8,
+            "passed_case_count": 8
+          },
+          "quality": {
+            "case_count": 15,
+            "passed_case_count": 15
+          },
+          "stability": {
+            "case_count": 3,
+            "passed_case_count": 3
+          },
+          "mixed": {
+            "case_count": 6,
+            "passed_case_count": 6
+          },
+          "telemetry": {
+            "case_count": 6,
+            "passed_case_count": 6
+          }
+        }
+      },
+      "predictive_unguarded": {
+        "handled_count": 37,
+        "fault_cases_total": 37,
+        "restored_count": 36,
+        "recoverable_cases_total": 36,
+        "normal_control_passed": true,
+        "by_group": {
+          "availability": {
+            "case_count": 8,
+            "passed_case_count": 8
+          },
+          "quality": {
+            "case_count": 15,
+            "passed_case_count": 15
+          },
+          "stability": {
+            "case_count": 3,
+            "passed_case_count": 3
+          },
+          "mixed": {
+            "case_count": 6,
+            "passed_case_count": 6
+          },
+          "telemetry": {
+            "case_count": 6,
+            "passed_case_count": 6
+          }
+        }
+      },
+      "predictive": {
+        "handled_count": 37,
+        "fault_cases_total": 37,
+        "restored_count": 36,
+        "recoverable_cases_total": 36,
+        "normal_control_passed": true,
+        "by_group": {
+          "availability": {
+            "case_count": 8,
+            "passed_case_count": 8
+          },
+          "quality": {
+            "case_count": 15,
+            "passed_case_count": 15
+          },
+          "stability": {
+            "case_count": 3,
+            "passed_case_count": 3
+          },
+          "mixed": {
+            "case_count": 6,
+            "passed_case_count": 6
+          },
+          "telemetry": {
+            "case_count": 6,
+            "passed_case_count": 6
+          }
+        }
+      }
+    }
+  },
+  "live_readback": {
+    "health": {
+      "status": "ok",
+      "backend": "flexiwan",
+      "model_loaded": false,
+      "storage": "timescaledb"
+    },
+    "mode": "manual",
+    "configured_priority": "wan2",
+    "fresh_wans": {
+      "wan1": {
+        "up": true,
+        "fresh": true,
+        "age_seconds": 4.4347243309021
+      },
+      "wan2": {
+        "up": true,
+        "fresh": true,
+        "age_seconds": 4.4347243309021
+      },
+      "wan3": {
+        "up": true,
+        "fresh": true,
+        "age_seconds": 4.4347243309021
+      }
+    },
+    "grafana_database": "ok"
+  },
+  "new_packet_trials_run": false,
+  "actual_faults_injected": false,
+  "live_ml_enabled": false
+}

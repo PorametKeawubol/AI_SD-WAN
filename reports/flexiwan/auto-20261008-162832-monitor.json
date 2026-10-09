@@ -1,0 +1,295 @@
+{
+  "stream": "live-auto-20261008-162832",
+  "requested_duration_seconds": 60,
+  "policy_writes_sent_by_monitor": false,
+  "observations": [
+    {
+      "observed_at_utc": "2026-10-08T09:46:27.296761+00:00",
+      "elapsed_seconds": 0.027,
+      "mode": "auto",
+      "model_loaded": true,
+      "forecast_sampling": "causal_linear_5s",
+      "confirmed_path": "wan2",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "forecast_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "action": "hold",
+      "reason": "Improvement below hysteresis margin",
+      "apply_inflight": null,
+      "latest_timestamp": 1791452785.3593943
+    },
+    {
+      "observed_at_utc": "2026-10-08T09:46:32.272338+00:00",
+      "elapsed_seconds": 5.003,
+      "mode": "auto",
+      "model_loaded": true,
+      "forecast_sampling": "causal_linear_5s",
+      "confirmed_path": "wan2",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "forecast_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "action": "hold",
+      "reason": "Improvement below hysteresis margin",
+      "apply_inflight": null,
+      "latest_timestamp": 1791452790.297386
+    },
+    {
+      "observed_at_utc": "2026-10-08T09:46:37.271813+00:00",
+      "elapsed_seconds": 10.003,
+      "mode": "auto",
+      "model_loaded": true,
+      "forecast_sampling": "causal_linear_5s",
+      "confirmed_path": "wan2",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "forecast_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "action": "hold",
+      "reason": "Improvement below hysteresis margin",
+      "apply_inflight": null,
+      "latest_timestamp": 1791452795.3351154
+    },
+    {
+      "observed_at_utc": "2026-10-08T09:46:42.272038+00:00",
+      "elapsed_seconds": 15.003,
+      "mode": "auto",
+      "model_loaded": true,
+      "forecast_sampling": "causal_linear_5s",
+      "confirmed_path": "wan2",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "forecast_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "action": "hold",
+      "reason": "Improvement below hysteresis margin",
+      "apply_inflight": null,
+      "latest_timestamp": 1791452800.3537972
+    },
+    {
+      "observed_at_utc": "2026-10-08T09:46:47.272208+00:00",
+      "elapsed_seconds": 20.003,
+      "mode": "auto",
+      "model_loaded": true,
+      "forecast_sampling": "causal_linear_5s",
+      "confirmed_path": "wan2",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "forecast_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "action": "hold",
+      "reason": "Improvement below hysteresis margin",
+      "apply_inflight": null,
+      "latest_timestamp": 1791452805.29617
+    },
+    {
+      "observed_at_utc": "2026-10-08T09:46:52.271876+00:00",
+      "elapsed_seconds": 25.003,
+      "mode": "auto",
+      "model_loaded": true,
+      "forecast_sampling": "causal_linear_5s",
+      "confirmed_path": "wan2",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "forecast_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "action": "hold",
+      "reason": "Improvement below hysteresis margin",
+      "apply_inflight": null,
+      "latest_timestamp": 1791452810.3315458
+    },
+    {
+      "observed_at_utc": "2026-10-08T09:46:57.272449+00:00",
+      "elapsed_seconds": 30.003,
+      "mode": "auto",
+      "model_loaded": true,
+      "forecast_sampling": "causal_linear_5s",
+      "confirmed_path": "wan2",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "forecast_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "action": "hold",
+      "reason": "Improvement below hysteresis margin",
+      "apply_inflight": null,
+      "latest_timestamp": 1791452815.2886086
+    },
+    {
+      "observed_at_utc": "2026-10-08T09:47:02.272663+00:00",
+      "elapsed_seconds": 35.003,
+      "mode": "auto",
+      "model_loaded": true,
+      "forecast_sampling": "causal_linear_5s",
+      "confirmed_path": "wan2",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "forecast_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "action": "hold",
+      "reason": "Improvement below hysteresis margin",
+      "apply_inflight": null,
+      "latest_timestamp": 1791452820.3321464
+    },
+    {
+      "observed_at_utc": "2026-10-08T09:47:07.271878+00:00",
+      "elapsed_seconds": 40.003,
+      "mode": "auto",
+      "model_loaded": true,
+      "forecast_sampling": "causal_linear_5s",
+      "confirmed_path": "wan2",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "forecast_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "action": "hold",
+      "reason": "Improvement below hysteresis margin",
+      "apply_inflight": null,
+      "latest_timestamp": 1791452825.3402114
+    },
+    {
+      "observed_at_utc": "2026-10-08T09:47:12.272501+00:00",
+      "elapsed_seconds": 45.003,
+      "mode": "auto",
+      "model_loaded": true,
+      "forecast_sampling": "causal_linear_5s",
+      "confirmed_path": "wan2",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "forecast_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "action": "hold",
+      "reason": "Improvement below hysteresis margin",
+      "apply_inflight": null,
+      "latest_timestamp": 1791452830.2959788
+    },
+    {
+      "observed_at_utc": "2026-10-08T09:47:17.272158+00:00",
+      "elapsed_seconds": 50.003,
+      "mode": "auto",
+      "model_loaded": true,
+      "forecast_sampling": "causal_linear_5s",
+      "confirmed_path": "wan2",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "forecast_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "action": "hold",
+      "reason": "Improvement below hysteresis margin",
+      "apply_inflight": null,
+      "latest_timestamp": 1791452835.3214846
+    },
+    {
+      "observed_at_utc": "2026-10-08T09:47:22.272201+00:00",
+      "elapsed_seconds": 55.003,
+      "mode": "auto",
+      "model_loaded": true,
+      "forecast_sampling": "causal_linear_5s",
+      "confirmed_path": "wan2",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "forecast_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "action": "hold",
+      "reason": "Improvement below hysteresis margin",
+      "apply_inflight": null,
+      "latest_timestamp": 1791452840.2976515
+    },
+    {
+      "observed_at_utc": "2026-10-08T09:47:27.272564+00:00",
+      "elapsed_seconds": 60.003,
+      "mode": "auto",
+      "model_loaded": true,
+      "forecast_sampling": "causal_linear_5s",
+      "confirmed_path": "wan2",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "forecast_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "action": "hold",
+      "reason": "Improvement below hysteresis margin",
+      "apply_inflight": null,
+      "latest_timestamp": 1791452845.3182254
+    }
+  ],
+  "actual_duration_seconds": 60.003,
+  "verified_all_samples": true
+}

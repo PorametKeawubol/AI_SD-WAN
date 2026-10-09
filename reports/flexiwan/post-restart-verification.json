@@ -1,0 +1,401 @@
+{
+  "timestamp_utc": "2026-10-01T16:46:37.079181+00:00",
+  "evidence_level": "real_packets",
+  "distribution": "AI-SDWAN-Lab",
+  "linux_kernel": "6.18.40.1-microsoft-standard-WSL2",
+  "kvm_available": true,
+  "image": {
+    "image": "/var/tmp/ai-sdwan-images/focal-server-cloudimg-amd64.img",
+    "sha256": "18f2977d77dfea1b74aee14533bd21c34f789139e949c57023b7364894b7e5e9",
+    "virtualization": "kvm",
+    "edge_package": "6.3.35"
+  },
+  "controller_version": "6.3.37",
+  "tls_verified": true,
+  "devices": [
+    {
+      "hostname": "sdw-edge-b",
+      "machineId": "B5B676CC-D083-4DBA-97E1-6CFF611D23B5",
+      "isApproved": true,
+      "isConnected": true,
+      "deviceStatus": {
+        "state": "running",
+        "lastUpdateTime": 1790873100,
+        "tunnelStatus": {
+          "1": {
+            "rtt": 25.493744933364123,
+            "drop_rate": 0,
+            "status": "up",
+            "rx_bytes": 11914,
+            "rx_pkts": 65,
+            "tx_bytes": 14254,
+            "tx_pkts": 65
+          },
+          "2": {
+            "rtt": 40.58271691882847,
+            "drop_rate": 0,
+            "status": "up",
+            "rx_bytes": 11914,
+            "rx_pkts": 65,
+            "tx_bytes": 14254,
+            "tx_pkts": 65
+          },
+          "3": {
+            "rtt": 67.54225295194291,
+            "drop_rate": 0,
+            "status": "up",
+            "rx_bytes": 11914,
+            "rx_pkts": 65,
+            "tx_bytes": 14254,
+            "tx_pkts": 65
+          }
+        },
+        "ifStats": {
+          "pci:0000:02:00.00": {
+            "rx_bps": 2788.288818553658,
+            "rx_pps": 25.48539764470446,
+            "tx_bps": 2788.288818553658,
+            "tx_pps": 25.48539764470446
+          },
+          "pci:0000:03:00.00": {
+            "rx_bps": 2789.686190226083,
+            "rx_pps": 25.51866839880982,
+            "tx_bps": 2789.686190226083,
+            "tx_pps": 25.51866839880982
+          },
+          "pci:0000:04:00.00": {
+            "rx_bps": 2789.686190226083,
+            "rx_pps": 25.51866839880982,
+            "tx_bps": 2789.686190226083,
+            "tx_pps": 25.51866839880982
+          },
+          "pci:0000:05:00.00": {
+            "rx_bps": 0,
+            "rx_pps": 0,
+            "tx_bps": 7.785356460653843,
+            "tx_pps": 0.09981226231607492
+          }
+        }
+      },
+      "versions": {
+        "agent": "6.3.35",
+        "router": "02.08.27",
+        "device": "6.3.35",
+        "vpp": "21.01-rc0",
+        "frr": "8.3"
+      }
+    },
+    {
+      "hostname": "sdw-edge-a",
+      "machineId": "D507482B-CA39-4046-8DE8-9A30092A89A3",
+      "isApproved": true,
+      "isConnected": true,
+      "deviceStatus": {
+        "state": "running",
+        "lastUpdateTime": 1790873100,
+        "tunnelStatus": {
+          "1": {
+            "rtt": 25.305948326306243,
+            "drop_rate": 0,
+            "status": "up",
+            "rx_bytes": 11914,
+            "rx_pkts": 65,
+            "tx_bytes": 14254,
+            "tx_pkts": 65
+          },
+          "2": {
+            "rtt": 40.587029953358304,
+            "drop_rate": 0,
+            "status": "up",
+            "rx_bytes": 11728,
+            "rx_pkts": 64,
+            "tx_bytes": 14254,
+            "tx_pkts": 65
+          },
+          "3": {
+            "rtt": 67.52736427219337,
+            "drop_rate": 0,
+            "status": "up",
+            "rx_bytes": 11728,
+            "rx_pkts": 64,
+            "tx_bytes": 14254,
+            "tx_pkts": 65
+          }
+        },
+        "ifStats": {
+          "pci:0000:02:00.00": {
+            "rx_bps": 2788.4274814808914,
+            "rx_pps": 25.486665045633522,
+            "tx_bps": 2788.4274814808914,
+            "tx_pps": 25.486665045633522
+          },
+          "pci:0000:03:00.00": {
+            "rx_bps": 2781.972634197794,
+            "rx_pps": 25.486665045633522,
+            "tx_bps": 2789.8249226452735,
+            "tx_pps": 25.519937454309282
+          },
+          "pci:0000:04:00.00": {
+            "rx_bps": 2781.972634197794,
+            "rx_pps": 25.486665045633522,
+            "tx_bps": 2789.8249226452735,
+            "tx_pps": 25.519937454309282
+          },
+          "pci:0000:05:00.00": {
+            "rx_bps": 0,
+            "rx_pps": 0,
+            "tx_bps": 7.785743630128256,
+            "tx_pps": 0.09981722602728534
+          }
+        }
+      },
+      "versions": {
+        "agent": "6.3.35",
+        "router": "02.08.27",
+        "device": "6.3.35",
+        "vpp": "21.01-rc0",
+        "frr": "8.3"
+      }
+    }
+  ],
+  "tunnels": [
+    {
+      "num": 1,
+      "deviceAconf": true,
+      "deviceBconf": true,
+      "isPending": false
+    },
+    {
+      "num": 2,
+      "deviceAconf": true,
+      "deviceBconf": true,
+      "isPending": false
+    },
+    {
+      "num": 3,
+      "deviceAconf": true,
+      "deviceBconf": true,
+      "isPending": false
+    }
+  ],
+  "agent_policy_readback": true,
+  "probe_origin": "linux_tap_through_vpp",
+  "icmp_probe_packets_per_wan": 100,
+  "fresh_probes": [
+    {
+      "link_id": "wan1",
+      "timestamp": 1790873196.2610145,
+      "up": true,
+      "latency_ms": 24.267,
+      "jitter_ms": 3.6804090805235226,
+      "loss_pct": 0.0,
+      "utilization_pct": 0.03674357073149159
+    },
+    {
+      "link_id": "wan2",
+      "timestamp": 1790873196.2610145,
+      "up": true,
+      "latency_ms": 42.31,
+      "jitter_ms": 6.5707762098552704,
+      "loss_pct": 0.0,
+      "utilization_pct": 0.04500785798284678
+    },
+    {
+      "link_id": "wan3",
+      "timestamp": 1790873196.2610145,
+      "up": true,
+      "latency_ms": 66.438,
+      "jitter_ms": 9.252337866723199,
+      "loss_pct": 0.0,
+      "utilization_pct": 0.12002095462092476
+    }
+  ],
+  "crypto": [
+    {
+      "edge": "sdw-edge-a",
+      "disabled_plugins": [
+        "crypto_native_plugin.so",
+        "crypto_ipsecmb_plugin.so"
+      ],
+      "engines": "Name                Prio    Description\nopenssl             50      OpenSSL\nsw_scheduler        100     SW Scheduler Async Engine"
+    },
+    {
+      "edge": "sdw-edge-b",
+      "disabled_plugins": [
+        "crypto_native_plugin.so",
+        "crypto_ipsecmb_plugin.so"
+      ],
+      "engines": "Name                Prio    Description\nopenssl             50      OpenSSL\nsw_scheduler        100     SW Scheduler Async Engine"
+    }
+  ],
+  "dashboard": {
+    "url": "http://127.0.0.1:8000",
+    "health": {
+      "status": "ok",
+      "backend": "flexiwan",
+      "model_loaded": false
+    },
+    "mode": "manual",
+    "configured_priority": "wan2"
+  },
+  "experiments": [
+    "live-smoke-20261001-01",
+    "live-baselines-20261001-01",
+    "live-forecast-smoke-20261001-01",
+    "live-brownout-smoke-20261001-01"
+  ],
+  "packet_trials_completed": 5,
+  "valid_trials": 5,
+  "passed_trials": 2,
+  "trials": [
+    {
+      "scenario": "S01",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": false,
+      "restored": false,
+      "sla_interval_ratio": 0.9571428571428572,
+      "recovery_seconds": 13,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap"
+      ],
+      "observed_packet_intervals": 170,
+      "experiment": "live-smoke-20261001-01",
+      "offered_packets": 34000,
+      "received_packets": 33593,
+      "pcap_sha256": {
+        "wan2.pcap": "b01f61c575550999add67f0a30ea5bcd1286407422648a65d0092774aab0b533",
+        "wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+        "wan1.pcap": "28cc27e3b480bec3242f094f39a7d69baa889d1c0366d072e53157e086be72e8"
+      }
+    },
+    {
+      "scenario": "S01",
+      "profile": "voice",
+      "strategy": "native_qbr",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": false,
+      "restored": false,
+      "sla_interval_ratio": 0.8428571428571429,
+      "recovery_seconds": 3,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap",
+        "wan3.pcap"
+      ],
+      "observed_packet_intervals": 170,
+      "experiment": "live-baselines-20261001-01",
+      "offered_packets": 34000,
+      "received_packets": 31558,
+      "pcap_sha256": {
+        "wan2.pcap": "d3ad4fefb3a01420f8bd15aa4872e79f03f616cdc95fc8579fe7e5c39d1b7d6b",
+        "wan3.pcap": "e1498ba87ec699416f7e124f313a60bc726613be07aef5faad3cb401fb0479a9",
+        "wan1.pcap": "0be130c3e57b627fa797136dd4b19baa1a6d47b94ed900414e92d0832e4882bb"
+      }
+    },
+    {
+      "scenario": "S01",
+      "profile": "voice",
+      "strategy": "native_priority",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": false,
+      "restored": false,
+      "sla_interval_ratio": 0.7,
+      "recovery_seconds": 31,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap"
+      ],
+      "observed_packet_intervals": 170,
+      "experiment": "live-baselines-20261001-01",
+      "offered_packets": 34000,
+      "received_packets": 27924,
+      "pcap_sha256": {
+        "wan2.pcap": "2f10c8c2d9130fc8898e7205e91420b7ebc69f29f04679ab1c5f39b970305ee6",
+        "wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+        "wan1.pcap": "26def48513df5d94ac128d368b498a0430c86501c2a642eb3f0c2f0389a6b9ba"
+      }
+    },
+    {
+      "scenario": "S01",
+      "profile": "voice",
+      "strategy": "predictive_synthetic_lab",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": true,
+      "restored": true,
+      "sla_interval_ratio": 1.0,
+      "recovery_seconds": 2,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap",
+        "wan3.pcap"
+      ],
+      "observed_packet_intervals": 170,
+      "experiment": "live-forecast-smoke-20261001-01",
+      "offered_packets": 33999,
+      "received_packets": 33639,
+      "pcap_sha256": {
+        "wan2.pcap": "b0d1c0205f2b5d6833406cdf426b1d72eac9884166ace5310a2979794f7d2bfe",
+        "wan3.pcap": "0d6427998336fe1105cf8755aa9e7ccaba635a9047df889ec521f9c3dd52d2c1",
+        "wan1.pcap": "57ab2d84752a29b1db51a99a7a898b82528e85815f1307f42d9dd296029963e2"
+      }
+    },
+    {
+      "scenario": "S08",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": true,
+      "restored": true,
+      "sla_interval_ratio": 1.0,
+      "recovery_seconds": 3,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap"
+      ],
+      "observed_packet_intervals": 170,
+      "experiment": "live-brownout-smoke-20261001-01",
+      "offered_packets": 34000,
+      "received_packets": 34000,
+      "pcap_sha256": {
+        "wan2.pcap": "8cd12cde5cea7199322d5eadab28f0bba8da7f55478f99bf9f7c7d2b635cf9ee",
+        "wan3.pcap": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+        "wan1.pcap": "c545f852da87482c552a03df2424470523817b2e6573d4e4f569ea3de78fe02f"
+      }
+    }
+  ],
+  "full_576_trial_benchmark_executed": false,
+  "model_validated_on_real_data": false
+}

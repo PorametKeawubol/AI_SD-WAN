@@ -1,0 +1,129 @@
+{
+  "id": "a615318831f443cea8b9058c946d6256",
+  "phase": "verified",
+  "source": "wan1",
+  "target": "wan2",
+  "original": {
+    "_id": "6abe7acf789d0c762ec2f5a5",
+    "name": "AI Lab Managed Policy",
+    "description": "Dedicated isolated test traffic",
+    "applyOnWan": false,
+    "overrideDefaultRoute": true,
+    "rules": [
+      {
+        "classification": {
+          "application": {
+            "appId": "6abe87b5789d0c4a06c313d6",
+            "category": "",
+            "serviceClass": "",
+            "importance": ""
+          }
+        },
+        "action": {
+          "order": "priority",
+          "fallback": "drop",
+          "links": [
+            {
+              "pathlabels": [
+                {
+                  "type": "Tunnel",
+                  "_id": "6abe7acf789d0caf31c2f57b",
+                  "name": "AI Lab WAN1",
+                  "description": "Dedicated wan1",
+                  "color": "#2563eb"
+                }
+              ],
+              "order": "priority"
+            },
+            {
+              "pathlabels": [
+                {
+                  "type": "Tunnel",
+                  "_id": "6abe7acf789d0c9907c2f586",
+                  "name": "AI Lab WAN2",
+                  "description": "Dedicated wan2",
+                  "color": "#16a34a"
+                }
+              ],
+              "order": "priority"
+            },
+            {
+              "pathlabels": [
+                {
+                  "type": "Tunnel",
+                  "_id": "6abe7acf789d0cc7ecc2f591",
+                  "name": "AI Lab WAN3",
+                  "description": "Dedicated wan3",
+                  "color": "#f59e0b"
+                }
+              ],
+              "order": "priority"
+            }
+          ]
+        },
+        "enabled": true,
+        "_id": "6abe7acf789d0c67d2c2f5a6",
+        "name": "AI-Lab-LAN",
+        "priority": 0
+      }
+    ]
+  },
+  "requested": {
+    "_id": "6abe7acf789d0c762ec2f5a5",
+    "name": "AI Lab Managed Policy",
+    "description": "Dedicated isolated test traffic",
+    "applyOnWan": false,
+    "overrideDefaultRoute": true,
+    "rules": [
+      {
+        "classification": {
+          "application": {
+            "appId": "6abe87b5789d0c4a06c313d6",
+            "category": "",
+            "serviceClass": "",
+            "importance": ""
+          }
+        },
+        "action": {
+          "order": "priority",
+          "fallback": "drop",
+          "links": [
+            {
+              "order": "priority",
+              "pathlabels": [
+                {
+                  "_id": "6abe7acf789d0c9907c2f586"
+                }
+              ]
+            },
+            {
+              "order": "priority",
+              "pathlabels": [
+                {
+                  "_id": "6abe7acf789d0caf31c2f57b"
+                }
+              ]
+            },
+            {
+              "order": "priority",
+              "pathlabels": [
+                {
+                  "_id": "6abe7acf789d0cc7ecc2f591"
+                }
+              ]
+            }
+          ]
+        },
+        "enabled": true,
+        "_id": "6abe7acf789d0c67d2c2f5a6",
+        "name": "AI-Lab-LAN",
+        "priority": 0
+      }
+    ]
+  },
+  "scope": "a10f37d16235495c0d7d253d7c5dfe0e7d017e328a97e478a278b0229fb1849a",
+  "job_ids": [
+    99,
+    100
+  ]
+}

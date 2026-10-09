@@ -1,0 +1,116 @@
+{
+  "StartedAt": "2026-10-08T00:14:24.8503283+07:00",
+  "ObservedAt": "2026-10-08T00:14:36.4046721+07:00",
+  "CPU": {
+    "Name": "AMD Ryzen 7 7735HS with Radeon Graphics",
+    "Cores": 8,
+    "LogicalProcessors": 16,
+    "AveragePercent": 17.6,
+    "PeakPercent": 23.0,
+    "Samples": [
+      13.0,
+      21.0,
+      23.0,
+      17.0,
+      14.0
+    ]
+  },
+  "RAM": {
+    "TotalGiB": 31.24,
+    "UsedGiB": 27.86,
+    "FreeGiB": 3.39,
+    "UsedPercent": 89.2
+  },
+  "GPU": {
+    "Names": [
+      "AMD Radeon(TM) Graphics",
+      "AMD Radeon RX 7600S"
+    ],
+    "BusiestEnginePeakPercent": 0.0,
+    "ValidCounterReadings": 1298,
+    "CounterError": null,
+    "AdapterMemory": [
+      {
+        "Name": "luid_0x00000000_0x0001C48B_phys_0",
+        "DedicatedUsage": 2854912,
+        "SharedUsage": 3571712
+      },
+      {
+        "Name": "luid_0x00000000_0x0001C3E4_phys_0",
+        "DedicatedUsage": 0,
+        "SharedUsage": 8192
+      },
+      {
+        "Name": "luid_0x00000000_0x00015EDB_phys_0",
+        "DedicatedUsage": 1831632896,
+        "SharedUsage": 307224576
+      }
+    ]
+  },
+  "Disks": [
+    {
+      "Drive": "C:",
+      "SizeGiB": 449.46,
+      "FreeGiB": 48.03,
+      "UsedPercent": 89.3
+    },
+    {
+      "Drive": "E:",
+      "SizeGiB": 488.33,
+      "FreeGiB": 123.95,
+      "UsedPercent": 74.6
+    },
+    {
+      "Drive": "X:",
+      "SizeGiB": 23.98,
+      "FreeGiB": 18.2,
+      "UsedPercent": 24.1
+    }
+  ],
+  "DiskIO": [
+    {
+      "Drive": "C:",
+      "BusyPercent": 1,
+      "ReadMiBPerSec": 0.308,
+      "WriteMiBPerSec": 1.002
+    },
+    {
+      "Drive": "E:",
+      "BusyPercent": 1,
+      "ReadMiBPerSec": 0.0,
+      "WriteMiBPerSec": 0.17
+    }
+  ],
+  "TopMemoryProcesses": [
+    {
+      "Name": "vmmemWSL",
+      "Id": 32044,
+      "WorkingSetGiB": 13.894
+    },
+    {
+      "Name": "Discord",
+      "Id": 6892,
+      "WorkingSetGiB": 0.548
+    },
+    {
+      "Name": "ChatGPT",
+      "Id": 12460,
+      "WorkingSetGiB": 0.49
+    },
+    {
+      "Name": "explorer",
+      "Id": 2180,
+      "WorkingSetGiB": 0.426
+    },
+    {
+      "Name": "MsMpEng",
+      "Id": 2152,
+      "WorkingSetGiB": 0.425
+    },
+    {
+      "Name": "ChatGPT",
+      "Id": 26652,
+      "WorkingSetGiB": 0.409
+    }
+  ]
+}

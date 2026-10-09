@@ -1,0 +1,6 @@
+{
+  "image": "/var/tmp/ai-sdwan-images/focal-server-cloudimg-amd64.img",
+  "sha256": "18f2977d77dfea1b74aee14533bd21c34f789139e949c57023b7364894b7e5e9",
+  "virtualization": "kvm",
+  "edge_package": "6.3.35"
+}

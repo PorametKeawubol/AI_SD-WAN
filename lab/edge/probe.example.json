@@ -1,0 +1,9 @@
+{
+  "probe_method": "linux_tap",
+  "links": {
+    "wan1": {"vpp_interface": "GigabitEthernet2/0/0", "linux_interface": "eth1", "mac": "52:54:00:53:01:01", "target_ip": "172.16.1.2", "capacity_mbps": 100},
+    "wan2": {"vpp_interface": "GigabitEthernet3/0/0", "linux_interface": "eth2", "mac": "52:54:00:53:01:02", "target_ip": "172.16.2.2", "capacity_mbps": 80},
+    "wan3": {"vpp_interface": "GigabitEthernet4/0/0", "linux_interface": "eth3", "mac": "52:54:00:53:01:03", "target_ip": "172.16.3.2", "capacity_mbps": 30}
+  },
+  "lab_faults_enabled": false
+}

@@ -1,0 +1,589 @@
+{
+  "observed_at_utc": "2026-10-09T13:18:36.619269+00:00",
+  "stream": "live-auto-20261009-201515",
+  "evidence_level": "https_sql_controller_agent_configuration_and_lan_ping",
+  "model_validated_on_real_data": false,
+  "policy_writes_sent_by_verifier": false,
+  "observations": [
+    {
+      "observed_at_utc": "2026-10-09T13:18:36.658795+00:00",
+      "state": {
+        "mode": "auto",
+        "profile": "voice",
+        "backend": "flexiwan",
+        "route_evidence": "agent_configuration",
+        "observing_native_qbr": false,
+        "confirmed_path": "wan1",
+        "network_available": true,
+        "model_loaded": true,
+        "model_error": "Experimental synthetic forecast enabled on real probes; live validation pending",
+        "forecast_sampling": "causal_linear_5s",
+        "telemetry": {
+          "wan1": {
+            "link_id": "wan1",
+            "timestamp": 1791551913.747649,
+            "up": true,
+            "latency_ms": 24.712,
+            "jitter_ms": 3.8855702284220786,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.03853041127606025,
+            "fresh": true,
+            "age_seconds": 2.910395383834839
+          },
+          "wan2": {
+            "link_id": "wan2",
+            "timestamp": 1791551913.747649,
+            "up": true,
+            "latency_ms": 40.554,
+            "jitter_ms": 7.666556202102741,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.04816301409507532,
+            "fresh": true,
+            "age_seconds": 2.910395383834839
+          },
+          "wan3": {
+            "link_id": "wan3",
+            "timestamp": 1791551913.747649,
+            "up": true,
+            "latency_ms": 65.6,
+            "jitter_ms": 8.690730694251203,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.12843470425353418,
+            "fresh": true,
+            "age_seconds": 2.910395383834839
+          }
+        },
+        "pending": null,
+        "apply_inflight": null,
+        "last_decision": {
+          "action": "hold",
+          "source": "wan1",
+          "target": "wan1",
+          "reason": "Current path remains preferred",
+          "scores": {
+            "wan1": 0.12737924997228908,
+            "wan2": 0.19959752514071757,
+            "wan3": 0.3105082500695771
+          },
+          "predicted": {
+            "wan1": [
+              31.133258819580078,
+              5.681436538696289,
+              0.0,
+              2.340052604675293
+            ],
+            "wan2": [
+              46.71577835083008,
+              8.065763473510742,
+              0.0,
+              2.351353645324707
+            ],
+            "wan3": [
+              71.35887908935547,
+              10.044266700744629,
+              0.0,
+              2.444287061691284
+            ]
+          },
+          "degraded": false
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-09T13:18:41.665008+00:00",
+      "state": {
+        "mode": "auto",
+        "profile": "voice",
+        "backend": "flexiwan",
+        "route_evidence": "agent_configuration",
+        "observing_native_qbr": false,
+        "confirmed_path": "wan1",
+        "network_available": true,
+        "model_loaded": true,
+        "model_error": "Experimental synthetic forecast enabled on real probes; live validation pending",
+        "forecast_sampling": "causal_linear_5s",
+        "telemetry": {
+          "wan1": {
+            "link_id": "wan1",
+            "timestamp": 1791551918.7816803,
+            "up": true,
+            "latency_ms": 24.3365,
+            "jitter_ms": 4.226593516059949,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.03812748451190306,
+            "fresh": true,
+            "age_seconds": 2.8824446201324463
+          },
+          "wan2": {
+            "link_id": "wan2",
+            "timestamp": 1791551918.7816803,
+            "up": true,
+            "latency_ms": 40.085,
+            "jitter_ms": 6.945593927087877,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.047659355639878824,
+            "fresh": true,
+            "age_seconds": 2.8824446201324463
+          },
+          "wan3": {
+            "link_id": "wan3",
+            "timestamp": 1791551918.7816803,
+            "up": true,
+            "latency_ms": 64.131,
+            "jitter_ms": 9.069958048414556,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.12709161503967686,
+            "fresh": true,
+            "age_seconds": 2.8824446201324463
+          }
+        },
+        "pending": null,
+        "apply_inflight": null,
+        "last_decision": {
+          "action": "hold",
+          "source": "wan1",
+          "target": "wan1",
+          "reason": "Current path remains preferred",
+          "scores": {
+            "wan1": 0.12902531875843923,
+            "wan2": 0.1934973291936221,
+            "wan3": 0.309381110559748
+          },
+          "predicted": {
+            "wan1": [
+              30.75775909423828,
+              6.238750457763672,
+              0.0,
+              2.3312039375305176
+            ],
+            "wan2": [
+              46.35334777832031,
+              7.315243244171143,
+              0.0,
+              2.4727859497070312
+            ],
+            "wan3": [
+              70.44832611083984,
+              10.468688011169434,
+              0.0,
+              2.549391984939575
+            ]
+          },
+          "degraded": false
+        }
+      }
+    },
+    {
+      "observed_at_utc": "2026-10-09T13:18:46.671393+00:00",
+      "state": {
+        "mode": "auto",
+        "profile": "voice",
+        "backend": "flexiwan",
+        "route_evidence": "agent_configuration",
+        "observing_native_qbr": false,
+        "confirmed_path": "wan1",
+        "network_available": true,
+        "model_loaded": true,
+        "model_error": "Experimental synthetic forecast enabled on real probes; live validation pending",
+        "forecast_sampling": "causal_linear_5s",
+        "telemetry": {
+          "wan1": {
+            "link_id": "wan1",
+            "timestamp": 1791551923.7486541,
+            "up": true,
+            "latency_ms": 25.049,
+            "jitter_ms": 3.8417052203416127,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.03848957686378718,
+            "fresh": true,
+            "age_seconds": 2.921710729598999
+          },
+          "wan2": {
+            "link_id": "wan2",
+            "timestamp": 1791551923.7486541,
+            "up": true,
+            "latency_ms": 40.703,
+            "jitter_ms": 6.657919419758698,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.04811197107973397,
+            "fresh": true,
+            "age_seconds": 2.921710729598999
+          },
+          "wan3": {
+            "link_id": "wan3",
+            "timestamp": 1791551923.7486541,
+            "up": true,
+            "latency_ms": 66.157,
+            "jitter_ms": 9.367638496440819,
+            "loss_pct": 0.0,
+            "utilization_pct": 0.12829858954595724,
+            "fresh": true,
+            "age_seconds": 2.921710729598999
+          }
+        },
+        "pending": null,
+        "apply_inflight": null,
+        "last_decision": {
+          "action": "hold",
+          "source": "wan1",
+          "target": "wan1",
+          "reason": "Current path remains preferred",
+          "scores": {
+            "wan1": 0.1280919614823055,
+            "wan2": 0.19337856183236918,
+            "wan3": 0.3166760807794648
+          },
+          "predicted": {
+            "wan1": [
+              31.470256805419922,
+              5.643342971801758,
+              0.0,
+              2.307008981704712
+            ],
+            "wan2": [
+              46.68906784057617,
+              7.158275604248047,
+              0.0,
+              2.3630435466766357
+            ],
+            "wan3": [
+              71.50479888916016,
+              10.863715171813965,
+              0.0,
+              2.587085008621216
+            ]
+          },
+          "degraded": false
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Auto enabled and a hold decision do not prove a new policy apply occurred.",
+    "Configured priority and agent readback do not prove the actual packet WAN path.",
+    "LAN ping proves current end-to-end reachability, not traffic failover or SLA.",
+    "Synthetic forecast remains experimental pending real-data validation."
+  ],
+  "health": {
+    "status": "ok",
+    "backend": "flexiwan",
+    "model_loaded": true,
+    "storage": "timescaledb"
+  },
+  "timescaledb": {
+    "stream_summary": {
+      "rows": 57,
+      "first_timestamp": 1791551833.7064312,
+      "latest_timestamp": 1791551923.7486541,
+      "future_rows": 0
+    },
+    "histories": {
+      "wan1": {
+        "samples": 13,
+        "all_up": true,
+        "latest_timestamp": 1791551923.7486541,
+        "latest_age_seconds": 2.9547958374023438,
+        "intervals_seconds": [
+          4.95866,
+          5.016217,
+          5.016105,
+          4.964346,
+          5.052002,
+          4.958914,
+          5.0005,
+          4.995795,
+          5.017639,
+          4.969024,
+          5.034031,
+          4.966974
+        ],
+        "resample_ready": true
+      },
+      "wan2": {
+        "samples": 13,
+        "all_up": true,
+        "latest_timestamp": 1791551923.7486541,
+        "latest_age_seconds": 2.9559574127197266,
+        "intervals_seconds": [
+          4.95866,
+          5.016217,
+          5.016105,
+          4.964346,
+          5.052002,
+          4.958914,
+          5.0005,
+          4.995795,
+          5.017639,
+          4.969024,
+          5.034031,
+          4.966974
+        ],
+        "resample_ready": true
+      },
+      "wan3": {
+        "samples": 13,
+        "all_up": true,
+        "latest_timestamp": 1791551923.7486541,
+        "latest_age_seconds": 2.957037925720215,
+        "intervals_seconds": [
+          4.95866,
+          5.016217,
+          5.016105,
+          4.964346,
+          5.052002,
+          4.958914,
+          5.0005,
+          4.995795,
+          5.017639,
+          4.969024,
+          5.034031,
+          4.966974
+        ],
+        "resample_ready": true
+      }
+    },
+    "service_state_age_seconds": 2.203136,
+    "service_state_mode": "auto",
+    "service_state_model_loaded": true,
+    "event_counts": [
+      {
+        "kind": "configuration",
+        "count": 2
+      },
+      {
+        "kind": "decision",
+        "count": 19
+      },
+      {
+        "kind": "startup",
+        "count": 1
+      }
+    ],
+    "apply_events": []
+  },
+  "grafana": {
+    "health": {
+      "database": "ok",
+      "version": "13.2.3",
+      "commit": "90ffed056f0884267356c12a0eeb72a022af53f1"
+    },
+    "queried_stream": "live-auto-20261009-201515",
+    "panels": [
+      {
+        "panel": "WAN1 health",
+        "status": 200,
+        "query_failed": false,
+        "frames": 1,
+        "values": [
+          [
+            [
+              1
+            ]
+          ]
+        ]
+      },
+      {
+        "panel": "WAN2 health",
+        "status": 200,
+        "query_failed": false,
+        "frames": 1,
+        "values": [
+          [
+            [
+              1
+            ]
+          ]
+        ]
+      },
+      {
+        "panel": "WAN3 health",
+        "status": 200,
+        "query_failed": false,
+        "frames": 1,
+        "values": [
+          [
+            [
+              1
+            ]
+          ]
+        ]
+      },
+      {
+        "panel": "Configured priority",
+        "status": 200,
+        "query_failed": false,
+        "frames": 1,
+        "values": [
+          [
+            [
+              "wan1"
+            ]
+          ]
+        ]
+      },
+      {
+        "panel": "Control mode",
+        "status": 200,
+        "query_failed": false,
+        "frames": 1,
+        "values": [
+          [
+            [
+              "auto"
+            ]
+          ]
+        ]
+      },
+      {
+        "panel": "Application profile",
+        "status": 200,
+        "query_failed": false,
+        "frames": 1,
+        "values": [
+          [
+            [
+              "voice"
+            ]
+          ]
+        ]
+      },
+      {
+        "panel": "ML model active",
+        "status": 200,
+        "query_failed": false,
+        "frames": 1,
+        "values": [
+          [
+            [
+              "true"
+            ]
+          ]
+        ]
+      },
+      {
+        "panel": "Decision and approval audit",
+        "status": 200,
+        "query_failed": false,
+        "frames": 1,
+        "values": [
+          [
+            [
+              1791551924447,
+              1791551919480,
+              1791551914446,
+              1791551909478,
+              1791551904472,
+              1791551899464,
+              1791551894928,
+              1791551894468,
+              1791551889505,
+              1791551884453,
+              1791551879489,
+              1791551874473,
+              1791551869455,
+              1791551864496,
+              1791551859388,
+              1791551854450,
+              1791551849482,
+              1791551844934,
+              1791551839488,
+              1791551834412,
+              1791551831873,
+              1791551831848
+            ],
+            [
+              "decision",
+              "decision",
+              "decision",
+              "decision",
+              "decision",
+              "decision",
+              "configuration",
+              "decision",
+              "decision",
+              "decision",
+              "decision",
+              "decision",
+              "decision",
+              "decision",
+              "decision",
+              "decision",
+              "decision",
+              "decision",
+              "decision",
+              "decision",
+              "configuration",
+              "startup"
+            ],
+            [
+              "{\"mode\": \"auto\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.1280919614823055, \"wan2\": 0.19337856183236918, \"wan3\": 0.3166760807794648}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {\"wan1\": [31.470256805419922, 5.643342971801758, 0.0, 2.307008981704712], \"wan2\": [46.68906784057617, 7.158275604248047, 0.0, 2.3630435466766357], \"wan3\": [71.50479888916016, 10.863715171813965, 0.0, 2.587085008621216]}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"auto\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.12902531875843923, \"wan2\": 0.1934973291936221, \"wan3\": 0.309381110559748}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {\"wan1\": [30.75775909423828, 6.238750457763672, 0.0, 2.3312039375305176], \"wan2\": [46.35334777832031, 7.315243244171143, 0.0, 2.4727859497070312], \"wan3\": [70.44832611083984, 10.468688011169434, 0.0, 2.549391984939575]}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"auto\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.12737924997228908, \"wan2\": 0.19959752514071757, \"wan3\": 0.3105082500695771}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {\"wan1\": [31.133258819580078, 5.681436538696289, 0.0, 2.340052604675293], \"wan2\": [46.71577835083008, 8.065763473510742, 0.0, 2.351353645324707], \"wan3\": [71.35887908935547, 10.044266700744629, 0.0, 2.444287061691284]}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"auto\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.12846910653764998, \"wan2\": 0.20082849741254163, \"wan3\": 0.3065983264748236}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {\"wan1\": [30.92125701904297, 5.940404891967773, 0.0, 2.3396942615509033], \"wan2\": [47.1607780456543, 8.128793716430664, 0.0, 2.455245018005371], \"wan3\": [71.71430969238281, 9.647185325622559, 0.0, 2.3528554439544678]}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"auto\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.13203098142568476, \"wan2\": 0.196745696076764, \"wan3\": 0.3203642113342236}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {\"wan1\": [31.471256256103516, 6.373727798461914, 0.0, 2.2715163230895996], \"wan2\": [47.09334945678711, 7.765931129455566, 0.0, 2.3699138164520264], \"wan3\": [71.65901184082031, 11.489251136779785, 0.0, 2.549562931060791]}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"auto\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.1258567300213868, \"wan2\": 0.19762475381854971, \"wan3\": 0.3061332676087247}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {\"wan1\": [30.039480209350586, 5.450933456420898, 0.0, 2.361496925354004], \"wan2\": [45.895851135253906, 7.354063510894775, 0.0, 2.3566372394561768], \"wan3\": [70.71563720703125, 9.190780639648438, 0.0, 2.262052059173584]}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"auto\", \"profile\": \"voice\"}",
+              "{\"mode\": \"manual\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.1296025221773437, \"wan2\": 0.19601420705534733, \"wan3\": 0.32074200961303573}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {\"wan1\": [29.941478729248047, 6.130112171173096, 0.0, 2.4303271770477295], \"wan2\": [46.01322937011719, 6.869215965270996, 0.0, 2.4027836322784424], \"wan3\": [70.94255828857422, 10.920626640319824, 0.0, 2.375185012817383]}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"manual\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.12449068602845811, \"wan2\": 0.19583598708444147, \"wan3\": 0.3121705292914468}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {\"wan1\": [29.874479293823242, 5.399336814880371, 0.0, 2.4302427768707275], \"wan2\": [45.060943603515625, 7.145473957061768, 0.0, 2.377152442932129], \"wan3\": [69.17778015136719, 10.684896469116211, 0.0, 2.429760456085205]}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"manual\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.11463696493709394, \"wan2\": 0.18898738006889335, \"wan3\": 0.2954285877459406}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"manual\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.11650657956909642, \"wan2\": 0.18128984545176524, \"wan3\": 0.30735802874620194}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"manual\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.11829696707988191, \"wan2\": 0.19012174914756508, \"wan3\": 0.31435653117848417}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"manual\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.11253479227785342, \"wan2\": 0.17569390601894722, \"wan3\": 0.3014620523814082}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"manual\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.1148683754448946, \"wan2\": 0.18351323122549526, \"wan3\": 0.30178647288552346}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"manual\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.11424468908734732, \"wan2\": 0.18311781084682757, \"wan3\": 0.3065963166520297}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"manual\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.1132363537726392, \"wan2\": 0.18733426011260107, \"wan3\": 0.31062597621672977}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"manual\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.11799153747357509, \"wan2\": 0.18347454484501974, \"wan3\": 0.3090583503205876}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"manual\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.153900814462945, \"wan2\": 0.29281048803482596, \"wan3\": 0.35587346594000074}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"manual\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.11935521449443792, \"wan2\": 0.18139183505367973, \"wan3\": 0.31046182676254414}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"manual\", \"action\": \"hold\", \"reason\": \"Current path remains preferred\", \"scores\": {\"wan1\": 0.11726397143137698, \"wan2\": 0.19231057013862254, \"wan3\": 0.3134106446291593}, \"source\": \"wan1\", \"target\": \"wan1\", \"profile\": \"voice\", \"degraded\": false, \"predicted\": {}, \"model_error\": \"Experimental synthetic forecast enabled on real probes; live validation pending\"}",
+              "{\"mode\": \"manual\", \"profile\": \"voice\"}",
+              "{\"mode\": \"manual\", \"backend\": \"flexiwan\", \"model_error\": null}"
+            ]
+          ]
+        ]
+      },
+      {
+        "panel": "Decision service heartbeat",
+        "status": 200,
+        "query_failed": false,
+        "frames": 1,
+        "values": [
+          [
+            [
+              2.280351
+            ]
+          ]
+        ]
+      }
+    ]
+  },
+  "flexiwan": {
+    "configured_priority": "wan1",
+    "agent_policy_readback": true,
+    "devices": [
+      {
+        "hostname": "sdw-edge-a",
+        "isApproved": true,
+        "isConnected": true
+      },
+      {
+        "hostname": "sdw-edge-b",
+        "isApproved": true,
+        "isConnected": true
+      }
+    ],
+    "configured_tunnels": 3,
+    "tunnels_configured_on_both_devices": true,
+    "unresolved_policy_intents": 0
+  },
+  "lan_ping": {
+    "observed_at_utc": "2026-10-09T13:18:50.141353+00:00",
+    "returncode": 0,
+    "transmitted": 3,
+    "received": 1,
+    "three_of_three_received": false,
+    "stdout": "PING 10.30.0.2 (10.30.0.2) 56(84) bytes of data.\n64 bytes from 10.30.0.2: icmp_seq=3 ttl=62 time=47.7 ms\n\n--- 10.30.0.2 ping statistics ---\n3 packets transmitted, 1 received, 66.6667% packet loss, time 2054ms\nrtt min/avg/max/mdev = 47.690/47.690/47.690/0.000 ms\n"
+  },
+  "verified": false,
+  "new_stream_applied_events": 0
+}

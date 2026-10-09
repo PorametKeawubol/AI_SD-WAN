@@ -1,0 +1,17 @@
+{
+  "evidence_level": "real_controller_api",
+  "controller_version": "6.3.37",
+  "timestamp": 1790860736.6659763,
+  "openapi_contract_verified": true,
+  "policy_put_get_restore": true,
+  "rule_id_preserved": true,
+  "custom_application_classifiers": 3,
+  "native_qbr_policy_put_get_restore": true,
+  "invalid_access_key_rejected": true,
+  "no_edge_preflight_refused": true,
+  "put_duration_seconds": [
+    0.2574085000087507
+  ],
+  "real_edge": false,
+  "packet_forwarding_tested": false
+}

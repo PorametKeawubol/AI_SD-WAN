@@ -1,0 +1,63 @@
+name: ai-sdwan-controller
+services:
+  mongo:
+    image: mongo:6.0.28@sha256:8b6d8f5bbedb25cb73517b65cf99f13aeb75ad5b157a56c479287a840bbad3ac
+    command: ["mongod", "--replSet", "rs", "--bind_ip_all"]
+    volumes: ["mongo-data:/data/db"]
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    networks: [backend]
+  mongo-init:
+    image: mongo:6.0.28@sha256:8b6d8f5bbedb25cb73517b65cf99f13aeb75ad5b157a56c479287a840bbad3ac
+    depends_on:
+      mongo: {condition: service_healthy}
+    entrypoint: ["mongosh", "--host", "mongo", "--quiet", "--eval"]
+    command: ["try { rs.initiate({_id:'rs',members:[{_id:0,host:'mongo:27017'}]}) } catch(e) { if (e.code !== 23) throw e }; while(!db.hello().isWritablePrimary) { sleep(500) }"]
+    networks: [backend]
+  redis:
+    image: redis:7.2.12-alpine@sha256:65748f2ea686cb0e37a008cbe7024324db1d84abf57e917e1c2ec92b5e50f602
+    command: ["redis-server", "--appendonly", "yes"]
+    volumes: ["redis-data:/data"]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+    networks: [backend]
+  mail:
+    image: axllent/mailpit:v1.27.8@sha256:6abc8e633df15eaf785cfcf38bae48e66f64beecdc03121e249d0f9ec15f0707
+    ports: ["127.0.0.1:8025:8025"]
+    networks: [backend, management]
+  seed:
+    build: {context: .., dockerfile: lab/controller.Dockerfile}
+    env_file: ["runtime/controller.env"]
+    command: ["node", "/lab/seed_controller.js"]
+    depends_on:
+      mongo-init: {condition: service_completed_successfully}
+    networks: [backend]
+  controller:
+    build: {context: .., dockerfile: lab/controller.Dockerfile}
+    env_file: ["runtime/controller.env"]
+    volumes:
+      - "./runtime/certs:/app/bin/cert.ai-lab:ro"
+      - "./runtime/logs:/app/logs"
+    ports: ["${LAB_BIND_IP:-127.0.0.1}:3443:3443"]
+    depends_on:
+      seed: {condition: service_completed_successfully}
+      redis: {condition: service_healthy}
+      mail: {condition: service_started}
+    networks: [backend, management]
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('https').get({hostname:'localhost',port:3443,path:'/api/version',ca:require('fs').readFileSync('bin/cert.ai-lab/certificate.pem')},r=>process.exit(r.statusCode===200?0:1)).on('error',()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+volumes:
+  mongo-data:
+  redis-data:
+networks:
+  backend: {internal: true}
+  management: {}

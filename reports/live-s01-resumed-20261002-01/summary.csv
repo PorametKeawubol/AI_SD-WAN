@@ -1,0 +1,5 @@
+scenario,profile,strategy,trials,measured_trials,valid_trials,invalid_trials,passed_trials,pass_rate,wilson_95,profile_passed
+S01,voice,native_priority,3,3,3,0,3,1.0,"[0.4385029682449546, 1.0]",True
+S01,voice,native_qbr,3,3,3,0,3,1.0,"[0.4385029682449546, 1.0]",True
+S01,voice,predictive_synthetic_lab,3,3,3,0,3,1.0,"[0.4385029682449546, 1.0]",True
+S01,voice,reactive,3,3,3,0,3,1.0,"[0.4385029682449546, 1.0]",True

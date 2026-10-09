@@ -1,0 +1,16 @@
+{
+  "grafana_healthy": true,
+  "ml_panel_active": true,
+  "ml_panel_value": [
+    [
+      "true"
+    ]
+  ],
+  "model_fingerprint": "b7b72bfa7c1f34be948b397c4aaebdc639093657c15b444992d8bef3b2bbfc7d",
+  "xgboost_devices": [
+    "cpu",
+    "cpu",
+    "cpu",
+    "cpu"
+  ]
+}

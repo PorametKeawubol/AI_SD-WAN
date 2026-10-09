@@ -1,0 +1,30 @@
+{
+  "evidence_level": "real_packets",
+  "complete": true,
+  "order_seed": 91001,
+  "trials": [
+    {
+      "scenario": "S08",
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": true,
+      "restored": true,
+      "sla_interval_ratio": 1.0,
+      "recovery_seconds": 3,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap"
+      ],
+      "observed_packet_intervals": 170
+    }
+  ],
+  "packet_observed_trials": 1,
+  "native_qbr_evaluated": false
+}

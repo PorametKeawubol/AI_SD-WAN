@@ -1,0 +1,94 @@
+{
+  "evidence_level": "real_packets",
+  "complete": false,
+  "coverage": {
+    "native_priority": {
+      "handled_cases_observed": [],
+      "handled_count": 0,
+      "restored_count": 0,
+      "all_16_all_3_profiles_evaluated": false
+    },
+    "native_qbr": {
+      "handled_cases_observed": [],
+      "handled_count": 0,
+      "restored_count": 0,
+      "all_16_all_3_profiles_evaluated": false
+    },
+    "predictive_synthetic_lab": {
+      "handled_cases_observed": [],
+      "handled_count": 0,
+      "restored_count": 0,
+      "all_16_all_3_profiles_evaluated": false
+    },
+    "reactive": {
+      "handled_cases_observed": [],
+      "handled_count": 0,
+      "restored_count": 0,
+      "all_16_all_3_profiles_evaluated": false
+    }
+  },
+  "summary": [
+    {
+      "scenario": "S01",
+      "profile": "voice",
+      "strategy": "native_priority",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 0,
+      "pass_rate": 0.0,
+      "wilson_95": [
+        0.0,
+        0.7934506856227626
+      ],
+      "profile_passed": false
+    },
+    {
+      "scenario": "S01",
+      "profile": "voice",
+      "strategy": "native_qbr",
+      "trials": 2,
+      "measured_trials": 2,
+      "valid_trials": 2,
+      "invalid_trials": 0,
+      "passed_trials": 2,
+      "pass_rate": 1.0,
+      "wilson_95": [
+        0.34238022750665303,
+        1.0
+      ],
+      "profile_passed": false
+    },
+    {
+      "scenario": "S01",
+      "profile": "voice",
+      "strategy": "predictive_synthetic_lab",
+      "trials": 1,
+      "measured_trials": 0,
+      "valid_trials": 0,
+      "invalid_trials": 1,
+      "passed_trials": 0,
+      "pass_rate": null,
+      "wilson_95": null,
+      "profile_passed": false
+    },
+    {
+      "scenario": "S01",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 1,
+      "invalid_trials": 0,
+      "passed_trials": 0,
+      "pass_rate": 0.0,
+      "wilson_95": [
+        0.0,
+        0.7934506856227626
+      ],
+      "profile_passed": false
+    }
+  ],
+  "native_qbr_evaluated": true
+}

@@ -1,0 +1,230 @@
+{
+  "Purpose": "Existing lab resume verification",
+  "NoNewPacketExperiments": true,
+  "ClockHelperRetriedBeforeSuccess": true,
+  "InitialStackVerificationFailedLANCheck": true,
+  "SubsequentStackVerificationPassed": true,
+  "DurationSeconds": 60,
+  "SampleCount": 7,
+  "AllChecksHealthy": true,
+  "TimestampsAdvancing": true,
+  "Checks": [
+    {
+      "ObservedAtUTC": "2026-10-07T16:16:06.6637667Z",
+      "Mode": "manual",
+      "Profile": "voice",
+      "ConfiguredPriority": "wan2",
+      "ModelLoaded": false,
+      "AllThreeUpAndFresh": true,
+      "Links": [
+        {
+          "Link": "wan1",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389761.9595149,
+          "AgeSeconds": 4.675251007080078
+        },
+        {
+          "Link": "wan2",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389761.9595149,
+          "AgeSeconds": 4.675251007080078
+        },
+        {
+          "Link": "wan3",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389761.9595149,
+          "AgeSeconds": 4.675251007080078
+        }
+      ]
+    },
+    {
+      "ObservedAtUTC": "2026-10-07T16:16:18.7308772Z",
+      "Mode": "manual",
+      "Profile": "voice",
+      "ConfiguredPriority": "wan2",
+      "ModelLoaded": false,
+      "AllThreeUpAndFresh": true,
+      "Links": [
+        {
+          "Link": "wan1",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389777.1994243,
+          "AgeSeconds": 1.4742934703826904
+        },
+        {
+          "Link": "wan2",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389777.1994243,
+          "AgeSeconds": 1.4742934703826904
+        },
+        {
+          "Link": "wan3",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389777.1994243,
+          "AgeSeconds": 1.4742934703826904
+        }
+      ]
+    },
+    {
+      "ObservedAtUTC": "2026-10-07T16:16:30.7817892Z",
+      "Mode": "manual",
+      "Profile": "voice",
+      "ConfiguredPriority": "wan2",
+      "ModelLoaded": false,
+      "AllThreeUpAndFresh": true,
+      "Links": [
+        {
+          "Link": "wan1",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389787.3031423,
+          "AgeSeconds": 3.725653886795044
+        },
+        {
+          "Link": "wan2",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389787.3031423,
+          "AgeSeconds": 3.725653886795044
+        },
+        {
+          "Link": "wan3",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389787.3031423,
+          "AgeSeconds": 3.725653886795044
+        }
+      ]
+    },
+    {
+      "ObservedAtUTC": "2026-10-07T16:16:42.8483841Z",
+      "Mode": "manual",
+      "Profile": "voice",
+      "ConfiguredPriority": "wan2",
+      "ModelLoaded": false,
+      "AllThreeUpAndFresh": true,
+      "Links": [
+        {
+          "Link": "wan1",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389802.6365218,
+          "AgeSeconds": 0.2480456829071045
+        },
+        {
+          "Link": "wan2",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389802.6365218,
+          "AgeSeconds": 0.2480456829071045
+        },
+        {
+          "Link": "wan3",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389802.6365218,
+          "AgeSeconds": 0.2480456829071045
+        }
+      ]
+    },
+    {
+      "ObservedAtUTC": "2026-10-07T16:16:54.8816582Z",
+      "Mode": "manual",
+      "Profile": "voice",
+      "ConfiguredPriority": "wan2",
+      "ModelLoaded": false,
+      "AllThreeUpAndFresh": true,
+      "Links": [
+        {
+          "Link": "wan1",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389812.8403323,
+          "AgeSeconds": 1.8883886337280273
+        },
+        {
+          "Link": "wan2",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389812.8403323,
+          "AgeSeconds": 1.8883886337280273
+        },
+        {
+          "Link": "wan3",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389812.8403323,
+          "AgeSeconds": 1.8883886337280273
+        }
+      ]
+    },
+    {
+      "ObservedAtUTC": "2026-10-07T16:17:06.9350354Z",
+      "Mode": "manual",
+      "Profile": "voice",
+      "ConfiguredPriority": "wan2",
+      "ModelLoaded": false,
+      "AllThreeUpAndFresh": true,
+      "Links": [
+        {
+          "Link": "wan1",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389823.0753043,
+          "AgeSeconds": 4.175547361373901
+        },
+        {
+          "Link": "wan2",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389823.0753043,
+          "AgeSeconds": 4.175547361373901
+        },
+        {
+          "Link": "wan3",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389823.0753043,
+          "AgeSeconds": 4.175547361373901
+        }
+      ]
+    },
+    {
+      "ObservedAtUTC": "2026-10-07T16:17:18.9800785Z",
+      "Mode": "manual",
+      "Profile": "voice",
+      "ConfiguredPriority": "wan2",
+      "ModelLoaded": false,
+      "AllThreeUpAndFresh": true,
+      "Links": [
+        {
+          "Link": "wan1",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389838.287093,
+          "AgeSeconds": 0.7384281158447266
+        },
+        {
+          "Link": "wan2",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389838.287093,
+          "AgeSeconds": 0.7384281158447266
+        },
+        {
+          "Link": "wan3",
+          "Up": true,
+          "Fresh": true,
+          "Timestamp": 1791389838.287093,
+          "AgeSeconds": 0.7384281158447266
+        }
+      ]
+    }
+  ]
+}

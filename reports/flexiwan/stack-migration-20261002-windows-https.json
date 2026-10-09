@@ -1,0 +1,92 @@
+{
+  "observed_at_utc": "2026-10-02T08:37:32.234368+00:00",
+  "tls_verification": "Windows default trusted CA store; verification enabled",
+  "freshness_checks": [
+    {
+      "observed_at_utc": "2026-10-02T08:37:36.596696+00:00",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "sample_timestamp": 1790930256.2284591,
+      "age_seconds": 0.34873080253601074
+    },
+    {
+      "observed_at_utc": "2026-10-02T08:37:48.657254+00:00",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "sample_timestamp": 1790930266.2460566,
+      "age_seconds": 2.374723196029663
+    },
+    {
+      "observed_at_utc": "2026-10-02T08:38:00.708879+00:00",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "sample_timestamp": 1790930276.185334,
+      "age_seconds": 4.565304517745972
+    },
+    {
+      "observed_at_utc": "2026-10-02T08:38:12.795746+00:00",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "sample_timestamp": 1790930291.1518092,
+      "age_seconds": 1.595979928970337
+    },
+    {
+      "observed_at_utc": "2026-10-02T08:38:24.843860+00:00",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "sample_timestamp": 1790930301.2290564,
+      "age_seconds": 3.6182942390441895
+    },
+    {
+      "observed_at_utc": "2026-10-02T08:38:36.895859+00:00",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "sample_timestamp": 1790930316.1054115,
+      "age_seconds": 0.7740499973297119
+    },
+    {
+      "observed_at_utc": "2026-10-02T08:38:48.937084+00:00",
+      "fresh_wans": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "sample_timestamp": 1790930326.0689805,
+      "age_seconds": 2.853917360305786
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "backend": "flexiwan",
+    "model_loaded": false,
+    "storage": "timescaledb"
+  },
+  "local_api_docs_and_assets": "HTTPS 200",
+  "grafana_login": "HTTPS 200",
+  "grafana_health": {
+    "database": "ok",
+    "version": "13.2.3",
+    "commit": "90ffed056f0884267356c12a0eeb72a022af53f1"
+  },
+  "grafana_datasource": "Database Connection OK",
+  "after_idempotent_resume": true,
+  "all_checks_passed": true
+}

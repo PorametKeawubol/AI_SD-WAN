@@ -1,0 +1,19 @@
+{
+  "fleximanage": {
+    "repository": "https://gitlab.com/flexiwangroup/fleximanage.git",
+    "tag": "v6.3.37",
+    "commit": "62a168daedc785706808c7be2689e208d81bf77e",
+    "openapi_sha256_lf": "4a95b529264a201d083176dfeada3707add1d5ceeba17a01518ab9a733466664"
+  },
+  "flexiagent_reference": {
+    "repository": "https://gitlab.com/flexiwangroup/flexiagent.git",
+    "tag": "v6.3.37",
+    "commit": "9d9f2c705693ffffbf703252989ec80b44f3d1f2"
+  },
+  "edge_package": {
+    "version": "6.3.35",
+    "url": "https://deb.flexiwan.com/flexiWAN/pool/main/f/flexiwan-router/flexiwan-router_6.3.35.focal_amd64.deb",
+    "sha256": "7d902afd3e80dd957d5d6163217c893ec3f55806d76c7ea7516b63bacfe0eddc",
+    "note": "6.3.37 was absent from the checked focal package index. Pinned 6.3.35 ran in two KVM VMs with controller 6.3.37, verified policy/probes and actual UDP/PCAP trials on 2026-10-01 UTC."
+  }
+}
