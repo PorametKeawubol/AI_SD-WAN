@@ -507,7 +507,7 @@
       "type": "timeseries",
       "gridPos": {
         "x": 0,
-        "y": 19,
+        "y": 30,
         "w": 12,
         "h": 8
       },
@@ -572,7 +572,7 @@
       "type": "timeseries",
       "gridPos": {
         "x": 12,
-        "y": 19,
+        "y": 30,
         "w": 12,
         "h": 8
       },
@@ -637,7 +637,7 @@
       "type": "timeseries",
       "gridPos": {
         "x": 0,
-        "y": 27,
+        "y": 38,
         "w": 12,
         "h": 8
       },
@@ -702,7 +702,7 @@
       "type": "timeseries",
       "gridPos": {
         "x": 12,
-        "y": 27,
+        "y": 38,
         "w": 12,
         "h": 8
       },
@@ -767,7 +767,7 @@
       "type": "table",
       "gridPos": {
         "x": 0,
-        "y": 35,
+        "y": 46,
         "w": 24,
         "h": 8
       },
@@ -1026,6 +1026,122 @@
           "sort": "none"
         }
       }
+    },
+    {
+      "id": 17,
+      "title": "Latest decision and reason",
+      "type": "table",
+      "gridPos": {
+        "x": 0,
+        "y": 19,
+        "w": 24,
+        "h": 4
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT payload->'last_decision'->>'action' AS action,\nupper(payload->'last_decision'->>'source') AS source,\nupper(payload->'last_decision'->>'target') AS target,\npayload->'last_decision'->>'reason' AS reason,\nupper(payload->'apply_inflight'->>'target') AS applying,\nextract(epoch from now()-updated_at)::double precision AS age_seconds\nFROM state WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND key='service_status'",
+          "format": "table",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
+    },
+    {
+      "id": 18,
+      "title": "ML 30s forecasts and measured WAN quality",
+      "type": "table",
+      "gridPos": {
+        "x": 0,
+        "y": 23,
+        "w": 24,
+        "h": 7
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT upper(wan.key) AS wan,\nCASE WHEN now() - to_timestamp((wan.value->>'timestamp')::double precision) > INTERVAL '10 seconds'\nTHEN 'STALE' WHEN (wan.value->>'up')::boolean THEN 'UP' ELSE 'DOWN' END AS status,\nCASE WHEN (wan.value->>'up')::boolean THEN (wan.value->>'latency_ms')::double precision END AS measured_rtt_ms,\n(payload->'last_decision'->'predicted'->wan.key->>0)::double precision AS forecast_rtt_30s_ms,\nCASE WHEN (wan.value->>'up')::boolean THEN (wan.value->>'jitter_ms')::double precision END AS measured_jitter_ms,\n(payload->'last_decision'->'predicted'->wan.key->>1)::double precision AS forecast_jitter_30s_ms,\n(wan.value->>'loss_pct')::double precision AS measured_loss_pct,\n(payload->'last_decision'->'predicted'->wan.key->>2)::double precision AS forecast_loss_30s_pct,\n(wan.value->>'utilization_pct')::double precision AS measured_utilization_pct,\n(payload->'last_decision'->'predicted'->wan.key->>3)::double precision AS forecast_utilization_30s_pct,\n(payload->'last_decision'->'scores'->>wan.key)::double precision AS decision_score\nFROM state CROSS JOIN LATERAL jsonb_each(payload->'telemetry') AS wan\nWHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND state.key='service_status' ORDER BY wan.key",
+          "format": "table",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "noValue": "\u2014",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "decimals": 2
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "description": "Forecasts combine the experimental XGBoost model with persistence for disabled metrics. Lower decision score is preferred among paths meeting the current SLA. Blank forecasts mean down/stale or insufficient continuous history; they are not zero. RTT/jitter are ICMP round-trip mean/stddev. Sudden-down failover is a policy rule."
     }
   ]
 }

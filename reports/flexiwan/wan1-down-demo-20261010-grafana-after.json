@@ -1,0 +1,844 @@
+{
+  "observed_at_utc": "2026-10-09T19:56:45.355036+00:00",
+  "phase": "after",
+  "tls_verified": true,
+  "range": "last 1 hour",
+  "active_stream": "live-natural-20261009-231927",
+  "dashboard_default": {
+    "text": "Latest live",
+    "value": "__latest_live__"
+  },
+  "default_panels": [
+    {
+      "id": 1,
+      "title": "WAN1 health",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "status"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 2,
+      "title": "WAN2 health",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "status"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "title": "WAN3 health",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "status"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Configured priority",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "value"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            "wan1"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Control mode",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "value"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            "auto"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Application profile",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "value"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            "voice"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 7,
+      "title": "ML model active",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "value"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            "true"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Latency",
+      "type": "timeseries",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 720,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "Time",
+            "wan1",
+            "wan2",
+            "wan3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Jitter",
+      "type": "timeseries",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 720,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "Time",
+            "wan1",
+            "wan2",
+            "wan3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Packet loss",
+      "type": "timeseries",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 720,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "Time",
+            "wan1",
+            "wan2",
+            "wan3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "WAN utilization",
+      "type": "timeseries",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 720,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "Time",
+            "wan1",
+            "wan2",
+            "wan3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Decision and approval audit",
+      "type": "table",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 100,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "time",
+            "event",
+            "detail"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Pending recommendation",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "target"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            "None"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Decision service heartbeat",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "age"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            1.408602
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Control and approvals",
+      "type": "aisdwan-controls-panel",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "live_stream"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "WAN environment (lab profiles)",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "environment"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            "Natural WAN: Fiber / Broadband / Mobile"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Latest decision and reason",
+      "type": "table",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "action",
+            "source",
+            "target",
+            "reason",
+            "applying",
+            "age_seconds"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "ML 30s forecasts and measured WAN quality",
+      "type": "table",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 3,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "wan",
+            "status",
+            "measured_rtt_ms",
+            "forecast_rtt_30s_ms",
+            "measured_jitter_ms",
+            "forecast_jitter_30s_ms",
+            "measured_loss_pct",
+            "forecast_loss_30s_pct",
+            "measured_utilization_pct",
+            "forecast_utilization_30s_pct",
+            "decision_score"
+          ]
+        }
+      ]
+    }
+  ],
+  "explicit_active_panels": [
+    {
+      "id": 1,
+      "title": "WAN1 health",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "status"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 2,
+      "title": "WAN2 health",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "status"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "title": "WAN3 health",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "status"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            1
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Configured priority",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "value"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            "wan1"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Control mode",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "value"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            "auto"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Application profile",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "value"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            "voice"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 7,
+      "title": "ML model active",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "value"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            "true"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Latency",
+      "type": "timeseries",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 720,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "Time",
+            "wan1",
+            "wan2",
+            "wan3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Jitter",
+      "type": "timeseries",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 720,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "Time",
+            "wan1",
+            "wan2",
+            "wan3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Packet loss",
+      "type": "timeseries",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 720,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "Time",
+            "wan1",
+            "wan2",
+            "wan3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "WAN utilization",
+      "type": "timeseries",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 720,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "Time",
+            "wan1",
+            "wan2",
+            "wan3"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Decision and approval audit",
+      "type": "table",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 100,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "time",
+            "event",
+            "detail"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Pending recommendation",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "target"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            "None"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Decision service heartbeat",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "age"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            3.532359
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 15,
+      "title": "Control and approvals",
+      "type": "aisdwan-controls-panel",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "live_stream"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "WAN environment (lab profiles)",
+      "type": "stat",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "environment"
+          ]
+        }
+      ],
+      "values": [
+        [
+          [
+            "Natural WAN: Fiber / Broadband / Mobile"
+          ]
+        ]
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Latest decision and reason",
+      "type": "table",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 1,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "action",
+            "source",
+            "target",
+            "reason",
+            "applying",
+            "age_seconds"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "ML 30s forecasts and measured WAN quality",
+      "type": "table",
+      "status": 200,
+      "query_failed": false,
+      "frames": 1,
+      "rows": 3,
+      "series": [
+        {
+          "name": null,
+          "fields": [
+            "wan",
+            "status",
+            "measured_rtt_ms",
+            "forecast_rtt_30s_ms",
+            "measured_jitter_ms",
+            "forecast_jitter_30s_ms",
+            "measured_loss_pct",
+            "forecast_loss_30s_pct",
+            "measured_utilization_pct",
+            "forecast_utilization_30s_pct",
+            "decision_score"
+          ]
+        }
+      ]
+    }
+  ],
+  "automatic_live_resolved_values": [
+    [
+      [
+        "live-natural-20261009-231927"
+      ]
+    ]
+  ],
+  "variable_query_failed": false,
+  "variable_fields": [
+    "__text",
+    "__value"
+  ],
+  "first_variable_option": [
+    [
+      "Latest live",
+      "__latest_live__"
+    ]
+  ],
+  "all_checks_passed": true
+}

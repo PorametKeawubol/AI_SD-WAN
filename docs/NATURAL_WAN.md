@@ -45,6 +45,8 @@ sudo .venv/bin/python -m lab.natural_wan stop
 
 ใน [Grafana](https://localhost:3000/d/ai-sdwan?var-stream=__latest_live__&from=now-15m&to=now) เลือก **Latest live** การ์ด **WAN environment (lab profiles)** แสดง `Natural WAN: Fiber / Broadband / Mobile` ขณะ heartbeat ของตัวจำลองสด หากขึ้น status stale ให้ตรวจ runner/log ก่อนสรุปว่าคืน baseline แล้ว ปุ่ม **Control and approvals** ยังใช้เปลี่ยน mode/profile และอนุมัติคำแนะนำตามสิทธิ์เดิม การเปิด–หยุด environment ใช้ CLI ด้านบน
 
+ตาราง **Latest decision and reason** และ **ML 30s forecasts and measured WAN quality** แสดง state ล่าสุดของ stream: action/reason, ค่าที่วัด, forecast ล่วงหน้า 30 วินาที และคะแนนเลือก WAN ค่าทำนายว่างเมื่อเส้น down หรือประวัติไม่เข้า sampling contract แม้การ์ด model active ยังเป็น true ได้ Forecasts ผสม XGBoost กับ persistence ตาม frozen model gate ส่วนกราฟ/audit ย้อนหลังใช้ช่วงเวลาที่เลือก ดู [การสาธิต WAN1 down พร้อม UDP จริง](../reports/flexiwan/WAN1_DOWN_DEMO.md)
+
 ## การคืนค่าและการทดลองเดิม
 
 ตัวจำลองต้องใช้ root และ marker `.ai-sdwan-owned` ตรวจ VM identity, topology และ qdisc baseline ที่รู้จักครบหก interfaces ก่อนเริ่ม เปลี่ยนเฉพาะ interfaces `a/b` ใน namespaces `sdw-wan1/2/3` เท่านั้น ใช้ `tc qdisc change` เพื่อเก็บ qdisc เดิมและ counters ต่อเนื่อง

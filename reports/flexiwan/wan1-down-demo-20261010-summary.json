@@ -1,0 +1,114 @@
+{
+  "scope": "Single authorized live demonstration; timing from real control events, application recovery from 1s UDP bins, not benchmark pass or proof of ML causality. Capture counts are large IPsec headers on namespace interface b, including packets before qdisc drop; they do not by themselves prove delivery or identify inner encrypted sessions.",
+  "injection_at_bangkok": "2026-10-10 02:50:38",
+  "restoration_at_bangkok": "2026-10-10 02:52:09",
+  "fault_duration_seconds": 90.32767271995544,
+  "first_down_decision_seconds": 5.369395732879639,
+  "decision_reason": "Current path down/stale; bypass cooldown",
+  "decision_target": "wan2",
+  "forecasts_at_down_decision": [],
+  "verified_priority_change_seconds": 20.67941117286682,
+  "adapter_duration_seconds": 15.264460031001363,
+  "verified_agent_detail": "Jobs and agent policy verified on 2 device(s)",
+  "first_ten_good_udp_bins_start_seconds_after_injection": 4.988499641418457,
+  "udp_delivery": [
+    {
+      "phase": "baseline",
+      "seconds": 10,
+      "sent": 2000,
+      "received": 2000,
+      "delivery_pct": 100.0,
+      "mean_offered_mbps": 2.0,
+      "mean_received_mbps": 2.0
+    },
+    {
+      "phase": "down",
+      "seconds": 90,
+      "sent": 18000,
+      "received": 17199,
+      "delivery_pct": 95.55,
+      "mean_offered_mbps": 2.0,
+      "mean_received_mbps": 1.911
+    },
+    {
+      "phase": "restoration",
+      "seconds": 85,
+      "sent": 16999,
+      "received": 16994,
+      "delivery_pct": 99.97058650508853,
+      "mean_offered_mbps": 1.9998823529411767,
+      "mean_received_mbps": 1.9992941176470589
+    }
+  ],
+  "pcap_evidence": [
+    {
+      "link": "wan1",
+      "bytes": 918040,
+      "sha256": "f9f01512f01e31d610d394a49290ce198b99a7b34867cf8709f1d21e3007076d",
+      "large_ipsec_packet_counts": {
+        "baseline": 5200,
+        "down": 16
+      }
+    },
+    {
+      "link": "wan2",
+      "bytes": 12034552,
+      "sha256": "f341a8288eefeea7c14514024ea7f51f0790f07b009540c0f98f0e0307b1ef57",
+      "large_ipsec_packet_counts": {
+        "down": 34520,
+        "restoration": 33858
+      }
+    },
+    {
+      "link": "wan3",
+      "bytes": 24,
+      "sha256": "9f648f8632961129ff3eebe5fba65c71316022b2739a76e11d0572043dbb6bd6",
+      "large_ipsec_packet_counts": {}
+    }
+  ],
+  "forecast_availability": {
+    "baseline": {
+      "observations": 5,
+      "model_loaded_all": true,
+      "forecast_wan_set_counts": {
+        "wan1,wan2,wan3": 5
+      }
+    },
+    "wan1_down": {
+      "observations": 45,
+      "model_loaded_all": true,
+      "forecast_wan_set_counts": {
+        "wan1,wan2,wan3": 3,
+        "no_forecasts": 30,
+        "wan2,wan3": 12
+      }
+    },
+    "restoration": {
+      "observations": 35,
+      "model_loaded_all": true,
+      "forecast_wan_set_counts": {
+        "wan2,wan3": 2,
+        "no_forecasts": 30,
+        "wan1,wan2,wan3": 3
+      }
+    },
+    "natural_resumed": {
+      "observations": 30,
+      "model_loaded_all": true,
+      "forecast_wan_set_counts": {
+        "wan1,wan2,wan3": 30
+      }
+    }
+  },
+  "all_demo_checks_passed": true,
+  "final_policy_priority": "wan2",
+  "natural_restored_active": true,
+  "final_forecast_wans": [
+    "wan1",
+    "wan2",
+    "wan3"
+  ],
+  "control_errors": [],
+  "grafana_demo_graphs_url": "https://localhost:3000/d/ai-sdwan?var-stream=live-natural-20261009-231927&from=1791575418782&to=1791575675512",
+  "raw_artifacts_linux": "/opt/ai-sdwan-lab/.work/ml-down-demo-20261010/packet-evidence"
+}

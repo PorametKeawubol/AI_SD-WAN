@@ -1,0 +1,142 @@
+{
+  "observed_at_utc": "2026-10-09T20:01:09.981100+00:00",
+  "scope": "Read-only follow-up after natural WAN resumption; automatic return to WAN1 was performed by the existing decision service, without another injected fault or forced policy write. Raw capture on idle WAN3 contains a valid PCAP header and no large application packets.",
+  "stream": "live-natural-20261009-231927",
+  "tls_verified": true,
+  "current_state": {
+    "mode": "auto",
+    "profile": "voice",
+    "confirmed_path": "wan1",
+    "model_loaded": true,
+    "telemetry": {
+      "wan1": {
+        "link_id": "wan1",
+        "timestamp": 1791576067.554976,
+        "up": true,
+        "latency_ms": 28.21,
+        "jitter_ms": 3.0425811410708508,
+        "loss_pct": 0.0,
+        "utilization_pct": 10.28091271643461,
+        "fresh": true,
+        "age_seconds": 2.0526468753814697
+      },
+      "wan2": {
+        "link_id": "wan2",
+        "timestamp": 1791576067.554976,
+        "up": true,
+        "latency_ms": 52.74,
+        "jitter_ms": 6.226523909855321,
+        "loss_pct": 0.0,
+        "utilization_pct": 15.630599453172783,
+        "fresh": true,
+        "age_seconds": 2.0526468753814697
+      },
+      "wan3": {
+        "link_id": "wan3",
+        "timestamp": 1791576067.554976,
+        "up": true,
+        "latency_ms": 116.446,
+        "jitter_ms": 12.878636729095204,
+        "loss_pct": 0.0,
+        "utilization_pct": 25.42481998255786,
+        "fresh": true,
+        "age_seconds": 2.0526468753814697
+      }
+    },
+    "last_decision": {
+      "action": "hold",
+      "source": "wan1",
+      "target": "wan1",
+      "reason": "Current path remains preferred",
+      "scores": {
+        "wan1": 0.14848486954699042,
+        "wan2": 0.24542918551209408,
+        "wan3": 1.2689007050495846
+      },
+      "predicted": {
+        "wan1": [
+          33.29225158691406,
+          5.106569290161133,
+          0.0,
+          12.481719970703125
+        ],
+        "wan2": [
+          51.81020736694336,
+          6.551709175109863,
+          0.0,
+          18.82867431640625
+        ],
+        "wan3": [
+          146.22845458984375,
+          18.444793701171875,
+          0.0,
+          28.97536277770996
+        ]
+      },
+      "degraded": false
+    },
+    "pending": null,
+    "apply_inflight": null
+  },
+  "agent_readback": true,
+  "unresolved_policy_intents": 0,
+  "events_after_demo": [
+    {
+      "timestamp": 1791575773.2755916,
+      "kind": "recommendation",
+      "payload": {
+        "id": "b6bedd6892c645a0b87c3abe2bdce554",
+        "reason": "Sustained quality improvement",
+        "source": "wan2",
+        "target": "wan1",
+        "created_at": 1791575773.2755916,
+        "expires_at": 1791575803.2755916
+      }
+    },
+    {
+      "timestamp": 1791575773.2755916,
+      "kind": "apply_intent",
+      "payload": {
+        "id": "b6bedd6892c645a0b87c3abe2bdce554",
+        "reason": "Sustained quality improvement",
+        "source": "wan2",
+        "target": "wan1",
+        "created_at": 1791575773.2755916,
+        "expires_at": 1791575803.2755916
+      }
+    },
+    {
+      "timestamp": 1791575773.2755916,
+      "kind": "apply_started",
+      "payload": {
+        "id": "b6bedd6892c645a0b87c3abe2bdce554",
+        "target": "wan1"
+      }
+    },
+    {
+      "timestamp": 1791575775.1886413,
+      "kind": "applied",
+      "payload": {
+        "id": "b6bedd6892c645a0b87c3abe2bdce554",
+        "detail": "Jobs and agent policy verified on 2 device(s)",
+        "reason": "Sustained quality improvement",
+        "source": "wan2",
+        "target": "wan1",
+        "backend": "flexiwan",
+        "created_at": 1791575773.2755916,
+        "expires_at": 1791575803.2755916,
+        "adapter_duration_seconds": 1.8655343009995704,
+        "recommendation_to_apply_seconds": 1.9130496978759766
+      }
+    }
+  ],
+  "checks": {
+    "auto_voice_and_model": true,
+    "three_fresh_up_wans": true,
+    "three_forecasts_returned": true,
+    "verified_priority_returned_to_wan1": true,
+    "natural_active": true,
+    "no_pending_inflight_or_unresolved": true
+  },
+  "all_checks_passed": true
+}

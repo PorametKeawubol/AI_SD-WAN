@@ -97,7 +97,7 @@ FROM telemetry WHERE {STREAM} AND $__timeFilter(observed_at) GROUP BY 1,2 ORDER 
             "timeseries",
             sql,
             (index % 2) * 12,
-            19 + (index // 2) * 8,
+            30 + (index // 2) * 8,
             12,
             8,
             unit=unit,
@@ -114,7 +114,7 @@ FROM telemetry WHERE {STREAM} AND $__timeFilter(observed_at) GROUP BY 1,2 ORDER 
         panels.append(item)
     sql = f"""SELECT observed_at AS time, kind AS event, payload::text AS detail
 FROM events WHERE {STREAM} AND $__timeFilter(observed_at) ORDER BY id DESC LIMIT 100"""
-    panels.append(panel(12, "Decision and approval audit", "table", sql, 0, 35, 24, 8))
+    panels.append(panel(12, "Decision and approval audit", "table", sql, 0, 46, 24, 8))
     recommendation = f"SELECT COALESCE(payload->'pending'->>'target','None') AS target FROM state WHERE {STREAM} AND key='service_status'"
     panels.append(panel(13, "Pending recommendation", "stat", recommendation, 16, 8, 8, 4))
     freshness = f"SELECT extract(epoch from now()-updated_at)::double precision AS age FROM state WHERE {STREAM} AND key='service_status'"
@@ -140,6 +140,39 @@ FROM events WHERE {STREAM} AND $__timeFilter(observed_at) ORDER BY id DESC LIMIT
         f"FROM state WHERE {STREAM} AND key='wan_environment'), 'Natural WAN not enabled') AS environment"
     )
     panels.append(panel(16, "WAN environment (lab profiles)", "stat", environment, 0, 16, 24, 3))
+    latest_decision = f"""SELECT payload->'last_decision'->>'action' AS action,
+upper(payload->'last_decision'->>'source') AS source,
+upper(payload->'last_decision'->>'target') AS target,
+payload->'last_decision'->>'reason' AS reason,
+upper(payload->'apply_inflight'->>'target') AS applying,
+extract(epoch from now()-updated_at)::double precision AS age_seconds
+FROM state WHERE {STREAM} AND key='service_status'"""
+    panels.append(panel(17, "Latest decision and reason", "table", latest_decision, 0, 19, 24, 4))
+    forecasts = f"""SELECT upper(wan.key) AS wan,
+CASE WHEN now() - to_timestamp((wan.value->>'timestamp')::double precision) > INTERVAL '10 seconds'
+THEN 'STALE' WHEN (wan.value->>'up')::boolean THEN 'UP' ELSE 'DOWN' END AS status,
+CASE WHEN (wan.value->>'up')::boolean THEN (wan.value->>'latency_ms')::double precision END AS measured_rtt_ms,
+(payload->'last_decision'->'predicted'->wan.key->>0)::double precision AS forecast_rtt_30s_ms,
+CASE WHEN (wan.value->>'up')::boolean THEN (wan.value->>'jitter_ms')::double precision END AS measured_jitter_ms,
+(payload->'last_decision'->'predicted'->wan.key->>1)::double precision AS forecast_jitter_30s_ms,
+(wan.value->>'loss_pct')::double precision AS measured_loss_pct,
+(payload->'last_decision'->'predicted'->wan.key->>2)::double precision AS forecast_loss_30s_pct,
+(wan.value->>'utilization_pct')::double precision AS measured_utilization_pct,
+(payload->'last_decision'->'predicted'->wan.key->>3)::double precision AS forecast_utilization_30s_pct,
+(payload->'last_decision'->'scores'->>wan.key)::double precision AS decision_score
+FROM state CROSS JOIN LATERAL jsonb_each(payload->'telemetry') AS wan
+WHERE {STREAM} AND state.key='service_status' ORDER BY wan.key"""
+    forecast_panel = panel(
+        18, "ML 30s forecasts and measured WAN quality", "table", forecasts, 0, 23, 24, 7
+    )
+    forecast_panel["description"] = (
+        "Forecasts combine the experimental XGBoost model with persistence for disabled metrics. "
+        "Lower decision score is preferred among paths meeting the current SLA. "
+        "Blank forecasts mean down/stale or insufficient continuous history; they are not zero. "
+        "RTT/jitter are ICMP round-trip mean/stddev. Sudden-down failover is a policy rule."
+    )
+    forecast_panel["fieldConfig"]["defaults"].update(decimals=2, noValue="—")
+    panels.append(forecast_panel)
     dashboard = {
         "uid": "ai-sdwan",
         "title": "AI SD-WAN",
@@ -178,7 +211,7 @@ FROM events WHERE {STREAM} AND $__timeFilter(observed_at) ORDER BY id DESC LIMIT
     target = ROOT / "lab/grafana/dashboards/ai-sdwan.json"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(dashboard, indent=2) + "\n", encoding="utf-8")
-    print("Built Grafana dashboard: 16 panels, read-only SQL and authenticated API controls.")
+    print("Built Grafana dashboard: 18 panels, read-only SQL and authenticated API controls.")
 
 
 if __name__ == "__main__":

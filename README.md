@@ -14,7 +14,7 @@
 | Telemetry & Decision Service | FastAPI | HTTPS API และ loop รับ probe จริง |
 | Backend / Service Logic | Python | validation, decision, approval, apply/readback |
 | Database / Time-Series DB | TimescaleDB | 2.30.2 / PostgreSQL 17; telemetry hypertable |
-| Monitoring & Dashboard | Grafana | 13.2.3; 16 panels, SQL อ่านอย่างเดียว และปุ่มควบคุมผ่าน authenticated API |
+| Monitoring & Dashboard | Grafana | 13.2.3; 18 panels, SQL อ่านอย่างเดียว และปุ่มควบคุมผ่าน authenticated API |
 | Machine Learning | XGBoost | 3.4.1; โมเดล simulation ที่ตรึงไว้; เปิด live ML แบบทดลองตามคำสั่งผู้ใช้ 8 ต.ค. 2026 |
 | Controller Integration | REST API | jobs + agent configuration readback |
 | Database Communication | SQL | psycopg 3, parameterized queries |
@@ -41,6 +41,8 @@ Grafana มี panel **Control and approvals** ใต้แถวสถานะ
 สถานะหลัง resume 9 ตุลาคม 2026: **Auto + live ML แบบ experimental / voice / configured priority WAN1** มีคำทำนายจาก probe จริงครบ 3 WAN ใน stream `live-auto-20261009-201515` และ [monitor จาก Windows](reports/flexiwan/resume-20261009-201515-windows-monitor-followup.json) ผ่าน 13/13 ตัวอย่างใน 62 วินาที [ผลตรวจ stack ซ้ำ](reports/flexiwan/resume-20261009-201515-verification-followup.json) ยืนยัน agents ทั้งสอง, tunnels 3 เส้น, SQL/Grafana, LAN ping 3/3 และ unresolved intents เป็น 0 ค่า WAN1 อ่านได้ตั้งแต่ก่อนเปิด Auto รอบนี้; decision ล่าสุดเป็น `hold` เพราะ current path remains preferred และ stream รอบนั้นยังไม่มี event `applied` โมเดลใน Linux ใช้ weights เดิมและยังไม่ได้ validate ประสิทธิภาพ ML บนข้อมูลจริง
 
 เปิด natural WAN ตามตัวเลือกผู้ใช้ใน stream ใหม่ `live-natural-20261009-231927`: **WAN1 ไฟเบอร์ / WAN2 บรอดแบนด์ / WAN3 มือถือ** คงความจุ 100/80/30 Mbps ให้ NetEm delay/jitter/burst loss และ UDP background load เปลี่ยนตามเวลาคนละจังหวะ Grafana อ่านค่าที่วัดจริงและมีการ์ด **WAN environment (lab profiles)** เพิ่ม Auto / voice และ ML แบบ experimental ยังทำงานอยู่ โปรไฟล์เป็นสมมติฐานสำหรับ lab ที่ยังไม่ได้ calibrate กับ ISP จริง ดู [วิธีเปิด–หยุดและนิยามค่าที่วัด](docs/NATURAL_WAN.md)
+
+สาธิต WAN1 down ตามคำขอผู้ใช้ 10 ตุลาคม 2026: เลือก WAN2 หลัง 5.37 วินาที, verified policy ครบสอง edges หลัง 20.68 วินาที และ UDP ฟื้นประมาณ 5 วินาที คืนลิงก์และ natural environment แล้ว ระบบกลับ WAN1 เองภายหลัง การสลับตอน down ใช้กฎ failover; decision นั้นไม่มี forecasts ที่ใช้ได้ เพิ่มตาราง **Latest decision and reason** และ **ML 30s forecasts and measured WAN quality** ใน Grafana ดู [ผลสาธิตและขอบเขตการตีความ ML](reports/flexiwan/WAN1_DOWN_DEMO.md)
 
 ดูข้อมูลสดที่ [Grafana Auto + ML](https://localhost:3000/d/ai-sdwan?var-stream=__latest_live__&from=now-1h&to=now) หน้าหลักเลือก **Data stream = Latest live** และติดตามรอบ live ล่าสุดโดยอัตโนมัติ ชื่อ stream ของแต่ละรอบยังเลือกได้เพื่อดูประวัติ หากแท็บเก่าขึ้น No data ให้เปิดลิงก์นี้เพื่อคืนทั้ง stream และช่วงเวลาเป็นข้อมูลสด ข้อมูลรอบก่อนยังอยู่ใน stream เดิม รวม `live-auto-20261008-162832` และ `live` รอบนี้ตรวจเวลา WSL ตรงกับ Windows และ sync edges ก่อนเปิด API; stream ใหม่มี future telemetry rows เป็น 0 NTP ของเฉพาะ lab ยังปิดอยู่; หลัง suspend/restart ต้องตรวจ clock ใหม่ก่อนเปิด decision API
 
