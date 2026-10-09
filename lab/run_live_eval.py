@@ -22,7 +22,7 @@ from pathlib import Path
 import httpx
 
 from lab.baselines import PROFILE_PORT, ensure_application, experiment_policy
-from lab.impairments import apply, plan, require_linux
+from lab.impairments import apply, assert_shaping_available, plan, require_linux
 from sdwan.adapters import FlexiWANAdapter
 from sdwan.domain import PROFILES
 from sdwan.flexiwan import FlexiWANConfig
@@ -741,6 +741,7 @@ def main():
         )
         return
     require_linux()
+    assert_shaping_available()
     if not args.ssh_key:
         parser.error("--ssh-key required for controlled telemetry faults")
     if not (ROOT / "lab/runtime/known_hosts").is_file():

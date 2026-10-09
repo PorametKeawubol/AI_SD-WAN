@@ -1,0 +1,161 @@
+{
+  "stream": "live-natural-20261009-231927",
+  "start_active": true,
+  "shaping_conflict_rejected": true,
+  "stop_restored_baseline": true,
+  "repeat_stop_idempotent": true,
+  "lease_released_after_stop": true,
+  "restored_qdiscs": {
+    "wan1": {
+      "a": [
+        {
+          "kind": "netem",
+          "handle": "8001:",
+          "root": true,
+          "refcnt": 17,
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.012,
+              "jitter": 0.0028,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 12500000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "ecn": false,
+            "gap": 0
+          }
+        }
+      ],
+      "b": [
+        {
+          "kind": "netem",
+          "handle": "8002:",
+          "root": true,
+          "refcnt": 17,
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.012,
+              "jitter": 0.0028,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 12500000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "ecn": false,
+            "gap": 0
+          }
+        }
+      ]
+    },
+    "wan2": {
+      "a": [
+        {
+          "kind": "netem",
+          "handle": "8003:",
+          "root": true,
+          "refcnt": 17,
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.02,
+              "jitter": 0.005,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 10000000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "ecn": false,
+            "gap": 0
+          }
+        }
+      ],
+      "b": [
+        {
+          "kind": "netem",
+          "handle": "8004:",
+          "root": true,
+          "refcnt": 17,
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.02,
+              "jitter": 0.005,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 10000000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "ecn": false,
+            "gap": 0
+          }
+        }
+      ]
+    },
+    "wan3": {
+      "a": [
+        {
+          "kind": "netem",
+          "handle": "8005:",
+          "root": true,
+          "refcnt": 17,
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.0325,
+              "jitter": 0.007,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 3750000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "ecn": false,
+            "gap": 0
+          }
+        }
+      ],
+      "b": [
+        {
+          "kind": "netem",
+          "handle": "8006:",
+          "root": true,
+          "refcnt": 17,
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.0325,
+              "jitter": 0.007,
+              "correlation": 0
+            },
+            "rate": {
+              "rate": 3750000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "ecn": false,
+            "gap": 0
+          }
+        }
+      ]
+    }
+  },
+  "all_checks_passed": true
+}

@@ -97,7 +97,7 @@ FROM telemetry WHERE {STREAM} AND $__timeFilter(observed_at) GROUP BY 1,2 ORDER 
             "timeseries",
             sql,
             (index % 2) * 12,
-            16 + (index // 2) * 8,
+            19 + (index // 2) * 8,
             12,
             8,
             unit=unit,
@@ -114,7 +114,7 @@ FROM telemetry WHERE {STREAM} AND $__timeFilter(observed_at) GROUP BY 1,2 ORDER 
         panels.append(item)
     sql = f"""SELECT observed_at AS time, kind AS event, payload::text AS detail
 FROM events WHERE {STREAM} AND $__timeFilter(observed_at) ORDER BY id DESC LIMIT 100"""
-    panels.append(panel(12, "Decision and approval audit", "table", sql, 0, 32, 24, 8))
+    panels.append(panel(12, "Decision and approval audit", "table", sql, 0, 35, 24, 8))
     recommendation = f"SELECT COALESCE(payload->'pending'->>'target','None') AS target FROM state WHERE {STREAM} AND key='service_status'"
     panels.append(panel(13, "Pending recommendation", "stat", recommendation, 16, 8, 8, 4))
     freshness = f"SELECT extract(epoch from now()-updated_at)::double precision AS age FROM state WHERE {STREAM} AND key='service_status'"
@@ -131,6 +131,15 @@ FROM events WHERE {STREAM} AND $__timeFilter(observed_at) ORDER BY id DESC LIMIT
     )
     controls["options"] = {}
     panels.append(controls)
+    environment = (
+        "SELECT COALESCE((SELECT CASE "
+        "WHEN payload->>'active'='true' AND updated_at > now()-INTERVAL '25 seconds' "
+        "THEN 'Natural WAN: Fiber / Broadband / Mobile' "
+        "WHEN payload->>'active'='true' THEN 'Natural WAN status stale (check runner)' "
+        "ELSE 'Natural WAN stopped' END "
+        f"FROM state WHERE {STREAM} AND key='wan_environment'), 'Natural WAN not enabled') AS environment"
+    )
+    panels.append(panel(16, "WAN environment (lab profiles)", "stat", environment, 0, 16, 24, 3))
     dashboard = {
         "uid": "ai-sdwan",
         "title": "AI SD-WAN",
@@ -169,7 +178,7 @@ FROM events WHERE {STREAM} AND $__timeFilter(observed_at) ORDER BY id DESC LIMIT
     target = ROOT / "lab/grafana/dashboards/ai-sdwan.json"
     target.parent.mkdir(parents=True, exist_ok=True)
     target.write_text(json.dumps(dashboard, indent=2) + "\n", encoding="utf-8")
-    print("Built Grafana dashboard: 15 panels, read-only SQL and authenticated API controls.")
+    print("Built Grafana dashboard: 16 panels, read-only SQL and authenticated API controls.")
 
 
 if __name__ == "__main__":

@@ -290,6 +290,7 @@ def prepare_main(monkeypatch, tmp_path, output):
     hosts.write_text("fixture only; no SSH connection", encoding="utf-8")
     monkeypatch.setattr(runner, "ROOT", root)
     monkeypatch.setattr(runner, "require_linux", lambda: None)
+    monkeypatch.setattr(runner, "assert_shaping_available", lambda: None)
     monkeypatch.setattr(
         runner,
         "FlexiWANConfig",

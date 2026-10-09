@@ -4,12 +4,15 @@ import argparse
 import json
 import os
 import subprocess
+from contextlib import contextmanager
+from pathlib import Path
 
 from sdwan.scenarios import scenario as resolve_scenario
 
 CAPACITY = {"wan1": 100, "wan2": 80, "wan3": 30}
 BASE_DELAY = {"wan1": 12, "wan2": 20, "wan3": 32.5}
 BASE_JITTER = {"wan1": 2.8, "wan2": 5, "wan3": 7}
+SHAPING_LOCK = Path(__file__).resolve().parents[1] / "lab/runtime/wan-shaping.lock"
 DOWN = {
     "S01": ["wan1"],
     "S02": ["wan2"],
@@ -128,20 +131,55 @@ def setup():
     apply(plan("CONTROL"))
 
 
-def apply(configuration):
+@contextmanager
+def shaping_session():
+    """Keep one owner of WAN qdiscs; the kernel releases this lease on exit."""
     require_linux()
+    import fcntl
+
+    SHAPING_LOCK.parent.mkdir(parents=True, exist_ok=True)
+    with SHAPING_LOCK.open("a+b") as handle:
+        try:
+            fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        except BlockingIOError:
+            raise RuntimeError("WAN shaping is in use; stop the natural WAN mode first") from None
+        active = True
+
+        def update(configuration, *, change=False):
+            if not active:
+                raise RuntimeError("WAN shaping lease has expired")
+            _apply(configuration, change=change)
+
+        try:
+            yield update
+        finally:
+            active = False
+            fcntl.flock(handle, fcntl.LOCK_UN)
+
+
+def assert_shaping_available():
+    with shaping_session():
+        pass
+
+
+def apply(configuration):
+    with shaping_session() as update:
+        update(configuration)
+
+
+def _apply(configuration, *, change=False):
     for link, values in configuration["wans"].items():
         if link not in CAPACITY:
             raise ValueError("Unknown WAN namespace")
         for side in ("a", "b"):
-            run(
+            arguments = [
                 "ip",
                 "netns",
                 "exec",
                 "sdw-" + link,
                 "tc",
                 "qdisc",
-                "replace",
+                "change" if change else "replace",
                 "dev",
                 side,
                 "root",
@@ -149,13 +187,22 @@ def apply(configuration):
                 "delay",
                 f"{values['delay_ms']}ms",
                 f"{values['jitter_ms']}ms",
+                f"{values.get('delay_correlation_pct', 0)}%",
                 "distribution",
                 "normal",
-                "loss",
-                f"{values['loss_pct']}%",
+            ]
+            if "burst_loss" in values:
+                arguments += ["loss", "gemodel"] + [
+                    f"{values['burst_loss'][key]}%"
+                    for key in ("enter_bad_pct", "exit_bad_pct", "bad_loss_pct", "good_loss_pct")
+                ]
+            else:
+                arguments += ["loss", f"{values['loss_pct']}%"]
+            arguments += [
                 "rate",
                 f"{values['rate_mbps']}mbit",
-            )
+            ]
+            run(*arguments)
 
 
 if __name__ == "__main__":

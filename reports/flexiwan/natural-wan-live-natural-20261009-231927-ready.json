@@ -1,0 +1,245 @@
+{
+  "observed_at_utc": "2026-10-09T16:37:59.457125+00:00",
+  "stream": "live-natural-20261009-231927",
+  "tls_verified": true,
+  "scope": "Final readiness after requiring exactly three measured WANs before activation; same illustrative profile definitions and seed as the measurements report, new driver process.",
+  "profile_source_sha256": "c89b367882b8b8e115c3dc6c9b96f8bd09f605aeb9a93a0a484269521f4cde0c",
+  "pid": 239249,
+  "seed": 20261009,
+  "profile_started_at": 1791563816.963545,
+  "samples": [
+    {
+      "mode": "auto",
+      "profile": "voice",
+      "confirmed_path": "wan1",
+      "model_loaded": true,
+      "pending": null,
+      "apply_inflight": null,
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1791563868.1269586,
+          "up": true,
+          "latency_ms": 24.594,
+          "jitter_ms": 2.9155040730549495,
+          "loss_pct": 0.0,
+          "utilization_pct": 9.833475513283682,
+          "fresh": true,
+          "age_seconds": 1.294236183166504
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1791563868.1269586,
+          "up": true,
+          "latency_ms": 47.217999999999996,
+          "jitter_ms": 5.080401165262444,
+          "loss_pct": 0.0,
+          "utilization_pct": 13.145231360596654,
+          "fresh": true,
+          "age_seconds": 1.294236183166504
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1791563868.1269586,
+          "up": true,
+          "latency_ms": 120.52173913043478,
+          "jitter_ms": 17.38888841915107,
+          "loss_pct": 8.0,
+          "utilization_pct": 22.491046397470775,
+          "fresh": true,
+          "age_seconds": 1.294236183166504
+        }
+      },
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13817943655414733,
+          "wan2": 0.23069919591889707,
+          "wan3": 3.7099762175147624
+        },
+        "predicted": {
+          "wan1": [
+            31.836368560791016,
+            4.948847770690918,
+            0.0,
+            11.929466247558594
+          ],
+          "wan2": [
+            54.15226364135742,
+            7.707700729370117,
+            0.0,
+            16.32659149169922
+          ],
+          "wan3": [
+            74.55794525146484,
+            14.008539199829102,
+            8.0,
+            18.103267669677734
+          ]
+        },
+        "degraded": false
+      }
+    },
+    {
+      "mode": "auto",
+      "profile": "voice",
+      "confirmed_path": "wan1",
+      "model_loaded": true,
+      "pending": null,
+      "apply_inflight": null,
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1791563872.922636,
+          "up": true,
+          "latency_ms": 24.303,
+          "jitter_ms": 2.999581804185377,
+          "loss_pct": 0.0,
+          "utilization_pct": 9.238596130869231,
+          "fresh": true,
+          "age_seconds": 1.505516529083252
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1791563872.922636,
+          "up": true,
+          "latency_ms": 46.963,
+          "jitter_ms": 5.3489373711046575,
+          "loss_pct": 0.0,
+          "utilization_pct": 12.778270955267516,
+          "fresh": true,
+          "age_seconds": 1.505516529083252
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1791563872.922636,
+          "up": true,
+          "latency_ms": 107.455,
+          "jitter_ms": 12.316715268284804,
+          "loss_pct": 0.0,
+          "utilization_pct": 18.7209160987877,
+          "fresh": true,
+          "age_seconds": 1.505516529083252
+        }
+      },
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.1353703262746394,
+          "wan2": 0.22663717386202306,
+          "wan3": 1.2201323385030265
+        },
+        "predicted": {
+          "wan1": [
+            30.909080505371094,
+            5.223326683044434,
+            0.0,
+            9.138021469116211
+          ],
+          "wan2": [
+            51.52113342285156,
+            7.964838981628418,
+            0.0,
+            12.609692573547363
+          ],
+          "wan3": [
+            130.619140625,
+            16.322147369384766,
+            0.0,
+            28.639808654785156
+          ]
+        },
+        "degraded": false
+      }
+    },
+    {
+      "mode": "auto",
+      "profile": "voice",
+      "confirmed_path": "wan1",
+      "model_loaded": true,
+      "pending": null,
+      "apply_inflight": null,
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1791563877.8753495,
+          "up": true,
+          "latency_ms": 24.848,
+          "jitter_ms": 2.9131934367631684,
+          "loss_pct": 0.0,
+          "utilization_pct": 9.256517873794463,
+          "fresh": true,
+          "age_seconds": 1.5591347217559814
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1791563877.8753495,
+          "up": true,
+          "latency_ms": 47.908,
+          "jitter_ms": 5.154855575086464,
+          "loss_pct": 0.0,
+          "utilization_pct": 12.682245057752626,
+          "fresh": true,
+          "age_seconds": 1.5591347217559814
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1791563877.8753495,
+          "up": true,
+          "latency_ms": 101.674,
+          "jitter_ms": 12.974256202187469,
+          "loss_pct": 0.0,
+          "utilization_pct": 18.68821642181878,
+          "fresh": true,
+          "age_seconds": 1.5591347217559814
+        }
+      },
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.1375145175696435,
+          "wan2": 0.22882303512566177,
+          "wan3": 1.2015827077907881
+        },
+        "predicted": {
+          "wan1": [
+            31.454082489013672,
+            4.979001522064209,
+            0.0,
+            11.59667682647705
+          ],
+          "wan2": [
+            52.46613311767578,
+            7.304368019104004,
+            0.0,
+            15.758852005004883
+          ],
+          "wan3": [
+            120.4089584350586,
+            17.724462509155273,
+            0.0,
+            24.11070442199707
+          ]
+        },
+        "degraded": false
+      }
+    }
+  ],
+  "checks": {
+    "latest_source_started": true,
+    "active_driver_and_three_workers": true,
+    "three_fresh_measured_wans_all_samples": true,
+    "auto_voice_model_and_three_forecasts": true,
+    "telemetry_advances_all_wans": true
+  },
+  "all_checks_passed": true
+}

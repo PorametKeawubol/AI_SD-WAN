@@ -14,7 +14,7 @@
 | Telemetry & Decision Service | FastAPI | HTTPS API และ loop รับ probe จริง |
 | Backend / Service Logic | Python | validation, decision, approval, apply/readback |
 | Database / Time-Series DB | TimescaleDB | 2.30.2 / PostgreSQL 17; telemetry hypertable |
-| Monitoring & Dashboard | Grafana | 13.2.3; 15 panels, SQL อ่านอย่างเดียว และปุ่มควบคุมผ่าน authenticated API |
+| Monitoring & Dashboard | Grafana | 13.2.3; 16 panels, SQL อ่านอย่างเดียว และปุ่มควบคุมผ่าน authenticated API |
 | Machine Learning | XGBoost | 3.4.1; โมเดล simulation ที่ตรึงไว้; เปิด live ML แบบทดลองตามคำสั่งผู้ใช้ 8 ต.ค. 2026 |
 | Controller Integration | REST API | jobs + agent configuration readback |
 | Database Communication | SQL | psycopg 3, parameterized queries |
@@ -38,7 +38,9 @@ Grafana มี panel **Control and approvals** ใต้แถวสถานะ
 
 สถานะหลัง migration เป็น **Manual / voice / configured priority WAN2** และรับ probe จริงครบ 3 WAN ตรวจ query ของ Grafana ทั้ง 14 SQL panels, datasource อ่านอย่างเดียว, agent configuration ทั้งสอง edges และ LAN ping 3/3 แล้ว Browser ของเครื่องมือตรวจภาพยังไม่เชื่อถือ CA จึงยังไม่ได้ตรวจหน้าจอแบบ interactive
 
-สถานะล่าสุด 9 ตุลาคม 2026 หลัง resume: **Auto + live ML แบบ experimental / voice / configured priority WAN1** มีคำทำนายจาก probe จริงครบ 3 WAN ใน stream `live-auto-20261009-201515` และ [monitor จาก Windows](reports/flexiwan/resume-20261009-201515-windows-monitor-followup.json) ผ่าน 13/13 ตัวอย่างใน 62 วินาที [ผลตรวจ stack ซ้ำ](reports/flexiwan/resume-20261009-201515-verification-followup.json) ยืนยัน agents ทั้งสอง, tunnels 3 เส้น, SQL/Grafana, LAN ping 3/3 และ unresolved intents เป็น 0 ค่า WAN1 อ่านได้ตั้งแต่ก่อนเปิด Auto รอบนี้; decision ล่าสุดเป็น `hold` เพราะ current path remains preferred และ stream ใหม่ยังไม่มี event `applied` โมเดลใน Linux ใช้ weights เดิมและยังไม่ได้ validate ประสิทธิภาพ ML บนข้อมูลจริง
+สถานะหลัง resume 9 ตุลาคม 2026: **Auto + live ML แบบ experimental / voice / configured priority WAN1** มีคำทำนายจาก probe จริงครบ 3 WAN ใน stream `live-auto-20261009-201515` และ [monitor จาก Windows](reports/flexiwan/resume-20261009-201515-windows-monitor-followup.json) ผ่าน 13/13 ตัวอย่างใน 62 วินาที [ผลตรวจ stack ซ้ำ](reports/flexiwan/resume-20261009-201515-verification-followup.json) ยืนยัน agents ทั้งสอง, tunnels 3 เส้น, SQL/Grafana, LAN ping 3/3 และ unresolved intents เป็น 0 ค่า WAN1 อ่านได้ตั้งแต่ก่อนเปิด Auto รอบนี้; decision ล่าสุดเป็น `hold` เพราะ current path remains preferred และ stream รอบนั้นยังไม่มี event `applied` โมเดลใน Linux ใช้ weights เดิมและยังไม่ได้ validate ประสิทธิภาพ ML บนข้อมูลจริง
+
+เปิด natural WAN ตามตัวเลือกผู้ใช้ใน stream ใหม่ `live-natural-20261009-231927`: **WAN1 ไฟเบอร์ / WAN2 บรอดแบนด์ / WAN3 มือถือ** คงความจุ 100/80/30 Mbps ให้ NetEm delay/jitter/burst loss และ UDP background load เปลี่ยนตามเวลาคนละจังหวะ Grafana อ่านค่าที่วัดจริงและมีการ์ด **WAN environment (lab profiles)** เพิ่ม Auto / voice และ ML แบบ experimental ยังทำงานอยู่ โปรไฟล์เป็นสมมติฐานสำหรับ lab ที่ยังไม่ได้ calibrate กับ ISP จริง ดู [วิธีเปิด–หยุดและนิยามค่าที่วัด](docs/NATURAL_WAN.md)
 
 ดูข้อมูลสดที่ [Grafana Auto + ML](https://localhost:3000/d/ai-sdwan?var-stream=__latest_live__&from=now-1h&to=now) หน้าหลักเลือก **Data stream = Latest live** และติดตามรอบ live ล่าสุดโดยอัตโนมัติ ชื่อ stream ของแต่ละรอบยังเลือกได้เพื่อดูประวัติ หากแท็บเก่าขึ้น No data ให้เปิดลิงก์นี้เพื่อคืนทั้ง stream และช่วงเวลาเป็นข้อมูลสด ข้อมูลรอบก่อนยังอยู่ใน stream เดิม รวม `live-auto-20261008-162832` และ `live` รอบนี้ตรวจเวลา WSL ตรงกับ Windows และ sync edges ก่อนเปิด API; stream ใหม่มี future telemetry rows เป็น 0 NTP ของเฉพาะ lab ยังปิดอยู่; หลัง suspend/restart ต้องตรวจ clock ใหม่ก่อนเปิด decision API
 
@@ -107,9 +109,10 @@ Simulation smoke ใหม่ครบ570 controller trials (38×3profiles×5str
 
 ## Live packet experiments และผลเดิม
 
-หยุด decision API ก่อนทดลองเพื่อให้มี policy writer เดียว Grafana เปิดอ่านข้อมูลต่อได้:
+หยุด natural WAN แล้วหยุด decision API ก่อนทดลองเพื่อให้ runner ใช้ baseline และมี policy writer เดียว Grafana เปิดอ่านข้อมูลต่อได้:
 
 ```powershell
+wsl --distribution AI-SDWAN-Lab --user root --cd /opt/ai-sdwan-lab --exec .venv/bin/python -m lab.natural_wan stop
 wsl --distribution AI-SDWAN-Lab --user root --cd /opt/ai-sdwan-lab --exec .venv/bin/python scripts/serve_live_lab.py --stop
 .\scripts\run-wsl-experiment.ps1 -OutputName live-s01-new -Repetitions 3
 ```
@@ -126,6 +129,7 @@ wsl --distribution AI-SDWAN-Lab --user root --cd /opt/ai-sdwan-lab --exec .venv/
 - [วิธี resume หลัง restart](reports/flexiwan/RESTART_RESUME.md)
 - [รายละเอียด implementation](docs/IMPLEMENTATION.md)
 - [Linux lab / live evaluation](docs/REAL_TESTBED.md)
+- [โหมดไฟเบอร์ / บรอดแบนด์ / มือถือ](docs/NATURAL_WAN.md)
 - [ผล packet ที่ตรึงไว้](reports/flexiwan/CONTINUATION.md)
 - [ผล simulation](reports/latest/EVALUATION.md) และ [เกณฑ์ evaluation](docs/EVALUATION_PROTOCOL.md)
 - [บันทึกงาน](docs/WORK_LOG.md)

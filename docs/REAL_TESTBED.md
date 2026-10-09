@@ -142,6 +142,14 @@ Adapter ยืนยัน policy ด้วย jobs + agent configuration ทั
 
 Rollback จะไม่ทับ concurrent admin policy change และไม่ race active queue ถ้าขาด submission acknowledgement ให้ตรวจ controller queue ก่อน การลบ journal เพื่อเขียนต่อไม่ใช่วิธีแก้ที่ปลอดภัย
 
+## Natural WAN environment
+
+โหมด [ไฟเบอร์ / บรอดแบนด์ / มือถือ](NATURAL_WAN.md) ใช้ NetEm ที่เปลี่ยนตามเวลาและ paced UDP underlay load จริง แยกจาก fixed scenario catalogue ความจุคง 100/80/30 Mbps แต่แต่ละเส้นมี calm/busy/fade และ burst loss ตามโปรไฟล์ที่ตั้งไว้ เป็นสมมติฐานของ lab ไม่ใช่ข้อมูลวัดจาก ISP จริง ตัว collector และนิยาม metrics เดิมยังใช้เหมือนเดิม
+
+เริ่มเมื่อ API ได้ probe สดครบ 3 WAN ด้วย `sudo .venv/bin/python -m lab.natural_wan start --background` ระบบค้นหา stream ปัจจุบันและบันทึก settings/history แยกจาก telemetry ดูสถานะด้วย `status` และคืน CONTROL baseline ด้วย `stop` Natural mode ถือ WAN shaping lock; impairment commands/live runner จะปฏิเสธขณะ mode นี้ทำงาน
+
+ก่อนรัน packet evaluation ให้หยุด natural mode แล้วหยุด decision API ตามลำดับ เพื่อให้การคืนค่า environment ถูกบันทึกใน stream เดิม Grafana เปิดอ่านต่อได้ หลัง API restart ให้เปิด natural mode ใหม่เพื่อผูกกับ stream ใหม่
+
 ## Live evaluation
 
 | Cases | Fault |

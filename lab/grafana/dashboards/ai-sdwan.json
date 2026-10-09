@@ -507,7 +507,7 @@
       "type": "timeseries",
       "gridPos": {
         "x": 0,
-        "y": 16,
+        "y": 19,
         "w": 12,
         "h": 8
       },
@@ -572,7 +572,7 @@
       "type": "timeseries",
       "gridPos": {
         "x": 12,
-        "y": 16,
+        "y": 19,
         "w": 12,
         "h": 8
       },
@@ -637,7 +637,7 @@
       "type": "timeseries",
       "gridPos": {
         "x": 0,
-        "y": 24,
+        "y": 27,
         "w": 12,
         "h": 8
       },
@@ -702,7 +702,7 @@
       "type": "timeseries",
       "gridPos": {
         "x": 12,
-        "y": 24,
+        "y": 27,
         "w": 12,
         "h": 8
       },
@@ -767,7 +767,7 @@
       "type": "table",
       "gridPos": {
         "x": 0,
-        "y": 32,
+        "y": 35,
         "w": 24,
         "h": 8
       },
@@ -969,6 +969,63 @@
         "overrides": []
       },
       "options": {}
+    },
+    {
+      "id": 16,
+      "title": "WAN environment (lab profiles)",
+      "type": "stat",
+      "gridPos": {
+        "x": 0,
+        "y": 16,
+        "w": 24,
+        "h": 3
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT COALESCE((SELECT CASE WHEN payload->>'active'='true' AND updated_at > now()-INTERVAL '25 seconds' THEN 'Natural WAN: Fiber / Broadband / Mobile' WHEN payload->>'active'='true' THEN 'Natural WAN status stale (check runner)' ELSE 'Natural WAN stopped' END FROM state WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND key='wan_environment'), 'Natural WAN not enabled') AS environment",
+          "format": "table",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "noValue": "NO DATA",
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "/.*/",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      }
     }
   ]
 }

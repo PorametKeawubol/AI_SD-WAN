@@ -1,0 +1,3856 @@
+{
+  "observed_at_utc": "2026-10-09T16:31:16.941030+00:00",
+  "stream": "live-natural-20261009-231927",
+  "seed": 20261009,
+  "monitor_elapsed_seconds": 60.17,
+  "evidence_scope": "Real ICMP/VPP measurements of illustrative NetEm profiles and real paced UDP underlay load in an isolated lab; no real ISP calibration, no model accuracy validation or benchmark trial result.",
+  "tls_verified": true,
+  "metric_definitions": {
+    "latency_ms": "ICMP round-trip mean",
+    "jitter_ms": "ICMP RTT population standard deviation",
+    "loss_pct": "100-packet ICMP window, one-percentage-point resolution",
+    "utilization_pct": "VPP bytes in the busier full-duplex direction / nominal 100,80,30 Mbps"
+  },
+  "profile_source_sha256": "90bfe878a8c5e9e8868ef4036247aa1321281c0b387ee34b49e342670dd45de7",
+  "profile_started_at": 1791562995.5118341,
+  "profile_events": [
+    {
+      "timestamp": 1791562995.5317671,
+      "kind": "natural_wan_started",
+      "payload": {
+        "pid": 222549,
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.05,
+            "jitter_ms": 1.55,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 20.05,
+            "jitter_ms": 4.02,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 33.918,
+            "jitter_ms": 6.355,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "active": true,
+        "stream": "live-natural-20261009-231927",
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "profiles": {
+          "wan1": "Fiber",
+          "wan2": "Broadband",
+          "wan3": "Mobile"
+        },
+        "load_mbps": {
+          "wan1": 9.225,
+          "wan2": 11.068,
+          "wan3": 4.954
+        },
+        "started_at": 1791562995.5118341,
+        "updated_at": 1791562995.529795,
+        "source_sha256": "90bfe878a8c5e9e8868ef4036247aa1321281c0b387ee34b49e342670dd45de7",
+        "elapsed_seconds": 0,
+        "profile_definitions": {
+          "wan1": {
+            "loss": {
+              "busy": [
+                0.01,
+                40,
+                10,
+                0.005
+              ],
+              "calm": [
+                0.002,
+                50,
+                5,
+                0.002
+              ]
+            },
+            "name": "Fiber",
+            "states": {
+              "busy": [
+                0.1,
+                30,
+                60,
+                7,
+                1.5,
+                12,
+                18
+              ],
+              "calm": [
+                0.9,
+                100,
+                220,
+                0,
+                0,
+                6,
+                12
+              ]
+            },
+            "delay_ms": 12,
+            "jitter_ms": 1.5,
+            "correlation": 20
+          },
+          "wan2": {
+            "loss": {
+              "busy": [
+                0.08,
+                25,
+                30,
+                0.04
+              ],
+              "calm": [
+                0.02,
+                30,
+                20,
+                0.01
+              ]
+            },
+            "name": "Broadband",
+            "states": {
+              "busy": [
+                0.4,
+                30,
+                75,
+                20,
+                6,
+                22,
+                36
+              ],
+              "calm": [
+                0.6,
+                35,
+                80,
+                0,
+                0,
+                10,
+                18
+              ]
+            },
+            "delay_ms": 20,
+            "jitter_ms": 4,
+            "correlation": 35
+          },
+          "wan3": {
+            "loss": {
+              "busy": [
+                0.2,
+                15,
+                60,
+                0.08
+              ],
+              "calm": [
+                0.08,
+                25,
+                40,
+                0.03
+              ],
+              "fade": [
+                0.6,
+                15,
+                70,
+                0.1
+              ]
+            },
+            "name": "Mobile",
+            "states": {
+              "busy": [
+                0.35,
+                20,
+                45,
+                17,
+                5,
+                18,
+                32
+              ],
+              "calm": [
+                0.5,
+                20,
+                45,
+                0,
+                0,
+                8,
+                18
+              ],
+              "fade": [
+                0.15,
+                8,
+                18,
+                42,
+                12,
+                24,
+                40
+              ]
+            },
+            "delay_ms": 32.5,
+            "jitter_ms": 6,
+            "correlation": 50
+          }
+        },
+        "calibrated_on_real_isp": false
+      }
+    },
+    {
+      "timestamp": 1791562995.5754893,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.05,
+            "jitter_ms": 1.55,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 20.05,
+            "jitter_ms": 4.02,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 33.918,
+            "jitter_ms": 6.355,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 9.225,
+          "wan2": 11.068,
+          "wan3": 4.954
+        },
+        "elapsed_seconds": 0
+      }
+    },
+    {
+      "timestamp": 1791563005.645753,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 11.989,
+            "jitter_ms": 1.577,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 19.721,
+            "jitter_ms": 4.138,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 33.609,
+            "jitter_ms": 6.277,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 9.492,
+          "wan2": 10.337,
+          "wan3": 4.087
+        },
+        "elapsed_seconds": 10.11
+      }
+    },
+    {
+      "timestamp": 1791563015.7140498,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 11.641,
+            "jitter_ms": 1.901,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 19.922,
+            "jitter_ms": 4.131,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 32.835,
+            "jitter_ms": 6.276,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 9.932,
+          "wan2": 9.6,
+          "wan3": 3.955
+        },
+        "elapsed_seconds": 20.18
+      }
+    },
+    {
+      "timestamp": 1791563025.7804606,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 11.431,
+            "jitter_ms": 2.097,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 20.335,
+            "jitter_ms": 4.239,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 47.934,
+            "jitter_ms": 10.509,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 70,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.6,
+              "good_loss_pct": 0.1
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "fade"
+        },
+        "load_mbps": {
+          "wan1": 9.041,
+          "wan2": 9.674,
+          "wan3": 5.212
+        },
+        "elapsed_seconds": 30.25
+      }
+    },
+    {
+      "timestamp": 1791563035.8487113,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 11.122,
+            "jitter_ms": 2.396,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 20.364,
+            "jitter_ms": 4.214,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 56.577,
+            "jitter_ms": 13.294,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 70,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.6,
+              "good_loss_pct": 0.1
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "fade"
+        },
+        "load_mbps": {
+          "wan1": 9.636,
+          "wan2": 10.234,
+          "wan3": 6.912
+        },
+        "elapsed_seconds": 40.32
+      }
+    },
+    {
+      "timestamp": 1791563045.919238,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 11.111,
+            "jitter_ms": 2.401,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 21.124,
+            "jitter_ms": 4.494,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 47.408,
+            "jitter_ms": 10.927,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 8.905,
+          "wan2": 9.867,
+          "wan3": 5.382
+        },
+        "elapsed_seconds": 50.38
+      }
+    },
+    {
+      "timestamp": 1791563055.9913955,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 10.967,
+            "jitter_ms": 2.541,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 21.609,
+            "jitter_ms": 4.673,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 41.893,
+            "jitter_ms": 9.277,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 9.017,
+          "wan2": 9.431,
+          "wan3": 5.236
+        },
+        "elapsed_seconds": 60.46
+      }
+    },
+    {
+      "timestamp": 1791563066.0657034,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 11.32,
+            "jitter_ms": 2.185,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 22.277,
+            "jitter_ms": 4.93,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 38.958,
+            "jitter_ms": 8.218,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 8.781,
+          "wan2": 9.937,
+          "wan3": 4.962
+        },
+        "elapsed_seconds": 70.53
+      }
+    },
+    {
+      "timestamp": 1791563076.140187,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 11.745,
+            "jitter_ms": 2.132,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 21.621,
+            "jitter_ms": 4.66,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 37.15,
+            "jitter_ms": 7.555,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 7.878,
+          "wan2": 10.545,
+          "wan3": 4.989
+        },
+        "elapsed_seconds": 80.6
+      }
+    },
+    {
+      "timestamp": 1791563086.2186773,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 11.659,
+            "jitter_ms": 2.086,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 21.388,
+            "jitter_ms": 4.563,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 35.898,
+            "jitter_ms": 7.105,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 8.331,
+          "wan2": 10.507,
+          "wan3": 4.779
+        },
+        "elapsed_seconds": 90.68
+      }
+    },
+    {
+      "timestamp": 1791563096.290988,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 11.49,
+            "jitter_ms": 2.17,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 21.442,
+            "jitter_ms": 4.582,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 34.999,
+            "jitter_ms": 6.791,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 7.916,
+          "wan2": 11.783,
+          "wan3": 4.728
+        },
+        "elapsed_seconds": 100.76
+      }
+    },
+    {
+      "timestamp": 1791563106.3592992,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 11.56,
+            "jitter_ms": 2.043,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 21.77,
+            "jitter_ms": 4.712,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 34.354,
+            "jitter_ms": 6.571,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 8.349,
+          "wan2": 11.979,
+          "wan3": 4.027
+        },
+        "elapsed_seconds": 110.83
+      }
+    },
+    {
+      "timestamp": 1791563116.4274716,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 11.599,
+            "jitter_ms": 1.969,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 21.817,
+            "jitter_ms": 4.729,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 33.101,
+            "jitter_ms": 6.522,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 8.239,
+          "wan2": 11.872,
+          "wan3": 4.27
+        },
+        "elapsed_seconds": 120.89
+      }
+    },
+    {
+      "timestamp": 1791563126.4978662,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 11.906,
+            "jitter_ms": 1.971,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 21.538,
+            "jitter_ms": 4.617,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 32.359,
+            "jitter_ms": 6.473,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 8.624,
+          "wan2": 11.298,
+          "wan3": 3.627
+        },
+        "elapsed_seconds": 130.96
+      }
+    },
+    {
+      "timestamp": 1791563136.5660515,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 11.99,
+            "jitter_ms": 1.858,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 27.67,
+            "jitter_ms": 6.633,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 31.013,
+            "jitter_ms": 6.656,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 8.571,
+          "wan2": 13.534,
+          "wan3": 3.891
+        },
+        "elapsed_seconds": 141.03
+      }
+    },
+    {
+      "timestamp": 1791563146.6325,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.119,
+            "jitter_ms": 1.858,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 32.876,
+            "jitter_ms": 8.168,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 31.16,
+            "jitter_ms": 6.52,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 7.863,
+          "wan2": 14.982,
+          "wan3": 4.021
+        },
+        "elapsed_seconds": 151.1
+      }
+    },
+    {
+      "timestamp": 1791563156.7007842,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.217,
+            "jitter_ms": 1.873,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 36.284,
+            "jitter_ms": 9.175,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 30.357,
+            "jitter_ms": 6.656,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 8.437,
+          "wan2": 19.591,
+          "wan3": 3.555
+        },
+        "elapsed_seconds": 161.17
+      }
+    },
+    {
+      "timestamp": 1791563166.769204,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.44,
+            "jitter_ms": 2.041,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 38.201,
+            "jitter_ms": 9.71,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 30.527,
+            "jitter_ms": 6.571,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 8.33,
+          "wan2": 19.187,
+          "wan3": 3.243
+        },
+        "elapsed_seconds": 171.23
+      }
+    },
+    {
+      "timestamp": 1791563176.833524,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 15.227,
+            "jitter_ms": 2.868,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 10,
+              "exit_bad_pct": 40,
+              "enter_bad_pct": 0.01,
+              "good_loss_pct": 0.005
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 39.687,
+            "jitter_ms": 10.154,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 36.025,
+            "jitter_ms": 8.407,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "busy",
+          "wan2": "busy",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 9.87,
+          "wan2": 20.027,
+          "wan3": 4.08
+        },
+        "elapsed_seconds": 181.3
+      }
+    },
+    {
+      "timestamp": 1791563186.8978283,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 17.094,
+            "jitter_ms": 3.46,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 10,
+              "exit_bad_pct": 40,
+              "enter_bad_pct": 0.01,
+              "good_loss_pct": 0.005
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 40.681,
+            "jitter_ms": 10.454,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 40.307,
+            "jitter_ms": 9.423,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "busy",
+          "wan2": "busy",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 11.475,
+          "wan2": 20.423,
+          "wan3": 4.976
+        },
+        "elapsed_seconds": 191.37
+      }
+    },
+    {
+      "timestamp": 1791563196.9642076,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 18.355,
+            "jitter_ms": 3.893,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 10,
+              "exit_bad_pct": 40,
+              "enter_bad_pct": 0.01,
+              "good_loss_pct": 0.005
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 40.954,
+            "jitter_ms": 10.5,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 43.769,
+            "jitter_ms": 10.036,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "busy",
+          "wan2": "busy",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 13.074,
+          "wan2": 21.974,
+          "wan3": 6.028
+        },
+        "elapsed_seconds": 201.43
+      }
+    },
+    {
+      "timestamp": 1791563207.0587952,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 19.043,
+            "jitter_ms": 4.043,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 10,
+              "exit_bad_pct": 40,
+              "enter_bad_pct": 0.01,
+              "good_loss_pct": 0.005
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 40.749,
+            "jitter_ms": 10.376,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 45.13,
+            "jitter_ms": 10.535,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "busy",
+          "wan2": "busy",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 14.493,
+          "wan2": 23.761,
+          "wan3": 6.776
+        },
+        "elapsed_seconds": 211.51
+      }
+    },
+    {
+      "timestamp": 1791563217.1388981,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 19.392,
+            "jitter_ms": 4.042,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 10,
+              "exit_bad_pct": 40,
+              "enter_bad_pct": 0.01,
+              "good_loss_pct": 0.005
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 33.724,
+            "jitter_ms": 8.239,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 46.813,
+            "jitter_ms": 10.736,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "busy",
+          "wan2": "calm",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 14.703,
+          "wan2": 19.031,
+          "wan3": 6.608
+        },
+        "elapsed_seconds": 221.61
+      }
+    },
+    {
+      "timestamp": 1791563227.205228,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 17.039,
+            "jitter_ms": 3.386,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 28.444,
+            "jitter_ms": 6.946,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 47.823,
+            "jitter_ms": 10.846,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 12.429,
+          "wan2": 15.443,
+          "wan3": 6.757
+        },
+        "elapsed_seconds": 231.67
+      }
+    },
+    {
+      "timestamp": 1791563237.285848,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 15.398,
+            "jitter_ms": 2.849,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 25.447,
+            "jitter_ms": 5.932,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 49.202,
+            "jitter_ms": 11.098,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 10.546,
+          "wan2": 13.488,
+          "wan3": 7.458
+        },
+        "elapsed_seconds": 241.75
+      }
+    },
+    {
+      "timestamp": 1791563247.359959,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 14.56,
+            "jitter_ms": 2.728,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 22.486,
+            "jitter_ms": 5.677,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 44.477,
+            "jitter_ms": 9.594,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 10.093,
+          "wan2": 12.366,
+          "wan3": 5.875
+        },
+        "elapsed_seconds": 251.83
+      }
+    },
+    {
+      "timestamp": 1791563257.4282594,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 14.097,
+            "jitter_ms": 2.731,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 20.605,
+            "jitter_ms": 5.495,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 41.012,
+            "jitter_ms": 8.518,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 9.36,
+          "wan2": 12.02,
+          "wan3": 5.343
+        },
+        "elapsed_seconds": 261.89
+      }
+    },
+    {
+      "timestamp": 1791563267.4966578,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 13.707,
+            "jitter_ms": 2.644,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 19.869,
+            "jitter_ms": 5.181,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 38.491,
+            "jitter_ms": 7.751,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 9.609,
+          "wan2": 11.105,
+          "wan3": 4.567
+        },
+        "elapsed_seconds": 271.96
+      }
+    },
+    {
+      "timestamp": 1791563277.5648658,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 13.412,
+            "jitter_ms": 2.546,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 19.915,
+            "jitter_ms": 4.768,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 36.507,
+            "jitter_ms": 7.166,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 10.419,
+          "wan2": 10.189,
+          "wan3": 4.736
+        },
+        "elapsed_seconds": 282.03
+      }
+    },
+    {
+      "timestamp": 1791563287.6352232,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 13.284,
+            "jitter_ms": 2.547,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 19.745,
+            "jitter_ms": 4.579,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 35.329,
+            "jitter_ms": 6.814,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 10.175,
+          "wan2": 9.443,
+          "wan3": 4.19
+        },
+        "elapsed_seconds": 292.1
+      }
+    },
+    {
+      "timestamp": 1791563297.7015584,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 13.198,
+            "jitter_ms": 2.543,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 25.762,
+            "jitter_ms": 6.905,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 32.868,
+            "jitter_ms": 6.897,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 9.008,
+          "wan2": 15.051,
+          "wan3": 4.48
+        },
+        "elapsed_seconds": 302.17
+      }
+    },
+    {
+      "timestamp": 1791563307.76578,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 13.043,
+            "jitter_ms": 2.443,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 30.102,
+            "jitter_ms": 8.246,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 37.717,
+            "jitter_ms": 8.576,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 9.168,
+          "wan2": 19.041,
+          "wan3": 6.105
+        },
+        "elapsed_seconds": 312.23
+      }
+    },
+    {
+      "timestamp": 1791563317.8324487,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.892,
+            "jitter_ms": 2.326,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 32.54,
+            "jitter_ms": 9.27,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 40.644,
+            "jitter_ms": 9.724,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 8.217,
+          "wan2": 21.758,
+          "wan3": 6.377
+        },
+        "elapsed_seconds": 322.3
+      }
+    },
+    {
+      "timestamp": 1791563327.9005702,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.907,
+            "jitter_ms": 2.365,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 34.622,
+            "jitter_ms": 9.737,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 42.111,
+            "jitter_ms": 10.578,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 8.244,
+          "wan2": 23.784,
+          "wan3": 6.845
+        },
+        "elapsed_seconds": 332.37
+      }
+    },
+    {
+      "timestamp": 1791563337.9710956,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.981,
+            "jitter_ms": 2.454,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 35.757,
+            "jitter_ms": 10.128,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 44.931,
+            "jitter_ms": 10.784,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 7.948,
+          "wan2": 22.446,
+          "wan3": 6.914
+        },
+        "elapsed_seconds": 342.44
+      }
+    },
+    {
+      "timestamp": 1791563348.037402,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.902,
+            "jitter_ms": 2.384,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 35.362,
+            "jitter_ms": 10.835,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 45.015,
+            "jitter_ms": 11.239,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 9.099,
+          "wan2": 23.197,
+          "wan3": 7.165
+        },
+        "elapsed_seconds": 352.51
+      }
+    },
+    {
+      "timestamp": 1791563358.1037612,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.826,
+            "jitter_ms": 2.315,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 35.881,
+            "jitter_ms": 10.985,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 45.338,
+            "jitter_ms": 11.467,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 9.42,
+          "wan2": 24.687,
+          "wan3": 7.365
+        },
+        "elapsed_seconds": 362.57
+      }
+    },
+    {
+      "timestamp": 1791563368.1722186,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.864,
+            "jitter_ms": 2.357,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 35.845,
+            "jitter_ms": 11.231,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 46.22,
+            "jitter_ms": 11.447,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 9.392,
+          "wan2": 22.985,
+          "wan3": 7.382
+        },
+        "elapsed_seconds": 372.64
+      }
+    },
+    {
+      "timestamp": 1791563378.2526152,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.537,
+            "jitter_ms": 2.082,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 35.791,
+            "jitter_ms": 11.403,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 41.46,
+            "jitter_ms": 9.551,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 8.487,
+          "wan2": 22.455,
+          "wan3": 6.293
+        },
+        "elapsed_seconds": 382.71
+      }
+    },
+    {
+      "timestamp": 1791563388.3247356,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.352,
+            "jitter_ms": 1.881,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 36.034,
+            "jitter_ms": 11.404,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 38.755,
+            "jitter_ms": 8.416,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 9.157,
+          "wan2": 22.102,
+          "wan3": 5.655
+        },
+        "elapsed_seconds": 392.79
+      }
+    },
+    {
+      "timestamp": 1791563398.3911092,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.33,
+            "jitter_ms": 1.849,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 36.403,
+            "jitter_ms": 11.321,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 37.626,
+            "jitter_ms": 7.835,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 9.119,
+          "wan2": 21.446,
+          "wan3": 5.554
+        },
+        "elapsed_seconds": 402.86
+      }
+    },
+    {
+      "timestamp": 1791563408.4593856,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.17,
+            "jitter_ms": 1.771,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 30.695,
+            "jitter_ms": 8.772,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 36.61,
+            "jitter_ms": 7.388,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 40,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.03
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "calm"
+        },
+        "load_mbps": {
+          "wan1": 10.081,
+          "wan2": 18.237,
+          "wan3": 5.279
+        },
+        "elapsed_seconds": 412.93
+      }
+    },
+    {
+      "timestamp": 1791563418.5255892,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.326,
+            "jitter_ms": 1.891,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 26.946,
+            "jitter_ms": 7.104,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 50.702,
+            "jitter_ms": 11.31,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 70,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.6,
+              "good_loss_pct": 0.1
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "fade"
+        },
+        "load_mbps": {
+          "wan1": 10.496,
+          "wan2": 16.478,
+          "wan3": 6.733
+        },
+        "elapsed_seconds": 422.99
+      }
+    },
+    {
+      "timestamp": 1791563428.5920682,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.724,
+            "jitter_ms": 2.267,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 24.418,
+            "jitter_ms": 6.056,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 50.279,
+            "jitter_ms": 11.202,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 10.143,
+          "wan2": 13.608,
+          "wan3": 6.822
+        },
+        "elapsed_seconds": 433.06
+      }
+    },
+    {
+      "timestamp": 1791563438.658474,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 12.993,
+            "jitter_ms": 2.521,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 23.029,
+            "jitter_ms": 5.399,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 48.955,
+            "jitter_ms": 11.394,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 9.907,
+          "wan2": 12.074,
+          "wan3": 7.393
+        },
+        "elapsed_seconds": 443.13
+      }
+    },
+    {
+      "timestamp": 1791563448.7246814,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 13.235,
+            "jitter_ms": 2.753,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 21.953,
+            "jitter_ms": 4.916,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 20,
+              "exit_bad_pct": 30,
+              "enter_bad_pct": 0.02,
+              "good_loss_pct": 0.01
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 50.071,
+            "jitter_ms": 11.488,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 60,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.2,
+              "good_loss_pct": 0.08
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "calm",
+          "wan3": "busy"
+        },
+        "load_mbps": {
+          "wan1": 10.457,
+          "wan2": 11.913,
+          "wan3": 6.98
+        },
+        "elapsed_seconds": 453.19
+      }
+    },
+    {
+      "timestamp": 1791563458.794971,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 13.335,
+            "jitter_ms": 2.847,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 28.956,
+            "jitter_ms": 6.97,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 59.089,
+            "jitter_ms": 13.884,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 70,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.6,
+              "good_loss_pct": 0.1
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "fade"
+        },
+        "load_mbps": {
+          "wan1": 9.442,
+          "wan2": 14.402,
+          "wan3": 8.2
+        },
+        "elapsed_seconds": 463.26
+      }
+    },
+    {
+      "timestamp": 1791563468.865577,
+      "kind": "natural_wan_profile",
+      "payload": {
+        "seed": 20261009,
+        "wans": {
+          "wan1": {
+            "delay_ms": 13.49,
+            "jitter_ms": 2.998,
+            "rate_mbps": 100,
+            "burst_loss": {
+              "bad_loss_pct": 5,
+              "exit_bad_pct": 50,
+              "enter_bad_pct": 0.002,
+              "good_loss_pct": 0.002
+            },
+            "delay_correlation_pct": 20
+          },
+          "wan2": {
+            "delay_ms": 33.588,
+            "jitter_ms": 8.337,
+            "rate_mbps": 80,
+            "burst_loss": {
+              "bad_loss_pct": 30,
+              "exit_bad_pct": 25,
+              "enter_bad_pct": 0.08,
+              "good_loss_pct": 0.04
+            },
+            "delay_correlation_pct": 35
+          },
+          "wan3": {
+            "delay_ms": 63.943,
+            "jitter_ms": 15.46,
+            "rate_mbps": 30,
+            "burst_loss": {
+              "bad_loss_pct": 70,
+              "exit_bad_pct": 15,
+              "enter_bad_pct": 0.6,
+              "good_loss_pct": 0.1
+            },
+            "delay_correlation_pct": 50
+          }
+        },
+        "regimes": {
+          "wan1": "calm",
+          "wan2": "busy",
+          "wan3": "fade"
+        },
+        "load_mbps": {
+          "wan1": 9.337,
+          "wan2": 15.854,
+          "wan3": 7.943
+        },
+        "elapsed_seconds": 473.33
+      }
+    }
+  ],
+  "observed_regimes": {
+    "wan1": [
+      "busy",
+      "calm"
+    ],
+    "wan2": [
+      "busy",
+      "calm"
+    ],
+    "wan3": [
+      "busy",
+      "calm",
+      "fade"
+    ]
+  },
+  "monitor_samples": [
+    {
+      "observed_at": 1791563416.8069587,
+      "telemetry": {
+        "wan1": {
+          "timestamp": 1791563412.7777731,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.027531862258911,
+          "latency_ms": 25.704,
+          "jitter_ms": 2.0079800795824645,
+          "loss_pct": 0.0,
+          "utilization_pct": 10.462340203507923
+        },
+        "wan2": {
+          "timestamp": 1791563412.7777731,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.027531862258911,
+          "latency_ms": 76.096,
+          "jitter_ms": 8.825575561967616,
+          "loss_pct": 0.0,
+          "utilization_pct": 23.667088617353524
+        },
+        "wan3": {
+          "timestamp": 1791563412.7777731,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.027531862258911,
+          "latency_ms": 81.78,
+          "jitter_ms": 8.719162803847626,
+          "loss_pct": 0.0,
+          "utilization_pct": 18.351333630926458
+        }
+      },
+      "configured_priority": "wan1",
+      "decision_action": "hold",
+      "regimes": {
+        "wan1": "calm",
+        "wan2": "calm",
+        "wan3": "calm"
+      },
+      "checks": {
+        "three_fresh_up_wans": true,
+        "auto_voice_experimental_model": true,
+        "three_forecasts": true,
+        "natural_runner_advancing": true
+      }
+    },
+    {
+      "observed_at": 1791563421.8144095,
+      "telemetry": {
+        "wan1": {
+          "timestamp": 1791563417.7886217,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.0243589878082275,
+          "latency_ms": 26.345,
+          "jitter_ms": 1.896701083460438,
+          "loss_pct": 0.0,
+          "utilization_pct": 10.465218298903068
+        },
+        "wan2": {
+          "timestamp": 1791563417.7886217,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.0243589878082275,
+          "latency_ms": 76.228,
+          "jitter_ms": 9.755091798645465,
+          "loss_pct": 0.0,
+          "utilization_pct": 23.56972625509433
+        },
+        "wan3": {
+          "timestamp": 1791563417.7886217,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.0243589878082275,
+          "latency_ms": 81.376,
+          "jitter_ms": 8.748612690021202,
+          "loss_pct": 0.0,
+          "utilization_pct": 18.25336335104594
+        }
+      },
+      "configured_priority": "wan1",
+      "decision_action": "hold",
+      "regimes": {
+        "wan1": "calm",
+        "wan2": "calm",
+        "wan3": "fade"
+      },
+      "checks": {
+        "three_fresh_up_wans": true,
+        "auto_voice_experimental_model": true,
+        "three_forecasts": true,
+        "natural_runner_advancing": true
+      }
+    },
+    {
+      "observed_at": 1791563426.8209903,
+      "telemetry": {
+        "wan1": {
+          "timestamp": 1791563423.0034776,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.816101312637329,
+          "latency_ms": 27.022,
+          "jitter_ms": 2.4496358913111966,
+          "loss_pct": 0.0,
+          "utilization_pct": 10.881158818288492
+        },
+        "wan2": {
+          "timestamp": 1791563423.0034776,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.816101312637329,
+          "latency_ms": 66.503,
+          "jitter_ms": 7.945104845123191,
+          "loss_pct": 0.0,
+          "utilization_pct": 21.328109955049136
+        },
+        "wan3": {
+          "timestamp": 1791563423.0034776,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.816101312637329,
+          "latency_ms": 117.08061224489796,
+          "jitter_ms": 12.505954974700565,
+          "loss_pct": 2.0,
+          "utilization_pct": 22.615777468621943
+        }
+      },
+      "configured_priority": "wan1",
+      "decision_action": "hold",
+      "regimes": {
+        "wan1": "calm",
+        "wan2": "calm",
+        "wan3": "fade"
+      },
+      "checks": {
+        "three_fresh_up_wans": true,
+        "auto_voice_experimental_model": true,
+        "three_forecasts": true,
+        "natural_runner_advancing": true
+      }
+    },
+    {
+      "observed_at": 1791563431.827433,
+      "telemetry": {
+        "wan1": {
+          "timestamp": 1791563427.9655988,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.8604929447174072,
+          "latency_ms": 25.892,
+          "jitter_ms": 2.404357710491515,
+          "loss_pct": 0.0,
+          "utilization_pct": 10.881055379368208
+        },
+        "wan2": {
+          "timestamp": 1791563427.9655988,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.8604929447174072,
+          "latency_ms": 66.107,
+          "jitter_ms": 8.592534608600653,
+          "loss_pct": 0.0,
+          "utilization_pct": 21.339421510636946
+        },
+        "wan3": {
+          "timestamp": 1791563427.9655988,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.8604929447174072,
+          "latency_ms": 116.84375,
+          "jitter_ms": 11.348630722286867,
+          "loss_pct": 4.0,
+          "utilization_pct": 22.64906586504877
+        }
+      },
+      "configured_priority": "wan1",
+      "decision_action": "hold",
+      "regimes": {
+        "wan1": "calm",
+        "wan2": "calm",
+        "wan3": "busy"
+      },
+      "checks": {
+        "three_fresh_up_wans": true,
+        "auto_voice_experimental_model": true,
+        "three_forecasts": true,
+        "natural_runner_advancing": true
+      }
+    },
+    {
+      "observed_at": 1791563436.8339636,
+      "telemetry": {
+        "wan1": {
+          "timestamp": 1791563432.795188,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.037572860717773,
+          "latency_ms": 27.405,
+          "jitter_ms": 3.0311507715717476,
+          "loss_pct": 0.0,
+          "utilization_pct": 10.51792660261689
+        },
+        "wan2": {
+          "timestamp": 1791563432.795188,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.037572860717773,
+          "latency_ms": 56.458,
+          "jitter_ms": 7.382671332248239,
+          "loss_pct": 0.0,
+          "utilization_pct": 17.609373990434282
+        },
+        "wan3": {
+          "timestamp": 1791563432.795188,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 4.037572860717773,
+          "latency_ms": 117.33,
+          "jitter_ms": 12.663376327030639,
+          "loss_pct": 0.0,
+          "utilization_pct": 23.50267160335752
+        }
+      },
+      "configured_priority": "wan1",
+      "decision_action": "hold",
+      "regimes": {
+        "wan1": "calm",
+        "wan2": "calm",
+        "wan3": "busy"
+      },
+      "checks": {
+        "three_fresh_up_wans": true,
+        "auto_voice_experimental_model": true,
+        "three_forecasts": true,
+        "natural_runner_advancing": true
+      }
+    },
+    {
+      "observed_at": 1791563441.839788,
+      "telemetry": {
+        "wan1": {
+          "timestamp": 1791563438.024543,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.814056396484375,
+          "latency_ms": 27.57,
+          "jitter_ms": 2.6786750456149027,
+          "loss_pct": 0.0,
+          "utilization_pct": 10.515733228416115
+        },
+        "wan2": {
+          "timestamp": 1791563438.024543,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.814056396484375,
+          "latency_ms": 57.882,
+          "jitter_ms": 7.193071388496016,
+          "loss_pct": 0.0,
+          "utilization_pct": 17.676032279990796
+        },
+        "wan3": {
+          "timestamp": 1791563438.024543,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.814056396484375,
+          "latency_ms": 117.38144329896907,
+          "jitter_ms": 12.525531286111672,
+          "loss_pct": 3.0,
+          "utilization_pct": 23.587498315620937
+        }
+      },
+      "configured_priority": "wan1",
+      "decision_action": "hold",
+      "regimes": {
+        "wan1": "calm",
+        "wan2": "calm",
+        "wan3": "busy"
+      },
+      "checks": {
+        "three_fresh_up_wans": true,
+        "auto_voice_experimental_model": true,
+        "three_forecasts": true,
+        "natural_runner_advancing": true
+      }
+    },
+    {
+      "observed_at": 1791563446.8457673,
+      "telemetry": {
+        "wan1": {
+          "timestamp": 1791563443.0196686,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.824924945831299,
+          "latency_ms": 28.379,
+          "jitter_ms": 3.006935150614326,
+          "loss_pct": 0.0,
+          "utilization_pct": 10.282083255093838
+        },
+        "wan2": {
+          "timestamp": 1791563443.0196686,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.824924945831299,
+          "latency_ms": 52.813,
+          "jitter_ms": 6.699562000608696,
+          "loss_pct": 0.0,
+          "utilization_pct": 15.646191957469455
+        },
+        "wan3": {
+          "timestamp": 1791563443.0196686,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.824924945831299,
+          "latency_ms": 116.22551020408163,
+          "jitter_ms": 13.148456192644668,
+          "loss_pct": 2.0,
+          "utilization_pct": 25.283915747234058
+        }
+      },
+      "configured_priority": "wan1",
+      "decision_action": "hold",
+      "regimes": {
+        "wan1": "calm",
+        "wan2": "calm",
+        "wan3": "busy"
+      },
+      "checks": {
+        "three_fresh_up_wans": true,
+        "auto_voice_experimental_model": true,
+        "three_forecasts": true,
+        "natural_runner_advancing": true
+      }
+    },
+    {
+      "observed_at": 1791563451.8520894,
+      "telemetry": {
+        "wan1": {
+          "timestamp": 1791563447.9434032,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.907573938369751,
+          "latency_ms": 27.815,
+          "jitter_ms": 2.8141917134410015,
+          "loss_pct": 0.0,
+          "utilization_pct": 10.25144110706315
+        },
+        "wan2": {
+          "timestamp": 1791563447.9434032,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.907573938369751,
+          "latency_ms": 52.491,
+          "jitter_ms": 6.198388419581335,
+          "loss_pct": 0.0,
+          "utilization_pct": 15.628477312547616
+        },
+        "wan3": {
+          "timestamp": 1791563447.9434032,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.907573938369751,
+          "latency_ms": 115.11836734693877,
+          "jitter_ms": 14.312235003794193,
+          "loss_pct": 2.0,
+          "utilization_pct": 25.52321086844418
+        }
+      },
+      "configured_priority": "wan1",
+      "decision_action": "hold",
+      "regimes": {
+        "wan1": "calm",
+        "wan2": "calm",
+        "wan3": "busy"
+      },
+      "checks": {
+        "three_fresh_up_wans": true,
+        "auto_voice_experimental_model": true,
+        "three_forecasts": true,
+        "natural_runner_advancing": true
+      }
+    },
+    {
+      "observed_at": 1791563456.858456,
+      "telemetry": {
+        "wan1": {
+          "timestamp": 1791563453.0271795,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.8301968574523926,
+          "latency_ms": 29.557,
+          "jitter_ms": 3.820059030957506,
+          "loss_pct": 0.0,
+          "utilization_pct": 10.834091927531766
+        },
+        "wan2": {
+          "timestamp": 1791563453.0271795,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.8301968574523926,
+          "latency_ms": 50.214,
+          "jitter_ms": 5.309482460654711,
+          "loss_pct": 0.0,
+          "utilization_pct": 15.41446430947564
+        },
+        "wan3": {
+          "timestamp": 1791563453.0271795,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.8301968574523926,
+          "latency_ms": 117.41414141414141,
+          "jitter_ms": 12.95712440118095,
+          "loss_pct": 1.0,
+          "utilization_pct": 23.8354551879246
+        }
+      },
+      "configured_priority": "wan1",
+      "decision_action": "hold",
+      "regimes": {
+        "wan1": "calm",
+        "wan2": "calm",
+        "wan3": "busy"
+      },
+      "checks": {
+        "three_fresh_up_wans": true,
+        "auto_voice_experimental_model": true,
+        "three_forecasts": true,
+        "natural_runner_advancing": true
+      }
+    },
+    {
+      "observed_at": 1791563461.866279,
+      "telemetry": {
+        "wan1": {
+          "timestamp": 1791563458.037421,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.827373743057251,
+          "latency_ms": 28.999,
+          "jitter_ms": 3.224453286993006,
+          "loss_pct": 0.0,
+          "utilization_pct": 10.81459646267534
+        },
+        "wan2": {
+          "timestamp": 1791563458.037421,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.827373743057251,
+          "latency_ms": 49.364,
+          "jitter_ms": 5.568222696695957,
+          "loss_pct": 0.0,
+          "utilization_pct": 15.403562138465688
+        },
+        "wan3": {
+          "timestamp": 1791563458.037421,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.827373743057251,
+          "latency_ms": 115.16326530612245,
+          "jitter_ms": 12.206425104328124,
+          "loss_pct": 2.0,
+          "utilization_pct": 23.904443916631436
+        }
+      },
+      "configured_priority": "wan1",
+      "decision_action": "hold",
+      "regimes": {
+        "wan1": "calm",
+        "wan2": "busy",
+        "wan3": "fade"
+      },
+      "checks": {
+        "three_fresh_up_wans": true,
+        "auto_voice_experimental_model": true,
+        "three_forecasts": true,
+        "natural_runner_advancing": true
+      }
+    },
+    {
+      "observed_at": 1791563466.8729646,
+      "telemetry": {
+        "wan1": {
+          "timestamp": 1791563463.0880718,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.7833666801452637,
+          "latency_ms": 29.149,
+          "jitter_ms": 2.9417850023412657,
+          "loss_pct": 0.0,
+          "utilization_pct": 9.811772251688364
+        },
+        "wan2": {
+          "timestamp": 1791563463.0880718,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.7833666801452637,
+          "latency_ms": 68.504,
+          "jitter_ms": 8.082968761538051,
+          "loss_pct": 0.0,
+          "utilization_pct": 18.624305911049472
+        },
+        "wan3": {
+          "timestamp": 1791563463.0880718,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.7833666801452637,
+          "latency_ms": 141.03061224489795,
+          "jitter_ms": 15.54417935659693,
+          "loss_pct": 2.0,
+          "utilization_pct": 27.49733004951557
+        }
+      },
+      "configured_priority": "wan1",
+      "decision_action": "hold",
+      "regimes": {
+        "wan1": "calm",
+        "wan2": "busy",
+        "wan3": "fade"
+      },
+      "checks": {
+        "three_fresh_up_wans": true,
+        "auto_voice_experimental_model": true,
+        "three_forecasts": true,
+        "natural_runner_advancing": true
+      }
+    },
+    {
+      "observed_at": 1791563471.8804567,
+      "telemetry": {
+        "wan1": {
+          "timestamp": 1791563468.126525,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.7521047592163086,
+          "latency_ms": 28.985,
+          "jitter_ms": 3.145230516194322,
+          "loss_pct": 0.0,
+          "utilization_pct": 9.790718904064255
+        },
+        "wan2": {
+          "timestamp": 1791563468.126525,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.7521047592163086,
+          "latency_ms": 68.45555555555555,
+          "jitter_ms": 7.358390005920915,
+          "loss_pct": 1.0,
+          "utilization_pct": 18.595281163509654
+        },
+        "wan3": {
+          "timestamp": 1791563468.126525,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.7521047592163086,
+          "latency_ms": 144.51063829787233,
+          "jitter_ms": 15.72621113345018,
+          "loss_pct": 6.0,
+          "utilization_pct": 27.324267290041494
+        }
+      },
+      "configured_priority": "wan1",
+      "decision_action": "hold",
+      "regimes": {
+        "wan1": "calm",
+        "wan2": "busy",
+        "wan3": "fade"
+      },
+      "checks": {
+        "three_fresh_up_wans": true,
+        "auto_voice_experimental_model": true,
+        "three_forecasts": true,
+        "natural_runner_advancing": true
+      }
+    },
+    {
+      "observed_at": 1791563476.8876605,
+      "telemetry": {
+        "wan1": {
+          "timestamp": 1791563473.099185,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.787048578262329,
+          "latency_ms": 29.57,
+          "jitter_ms": 3.69949996621165,
+          "loss_pct": 0.0,
+          "utilization_pct": 9.671199144188153
+        },
+        "wan2": {
+          "timestamp": 1791563473.099185,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.787048578262329,
+          "latency_ms": 80.971,
+          "jitter_ms": 9.267732138986323,
+          "loss_pct": 0.0,
+          "utilization_pct": 20.509787336949117
+        },
+        "wan3": {
+          "timestamp": 1791563473.099185,
+          "fresh": true,
+          "up": true,
+          "age_seconds": 3.787048578262329,
+          "latency_ms": 151.89285714285714,
+          "jitter_ms": 18.11078201431589,
+          "loss_pct": 16.0,
+          "utilization_pct": 26.897706216255823
+        }
+      },
+      "configured_priority": "wan1",
+      "decision_action": "hold",
+      "regimes": {
+        "wan1": "calm",
+        "wan2": "busy",
+        "wan3": "fade"
+      },
+      "checks": {
+        "three_fresh_up_wans": true,
+        "auto_voice_experimental_model": true,
+        "three_forecasts": true,
+        "natural_runner_advancing": true
+      }
+    }
+  ],
+  "measured_summary_since_runner_start": [
+    {
+      "link_id": "wan1",
+      "samples": 96,
+      "avg_rtt_ms": 28.664413089225594,
+      "min_rtt_ms": 24.264,
+      "max_rtt_ms": 43.97,
+      "avg_rtt_stddev_ms": 2.964865010306259,
+      "min_rtt_stddev_ms": 1.678272921785965,
+      "max_rtt_stddev_ms": 5.268170365506415,
+      "avg_loss_pct": 0.020833333333333332,
+      "max_loss_pct": 1.0,
+      "avg_utilization_pct": 9.931793339856407,
+      "min_utilization_pct": 8.164434138779955,
+      "max_utilization_pct": 15.279119465984763,
+      "all_samples_up": true
+    },
+    {
+      "link_id": "wan2",
+      "samples": 96,
+      "avg_rtt_ms": 67.08437847493461,
+      "min_rtt_ms": 43.926,
+      "max_rtt_ms": 102.4,
+      "avg_rtt_stddev_ms": 8.018056729881854,
+      "min_rtt_stddev_ms": 4.260184385680977,
+      "max_rtt_stddev_ms": 13.734641276713418,
+      "avg_loss_pct": 0.16666666666666666,
+      "max_loss_pct": 5.0,
+      "avg_utilization_pct": 20.124676282067572,
+      "min_utilization_pct": 12.22257884522826,
+      "max_utilization_pct": 31.9429119393155,
+      "all_samples_up": true
+    },
+    {
+      "link_id": "wan3",
+      "samples": 96,
+      "avg_rtt_ms": 93.18146350361387,
+      "min_rtt_ms": 64.897,
+      "max_rtt_ms": 151.89285714285714,
+      "avg_rtt_stddev_ms": 10.412133668589139,
+      "min_rtt_stddev_ms": 6.798270064495026,
+      "max_rtt_stddev_ms": 18.11078201431589,
+      "avg_loss_pct": 1.21875,
+      "max_loss_pct": 16.0,
+      "avg_utilization_pct": 19.139693877299255,
+      "min_utilization_pct": 11.3075030452612,
+      "max_utilization_pct": 27.49733004951557,
+      "all_samples_up": true
+    }
+  ],
+  "qdiscs": {
+    "wan1": {
+      "a": [
+        {
+          "kind": "netem",
+          "handle": "8001:",
+          "root": true,
+          "refcnt": 17,
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.01349,
+              "jitter": 0.00299795,
+              "correlation": 0.2
+            },
+            "loss-gemodel": {
+              "p": 1.99999e-05,
+              "r": 0.5,
+              "1-h": 0.05,
+              "1-k": 1.99999e-05
+            },
+            "rate": {
+              "rate": 12500000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "ecn": false,
+            "gap": 0
+          },
+          "bytes": 645705888,
+          "packets": 745141,
+          "drops": 15,
+          "overlimits": 0,
+          "requeues": 0,
+          "backlog": 16894,
+          "qlen": 14
+        }
+      ],
+      "b": [
+        {
+          "kind": "netem",
+          "handle": "8002:",
+          "root": true,
+          "refcnt": 17,
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.01349,
+              "jitter": 0.00299795,
+              "correlation": 0.2
+            },
+            "loss-gemodel": {
+              "p": 1.99999e-05,
+              "r": 0.5,
+              "1-h": 0.05,
+              "1-k": 1.99999e-05
+            },
+            "rate": {
+              "rate": 12500000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "ecn": false,
+            "gap": 0
+          },
+          "bytes": 31050942,
+          "packets": 269383,
+          "drops": 1,
+          "overlimits": 0,
+          "requeues": 0,
+          "backlog": 0,
+          "qlen": 0
+        }
+      ]
+    },
+    "wan2": {
+      "a": [
+        {
+          "kind": "netem",
+          "handle": "8003:",
+          "root": true,
+          "refcnt": 17,
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.033588,
+              "jitter": 0.00833696,
+              "correlation": 0.35
+            },
+            "loss-gemodel": {
+              "p": 0.0008,
+              "r": 0.25,
+              "1-h": 0.3,
+              "1-k": 0.0004
+            },
+            "rate": {
+              "rate": 10000000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "ecn": false,
+            "gap": 0
+          },
+          "bytes": 1019527116,
+          "packets": 1034443,
+          "drops": 672,
+          "overlimits": 0,
+          "requeues": 0,
+          "backlog": 89344,
+          "qlen": 71
+        }
+      ],
+      "b": [
+        {
+          "kind": "netem",
+          "handle": "8004:",
+          "root": true,
+          "refcnt": 17,
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.033588,
+              "jitter": 0.00833696,
+              "correlation": 0.35
+            },
+            "loss-gemodel": {
+              "p": 0.0008,
+              "r": 0.25,
+              "1-h": 0.3,
+              "1-k": 0.0004
+            },
+            "rate": {
+              "rate": 10000000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "ecn": false,
+            "gap": 0
+          },
+          "bytes": 31048972,
+          "packets": 269358,
+          "drops": 13,
+          "overlimits": 0,
+          "requeues": 0,
+          "backlog": 98,
+          "qlen": 1
+        }
+      ]
+    },
+    "wan3": {
+      "a": [
+        {
+          "kind": "netem",
+          "handle": "8005:",
+          "root": true,
+          "refcnt": 17,
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.063943,
+              "jitter": 0.01546,
+              "correlation": 0.5
+            },
+            "loss-gemodel": {
+              "p": 0.006,
+              "r": 0.15,
+              "1-h": 0.7,
+              "1-k": 0.001
+            },
+            "rate": {
+              "rate": 3750000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "ecn": false,
+            "gap": 0
+          },
+          "bytes": 384752312,
+          "packets": 542971,
+          "drops": 2287,
+          "overlimits": 0,
+          "requeues": 0,
+          "backlog": 84470,
+          "qlen": 70
+        }
+      ],
+      "b": [
+        {
+          "kind": "netem",
+          "handle": "8006:",
+          "root": true,
+          "refcnt": 17,
+          "options": {
+            "limit": 1000,
+            "delay": {
+              "delay": 0.063943,
+              "jitter": 0.01546,
+              "correlation": 0.5
+            },
+            "loss-gemodel": {
+              "p": 0.006,
+              "r": 0.15,
+              "1-h": 0.7,
+              "1-k": 0.001
+            },
+            "rate": {
+              "rate": 3750000,
+              "packetoverhead": 0,
+              "cellsize": 0,
+              "celloverhead": 0
+            },
+            "ecn": false,
+            "gap": 0
+          },
+          "bytes": 31043416,
+          "packets": 269266,
+          "drops": 64,
+          "overlimits": 0,
+          "requeues": 0,
+          "backlog": 196,
+          "qlen": 2
+        }
+      ]
+    }
+  },
+  "load_workers": [
+    {
+      "pid": 222587,
+      "is_owned_load_worker": true
+    },
+    {
+      "pid": 222588,
+      "is_owned_load_worker": true
+    },
+    {
+      "pid": 222589,
+      "is_owned_load_worker": true
+    }
+  ],
+  "checks": {
+    "all_monitor_samples_healthy": true,
+    "telemetry_advances_all_wans": true,
+    "driver_and_three_workers_alive": true,
+    "source_matches_recorded_start": true,
+    "correlated_netem_and_burst_loss_all_six": true,
+    "measured_background_load_varies_all_wans": true,
+    "mobile_more_variable_than_fiber": true
+  },
+  "all_checks_passed": true
+}
