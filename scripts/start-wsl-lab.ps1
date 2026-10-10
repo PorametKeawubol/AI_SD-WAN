@@ -23,4 +23,17 @@ if (-not $KeepAliveOnly) {
     if ($LASTEXITCODE -ne 0) { throw 'The dedicated native lab Docker endpoint did not verify.' }
     & wsl.exe --distribution AI-SDWAN-Lab --user root --cd /opt/ai-sdwan-lab --exec .venv/bin/python -m lab.resume --apply
     if ($LASTEXITCODE -ne 0) { throw 'Lab resume stopped; existing resources were preserved for inspection.' }
+    if (Test-Path -LiteralPath (Join-Path $labRoot 'lab/runtime/official-gui-login.json')) {
+        # Guests may still be booting when resume returns.
+        for ($guiAttempt = 0; $guiAttempt -lt 6; $guiAttempt++) {
+            & wsl.exe --distribution AI-SDWAN-Lab --user root --cd /opt/ai-sdwan-lab --exec .venv/bin/python scripts/expose_official_edge_ui.py
+            if ($LASTEXITCODE -eq 0) { break }
+            if ($guiAttempt -lt 5) { Start-Sleep -Seconds 5 }
+        }
+        if ($LASTEXITCODE -ne 0) { throw 'The official flexiEdge GUI relay did not verify.' }
+    }
+    if (Test-Path -LiteralPath (Join-Path $labRoot 'lab/runtime/community-gui/source.zip')) {
+        & wsl.exe --distribution AI-SDWAN-Lab --user root --cd /opt/ai-sdwan-lab --exec .venv/bin/python scripts/serve_community_gui.py --background
+        if ($LASTEXITCODE -ne 0) { throw 'The community GUI trial did not verify.' }
+    }
 }

@@ -1,0 +1,56 @@
+{
+  "recorded_at_utc": "2026-10-10T16:31:45.680001+00:00",
+  "frontend": "Aikonlee/fleximanage community GUI, not the vendor GUI",
+  "commit": "1bcaeec0491acb4e70809ee098545f9912d14765",
+  "controller_version": "6.3.37",
+  "edge_version": "6.3.35",
+  "gui_url": "https://localhost:18443/devices",
+  "mode": "read-only",
+  "api_checks": {
+    "trusted_https": true,
+    "community_build_served": true,
+    "login_success": true,
+    "two_real_devices": true,
+    "three_real_tunnels": true,
+    "write_requests_blocked": true,
+    "mutating_get_blocked": true,
+    "cross_origin_blocked": true,
+    "matching_source_available": true
+  },
+  "browser_checks": {
+    "two_running_devices": true,
+    "real_device_traffic": true,
+    "three_connected_tunnels": true,
+    "real_tunnel_rtt_and_drop_rate": true,
+    "summary_fallback_visible": true,
+    "monthly_traffic_unavailable_visible": true,
+    "map_unavailable_caption_visible": true,
+    "legacy_auth_debug_pages_404": true
+  },
+  "private_credentials_absent_from_source_archive": true,
+  "source_zip_sha256": "80a63ee730b3e0fa7cc6ce0140878ff1199b6a922ce24d95fe1438598eb7411c",
+  "live_api_final": {
+    "mode": "auto",
+    "model_loaded": true,
+    "wan_count": 3,
+    "wan_fresh": {
+      "wan1": true,
+      "wan2": true,
+      "wan3": true
+    },
+    "forecasts": [
+      "wan1",
+      "wan2",
+      "wan3"
+    ],
+    "pending": null,
+    "apply_inflight": null
+  },
+  "limitations": [
+    "Configuration changes blocked",
+    "Monthly traffic unavailable; summary endpoint returns HTTP 500",
+    "Map background unavailable",
+    "Other menus not validated as a complete vendor replacement"
+  ],
+  "screenshots_saved": false
+}

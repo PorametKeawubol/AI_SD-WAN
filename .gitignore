@@ -12,6 +12,7 @@ config/flexiwan.local.json
 config/lab.local.json
 artifacts/*
 !artifacts/.gitkeep
+!artifacts/ai-sdwan-demo-20261010.mp4
 node_modules/
 *.pcap
 *.pcapng

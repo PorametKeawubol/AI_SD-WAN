@@ -1,0 +1,1338 @@
+diff --git a/frontend/public/index.html b/frontend/public/index.html
+index ec44015..cdcb1eb 100644
+--- a/frontend/public/index.html
++++ b/frontend/public/index.html
+@@ -1,37 +1,32 @@
+-<!DOCTYPE html>
+-<html lang="en">
+-  <head>
+-    <meta charset="utf-8" />
+-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+-    <meta name="theme-color" content="#000000" />
+-    <meta
+-      name="description"
+-      content="OpenSource-OpenNetworking - Open SD-WAN Management Platform"
+-    />
+-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+-    <!-- Bootstrap CSS -->
+-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+-    <!-- Font Awesome -->
+-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+-    <!-- Leaflet CSS/JS are bundled via npm (see src/index.js) rather than loaded
+-         from an external CDN, since that CDN can be slow or blocked entirely
+-         depending on the deployment's network environment. -->
+-  <title>OpenSource-OpenNetworking</title>
+-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+-  <meta http-equiv="Pragma" content="no-cache" />
+-  <meta http-equiv="Expires" content="0" />
+-  <script>
+-    // Server configuration injected by backend via API endpoint
+-    // Default empty object will be populated on page load
+-    window.__FLEXIWAN_SERVER_CONFIG__ = {};
+-  </script>
+-  </head>
+-  <body>
+-    <noscript>You need to enable JavaScript to run this app.</noscript>
+-    <div id="root"></div>
+-    <!-- Bootstrap JS -->
+-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+-  </body>
+-</html>
+\ No newline at end of file
++<!DOCTYPE html>
++<html lang="en">
++  <head>
++    <meta charset="utf-8" />
++    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
++    <meta name="viewport" content="width=device-width, initial-scale=1" />
++    <meta name="theme-color" content="#000000" />
++    <meta
++      name="description"
++      content="OpenSource-OpenNetworking - Open SD-WAN Management Platform"
++    />
++    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
++    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
++    <!-- Bootstrap, icons and Leaflet are already bundled from npm for local use. -->
++    <!-- Leaflet CSS/JS are bundled via npm (see src/index.js) rather than loaded
++         from an external CDN, since that CDN can be slow or blocked entirely
++         depending on the deployment's network environment. -->
++  <title>OpenSource-OpenNetworking</title>
++  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
++  <meta http-equiv="Pragma" content="no-cache" />
++  <meta http-equiv="Expires" content="0" />
++  <script>
++    // Server configuration injected by backend via API endpoint
++    // Default empty object will be populated on page load
++    window.__FLEXIWAN_SERVER_CONFIG__ = {};
++  </script>
++  </head>
++  <body>
++    <noscript>You need to enable JavaScript to run this app.</noscript>
++    <div id="root"></div>
++  </body>
++</html>
+diff --git a/frontend/src/pages/About.js b/frontend/src/pages/About.js
+index 2128a60..7a82ad7 100644
+--- a/frontend/src/pages/About.js
++++ b/frontend/src/pages/About.js
+@@ -32,7 +32,7 @@ const About = () => {
+         setUpgradeDeadline(response.data.upgradeDeadline || null);
+       }
+     } catch (error) {
+-      console.error('Error fetching version info:', error);
++
+     }
+   };
+ 
+diff --git a/frontend/src/pages/AddOrganization.js b/frontend/src/pages/AddOrganization.js
+index 7e25e16..b55244d 100644
+--- a/frontend/src/pages/AddOrganization.js
++++ b/frontend/src/pages/AddOrganization.js
+@@ -64,7 +64,7 @@ const AddOrganization = () => {
+       };
+ 
+       const response = await api.post('/organizations', payload);
+-      console.log('Organization created:', response.data);
++
+       
+       const newOrgId = response.data._id || response.data.id;
+       
+@@ -82,7 +82,7 @@ const AddOrganization = () => {
+           
+           setSuccess('Organization created and set as current successfully!');
+         } catch (err) {
+-          console.error('Error setting new organization as current:', err);
++
+           setSuccess('Organization created successfully, but failed to set as current.');
+         }
+       } else {
+@@ -95,7 +95,7 @@ const AddOrganization = () => {
+       }, 2000);
+ 
+     } catch (error) {
+-      console.error('Error creating organization:', error);
++
+       setError(error.message || 'Failed to create organization');
+     } finally {
+       setLoading(false);
+diff --git a/frontend/src/pages/DeviceInfo.js b/frontend/src/pages/DeviceInfo.js
+index e35a1ea..852731d 100644
+--- a/frontend/src/pages/DeviceInfo.js
++++ b/frontend/src/pages/DeviceInfo.js
+@@ -251,7 +251,7 @@ const DeviceInfo = () => {
+ 
+       setLoading(false);
+     } catch (err) {
+-      console.error(err.message);
++
+       setLoading(false);
+     }
+   }, [deviceId, apiCall]);
+@@ -262,7 +262,7 @@ const DeviceInfo = () => {
+       const response = await apiCall(`/devices/${deviceId}/cpu-optimization`);
+       if (response && response.ok) setCpuOptimization(response.data);
+     } catch (error) {
+-      console.error('Error fetching CPU optimization:', error);
++
+     }
+   }, [deviceId, apiCall]);
+ 
+@@ -277,7 +277,7 @@ const DeviceInfo = () => {
+         setStaticRoutes(transformedData);
+       }
+     } catch (error) {
+-      console.error('Error fetching static routes:', error);
++
+     }
+   }, [deviceId, apiCall]);
+ 
+@@ -483,7 +483,7 @@ const DeviceInfo = () => {
+       const response = await apiCall(`/devices/${deviceId}/bgp/status`);
+       if (response && response.ok) setBgpStatus(response.data);
+     } catch (err) {
+-      console.error('Failed to fetch BGP status:', err);
++
+     } finally {
+       setStatusLoading(false);
+     }
+@@ -495,7 +495,7 @@ const DeviceInfo = () => {
+       const response = await apiCall(`/devices/${deviceId}/routes`);
+       if (response && response.ok) setRoutingTable(response.data);
+     } catch (err) {
+-      console.error('Failed to fetch routing table:', err);
++
+     } finally {
+       setStatusLoading(false);
+     }
+@@ -507,7 +507,7 @@ const DeviceInfo = () => {
+       const response = await apiCall(`/devices/${deviceId}/statistics`);
+       if (response && response.ok) setStatistics(response.data);
+     } catch (err) {
+-      console.error('Failed to fetch statistics:', err);
++
+     } finally {
+       setStatusLoading(false);
+     }
+@@ -519,7 +519,7 @@ const DeviceInfo = () => {
+       const response = await apiCall(`/vrrp/status?device=${deviceId}`);
+       if (response && response.ok) setVrrpStatus(response.data);
+     } catch (err) {
+-      console.error('Failed to fetch VRRP status:', err);
++
+     } finally {
+       setStatusLoading(false);
+     }
+@@ -531,7 +531,7 @@ const DeviceInfo = () => {
+       const response = await apiCall(`/devices/${deviceId}/logs`);
+       if (response && response.ok) setDeviceLogs(response.data);
+     } catch (err) {
+-      console.error('Failed to fetch device logs:', err);
++
+     } finally {
+       setLogsLoading(false);
+     }
+@@ -672,7 +672,8 @@ const DeviceInfo = () => {
+   }
+ 
+   const isOnline = device?.isConnected;
+-  const isRunning = device?.state === 'running';
++  const routerState = typeof device?.state === 'string' ? device.state : device?.state?.state;
++  const isRunning = routerState === 'running';
+ 
+   return (
+     <div className="device-info-page">
+@@ -796,7 +797,8 @@ const DeviceInfo = () => {
+               <tbody>
+                 {device.interfaces?.map((iface, idx) => {
+                   const isIfaceAssigned = (interfaceChanges[iface._id]?.isAssigned !== undefined) ? interfaceChanges[iface._id].isAssigned : iface.isAssigned;
+-                  const isUp = iface.linkStatus === 'up' || (iface.IPv4 && iface.IPv4.length > 0); // Simple heuristic for green status
++                  const linkStatus = typeof iface.linkStatus === 'string' ? iface.linkStatus.trim().toLowerCase() : '';
++                  const linkStatusLabel = linkStatus ? linkStatus.charAt(0).toUpperCase() + linkStatus.slice(1) : 'Unknown';
+                   
+                   return (
+                     <tr key={iface._id || idx}>
+@@ -806,7 +808,7 @@ const DeviceInfo = () => {
+                         </button>
+                       </td>
+                       <td className="fw-bold text-dark">
+-                        <span className={`status-dot ${isUp ? 'bg-success' : 'bg-secondary'}`}></span>
++                        <span className={`status-dot ${linkStatus === 'up' ? 'bg-success' : linkStatus === 'down' ? 'bg-danger' : 'bg-secondary'}`} title={`Link status: ${linkStatusLabel}`} aria-label={`Link status: ${linkStatusLabel}`}></span>
+                         {iface.name}
+                         {iface.deviceType === 'lte' && <span className="text-muted small ms-1">(LTE)</span>}
+                         {iface.deviceType === 'wifi' && <span className="text-muted small ms-1">(WiFi)</span>}
+@@ -1779,4 +1781,4 @@ const DeviceInfo = () => {
+   );
+ };
+ 
+-export default DeviceInfo;
+\ No newline at end of file
++export default DeviceInfo;
+diff --git a/frontend/src/pages/Devices.js b/frontend/src/pages/Devices.js
+index fd91203..472bde8 100644
+--- a/frontend/src/pages/Devices.js
++++ b/frontend/src/pages/Devices.js
+@@ -9,6 +9,20 @@ import {
+ import api from '../services/api';
+ import './Devices.css';
+ 
++const formatInterfaceTraffic = (device, metric) => {
++  const counters = device.state?.ifStats;
++  if (!counters || typeof counters !== 'object' || Array.isArray(counters)) return 'N/A';
++  const interfaces = Object.values(counters);
++  if (!interfaces.length || interfaces.some(iface => !Number.isFinite(iface?.[metric]))) return 'N/A';
++  const total = interfaces.reduce((sum, iface) => sum + iface[metric], 0);
++  // flexiManage 6.3.37 maps byte counters to *_bps without multiplying by 8.
++  const isBytesRate = metric.endsWith('_bps');
++  const rate = isBytesRate ? total * 8 / 1e6 : total;
++  return Number.isFinite(rate)
++    ? rate.toLocaleString('en-US', { maximumFractionDigits: isBytesRate ? 3 : 2 })
++    : 'N/A';
++};
++
+ const Devices = () => {
+   const [devices, setDevices] = useState([]);
+   const [loading, setLoading] = useState(true);
+@@ -27,6 +41,7 @@ const Devices = () => {
+ 
+   useEffect(() => {
+     fetchDevices();
++    const timer = setInterval(fetchDevices, 30000);
+     
+     // Click outside listener for closing menu
+     const handleClickOutside = (event) => {
+@@ -35,7 +50,10 @@ const Devices = () => {
+       }
+     };
+     document.addEventListener('mousedown', handleClickOutside);
+-    return () => document.removeEventListener('mousedown', handleClickOutside);
++    return () => {
++      clearInterval(timer);
++      document.removeEventListener('mousedown', handleClickOutside);
++    };
+   }, []);
+ 
+   const fetchDevices = async () => {
+@@ -45,7 +63,7 @@ const Devices = () => {
+       setDevices(Array.isArray(response.data) ? response.data : []);
+       setError(null);
+     } catch (error) {
+-      console.error('Error fetching devices:', error);
++
+       setError('Failed to load devices');
+     } finally {
+       setLoading(false);
+@@ -109,7 +127,7 @@ const Devices = () => {
+           });
+         }
+       } catch (err) {
+-        console.error(`Action ${action} failed for ${id}:`, err);
++
+       }
+     }
+     setShowActionsMenu(false);
+@@ -286,7 +304,8 @@ const Devices = () => {
+             const id = device._id || device.id;
+             const isSelected = selectedDevices.has(id);
+             const isOnline = device.isConnected;
+-            const isRunning = device.state === 'running';
++            const routerState = typeof device.state === 'string' ? device.state : device.state?.state;
++            const isRunning = routerState === 'running';
+             const isApproved = device.isApproved;
+             const isSynced = device.sync?.state === 'synced';
+ 
+@@ -343,14 +362,14 @@ const Devices = () => {
+                 {/* Info Grid */}
+                 <div className="device-card-info-template">
+                   <div className="info-left-template text-start">
+-                    <p>vRouter: <span className={`font-bold-template ${isRunning ? 'text-green-template' : ''}`}>{isRunning ? 'Running' : 'Stopped'}</span></p>
++                    <p>vRouter: <span className={`font-bold-template ${isRunning ? 'text-green-template' : ''}`}>{routerState ? routerState.charAt(0).toUpperCase() + routerState.slice(1) : 'Unknown'}</span></p>
+                     <p>Hostname: <span className="text-dark-template">{device.hostname || 'N/A'}</span></p>
+                     <p>WAN IPs: {device.interfaces?.filter(i => i.type === 'WAN').map(i => i.IPv4 || i.PublicIP).join(', ') || 'N/A'}</p>
+                     <p className="text-xxs-template">ID: {device.machineId || id}</p>
+                   </div>
+                   <div className="info-right-template text-end">
+-                    <p>PPS: RX: {device.stats?.pps?.rx || 0} TX: {device.stats?.pps?.tx || 0}</p>
+-                    <p>BPS: RX: {device.stats?.bps?.rx || 0} TX: {device.stats?.bps?.tx || 0}</p>
++                    <p>PPS: RX: {formatInterfaceTraffic(device, 'rx_pps')} TX: {formatInterfaceTraffic(device, 'tx_pps')}</p>
++                    <p title="Sum of traffic rates over reported interfaces">Traffic (Mbps): RX: {formatInterfaceTraffic(device, 'rx_bps')} TX: {formatInterfaceTraffic(device, 'tx_bps')}</p>
+                   </div>
+                 </div>
+               </div>
+@@ -403,4 +422,4 @@ const Devices = () => {
+   );
+ };
+ 
+-export default Devices;
+\ No newline at end of file
++export default Devices;
+diff --git a/frontend/src/pages/EditOrganization.js b/frontend/src/pages/EditOrganization.js
+index 55504fd..4f610b6 100644
+--- a/frontend/src/pages/EditOrganization.js
++++ b/frontend/src/pages/EditOrganization.js
+@@ -39,7 +39,7 @@ const EditOrganization = () => {
+       
+       setLoading(false);
+     } catch (error) {
+-      console.error('Error fetching organization:', error);
++
+       setError(error.message || 'Failed to fetch organization');
+       setLoading(false);
+     }
+@@ -92,8 +92,8 @@ const EditOrganization = () => {
+         tunnelRange: tunnelRangeIP
+       };
+ 
+-      const response = await api.put(`/organizations/${id}`, payload);
+-      console.log('Organization updated:', response.data);
++      await api.put(`/organizations/${id}`, payload);
++
+       
+       setSuccess('Organization updated successfully!');
+       
+@@ -103,7 +103,7 @@ const EditOrganization = () => {
+       }, 2000);
+ 
+     } catch (error) {
+-      console.error('Error updating organization:', error);
++
+       setError(error.message || 'Failed to update organization');
+     } finally {
+       setSaving(false);
+@@ -271,4 +271,4 @@ const EditOrganization = () => {
+   );
+ };
+ 
+-export default EditOrganization;
+\ No newline at end of file
++export default EditOrganization;
+diff --git a/frontend/src/pages/Home.js b/frontend/src/pages/Home.js
+index fa4d01f..11f6641 100644
+--- a/frontend/src/pages/Home.js
++++ b/frontend/src/pages/Home.js
+@@ -8,7 +8,43 @@ import './Home.css';
+ // dev-server's /api proxy (which is only correctly configured inside docker-compose).
+ const TILE_URL_TEMPLATE = `${inferBaseURL().replace(/\/+$/, '')}/public/tiles/{z}/{x}/{y}`;
+ 
++const fallbackDeviceStats = (devices) => {
++  const state = (device) => device.state?.state || device.state;
++  const booleanCount = (key) => devices.every(device => typeof device[key] === 'boolean')
++    ? devices.filter(device => device[key]).length : null;
++  const connected = booleanCount('isConnected');
++  const approved = booleanCount('isApproved');
++  const running = connected !== null
++    && devices.every(device => !device.isConnected || typeof state(device) === 'string')
++    ? devices.filter(device => device.isConnected && state(device) === 'running').length : null;
++  // Match the official summary's WAN/route warning conditions. Missing fields are unavailable.
++  const warning = devices.every(device => typeof device.isConnected === 'boolean'
++    && (!device.isConnected || (Array.isArray(device.interfaces) && Array.isArray(device.staticroutes))))
++    ? devices.filter(device => device.isConnected && (
++      device.interfaces.some(iface => iface.type === 'WAN' && (iface.linkStatus === 'down'
++        || (iface.monitorInternet === true && iface.internetAccess !== 'yes')))
++      || device.staticroutes.some(route => route.isPending === true)
++    )).length : null;
++  return {
++    running,
++    notRunning: running === null ? null : devices.length - running,
++    connected,
++    notConnected: connected === null ? null : devices.length - connected,
++    approved,
++    notApproved: approved === null ? null : devices.length - approved,
++    warning
++  };
++};
++
++const fallbackTunnelStats = (tunnels) => {
++  const connected = tunnels.filter(tunnel => tunnel.tunnelStatus === 'Connected').length;
++  const notConnected = tunnels.filter(tunnel => tunnel.tunnelStatus === 'Not Connected').length;
++  const pending = tunnels.filter(tunnel => tunnel.tunnelStatus === 'Pending').length;
++  return { connected, notConnected, pending, unknown: tunnels.length - connected - notConnected - pending };
++};
++
+ const Home = () => {
++  const trialReadOnly = window.__FLEXIWAN_SERVER_CONFIG__?.trialReadOnly === true;
+   const [deviceStats, setDeviceStats] = useState({
+     running: 0,
+     notRunning: 0,
+@@ -27,15 +63,17 @@ const Home = () => {
+   });
+ 
+   const [trafficStats, setTrafficStats] = useState({
+-    total: '0 B',
+-    totalBytes: 0,
++    total: 'Loading...',
++    totalBytes: null,
+     lastUpdate: null
+   });
+ 
+   const [loading, setLoading] = useState(true);
+   const [error, setError] = useState(null);
++  const [notice, setNotice] = useState(null);
+ 
+-  const initializeMap = (devicesList = []) => {
++  const initializeMap = useCallback((devicesList = []) => {
++    if (trialReadOnly) return; // Map tiles require the fork's newer backend.
+     const mapElement = document.getElementById('map');
+     if (!mapElement) return;
+ 
+@@ -61,7 +99,8 @@ const Home = () => {
+           if (coords.length === 2) {
+             // Schema default is [40.416775, -3.703790] (Madrid), which is [lat, lng]
+             const [latitude, longitude] = coords;
+-            const color = device.state === 'running' ? '#16a34a' : '#dc2626';
++            const running = (device.state?.state || device.state) === 'running';
++            const color = running ? '#16a34a' : '#dc2626';
+ 
+             const icon = L.divIcon({
+               className: 'custom-map-marker',
+@@ -71,84 +110,98 @@ const Home = () => {
+             });
+ 
+             L.marker([latitude, longitude], { icon })
+-              .bindPopup(`<strong>${device.name}</strong><br/>${device.state === 'running' ? 'Running' : 'Stopped'}`)
++              .bindPopup(`<strong>${device.name}</strong><br/>${running ? 'Running' : 'Stopped'}`)
+               .addTo(map);
+           }
+         });
+       }
+     } catch (err) {
+-      console.error('Map initialization error:', err);
++
+     }
+-  };
++  }, [trialReadOnly]);
+ 
+   const fetchDashboardData = useCallback(async () => {
+     try {
+       setLoading(true);
+       setError(null);
++      setNotice(null);
+       
+-      const response = await api.get('/organizations/summary');
+-      const data = response.data;
+-      
+-      // Fetch devices list for map and accurate stats
+-      let devicesList = [];
+-      try {
+-        const devRes = await api.get('/devices');
+-        devicesList = devRes.data?.devices || devRes.data || [];
+-      } catch (e) {
+-        // Note: data.devices from /organizations/summary is just a count,
+-        // not a device array, so there's no richer fallback to use here.
+-        console.warn('Failed to fetch devices list', e);
+-        devicesList = [];
++      const [summaryResult, devicesResult] = await Promise.allSettled([
++        api.get('/organizations/summary'), api.get('/devices?response=detailed')
++      ]);
++      const data = summaryResult.status === 'fulfilled' ? summaryResult.value.data : null;
++      const deviceData = devicesResult.status === 'fulfilled' ? devicesResult.value.data : null;
++      const devicesList = Array.isArray(deviceData) ? deviceData
++        : Array.isArray(deviceData?.devices) ? deviceData.devices : null;
++
++      if (data?.devices && data?.tunnels) {
++        const totalDevs = data.devices.total;
++        const { running, connected, approved, warning } = data.devices;
++        setDeviceStats({
++          running,
++          notRunning: totalDevs - running,
++          connected,
++          notConnected: Math.max(0, totalDevs - connected),
++          approved,
++          notApproved: Math.max(0, totalDevs - approved),
++          warning
++        });
++        const { total: tunnelTotal, connected: tunnelConnected,
++          warning: tunnelPending, unknown: tunnelUnknown } = data.tunnels;
++        setTunnelStats({
++          connected: tunnelConnected,
++          notConnected: Math.max(0, tunnelTotal - tunnelConnected - tunnelPending - tunnelUnknown),
++          pending: tunnelPending,
++          unknown: tunnelUnknown
++        });
++      } else {
++        // A failed aggregate endpoint must not hide working device/tunnel APIs or display fake zeros.
++        if (!devicesList) throw new Error('Live device status unavailable');
++        const tunnelsResponse = await api.get('/tunnels');
++        if (!Array.isArray(tunnelsResponse.data)) throw new Error('Live tunnel status unavailable');
++        setDeviceStats(fallbackDeviceStats(devicesList));
++        setTunnelStats(fallbackTunnelStats(tunnelsResponse.data));
++        setNotice('Organization summary unavailable. Status comes from live device and tunnel APIs; monthly traffic is unavailable.');
+       }
+-      
+-      // Calculate Stats
+-      const totalDevs = devicesList.length;
+-      const running = devicesList.filter(d => d.state === 'running').length;
+-      const connected = devicesList.filter(d => d.isConnected).length;
+-      const approved = devicesList.filter(d => d.isApproved).length;
+-      
+-      setDeviceStats({
+-        running,
+-        notRunning: totalDevs - running,
+-        connected,
+-        notConnected: Math.max(0, totalDevs - connected),
+-        approved,
+-        notApproved: Math.max(0, totalDevs - approved),
+-        warning: 0 // Placeholder as logic for warning isn't specified
+-      });
+ 
+-      const tunnelTotal = data.tunnels?.total || 0;
+-      const tunnelActive = data.tunnels?.active || 0;
+-      
+-      setTunnelStats({
+-        connected: tunnelActive,
+-        notConnected: Math.max(0, tunnelTotal - tunnelActive),
+-        pending: 0,
+-        unknown: 0
+-      });
+-
+-      if (data.traffic) {
++      // traffic is a monthly [{ month: epochMilliseconds, bytes, deviceCount }] array.
++      const now = new Date();
++      const monthlyTraffic = Array.isArray(data?.traffic)
++        ? data.traffic.find(row => {
++          const month = new Date(row.month);
++          return month.getUTCFullYear() === now.getUTCFullYear()
++            && month.getUTCMonth() === now.getUTCMonth();
++        })
++        : null;
++      if (monthlyTraffic && Number.isFinite(monthlyTraffic.bytes)) {
++        const bytes = monthlyTraffic.bytes;
++        const unit = bytes >= 1000000000 ? 'GB' : bytes >= 1000000 ? 'MB'
++          : bytes >= 1000 ? 'KB' : 'B';
++        const divisor = { GB: 1000000000, MB: 1000000, KB: 1000, B: 1 }[unit];
+         setTrafficStats({
+-          total: `${(data.traffic.total || 0).toFixed(2)} ${data.traffic.unit || 'MBytes'}`,
+-          totalBytes: data.traffic.totalBytes || 0,
+-          lastUpdate: data.traffic.lastUpdate
++          total: `${(bytes / divisor).toFixed(2)} ${unit}`,
++          totalBytes: bytes,
++          lastUpdate: monthlyTraffic.month
+         });
+       } else {
+-        setTrafficStats({ total: '0 B', totalBytes: 0, lastUpdate: null });
++        setTrafficStats({ total: data ? 'No monthly traffic reported' : 'Unavailable', totalBytes: null, lastUpdate: null });
+       }
+ 
+-      initializeMap(devicesList);
++      initializeMap(devicesList || []);
+ 
+     } catch (err) {
+-      console.error('Dashboard data fetch failed:', err);
++
+       setError('Failed to load dashboard data');
++      setTrafficStats({ total: 'Unavailable', totalBytes: null, lastUpdate: null });
+     } finally {
+       setLoading(false);
+     }
+-  }, []);
++  }, [initializeMap]);
+ 
+   useEffect(() => {
+     fetchDashboardData();
++    const timer = setInterval(fetchDashboardData, 30000);
++    return () => clearInterval(timer);
+   }, [fetchDashboardData]);
+ 
+   // Helper component for status circle
+@@ -156,7 +209,7 @@ const Home = () => {
+     <div className="status-item">
+       <div className="status-label">{label}</div>
+       <div className={`status-circle ${type}`}>
+-        {loading ? '-' : count}
++        {loading ? '-' : error ? 'N/A' : count ?? 'N/A'}
+       </div>
+     </div>
+   );
+@@ -172,6 +225,7 @@ const Home = () => {
+       <h1 className="page-title">Home</h1>
+ 
+       {error && <div className="alert alert-danger">{error}</div>}
++      {notice && <div className="alert alert-warning">{notice}</div>}
+ 
+       {/* Network Status Section */}
+       <div className="panel">
+@@ -237,7 +291,7 @@ const Home = () => {
+         <div className="panel-body flex-row-center">
+           <span className="traffic-label">Total</span>
+           <span className="traffic-value">{trafficStats.total}</span>
+-          <Link to="/traffic-dashboard" className="dashboard-link">Check traffic dashboard for more</Link>
++          <Link to="/dashboards/traffic" className="dashboard-link">Check traffic dashboard for more</Link>
+         </div>
+       </div>
+ 
+@@ -245,10 +299,12 @@ const Home = () => {
+       <div className="panel mt-4">
+         <div className="panel-header">
+           <span>World Map</span>
+-          <Link to="/world-map-dashboard" className="dashboard-link ml-4 italic">Larger map in World Map dashboard</Link>
++          <Link to="/dashboards/world-map" className="dashboard-link ml-4 italic">Larger map in World Map dashboard</Link>
+         </div>
+         <div className="panel-body p-0">
+-           <div id="map"></div>
++           {trialReadOnly
++             ? <div className="p-4 text-muted">Map background is unavailable with this controller version.</div>
++             : <div id="map"></div>}
+         </div>
+       </div>
+ 
+@@ -256,4 +312,4 @@ const Home = () => {
+   );
+ };
+ 
+-export default Home;
+\ No newline at end of file
++export default Home;
+diff --git a/frontend/src/pages/Login.js b/frontend/src/pages/Login.js
+index 3fb387c..7d17162 100644
+--- a/frontend/src/pages/Login.js
++++ b/frontend/src/pages/Login.js
+@@ -40,6 +40,8 @@ const Login = ({ onLogin }) => {
+ 
+   // 1. Fetch runtime config
+   useEffect(() => {
++    // The original 6.3.37 controller has no fork-specific public/config endpoint.
++    if (window.__FLEXIWAN_SERVER_CONFIG__?.trialReadOnly) return;
+     api.get('/public/config')
+       .then(res => {
+         if (res.data?.captchaSiteKey) {
+@@ -50,7 +52,7 @@ const Login = ({ onLogin }) => {
+         }
+       })
+       .catch(err => {
+-        console.warn('Failed to fetch public config', err);
++
+       });
+   }, []);
+ 
+@@ -83,7 +85,7 @@ const Login = ({ onLogin }) => {
+         setCaptchaWidgetId(widgetId);
+         captchaRenderedRef.current = true;
+       } catch (e) {
+-        console.warn('Turnstile render failed', e);
++
+       }
+     };
+ 
+@@ -117,7 +119,7 @@ const Login = ({ onLogin }) => {
+         window.turnstile.reset(captchaWidgetId);
+         setCaptchaToken('');
+       } catch (e) {
+-        console.warn('Failed to reset CAPTCHA widget:', e);
++
+       }
+     }
+   };
+@@ -175,8 +177,9 @@ const Login = ({ onLogin }) => {
+       const finalToken = response.data?.token || response.headers['refresh-jwt'] || response.headers['Refresh-JWT'];
+       if (finalToken) {
+         localStorage.setItem('token', finalToken);
+-        if (response.data?.refreshToken) {
+-          localStorage.setItem('refreshToken', response.data.refreshToken);
++        const sessionRefresh = response.data?.refreshToken || response.headers['refresh-token'];
++        if (sessionRefresh) {
++          localStorage.setItem('refreshToken', sessionRefresh);
+         }
+         onLogin();
+         navigate('/home', { replace: true });
+@@ -294,4 +297,4 @@ const Login = ({ onLogin }) => {
+   );
+ };
+ 
+-export default Login;
+\ No newline at end of file
++export default Login;
+diff --git a/frontend/src/pages/Organizations.js b/frontend/src/pages/Organizations.js
+index 75f350a..bb42287 100644
+--- a/frontend/src/pages/Organizations.js
++++ b/frontend/src/pages/Organizations.js
+@@ -31,7 +31,7 @@ const Organizations = () => {
+           }
+         }
+       } catch (error) {
+-        console.error('Error reading org from token:', error);
++
+         // Fallback: fetch from API
+         fetchCurrentUser();
+       }
+@@ -50,7 +50,7 @@ const Organizations = () => {
+         setCurrentOrgId(user.defaultOrg._id || user.defaultOrg);
+       }
+     } catch (error) {
+-      console.error('Error fetching current user:', error);
++
+     }
+   };
+ 
+@@ -60,12 +60,12 @@ const Organizations = () => {
+       setError(null);
+ 
+       const response = await api.get('/organizations');
+-      console.log('Fetched organizations:', response.data);
++
+       
+       setOrganizations(Array.isArray(response.data) ? response.data : []);
+       setError(null);
+     } catch (error) {
+-      console.error('Error fetching organizations:', error);
++
+       setError(error.message || 'Failed to fetch organizations');
+     } finally {
+       setLoading(false);
+@@ -129,7 +129,7 @@ const Organizations = () => {
+             }
+           }
+         } catch (err) {
+-          console.error('Error reading org from token:', err);
++
+           setCurrentOrgId(null);
+         }
+       }
+@@ -141,7 +141,7 @@ const Organizations = () => {
+       fetchOrganizations();
+       
+     } catch (error) {
+-      console.error('Error deleting organization:', error);
++
+       setError('Failed to delete organization: ' + error.message);
+     } finally {
+       setDeleting(false);
+@@ -170,7 +170,7 @@ const Organizations = () => {
+             setCurrentOrgId(orgId);
+           }
+         } catch (err) {
+-          console.error('Error parsing new token:', err);
++
+           setCurrentOrgId(orgId);
+         }
+       } else {
+@@ -182,7 +182,7 @@ const Organizations = () => {
+       setError(null);
+       
+     } catch (error) {
+-      console.error('Error setting organization:', error);
++
+       setError('Failed to set organization: ' + error.message);
+     } finally {
+       setSettingOrg(null);
+diff --git a/frontend/src/pages/Register.js b/frontend/src/pages/Register.js
+index ae46fba..84e75ec 100644
+--- a/frontend/src/pages/Register.js
++++ b/frontend/src/pages/Register.js
+@@ -39,7 +39,7 @@ const Register = () => {
+ 
+   // Log CAPTCHA debug mode status
+   // eslint-disable-next-line no-console
+-  console.log('[captcha][register] Debug mode:', CAPTCHA_DEBUG);
++
+ 
+   // Fetch runtime config
+   useEffect(() => {
+@@ -51,42 +51,42 @@ const Register = () => {
+       })
+       .catch(err => {
+         // eslint-disable-next-line no-console
+-        console.warn('Failed to fetch public config', err);
++
+       });
+   }, []);
+ 
+   // Load script & render captcha when key available
+   useEffect(() => {
+-    if (!TURNSTILE_SITE_KEY) { CAPTCHA_DEBUG && console.log('[captcha][register] no site key yet, skip'); return; }
++    if (!TURNSTILE_SITE_KEY) {  return; }
+     if (captchaRenderedRef.current) return;
+     if (typeof window === 'undefined') return;
+     const ensureRender = () => {
+-      if (!window.turnstile || !window.turnstile.render) { CAPTCHA_DEBUG && console.log('[captcha][register] turnstile not ready retry'); return; }
++      if (!window.turnstile || !window.turnstile.render) {  return; }
+       if (captchaRenderedRef.current) return;
+       try {
+-        const widgetId = window.turnstile.render('#register-turnstile', {
++        window.turnstile.render('#register-turnstile', {
+           sitekey: TURNSTILE_SITE_KEY,
+           callback: (token) => { 
+             setCaptchaToken(token); 
+-            CAPTCHA_DEBUG && console.log('[captcha][register] token received', token ? token.substring(0, 8) + '...' : '(empty)'); 
++
+           },
+           'error-callback': (error) => {
+             setCaptchaToken('');
+             // eslint-disable-next-line no-console
+-            console.error('[captcha][register] Turnstile error callback:', error);
++
+           },
+           'timeout-callback': () => {
+             setCaptchaToken('');
+             // eslint-disable-next-line no-console
+-            console.warn('[captcha][register] Turnstile timeout');
++
+           }
+         });
+         captchaRenderedRef.current = true;
+-        CAPTCHA_DEBUG && console.log('[captcha][register] widget rendered id=', widgetId);
++
+       } catch (e) {
+         // eslint-disable-next-line no-console
+-        console.error('Turnstile render failed (register):', e);
+-        CAPTCHA_DEBUG && console.error('[captcha][register] render exception', e);
++
++
+       }
+     };
+     if (!window.turnstile) {
+@@ -96,7 +96,7 @@ const Register = () => {
+       script.defer = true;
+       script.onload = ensureRender;
+       document.head.appendChild(script);
+-      CAPTCHA_DEBUG && console.log('[captcha][register] script tag injected');
++
+     } else {
+       ensureRender();
+     }
+@@ -141,7 +141,7 @@ const Register = () => {
+         }
+         // Widget doesn't exist or failed to load - proceed without captcha and let backend handle it
+         // eslint-disable-next-line no-console
+-        console.warn('[captcha][register] Turnstile widget not found, proceeding without captcha. Backend will validate.');
++
+       }
+       
+       // Add captcha token if available
+@@ -155,27 +155,27 @@ const Register = () => {
+       navigate('/login?registered=1');
+     } catch (err) {
+       // eslint-disable-next-line no-console
+-      console.error('Registration error - Full Details:', err);
++
+       // eslint-disable-next-line no-console
+-      console.error('Error message:', err?.message);
++
+       // eslint-disable-next-line no-console
+-      console.error('Error code:', err?.code);
++
+       // eslint-disable-next-line no-console
+-      console.error('Response status:', err?.response?.status);
++
+       // eslint-disable-next-line no-console
+-      console.error('Response data:', JSON.stringify(err?.response?.data));
++
+       // eslint-disable-next-line no-console
+-      console.error('Response data.error:', err?.response?.data?.error);
++
+       // eslint-disable-next-line no-console
+-      console.error('Response data.message:', err?.response?.data?.message);
++
+       // eslint-disable-next-line no-console
+-      console.error('Request config:', err?.config?.url);
++
+       
+       const apiErr = err?.response?.data?.error || err?.response?.data?.message;
+       const displayError = apiErr || err?.message || 'Registration failed. Please try again.';
+       setError(displayError); // TODO i18n
+       // eslint-disable-next-line no-console
+-      console.error('Final error to display:', displayError);
++
+     } finally {
+       setLoading(false);
+     }
+@@ -377,4 +377,4 @@ const Register = () => {
+   );
+ };
+ 
+-export default Register;
+\ No newline at end of file
++export default Register;
+diff --git a/frontend/src/pages/Tokens.js b/frontend/src/pages/Tokens.js
+index 8208e1f..b70d64f 100644
+--- a/frontend/src/pages/Tokens.js
++++ b/frontend/src/pages/Tokens.js
+@@ -91,7 +91,7 @@ const Tokens = () => {
+         throw new Error('Copy command failed');
+       }
+     } catch (err) {
+-      console.error('Failed to copy token:', err);
++
+       // Provide fallback - select the text for manual copy
+       const tokenElement = document.querySelector(`[data-token-id="${tokenId}"]`);
+       if (tokenElement) {
+diff --git a/frontend/src/pages/Tunnels.js b/frontend/src/pages/Tunnels.js
+index a18c0dd..7b3f744 100644
+--- a/frontend/src/pages/Tunnels.js
++++ b/frontend/src/pages/Tunnels.js
+@@ -12,7 +12,7 @@ const Tunnels = () => {
+   const [devices, setDevices] = useState({});
+   const [loading, setLoading] = useState(true);
+   const [error, setError] = useState(null);
+-  const [stats, setStats] = useState({ connected: 0, disconnected: 0, total: 0 });
++  const [stats, setStats] = useState({ connected: 0, disconnected: 0, pending: 0, unknown: 0, total: 0 });
+   const [selectedTunnels, setSelectedTunnels] = useState(new Set());
+   const [batchOspfLoading, setBatchOspfLoading] = useState(false);
+   const navigate = useNavigate();
+@@ -45,20 +45,25 @@ const Tunnels = () => {
+       const tunnelsData = tunnelsResponse.data;
+       
+       // Calculate stats
+-      const connected = tunnelsData.filter(t => t.isActive).length;
++      // isActive means configured; tunnelStatus carries the observed link state.
++      const connected = tunnelsData.filter(t => t.tunnelStatus === 'Connected').length;
++      const disconnected = tunnelsData.filter(t => t.tunnelStatus === 'Not Connected').length;
++      const pending = tunnelsData.filter(t => t.tunnelStatus === 'Pending').length;
+       const total = tunnelsData.length;
+       
+       setDevices(deviceMap);
+       setTunnels(tunnelsData);
+       setStats({
+         connected: connected,
+-        disconnected: total - connected,
++        disconnected,
++        pending,
++        unknown: total - connected - disconnected - pending,
+         total: total
+       });
+       setError(null);
+       setLoading(false);
+     } catch (error) {
+-      console.error('TUNNELS: Error fetching data:', error);
++
+       setError(error.response?.data?.error || error.message || 'Failed to fetch tunnels');
+       setLoading(false);
+       
+@@ -122,12 +127,14 @@ const Tunnels = () => {
+       );
+     }
+     if (status === 'N/A') return <Badge bg="light" text="dark">N/A</Badge>;
+-    // Fallback for API responses that don't include tunnelStatus
+-    return (
+-      <Badge bg={tunnel.isActive ? 'success' : 'secondary'}>
+-        {tunnel.isActive ? 'Connected' : 'Inactive'}
+-      </Badge>
+-    );
++    return <Badge bg="light" text="dark">Unknown</Badge>;
++  };
++
++  // These endpoint observations are milliseconds (rtt) and percent (drop_rate).
++  const getTunnelMetric = (tunnel, key) => {
++    const values = [tunnel.tunnelStatusA?.[key], tunnel.tunnelStatusB?.[key]]
++      .filter(value => typeof value === 'number' && Number.isFinite(value));
++    return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
+   };
+ 
+   const getEncryptionBadge = (encryptionMethod) => {
+@@ -157,7 +164,7 @@ const Tunnels = () => {
+         fetchTunnelsAndDevices();
+       }
+     } catch (error) {
+-      console.error('Error deleting tunnel:', error);
++
+       const errorMsg = error.response?.data?.message || error.response?.data?.error || error.message || 'Unknown error';
+       alert('Failed to delete tunnel: ' + errorMsg);
+     }
+@@ -185,7 +192,7 @@ const Tunnels = () => {
+       setSelectedTunnels(new Set());
+       fetchTunnelsAndDevices();
+     } catch (error) {
+-      console.error('Error batch deleting tunnels:', error);
++
+       const errorMsg = error.response?.data?.message || error.response?.data?.error || error.message || 'Unknown error';
+       alert('Failed to delete tunnels: ' + errorMsg);
+     }
+@@ -330,7 +337,7 @@ const Tunnels = () => {
+       setSelectedTunnels(new Set());
+       fetchTunnelsAndDevices();
+     } catch (error) {
+-      console.error('Batch OSPF configuration error:', error);
++
+       alert('Batch configuration failed: ' + error.message);
+     } finally {
+       setBatchOspfLoading(false);
+@@ -419,8 +426,9 @@ const Tunnels = () => {
+           <Card className="border-0 shadow-sm h-100">
+             <Card.Body className="d-flex justify-content-between align-items-center">
+               <div>
+-                <h6 className="text-muted text-uppercase small fw-bold mb-1">Inactive</h6>
++                <h6 className="text-muted text-uppercase small fw-bold mb-1">Not Connected</h6>
+                 <h3 className="mb-0 display-6 fw-bold text-secondary">{stats.disconnected}</h3>
++                <div className="small text-muted">Pending: {stats.pending} · Unknown: {stats.unknown}</div>
+               </div>
+               <div className="bg-secondary bg-opacity-10 rounded-circle p-3">
+                 <FaRoute size={24} className="text-secondary" />
+@@ -470,6 +478,8 @@ const Tunnels = () => {
+                 ) : (
+                   tunnels.map((tunnel) => {
+                     const tunnelId = tunnel._id || tunnel.id;
++                    const latency = getTunnelMetric(tunnel, 'rtt');
++                    const dropRate = getTunnelMetric(tunnel, 'drop_rate');
+                     return (
+                       <tr key={tunnelId}>
+                         <td className="text-center">
+@@ -510,19 +520,19 @@ const Tunnels = () => {
+                         )}
+                       </td>
+                       <td>
+-                        {tunnel.stats?.latency ? (
+-                          <span className="text-success fw-bold">{tunnel.stats.latency.toFixed(2)} ms</span>
++                        {latency !== null ? (
++                          <span className="text-success fw-bold" title="Mean RTT of reporting endpoints">{latency.toFixed(2)} ms</span>
+                         ) : (
+-                          <span className="text-muted">-</span>
++                          <span className="text-muted">N/A</span>
+                         )}
+                       </td>
+                       <td>
+-                        {tunnel.stats?.dropRate !== undefined ? (
+-                          <span className={tunnel.stats.dropRate > 0 ? 'text-warning fw-bold' : 'text-success'}>
+-                            {tunnel.stats.dropRate.toFixed(2)}%
++                        {dropRate !== null ? (
++                          <span className={dropRate > 0 ? 'text-warning fw-bold' : 'text-success'} title="Mean drop rate of reporting endpoints">
++                            {dropRate.toFixed(2)}%
+                           </span>
+                         ) : (
+-                          <span className="text-muted">-</span>
++                          <span className="text-muted">N/A</span>
+                         )}
+                       </td>
+                       <td>
+diff --git a/frontend/src/pages/Tunnels.js.backup b/frontend/src/pages/Tunnels.js.backup
+index 5b1f0f6..ebe77b3 100644
+--- a/frontend/src/pages/Tunnels.js.backup
++++ b/frontend/src/pages/Tunnels.js.backup
+@@ -45,7 +45,6 @@ const Tunnels = () => {
+       setError(null);
+       setLoading(false);
+     } catch (error) {
+-      console.error('Error fetching tunnels:', error);
+       setError(error.message || 'Failed to fetch tunnels');
+       setLoading(false);
+       
+@@ -67,12 +66,10 @@ const Tunnels = () => {
+ 
+   const handleToggleTunnel = (tunnelId, currentStatus) => {
+     // Implement tunnel start/stop functionality
+-    console.log(`${currentStatus === 'up' ? 'Stop' : 'Start'} tunnel:`, tunnelId);
+   };
+ 
+   const handleViewTunnel = (tunnelId) => {
+     // Implement view tunnel details functionality
+-    console.log('View tunnel:', tunnelId);
+   };
+ 
+   if (loading) {
+diff --git a/frontend/src/pages/UserProfile.js b/frontend/src/pages/UserProfile.js
+index b4cb58a..5901510 100644
+--- a/frontend/src/pages/UserProfile.js
++++ b/frontend/src/pages/UserProfile.js
+@@ -20,7 +20,7 @@ export default function UserProfile() {
+             const resp = await api.get('/users/me'); 
+             setUser(resp.data);
+         } catch (e) {
+-            console.error(e);
++
+             setMsg({ type: 'error', text: 'Failed to load user profile' });
+         } finally {
+             setLoading(false);
+diff --git a/frontend/src/pages/account/AccessKeys.js b/frontend/src/pages/account/AccessKeys.js
+index 045858d..f999acd 100644
+--- a/frontend/src/pages/account/AccessKeys.js
++++ b/frontend/src/pages/account/AccessKeys.js
+@@ -75,7 +75,7 @@ const AccountAccessKeys = () => {
+         throw new Error('Copy command failed');
+       }
+     } catch (err) {
+-      console.error('Failed to copy access key:', err);
++
+       // Provide fallback - select the text for manual copy
+       const keyElement = document.querySelector(`[data-key-id="${keyId}"]`);
+       if (keyElement) {
+diff --git a/frontend/src/services/api.js b/frontend/src/services/api.js
+index 7098e3f..6cf9f82 100644
+--- a/frontend/src/services/api.js
++++ b/frontend/src/services/api.js
+@@ -1,100 +1,90 @@
+-import axios from 'axios';
+-
+-// Smartly infer API base URL. Prevent Mixed Content errors when page is HTTPS but code still targets http://localhost:3000
+-function inferBaseURL () {
+-  // First, try to use the server-injected config
+-  if (typeof window !== 'undefined' && window.__FLEXIWAN_SERVER_CONFIG__?.baseUrl) {
+-    console.log('[api] Using server-injected API URL');
+-    return window.__FLEXIWAN_SERVER_CONFIG__.baseUrl;
+-  }
+-  
+-  // Fallback to HTTPS and correct port
+-  console.log('[api] Using HTTPS API URL (fallback)');
+-  return 'https://localhost:3443/api';
+-}
+-
+-const api = axios.create({
+-  baseURL: inferBaseURL(),
+-  timeout: 30000, // Increased timeout for HTTPS proxy
+-  headers: {
+-    'Content-Type': 'application/json'
+-  }
+-});
+-
+-// Add debug logging
+-console.log('[api] API configuration:', {
+-  baseURL: api.defaults.baseURL,
+-  timeout: api.defaults.timeout,
+-  NODE_ENV: process.env.NODE_ENV,
+-  REACT_APP_API_URL: process.env.REACT_APP_API_URL
+-});
+-
+-// Request interceptor to add auth token
+-api.interceptors.request.use(
+-  (config) => {
+-    const token = localStorage.getItem('token');
+-    console.log('[api] Request interceptor - token status:', token ? 'exists' : 'missing', 'for URL:', config.url);
+-    if (token) {
+-      config.headers.Authorization = `Bearer ${token}`;
+-      console.log('[api] Authorization header added:', `Bearer ${token.substring(0, 20)}...`);
+-    } else {
+-      console.log('[api] WARNING: No token found in localStorage!');
+-    }
+-    return config;
+-  },
+-  (error) => {
+-    return Promise.reject(error);
+-  }
+-);
+-
+-// Response interceptor to handle common errors
+-api.interceptors.response.use(
+-  (response) => {
+-    // Check if backend sent a new JWT token via Refresh-JWT header
+-    const refreshToken = response.headers['refresh-jwt'];
+-    if (refreshToken) {
+-      console.log('[api] Received new JWT token from backend, updating localStorage');
+-      localStorage.setItem('token', refreshToken);
+-    }
+-    return response;
+-  },
+-  (error) => {
+-    // No response usually means: network down / CORS / Mixed Content / self-signed certificate rejected
+-    if (!error.response) {
+-      // Add diagnostic info to console
+-      // Avoid intrusive alert popups
+-      // eslint-disable-next-line no-console
+-      console.warn('[api] Network error (possibly CORS / Mixed Content / certificate) ->', {
+-        message: error.message,
+-        baseURL: api.defaults.baseURL,
+-        url: error.config?.url,
+-        httpsPage: typeof window !== 'undefined' ? window.location.protocol === 'https:' : undefined
+-      });
+-    } else if (error.response.status === 401) {
+-      // Log 401 errors with context
+-      console.warn('[api] 401 Unauthorized error:', {
+-        url: error.config?.url,
+-        hasToken: !!localStorage.getItem('token'),
+-        tokenPreview: localStorage.getItem('token')?.substring(0, 20) + '...',
+-        responseData: error.response.data,
+-        headers: error.response.headers
+-      });
+-      
+-      // Only redirect if not already on login page to avoid loop
+-      // Don't automatically remove token - let the component decide
+-      if (typeof window !== 'undefined' && window.location.pathname !== '/login' && window.location.pathname !== '/register') {
+-        console.warn('[api] Redirecting to login due to 401');
+-        // Clear token only if it exists (user was logged in)
+-        if (localStorage.getItem('token')) {
+-          localStorage.removeItem('token');
+-        }
+-        window.location.href = '/login';
+-      }
+-    }
+-    return Promise.reject(error);
+-  }
+-);
+-
+-export { inferBaseURL };
+-
+-export default api;
+\ No newline at end of file
++import axios from 'axios';
++
++// Smartly infer API base URL. Prevent Mixed Content errors when page is HTTPS but code still targets http://localhost:3000
++function inferBaseURL () {
++  // First, try to use the server-injected config
++  if (typeof window !== 'undefined' && window.__FLEXIWAN_SERVER_CONFIG__?.baseUrl) {
++
++    return window.__FLEXIWAN_SERVER_CONFIG__.baseUrl;
++  }
++
++  // Fallback to HTTPS and correct port
++
++  return 'https://localhost:3443/api';
++}
++
++const api = axios.create({
++  baseURL: inferBaseURL(),
++  timeout: 30000, // Increased timeout for HTTPS proxy
++  headers: {
++    'Content-Type': 'application/json'
++  }
++});
++
++// Add debug logging
++
++
++// Request interceptor to add auth token
++api.interceptors.request.use(
++  (config) => {
++    const token = localStorage.getItem('token');
++
++    if (token) {
++      config.headers.Authorization = `Bearer ${token}`;
++    }
++    const refreshToken = localStorage.getItem('refreshToken');
++    if (refreshToken) {
++      config.headers['refresh-token'] = refreshToken;
++    }
++    if (!token) {
++
++    }
++    return config;
++  },
++  (error) => {
++    return Promise.reject(error);
++  }
++);
++
++// Response interceptor to handle common errors
++api.interceptors.response.use(
++  (response) => {
++    // Check if backend sent a new JWT token via Refresh-JWT header
++    const refreshToken = response.headers['refresh-jwt'];
++    if (refreshToken) {
++
++      localStorage.setItem('token', refreshToken);
++    }
++    const sessionRefresh = response.headers['refresh-token'];
++    if (sessionRefresh) localStorage.setItem('refreshToken', sessionRefresh);
++    return response;
++  },
++  (error) => {
++    // No response usually means: network down / CORS / Mixed Content / self-signed certificate rejected
++    if (!error.response) {
++      // Add diagnostic info to console
++      // Avoid intrusive alert popups
++      // eslint-disable-next-line no-console
++
++    } else if (error.response.status === 401) {
++      // Log 401 errors with context
++
++
++      // Only redirect if not already on login page to avoid loop
++      // Don't automatically remove token - let the component decide
++      if (typeof window !== 'undefined' && window.location.pathname !== '/login' && window.location.pathname !== '/register') {
++
++        // Clear token only if it exists (user was logged in)
++        if (localStorage.getItem('token')) {
++          localStorage.removeItem('token');
++        }
++        window.location.href = '/login';
++      }
++    }
++    return Promise.reject(error);
++  }
++);
++
++export { inferBaseURL };
++
++export default api;
+diff --git a/frontend/src/setupProxy.js b/frontend/src/setupProxy.js
+index 5b20852..45d6a77 100644
+--- a/frontend/src/setupProxy.js
++++ b/frontend/src/setupProxy.js
+@@ -7,7 +7,7 @@ module.exports = function(app) {
+   // not the docker-only hostname, or every relative /api/* request 500s.
+   const backendTarget = process.env.REACT_APP_API_TARGET || 'https://localhost:3443';
+ 
+-  console.log('Frontend proxy target:', backendTarget);
++
+ 
+   app.use(
+     '/api',
+@@ -21,19 +21,19 @@ module.exports = function(app) {
+         // Don't rewrite the path - keep /api prefix
+       },
+       onError: (err, req, res) => {
+-        console.error('Proxy error:', err.message);
++
+         if (!res.headersSent) {
+           res.status(500).json({ error: 'Proxy connection failed' });
+         }
+       },
+       onProxyReq: (proxyReq, req, res) => {
+         if (process.env.NODE_ENV === 'development') {
+-          console.log('Proxying request:', req.method, req.url);
++
+         }
+       },
+       onProxyRes: (proxyRes, req, res) => {
+         if (process.env.NODE_ENV === 'development') {
+-          console.log('Proxy response:', proxyRes.statusCode, req.url);
++
+         }
+       }
+     })

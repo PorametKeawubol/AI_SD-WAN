@@ -1,0 +1,27 @@
+{
+  "repository": "https://github.com/Aikonlee/fleximanage.git",
+  "commit": "1bcaeec0491acb4e70809ee098545f9912d14765",
+  "license": "AGPL-3.0",
+  "frontend_only": true,
+  "local_patch": "lab/community-gui.patch",
+  "patch_sha256": "f7128a4984cf283649c591cc5d641f1632b14d872b493e9d035543d0cf208d2e",
+  "controller_version": "6.3.37",
+  "trial_mode": "read-only",
+  "gui_url": "https://localhost:18443",
+  "build_assets": {
+    "asset-manifest.json": "de7580dff54f874eafff454ab3323fe5b815867e8363ac259d188922bb4aa96b",
+    "direct-login.html": "65d247792dec5b63350df76b6b65c8ade0fcf57f2f406af850b35788a87d7f24",
+    "fix-auth.html": "598554fa66bbc9ba9f13d0fb12eda3e2727d4ee529f073ada6410cee01f66fbf",
+    "index.html": "03ed239ac4a01ac54c1e5343ec077ceb48b4246bdc6ff0408d64e82c82aafa25",
+    "manifest.json": "f5b3e91dbd2efb95077474e66e9afa83718176188c75f8a960ffdf4ac45f3cd4",
+    "static/css/main.f41f12eb.css": "a7d15365cbb176a94493d2c758706c2acf9edb3b78054a07a73ec5a114d36c2a",
+    "static/css/main.f41f12eb.css.map": "dba04540da005457b220f46ae3fecfcb2848ffd4993967981e445f1b86fdb5c3",
+    "static/js/main.65f135c8.js": "bd90fe5b1800e20af035dc42cfe2322211277af09e718195d279252281d3ccf2",
+    "static/js/main.65f135c8.js.LICENSE.txt": "9fdf58a3d23471a52031508deb447ef5b028eb6d85f09c52d523f68210121959",
+    "static/js/main.65f135c8.js.map": "cb8bade69b5d13282cd5c7d92f6084287ba7b4eb3f34769224f5c76cbe94123d"
+  },
+  "excluded_http_assets": [
+    "direct-login.html",
+    "fix-auth.html"
+  ]
+}

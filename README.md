@@ -29,6 +29,8 @@ MongoDB/Redis ยังจำเป็นต่อ flexiManage upstream ส่�
 - **Grafana:** <https://localhost:3000/d/ai-sdwan>
 - **API reference:** <https://localhost:8000/docs>
 - **Health:** <https://localhost:8000/health>
+- **Official flexiEdge WebUI:** [edge A](http://localhost:18081/) / [edge B](http://localhost:18082/). Login: `flexiui`; password is in ignored `lab/runtime/official-gui-login.json`. [GUI access and scope](docs/OFFICIAL_FLEXIWAN_GUI.md).
+- **Community flexiManage GUI trial:** [Devices](https://localhost:18443/devices) / [Tunnels](https://localhost:18443/tunnels). Read-only; login is in ignored `lab/runtime/community-gui-login.json`. [Source, checks and limitations](docs/COMMUNITY_FLEXIMANAGE_GUI.md).
 
 Grafana มี panel **Control and approvals** ใต้แถวสถานะ ใช้ปุ่ม **Auto / Manual**, เลือก **Voice / Interactive / Bulk** แล้วกด **Apply profile**, หรือกด **Approve / Reject** คำแนะนำที่รออนุมัติได้ใน Dashboard โดยตรง บัญชี Grafana **Admin** มีสิทธิ์ส่งคำสั่ง ส่วน Viewer อ่านสถานะได้ โหมด **Auto** ตัดสินใจตาม SLA และเงื่อนไขของ policy เอง; โหมด **Manual** ต้องอนุมัติคำแนะนำก่อนเปลี่ยนเส้นทาง ถ้าไม่มีคำแนะนำ ปุ่ม Approve/Reject จะปิดไว้
 
@@ -43,6 +45,8 @@ Grafana มี panel **Control and approvals** ใต้แถวสถานะ
 เปิด natural WAN ตามตัวเลือกผู้ใช้ใน stream ใหม่ `live-natural-20261009-231927`: **WAN1 ไฟเบอร์ / WAN2 บรอดแบนด์ / WAN3 มือถือ** คงความจุ 100/80/30 Mbps ให้ NetEm delay/jitter/burst loss และ UDP background load เปลี่ยนตามเวลาคนละจังหวะ Grafana อ่านค่าที่วัดจริงและมีการ์ด **WAN environment (lab profiles)** เพิ่ม Auto / voice และ ML แบบ experimental ยังทำงานอยู่ โปรไฟล์เป็นสมมติฐานสำหรับ lab ที่ยังไม่ได้ calibrate กับ ISP จริง ดู [วิธีเปิด–หยุดและนิยามค่าที่วัด](docs/NATURAL_WAN.md)
 
 สาธิต WAN1 down ตามคำขอผู้ใช้ 10 ตุลาคม 2026: เลือก WAN2 หลัง 5.37 วินาที, verified policy ครบสอง edges หลัง 20.68 วินาที และ UDP ฟื้นประมาณ 5 วินาที คืนลิงก์และ natural environment แล้ว ระบบกลับ WAN1 เองภายหลัง การสลับตอน down ใช้กฎ failover; decision นั้นไม่มี forecasts ที่ใช้ได้ เพิ่มตาราง **Latest decision and reason** และ **ML 30s forecasts and measured WAN quality** ใน Grafana ดู [ผลสาธิตและขอบเขตการตีความ ML](reports/flexiwan/WAN1_DOWN_DEMO.md)
+
+Recorded live demo: [MP4 1080p with Thai captions (2:59)](artifacts/ai-sdwan-demo-20261010.mp4). WAN1 down, automatic WAN3 selection, then automatic return to WAN1 and recovered forecasts. Some waiting intervals are removed. [Verified results and scope](reports/flexiwan/recorded-video-demo-20261010-summary.json).
 
 ดูข้อมูลสดที่ [Grafana Auto + ML](https://localhost:3000/d/ai-sdwan?var-stream=__latest_live__&from=now-1h&to=now) หน้าหลักเลือก **Data stream = Latest live** และติดตามรอบ live ล่าสุดโดยอัตโนมัติ ชื่อ stream ของแต่ละรอบยังเลือกได้เพื่อดูประวัติ หากแท็บเก่าขึ้น No data ให้เปิดลิงก์นี้เพื่อคืนทั้ง stream และช่วงเวลาเป็นข้อมูลสด ข้อมูลรอบก่อนยังอยู่ใน stream เดิม รวม `live-auto-20261008-162832` และ `live` รอบนี้ตรวจเวลา WSL ตรงกับ Windows และ sync edges ก่อนเปิด API; stream ใหม่มี future telemetry rows เป็น 0 NTP ของเฉพาะ lab ยังปิดอยู่; หลัง suspend/restart ต้องตรวจ clock ใหม่ก่อนเปิด decision API
 

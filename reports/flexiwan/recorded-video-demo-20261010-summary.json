@@ -1,0 +1,156 @@
+{
+  "title": "Recorded single WAN1 outage demonstration",
+  "scope": "Real isolated flexiWAN lab, one live demonstration recorded through community GUI and Grafana. Existing decision API remains the only policy writer. No synthetic telemetry injection, model retraining, or service restart.",
+  "stream": "live-natural-20261009-231927",
+  "experimental_model": true,
+  "model_training_domain": "synthetic",
+  "model_validated_on_real_data": false,
+  "repeated_benchmark": false,
+  "pre_outage_prediction_established": false,
+  "native_udp_recovery_time_measured": false,
+  "route_evidence": "Verified configured policy priority on both agents; not a measurement of application packet path selection.",
+  "fault": {
+    "scenario": "S01",
+    "link": "wan1",
+    "mechanism": "Real NetEm loss 100% on a and b in sdw-wan1 only; management and WAN2/WAN3 preserved.",
+    "started": {
+      "timestamp": 1791651041.1387799,
+      "at_utc": "2026-10-10T16:50:41.138780+00:00"
+    },
+    "restored": {
+      "timestamp": 1791651132.0615103,
+      "at_utc": "2026-10-10T16:52:12.061510+00:00"
+    },
+    "duration_seconds": 90.92273044586182,
+    "cleanup": "Natural mode temporarily stopped for exclusive shaping lease; CONTROL restored in finally and original natural stream/seed resumed."
+  },
+  "first_recommendation": {
+    "source_event": {
+      "timestamp": 1791651042.8355615,
+      "at_utc": "2026-10-10T16:50:42.835562+00:00",
+      "kind": "apply_intent",
+      "source": "wan1",
+      "target": "wan3",
+      "reason": "Current SLA violation; healthy alternative"
+    },
+    "seconds_after_fault": 1.6967816352844238,
+    "first_api_observation": {
+      "timestamp": 1791651043.1892304,
+      "at_utc": "2026-10-10T16:50:43.189230+00:00"
+    },
+    "first_api_observation_seconds_after_fault": 2.050450563430786,
+    "action": "switch",
+    "source": "wan1",
+    "target": "wan3",
+    "reason": "Current SLA violation; healthy alternative",
+    "forecast_wans": [
+      "wan1",
+      "wan2",
+      "wan3"
+    ],
+    "measured_wan1_loss_pct": 67.0,
+    "interpretation": "Current SLA violation with all three forecasts present, after outage injection; not evidence of advance outage prediction."
+  },
+  "later_down_stale_evaluation": {
+    "timestamp": 1791651049.2448242,
+    "at_utc": "2026-10-10T16:50:49.244824+00:00",
+    "reason": "Current path down/stale; bypass cooldown",
+    "target": "wan2",
+    "first_apply_still_inflight": true,
+    "interpretation": "Evaluated while the initial apply was inflight; this observation did not establish another completed apply."
+  },
+  "alternate_apply_verified": {
+    "source_event": {
+      "timestamp": 1791651054.105367,
+      "at_utc": "2026-10-10T16:50:54.105367+00:00",
+      "kind": "applied",
+      "source": "wan1",
+      "target": "wan3",
+      "reason": "Current SLA violation; healthy alternative",
+      "detail": "Jobs and agent policy verified on 2 device(s)"
+    },
+    "seconds_after_fault": 12.96658706665039,
+    "configured_priority": "wan3",
+    "first_api_observation": {
+      "timestamp": 1791651059.3345435,
+      "at_utc": "2026-10-10T16:50:59.334543+00:00"
+    },
+    "first_api_observation_seconds_after_fault": 18.19576358795166
+  },
+  "automatic_return": {
+    "recommendation_event": {
+      "timestamp": 1791651170.2927966,
+      "at_utc": "2026-10-10T16:52:50.292797+00:00",
+      "kind": "apply_intent",
+      "source": "wan3",
+      "target": "wan1",
+      "reason": "Current SLA violation; healthy alternative"
+    },
+    "applied_event": {
+      "timestamp": 1791651175.468621,
+      "at_utc": "2026-10-10T16:52:55.468621+00:00",
+      "kind": "applied",
+      "source": "wan3",
+      "target": "wan1",
+      "reason": "Current SLA violation; healthy alternative",
+      "detail": "Jobs and agent policy verified on 2 device(s)"
+    },
+    "apply_seconds_after_restoration": 43.40711069107056,
+    "configured_priority": "wan1",
+    "first_api_observation": {
+      "timestamp": 1791651180.3473165,
+      "at_utc": "2026-10-10T16:53:00.347317+00:00"
+    },
+    "first_api_observation_seconds_after_restoration": 48.28580617904663
+  },
+  "final_checks": {
+    "all_checks_passed": true,
+    "mode": "auto",
+    "profile": "voice",
+    "model_loaded": true,
+    "configured_priority": "wan1",
+    "fresh_up_wans": [
+      "wan1",
+      "wan2",
+      "wan3"
+    ],
+    "forecast_wans": [
+      "wan1",
+      "wan2",
+      "wan3"
+    ],
+    "pending": false,
+    "apply_inflight": false,
+    "both_agent_policy_readback": true,
+    "unresolved_policy_intents": 0,
+    "lan_ping_received_3_of_3": true,
+    "baseline_restored": true,
+    "natural_mode_active": true,
+    "natural_seed": 20261009,
+    "cleanup_errors": [],
+    "completed_at_utc": "2026-10-10T16:53:42.496731+00:00"
+  },
+  "evidence": {
+    "operator_report": ".work/video-demo-20261010/operator-report.json",
+    "operator_report_sha256": "bd06befa29c7e812797ccea94f3536c24e5412b315655eeb52033285c47eab63",
+    "api_samples": ".work/video-demo-20261010/operator-samples.jsonl",
+    "api_samples_sha256": "11d051a9a1702784c486b475efafe20a797eeec7d0aaaf7088ec4eb33f6c624a",
+    "video_recording_timeline": ".work/video-demo-20261010/recording-timeline.json",
+    "video_recording_info": ".work/video-demo-20261010/rawinfo.json",
+    "raw_browser_recording_directory": ".work/video-demo-20261010/raw/",
+    "visibility": "Raw recording and detailed evidence remain ignored local artifacts; this tracked file contains a safe summary."
+  },
+  "video": {
+    "path": "artifacts/ai-sdwan-demo-20261010.mp4",
+    "sha256": "33c8d3ea48665b675e67d49e5b5d51b54daf3aea3a2cd84a877df4fb1e2c2ea9",
+    "bytes": 3095213,
+    "duration_seconds": 178.96,
+    "width": 1920,
+    "height": 1080,
+    "codec": "h264",
+    "audio_streams": 0,
+    "thai_captions": true,
+    "edit": "Original playback speed; some waiting intervals removed and labeled.",
+    "edit_map": ".work/video-demo-20261010/edit-plan.json"
+  }
+}
