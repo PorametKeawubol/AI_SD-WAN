@@ -4,6 +4,8 @@
 
 เครื่องนี้รัน flexiManage 6.3.37 และ flexiEdge 6.3.35 สองเครื่องผ่าน KVM ใน WSL distro `AI-SDWAN-Lab` แล้ว มี IPsec tunnels 3 เส้น Hypervisor/VirtualMachinePlatform/WSL เปิดใช้งานหลัง restart สำเร็จ
 
+Flow ทั้งระบบในภาพเดียว: [ภาพ PNG](artifacts/ai-sdwan-system-flow.png) · [ภาพ SVG สำหรับซูม](artifacts/ai-sdwan-system-flow.svg) · [รายละเอียดและวิธีสร้างภาพซ้ำ](docs/SYSTEM_FLOW.md)
+
 ## Stack ที่ใช้งาน
 
 | ส่วนของระบบ | Technology | สถานะ |

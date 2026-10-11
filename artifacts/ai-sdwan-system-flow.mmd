@@ -1,0 +1,111 @@
+flowchart TB
+    START([เริ่มระบบ AI SD-WAN]) --> READY[เปิด lab และตรวจความพร้อม<br/>flexiManage 6.3.37 + flexiEdge 2 เครื่อง<br/>IPsec 3 tunnels + FastAPI + TimescaleDB + Grafana<br/>หลัง restart เริ่ม Manual; ML ปิดค่าเริ่มต้น<br/>เปิด experimental ML และ Auto แยกกัน]
+
+    READY --> CLIENT[Client LAN<br/>10.20.0.2]
+    CLIENT ==>|traffic จริง| EDGEA[flexiEdge A<br/>LAN 10.20.0.1 · VPP / DPDK]
+    EDGEA ==> ROUTE[ส่ง packet ตาม multilink policy<br/>และ native flexiWAN failover]
+    ROUTE ==> WAN1[WAN1 — ไฟเบอร์<br/>100 Mbps · IPsec tunnel 1]
+    ROUTE ==> WAN2[WAN2 — บรอดแบนด์<br/>80 Mbps · IPsec tunnel 2]
+    ROUTE ==> WAN3[WAN3 — มือถือ<br/>30 Mbps · IPsec tunnel 3]
+    WAN1 ==> EDGEB[flexiEdge B<br/>LAN 10.30.0.1 · VPP / DPDK]
+    WAN2 ==> EDGEB
+    WAN3 ==> EDGEB
+    EDGEB ==> SERVER[Server LAN<br/>10.30.0.2 · ส่งข้อมูลกลับได้]
+
+    READY --> NATURAL[จำลองธรรมชาติของ WAN ทุก 10 วินาที<br/>NetEm + background load แยกแต่ละเส้น<br/>fiber / broadband / mobile]
+    NATURAL -.-> WAN1
+    NATURAL -.-> WAN2
+    NATURAL -.-> WAN3
+    READY --> API[FastAPI: ระบบ AI และ control<br/>รับ stream, profile และ mode<br/>แยก priority ที่ยืนยันแล้วจากข้อเสนอ]
+    API --> COLLECT[Collector ทุกประมาณ 5 วินาที<br/>ผ่าน API ของ flexiManage<br/>เรียก probe บน flexiEdge A]
+    EDGEA -.-> PROBE[Probe วัด WAN ทั้ง 3 เส้น<br/>100 ICMP ต่อเส้น + VPP counter delta<br/>RTT, jitter, loss, utilization]
+    COLLECT --> PROBE
+    WAN1 -.-> PROBE
+    WAN2 -.-> PROBE
+    WAN3 -.-> PROBE
+    PROBE --> VALID{ข้อมูลใช้ได้หรือไม่?<br/>WAN ถูกต้อง · ค่าถูกต้อง · อายุ ≤ 10 วินาที<br/>ไม่ซ้ำ / ย้อนเวลา / อนาคต}
+    VALID -->|ไม่ได้| INVALID[ปฏิเสธ sample และบันทึกเหตุผล<br/>ไม่เติมค่าที่หายด้วย 0]
+    INVALID -.-> COLLECT
+    VALID -->|ได้| HISTORY[เก็บ current metrics และประวัติราย WAN<br/>หน้าต่าง 12 samples บนช่วง 5 วินาที<br/>ประมาณ 55 วินาที]
+
+    TRAIN[ฝึก ML แบบ offline จาก synthetic episodes<br/>60 train / 15 validation · split ตามเวลา<br/>ต้องชนะ persistence ตาม MAE gate] --> MODEL[โหลด model และ metadata ที่ตรึงไว้<br/>RTT / jitter / utilization: XGBoost<br/>loss: persistence · ยังเป็น experimental]
+    HISTORY --> MLGATE{model และประวัติพร้อมหรือไม่?<br/>causal resample grid 5s จาก measured intervals 4–6s<br/>ต้อง UP และครอบคลุม 55s; ไม่เติม gap / ไม่ extrapolate}
+    MODEL --> MLGATE
+    MLGATE -->|พร้อม| FEATURES[สร้าง 26 features ต่อ WAN<br/>current / lag / mean / std / trend<br/>สถานะ UP และ history fraction]
+    FEATURES --> FORECAST[พยากรณ์อีก 30 วินาที<br/>latency / jitter / loss / utilization<br/>ML ช่วยประเมินความเสี่ยงใน policy]
+    MLGATE -->|ไม่พร้อม / inference ล้มเหลว| FALLBACK[ใช้ reactive decision จากค่าปัจจุบัน<br/>forecast ที่ไม่มีแสดงเป็น unavailable<br/>ไม่มีการฝึก model ใหม่ระหว่าง live]
+    API --> PROFILE[Application profile และ SLA<br/>Voice 100/30/1/90 · headroom ≥ 2 Mbps<br/>Interactive 150/40/2/90 · ≥ 5 Mbps<br/>Bulk 300/100/3/90 · ≥ 10 Mbps<br/>หน่วย: RTT ms / jitter ms / loss % / util %]
+    HISTORY --> SCORE[คัดเฉพาะ WAN ที่ fresh และ UP<br/>เลือกเส้นผ่าน SLA ก่อน แล้วเทียบ score ต่ำสุด<br/>ไม่มีเส้นผ่าน SLA: เลือก least-bad และ degraded<br/>current SLA + headroom + cost<br/>เพิ่ม penalty เมื่อ forecast แย่กว่าปัจจุบัน]
+    FORECAST --> SCORE
+    FALLBACK --> SCORE
+    PROFILE --> SCORE
+    SCORE --> DECISION{ตัดสินใจเลือก path}
+    DECISION -->|ไม่มี WAN fresh และ UP| NOPATH[Network unavailable<br/>ไม่ส่งคำสั่ง policy ใหม่<br/>ยังเก็บ last configured priority]
+    DECISION -->|เส้นเดิมเหมาะสม / ยังไม่ผ่าน guard| HOLD[HOLD: ใช้ priority ที่ยืนยันแล้วต่อ<br/>กรณีปกติ: margin ≥ 0.15<br/>cooldown 30 วินาที · ยืนยัน 3 รอบใหม่]
+    DECISION -->|ควรเปลี่ยนเส้น| SWITCH[เสนอ SWITCH พร้อมเหตุผล<br/>DOWN/stale: ไป best fresh UP ทันที แม้ degraded<br/>SLA เสีย + เส้นอื่นผ่าน SLA: เปลี่ยนทันที<br/>กรณีปกติต้องผ่าน stability guards]
+
+    SWITCH --> MODE{Control mode}
+    MODE -->|Auto| APPLY[Apply worker แบบ asynchronous<br/>เขียน policy ได้ครั้งละ 1 งาน<br/>collector และ dashboard ทำงานต่อ]
+    MODE -->|Manual| PENDING[Pending approval<br/>source / target / reason / proposal ID<br/>หมดอายุ 30 วินาที]
+    PENDING --> REVIEW{ผู้ใช้อนุมัติหรือไม่?}
+    REVIEW -->|อนุมัติ| RECHECK{ตรวจข้อมูลและ decision ใหม่<br/>ยังตรงกับข้อเสนอเดิมหรือไม่?}
+    RECHECK -->|ตรงและยังใช้ได้| APPLY
+    RECHECK -->|เปลี่ยนไป / stale| CANCEL[ยกเลิกข้อเสนอ<br/>ไม่เปลี่ยน policy]
+    REVIEW -->|ปฏิเสธ / หมดอายุ| CANCEL
+    APPLY --> PREFLIGHT{Preflight ผ่านหรือไม่?<br/>scope / org / devices / rule ถูกต้อง<br/>ทั้ง 2 edges พร้อม · config เดิมสอดคล้อง<br/>ไม่มี unresolved intent}
+    PREFLIGHT -->|ผ่าน| JOURNAL[บันทึก original snapshot + durable intent<br/>ก่อนส่งคำสั่งไปยัง controller]
+    JOURNAL --> MANAGE[flexiManage ของจริง<br/>PUT multilink rule: target เป็น priority แรก<br/>ตามด้วยเส้นอื่น · fallback drop]
+    MANAGE <--> CONTROLDB[(MongoDB / Redis<br/>ข้อมูลและ queue ของ controller)]
+    MANAGE --> JOBS[Controller jobs ส่ง config ทั้ง 2 edges<br/>รอครบทุกเครื่อง · poll ทุก 1 วินาที<br/>timeout ค่าเริ่มต้น 180 วินาที]
+    JOBS --> EDGEA
+    JOBS --> EDGEB
+    JOBS --> READBACK[อ่าน config กลับจากทั้ง 2 edges<br/>ตรวจ priority / action / classification / flags]
+    EDGEA -.-> READBACK
+    EDGEB -.-> READBACK
+    READBACK --> VERIFIED{job ครบและ readback ตรงหรือไม่?}
+    VERIFIED -->|ผ่าน| CONFIRM[ยืนยัน confirmed priority ใหม่<br/>อัปเดต last switch + state + audit<br/>priority ที่ตั้งไว้ต่างจาก packet path ณ ทุกขณะได้]
+    CONFIRM -.-> ROUTE
+    CONFIRM -.-> COLLECT
+    HOLD -.-> COLLECT
+    NOPATH -.-> COLLECT
+    PREFLIGHT -->|ไม่ผ่าน| FAILED[ไม่ยืนยัน priority ใหม่<br/>ถ้ามี intent ค้าง: block การเขียนครั้งต่อไป<br/>บันทึกข้อผิดพลาดและสถานะจริง]
+    VERIFIED -->|ล้มเหลว / timeout / ไม่ตรง| FAILED
+    FAILED --> RECONCILE[ผู้ดูแล reconcile / rollback อย่างชัดเจน<br/>ตรวจ queue, scope และ config ก่อนทำ<br/>ใช้ snapshot เมื่อปลอดภัย · ไม่ rollback อัตโนมัติ]
+    RECONCILE -.-> READBACK
+
+    HISTORY --> DB[(TimescaleDB ของระบบ AI<br/>telemetry / forecasts / events / state<br/>แยกข้อมูลตาม stream)]
+    INVALID --> AUDIT[บันทึก decision / proposal / apply / error<br/>และหลักฐานเหตุการณ์]
+    NATURAL -.-> AUDIT
+    NOPATH --> AUDIT
+    HOLD --> AUDIT
+    PENDING --> AUDIT
+    CANCEL --> AUDIT
+    CONFIRM --> AUDIT
+    FAILED --> AUDIT
+    FORECAST --> DB
+    AUDIT --> DB
+
+    USER[ผู้ใช้งาน / ผู้ดูแล] --> GRAFANA[Grafana: https://localhost:3000<br/>WAN metrics + forecast + reason + audit<br/>configured priority / mode / profile / ML status]
+    DB -->|อ่าน SQL| GRAFANA
+    GRAFANA --> CONTROLS[Control and approvals ใน Grafana<br/>เลือก mode / profile · approve / reject<br/>server proxy ใช้ token ที่เก็บฝั่ง server]
+    CONTROLS --> API
+    CONTROLS --> REVIEW
+    USER --> COMMUNITY[Community flexiManage GUI<br/>https://localhost:18443<br/>Devices / Tunnels · read-only<br/>frontend ชุมชนต่อ controller จริง]
+    MANAGE -->|อ่านสถานะผ่าน API| COMMUNITY
+    USER --> EDGEUI[Official flexiEdge local Web UI<br/>http://localhost:18081 และ :18082<br/>ตั้งค่า / troubleshoot เครื่องแต่ละตัว]
+    EDGEUI -.-> EDGEA
+    EDGEUI -.-> EDGEB
+    CLIENT -.-> PROOF[ตรวจ traffic เมื่อรัน demo / benchmark<br/>end-to-end UDP / ping และ PCAP<br/>เป็นหลักฐาน packet path · ไม่ใช่ input ML live]
+    SERVER -.-> PROOF
+    PROOF --> AUDIT
+
+    classDef traffic fill:#ecfdf5,stroke:#059669,color:#064e3b,stroke-width:2px;
+    classDef ai fill:#eff6ff,stroke:#2563eb,color:#172554,stroke-width:1.5px;
+    classDef control fill:#f5f3ff,stroke:#7c3aed,color:#2e1065,stroke-width:1.5px;
+    classDef warning fill:#fff7ed,stroke:#c2410c,color:#7c2d12,stroke-width:1.5px;
+    classDef ui fill:#f8fafc,stroke:#64748b,color:#0f172a,stroke-width:1.5px;
+    class CLIENT,EDGEA,ROUTE,WAN1,WAN2,WAN3,EDGEB,SERVER traffic;
+    class API,COLLECT,PROBE,VALID,HISTORY,TRAIN,MODEL,MLGATE,FEATURES,FORECAST,FALLBACK,PROFILE,SCORE,DECISION ai;
+    class SWITCH,MODE,APPLY,PENDING,REVIEW,RECHECK,PREFLIGHT,JOURNAL,MANAGE,CONTROLDB,JOBS,READBACK,VERIFIED,CONFIRM control;
+    class INVALID,NOPATH,HOLD,CANCEL,FAILED,RECONCILE warning;
+    class START,READY,NATURAL,DB,AUDIT,USER,GRAFANA,CONTROLS,COMMUNITY,EDGEUI,PROOF ui;

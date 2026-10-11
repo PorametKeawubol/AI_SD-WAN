@@ -1,0 +1,15 @@
+{
+  "name": "ai-sdwan-system-flow",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Render the single complete AI SD-WAN system flow as SVG and PNG",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "render": "node render-system-flow.cjs"
+  },
+  "dependencies": {
+    "playwright-core": "1.64.0"
+  }
+}

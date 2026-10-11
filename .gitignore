@@ -13,6 +13,9 @@ config/lab.local.json
 artifacts/*
 !artifacts/.gitkeep
 !artifacts/ai-sdwan-demo-20261010.mp4
+!artifacts/ai-sdwan-system-flow.png
+!artifacts/ai-sdwan-system-flow.svg
+!artifacts/ai-sdwan-system-flow.mmd
 node_modules/
 *.pcap
 *.pcapng
