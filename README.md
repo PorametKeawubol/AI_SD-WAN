@@ -6,6 +6,8 @@
 
 Flow ทั้งระบบในภาพเดียว: [ภาพ PNG](artifacts/ai-sdwan-system-flow.png) · [ภาพ SVG สำหรับซูม](artifacts/ai-sdwan-system-flow.svg) · [รายละเอียดและวิธีสร้างภาพซ้ำ](docs/SYSTEM_FLOW.md)
 
+สาธิตด้วยคำสั่งสั้นใน PowerShell: `./demo.ps1 start`, `./demo.ps1 traffic`, `./demo.ps1 down` และ `./demo.ps1 reset` ดูคำสั่งทั้งหมดด้วย `./demo.ps1 help` หรือ [คู่มือสาธิต](docs/DEMO_COMMANDS.md) สคริปต์อ่าน token จาก private runtime และตรวจการคืนค่า workload ก่อนเปลี่ยนเหตุการณ์ทดสอบ
+
 ## Stack ที่ใช้งาน
 
 | ส่วนของระบบ | Technology | สถานะ |
@@ -16,7 +18,7 @@ Flow ทั้งระบบในภาพเดียว: [ภาพ PNG](art
 | Telemetry & Decision Service | FastAPI | HTTPS API และ loop รับ probe จริง |
 | Backend / Service Logic | Python | validation, decision, approval, apply/readback |
 | Database / Time-Series DB | TimescaleDB | 2.30.2 / PostgreSQL 17; telemetry hypertable |
-| Monitoring & Dashboard | Grafana | 13.2.3; 18 panels, SQL อ่านอย่างเดียว และปุ่มควบคุมผ่าน authenticated API |
+| Monitoring & Dashboard | Grafana | 13.2.3; 25 panels, SQL อ่านอย่างเดียว และปุ่มควบคุมผ่าน authenticated API |
 | Machine Learning | XGBoost | 3.4.1; โมเดล simulation ที่ตรึงไว้; เปิด live ML แบบทดลองตามคำสั่งผู้ใช้ 8 ต.ค. 2026 |
 | Controller Integration | REST API | jobs + agent configuration readback |
 | Database Communication | SQL | psycopg 3, parameterized queries |
@@ -45,6 +47,10 @@ Grafana มี panel **Control and approvals** ใต้แถวสถานะ
 สถานะหลัง resume 9 ตุลาคม 2026: **Auto + live ML แบบ experimental / voice / configured priority WAN1** มีคำทำนายจาก probe จริงครบ 3 WAN ใน stream `live-auto-20261009-201515` และ [monitor จาก Windows](reports/flexiwan/resume-20261009-201515-windows-monitor-followup.json) ผ่าน 13/13 ตัวอย่างใน 62 วินาที [ผลตรวจ stack ซ้ำ](reports/flexiwan/resume-20261009-201515-verification-followup.json) ยืนยัน agents ทั้งสอง, tunnels 3 เส้น, SQL/Grafana, LAN ping 3/3 และ unresolved intents เป็น 0 ค่า WAN1 อ่านได้ตั้งแต่ก่อนเปิด Auto รอบนี้; decision ล่าสุดเป็น `hold` เพราะ current path remains preferred และ stream รอบนั้นยังไม่มี event `applied` โมเดลใน Linux ใช้ weights เดิมและยังไม่ได้ validate ประสิทธิภาพ ML บนข้อมูลจริง
 
 เปิด natural WAN ตามตัวเลือกผู้ใช้ใน stream ใหม่ `live-natural-20261009-231927`: **WAN1 ไฟเบอร์ / WAN2 บรอดแบนด์ / WAN3 มือถือ** คงความจุ 100/80/30 Mbps ให้ NetEm delay/jitter/burst loss และ UDP background load เปลี่ยนตามเวลาคนละจังหวะ Grafana อ่านค่าที่วัดจริงและมีการ์ด **WAN environment (lab profiles)** เพิ่ม Auto / voice และ ML แบบ experimental ยังทำงานอยู่ โปรไฟล์เป็นสมมติฐานสำหรับ lab ที่ยังไม่ได้ calibrate กับ ISP จริง ดู [วิธีเปิด–หยุดและนิยามค่าที่วัด](docs/NATURAL_WAN.md)
+
+โหมด **real traffic with emulated capacity** ใช้ HTTP request/download และ UDP ผ่าน LAN tunnel พร้อม iperf3 background load แยกแต่ละ WAN เอาการเติม delay/jitter/loss ออกระหว่างรัน คงคอขวด 100/80/30 Mbps และวัด goodput/loss/jitter ที่ปลายทาง Grafana เพิ่ม 7 panels สำหรับ workload และผล endpoint โหมดนี้ยังใช้ WAN เสมือน ไม่ใช่ ISP จริง และไม่เปิด ML ให้อัตโนมัติ ดู [วิธีเปิด–หยุดและอ่านผล](docs/REAL_TRAFFIC.md)
+
+ปรับ ML 11 ตุลาคม 2026: ใช้ cache forecast ใน live แล้ว ผลอ่านซ้ำเมื่อ telemetry ไม่เปลี่ยนเร็วขึ้นประมาณ 468 เท่าโดยคำทำนายเดิม สร้าง offline pipeline ที่แยก train/tune/acceptance/holdout และทดลองกับข้อมูลจำลองกับ probe จริงแล้ว Candidate ยังไม่ถูก promote เพราะผลไม่ได้ชนะทุกชุดและข้อมูลจริงยังไม่ผ่าน acceptance ดู [ผล ตัวเลข และวิธีรันซ้ำ](docs/ML_OPTIMIZATION.md)
 
 สาธิต WAN1 down ตามคำขอผู้ใช้ 10 ตุลาคม 2026: เลือก WAN2 หลัง 5.37 วินาที, verified policy ครบสอง edges หลัง 20.68 วินาที และ UDP ฟื้นประมาณ 5 วินาที คืนลิงก์และ natural environment แล้ว ระบบกลับ WAN1 เองภายหลัง การสลับตอน down ใช้กฎ failover; decision นั้นไม่มี forecasts ที่ใช้ได้ เพิ่มตาราง **Latest decision and reason** และ **ML 30s forecasts and measured WAN quality** ใน Grafana ดู [ผลสาธิตและขอบเขตการตีความ ML](reports/flexiwan/WAN1_DOWN_DEMO.md)
 
@@ -89,7 +95,7 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m sdwan report
 ```
 
-มี frozen model/results ใน workspace แล้ว `python -m sdwan train` และ `eval --suite balanced --repetitions 30 --seed-base 70000 --output reports/balanced-new` ใช้สร้างผล simulation ใหม่ ควรเลือก output ใหม่เพื่อรักษาหลักฐานเดิม Live ML ปิดเป็นค่าเริ่มต้นเพราะยังไม่ได้ validate โมเดล synthetic กับ probe จริง
+มี frozen model/results ใน workspace แล้ว สร้างโมเดล legacy ชุดใหม่ด้วย `python -m sdwan train --output artifacts/model-legacy-new` หรือใช้ pipeline แยก acceptance ด้วย `python -m sdwan.optimization --output artifacts/model-candidate-new --baseline-model artifacts/model` คำสั่ง train ปฏิเสธการเขียนทับ weights เดิม ประเมิน simulation ใหม่ด้วย `python -m sdwan eval --model artifacts/model-candidate-new --suite balanced --repetitions 30 --seed-base 70000 --output reports/balanced-new` โดยเลือก output ใหม่ Live ML ปิดเป็นค่าเริ่มต้นเพราะยังไม่ได้ validate ประสิทธิภาพบนข้อมูลจริง
 
 Git repository มี source, dashboard/plugin ที่ build แล้ว และรายงานผล ไม่รวม credentials, runtime, virtual environment, vendor, model weights, raw PCAP, SQLite backups หรือ experiment logs ไฟล์เหล่านี้ยังเก็บไว้ใน workspace เดิม หาก clone ไปเครื่องใหม่ให้สร้างโมเดลด้วย `python -m sdwan train` และเตรียม private runtime ตาม [REAL_TESTBED](docs/REAL_TESTBED.md)
 
@@ -138,6 +144,8 @@ wsl --distribution AI-SDWAN-Lab --user root --cd /opt/ai-sdwan-lab --exec .venv/
 - [รายละเอียด implementation](docs/IMPLEMENTATION.md)
 - [Linux lab / live evaluation](docs/REAL_TESTBED.md)
 - [โหมดไฟเบอร์ / บรอดแบนด์ / มือถือ](docs/NATURAL_WAN.md)
+- [ทราฟฟิกใช้งานจริงและโหลดพื้นหลังแยก WAN](docs/REAL_TRAFFIC.md)
+- [ผลปรับ ML, ข้อมูลจริง และ forecast cache](docs/ML_OPTIMIZATION.md)
 - [ผล packet ที่ตรึงไว้](reports/flexiwan/CONTINUATION.md)
 - [ผล simulation](reports/latest/EVALUATION.md) และ [เกณฑ์ evaluation](docs/EVALUATION_PROTOCOL.md)
 - [บันทึกงาน](docs/WORK_LOG.md)

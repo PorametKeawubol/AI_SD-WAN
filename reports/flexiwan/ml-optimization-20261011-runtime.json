@@ -1,0 +1,19 @@
+{
+  "stream": "live-real-traffic-20261011-053846",
+  "source_optimization_loaded": true,
+  "mode": "auto",
+  "profile": "voice",
+  "confirmed_priority": "wan1",
+  "model_loaded": true,
+  "new_candidate_promoted": false,
+  "frozen_model_preserved": true,
+  "original_model_fingerprint": "b7b72bfa7c1f34be948b397c4aaebdc639093657c15b444992d8bef3b2bbfc7d",
+  "agent_readback_verified": true,
+  "unresolved_intents": 0,
+  "fresh_wans": [
+    "wan1",
+    "wan2",
+    "wan3"
+  ],
+  "apply_inflight": null
+}

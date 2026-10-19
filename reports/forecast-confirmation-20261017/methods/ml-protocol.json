@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "purpose": "Additional independent link-level tuning, acceptance and final evaluation after optimization",
+  "development_data": "/opt/ai-sdwan-lab/artifacts/link-campaign-20261017/dataset.json",
+  "development_dataset_sha256": "d0dd7e3b4e31a95e2c8904db86d58aec30a8ca23022fe39fec4ee519b8a24cf8",
+  "development_note": "All 12 previously observed episodes are now training data; their former holdout is no longer used for confirmation.",
+  "fresh_collection": {
+    "schema": 1,
+    "testbed": "isolated_linux_veth_netem",
+    "real_packets": true,
+    "flexiwan_in_path": false,
+    "real_isp": false,
+    "duration_seconds_per_episode": 125,
+    "interval_seconds": 5,
+    "partitions": {
+      "train": 0,
+      "tune": 3,
+      "accept": 3,
+      "holdout": 3
+    },
+    "seeds": [
+      2026181700,
+      2026189619,
+      2026197538,
+      2026205457,
+      2026213376,
+      2026221295,
+      2026229214,
+      2026237133,
+      2026245052
+    ],
+    "capacity_mbps": {
+      "wan1": 100,
+      "wan2": 80,
+      "wan3": 30
+    },
+    "scenarios": [
+      "stable",
+      "gradual_degradation",
+      "step_busy",
+      "recovery"
+    ],
+    "measurements": {
+      "rtt_jitter_loss": "100 ICMP probes at 20 ms spacing; RTT mean and population stddev",
+      "utilization": "measured source veth TX bytes / actual elapsed interval / capacity; not VPP",
+      "raw_counter_audit": "per-frame TX counter before/after, elapsed seconds and configured Mbps"
+    },
+    "split_rule": "whole chronological episodes; all WANs together; no cross-episode windows",
+    "acceptance": "at least 2% MAE gain, >=3 episode groups, >=30 windows, paired episode-block 95% CI upper<0",
+    "runtime_promotion": false
+  },
+  "combined_counts": [
+    12,
+    3,
+    3,
+    3
+  ],
+  "search": {
+    "schema": 1,
+    "linear_alphas": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "linear_features": "current level plus relative lag1/lag3/mean, stddev, observed slope*30; training-only standardization",
+    "trees_depth_lambda_min_child": [
+      [
+        2,
+        5,
+        1
+      ],
+      [
+        3,
+        5,
+        1
+      ],
+      [
+        5,
+        5,
+        1
+      ],
+      [
+        2,
+        20,
+        10
+      ]
+    ],
+    "tree_parameters": {
+      "trees": 240,
+      "learning_rate": 0.05,
+      "objective": "reg:absoluteerror",
+      "early_stopping": 20
+    },
+    "blend_weights": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "selection": "minimum tuning MAE only; ties prefer smaller weight then linear before trees in declared order",
+    "acceptance": "untouched chronological acceptance; >=2% MAE reduction, >=3 episode groups, >=30 samples, paired episode-block bootstrap 95% CI upper<0",
+    "rejection": "use persistence; do not try another candidate on acceptance",
+    "holdout": "report only after selection and acceptance are frozen; no retuning",
+    "runtime_promoted": false
+  },
+  "comparators": [
+    "persistence",
+    "linear_trend",
+    "original_frozen",
+    "previous_optimized",
+    "new_gated_candidate"
+  ],
+  "old_frozen_fingerprint": "b7b72bfa7c1f34be948b397c4aaebdc639093657c15b444992d8bef3b2bbfc7d",
+  "previous_optimized_fingerprint": "2d3c3fc2cd27419da0977af36d6d0943afbf50ed54a5be9f1bb16ba78695b6eb",
+  "collector_sha256": "14d7be47b4bb2d028f5a017acecd4273df839b8ff50248a2afe0722a749c9f09",
+  "new_seed_data_never_seen_before_search": true,
+  "acceptance_rejection": "Do not choose another candidate after viewing acceptance. Reject each failed metric to persistence.",
+  "final_evaluation": "Report all final episodes and metrics after parameters and gate are frozen. No retry based on final performance.",
+  "runtime_promotion": false,
+  "scope": "ICMP/UDP through isolated Linux veth/NetEm, no flexiEdge/VPP/overlay or ISP circuits"
+}

@@ -1,0 +1,1895 @@
+{
+  "storage": "timescaledb",
+  "stream": "trial-533324779b0848859e800360a58902e1",
+  "telemetry": [
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.798631332466998,
+      "timestamp": 1792269629.6886625,
+      "latency_ms": 28.12,
+      "utilization_pct": 0.03174808415429072
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.9778981567829,
+      "timestamp": 1792269629.6886625,
+      "latency_ms": 42.721,
+      "utilization_pct": 0.03953388269076757
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.060296407954874,
+      "timestamp": 1792269629.6886625,
+      "latency_ms": 69.527,
+      "utilization_pct": 0.10793926149595848
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.850048700990677,
+      "timestamp": 1792269634.7149122,
+      "latency_ms": 30.265,
+      "utilization_pct": 2.330367176190874
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.207065977219856,
+      "timestamp": 1792269634.7149122,
+      "latency_ms": 43.3,
+      "utilization_pct": 0.039237786752238574
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.851180842924364,
+      "timestamp": 1792269634.7149122,
+      "latency_ms": 70.006,
+      "utilization_pct": 0.10463409800596953
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.8693410291676282,
+      "timestamp": 1792269639.7353704,
+      "latency_ms": 30.96,
+      "utilization_pct": 2.3390925954595123
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.522649732640754,
+      "timestamp": 1792269639.7353704,
+      "latency_ms": 45.271,
+      "utilization_pct": 0.038405881005909
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.107852875403731,
+      "timestamp": 1792269639.7353704,
+      "latency_ms": 70.404,
+      "utilization_pct": 0.1045128020225332
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.470832032812882,
+      "timestamp": 1792269644.6425219,
+      "latency_ms": 29.265,
+      "utilization_pct": 2.3332717573173536
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.405284927308074,
+      "timestamp": 1792269644.6425219,
+      "latency_ms": 43.505,
+      "utilization_pct": 0.04091206638183709
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.711649653895059,
+      "timestamp": 1792269644.6425219,
+      "latency_ms": 69.431,
+      "utilization_pct": 0.10950738072437517
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.6687327512371355,
+      "timestamp": 1792269649.7231002,
+      "latency_ms": 29.68,
+      "utilization_pct": 2.3224075565564744
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.792629755845669,
+      "timestamp": 1792269649.7231002,
+      "latency_ms": 43.459,
+      "utilization_pct": 0.0381959958222547
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.468253217991162,
+      "timestamp": 1792269649.7231002,
+      "latency_ms": 68.841,
+      "utilization_pct": 0.10394164760367348
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 4.261945447797285,
+      "timestamp": 1792269654.8492496,
+      "latency_ms": 31.361,
+      "utilization_pct": 2.334172143462443
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.02239989030714,
+      "timestamp": 1792269654.8492496,
+      "latency_ms": 45.51,
+      "utilization_pct": 0.03740188835771262
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.681687611155402,
+      "timestamp": 1792269654.8492496,
+      "latency_ms": 70.535,
+      "utilization_pct": 0.09759462987620263
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.871242177906208,
+      "timestamp": 1792269659.8903825,
+      "latency_ms": 30.022,
+      "utilization_pct": 2.138234033162711
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.5759105833336875,
+      "timestamp": 1792269659.8903825,
+      "latency_ms": 43.82,
+      "utilization_pct": 0.037766298627778166
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.38354788979094,
+      "timestamp": 1792269659.8903825,
+      "latency_ms": 69.377,
+      "utilization_pct": 0.10384110723544715
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.635152128866136,
+      "timestamp": 1792269664.801963,
+      "latency_ms": 30.487000000000002,
+      "utilization_pct": 2.330887549956202
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.834354687898485,
+      "timestamp": 1792269664.801963,
+      "latency_ms": 42.886,
+      "utilization_pct": 0.0372997006550309
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.366553848668143,
+      "timestamp": 1792269664.801963,
+      "latency_ms": 69.113,
+      "utilization_pct": 0.09907855462949551
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.5901203322451463,
+      "timestamp": 1792269669.7809103,
+      "latency_ms": 29.994,
+      "utilization_pct": 2.3343234289321657
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.406092724898696,
+      "timestamp": 1792269669.7809103,
+      "latency_ms": 43.224,
+      "utilization_pct": 0.0391045391337111
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.813295878551711,
+      "timestamp": 1792269669.7809103,
+      "latency_ms": 71.068,
+      "utilization_pct": 0.10671466956175368
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.5382402405715756,
+      "timestamp": 1792269674.6657495,
+      "latency_ms": 30.516,
+      "utilization_pct": 2.3346112447017027
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.684040278395214,
+      "timestamp": 1792269674.6657495,
+      "latency_ms": 45.135,
+      "utilization_pct": 0.03957966239004778
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.092982514004962,
+      "timestamp": 1792269674.6657495,
+      "latency_ms": 70.813,
+      "utilization_pct": 0.10388271472301779
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 4.340770784088927,
+      "timestamp": 1792269679.722291,
+      "latency_ms": 30.047,
+      "utilization_pct": 2.313332823761474
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.077238091233048,
+      "timestamp": 1792269679.722291,
+      "latency_ms": 44.501,
+      "utilization_pct": 0.039844770755539875
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.583119742547309,
+      "timestamp": 1792269679.722291,
+      "latency_ms": 69.796,
+      "utilization_pct": 0.10833685172618975
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.7928979685723156,
+      "timestamp": 1792269684.7937865,
+      "latency_ms": 30.115,
+      "utilization_pct": 2.329380236282485
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.788806006057668,
+      "timestamp": 1792269684.7937865,
+      "latency_ms": 42.899,
+      "utilization_pct": 0.03888031681589652
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.122550684978407,
+      "timestamp": 1792269684.7937865,
+      "latency_ms": 69.387,
+      "utilization_pct": 0.10527081500224195
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 22.979683287634757,
+      "timestamp": 1792269689.9108407,
+      "latency_ms": 33.866,
+      "utilization_pct": 2.315403925737453
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 32.059135655846994,
+      "timestamp": 1792269689.9108407,
+      "latency_ms": 48.711,
+      "utilization_pct": 0.03633663483894541
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 37.871942266010066,
+      "timestamp": 1792269689.9108407,
+      "latency_ms": 77.617,
+      "utilization_pct": 0.09769659290031349
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.7812675123561412,
+      "timestamp": 1792269694.779056,
+      "latency_ms": 29.804000000000002,
+      "utilization_pct": 2.3235960381543195
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.296949773706819,
+      "timestamp": 1792269694.779056,
+      "latency_ms": 44.618,
+      "utilization_pct": 0.038444534000289354
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 10.919938232426041,
+      "timestamp": 1792269694.779056,
+      "latency_ms": 70.107,
+      "utilization_pct": 0.10412469779507635
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.87936218984513,
+      "timestamp": 1792269699.748939,
+      "latency_ms": 29.707,
+      "utilization_pct": 2.330499674679329
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.071556169661461,
+      "timestamp": 1792269699.748939,
+      "latency_ms": 43.909,
+      "utilization_pct": 0.03898928898860314
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.599894322335011,
+      "timestamp": 1792269699.748939,
+      "latency_ms": 68.923,
+      "utilization_pct": 0.10357524783036656
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 4.112713337931541,
+      "timestamp": 1792269704.6074762,
+      "latency_ms": 29.933,
+      "utilization_pct": 2.32998339541901
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.5620057524442545,
+      "timestamp": 1792269704.6074762,
+      "latency_ms": 43.387,
+      "utilization_pct": 0.04160154759656469
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.116787756660786,
+      "timestamp": 1792269704.6074762,
+      "latency_ms": 68.059,
+      "utilization_pct": 0.11093746025750584
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 1.0,
+      "jitter_ms": 9.446271740260158,
+      "timestamp": 1792269709.710002,
+      "latency_ms": 75.91313131313132,
+      "utilization_pct": 2.3264749675611838
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.813011375302407,
+      "timestamp": 1792269709.710002,
+      "latency_ms": 44.574,
+      "utilization_pct": 0.039302433324032854
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.92952243963808,
+      "timestamp": 1792269709.710002,
+      "latency_ms": 67.227,
+      "utilization_pct": 0.10730733586612685
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 2.0,
+      "jitter_ms": 14.692888997358995,
+      "timestamp": 1792269715.0856595,
+      "latency_ms": 129.5408163265306,
+      "utilization_pct": 2.3665008288977716
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.781272668164878,
+      "timestamp": 1792269715.0856595,
+      "latency_ms": 45.471,
+      "utilization_pct": 0.036338327770868414
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.522092700739648,
+      "timestamp": 1792269715.0856595,
+      "latency_ms": 69.356,
+      "utilization_pct": 0.09614238872153093
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 1.0,
+      "jitter_ms": 41.376642298588166,
+      "timestamp": 1792269720.8137462,
+      "latency_ms": 191.64646464646464,
+      "utilization_pct": 2.3157634229719832
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 24.348899174295333,
+      "timestamp": 1792269720.8137462,
+      "latency_ms": 48.553,
+      "utilization_pct": 0.02917608582125767
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.500202682048421,
+      "timestamp": 1792269720.8137462,
+      "latency_ms": 70.407,
+      "utilization_pct": 0.07824014397027113
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 1.0,
+      "jitter_ms": 23.153577569567354,
+      "timestamp": 1792269725.2113853,
+      "latency_ms": 231.4848484848485,
+      "utilization_pct": 2.3239034214723393
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.275196973278455,
+      "timestamp": 1792269725.2113853,
+      "latency_ms": 44.897,
+      "utilization_pct": 0.0346114622479436
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.876150008986295,
+      "timestamp": 1792269725.2113853,
+      "latency_ms": 69.781,
+      "utilization_pct": 0.09090124919145699
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 2.0,
+      "jitter_ms": 33.49421211042229,
+      "timestamp": 1792269730.2737577,
+      "latency_ms": 247.92857142857142,
+      "utilization_pct": 1.1606720250361324
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.913006761023271,
+      "timestamp": 1792269730.2737577,
+      "latency_ms": 45.282,
+      "utilization_pct": 1.146610217533868
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.363151178956794,
+      "timestamp": 1792269730.2737577,
+      "latency_ms": 70.3,
+      "utilization_pct": 5.658771806919476
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 6.0,
+      "jitter_ms": 43.31649058640945,
+      "timestamp": 1792269740.4545357,
+      "latency_ms": 323.1808510638298,
+      "utilization_pct": 0.024805659119018147
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.552970242569395,
+      "timestamp": 1792269740.4545357,
+      "latency_ms": 45.541,
+      "utilization_pct": 0.03100707389877268
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.793440964719101,
+      "timestamp": 1792269740.4545357,
+      "latency_ms": 80.114,
+      "utilization_pct": 7.741865790497206
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 9.0,
+      "jitter_ms": 54.50140449028888,
+      "timestamp": 1792269745.9059994,
+      "latency_ms": 378.75824175824175,
+      "utilization_pct": 0.02294327131494657
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.045919102572779,
+      "timestamp": 1792269745.9059994,
+      "latency_ms": 44.032000000000004,
+      "utilization_pct": 0.029660769456669924
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.470186479647305,
+      "timestamp": 1792269745.9059994,
+      "latency_ms": 79.571,
+      "utilization_pct": 7.719506583095994
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 60.25244838178777,
+      "timestamp": 1792269751.1348252,
+      "latency_ms": 67.608,
+      "utilization_pct": 0.0277685255469133
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 60.4475287832348,
+      "timestamp": 1792269751.1348252,
+      "latency_ms": 103.508,
+      "utilization_pct": 7.7250707407435035
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.799596399814544,
+      "timestamp": 1792269756.5085828,
+      "latency_ms": 44.736,
+      "utilization_pct": 0.024908658581141493
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.56131788920374,
+      "timestamp": 1792269756.5085828,
+      "latency_ms": 81.594,
+      "utilization_pct": 7.714789773366918
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 9.0,
+      "jitter_ms": 52.00413580944581,
+      "timestamp": 1792269761.0061297,
+      "latency_ms": 507.85714285714283,
+      "utilization_pct": 0.022038874677508775
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.681614413650297,
+      "timestamp": 1792269761.0061297,
+      "latency_ms": 45.52,
+      "utilization_pct": 0.02798416357390193
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.514476143603904,
+      "timestamp": 1792269761.0061297,
+      "latency_ms": 78.964,
+      "utilization_pct": 7.730298101782855
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.188625668373614,
+      "timestamp": 1792269766.1204581,
+      "latency_ms": 43.781,
+      "utilization_pct": 0.027285730149140815
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.634413471684107,
+      "timestamp": 1792269766.1204581,
+      "latency_ms": 79.952,
+      "utilization_pct": 7.710839255881866
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.6499030820005185,
+      "timestamp": 1792269771.1870925,
+      "latency_ms": 43.883,
+      "utilization_pct": 0.02682130532939678
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.162257744594228,
+      "timestamp": 1792269771.1870925,
+      "latency_ms": 78.192,
+      "utilization_pct": 7.732391259453826
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.35668974471535,
+      "timestamp": 1792269776.1841803,
+      "latency_ms": 45.554,
+      "utilization_pct": 0.0278213714050341
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.22049657867455,
+      "timestamp": 1792269776.1841803,
+      "latency_ms": 80.706,
+      "utilization_pct": 7.7357756970819205
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 38.80293879334399,
+      "timestamp": 1792269781.2117076,
+      "latency_ms": 52.129,
+      "utilization_pct": 0.02716362602396661
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 45.40973916463296,
+      "timestamp": 1792269781.2117076,
+      "latency_ms": 90.217,
+      "utilization_pct": 7.6920289245276345
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 4.019950248448356,
+      "timestamp": 1792269784.819366,
+      "latency_ms": 28.78,
+      "utilization_pct": 0.030434038807126723
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.45447912331908,
+      "timestamp": 1792269784.819366,
+      "latency_ms": 45.571,
+      "utilization_pct": 0.038042548508908404
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.4757803390788355,
+      "timestamp": 1792269784.819366,
+      "latency_ms": 80.937,
+      "utilization_pct": 7.7435503548493685
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.751329764230279,
+      "timestamp": 1792269789.8097868,
+      "latency_ms": 27.375,
+      "utilization_pct": 0.02988841178364081
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.364862527973405,
+      "timestamp": 1792269789.8097868,
+      "latency_ms": 44.525,
+      "utilization_pct": 0.037215035254431296
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.229537714841582,
+      "timestamp": 1792269789.8097868,
+      "latency_ms": 79.053,
+      "utilization_pct": 7.758776024628625
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 4.264108230333747,
+      "timestamp": 1792269794.8802712,
+      "latency_ms": 28.559,
+      "utilization_pct": 0.030015378001676904
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.112338855819512,
+      "timestamp": 1792269794.8802712,
+      "latency_ms": 43.594,
+      "utilization_pct": 0.03751922250209613
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.202757097464243,
+      "timestamp": 1792269794.8802712,
+      "latency_ms": 79.576,
+      "utilization_pct": 7.833302911781898
+    }
+  ],
+  "events": [
+    {
+      "id": 76689,
+      "timestamp": 1792269629.8267076,
+      "kind": "startup",
+      "payload": {
+        "mode": "manual",
+        "backend": "flexiwan",
+        "model_error": null
+      }
+    },
+    {
+      "id": 76690,
+      "timestamp": 1792269629.858051,
+      "kind": "configuration",
+      "payload": {
+        "mode": "manual",
+        "profile": "voice"
+      }
+    },
+    {
+      "id": 76691,
+      "timestamp": 1792269630.336444,
+      "kind": "configuration",
+      "payload": {
+        "mode": "auto",
+        "profile": "voice"
+      }
+    },
+    {
+      "id": 76692,
+      "timestamp": 1792269631.3543246,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.12473712235670381,
+          "wan2": 0.1994148775163706,
+          "wan3": 0.3141628748221924
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76693,
+      "timestamp": 1792269636.058431,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.1353459366335893,
+          "wan2": 0.19601250282605276,
+          "wan3": 0.3208669291161724
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76694,
+      "timestamp": 1792269641.286753,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13757409452021668,
+          "wan2": 0.20402800801928153,
+          "wan3": 0.31710520717272905
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76695,
+      "timestamp": 1792269646.042891,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.12982266648094815,
+          "wan2": 0.19128508629269023,
+          "wan3": 0.31821984332717435
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76696,
+      "timestamp": 1792269651.1610034,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13236889760250836,
+          "wan2": 0.19372485836534153,
+          "wan3": 0.3148179241992805
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76697,
+      "timestamp": 1792269656.1491628,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.14138625655775267,
+          "wan2": 0.2080750024159771,
+          "wan3": 0.3213122417908296
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76698,
+      "timestamp": 1792269661.7474697,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.1344380045746459,
+          "wan2": 0.19336234771993752,
+          "wan3": 0.31586105444399865
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76699,
+      "timestamp": 1792269666.5634205,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13458016010903456,
+          "wan2": 0.19228253075374827,
+          "wan3": 0.31494782324883674
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76700,
+      "timestamp": 1792269670.963781,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13280667459652123,
+          "wan2": 0.19044445906454746,
+          "wan3": 0.32380383030628096
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76701,
+      "timestamp": 1792269675.8642788,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13402728701164668,
+          "wan2": 0.20469790129328483,
+          "wan3": 0.31823202128457145
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76702,
+      "timestamp": 1792269681.1519806,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.1379350266001953,
+          "wan2": 0.1987509952261462,
+          "wan3": 0.31845602636985904
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76703,
+      "timestamp": 1792269686.0682256,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.15596007241828874,
+          "wan2": 0.19868717390174426,
+          "wan3": 0.31415345592485977
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {
+          "wan1": [
+            53.29148778259646,
+            2.8589680194854736,
+            0.0,
+            1.113340139389038
+          ],
+          "wan2": [
+            30.872156490539307,
+            4.151802062988281,
+            0.0,
+            0.0
+          ],
+          "wan3": [
+            42.15644671134247,
+            5.470098495483398,
+            0.0,
+            0.0
+          ]
+        },
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76704,
+      "timestamp": 1792269692.1746595,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 1.0868892228953058,
+          "wan2": 1.077921132097045,
+          "wan3": 1.2304934427615675
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {
+          "wan1": [
+            0.0,
+            19.526559829711914,
+            7.094264971195816,
+            1.202688217163086
+          ],
+          "wan2": [
+            0.0,
+            27.905607223510742,
+            0.0,
+            0.0
+          ],
+          "wan3": [
+            0.0,
+            33.698974609375,
+            0.0,
+            0.0
+          ]
+        },
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76705,
+      "timestamp": 1792269696.1304755,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.9812179424941981,
+          "wan2": 1.0026065447459729,
+          "wan3": 1.103087417210064
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {
+          "wan1": [
+            24.984441034613514,
+            1.9918831586837769,
+            34.86300798305251,
+            1.398909330368042
+          ],
+          "wan2": [
+            0.0,
+            3.6170060634613037,
+            38.400111700970655,
+            0.0
+          ],
+          "wan3": [
+            0.0,
+            7.0483856201171875,
+            32.46686646448057,
+            0.0
+          ]
+        },
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76706,
+      "timestamp": 1792269701.0289068,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Waiting for consecutive confirmations",
+        "scores": {
+          "wan1": 0.9557556436400554,
+          "wan2": 1.005977586918103,
+          "wan3": 0.315940920895284
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {
+          "wan1": [
+            0.41247558358144687,
+            2.0519261360168457,
+            15.874578572358736,
+            1.3213528394699097
+          ],
+          "wan2": [
+            0.0,
+            4.215452194213867,
+            6.198552686146731,
+            0.0
+          ],
+          "wan3": [
+            0.0,
+            5.904501914978027,
+            0.0,
+            0.0
+          ]
+        },
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76707,
+      "timestamp": 1792269706.371017,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.1392352899424979,
+          "wan2": 0.19864370759562264,
+          "wan3": 0.3101404808115011
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {
+          "wan1": [
+            38.8682150628883,
+            1.7992222309112549,
+            0.0,
+            0.8746670484542847
+          ],
+          "wan2": [
+            16.82567713447701,
+            3.882061719894409,
+            0.0,
+            0.0
+          ],
+          "wan3": [
+            17.273599979523894,
+            5.3934431076049805,
+            0.0,
+            0.0
+          ]
+        },
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76708,
+      "timestamp": 1792269711.1615837,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Waiting for consecutive confirmations",
+        "scores": {
+          "wan1": 0.6595919971537303,
+          "wan2": 0.9992954174578206,
+          "wan3": 0.30638999515736404
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {
+          "wan1": [
+            7.7532126687402325,
+            5.965689659118652,
+            0.0,
+            0.494251012802124
+          ],
+          "wan2": [
+            0.0,
+            3.1330673694610596,
+            10.479893392320992,
+            0.0
+          ],
+          "wan3": [
+            0.0,
+            5.240509033203125,
+            0.0,
+            0.0
+          ]
+        },
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76709,
+      "timestamp": 1792269716.0932028,
+      "kind": "recommendation",
+      "payload": {
+        "id": "ede3702b1d0b4cf8b319d061a43d6818",
+        "reason": "Current SLA violation; healthy alternative",
+        "source": "wan1",
+        "target": "wan3",
+        "created_at": 1792269716.0932028,
+        "expires_at": 1792269746.0932028
+      }
+    },
+    {
+      "id": 76710,
+      "timestamp": 1792269716.0932028,
+      "kind": "apply_intent",
+      "payload": {
+        "id": "ede3702b1d0b4cf8b319d061a43d6818",
+        "reason": "Current SLA violation; healthy alternative",
+        "source": "wan1",
+        "target": "wan3",
+        "created_at": 1792269716.0932028,
+        "expires_at": 1792269746.0932028
+      }
+    },
+    {
+      "id": 76711,
+      "timestamp": 1792269716.0932028,
+      "kind": "apply_started",
+      "payload": {
+        "id": "ede3702b1d0b4cf8b319d061a43d6818",
+        "target": "wan3"
+      }
+    },
+    {
+      "id": 76712,
+      "timestamp": 1792269716.0932028,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "switch",
+        "reason": "Current SLA violation; healthy alternative",
+        "scores": {
+          "wan1": 2.6055192103434814,
+          "wan2": 1.000829765956292,
+          "wan3": 0.3100421886528002
+        },
+        "source": "wan1",
+        "target": "wan3",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {
+          "wan1": [
+            7.141032573245695,
+            11.067279815673828,
+            0.0,
+            0.0
+          ],
+          "wan2": [
+            0.0,
+            3.1013290882110596,
+            12.745679383907168,
+            0.0
+          ],
+          "wan3": [
+            0.0,
+            4.826700210571289,
+            0.0,
+            0.0
+          ]
+        },
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76713,
+      "timestamp": 1792269723.2137268,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "switch",
+        "reason": "Current SLA violation; healthy alternative",
+        "scores": {
+          "wan1": 2.619643281634935,
+          "wan2": 0.32603362130500435,
+          "wan3": 0.3196860847869399
+        },
+        "source": "wan1",
+        "target": "wan3",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {
+          "wan1": [
+            0.0,
+            37.306026458740234,
+            0.0,
+            0.0
+          ],
+          "wan2": [
+            0.0,
+            20.19137954711914,
+            0.0,
+            0.0
+          ],
+          "wan3": [
+            0.0,
+            5.804810523986816,
+            0.0,
+            0.0
+          ]
+        },
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76714,
+      "timestamp": 1792269726.2415924,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "switch",
+        "reason": "Current SLA violation; healthy alternative",
+        "scores": {
+          "wan1": 1.9176849016207815,
+          "wan2": 1.0030014235029714,
+          "wan3": 0.3203355021418944
+        },
+        "source": "wan1",
+        "target": "wan3",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {
+          "wan1": [
+            0.0,
+            18.89398956298828,
+            0.0,
+            0.0
+          ],
+          "wan2": [
+            0.0,
+            3.5952532291412354,
+            31.15271510632944,
+            0.0
+          ],
+          "wan3": [
+            0.0,
+            6.180757522583008,
+            0.0,
+            0.0
+          ]
+        },
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76715,
+      "timestamp": 1792269730.9715827,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "switch",
+        "reason": "Current SLA violation; healthy alternative",
+        "scores": {
+          "wan1": 3.7840149150635893,
+          "wan2": 1.0092089034364238,
+          "wan3": 0.32775229420457774
+        },
+        "source": "wan1",
+        "target": "wan3",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {
+          "wan1": [
+            0.0,
+            29.2335205078125,
+            0.0,
+            0.0
+          ],
+          "wan2": [
+            0.0,
+            4.233062744140625,
+            11.945059595967779,
+            0.0
+          ],
+          "wan3": [
+            0.0,
+            5.586969375610352,
+            0.0,
+            2.707934617996216
+          ]
+        },
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76716,
+      "timestamp": 1792269741.9964101,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "switch",
+        "reason": "Current SLA violation; healthy alternative",
+        "scores": {
+          "wan1": 5.1233604998660836,
+          "wan2": 0.1983611467402939,
+          "wan3": 0.35686804941562267
+        },
+        "source": "wan1",
+        "target": "wan2",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76717,
+      "timestamp": 1792269743.3366978,
+      "kind": "telemetry_rejected",
+      "payload": {
+        "rejected": [
+          {
+            "index": 0,
+            "reason": "replayed/out-of-order timestamp"
+          },
+          {
+            "index": 1,
+            "reason": "replayed/out-of-order timestamp"
+          },
+          {
+            "index": 2,
+            "reason": "replayed/out-of-order timestamp"
+          }
+        ]
+      }
+    },
+    {
+      "id": 76718,
+      "timestamp": 1792269745.7458735,
+      "kind": "applied",
+      "payload": {
+        "id": "ede3702b1d0b4cf8b319d061a43d6818",
+        "detail": "Jobs and agent policy verified on 2 device(s)",
+        "reason": "Current SLA violation; healthy alternative",
+        "source": "wan1",
+        "target": "wan3",
+        "backend": "flexiwan",
+        "created_at": 1792269716.0932028,
+        "expires_at": 1792269746.0932028,
+        "adapter_duration_seconds": 29.60267102799844,
+        "recommendation_to_apply_seconds": 29.65267062187195
+      }
+    },
+    {
+      "id": 76719,
+      "timestamp": 1792269748.8505244,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Cooldown active",
+        "scores": {
+          "wan1": 5.364655660662176,
+          "wan2": 0.19711822863291298,
+          "wan3": 0.35304675416947534
+        },
+        "source": "wan3",
+        "target": "wan3",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76720,
+      "timestamp": 1792269754.342634,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Cooldown active",
+        "scores": {
+          "wan1": 5.364655660662176,
+          "wan2": 1.3225532700878302,
+          "wan3": 2.1713826431228043
+        },
+        "source": "wan3",
+        "target": "wan3",
+        "profile": "voice",
+        "degraded": true,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76721,
+      "timestamp": 1792269758.4249215,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Cooldown active",
+        "scores": {
+          "wan2": 0.20424682376306552,
+          "wan3": 0.35971543555030305
+        },
+        "source": "wan3",
+        "target": "wan3",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76722,
+      "timestamp": 1792269763.1469746,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 5.711730970187435,
+          "wan2": 0.20581740303029183,
+          "wan3": 0.35153900446033076
+        },
+        "source": "wan3",
+        "target": "wan3",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76723,
+      "timestamp": 1792269768.4353547,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Cooldown active",
+        "scores": {
+          "wan1": 5.711730970187435,
+          "wan2": 0.19731264733940598,
+          "wan3": 0.3552701552376971
+        },
+        "source": "wan3",
+        "target": "wan3",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76724,
+      "timestamp": 1792269773.463197,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan2": 0.1940263893888858,
+          "wan3": 0.3402117037297179
+        },
+        "source": "wan3",
+        "target": "wan3",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76725,
+      "timestamp": 1792269779.1153688,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Waiting for consecutive confirmations",
+        "scores": {
+          "wan2": 0.20375296725044406,
+          "wan3": 0.3548142700196335
+        },
+        "source": "wan3",
+        "target": "wan3",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76726,
+      "timestamp": 1792269783.4955568,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Waiting for consecutive confirmations",
+        "scores": {
+          "wan2": 1.133118531332333,
+          "wan3": 1.3312026426384325
+        },
+        "source": "wan3",
+        "target": "wan3",
+        "profile": "voice",
+        "degraded": true,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76727,
+      "timestamp": 1792269788.4677436,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Waiting for consecutive confirmations",
+        "scores": {
+          "wan1": 0.1281903917210009,
+          "wan2": 0.2044729317363087,
+          "wan3": 0.34388878618527446
+        },
+        "source": "wan3",
+        "target": "wan3",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76728,
+      "timestamp": 1792269793.8821328,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Waiting for consecutive confirmations",
+        "scores": {
+          "wan1": 0.12218367911450792,
+          "wan2": 0.19406944191191342,
+          "wan3": 0.34995387813999157
+        },
+        "source": "wan3",
+        "target": "wan3",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    },
+    {
+      "id": 76729,
+      "timestamp": 1792269798.2482383,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Waiting for consecutive confirmations",
+        "scores": {
+          "wan1": 0.12915441383222778,
+          "wan2": 0.19626012440963356,
+          "wan3": 0.35146855216939804
+        },
+        "source": "wan3",
+        "target": "wan3",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Experimental forecast enabled on real probes; live validation pending"
+      }
+    }
+  ],
+  "state": {
+    "mode": "auto",
+    "profile": "voice",
+    "route": {
+      "current": "wan3",
+      "last_switch": 1792269745.7458735
+    },
+    "service_status": {
+      "mode": "auto",
+      "backend": "flexiwan",
+      "pending": null,
+      "profile": "voice",
+      "telemetry": {
+        "wan1": {
+          "up": true,
+          "fresh": true,
+          "link_id": "wan1",
+          "loss_pct": 0.0,
+          "jitter_ms": 4.264108230333747,
+          "timestamp": 1792269794.8802712,
+          "latency_ms": 28.559,
+          "age_seconds": 3.3957250118255615,
+          "utilization_pct": 0.030015378001676904
+        },
+        "wan2": {
+          "up": true,
+          "fresh": true,
+          "link_id": "wan2",
+          "loss_pct": 0.0,
+          "jitter_ms": 7.112338855819512,
+          "timestamp": 1792269794.8802712,
+          "latency_ms": 43.594,
+          "age_seconds": 3.3957250118255615,
+          "utilization_pct": 0.03751922250209613
+        },
+        "wan3": {
+          "up": true,
+          "fresh": true,
+          "link_id": "wan3",
+          "loss_pct": 0.0,
+          "jitter_ms": 8.202757097464243,
+          "timestamp": 1792269794.8802712,
+          "latency_ms": 79.576,
+          "age_seconds": 3.3957250118255615,
+          "utilization_pct": 7.833302911781898
+        }
+      },
+      "model_error": "Experimental forecast enabled on real probes; live validation pending",
+      "model_loaded": true,
+      "last_decision": {
+        "action": "hold",
+        "reason": "Waiting for consecutive confirmations",
+        "scores": {
+          "wan1": 0.12915441383222778,
+          "wan2": 0.19626012440963356,
+          "wan3": 0.35146855216939804
+        },
+        "source": "wan3",
+        "target": "wan3",
+        "degraded": false,
+        "predicted": {}
+      },
+      "apply_inflight": null,
+      "confirmed_path": "wan3",
+      "route_evidence": "agent_configuration",
+      "forecast_sampling": "causal_linear_5s",
+      "network_available": true,
+      "observing_native_qbr": false
+    }
+  }
+}

@@ -1,5 +1,7 @@
 # flexiWAN lab และ live evaluation
 
+> สถานะตรวจซ้ำ 17 ตุลาคม 2569: controller/ฐานข้อมูลเริ่มทำงานได้ แต่ WSL ไม่เห็น SVM และ `modprobe kvm_amd` คืน `Operation not supported` ทำให้ VM ทั้งสองยังปิดอยู่ จึงไม่มีผล packet ผ่าน flexiEdge ชุดใหม่ในวันนี้ รายละเอียดด้านล่างที่ระบุว่า KVM และ VM ทำงานได้เป็นผลรอบเดิม ดูหลักฐาน [สภาพแวดล้อม](../reports/flexiwan/forecast-environment-20261017.json) และ [การปรับปรุง forecast](FORECAST_SEARCH_20261017.md) ซึ่งแยกการทดลอง Linux veth/NetEm ออกจาก flexiEdge อย่างชัดเจน
+
 รัน **flexiManage 6.3.37 จริง** ทั้ง native Windows รอบก่อนและ Docker ใน `AI-SDWAN-Lab` รอบปัจจุบันแล้ว หลัง restart Windows ยืนยัน VirtualMachinePlatform/WSL Enabled, HypervisorPresent=true และไม่มี servicing reboot pending Ubuntu 24.04 distro มี `/dev/kvm` และรัน flexiEdge 6.3.35 สองเครื่องผ่าน KVM พร้อม tunnel ครบ 3 เส้น, jobs/policy readback และ probe จริง
 
 **ชุด S01 voice ล่าสุดผ่าน 12/12 actual packet trials**: สี่ strategies อย่างละสาม repeats หลังแก้ clock และใช้ tunnel timers1/4วินาที recovery2–4วินาที เกณฑ์ SLA เดิมไม่เปลี่ยน Reactive voice มี valid observations ครบ16 cases และ passing observations14/16: S07 แจ้ง no_path ครั้งแรกหลัง10.00วินาที เกินเกณฑ์5วินาที; S12 มี SLA97.14% ต่ำกว่า98% สอง initial attempts ที่ baseline invalid ถูกทดสอบซ้ำใน output แยกและผ่านทั้งคู่ ผลทั้งหมดรวม45 attempts,43 completed packet trials,40 valid,33 passed,5 invalid attempts ดู [CONTINUATION](../reports/flexiwan/CONTINUATION.md) ผล bring-up แรก5 trials (ผ่าน2 ไม่ผ่าน3) และทุกรอบ invalid ยังคงเก็บไว้ พร้อม UDP observations, PCAP, states และ audit ดู [LIVE_BRINGUP](../reports/flexiwan/LIVE_BRINGUP.md), [readiness ปัจจุบัน](../reports/flexiwan/wsl2-readiness.json) และ [verification ล่าสุด](../reports/flexiwan/continuation-verification.json) ยังไม่ได้รันเต็ม576 trials หรือ validate ML บนข้อมูลจริง ผล `reports/latest` ยังคงเป็น simulation
@@ -32,7 +34,7 @@ Default Docker socket ถูก Docker Desktop redirect จึงให้ Engin
 cd /opt/ai-sdwan-lab
 sudo touch .ai-sdwan-owned
 sudo apt-get update
-sudo apt-get install -y python3.12-venv git qemu-kvm libvirt-daemon-system libvirt-clients virtinst cloud-image-utils iproute2 tcpdump openssh-client curl
+sudo apt-get install -y python3.12-venv git qemu-kvm libvirt-daemon-system libvirt-clients virtinst cloud-image-utils iproute2 tcpdump iperf3 openssh-client curl
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements-lock.txt
 .venv/bin/python -m pip install -e '.[dev,lab]'

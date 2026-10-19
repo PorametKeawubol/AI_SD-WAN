@@ -1,0 +1,26 @@
+{
+  "declared_at_unix": 1792267281.1456003,
+  "prior_instrumentation_record_retained": "/mnt/e/Proposal/.codex-review/loss-sla-20261018/predeclared-sla-sampler-amendment.json",
+  "reason": "Readiness observation with on-demand RPC had only 1 eligible history window per WAN out of 21 candidates due to missing/irregular measurements. Split actual edge sampling from RPC reading before randomized SLA trials.",
+  "original_readiness": "/mnt/e/Proposal/.codex-review/loss-sla-20261018/observe-v2/summary.json",
+  "unchanged_measurement": "The installed probe.py still sends 100 actual ICMP probes per WAN and reads VPP counters; timestamp is actual measurement completion. No new labels, zero filling, time rewriting, extrapolation or relaxed freshness/cadence gates.",
+  "new_transport": "Temporary edge-side five-second sampler with an atomic latest-result cache; fixed allowlisted RPC command reads the result.",
+  "clock_verification": "Read-only native guest UTC date with independently verified hostname/MAC/IP; both SSH clock-offset bounds must remain inside +/-1 second. Initial guest clock alignment performed only while API services were stopped; host clock unchanged.",
+  "ssh_transport": "Authenticated persistent sessions for only the two owned lab guests; strict known_hosts unchanged. PATH override is scoped only to the experiment subprocess.",
+  "experiment_config": "/opt/ai-sdwan-lab/config/flexiwan.tcg-cache-20261018.local.json",
+  "original_config_preserved": true,
+  "sampler_enabled_at_reboot": false,
+  "loss_selection_unchanged": true,
+  "SLA_cases_methods_order_and_gates_unchanged": true,
+  "randomized_SLA_trials_started": false,
+  "source_sha256": {
+    "lab/edge/probe.py": "754f765a6a3b8b863a7b2fdde7025790fdb814fa3ec61ba911d2f174e1abd906",
+    "lab/edge/probe_cache.py": "613506675b7cd5d5358951abca2cd06f19d6dfcdaf4f3225d4da0128caadbefe",
+    "sdwan/flexiwan.py": "d48e67e39e54aa70f3a72cb41e99dcc246445782e82dddd79c9da79936c2ef50",
+    "scripts/run_live_lab.py": "2d5815d65a7ea907b55f48df55acdf7dbfe7db051afb61d3dc1835de8bfc8fe8",
+    "sdwan/collector.py": "bd60bfa290d48d39d01f7fba99d6abbdec657743330d09c1270dffee703fbb70",
+    "sdwan/cli.py": "b96f076a3f7a457b605e772856051356763e43ab5bd7e2198443e745ee22e7e4",
+    "lab/run_live_eval.py": "25000d9c8daef03a542334a93fd813acbaaaa78983c089b98c1531effadbb6e1",
+    "scripts/verify_edge_clocks.py": "ee56810813815663b694a6353c23090854dd214a7d1a1f3bcd31ec8986f5cabc"
+  }
+}

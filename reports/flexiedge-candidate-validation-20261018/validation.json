@@ -1,0 +1,1366 @@
+{
+  "scope": "Measured packet loss confirmation and actual flexiEdge/TCG validation; all attempts retained",
+  "created_at": 1792270734.2431045,
+  "frozen_model_sha256": "fc33ddc5508a23c0b7f7556e06c04bbe96c6d4114336cf1d0ae703f7d5bc31ef",
+  "loss_mae_recomputed_from_saved_predictions": {
+    "persistence": 4.666666666666667,
+    "original_demo": 4.666666666666667,
+    "frozen_v2": 5.610028048960767,
+    "loss_v3_gated": 3.2022849202635766
+  },
+  "manual_runs": {
+    "observe-v2": {
+      "complete": true,
+      "policy_unchanged": true,
+      "model_unchanged": true,
+      "model_sha256": "6397fe7394d23e3579e1ee2215dfd671097278ac890ee0b0e83f6bb1e01afc82",
+      "frames_with_all_wan_forecasts": 13,
+      "wans": {
+        "wan1": {
+          "windows": {
+            "candidate_windows": 21,
+            "forecast_available_windows": 1,
+            "scored_windows": 1,
+            "history_rejected": 20
+          },
+          "metrics": {
+            "latency_ms": {
+              "samples": 1,
+              "forecast_absolute_error_sum": 21.55755795958391,
+              "persistence_absolute_error_sum": 1.1630000000000003,
+              "forecast_mae": 21.55755795958391,
+              "persistence_mae": 1.1630000000000003
+            },
+            "jitter_ms": {
+              "samples": 1,
+              "forecast_absolute_error_sum": 1.450029413283497,
+              "persistence_absolute_error_sum": 0.576073561266246,
+              "forecast_mae": 1.450029413283497,
+              "persistence_mae": 0.576073561266246
+            },
+            "loss_pct": {
+              "samples": 1,
+              "forecast_absolute_error_sum": 0.0015264496492004287,
+              "persistence_absolute_error_sum": 0.0,
+              "forecast_mae": 0.0015264496492004287,
+              "persistence_mae": 0.0
+            },
+            "utilization_pct": {
+              "samples": 1,
+              "forecast_absolute_error_sum": 0.03004547285611898,
+              "persistence_absolute_error_sum": 0.0020035655383410164,
+              "forecast_mae": 0.03004547285611898,
+              "persistence_mae": 0.0020035655383410164
+            }
+          }
+        },
+        "wan2": {
+          "windows": {
+            "candidate_windows": 21,
+            "forecast_available_windows": 1,
+            "scored_windows": 1,
+            "history_rejected": 20
+          },
+          "metrics": {
+            "latency_ms": {
+              "samples": 1,
+              "forecast_absolute_error_sum": 6.791197710546136,
+              "persistence_absolute_error_sum": 1.4919999999999973,
+              "forecast_mae": 6.791197710546136,
+              "persistence_mae": 1.4919999999999973
+            },
+            "jitter_ms": {
+              "samples": 1,
+              "forecast_absolute_error_sum": 2.7950242092746675,
+              "persistence_absolute_error_sum": 0.8419794997347365,
+              "forecast_mae": 2.7950242092746675,
+              "persistence_mae": 0.8419794997347365
+            },
+            "loss_pct": {
+              "samples": 1,
+              "forecast_absolute_error_sum": 0.0029842188541965298,
+              "persistence_absolute_error_sum": 0.0,
+              "forecast_mae": 0.0029842188541965298,
+              "persistence_mae": 0.0
+            },
+            "utilization_pct": {
+              "samples": 1,
+              "forecast_absolute_error_sum": 0.03769747831381369,
+              "persistence_absolute_error_sum": 0.0026450941665912275,
+              "forecast_mae": 0.03769747831381369,
+              "persistence_mae": 0.0026450941665912275
+            }
+          }
+        },
+        "wan3": {
+          "windows": {
+            "candidate_windows": 21,
+            "forecast_available_windows": 1,
+            "scored_windows": 1,
+            "history_rejected": 20
+          },
+          "metrics": {
+            "latency_ms": {
+              "samples": 1,
+              "forecast_absolute_error_sum": 26.968194842877423,
+              "persistence_absolute_error_sum": 0.9629999999999939,
+              "forecast_mae": 26.968194842877423,
+              "persistence_mae": 0.9629999999999939
+            },
+            "jitter_ms": {
+              "samples": 1,
+              "forecast_absolute_error_sum": 6.437677884784264,
+              "persistence_absolute_error_sum": 2.8141419030701975,
+              "forecast_mae": 6.437677884784264,
+              "persistence_mae": 2.8141419030701975
+            },
+            "loss_pct": {
+              "samples": 1,
+              "forecast_absolute_error_sum": 0.004045035743819231,
+              "persistence_absolute_error_sum": 0.0,
+              "forecast_mae": 0.004045035743819231,
+              "persistence_mae": 0.0
+            },
+            "utilization_pct": {
+              "samples": 1,
+              "forecast_absolute_error_sum": 0.10211603292397073,
+              "persistence_absolute_error_sum": 0.0053059023781993064,
+              "forecast_mae": 0.10211603292397073,
+              "persistence_mae": 0.0053059023781993064
+            }
+          }
+        }
+      }
+    },
+    "observe-v2-cache": {
+      "complete": true,
+      "policy_unchanged": true,
+      "model_unchanged": true,
+      "model_sha256": "6397fe7394d23e3579e1ee2215dfd671097278ac890ee0b0e83f6bb1e01afc82",
+      "frames_with_all_wan_forecasts": 25,
+      "wans": {
+        "wan1": {
+          "windows": {
+            "candidate_windows": 25,
+            "forecast_available_windows": 25,
+            "scored_windows": 19,
+            "future_target_missing": 6
+          },
+          "metrics": {
+            "latency_ms": {
+              "samples": 19,
+              "forecast_absolute_error_sum": 491.2422952445096,
+              "persistence_absolute_error_sum": 34.822,
+              "forecast_mae": 25.854857644447872,
+              "persistence_mae": 1.8327368421052632
+            },
+            "jitter_ms": {
+              "samples": 19,
+              "forecast_absolute_error_sum": 100.74370182585027,
+              "persistence_absolute_error_sum": 81.58131082470109,
+              "forecast_mae": 5.302300096097382,
+              "persistence_mae": 4.293753201300057
+            },
+            "loss_pct": {
+              "samples": 19,
+              "forecast_absolute_error_sum": 0.15910865473085858,
+              "persistence_absolute_error_sum": 0.0,
+              "forecast_mae": 0.008374139722676768,
+              "persistence_mae": 0.0
+            },
+            "utilization_pct": {
+              "samples": 19,
+              "forecast_absolute_error_sum": 0.5884490873330374,
+              "persistence_absolute_error_sum": 0.02241804092758027,
+              "forecast_mae": 0.03097100459647565,
+              "persistence_mae": 0.0011798968909252773
+            }
+          }
+        },
+        "wan2": {
+          "windows": {
+            "candidate_windows": 25,
+            "forecast_available_windows": 25,
+            "scored_windows": 19,
+            "future_target_missing": 6
+          },
+          "metrics": {
+            "latency_ms": {
+              "samples": 19,
+              "forecast_absolute_error_sum": 806.4703988026705,
+              "persistence_absolute_error_sum": 40.80200000000001,
+              "forecast_mae": 42.44581046329845,
+              "persistence_mae": 2.1474736842105266
+            },
+            "jitter_ms": {
+              "samples": 19,
+              "forecast_absolute_error_sum": 123.19921509403191,
+              "persistence_absolute_error_sum": 78.8505614832993,
+              "forecast_mae": 6.484169215475364,
+              "persistence_mae": 4.150029551752595
+            },
+            "loss_pct": {
+              "samples": 19,
+              "forecast_absolute_error_sum": 0.1849664657656469,
+              "persistence_absolute_error_sum": 0.0,
+              "forecast_mae": 0.009735077145560364,
+              "persistence_mae": 0.0
+            },
+            "utilization_pct": {
+              "samples": 19,
+              "forecast_absolute_error_sum": 0.7400924558632449,
+              "persistence_absolute_error_sum": 0.02740637186229497,
+              "forecast_mae": 0.038952234519118153,
+              "persistence_mae": 0.0014424406243313142
+            }
+          }
+        },
+        "wan3": {
+          "windows": {
+            "candidate_windows": 25,
+            "forecast_available_windows": 25,
+            "scored_windows": 19,
+            "future_target_missing": 6
+          },
+          "metrics": {
+            "latency_ms": {
+              "samples": 19,
+              "forecast_absolute_error_sum": 1288.9475816562253,
+              "persistence_absolute_error_sum": 51.06199999999998,
+              "forecast_mae": 67.83934640295922,
+              "persistence_mae": 2.6874736842105253
+            },
+            "jitter_ms": {
+              "samples": 19,
+              "forecast_absolute_error_sum": 125.29467517767036,
+              "persistence_absolute_error_sum": 80.51700701892825,
+              "forecast_mae": 6.594456588298439,
+              "persistence_mae": 4.23773721152254
+            },
+            "loss_pct": {
+              "samples": 19,
+              "forecast_absolute_error_sum": 0.21348266761586665,
+              "persistence_absolute_error_sum": 0.0,
+              "forecast_mae": 0.011235929874519298,
+              "persistence_mae": 0.0
+            },
+            "utilization_pct": {
+              "samples": 19,
+              "forecast_absolute_error_sum": 1.9911444747316007,
+              "persistence_absolute_error_sum": 0.06376630332227053,
+              "forecast_mae": 0.10479707761745267,
+              "persistence_mae": 0.0033561212274879223
+            }
+          }
+        }
+      }
+    },
+    "observe-v3-normal": {
+      "complete": true,
+      "policy_unchanged": true,
+      "model_unchanged": true,
+      "model_sha256": "fc33ddc5508a23c0b7f7556e06c04bbe96c6d4114336cf1d0ae703f7d5bc31ef",
+      "frames_with_all_wan_forecasts": 24,
+      "wans": {
+        "wan1": {
+          "windows": {
+            "candidate_windows": 24,
+            "history_rejected": 13,
+            "forecast_available_windows": 11,
+            "scored_windows": 8,
+            "future_target_missing": 3
+          },
+          "metrics": {
+            "latency_ms": {
+              "samples": 8,
+              "forecast_absolute_error_sum": 201.02032457926592,
+              "persistence_absolute_error_sum": 12.865000000000002,
+              "forecast_mae": 25.12754057240824,
+              "persistence_mae": 1.6081250000000002
+            },
+            "jitter_ms": {
+              "samples": 8,
+              "forecast_absolute_error_sum": 55.62058666865394,
+              "persistence_absolute_error_sum": 47.19596299382074,
+              "forecast_mae": 6.952573333581743,
+              "persistence_mae": 5.899495374227593
+            },
+            "loss_pct": {
+              "samples": 8,
+              "forecast_absolute_error_sum": 54.55471608319239,
+              "persistence_absolute_error_sum": 0.0,
+              "forecast_mae": 6.819339510399049,
+              "persistence_mae": 0.0
+            },
+            "utilization_pct": {
+              "samples": 8,
+              "forecast_absolute_error_sum": 0.2492706062932387,
+              "persistence_absolute_error_sum": 0.007359306231730797,
+              "forecast_mae": 0.031158825786654836,
+              "persistence_mae": 0.0009199132789663497
+            }
+          }
+        },
+        "wan2": {
+          "windows": {
+            "candidate_windows": 24,
+            "history_rejected": 13,
+            "forecast_available_windows": 11,
+            "scored_windows": 8,
+            "future_target_missing": 3
+          },
+          "metrics": {
+            "latency_ms": {
+              "samples": 8,
+              "forecast_absolute_error_sum": 354.383,
+              "persistence_absolute_error_sum": 16.49400000000002,
+              "forecast_mae": 44.297875,
+              "persistence_mae": 2.0617500000000026
+            },
+            "jitter_ms": {
+              "samples": 8,
+              "forecast_absolute_error_sum": 59.6642565777735,
+              "persistence_absolute_error_sum": 40.350433235408204,
+              "forecast_mae": 7.4580320722216875,
+              "persistence_mae": 5.0438041544260255
+            },
+            "loss_pct": {
+              "samples": 8,
+              "forecast_absolute_error_sum": 0.0,
+              "persistence_absolute_error_sum": 0.0,
+              "forecast_mae": 0.0,
+              "persistence_mae": 0.0
+            },
+            "utilization_pct": {
+              "samples": 8,
+              "forecast_absolute_error_sum": 0.3094211872155904,
+              "persistence_absolute_error_sum": 0.007314378890670305,
+              "forecast_mae": 0.0386776484019488,
+              "persistence_mae": 0.0009142973613337881
+            }
+          }
+        },
+        "wan3": {
+          "windows": {
+            "candidate_windows": 24,
+            "history_rejected": 13,
+            "forecast_available_windows": 11,
+            "scored_windows": 8,
+            "future_target_missing": 3
+          },
+          "metrics": {
+            "latency_ms": {
+              "samples": 8,
+              "forecast_absolute_error_sum": 550.9483383526875,
+              "persistence_absolute_error_sum": 25.905000000000015,
+              "forecast_mae": 68.86854229408594,
+              "persistence_mae": 3.238125000000002
+            },
+            "jitter_ms": {
+              "samples": 8,
+              "forecast_absolute_error_sum": 68.4197939849856,
+              "persistence_absolute_error_sum": 51.13427863685818,
+              "forecast_mae": 8.5524742481232,
+              "persistence_mae": 6.391784829607272
+            },
+            "loss_pct": {
+              "samples": 8,
+              "forecast_absolute_error_sum": 0.0,
+              "persistence_absolute_error_sum": 0.0,
+              "forecast_mae": 0.0,
+              "persistence_mae": 0.0
+            },
+            "utilization_pct": {
+              "samples": 8,
+              "forecast_absolute_error_sum": 0.8368612102741333,
+              "persistence_absolute_error_sum": 0.016946030018413563,
+              "forecast_mae": 0.10460765128426666,
+              "persistence_mae": 0.0021182537523016954
+            }
+          }
+        }
+      }
+    },
+    "observe-v3-loss": {
+      "complete": true,
+      "policy_unchanged": true,
+      "model_unchanged": true,
+      "model_sha256": "fc33ddc5508a23c0b7f7556e06c04bbe96c6d4114336cf1d0ae703f7d5bc31ef",
+      "frames_with_all_wan_forecasts": 0,
+      "wans": {
+        "wan1": {
+          "windows": {
+            "candidate_windows": 19,
+            "history_rejected": 19
+          },
+          "metrics": {
+            "latency_ms": {
+              "samples": 0,
+              "forecast_mae": null,
+              "persistence_mae": null
+            },
+            "jitter_ms": {
+              "samples": 0,
+              "forecast_mae": null,
+              "persistence_mae": null
+            },
+            "loss_pct": {
+              "samples": 0,
+              "forecast_mae": null,
+              "persistence_mae": null
+            },
+            "utilization_pct": {
+              "samples": 0,
+              "forecast_mae": null,
+              "persistence_mae": null
+            }
+          }
+        },
+        "wan2": {
+          "windows": {
+            "candidate_windows": 19,
+            "history_rejected": 19
+          },
+          "metrics": {
+            "latency_ms": {
+              "samples": 0,
+              "forecast_mae": null,
+              "persistence_mae": null
+            },
+            "jitter_ms": {
+              "samples": 0,
+              "forecast_mae": null,
+              "persistence_mae": null
+            },
+            "loss_pct": {
+              "samples": 0,
+              "forecast_mae": null,
+              "persistence_mae": null
+            },
+            "utilization_pct": {
+              "samples": 0,
+              "forecast_mae": null,
+              "persistence_mae": null
+            }
+          }
+        },
+        "wan3": {
+          "windows": {
+            "candidate_windows": 19,
+            "history_rejected": 19
+          },
+          "metrics": {
+            "latency_ms": {
+              "samples": 0,
+              "forecast_mae": null,
+              "persistence_mae": null
+            },
+            "jitter_ms": {
+              "samples": 0,
+              "forecast_mae": null,
+              "persistence_mae": null
+            },
+            "loss_pct": {
+              "samples": 0,
+              "forecast_mae": null,
+              "persistence_mae": null
+            },
+            "utilization_pct": {
+              "samples": 0,
+              "forecast_mae": null,
+              "persistence_mae": null
+            }
+          }
+        }
+      }
+    }
+  },
+  "packet_attempts": [
+    {
+      "name": "tcg-control-readiness-20261018",
+      "result": "preflight failed before output directory creation"
+    },
+    {
+      "name": "tcg-control-readiness-20261018-2",
+      "result": "preflight failed before output directory creation"
+    },
+    {
+      "name": "tcg-control-readiness-20261018-3",
+      "result": "preflight failed before output directory creation"
+    },
+    {
+      "name": "tcg-control-readiness-20261018-4",
+      "results": {
+        "evidence_level": "real_packets",
+        "complete": true,
+        "order_seed": 20261018,
+        "trials": [
+          {
+            "scenario": "CONTROL",
+            "group": "availability",
+            "affected_links": [],
+            "profile": "voice",
+            "strategy": "reactive",
+            "repeat": 0,
+            "packet_measurement_completed": true,
+            "valid": false,
+            "passed": false,
+            "reason": "Healthy baseline was not established",
+            "evidence_level": "real_packets",
+            "packet_artifacts": [
+              "packets.json",
+              "wan1.pcap"
+            ],
+            "observed_packet_intervals": 170
+          }
+        ],
+        "packet_observed_trials": 1,
+        "native_qbr_evaluated": false,
+        "case_manifest": {
+          "suite": "balanced",
+          "version": 2,
+          "case_count": 1,
+          "full_suite_case_count": 38,
+          "full_suite_fault_count": 37,
+          "fault_case_count": 0,
+          "recoverable_fault_count": 0,
+          "group_counts": {
+            "availability": 1,
+            "quality": 0,
+            "stability": 0,
+            "mixed": 0,
+            "telemetry": 0
+          },
+          "complete_suite_selected": false,
+          "initial_priority": "wan1",
+          "scope": "Balanced v2 covers all 8 binary Up/Down states. Other impairments are selected tests. Legacy v1 retains the original definitions.",
+          "cases": [
+            {
+              "id": "CONTROL",
+              "name": "Normal control",
+              "kind": "normal",
+              "links": [],
+              "recoverable": true,
+              "group": "availability",
+              "affected_links": []
+            }
+          ],
+          "sha256": "aaf8565685910062da8308987cb78f37358bd779134a068ecb6c682ad1b0ab00"
+        }
+      }
+    },
+    {
+      "name": "tcg-control-readiness-20261018-5",
+      "results": {
+        "evidence_level": "real_packets",
+        "complete": true,
+        "order_seed": 20261018,
+        "trials": [
+          {
+            "scenario": "CONTROL",
+            "group": "availability",
+            "affected_links": [],
+            "profile": "voice",
+            "strategy": "reactive",
+            "repeat": 0,
+            "packet_measurement_completed": true,
+            "valid": false,
+            "passed": false,
+            "reason": "Healthy baseline was not established",
+            "evidence_level": "real_packets",
+            "packet_artifacts": [
+              "packets.json",
+              "wan1.pcap"
+            ],
+            "observed_packet_intervals": 170
+          }
+        ],
+        "packet_observed_trials": 1,
+        "native_qbr_evaluated": false,
+        "case_manifest": {
+          "suite": "balanced",
+          "version": 2,
+          "case_count": 1,
+          "full_suite_case_count": 38,
+          "full_suite_fault_count": 37,
+          "fault_case_count": 0,
+          "recoverable_fault_count": 0,
+          "group_counts": {
+            "availability": 1,
+            "quality": 0,
+            "stability": 0,
+            "mixed": 0,
+            "telemetry": 0
+          },
+          "complete_suite_selected": false,
+          "initial_priority": "wan1",
+          "scope": "Balanced v2 covers all 8 binary Up/Down states. Other impairments are selected tests. Legacy v1 retains the original definitions.",
+          "cases": [
+            {
+              "id": "CONTROL",
+              "name": "Normal control",
+              "kind": "normal",
+              "links": [],
+              "recoverable": true,
+              "group": "availability",
+              "affected_links": []
+            }
+          ],
+          "sha256": "aaf8565685910062da8308987cb78f37358bd779134a068ecb6c682ad1b0ab00"
+        }
+      }
+    },
+    {
+      "name": "tcg-bulk-readiness-20261018",
+      "results": {
+        "evidence_level": "real_packets",
+        "complete": true,
+        "order_seed": 20261018,
+        "trials": [
+          {
+            "scenario": "CONTROL",
+            "group": "availability",
+            "affected_links": [],
+            "profile": "bulk",
+            "strategy": "reactive",
+            "repeat": 0,
+            "packet_measurement_completed": true,
+            "valid": false,
+            "passed": false,
+            "reason": "Traffic generator underdelivered; harness limitation",
+            "evidence_level": "real_packets",
+            "packet_artifacts": [
+              "packets.json",
+              "wan1.pcap"
+            ],
+            "observed_packet_intervals": 170
+          }
+        ],
+        "packet_observed_trials": 1,
+        "native_qbr_evaluated": false,
+        "case_manifest": {
+          "suite": "balanced",
+          "version": 2,
+          "case_count": 1,
+          "full_suite_case_count": 38,
+          "full_suite_fault_count": 37,
+          "fault_case_count": 0,
+          "recoverable_fault_count": 0,
+          "group_counts": {
+            "availability": 1,
+            "quality": 0,
+            "stability": 0,
+            "mixed": 0,
+            "telemetry": 0
+          },
+          "complete_suite_selected": false,
+          "initial_priority": "wan1",
+          "scope": "Balanced v2 covers all 8 binary Up/Down states. Other impairments are selected tests. Legacy v1 retains the original definitions.",
+          "cases": [
+            {
+              "id": "CONTROL",
+              "name": "Normal control",
+              "kind": "normal",
+              "links": [],
+              "recoverable": true,
+              "group": "availability",
+              "affected_links": []
+            }
+          ],
+          "sha256": "aaf8565685910062da8308987cb78f37358bd779134a068ecb6c682ad1b0ab00"
+        }
+      }
+    },
+    {
+      "name": "loss-sla-tcg-voice-20261018",
+      "results": {
+        "evidence_level": "live_lab_attempt",
+        "complete": false,
+        "order_seed": 20261018,
+        "trials": [
+          {
+            "scenario": "S12",
+            "group": "quality",
+            "affected_links": [
+              "wan1"
+            ],
+            "profile": "voice",
+            "strategy": "reactive",
+            "repeat": 2,
+            "packet_measurement_completed": false,
+            "evidence_level": "live_lab_attempt",
+            "packet_artifacts": [],
+            "valid": false,
+            "passed": false,
+            "error_type": "IntegrationError",
+            "phase": "controller_apply",
+            "packet_measurement_started": false,
+            "cleanup_errors": []
+          }
+        ],
+        "packet_observed_trials": 0,
+        "native_qbr_evaluated": false,
+        "case_manifest": {
+          "suite": "balanced",
+          "version": 2,
+          "case_count": 1,
+          "full_suite_case_count": 38,
+          "full_suite_fault_count": 37,
+          "fault_case_count": 1,
+          "recoverable_fault_count": 1,
+          "group_counts": {
+            "availability": 0,
+            "quality": 1,
+            "stability": 0,
+            "mixed": 0,
+            "telemetry": 0
+          },
+          "complete_suite_selected": false,
+          "initial_priority": "wan1",
+          "scope": "Balanced v2 covers all 8 binary Up/Down states. Other impairments are selected tests. Legacy v1 retains the original definitions.",
+          "cases": [
+            {
+              "id": "S12",
+              "name": "Progressive degradation",
+              "kind": "ramp",
+              "links": [
+                "wan1"
+              ],
+              "recoverable": true,
+              "group": "quality",
+              "affected_links": [
+                "wan1"
+              ]
+            }
+          ],
+          "sha256": "75fb3a321abae192fa083403adc29bb3cd8e135802038f337ce10878f41e51a7"
+        }
+      }
+    },
+    {
+      "name": "loss-sla-tcg-voice-20261018-retry1",
+      "results": {
+        "evidence_level": "real_packets",
+        "complete": true,
+        "order_seed": 20261018,
+        "trials": [
+          {
+            "scenario": "S12",
+            "group": "quality",
+            "affected_links": [
+              "wan1"
+            ],
+            "profile": "voice",
+            "strategy": "reactive",
+            "repeat": 2,
+            "packet_measurement_completed": true,
+            "valid": true,
+            "passed": false,
+            "restored": false,
+            "sla_interval_ratio": 0.4714285714285714,
+            "recovery_seconds": 44,
+            "udp_rtt_is_latency_proxy": true,
+            "udp_rtt_stddev_is_jitter_proxy": true,
+            "evidence_level": "real_packets",
+            "packet_artifacts": [
+              "packets.json",
+              "wan1.pcap",
+              "wan2.pcap",
+              "wan3.pcap"
+            ],
+            "observed_packet_intervals": 170
+          },
+          {
+            "scenario": "S12",
+            "group": "quality",
+            "affected_links": [
+              "wan1"
+            ],
+            "profile": "voice",
+            "strategy": "predictive_synthetic_lab",
+            "repeat": 1,
+            "packet_measurement_completed": true,
+            "valid": true,
+            "passed": false,
+            "restored": false,
+            "sla_interval_ratio": 0.6857142857142857,
+            "recovery_seconds": 28,
+            "udp_rtt_is_latency_proxy": true,
+            "udp_rtt_stddev_is_jitter_proxy": true,
+            "evidence_level": "real_packets",
+            "packet_artifacts": [
+              "packets.json",
+              "wan1.pcap",
+              "wan2.pcap",
+              "wan3.pcap"
+            ],
+            "observed_packet_intervals": 170
+          },
+          {
+            "scenario": "S12",
+            "group": "quality",
+            "affected_links": [
+              "wan1"
+            ],
+            "profile": "voice",
+            "strategy": "predictive_synthetic_lab",
+            "repeat": 2,
+            "packet_measurement_completed": true,
+            "valid": true,
+            "passed": false,
+            "restored": false,
+            "sla_interval_ratio": 0.4714285714285714,
+            "recovery_seconds": 45,
+            "udp_rtt_is_latency_proxy": true,
+            "udp_rtt_stddev_is_jitter_proxy": true,
+            "evidence_level": "real_packets",
+            "packet_artifacts": [
+              "packets.json",
+              "wan1.pcap",
+              "wan2.pcap",
+              "wan3.pcap"
+            ],
+            "observed_packet_intervals": 170
+          },
+          {
+            "scenario": "S12",
+            "group": "quality",
+            "affected_links": [
+              "wan1"
+            ],
+            "profile": "voice",
+            "strategy": "reactive",
+            "repeat": 0,
+            "packet_measurement_completed": true,
+            "valid": true,
+            "passed": false,
+            "restored": false,
+            "sla_interval_ratio": 0.5428571428571428,
+            "recovery_seconds": 38,
+            "udp_rtt_is_latency_proxy": true,
+            "udp_rtt_stddev_is_jitter_proxy": true,
+            "evidence_level": "real_packets",
+            "packet_artifacts": [
+              "packets.json",
+              "wan1.pcap",
+              "wan2.pcap"
+            ],
+            "observed_packet_intervals": 170
+          },
+          {
+            "scenario": "S12",
+            "group": "quality",
+            "affected_links": [
+              "wan1"
+            ],
+            "profile": "voice",
+            "strategy": "reactive",
+            "repeat": 1,
+            "packet_measurement_completed": true,
+            "valid": true,
+            "passed": false,
+            "restored": false,
+            "sla_interval_ratio": 0.7428571428571429,
+            "recovery_seconds": 24,
+            "udp_rtt_is_latency_proxy": true,
+            "udp_rtt_stddev_is_jitter_proxy": true,
+            "evidence_level": "real_packets",
+            "packet_artifacts": [
+              "packets.json",
+              "wan1.pcap",
+              "wan2.pcap"
+            ],
+            "observed_packet_intervals": 170
+          },
+          {
+            "scenario": "S12",
+            "group": "quality",
+            "affected_links": [
+              "wan1"
+            ],
+            "profile": "voice",
+            "strategy": "predictive_synthetic_lab",
+            "repeat": 0,
+            "packet_measurement_completed": true,
+            "valid": true,
+            "passed": false,
+            "restored": false,
+            "sla_interval_ratio": 0.9428571428571428,
+            "recovery_seconds": 3,
+            "udp_rtt_is_latency_proxy": true,
+            "udp_rtt_stddev_is_jitter_proxy": true,
+            "evidence_level": "real_packets",
+            "packet_artifacts": [
+              "packets.json",
+              "wan1.pcap",
+              "wan2.pcap"
+            ],
+            "observed_packet_intervals": 170
+          }
+        ],
+        "packet_observed_trials": 6,
+        "native_qbr_evaluated": false,
+        "case_manifest": {
+          "suite": "balanced",
+          "version": 2,
+          "case_count": 1,
+          "full_suite_case_count": 38,
+          "full_suite_fault_count": 37,
+          "fault_case_count": 1,
+          "recoverable_fault_count": 1,
+          "group_counts": {
+            "availability": 0,
+            "quality": 1,
+            "stability": 0,
+            "mixed": 0,
+            "telemetry": 0
+          },
+          "complete_suite_selected": false,
+          "initial_priority": "wan1",
+          "scope": "Balanced v2 covers all 8 binary Up/Down states. Other impairments are selected tests. Legacy v1 retains the original definitions.",
+          "cases": [
+            {
+              "id": "S12",
+              "name": "Progressive degradation",
+              "kind": "ramp",
+              "links": [
+                "wan1"
+              ],
+              "recoverable": true,
+              "group": "quality",
+              "affected_links": [
+                "wan1"
+              ]
+            }
+          ],
+          "sha256": "75fb3a321abae192fa083403adc29bb3cd8e135802038f337ce10878f41e51a7"
+        }
+      }
+    }
+  ],
+  "latest_trials": [
+    {
+      "scenario": "S12",
+      "group": "quality",
+      "affected_links": [
+        "wan1"
+      ],
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 2,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": false,
+      "restored": false,
+      "sla_interval_ratio": 0.4714285714285714,
+      "recovery_seconds": 44,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap",
+        "wan3.pcap"
+      ],
+      "observed_packet_intervals": 170,
+      "trial_status": "completed",
+      "phase": "assessment",
+      "state_count": 34,
+      "all_wan_forecast_frames_during_event": 0,
+      "state_frames_during_event": 16,
+      "all_wan_forecast_frames_before_event": 0,
+      "baseline": {
+        "intervals": 60,
+        "sla_good_intervals": 55,
+        "min_offered_mbps": 2.0
+      },
+      "event_measurement": {
+        "intervals": 70,
+        "sla_good_intervals": 33,
+        "loss_pct_mean": 1.621933621933622,
+        "received_mbps_mean": 1.967285714285714,
+        "offered_mbps_min": 1.98
+      },
+      "verified_applies": [
+        {
+          "second": 126.7843325138092,
+          "reason": "Current SLA violation; healthy alternative",
+          "target": "wan2"
+        },
+        {
+          "second": 163.73570370674133,
+          "reason": "Current SLA violation; healthy alternative",
+          "target": "wan3"
+        }
+      ],
+      "verified_switches_before_fault": 0,
+      "verified_switches_during_event": 1
+    },
+    {
+      "scenario": "S12",
+      "group": "quality",
+      "affected_links": [
+        "wan1"
+      ],
+      "profile": "voice",
+      "strategy": "predictive_synthetic_lab",
+      "repeat": 1,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": false,
+      "restored": false,
+      "sla_interval_ratio": 0.6857142857142857,
+      "recovery_seconds": 28,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap",
+        "wan3.pcap"
+      ],
+      "observed_packet_intervals": 170,
+      "trial_status": "completed",
+      "phase": "assessment",
+      "state_count": 34,
+      "all_wan_forecast_frames_during_event": 9,
+      "state_frames_during_event": 16,
+      "all_wan_forecast_frames_before_event": 3,
+      "baseline": {
+        "intervals": 60,
+        "sla_good_intervals": 56,
+        "min_offered_mbps": 2.0
+      },
+      "event_measurement": {
+        "intervals": 70,
+        "sla_good_intervals": 48,
+        "loss_pct_mean": 0.7142857142857143,
+        "received_mbps_mean": 1.9852857142857148,
+        "offered_mbps_min": 1.97
+      },
+      "verified_applies": [
+        {
+          "second": 114.29946255683899,
+          "reason": "Current SLA violation; healthy alternative",
+          "target": "wan3"
+        }
+      ],
+      "verified_switches_before_fault": 0,
+      "verified_switches_during_event": 1
+    },
+    {
+      "scenario": "S12",
+      "group": "quality",
+      "affected_links": [
+        "wan1"
+      ],
+      "profile": "voice",
+      "strategy": "predictive_synthetic_lab",
+      "repeat": 2,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": false,
+      "restored": false,
+      "sla_interval_ratio": 0.4714285714285714,
+      "recovery_seconds": 45,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap",
+        "wan3.pcap"
+      ],
+      "observed_packet_intervals": 170,
+      "trial_status": "completed",
+      "phase": "assessment",
+      "state_count": 34,
+      "all_wan_forecast_frames_during_event": 13,
+      "state_frames_during_event": 16,
+      "all_wan_forecast_frames_before_event": 2,
+      "baseline": {
+        "intervals": 60,
+        "sla_good_intervals": 56,
+        "min_offered_mbps": 2.0
+      },
+      "event_measurement": {
+        "intervals": 70,
+        "sla_good_intervals": 33,
+        "loss_pct_mean": 1.7571428571428571,
+        "received_mbps_mean": 1.9648571428571426,
+        "offered_mbps_min": 2.0
+      },
+      "verified_applies": [
+        {
+          "second": 127.44133925437927,
+          "reason": "Current SLA violation; healthy alternative",
+          "target": "wan2"
+        }
+      ],
+      "verified_switches_before_fault": 0,
+      "verified_switches_during_event": 1
+    },
+    {
+      "scenario": "S12",
+      "group": "quality",
+      "affected_links": [
+        "wan1"
+      ],
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": false,
+      "restored": false,
+      "sla_interval_ratio": 0.5428571428571428,
+      "recovery_seconds": 38,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap"
+      ],
+      "observed_packet_intervals": 170,
+      "trial_status": "completed",
+      "phase": "assessment",
+      "state_count": 34,
+      "all_wan_forecast_frames_during_event": 0,
+      "state_frames_during_event": 16,
+      "all_wan_forecast_frames_before_event": 0,
+      "baseline": {
+        "intervals": 60,
+        "sla_good_intervals": 57,
+        "min_offered_mbps": 1.97
+      },
+      "event_measurement": {
+        "intervals": 70,
+        "sla_good_intervals": 38,
+        "loss_pct_mean": 0.9505384063173007,
+        "received_mbps_mean": 1.9808571428571429,
+        "offered_mbps_min": 1.99
+      },
+      "verified_applies": [
+        {
+          "second": 118.42670941352844,
+          "reason": "Current SLA violation; healthy alternative",
+          "target": "wan2"
+        }
+      ],
+      "verified_switches_before_fault": 0,
+      "verified_switches_during_event": 1
+    },
+    {
+      "scenario": "S12",
+      "group": "quality",
+      "affected_links": [
+        "wan1"
+      ],
+      "profile": "voice",
+      "strategy": "reactive",
+      "repeat": 1,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": false,
+      "restored": false,
+      "sla_interval_ratio": 0.7428571428571429,
+      "recovery_seconds": 24,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap"
+      ],
+      "observed_packet_intervals": 170,
+      "trial_status": "completed",
+      "phase": "assessment",
+      "state_count": 34,
+      "all_wan_forecast_frames_during_event": 0,
+      "state_frames_during_event": 16,
+      "all_wan_forecast_frames_before_event": 0,
+      "baseline": {
+        "intervals": 60,
+        "sla_good_intervals": 56,
+        "min_offered_mbps": 2.0
+      },
+      "event_measurement": {
+        "intervals": 70,
+        "sla_good_intervals": 52,
+        "loss_pct_mean": 0.5432178932178933,
+        "received_mbps_mean": 1.9888571428571429,
+        "offered_mbps_min": 1.98
+      },
+      "verified_applies": [
+        {
+          "second": 102.40923404693604,
+          "reason": "Current SLA violation; healthy alternative",
+          "target": "wan2"
+        }
+      ],
+      "verified_switches_before_fault": 0,
+      "verified_switches_during_event": 1
+    },
+    {
+      "scenario": "S12",
+      "group": "quality",
+      "affected_links": [
+        "wan1"
+      ],
+      "profile": "voice",
+      "strategy": "predictive_synthetic_lab",
+      "repeat": 0,
+      "packet_measurement_completed": true,
+      "valid": true,
+      "passed": false,
+      "restored": false,
+      "sla_interval_ratio": 0.9428571428571428,
+      "recovery_seconds": 3,
+      "udp_rtt_is_latency_proxy": true,
+      "udp_rtt_stddev_is_jitter_proxy": true,
+      "evidence_level": "real_packets",
+      "packet_artifacts": [
+        "packets.json",
+        "wan1.pcap",
+        "wan2.pcap"
+      ],
+      "observed_packet_intervals": 170,
+      "trial_status": "completed",
+      "phase": "assessment",
+      "state_count": 34,
+      "all_wan_forecast_frames_during_event": 4,
+      "state_frames_during_event": 16,
+      "all_wan_forecast_frames_before_event": 2,
+      "baseline": {
+        "intervals": 60,
+        "sla_good_intervals": 58,
+        "min_offered_mbps": 2.0
+      },
+      "event_measurement": {
+        "intervals": 70,
+        "sla_good_intervals": 66,
+        "loss_pct_mean": 0.0,
+        "received_mbps_mean": 1.9995714285714286,
+        "offered_mbps_min": 1.97
+      },
+      "verified_applies": [
+        {
+          "second": 79.06334495544434,
+          "reason": "Current SLA violation; healthy alternative",
+          "target": "wan2"
+        }
+      ],
+      "verified_switches_before_fault": 0,
+      "verified_switches_during_event": 1
+    }
+  ],
+  "latest_complete": true,
+  "valid_pairs": [
+    {
+      "repeat": 0,
+      "sla_violation_fraction_difference": -0.4,
+      "predictive_forecast_frames_during_event": 4,
+      "endpoint_loss_difference": -0.9505384063173007,
+      "endpoint_goodput_difference": 0.018714285714285683
+    },
+    {
+      "repeat": 1,
+      "sla_violation_fraction_difference": 0.05714285714285716,
+      "predictive_forecast_frames_during_event": 9,
+      "endpoint_loss_difference": 0.17106782106782104,
+      "endpoint_goodput_difference": -0.0035714285714281147
+    },
+    {
+      "repeat": 2,
+      "sla_violation_fraction_difference": 0.0,
+      "predictive_forecast_frames_during_event": 13,
+      "endpoint_loss_difference": 0.1352092352092351,
+      "endpoint_goodput_difference": -0.0024285714285714466
+    }
+  ],
+  "paired_violation_difference_95ci": [
+    -0.4000000000000001,
+    0.05714285714285716
+  ],
+  "mean_sla_interval_ratio": {
+    "reactive": 0.5857142857142857,
+    "predictive_synthetic_lab": 0.6999999999999998
+  },
+  "demonstrated_sla_advantage": false,
+  "promoted_to_default_runtime": false,
+  "software_checks": {
+    "pytest": {
+      "command": ".venv/bin/python -m pytest -q",
+      "passed": 376,
+      "skipped": 7,
+      "warnings": 1,
+      "seconds": 24.6
+    },
+    "ruff": "Passed changed source and test files"
+  },
+  "limitations": [
+    "One physical host and QEMU TCG, not recovered KVM or ISP circuits",
+    "New loss Holdout has three independent episodes; overlapping windows are not independent replicates",
+    "RTT/jitter/utilization gains belong to the prior 69-window link experiment, not this loss set",
+    "Normal flexiEdge readiness shows worse forecast MAE than Persistence for several metrics",
+    "Readiness baseline tolerance prospectively changed from 98% to 90%; event SLA and measurement gates unchanged",
+    "Default live service keeps forecast disabled; experimental candidate is explicitly selected only"
+  ],
+  "lab_restoration": {
+    "scope": "Only temporary resources created for this task; no host reboot or update removal",
+    "started_at": 1792270820.601641,
+    "policy_restored_to_first_trial_original": true,
+    "both_agents_verified": true,
+    "unresolved_journals": 0,
+    "netem_restored_to_control": true,
+    "sampler": {
+      "sampler_active": false,
+      "sampler_enabled_at_reboot": false
+    },
+    "owned_ssh_masters_stopped": true,
+    "guests_shutdown_requested": true,
+    "guest_states": {
+      "sdw-edge-a": "shut off",
+      "sdw-edge-b": "shut off"
+    },
+    "original_kvm_definitions_restored": true,
+    "definitions": {
+      "sdw-edge-a": {
+        "disk_xml_sha256": "8a45ccbc2d7331c58c6932722571e09433ad01a71e286974b7ac6a267c99995f",
+        "exact_backup_restored": true,
+        "libvirt_loaded": true,
+        "type": "kvm",
+        "vcpu": "2",
+        "state": "shut off"
+      },
+      "sdw-edge-b": {
+        "disk_xml_sha256": "d8b70fac49ea6dd474c8b774a1536e395ffd0d0d8be3f6a75f1088cb07bc7b7d",
+        "exact_backup_restored": true,
+        "libvirt_loaded": true,
+        "type": "kvm",
+        "vcpu": "2",
+        "state": "shut off"
+      }
+    },
+    "kvm": {
+      "opens": false,
+      "errno": 19
+    },
+    "complete": true,
+    "completed_at": 1792270877.0364304,
+    "services_after_test": [
+      "ai-sdwan-observability-grafana-1 Up 7 hours",
+      "ai-sdwan-observability-timescaledb-1 Up 7 hours (healthy)",
+      "ai-sdwan-controller-mail-1 Up 7 hours (healthy)",
+      "ai-sdwan-controller-controller-1 Up 7 hours (healthy)",
+      "ai-sdwan-controller-redis-1 Up 7 hours (healthy)",
+      "ai-sdwan-controller-mongo-1 Up 7 hours (healthy)"
+    ]
+  }
+}

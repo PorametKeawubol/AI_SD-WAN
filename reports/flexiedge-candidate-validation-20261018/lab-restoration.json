@@ -1,0 +1,51 @@
+{
+  "scope": "Only temporary resources created for this task; no host reboot or update removal",
+  "started_at": 1792270820.601641,
+  "policy_restored_to_first_trial_original": true,
+  "both_agents_verified": true,
+  "unresolved_journals": 0,
+  "netem_restored_to_control": true,
+  "sampler": {
+    "sampler_active": false,
+    "sampler_enabled_at_reboot": false
+  },
+  "owned_ssh_masters_stopped": true,
+  "guests_shutdown_requested": true,
+  "guest_states": {
+    "sdw-edge-a": "shut off",
+    "sdw-edge-b": "shut off"
+  },
+  "original_kvm_definitions_restored": true,
+  "definitions": {
+    "sdw-edge-a": {
+      "disk_xml_sha256": "8a45ccbc2d7331c58c6932722571e09433ad01a71e286974b7ac6a267c99995f",
+      "exact_backup_restored": true,
+      "libvirt_loaded": true,
+      "type": "kvm",
+      "vcpu": "2",
+      "state": "shut off"
+    },
+    "sdw-edge-b": {
+      "disk_xml_sha256": "d8b70fac49ea6dd474c8b774a1536e395ffd0d0d8be3f6a75f1088cb07bc7b7d",
+      "exact_backup_restored": true,
+      "libvirt_loaded": true,
+      "type": "kvm",
+      "vcpu": "2",
+      "state": "shut off"
+    }
+  },
+  "kvm": {
+    "opens": false,
+    "errno": 19
+  },
+  "complete": true,
+  "completed_at": 1792270877.0364304,
+  "services_after_test": [
+    "ai-sdwan-observability-grafana-1 Up 7 hours",
+    "ai-sdwan-observability-timescaledb-1 Up 7 hours (healthy)",
+    "ai-sdwan-controller-mail-1 Up 7 hours (healthy)",
+    "ai-sdwan-controller-controller-1 Up 7 hours (healthy)",
+    "ai-sdwan-controller-redis-1 Up 7 hours (healthy)",
+    "ai-sdwan-controller-mongo-1 Up 7 hours (healthy)"
+  ]
+}

@@ -52,6 +52,30 @@ def panel(identifier, title, kind, sql, x, y, width, height, *, unit="none", for
     }
 
 
+def workload_series(identifier, title, sql, x, y, *, unit, width=12):
+    item = panel(
+        identifier, title, "timeseries", sql, x, y, width, 8, unit=unit, format="time_series"
+    )
+    item["fieldConfig"]["defaults"].update(
+        decimals=2,
+        noValue="—",
+        custom={
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "spanNulls": False,
+            "showPoints": "auto",
+        },
+    )
+    item["description"] = (
+        "Measured at the workload endpoint using real packets in the lab. "
+        "Failed or missing measurements are gaps, not zero. "
+        "The WAN capacities are emulated; these are not measurements from three real ISPs."
+    )
+    return item
+
+
 def build():
     panels = []
     for index, link in enumerate(("wan1", "wan2", "wan3")):
@@ -133,6 +157,11 @@ FROM events WHERE {STREAM} AND $__timeFilter(observed_at) ORDER BY id DESC LIMIT
     panels.append(controls)
     environment = (
         "SELECT COALESCE((SELECT CASE "
+        "WHEN payload->>'kind'='real_traffic' THEN CASE "
+        "WHEN payload->>'active'='true' AND updated_at > now()-INTERVAL '25 seconds' "
+        "THEN 'Real traffic; capacity-emulated WANs (100 / 80 / 30 Mbps)' "
+        "WHEN payload->>'active'='true' THEN 'Real traffic status stale (check runner)' "
+        "ELSE 'Real traffic stopped; capacity-emulated WANs' END "
         "WHEN payload->>'active'='true' AND updated_at > now()-INTERVAL '25 seconds' "
         "THEN 'Natural WAN: Fiber / Broadband / Mobile' "
         "WHEN payload->>'active'='true' THEN 'Natural WAN status stale (check runner)' "
@@ -173,6 +202,106 @@ WHERE {STREAM} AND state.key='service_status' ORDER BY wan.key"""
     )
     forecast_panel["fieldConfig"]["defaults"].update(decimals=2, noValue="—")
     panels.append(forecast_panel)
+    workload_status = f"""SELECT CASE
+WHEN payload->>'active'='true' AND updated_at > now()-INTERVAL '25 seconds' THEN 'RUNNING'
+WHEN payload->>'active'='true' THEN 'STALE (check runner)' ELSE 'STOPPED' END AS status,
+payload->>'run_id' AS run_id, payload->>'phase' AS phase,
+COALESCE(payload->>'mode',payload->>'kind') AS traffic_mode,
+payload->>'capacity_emulated' AS capacity_emulated,
+(payload->>'delay_injected_ms')::double precision AS injected_delay_ms,
+(payload->>'loss_injected_pct')::double precision AS injected_loss_pct,
+updated_at AS last_heartbeat,
+extract(epoch from now()-updated_at)::double precision AS heartbeat_age_seconds,
+payload->'application'->'http'->>'success' AS latest_http_success,
+payload->'application'->'download'->>'success' AS latest_download_success,
+payload->'application'->'udp'->>'success' AS latest_udp_success
+FROM state WHERE {STREAM} AND key='application_workload'"""
+    status_panel = panel(
+        19, "Real traffic workload session", "table", workload_status, 0, 54, 24, 5
+    )
+    status_panel["description"] = (
+        "Workload runner heartbeat and latest endpoint measurement outcomes. "
+        "A stale or stopped session is not a current healthy measurement. "
+        "Capacity-emulated lab WANs carry real packets; no real ISP behavior is implied."
+    )
+    status_panel["fieldConfig"]["defaults"]["noValue"] = "—"
+    panels.append(status_panel)
+    http = f"""SELECT observed_at AS time, 'HTTP response' AS metric,
+CASE WHEN payload->>'success'='true' THEN (payload->>'latency_ms')::double precision END AS value
+FROM events WHERE {STREAM} AND kind='application_measurement'
+AND payload->>'application'='http' AND $__timeFilter(observed_at) ORDER BY observed_at,id"""
+    panels.append(workload_series(20, "Endpoint HTTP response time", http, 0, 59, unit="ms"))
+    download = f"""SELECT observed_at AS time, 'Received download' AS metric,
+CASE WHEN payload->>'success'='true' THEN (payload->>'received_mbps')::double precision END AS value
+FROM events WHERE {STREAM} AND kind='application_measurement'
+AND payload->>'application'='download' AND $__timeFilter(observed_at) ORDER BY observed_at,id"""
+    panels.append(workload_series(21, "Endpoint download goodput", download, 12, 59, unit="Mbits"))
+    udp_loss = f"""SELECT observed_at AS time, 'UDP received loss' AS metric,
+CASE WHEN payload->>'success'='true' THEN (payload->>'loss_pct')::double precision END AS value
+FROM events WHERE {STREAM} AND kind='application_measurement'
+AND payload->>'application'='udp' AND $__timeFilter(observed_at) ORDER BY observed_at,id"""
+    panels.append(workload_series(22, "Endpoint UDP packet loss", udp_loss, 0, 67, unit="percent"))
+    udp_timing = f"""SELECT observed_at AS time, timing.metric,
+CASE WHEN payload->>'success'='true' THEN timing.value END AS value
+FROM events CROSS JOIN LATERAL (VALUES
+('UDP RTT stddev', (payload->>'jitter_ms')::double precision),
+('Measured RTT', COALESCE(payload->>'rtt_ms',payload->>'latency_ms')::double precision)
+) AS timing(metric,value)
+WHERE {STREAM} AND kind='application_measurement'
+AND payload->>'application'='udp' AND $__timeFilter(observed_at) ORDER BY observed_at,id,metric"""
+    timing_panel = workload_series(
+        23, "Endpoint UDP RTT / RTT variation", udp_timing, 12, 67, unit="ms"
+    )
+    timing_panel["description"] += (
+        " UDP echo reports mean round-trip latency and its standard deviation. "
+        "RTT is shown only when an echo is received; it is not converted into one-way latency."
+    )
+    panels.append(timing_panel)
+    background = f"""SELECT observed_at AS time,
+upper(payload->>'link_id') || ' ' || COALESCE(payload->>'direction',payload->>'side','') || ' ' || traffic.metric AS metric,
+CASE WHEN payload->>'success'='true' THEN traffic.value END AS value
+FROM events CROSS JOIN LATERAL (VALUES
+('offered', (payload->>'offered_mbps')::double precision),
+('received', (payload->>'received_mbps')::double precision)
+) AS traffic(metric,value)
+WHERE {STREAM} AND kind='background_measurement'
+AND payload->>'link_id' IN ('wan1','wan2','wan3') AND $__timeFilter(observed_at)
+ORDER BY observed_at,id,metric"""
+    background_panel = workload_series(
+        24,
+        "Per-WAN background load: offered and received",
+        background,
+        0,
+        75,
+        unit="Mbits",
+        width=24,
+    )
+    background_panel["description"] = (
+        "Real background packets compete for each WAN's shared bottleneck separately. "
+        "Offered is sender-measured throughput; received is receiver-measured goodput. "
+        "These external background packets do not enter the edge VPP utilization counters. "
+        "Failed or missing measurements are gaps, not zero."
+    )
+    panels.append(background_panel)
+    endpoint_events = f"""SELECT observed_at AS time,
+payload->>'run_id' AS run_id, payload->>'phase' AS phase,
+payload->>'application' AS application,
+CASE WHEN payload->>'success'='true' THEN 'SUCCESS' ELSE 'FAILED / INCOMPLETE' END AS status,
+CASE WHEN payload->>'success'='true' THEN (payload->>'latency_ms')::double precision END AS latency_ms,
+CASE WHEN payload->>'success'='true' THEN (payload->>'received_mbps')::double precision END AS received_mbps,
+CASE WHEN payload->>'success'='true' THEN (payload->>'loss_pct')::double precision END AS loss_pct,
+payload->>'error' AS error
+FROM events WHERE {STREAM} AND kind='application_measurement' AND $__timeFilter(observed_at)
+ORDER BY id DESC LIMIT 100"""
+    endpoint_panel = panel(
+        25, "Endpoint measurement outcomes", "table", endpoint_events, 0, 83, 24, 8
+    )
+    endpoint_panel["fieldConfig"]["defaults"].update(decimals=2, noValue="—")
+    endpoint_panel["description"] = (
+        "Individual measurement times, phases and outcomes remain visible even when a test fails. "
+        "Charts show successful measurements only; failed measurements never become healthy zeros."
+    )
+    panels.append(endpoint_panel)
     dashboard = {
         "uid": "ai-sdwan",
         "title": "AI SD-WAN",
@@ -210,8 +339,10 @@ WHERE {STREAM} AND state.key='service_status' ORDER BY wan.key"""
     }
     target = ROOT / "lab/grafana/dashboards/ai-sdwan.json"
     target.parent.mkdir(parents=True, exist_ok=True)
-    target.write_text(json.dumps(dashboard, indent=2) + "\n", encoding="utf-8")
-    print("Built Grafana dashboard: 18 panels, read-only SQL and authenticated API controls.")
+    target.write_text(json.dumps(dashboard, indent=2) + "\n", encoding="utf-8", newline="\n")
+    print(
+        f"Built Grafana dashboard: {len(panels)} panels, read-only SQL and authenticated API controls."
+    )
 
 
 if __name__ == "__main__":

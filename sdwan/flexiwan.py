@@ -42,7 +42,10 @@ class FlexiWANConfig(BaseModel):
     poll_seconds: float = Field(default=1, gt=0, le=10)
     journal_dir: str = "data/flexiwan-journal"
     telemetry_device_id: str | None = None
-    probe_command: Literal["python3 /opt/ai-sdwan/probe.py --config /etc/ai-sdwan/probe.json"] = (
+    probe_command: Literal[
+        "python3 /opt/ai-sdwan/probe.py --config /etc/ai-sdwan/probe.json",
+        "python3 /opt/ai-sdwan/probe_cache.py --read",
+    ] = (
         "python3 /opt/ai-sdwan/probe.py --config /etc/ai-sdwan/probe.json"
     )
 

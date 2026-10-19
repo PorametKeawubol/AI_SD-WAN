@@ -1,0 +1,877 @@
+{
+  "schema_version": 1,
+  "run_id": "real-traffic-20261011-054158-1767b9",
+  "stream": "live-real-traffic-20261011-053846",
+  "measurement_started_at_utc": "2026-10-11T05:42:05.067321+00:00",
+  "runner_stopped_at_utc": "2026-10-11T05:45:47.527938+00:00",
+  "requested_measurement_duration_seconds": 210,
+  "last_recorded_elapsed_seconds": 209.45,
+  "total_until_cleanup_seconds": 222.460617,
+  "environment": {
+    "real_packets": true,
+    "real_isp": false,
+    "capacity_emulated": true,
+    "capacity_mbps": {
+      "wan1": 100,
+      "wan2": 80,
+      "wan3": 30
+    },
+    "delay_injected_ms": 0,
+    "jitter_injected_ms": 0,
+    "loss_injected_pct": 0,
+    "background": "Six iperf3 UDP streams to owned Linux receiver namespaces sharing tunnel qdiscs; external cross-traffic is excluded from VPP byte-counter utilization.",
+    "application": "HTTP small response/download and 2 Mbps UDP echo across the flexiWAN LAN tunnel.",
+    "profile": "voice",
+    "control_mode": "auto",
+    "ml_model_loaded": true,
+    "ml_model_status": "synthetic experimental; real-data accuracy not validated"
+  },
+  "coverage": {
+    "raw_endpoint_rows": 431,
+    "database_endpoint_events": 431,
+    "raw_matches_database_count": true,
+    "applications": {
+      "http": 208,
+      "download": 14,
+      "udp": 209
+    },
+    "successful_endpoint_rows": 431,
+    "failed_endpoint_rows": 0,
+    "completed_background_receiver_events": 108,
+    "receiver_bindings": [
+      "wan1_a",
+      "wan1_b",
+      "wan2_a",
+      "wan2_b",
+      "wan3_a",
+      "wan3_b"
+    ],
+    "last_incomplete_background_batch_raw_files": 6,
+    "api_snapshots": 92,
+    "api_snapshots_with_forecasts": 37,
+    "database_event_counts": {
+      "configuration": 4,
+      "decision": 46,
+      "real_traffic_started": 1,
+      "real_traffic_phase": 3,
+      "application_measurement": 431,
+      "background_measurement": 108,
+      "recommendation": 2,
+      "apply_intent": 2,
+      "apply_started": 2,
+      "applied": 2,
+      "real_traffic_stopped": 1
+    },
+    "raw_endpoint_rows_identical_in_database": 431,
+    "endpoint_keys_unique": true,
+    "raw_background_file_count": 114
+  },
+  "timing": {
+    "nominal_busy_elapsed_seconds": 60,
+    "recorded_busy_phase_event_elapsed_seconds": 61.753859,
+    "first_high_rate_background_issue_elapsed_seconds": 68.72203,
+    "nominal_recovery_elapsed_seconds": 150,
+    "first_low_rate_recovery_background_issue_elapsed_seconds": 161.811005,
+    "phase_rate_mismatch": {
+      "events": 2,
+      "issue_elapsed_seconds": [
+        150.036968,
+        150.037498
+      ],
+      "note": "The original run labeled a high-rate batch at the recovery phase boundary. Actual requested rates identify the congestion window; runner label handling was corrected afterward."
+    }
+  },
+  "verified_transitions": [
+    {
+      "source": "wan1",
+      "target": "wan2",
+      "reason": "Current SLA violation; healthy alternative",
+      "intent_elapsed_seconds": 72.300803,
+      "verified_elapsed_seconds": 79.480233,
+      "observed_confirmed_elapsed_seconds": 82.874973,
+      "intent_after_actual_rate_change_seconds": 3.578773,
+      "verified_after_actual_rate_change_seconds": 10.758202,
+      "adapter_duration_seconds": 7.087873,
+      "verification": "Jobs and agent policy verified on 2 device(s)",
+      "forecast_links_at_first_observed_switch": [],
+      "trigger_current_wan_measurement_at_first_observed_switch": {
+        "up": true,
+        "latency_ms": 200.46808510638297,
+        "jitter_ms": 6.966030231361781,
+        "loss_pct": 6.0,
+        "utilization_pct": 2.3009837234568438
+      }
+    },
+    {
+      "source": "wan2",
+      "target": "wan1",
+      "reason": "Current SLA violation; healthy alternative",
+      "intent_elapsed_seconds": 196.644994,
+      "verified_elapsed_seconds": 202.27853,
+      "observed_confirmed_elapsed_seconds": 207.369262,
+      "intent_after_actual_rate_change_seconds": 34.833989,
+      "verified_after_actual_rate_change_seconds": 40.467525,
+      "adapter_duration_seconds": 5.563282,
+      "verification": "Jobs and agent policy verified on 2 device(s)",
+      "forecast_links_at_first_observed_switch": [
+        "wan1",
+        "wan2",
+        "wan3"
+      ],
+      "trigger_current_wan_measurement_at_first_observed_switch": {
+        "up": true,
+        "latency_ms": 14.85479,
+        "jitter_ms": 32.21095996746915,
+        "loss_pct": 0.0,
+        "utilization_pct": 23.753365294209384
+      }
+    }
+  ],
+  "application_phase_stats": {
+    "baseline": {
+      "http": {
+        "samples": 60,
+        "successful": 60,
+        "failed": 0,
+        "errors": {},
+        "latency_ms_successful": {
+          "count": 60,
+          "mean": 11.357464,
+          "median": 2.745302,
+          "p95": 66.255138,
+          "min": 2.009863,
+          "max": 164.08303
+        },
+        "received_mbps_successful": {
+          "count": 60,
+          "mean": 0.12233,
+          "median": 0.142793,
+          "p95": 0.178945,
+          "min": 0.002389,
+          "max": 0.195038
+        },
+        "response_header_latency_ms_successful": {
+          "count": 60,
+          "mean": 11.250062,
+          "median": 2.649077,
+          "p95": 66.176033,
+          "min": 1.954194,
+          "max": 163.886058
+        }
+      },
+      "download": {
+        "samples": 4,
+        "successful": 4,
+        "failed": 0,
+        "errors": {},
+        "latency_ms_successful": {
+          "count": 4,
+          "mean": 480.765201,
+          "median": 489.645987,
+          "p95": 538.629024,
+          "min": 399.777989,
+          "max": 543.990842
+        },
+        "received_mbps_successful": {
+          "count": 4,
+          "mean": 70.717143,
+          "median": 68.626964,
+          "p95": 82.027833,
+          "min": 61.68198,
+          "max": 83.932665
+        },
+        "received_bytes_successful": 16777216
+      },
+      "udp": {
+        "samples": 60,
+        "successful": 60,
+        "failed": 0,
+        "errors": {},
+        "latency_ms_successful": {
+          "count": 60,
+          "mean": 5.160474,
+          "median": 2.147845,
+          "p95": 15.163763,
+          "min": 1.165321,
+          "max": 64.234025
+        },
+        "received_mbps_successful": {
+          "count": 60,
+          "mean": 1.983,
+          "median": 2.0,
+          "p95": 2.0,
+          "min": 1.79,
+          "max": 2.01
+        },
+        "sent_packets": 11898,
+        "received_echo_packets": 11898,
+        "packet_weighted_loss_pct": 0.0,
+        "interval_loss_pct": {
+          "count": 60,
+          "mean": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "rtt_stddev_ms_successful": {
+          "count": 60,
+          "mean": 4.909914,
+          "median": 2.663448,
+          "p95": 18.732575,
+          "min": 0.219739,
+          "max": 37.805683
+        },
+        "intervals_loss_above_1pct": 0,
+        "intervals_mean_rtt_above_100ms": 0,
+        "intervals_rtt_stddev_above_30ms": 1
+      }
+    },
+    "wan1_busy": {
+      "http": {
+        "samples": 89,
+        "successful": 89,
+        "failed": 0,
+        "errors": {},
+        "latency_ms_successful": {
+          "count": 89,
+          "mean": 54.545838,
+          "median": 3.274914,
+          "p95": 257.652536,
+          "min": 2.007265,
+          "max": 1666.232416
+        },
+        "received_mbps_successful": {
+          "count": 89,
+          "mean": 0.103377,
+          "median": 0.119698,
+          "p95": 0.176741,
+          "min": 0.000235,
+          "max": 0.195291
+        },
+        "response_header_latency_ms_successful": {
+          "count": 89,
+          "mean": 54.356698,
+          "median": 3.17385,
+          "p95": 257.473562,
+          "min": 1.949471,
+          "max": 1666.139203
+        }
+      },
+      "download": {
+        "samples": 6,
+        "successful": 6,
+        "failed": 0,
+        "errors": {},
+        "latency_ms_successful": {
+          "count": 6,
+          "mean": 600.12931,
+          "median": 633.24865,
+          "p95": 640.293066,
+          "min": 481.279516,
+          "max": 641.888431
+        },
+        "received_mbps_successful": {
+          "count": 6,
+          "mean": 56.51052,
+          "median": 52.987769,
+          "p95": 66.862998,
+          "min": 52.274555,
+          "max": 69.719219
+        },
+        "received_bytes_successful": 25165824
+      },
+      "udp": {
+        "samples": 90,
+        "successful": 90,
+        "failed": 0,
+        "errors": {},
+        "latency_ms_successful": {
+          "count": 90,
+          "mean": 17.332108,
+          "median": 2.159657,
+          "p95": 178.487482,
+          "min": 1.218125,
+          "max": 205.953308
+        },
+        "received_mbps_successful": {
+          "count": 90,
+          "mean": 1.973,
+          "median": 2.0,
+          "p95": 2.0,
+          "min": 1.67,
+          "max": 2.0
+        },
+        "sent_packets": 17866,
+        "received_echo_packets": 17757,
+        "packet_weighted_loss_pct": 0.610097,
+        "interval_loss_pct": {
+          "count": 90,
+          "mean": 0.621147,
+          "median": 0.0,
+          "p95": 6.043429,
+          "min": 0.0,
+          "max": 14.358974
+        },
+        "rtt_stddev_ms_successful": {
+          "count": 90,
+          "mean": 5.357717,
+          "median": 1.874417,
+          "p95": 23.05824,
+          "min": 0.187413,
+          "max": 47.466744
+        },
+        "intervals_loss_above_1pct": 6,
+        "intervals_mean_rtt_above_100ms": 6,
+        "intervals_rtt_stddev_above_30ms": 3
+      }
+    },
+    "recovery": {
+      "http": {
+        "samples": 59,
+        "successful": 59,
+        "failed": 0,
+        "errors": {},
+        "latency_ms_successful": {
+          "count": 59,
+          "mean": 6.473208,
+          "median": 2.976613,
+          "p95": 20.865794,
+          "min": 2.016118,
+          "max": 62.752291
+        },
+        "received_mbps_successful": {
+          "count": 59,
+          "mean": 0.115227,
+          "median": 0.131693,
+          "p95": 0.175925,
+          "min": 0.006247,
+          "max": 0.194433
+        },
+        "response_header_latency_ms_successful": {
+          "count": 59,
+          "mean": 6.363869,
+          "median": 2.797439,
+          "p95": 20.720513,
+          "min": 1.95619,
+          "max": 62.657024
+        }
+      },
+      "download": {
+        "samples": 4,
+        "successful": 4,
+        "failed": 0,
+        "errors": {},
+        "latency_ms_successful": {
+          "count": 4,
+          "mean": 658.360791,
+          "median": 651.319763,
+          "p95": 688.646239,
+          "min": 636.878095,
+          "max": 693.925544
+        },
+        "received_mbps_successful": {
+          "count": 4,
+          "mean": 51.022214,
+          "median": 51.524271,
+          "p95": 52.599504,
+          "min": 48.354513,
+          "max": 52.6858
+        },
+        "received_bytes_successful": 16777216
+      },
+      "udp": {
+        "samples": 59,
+        "successful": 59,
+        "failed": 0,
+        "errors": {},
+        "latency_ms_successful": {
+          "count": 59,
+          "mean": 2.613797,
+          "median": 1.701641,
+          "p95": 9.458933,
+          "min": 1.146416,
+          "max": 12.578237
+        },
+        "received_mbps_successful": {
+          "count": 59,
+          "mean": 1.991356,
+          "median": 2.0,
+          "p95": 2.0,
+          "min": 1.82,
+          "max": 2.01
+        },
+        "sent_packets": 11749,
+        "received_echo_packets": 11749,
+        "packet_weighted_loss_pct": 0.0,
+        "interval_loss_pct": {
+          "count": 59,
+          "mean": 0.0,
+          "median": 0.0,
+          "p95": 0.0,
+          "min": 0.0,
+          "max": 0.0
+        },
+        "rtt_stddev_ms_successful": {
+          "count": 59,
+          "mean": 2.280535,
+          "median": 1.380817,
+          "p95": 8.214098,
+          "min": 0.188698,
+          "max": 10.762037
+        },
+        "intervals_loss_above_1pct": 0,
+        "intervals_mean_rtt_above_100ms": 0,
+        "intervals_rtt_stddev_above_30ms": 0
+      }
+    }
+  },
+  "actual_rate_and_verification_windows": {
+    "before_high_load": {
+      "elapsed_window_seconds": [
+        0,
+        68.72203
+      ],
+      "applications": {
+        "http": {
+          "samples": 69,
+          "successful": 69,
+          "latency_ms_successful": {
+            "count": 69,
+            "mean": 10.326521,
+            "median": 2.703503,
+            "p95": 56.313789,
+            "min": 2.009863,
+            "max": 164.08303
+          },
+          "received_mbps_successful": {
+            "count": 69,
+            "mean": 0.124808,
+            "median": 0.144997,
+            "p95": 0.181385,
+            "min": 0.002389,
+            "max": 0.195038
+          }
+        },
+        "download": {
+          "samples": 5,
+          "successful": 5,
+          "latency_ms_successful": {
+            "count": 5,
+            "mean": 480.868064,
+            "median": 481.279516,
+            "p95": 536.841751,
+            "min": 399.777989,
+            "max": 543.990842
+          },
+          "received_mbps_successful": {
+            "count": 5,
+            "mean": 70.517558,
+            "median": 69.719219,
+            "p95": 81.392889,
+            "min": 61.68198,
+            "max": 83.932665
+          }
+        },
+        "udp": {
+          "samples": 69,
+          "successful": 69,
+          "latency_ms_successful": {
+            "count": 69,
+            "mean": 5.172836,
+            "median": 2.129882,
+            "p95": 15.254985,
+            "min": 1.165321,
+            "max": 64.234025
+          },
+          "received_mbps_successful": {
+            "count": 69,
+            "mean": 1.984203,
+            "median": 2.0,
+            "p95": 2.0,
+            "min": 1.79,
+            "max": 2.01
+          },
+          "packet_weighted_loss_pct": 0.0
+        }
+      }
+    },
+    "high_load_before_first_verified_apply": {
+      "elapsed_window_seconds": [
+        68.72203,
+        79.480233
+      ],
+      "applications": {
+        "http": {
+          "samples": 10,
+          "successful": 10,
+          "latency_ms_successful": {
+            "count": 10,
+            "mean": 427.981659,
+            "median": 236.934976,
+            "p95": 1512.135991,
+            "min": 2.347804,
+            "max": 1666.232416
+          },
+          "received_mbps_successful": {
+            "count": 10,
+            "mean": 0.052716,
+            "median": 0.002045,
+            "p95": 0.158476,
+            "min": 0.000235,
+            "max": 0.166965
+          }
+        },
+        "download": {
+          "samples": 1,
+          "successful": 1,
+          "latency_ms_successful": {
+            "count": 1,
+            "mean": 641.888431,
+            "median": 641.888431,
+            "p95": 641.888431,
+            "min": 641.888431,
+            "max": 641.888431
+          },
+          "received_mbps_successful": {
+            "count": 1,
+            "mean": 52.274555,
+            "median": 52.274555,
+            "p95": 52.274555,
+            "min": 52.274555,
+            "max": 52.274555
+          }
+        },
+        "udp": {
+          "samples": 11,
+          "successful": 11,
+          "latency_ms_successful": {
+            "count": 11,
+            "mean": 110.200469,
+            "median": 160.446673,
+            "p95": 205.72534,
+            "min": 1.262707,
+            "max": 205.953308
+          },
+          "received_mbps_successful": {
+            "count": 11,
+            "mean": 1.869091,
+            "median": 1.9,
+            "p95": 2.0,
+            "min": 1.67,
+            "max": 2.0
+          },
+          "packet_weighted_loss_pct": 5.034642
+        }
+      }
+    },
+    "high_load_after_first_verified_apply": {
+      "elapsed_window_seconds": [
+        79.480233,
+        161.811005
+      ],
+      "applications": {
+        "http": {
+          "samples": 82,
+          "successful": 82,
+          "latency_ms_successful": {
+            "count": 82,
+            "mean": 7.597666,
+            "median": 3.292284,
+            "p95": 21.156466,
+            "min": 2.007265,
+            "max": 124.653281
+          },
+          "received_mbps_successful": {
+            "count": 82,
+            "mean": 0.105156,
+            "median": 0.119068,
+            "p95": 0.175471,
+            "min": 0.003145,
+            "max": 0.195291
+          }
+        },
+        "download": {
+          "samples": 5,
+          "successful": 5,
+          "latency_ms_successful": {
+            "count": 5,
+            "mean": 624.303452,
+            "median": 633.374748,
+            "p95": 642.228876,
+            "min": 575.60364,
+            "max": 643.909352
+          },
+          "received_mbps_successful": {
+            "count": 5,
+            "mean": 53.835967,
+            "median": 52.977218,
+            "p95": 57.235133,
+            "min": 52.11049,
+            "max": 58.294336
+          }
+        },
+        "udp": {
+          "samples": 82,
+          "successful": 82,
+          "latency_ms_successful": {
+            "count": 82,
+            "mean": 4.186944,
+            "median": 2.107385,
+            "p95": 10.035749,
+            "min": 1.182801,
+            "max": 51.53828
+          },
+          "received_mbps_successful": {
+            "count": 82,
+            "mean": 1.98439,
+            "median": 2.0,
+            "p95": 2.0,
+            "min": 1.82,
+            "max": 2.0
+          },
+          "packet_weighted_loss_pct": 0.0
+        }
+      }
+    },
+    "after_actual_recovery": {
+      "elapsed_window_seconds": [
+        161.811005,
+        210
+      ],
+      "applications": {
+        "http": {
+          "samples": 47,
+          "successful": 47,
+          "latency_ms_successful": {
+            "count": 47,
+            "mean": 6.438119,
+            "median": 2.773684,
+            "p95": 15.747119,
+            "min": 2.016118,
+            "max": 62.752291
+          },
+          "received_mbps_successful": {
+            "count": 47,
+            "mean": 0.118661,
+            "median": 0.141328,
+            "p95": 0.177648,
+            "min": 0.006247,
+            "max": 0.194433
+          }
+        },
+        "download": {
+          "samples": 3,
+          "successful": 3,
+          "latency_ms_successful": {
+            "count": 3,
+            "mean": 663.177938,
+            "median": 658.730174,
+            "p95": 690.406007,
+            "min": 636.878095,
+            "max": 693.925544
+          },
+          "received_mbps_successful": {
+            "count": 3,
+            "mean": 50.659455,
+            "median": 50.938052,
+            "p95": 52.511025,
+            "min": 48.354513,
+            "max": 52.6858
+          }
+        },
+        "udp": {
+          "samples": 47,
+          "successful": 47,
+          "latency_ms_successful": {
+            "count": 47,
+            "mean": 2.367488,
+            "median": 1.696311,
+            "p95": 5.751799,
+            "min": 1.146416,
+            "max": 12.578237
+          },
+          "received_mbps_successful": {
+            "count": 47,
+            "mean": 1.996809,
+            "median": 2.0,
+            "p95": 2.0,
+            "min": 1.96,
+            "max": 2.01
+          },
+          "packet_weighted_loss_pct": 0.0
+        }
+      }
+    }
+  },
+  "wan1_background_by_actual_rate": {
+    "low": {
+      "samples": 20,
+      "success": 20,
+      "sender_mbps": {
+        "count": 20,
+        "mean": 14.998054,
+        "median": 14.998511,
+        "p95": 14.998634,
+        "min": 14.98982,
+        "max": 14.998646
+      },
+      "received_mbps": {
+        "count": 20,
+        "mean": 14.997435,
+        "median": 14.998265,
+        "p95": 14.99841,
+        "min": 14.989429,
+        "max": 14.998416
+      },
+      "receiver_loss_pct": {
+        "count": 20,
+        "mean": 0.0,
+        "median": 0.0,
+        "p95": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "receiver_jitter_ms": {
+        "count": 20,
+        "mean": 0.114009,
+        "median": 0.074094,
+        "p95": 0.144499,
+        "min": 0.058917,
+        "max": 0.804776
+      }
+    },
+    "high": {
+      "samples": 16,
+      "success": 16,
+      "sender_mbps": {
+        "count": 16,
+        "mean": 109.986221,
+        "median": 109.987055,
+        "p95": 109.98892,
+        "min": 109.969437,
+        "max": 109.989132
+      },
+      "received_mbps": {
+        "count": 16,
+        "mean": 95.315742,
+        "median": 95.65628,
+        "p95": 96.455203,
+        "min": 92.590893,
+        "max": 96.513048
+      },
+      "receiver_loss_pct": {
+        "count": 16,
+        "mean": 12.488183,
+        "median": 12.174882,
+        "p95": 14.384933,
+        "min": 11.391665,
+        "max": 14.988566
+      },
+      "receiver_jitter_ms": {
+        "count": 16,
+        "mean": 0.143259,
+        "median": 0.142854,
+        "p95": 0.163842,
+        "min": 0.110158,
+        "max": 0.176985
+      }
+    }
+  },
+  "packet_capture": {
+    "files": [
+      {
+        "file": "wan1.pcap0",
+        "bytes": 10469560,
+        "packet_signatures": {
+          "outer_vxlan_inner_ipv4_esp": 59486
+        },
+        "first_elapsed_seconds": -0.315871,
+        "last_elapsed_seconds": 211.421071
+      },
+      {
+        "file": "wan2.pcap0",
+        "bytes": 16000008,
+        "packet_signatures": {
+          "outer_vxlan_inner_ipv4_esp": 90909
+        },
+        "first_elapsed_seconds": -0.283767,
+        "last_elapsed_seconds": 195.495881
+      },
+      {
+        "file": "wan2.pcap1",
+        "bytes": 578712,
+        "packet_signatures": {
+          "outer_vxlan_inner_ipv4_esp": 3288
+        },
+        "first_elapsed_seconds": 195.495882,
+        "last_elapsed_seconds": 211.431589
+      },
+      {
+        "file": "wan3.pcap0",
+        "bytes": 253992,
+        "packet_signatures": {
+          "outer_vxlan_inner_ipv4_esp": 1443
+        },
+        "first_elapsed_seconds": -0.283703,
+        "last_elapsed_seconds": 211.442724
+      }
+    ],
+    "interpretation": "Outer VXLAN UDP4789 with inner IPv4 ESP(50) was observed on all WANs. Packet-count redistribution supports tunnel-path activity but cannot identify every application packet inside encryption or establish exact application switchover time."
+  },
+  "cleanup": {
+    "runner_completed": true,
+    "runner_active": false,
+    "runner_reported_restored_baseline": true,
+    "runner_errors": [],
+    "cleanup_errors": [],
+    "journal_entries": [
+      {
+        "kind": "path_apply",
+        "phase": "verified",
+        "source": "wan2",
+        "target": "wan1",
+        "job_count": 2
+      },
+      {
+        "kind": "classifier_start",
+        "phase": "verified",
+        "source": "wan1",
+        "target": "wan1",
+        "job_count": 2
+      },
+      {
+        "kind": "classifier_restore",
+        "phase": "verified",
+        "source": "wan1",
+        "target": "wan1",
+        "job_count": 2
+      },
+      {
+        "kind": "path_apply",
+        "phase": "verified",
+        "source": "wan1",
+        "target": "wan2",
+        "job_count": 2
+      }
+    ],
+    "last_observed_configured_priority": "wan1",
+    "last_observed_apply_inflight": null,
+    "note": "Runner-reported CONTROL/network cleanup succeeded; classifier restoration has verified two-agent job/readback journal evidence. This is the completed original run; later reruns have separate evidence."
+  },
+  "metric_notes": [
+    "HTTP latency_ms is completed body latency; response_header_latency_ms is also reported. Download goodput includes complete transfers only.",
+    "UDP latency/jitter are echo mean RTT and RTT standard deviation; interval success means at least one echo, not that the Voice SLA passed. Packet-weighted UDP loss uses all sent/received counts.",
+    "Background statistics are classified by actual requested rate rather than the phase label; rates are sender/receiver measurements, not inferred from configured capacity.",
+    "Phase statistics use nominal 0-60/60-150/150-210 s windows; background batches cause actual load changes to occur later.",
+    "Time windows around verification can contain intervals crossing an apply. They are observational comparisons, not a causal proof of AI benefit."
+  ],
+  "limitations": [
+    "Single 210 s run with capacity-emulated shared-host WANs, not measurements from three ISPs.",
+    "No reactive/no-controller comparison or real-data ML validation; first switch had no available forecast and used current SLA violation.",
+    "Return to WAN1 was triggered by measured WAN2 RTT variation above the Voice threshold, not simply by WAN1 recovery.",
+    "All HTTP/download measurements completed, but UDP had loss and high RTT intervals during congestion; success does not imply uninterrupted SLA.",
+    "Six final background clients were stopped before full receiver measurements; their partial raw outputs are retained but not counted as completed events.",
+    "This report does not claim exact per-application packet path or outage/recovery time."
+  ]
+}

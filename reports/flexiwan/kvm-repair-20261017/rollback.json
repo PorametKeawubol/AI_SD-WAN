@@ -1,0 +1,26 @@
+﻿{
+    "timestamp_utc":  "2026-10-17T14:00:20.4027069Z",
+    "mode":  "Rollback",
+    "administrator":  true,
+    "windows_version":  "10.0.26300",
+    "windows_build":  "26300",
+    "cpu":  "AMD Ryzen 7 7735HS with Radeon Graphics        ",
+    "hypervisor_present":  true,
+    "firmware_virtualization":  true,
+    "kb5127648_installed":  true,
+    "exact_manifest_present":  true,
+    "package_name":  "Package_for_RollupFix~31bf3856ad364e35~amd64~~26100.9711.1.30",
+    "linux":  {
+                  "svm":  false,
+                  "device_exists":  true,
+                  "module_exit":  1,
+                  "module_error":  "modprobe: ERROR: could not insert \u0027kvm_amd\u0027: Operation not supported",
+                  "kvm_api_version":  null,
+                  "create_vm_verified":  false,
+                  "device_error":  "[Errno 19] No such device: \u0027/dev/kvm\u0027"
+              },
+    "rollback_performed":  true,
+    "automatic_reboot_performed":  false,
+    "upstream_issue":  "https://github.com/microsoft/WSL/issues/41917",
+    "restart_needed":  true
+}

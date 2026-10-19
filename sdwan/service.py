@@ -3,6 +3,7 @@ import time
 import uuid
 from collections import deque
 from concurrent.futures import ThreadPoolExecutor
+from copy import deepcopy
 
 from pydantic import ValidationError
 
@@ -60,6 +61,10 @@ class Service:
         self.last_decision = None
         self.last_tick = None
         self.version = 0
+        self._telemetry_version = 0
+        self._forecast_cache_key = None
+        self._forecast_cache_model = None
+        self._forecast_cache = {}
         self.model_error = None
         self.model = None
         try:
@@ -99,28 +104,44 @@ class Service:
                     self.latest[sample.link_id] = sample
                     self.histories[sample.link_id].append(sample)
                 self.version += 1
+                self._telemetry_version += 1
             if rejected:
                 self.store.log(now, "telemetry_rejected", {"rejected": rejected})
             return {"accepted": len(accepted), "rejected": rejected}
 
     def forecasts(self):
-        if self.model is None:
-            return {}
-        try:
-            predictions = {}
-            for link, history in self.histories.items():
-                samples = list(history)
-                if self.forecast_sampling == "causal_linear_5s":
-                    samples = resample_live_history(samples)
-                    if samples is None:
-                        continue
-                values = self.model.predict(samples)
-                if values is not None:
-                    predictions[link] = values
-            return predictions
-        except Exception as error:  # noqa: BLE001 - prediction must fall back rather than break routing
-            self.model_error = f"Prediction failed: {type(error).__name__}; reactive fallback"
-            return {}
+        # A forecast depends on accepted measurements, the loaded model and the
+        # sampling contract, not wall time, application profile or control mode.
+        # Keep the cache behind the control lock so concurrent readers cannot
+        # repeat inference or publish predictions for different telemetry frames.
+        with self.lock:
+            model = self.model
+            key = (self._telemetry_version, self.forecast_sampling)
+            if key == self._forecast_cache_key and model is self._forecast_cache_model:
+                return deepcopy(self._forecast_cache)
+            try:
+                predictions = {}
+                if model is not None:
+                    for link, history in self.histories.items():
+                        samples = list(history)
+                        if self.forecast_sampling == "causal_linear_5s":
+                            samples = resample_live_history(samples)
+                            if samples is None:
+                                continue
+                        values = model.predict(samples)
+                        if values is not None:
+                            predictions[link] = values
+                # Cache empty valid results too: incomplete history remains
+                # incomplete until another measurement is accepted.
+                self._forecast_cache = deepcopy(predictions)
+                self._forecast_cache_key = key
+                self._forecast_cache_model = model
+                return deepcopy(self._forecast_cache)
+            except Exception as error:  # noqa: BLE001 - prediction must fall back rather than break routing
+                self.model_error = f"Prediction failed: {type(error).__name__}; reactive fallback"
+                # Do not cache failures; preserve retry after transient model
+                # errors, even when the telemetry frame has not changed.
+                return {}
 
     def tick(self, now=None):
         now = time.time() if now is None else now

@@ -1,0 +1,13 @@
+{
+  "probe_batches": 1350,
+  "icmp_sent": 135000,
+  "icmp_received": 128310,
+  "nonzero_loss_batches": 795,
+  "counter_rows": 1350,
+  "maximum_metric_discrepancy": 0.0,
+  "counters_verified": true,
+  "pcap_scope": "First 1000 frames per WAN in each of two campaigns; not the complete packet stream.",
+  "unused_original_complete_episodes": [
+    "link-2026149314"
+  ]
+}

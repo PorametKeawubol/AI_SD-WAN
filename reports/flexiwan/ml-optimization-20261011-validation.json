@@ -1,0 +1,267 @@
+{
+  "created_at": "2026-10-11T06:40:56.762660+00:00",
+  "tests": {
+    "passed": 93,
+    "scope": "model, blended model, cache, optimization, service, live sampling, forecast diagnostic, policy, evaluation"
+  },
+  "ruff": "passed for changed ML source, benchmark and related tests",
+  "git_diff_whitespace": "passed with cr-at-eol for repository Windows line endings",
+  "source_sha256": {
+    "sdwan/service.py": "787a60b508b1610beda64be8a9f633ed14b2d22e60776db78209157d60656617",
+    "sdwan/model.py": "40b8050063f30c63458de0941bb2a1230f1381a34eb1227bb74e403747116821",
+    "sdwan/optimization.py": "495051fcab199a209df0989dc7663cf58398e727eca15edb50dabebe2156ddf8",
+    "scripts/benchmark_forecast_cache.py": "a82abe3797e8a08ce06ab1780cfda330d45954257d2b928ef7cf5682ff058142"
+  },
+  "windows_and_linux_source_identical": true,
+  "cache_benchmark_source_identical": true,
+  "original_model_sha256": "b7b72bfa7c1f34be948b397c4aaebdc639093657c15b444992d8bef3b2bbfc7d",
+  "windows_original_model_sha256": "6106291421fa5b4c2b9c4306ef07f42e61bfd133235566b15d2520b538ac2531",
+  "windows_and_linux_original_models_preserved": true,
+  "windows_and_linux_original_models_structurally_identical": true,
+  "original_model_serialization_note": "loss_pct.json has different JSON formatting on Windows and Linux; parsed content is identical and this metric uses persistence.",
+  "offline_candidates": {
+    "synthetic": {
+      "sha256": "e9543710bd4fbb44846bd61b5b643f009678ef6f2b7b114a460c33c5419eab01",
+      "runtime_promoted": false
+    },
+    "real": {
+      "sha256": "47585df18e137b4730fb59ce71db4c775da54acb10351bb1ec8b5db7d86dc96c",
+      "runtime_promoted": false
+    }
+  },
+  "grafana": {
+    "panels": 25,
+    "queries": 25,
+    "query_errors": [],
+    "panel_results": [
+      {
+        "panel": 1,
+        "title": "WAN1 health",
+        "status": 200,
+        "rows": 1,
+        "error": null
+      },
+      {
+        "panel": 2,
+        "title": "WAN2 health",
+        "status": 200,
+        "rows": 1,
+        "error": null
+      },
+      {
+        "panel": 3,
+        "title": "WAN3 health",
+        "status": 200,
+        "rows": 1,
+        "error": null
+      },
+      {
+        "panel": 4,
+        "title": "Configured priority",
+        "status": 200,
+        "rows": 1,
+        "error": null
+      },
+      {
+        "panel": 5,
+        "title": "Control mode",
+        "status": 200,
+        "rows": 1,
+        "error": null
+      },
+      {
+        "panel": 6,
+        "title": "Application profile",
+        "status": 200,
+        "rows": 1,
+        "error": null
+      },
+      {
+        "panel": 7,
+        "title": "ML model active",
+        "status": 200,
+        "rows": 1,
+        "error": null
+      },
+      {
+        "panel": 8,
+        "title": "Latency",
+        "status": 200,
+        "rows": 179,
+        "error": null
+      },
+      {
+        "panel": 9,
+        "title": "Jitter",
+        "status": 200,
+        "rows": 179,
+        "error": null
+      },
+      {
+        "panel": 10,
+        "title": "Packet loss",
+        "status": 200,
+        "rows": 179,
+        "error": null
+      },
+      {
+        "panel": 11,
+        "title": "WAN utilization",
+        "status": 200,
+        "rows": 179,
+        "error": null
+      },
+      {
+        "panel": 12,
+        "title": "Decision and approval audit",
+        "status": 200,
+        "rows": 100,
+        "error": null
+      },
+      {
+        "panel": 13,
+        "title": "Pending recommendation",
+        "status": 200,
+        "rows": 1,
+        "error": null
+      },
+      {
+        "panel": 14,
+        "title": "Decision service heartbeat",
+        "status": 200,
+        "rows": 1,
+        "error": null
+      },
+      {
+        "panel": 15,
+        "title": "Control and approvals",
+        "status": 200,
+        "rows": 1,
+        "error": null
+      },
+      {
+        "panel": 16,
+        "title": "WAN environment (lab profiles)",
+        "status": 200,
+        "rows": 1,
+        "error": null
+      },
+      {
+        "panel": 17,
+        "title": "Latest decision and reason",
+        "status": 200,
+        "rows": 1,
+        "error": null
+      },
+      {
+        "panel": 18,
+        "title": "ML 30s forecasts and measured WAN quality",
+        "status": 200,
+        "rows": 3,
+        "error": null
+      },
+      {
+        "panel": 19,
+        "title": "Real traffic workload session",
+        "status": 200,
+        "rows": 1,
+        "error": null
+      },
+      {
+        "panel": 20,
+        "title": "Endpoint HTTP response time",
+        "status": 200,
+        "rows": 0,
+        "error": null
+      },
+      {
+        "panel": 21,
+        "title": "Endpoint download goodput",
+        "status": 200,
+        "rows": 0,
+        "error": null
+      },
+      {
+        "panel": 22,
+        "title": "Endpoint UDP packet loss",
+        "status": 200,
+        "rows": 0,
+        "error": null
+      },
+      {
+        "panel": 23,
+        "title": "Endpoint UDP RTT / RTT variation",
+        "status": 200,
+        "rows": 0,
+        "error": null
+      },
+      {
+        "panel": 24,
+        "title": "Per-WAN background load: offered and received",
+        "status": 200,
+        "rows": 0,
+        "error": null
+      },
+      {
+        "panel": 25,
+        "title": "Endpoint measurement outcomes",
+        "status": 200,
+        "rows": 0,
+        "error": null
+      }
+    ],
+    "new_panels": [
+      {
+        "panel": 19,
+        "title": "Real traffic workload session",
+        "status": 200,
+        "rows": 1,
+        "error": null
+      },
+      {
+        "panel": 20,
+        "title": "Endpoint HTTP response time",
+        "status": 200,
+        "rows": 0,
+        "error": null
+      },
+      {
+        "panel": 21,
+        "title": "Endpoint download goodput",
+        "status": 200,
+        "rows": 0,
+        "error": null
+      },
+      {
+        "panel": 22,
+        "title": "Endpoint UDP packet loss",
+        "status": 200,
+        "rows": 0,
+        "error": null
+      },
+      {
+        "panel": 23,
+        "title": "Endpoint UDP RTT / RTT variation",
+        "status": 200,
+        "rows": 0,
+        "error": null
+      },
+      {
+        "panel": 24,
+        "title": "Per-WAN background load: offered and received",
+        "status": 200,
+        "rows": 0,
+        "error": null
+      },
+      {
+        "panel": 25,
+        "title": "Endpoint measurement outcomes",
+        "status": 200,
+        "rows": 0,
+        "error": null
+      }
+    ]
+  },
+  "grafana_window_minutes": 15,
+  "endpoint_empty_reason": "Workload completed; no application/background samples in the latest 15-minute window. Historical results remain in the stream."
+}

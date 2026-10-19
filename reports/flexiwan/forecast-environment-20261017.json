@@ -1,0 +1,49 @@
+{
+  "created_at": "2026-10-17T12:15:09.017102+00:00",
+  "linux": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "packages": {
+    "numpy": "2.5.3",
+    "xgboost": "3.4.1",
+    "scikit-learn": "1.9.1",
+    "fastapi": "0.142.2",
+    "matplotlib": "3.11.2",
+    "pytest": "9.1.1"
+  },
+  "memory": [
+    "MemTotal:       15986588 kB"
+  ],
+  "cpu_virtualization_flags_present": false,
+  "kvm_module": {
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "modprobe: ERROR: could not insert 'kvm_amd': Operation not supported"
+  },
+  "kvm_kernel_evidence": {
+    "exit_code": 0,
+    "stdout": "[    0.120942] x86/fpu: Supporting XSAVE feature 0x1000: 'Control-flow Kernel registers (KVM only)'\n[  279.849054] kvm_amd: SVM not supported by CPU 4\n[  854.627969] kvm_amd: SVM not supported by CPU 0",
+    "stderr": ""
+  },
+  "guests": [
+    {
+      "name": "sdw-edge-a",
+      "vcpus": "2",
+      "memory_kib": "4194304",
+      "state": "shut off"
+    },
+    {
+      "name": "sdw-edge-b",
+      "vcpus": "2",
+      "memory_kib": "4194304",
+      "state": "shut off"
+    }
+  ],
+  "controller_containers": {
+    "exit_code": 0,
+    "stdout": "ai-sdwan-observability-grafana-1 grafana/grafana:13.2.3 Up 14 minutes\nai-sdwan-observability-timescaledb-1 timescale/timescaledb:2.30.2-pg17 Up 14 minutes (healthy)\nai-sdwan-controller-mail-1 axllent/mailpit:v1.27.8 Up 14 minutes (healthy)\nai-sdwan-controller-controller-1 ai-sdwan-controller-controller Up 13 minutes (healthy)\nai-sdwan-controller-redis-1 redis:7.2.12-alpine Up 14 minutes (healthy)\nai-sdwan-controller-mongo-1 mongo:6.0.28 Up 14 minutes (healthy)",
+    "stderr": ""
+  },
+  "link_testbed": "six isolated veth namespaces, no flexiEdge in packet path",
+  "restriction": "No VM benchmark results collected on this date; KVM unavailable. No OS rollback, reboot, security or boot setting changed.",
+  "related_upstream_issue": "https://github.com/microsoft/WSL/issues/41917"
+}

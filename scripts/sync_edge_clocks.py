@@ -10,6 +10,38 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def sync_site(site, options, code, *, apply=False, force_sync=False):
+    # SSH startup latency can leave the first clock-set request over a second old.
+    # Retry only a measured clock-bound failure, with a fresh host epoch each time.
+    attempts = 3 if apply else 1
+    for attempt in range(1, attempts + 1):
+        command = [
+            "ssh",
+            *options,
+            f"lab@192.168.56.{10 + site}",
+            "sudo python3 - --site",
+            str(site),
+            "--host-epoch",
+            f"{time.time():.6f}",
+        ]
+        if apply:
+            command += ["--apply"]
+        if force_sync:
+            command += ["--force-sync"]
+        result = subprocess.run(
+            command, input=code, capture_output=True, text=True, check=True, timeout=12
+        )
+        row = json.loads(result.stdout)
+        row["after_offset_upper_bound_seconds"] = time.time() - row["guest_after_epoch"]
+        row["synchronization_attempt"] = attempt
+        if not apply or abs(row["after_offset_upper_bound_seconds"]) <= 1:
+            return row
+    raise RuntimeError(
+        f"Guest clock readback still exceeds one second: site {site}, "
+        f"{row['after_offset_upper_bound_seconds']:.3f}s after {attempts} attempts"
+    )
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--apply", action="store_true")
@@ -41,29 +73,10 @@ def main():
         "ConnectTimeout=5",
     ]
     code = (ROOT / "lab/edge/clock.py").read_text(encoding="utf-8")
-    rows = []
-    for site in (1, 2):
-        command = [
-            "ssh",
-            *options,
-            f"lab@192.168.56.{10 + site}",
-            "sudo python3 - --site",
-            str(site),
-            "--host-epoch",
-            f"{time.time():.6f}",
-        ]
-        if args.apply:
-            command += ["--apply"]
-        if args.force_sync:
-            command += ["--force-sync"]
-        result = subprocess.run(
-            command, input=code, capture_output=True, text=True, check=True, timeout=12
-        )
-        row = json.loads(result.stdout)
-        row["after_offset_upper_bound_seconds"] = time.time() - row["guest_after_epoch"]
-        if args.apply and abs(row["after_offset_upper_bound_seconds"]) > 1:
-            raise RuntimeError("Guest clock readback still exceeds one second")
-        rows.append(row)
+    rows = [
+        sync_site(site, options, code, apply=args.apply, force_sync=args.force_sync)
+        for site in (1, 2)
+    ]
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(
         json.dumps(

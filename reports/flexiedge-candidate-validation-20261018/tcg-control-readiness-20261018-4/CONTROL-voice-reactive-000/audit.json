@@ -1,0 +1,1785 @@
+{
+  "storage": "timescaledb",
+  "stream": "trial-1e599290f5d74f29b27e2eb14cf3a57a",
+  "telemetry": [
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 4.207548454860621,
+      "timestamp": 1792267319.66233,
+      "latency_ms": 27.756,
+      "utilization_pct": 0.03206504807232943
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.74940708507051,
+      "timestamp": 1792267319.66233,
+      "latency_ms": 43.652,
+      "utilization_pct": 0.04078678769497901
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.963521406233156,
+      "timestamp": 1792267319.66233,
+      "latency_ms": 71.522,
+      "utilization_pct": 0.11297338959736222
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 26.084274266308427,
+      "timestamp": 1792267324.9542594,
+      "latency_ms": 35.294,
+      "utilization_pct": 2.310404804443004
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 36.26788325778057,
+      "timestamp": 1792267324.9542594,
+      "latency_ms": 50.738,
+      "utilization_pct": 0.03654923873228598
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 39.43461677257685,
+      "timestamp": 1792267324.9542594,
+      "latency_ms": 74.86,
+      "utilization_pct": 0.09788414007690172
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.7909397251868833,
+      "timestamp": 1792267329.7787259,
+      "latency_ms": 30.676,
+      "utilization_pct": 2.33224756981733
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.717594435510378,
+      "timestamp": 1792267329.7787259,
+      "latency_ms": 44.405,
+      "utilization_pct": 0.03845648087122446
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.432865100275738,
+      "timestamp": 1792267329.7787259,
+      "latency_ms": 70.284,
+      "utilization_pct": 0.10460536387558324
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.821948586781356,
+      "timestamp": 1792267334.7338166,
+      "latency_ms": 30.747,
+      "utilization_pct": 2.328324400366017
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.138101988624147,
+      "timestamp": 1792267334.7338166,
+      "latency_ms": 45.13,
+      "utilization_pct": 0.039158389017732775
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.761530459913953,
+      "timestamp": 1792267334.7338166,
+      "latency_ms": 70.828,
+      "utilization_pct": 0.10362957614237307
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 4.2024206119806715,
+      "timestamp": 1792267339.707754,
+      "latency_ms": 30.569,
+      "utilization_pct": 2.3243114895576515
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.993765509366181,
+      "timestamp": 1792267339.707754,
+      "latency_ms": 44.838,
+      "utilization_pct": 0.03863601328908809
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.364522144775995,
+      "timestamp": 1792267339.707754,
+      "latency_ms": 69.165,
+      "utilization_pct": 0.10719120291522131
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 4.130919873345403,
+      "timestamp": 1792267344.774226,
+      "latency_ms": 30.751,
+      "utilization_pct": 2.329076022571603
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.777114061309578,
+      "timestamp": 1792267344.774226,
+      "latency_ms": 44.705,
+      "utilization_pct": 0.03846259259903075
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.44326934911845,
+      "timestamp": 1792267344.774226,
+      "latency_ms": 69.708,
+      "utilization_pct": 0.10256691359741535
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.8104781852150786,
+      "timestamp": 1792267349.7105324,
+      "latency_ms": 30.216,
+      "utilization_pct": 2.333778886899858
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.921019867042718,
+      "timestamp": 1792267349.7105324,
+      "latency_ms": 43.278,
+      "utilization_pct": 0.03922612864289491
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 10.63713208529442,
+      "timestamp": 1792267349.7105324,
+      "latency_ms": 69.511,
+      "utilization_pct": 0.10833747053479074
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 19.116764239797487,
+      "timestamp": 1792267355.0634797,
+      "latency_ms": 32.915,
+      "utilization_pct": 2.325048392359812
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 25.39996604328439,
+      "timestamp": 1792267355.0634797,
+      "latency_ms": 47.145,
+      "utilization_pct": 0.03623011636342813
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 30.985113264275796,
+      "timestamp": 1792267355.0634797,
+      "latency_ms": 76.134,
+      "utilization_pct": 0.09696846814024204
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.8152163765637197,
+      "timestamp": 1792267359.833315,
+      "latency_ms": 30.218,
+      "utilization_pct": 2.333691513451236
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.194998540653083,
+      "timestamp": 1792267359.833315,
+      "latency_ms": 43.686,
+      "utilization_pct": 0.03911714083587738
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 10.27386957285326,
+      "timestamp": 1792267359.833315,
+      "latency_ms": 69.998,
+      "utilization_pct": 0.10596165632713772
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.953066657672243,
+      "timestamp": 1792267365.1049562,
+      "latency_ms": 30.908,
+      "utilization_pct": 2.329724724276149
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.0291535763561175,
+      "timestamp": 1792267365.1049562,
+      "latency_ms": 43.6,
+      "utilization_pct": 0.03607873559005711
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.31811161126545,
+      "timestamp": 1792267365.1049562,
+      "latency_ms": 70.086,
+      "utilization_pct": 0.09656330351000941
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.7480494927361883,
+      "timestamp": 1792267369.8385441,
+      "latency_ms": 30.565,
+      "utilization_pct": 2.326012811589419
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.045552568819567,
+      "timestamp": 1792267369.8385441,
+      "latency_ms": 45.183,
+      "utilization_pct": 0.037575771581895547
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 10.484097290658838,
+      "timestamp": 1792267369.8385441,
+      "latency_ms": 70.652,
+      "utilization_pct": 0.10220974905093626
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 4.365503865534882,
+      "timestamp": 1792267375.0498338,
+      "latency_ms": 30.976,
+      "utilization_pct": 2.3243143598051486
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.651649430024876,
+      "timestamp": 1792267375.0498338,
+      "latency_ms": 44.519,
+      "utilization_pct": 0.03598917134933628
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.923258335849168,
+      "timestamp": 1792267375.0498338,
+      "latency_ms": 70.788,
+      "utilization_pct": 0.0959711235982301
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.6833510557643026,
+      "timestamp": 1792267379.8943913,
+      "latency_ms": 30.535,
+      "utilization_pct": 2.32437602286931
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.218026045949127,
+      "timestamp": 1792267379.8943913,
+      "latency_ms": 44.07,
+      "utilization_pct": 0.037190091947297055
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.251944390234952,
+      "timestamp": 1792267379.8943913,
+      "latency_ms": 67.555,
+      "utilization_pct": 0.10232280303022127
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 64.57388171699144,
+      "timestamp": 1792267385.0330179,
+      "latency_ms": 54.78,
+      "utilization_pct": 2.3274457493883105
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 58.35824578412206,
+      "timestamp": 1792267385.0330179,
+      "latency_ms": 64.757,
+      "utilization_pct": 0.036331083386688404
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 68.04205358452961,
+      "timestamp": 1792267385.0330179,
+      "latency_ms": 96.412,
+      "utilization_pct": 0.098414702341486
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.553456204879976,
+      "timestamp": 1792267389.6668925,
+      "latency_ms": 29.743,
+      "utilization_pct": 2.3377880343291877
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.1159170877688,
+      "timestamp": 1792267389.6668925,
+      "latency_ms": 44.518,
+      "utilization_pct": 0.039146673409259335
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.881912567919228,
+      "timestamp": 1792267389.6668925,
+      "latency_ms": 68.598,
+      "utilization_pct": 0.10734486170898415
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 4.036583208606011,
+      "timestamp": 1792267394.8662527,
+      "latency_ms": 30.586000000000002,
+      "utilization_pct": 2.335301903663506
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.693380271376165,
+      "timestamp": 1792267394.8662527,
+      "latency_ms": 43.51,
+      "utilization_pct": 0.037918100437931354
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.767410096847577,
+      "timestamp": 1792267394.8662527,
+      "latency_ms": 69.47,
+      "utilization_pct": 0.10314091679534455
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.9862508701786443,
+      "timestamp": 1792267399.6792526,
+      "latency_ms": 30.002,
+      "utilization_pct": 2.327263261896328
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.609262447832904,
+      "timestamp": 1792267399.6792526,
+      "latency_ms": 43.415,
+      "utilization_pct": 0.041284204579332136
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 10.279527761526792,
+      "timestamp": 1792267399.6792526,
+      "latency_ms": 69.603,
+      "utilization_pct": 0.11055524261075805
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.7305521039116987,
+      "timestamp": 1792267404.749984,
+      "latency_ms": 29.941,
+      "utilization_pct": 2.332575137578769
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.750284364380511,
+      "timestamp": 1792267404.749984,
+      "latency_ms": 43.819,
+      "utilization_pct": 0.03790753552512956
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.153926152203764,
+      "timestamp": 1792267404.749984,
+      "latency_ms": 70.606,
+      "utilization_pct": 0.1010867614003455
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.878898168294703,
+      "timestamp": 1792267409.7289202,
+      "latency_ms": 30.707,
+      "utilization_pct": 2.325979410457769
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.809723856368921,
+      "timestamp": 1792267409.7289202,
+      "latency_ms": 44.981,
+      "utilization_pct": 0.04025296381993
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 10.331146886962744,
+      "timestamp": 1792267409.7289202,
+      "latency_ms": 68.902,
+      "utilization_pct": 0.10779367620763831
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 22.568639546946553,
+      "timestamp": 1792267415.0017772,
+      "latency_ms": 34.497,
+      "utilization_pct": 2.3148816328766975
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 30.898045553076653,
+      "timestamp": 1792267415.0017772,
+      "latency_ms": 50.091,
+      "utilization_pct": 0.03568497443470226
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 34.45555007542326,
+      "timestamp": 1792267415.0017772,
+      "latency_ms": 77.513,
+      "utilization_pct": 0.0951599318258727
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 4.266668372395492,
+      "timestamp": 1792267419.7666347,
+      "latency_ms": 30.729,
+      "utilization_pct": 2.329379920914955
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.089520435121123,
+      "timestamp": 1792267419.7666347,
+      "latency_ms": 44.91,
+      "utilization_pct": 0.039213549223276606
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.451832414934154,
+      "timestamp": 1792267419.7666347,
+      "latency_ms": 70.208,
+      "utilization_pct": 0.10662057748868077
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 4.1572534202283125,
+      "timestamp": 1792267424.7418778,
+      "latency_ms": 29.662,
+      "utilization_pct": 2.3252028812743797
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.557474710510119,
+      "timestamp": 1792267424.7418778,
+      "latency_ms": 43.524,
+      "utilization_pct": 0.03909397874759322
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.869561084465712,
+      "timestamp": 1792267424.7418778,
+      "latency_ms": 67.858,
+      "utilization_pct": 0.10201842491297175
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.821206484868359,
+      "timestamp": 1792267429.6414418,
+      "latency_ms": 29.209,
+      "utilization_pct": 2.3335028736556143
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.0611525263231645,
+      "timestamp": 1792267429.6414418,
+      "latency_ms": 43.785000000000004,
+      "utilization_pct": 0.041137762034438176
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.718017236041517,
+      "timestamp": 1792267429.6414418,
+      "latency_ms": 68.679,
+      "utilization_pct": 0.1118524599681015
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.685508241749026,
+      "timestamp": 1792267434.8016202,
+      "latency_ms": 30.826999999999998,
+      "utilization_pct": 2.3298579144900566
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.1098061344039385,
+      "timestamp": 1792267434.8016202,
+      "latency_ms": 43.163,
+      "utilization_pct": 0.03795867624423809
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.384952370683616,
+      "timestamp": 1792267434.8016202,
+      "latency_ms": 67.813,
+      "utilization_pct": 0.10439442617844617
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.7576156003508396,
+      "timestamp": 1792267439.7391415,
+      "latency_ms": 30.555,
+      "utilization_pct": 2.3258233108871575
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.663903585737116,
+      "timestamp": 1792267439.7391415,
+      "latency_ms": 43.683,
+      "utilization_pct": 0.040322804048163234
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.508244632948818,
+      "timestamp": 1792267439.7391415,
+      "latency_ms": 68.478,
+      "utilization_pct": 0.10635438163163849
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.5610509684642255,
+      "timestamp": 1792267445.0091472,
+      "latency_ms": 30.454,
+      "utilization_pct": 2.360905370863723
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.9543242956268765,
+      "timestamp": 1792267445.0091472,
+      "latency_ms": 44.785000000000004,
+      "utilization_pct": 0.038642371516730174
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.748028723798468,
+      "timestamp": 1792267445.0091472,
+      "latency_ms": 70.456,
+      "utilization_pct": 0.1030463240446138
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 42.23994047107548,
+      "timestamp": 1792267449.7063425,
+      "latency_ms": 43.323,
+      "utilization_pct": 2.3170744470731335
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 43.10641061373587,
+      "timestamp": 1792267449.7063425,
+      "latency_ms": 57.058,
+      "utilization_pct": 0.039149889557039505
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 42.627850802028476,
+      "timestamp": 1792267449.7063425,
+      "latency_ms": 80.856,
+      "utilization_pct": 0.10649150286310685
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 4.285589224365769,
+      "timestamp": 1792267454.7309058,
+      "latency_ms": 29.935,
+      "utilization_pct": 2.3342897597806433
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.349959183560137,
+      "timestamp": 1792267454.7309058,
+      "latency_ms": 43.57,
+      "utilization_pct": 0.03908900094310697
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.602674002890032,
+      "timestamp": 1792267454.7309058,
+      "latency_ms": 69.92,
+      "utilization_pct": 0.10423733584828526
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.971722422325105,
+      "timestamp": 1792267459.8444045,
+      "latency_ms": 30.111,
+      "utilization_pct": 2.3340118918346437
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.506968879593631,
+      "timestamp": 1792267459.8444045,
+      "latency_ms": 42.734,
+      "utilization_pct": 0.037514771095183676
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 10.13195459918766,
+      "timestamp": 1792267459.8444045,
+      "latency_ms": 70.436,
+      "utilization_pct": 0.10242648613286093
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.5483878029324813,
+      "timestamp": 1792267464.7491083,
+      "latency_ms": 30.112,
+      "utilization_pct": 2.3249161912491787
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.729713772191051,
+      "timestamp": 1792267464.7491083,
+      "latency_ms": 43.375,
+      "utilization_pct": 0.04012551645051372
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.742016782986981,
+      "timestamp": 1792267464.7491083,
+      "latency_ms": 70.153,
+      "utilization_pct": 0.11027091652960504
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.542371522017418,
+      "timestamp": 1792267469.7431095,
+      "latency_ms": 30.098,
+      "utilization_pct": 2.3256301108293305
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.472306471230954,
+      "timestamp": 1792267469.7431095,
+      "latency_ms": 44.206,
+      "utilization_pct": 0.038199980469842895
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 9.219959002078046,
+      "timestamp": 1792267469.7431095,
+      "latency_ms": 67.834,
+      "utilization_pct": 0.10354770650135547
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.627729179528152,
+      "timestamp": 1792267475.0476825,
+      "latency_ms": 30.209,
+      "utilization_pct": 2.334720816391528
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.747668294396709,
+      "timestamp": 1792267475.0476825,
+      "latency_ms": 45.006,
+      "utilization_pct": 0.037032524800235424
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.7471606250257,
+      "timestamp": 1792267475.0476825,
+      "latency_ms": 68.991,
+      "utilization_pct": 0.09875339946729446
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 4.164751613241779,
+      "timestamp": 1792267479.7563872,
+      "latency_ms": 30.662,
+      "utilization_pct": 2.330091966701011
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 5.913668489186724,
+      "timestamp": 1792267479.7563872,
+      "latency_ms": 43.755,
+      "utilization_pct": 0.039437683195042844
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 8.21910329658899,
+      "timestamp": 1792267479.7563872,
+      "latency_ms": 69.571,
+      "utilization_pct": 0.10501713071433187
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 3.7575166000963987,
+      "timestamp": 1792267484.633616,
+      "latency_ms": 29.813,
+      "utilization_pct": 2.3275098672637005
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 7.150598506418886,
+      "timestamp": 1792267484.633616,
+      "latency_ms": 43.021,
+      "utilization_pct": 0.041255592339268385
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 10.196433886413425,
+      "timestamp": 1792267484.633616,
+      "latency_ms": 68.756,
+      "utilization_pct": 0.10770004847483758
+    },
+    {
+      "up": true,
+      "link_id": "wan1",
+      "loss_pct": 0.0,
+      "jitter_ms": 4.051147985448075,
+      "timestamp": 1792267489.7292068,
+      "latency_ms": 29.919999999999998,
+      "utilization_pct": 2.329424570051667
+    },
+    {
+      "up": true,
+      "link_id": "wan2",
+      "loss_pct": 0.0,
+      "jitter_ms": 6.687509177563796,
+      "timestamp": 1792267489.7292068,
+      "latency_ms": 45.011,
+      "utilization_pct": 0.03818616933917184
+    },
+    {
+      "up": true,
+      "link_id": "wan3",
+      "loss_pct": 0.0,
+      "jitter_ms": 10.041120654588312,
+      "timestamp": 1792267489.7292068,
+      "latency_ms": 69.536,
+      "utilization_pct": 0.10391490708232316
+    }
+  ],
+  "events": [
+    {
+      "id": 76447,
+      "timestamp": 1792267319.5661092,
+      "kind": "startup",
+      "payload": {
+        "mode": "manual",
+        "backend": "flexiwan",
+        "model_error": null
+      }
+    },
+    {
+      "id": 76448,
+      "timestamp": 1792267319.6048837,
+      "kind": "configuration",
+      "payload": {
+        "mode": "manual",
+        "profile": "voice"
+      }
+    },
+    {
+      "id": 76449,
+      "timestamp": 1792267320.4586112,
+      "kind": "configuration",
+      "payload": {
+        "mode": "auto",
+        "profile": "voice"
+      }
+    },
+    {
+      "id": 76450,
+      "timestamp": 1792267320.620975,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.12637176477919138,
+          "wan2": 0.194020025213295,
+          "wan3": 0.31951109835755
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76451,
+      "timestamp": 1792267326.639531,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.2986278364494612,
+          "wan2": 1.112060803783091,
+          "wan3": 1.2326405853839737
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76452,
+      "timestamp": 1792267330.9092865,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13618801078427475,
+          "wan2": 0.19606305703818788,
+          "wan3": 0.3189121096082975
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76453,
+      "timestamp": 1792267335.9735005,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13660119791248573,
+          "wan2": 0.20104261057252387,
+          "wan3": 0.3160669190263303
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76454,
+      "timestamp": 1792267340.9516056,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13859698989580055,
+          "wan2": 0.19920349675125634,
+          "wan3": 0.31510379963669866
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76455,
+      "timestamp": 1792267346.0578008,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13867425919325535,
+          "wan2": 0.19735986472972888,
+          "wan3": 0.31725007385011866
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76456,
+      "timestamp": 1792267350.8859725,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13494081937960029,
+          "wan2": 0.19403950932802294,
+          "wan3": 0.3246277763528541
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76457,
+      "timestamp": 1792267356.598314,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.24506517558591628,
+          "wan2": 0.3288284904825017,
+          "wan3": 1.1801310358754056
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76458,
+      "timestamp": 1792267360.7263336,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.1349782616995102,
+          "wan2": 0.19708985217241368,
+          "wan3": 0.32366306657956695
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76459,
+      "timestamp": 1792267366.486683,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.1379606522582752,
+          "wan2": 0.19572115506835752,
+          "wan3": 0.31753968291428636
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76460,
+      "timestamp": 1792267372.2368395,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13555868463755696,
+          "wan2": 0.20058197674476694,
+          "wan3": 0.3270203315194771
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76461,
+      "timestamp": 1792267378.1750526,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.14090521636990777,
+          "wan2": 0.2026279781524147,
+          "wan3": 0.32367900744499145
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76462,
+      "timestamp": 1792267381.0210323,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.1350346337432109,
+          "wan2": 0.19839215712623967,
+          "wan3": 0.3095151672732834
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76463,
+      "timestamp": 1792267386.1253717,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 1.3137116210289232,
+          "wan2": 1.3013865236997917,
+          "wan3": 1.488013715067433
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": true,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76464,
+      "timestamp": 1792267390.9553142,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13181502142308182,
+          "wan2": 0.1990586917074741,
+          "wan3": 0.3168523252223098
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76465,
+      "timestamp": 1792267395.7914746,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13756072456347926,
+          "wan2": 0.19988239864323762,
+          "wan3": 0.3186979688403094
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76466,
+      "timestamp": 1792267400.9919243,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.1354597779043515,
+          "wan2": 0.19904222332651825,
+          "wan3": 0.3225234438145298
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76467,
+      "timestamp": 1792267406.2039437,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13358097258870927,
+          "wan2": 0.19452207498841192,
+          "wan3": 0.3180126522836923
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76468,
+      "timestamp": 1792267410.890193,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13685695347272764,
+          "wan2": 0.1984082473154927,
+          "wan3": 0.3207599687067643
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76469,
+      "timestamp": 1792267416.2104566,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.2728067330344382,
+          "wan2": 1.0743194453112355,
+          "wan3": 1.207401267055865
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76470,
+      "timestamp": 1792267420.8903613,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13951375568416155,
+          "wan2": 0.20005882548284626,
+          "wan3": 0.31881391706204215
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76471,
+      "timestamp": 1792267425.950778,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.1355763609369794,
+          "wan2": 0.1990203213679801,
+          "wan3": 0.31454110460462636
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76472,
+      "timestamp": 1792267430.9988852,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13199088135521508,
+          "wan2": 0.19649791311221182,
+          "wan3": 0.3160102023402236
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76473,
+      "timestamp": 1792267435.9131086,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13593415146914362,
+          "wan2": 0.1882843053564333,
+          "wan3": 0.3111793398481882
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76474,
+      "timestamp": 1792267440.965148,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13559214285381754,
+          "wan2": 0.1935422285783277,
+          "wan3": 0.31399955485571146
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76475,
+      "timestamp": 1792267446.151082,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13403718207453438,
+          "wan2": 0.20544823259004039,
+          "wan3": 0.3215266020320642
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76476,
+      "timestamp": 1792267450.797376,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 1.1304303938856248,
+          "wan2": 1.1766153205741674,
+          "wan3": 1.2719311578516281
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": true,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76477,
+      "timestamp": 1792267456.123681,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13726607776207286,
+          "wan2": 0.19777487622530607,
+          "wan3": 0.31228488891234735
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76478,
+      "timestamp": 1792267461.1897168,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13570116930189177,
+          "wan2": 0.18964431714911614,
+          "wan3": 0.32402507480480586
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76479,
+      "timestamp": 1792267465.810111,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13286677900496519,
+          "wan2": 0.19972330100869118,
+          "wan3": 0.32058956341412925
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76480,
+      "timestamp": 1792267471.0025883,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.1327858603314983,
+          "wan2": 0.20049704310898941,
+          "wan3": 0.31014097285802256
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76481,
+      "timestamp": 1792267476.4464471,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13370306255750689,
+          "wan2": 0.20473084283731177,
+          "wan3": 0.3104519931659501
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76482,
+      "timestamp": 1792267480.6745272,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13863449736611355,
+          "wan2": 0.1887551860665699,
+          "wan3": 0.30868205052845044
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76483,
+      "timestamp": 1792267485.7146804,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.1333682937794155,
+          "wan2": 0.19480241603002466,
+          "wan3": 0.3194237259902142
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    },
+    {
+      "id": 76484,
+      "timestamp": 1792267490.8749895,
+      "kind": "decision",
+      "payload": {
+        "mode": "auto",
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13565002751973992,
+          "wan2": 0.19768003813265725,
+          "wan3": 0.3207219958757259
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "profile": "voice",
+        "degraded": false,
+        "predicted": {},
+        "model_error": "Forecast disabled on live probe data; reactive routing until live validation"
+      }
+    }
+  ],
+  "state": {
+    "mode": "auto",
+    "profile": "voice",
+    "route": {
+      "current": "wan1"
+    },
+    "service_status": {
+      "mode": "auto",
+      "backend": "flexiwan",
+      "pending": null,
+      "profile": "voice",
+      "telemetry": {
+        "wan1": {
+          "up": true,
+          "fresh": true,
+          "link_id": "wan1",
+          "loss_pct": 0.0,
+          "jitter_ms": 4.051147985448075,
+          "timestamp": 1792267489.7292068,
+          "latency_ms": 29.919999999999998,
+          "age_seconds": 1.171581745147705,
+          "utilization_pct": 2.329424570051667
+        },
+        "wan2": {
+          "up": true,
+          "fresh": true,
+          "link_id": "wan2",
+          "loss_pct": 0.0,
+          "jitter_ms": 6.687509177563796,
+          "timestamp": 1792267489.7292068,
+          "latency_ms": 45.011,
+          "age_seconds": 1.171581745147705,
+          "utilization_pct": 0.03818616933917184
+        },
+        "wan3": {
+          "up": true,
+          "fresh": true,
+          "link_id": "wan3",
+          "loss_pct": 0.0,
+          "jitter_ms": 10.041120654588312,
+          "timestamp": 1792267489.7292068,
+          "latency_ms": 69.536,
+          "age_seconds": 1.171581745147705,
+          "utilization_pct": 0.10391490708232316
+        }
+      },
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "model_loaded": false,
+      "last_decision": {
+        "action": "hold",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.13565002751973992,
+          "wan2": 0.19768003813265725,
+          "wan3": 0.3207219958757259
+        },
+        "source": "wan1",
+        "target": "wan1",
+        "degraded": false,
+        "predicted": {}
+      },
+      "apply_inflight": null,
+      "confirmed_path": "wan1",
+      "route_evidence": "agent_configuration",
+      "forecast_sampling": "strict",
+      "network_available": true,
+      "observing_native_qbr": false
+    }
+  }
+}

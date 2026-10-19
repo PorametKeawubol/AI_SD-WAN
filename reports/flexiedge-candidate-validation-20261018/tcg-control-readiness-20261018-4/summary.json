@@ -1,0 +1,86 @@
+{
+  "evidence_level": "real_packets",
+  "complete": true,
+  "coverage": {
+    "reactive": {
+      "handled_cases_observed": [],
+      "handled_count": 0,
+      "fault_cases_selected": 0,
+      "restored_count": 0,
+      "recoverable_cases_selected": 0,
+      "normal_control_passed": false,
+      "all_selected_cases_all_3_profiles_evaluated": false,
+      "full_suite_all_3_profiles_evaluated": false,
+      "by_group": {
+        "availability": {
+          "case_count": 1,
+          "passed_case_count": 0
+        },
+        "quality": {
+          "case_count": 0,
+          "passed_case_count": 0
+        },
+        "stability": {
+          "case_count": 0,
+          "passed_case_count": 0
+        },
+        "mixed": {
+          "case_count": 0,
+          "passed_case_count": 0
+        },
+        "telemetry": {
+          "case_count": 0,
+          "passed_case_count": 0
+        }
+      }
+    }
+  },
+  "summary": [
+    {
+      "scenario": "CONTROL",
+      "group": "availability",
+      "profile": "voice",
+      "strategy": "reactive",
+      "trials": 1,
+      "measured_trials": 1,
+      "valid_trials": 0,
+      "invalid_trials": 1,
+      "passed_trials": 0,
+      "pass_rate": null,
+      "wilson_95": null,
+      "profile_passed": false
+    }
+  ],
+  "native_qbr_evaluated": false,
+  "case_manifest": {
+    "suite": "balanced",
+    "version": 2,
+    "case_count": 1,
+    "full_suite_case_count": 38,
+    "full_suite_fault_count": 37,
+    "fault_case_count": 0,
+    "recoverable_fault_count": 0,
+    "group_counts": {
+      "availability": 1,
+      "quality": 0,
+      "stability": 0,
+      "mixed": 0,
+      "telemetry": 0
+    },
+    "complete_suite_selected": false,
+    "initial_priority": "wan1",
+    "scope": "Balanced v2 covers all 8 binary Up/Down states. Other impairments are selected tests. Legacy v1 retains the original definitions.",
+    "cases": [
+      {
+        "id": "CONTROL",
+        "name": "Normal control",
+        "kind": "normal",
+        "links": [],
+        "recoverable": true,
+        "group": "availability",
+        "affected_links": []
+      }
+    ],
+    "sha256": "aaf8565685910062da8308987cb78f37358bd779134a068ecb6c682ad1b0ab00"
+  }
+}

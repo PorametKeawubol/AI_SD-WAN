@@ -1,0 +1,142 @@
+{
+  "declared_at_unix": 1792265996.660476,
+  "collection": {
+    "schema": 1,
+    "testbed": "isolated_linux_veth_netem",
+    "real_packets": true,
+    "flexiwan_in_path": false,
+    "real_isp": false,
+    "duration_seconds_per_episode": 125,
+    "interval_seconds": 5,
+    "partitions": {
+      "train": 3,
+      "tune": 3,
+      "accept": 3,
+      "holdout": 3
+    },
+    "seeds": [
+      2026101900,
+      2026109819,
+      2026117738,
+      2026125657,
+      2026133576,
+      2026141495,
+      2026149414,
+      2026157333,
+      2026165252,
+      2026173171,
+      2026181090,
+      2026189009
+    ],
+    "capacity_mbps": {
+      "wan1": 100,
+      "wan2": 80,
+      "wan3": 30
+    },
+    "scenarios": [
+      "normal",
+      "gradual_loss",
+      "sustained_loss",
+      "loss_burst",
+      "loss_recovery"
+    ],
+    "measurements": {
+      "rtt_jitter_loss": "100 ICMP probes at 20 ms spacing; RTT mean and population stddev",
+      "utilization": "measured source veth TX bytes / actual elapsed interval / capacity; not VPP",
+      "raw_counter_audit": "per-frame TX counter before/after, elapsed seconds and configured Mbps"
+    },
+    "split_rule": "whole chronological episodes; all WANs together; no cross-episode windows",
+    "acceptance": "at least 2% MAE gain, >=3 episode groups, >=30 windows, paired episode-block 95% CI upper<0",
+    "runtime_promotion": false,
+    "campaign": "nonzero_loss_with_normal_controls",
+    "generator_sha256": "57139f06ebbac1d27df109c86687272631f8c82965e6ce2aa33be210c63940af",
+    "training_controls": "First 3 fresh episodes have zero configured loss on all WANs; append to 6 prior complete training episodes only.",
+    "profile_assignment": "Normal/ramp/step/burst rotate across WANs and episodes, never supplied as model features.",
+    "loss_definition": "Measured 100-probe ICMP round-trip loss; NetEm configured probability is not a target label."
+  },
+  "candidate_selection": {
+    "schema": 1,
+    "linear_alphas": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "linear_features": "current level plus relative lag1/lag3/mean, stddev, observed slope*30; training-only standardization",
+    "trees_depth_lambda_min_child": [
+      [
+        2,
+        5,
+        1
+      ],
+      [
+        3,
+        5,
+        1
+      ],
+      [
+        5,
+        5,
+        1
+      ],
+      [
+        2,
+        20,
+        10
+      ]
+    ],
+    "tree_parameters": {
+      "trees": 240,
+      "learning_rate": 0.05,
+      "objective": "reg:absoluteerror",
+      "early_stopping": 20
+    },
+    "blend_weights": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "selection": "minimum tuning MAE only; ties prefer smaller weight then linear before trees in declared order",
+    "acceptance": "untouched chronological acceptance; >=2% MAE reduction, >=3 episode groups, >=30 samples, paired episode-block bootstrap 95% CI upper<0",
+    "rejection": "use persistence; do not try another candidate on acceptance",
+    "holdout": "report only after selection and acceptance are frozen; no retuning",
+    "runtime_promoted": false
+  },
+  "baseline_model": "/opt/ai-sdwan-lab/artifacts/model",
+  "baseline_sha256": "b7b72bfa7c1f34be948b397c4aaebdc639093657c15b444992d8bef3b2bbfc7d",
+  "frozen_v2": "/opt/ai-sdwan-lab/artifacts/model-search-link-v2-20261017",
+  "frozen_v2_sha256": "6397fe7394d23e3579e1ee2215dfd671097278ac890ee0b0e83f6bb1e01afc82",
+  "new_loss_bundle": "/opt/ai-sdwan-lab/artifacts/model-search-loss-v3-20261018",
+  "data_directory": "/opt/ai-sdwan-lab/artifacts/loss-confirmation-campaign-20261018",
+  "reports": "/opt/ai-sdwan-lab/reports/loss-confirmation-20261018",
+  "loss_only": true,
+  "runtime_promoted": false,
+  "code_sha256": {
+    "lab/loss_forecast_campaign.py": "62c760eef00a7af79addc0bd18db7c49e7a165118a6de6f4e5ceaacc67bad283",
+    "lab/link_forecast_campaign.py": "14d7be47b4bb2d028f5a017acecd4273df839b8ff50248a2afe0722a749c9f09",
+    "sdwan/forecast_search.py": "9a8ce5d751e365a9057ac5733e019817cde60b0d7c10065fbc1801838e089dec",
+    "sdwan/optimization.py": "495051fcab199a209df0989dc7663cf58398e727eca15edb50dabebe2156ddf8",
+    "lab/loss_forecast_confirmation.py": "197f3586f2f66a8a115a612a58ce552ff8b0a814dd371b4f1698e355fb729c53"
+  },
+  "amendment_reason": "Generator review found no complete normal-history training windows. Add normal controls and rotate profiles before any Tune/Acceptance/Holdout model evaluation. No measured validation scores have been inspected.",
+  "original_protocol_retained": "/mnt/e/Proposal/.codex-review/loss-sla-20261018/predeclared-protocol.json",
+  "old_training_directory": "/opt/ai-sdwan-lab/artifacts/loss-campaign-20261018",
+  "old_training_episode_ids": [
+    "link-2026101800",
+    "link-2026109719",
+    "link-2026117638",
+    "link-2026125557",
+    "link-2026133476",
+    "link-2026141395"
+  ],
+  "old_unused_episodes_policy": "Any later episodes from interrupted first collection are retained but never used for training, selection, acceptance or final claims.",
+  "combined_counts": [
+    9,
+    3,
+    3,
+    3
+  ]
+}

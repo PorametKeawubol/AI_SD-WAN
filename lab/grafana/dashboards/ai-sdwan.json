@@ -991,7 +991,7 @@
             "type": "grafana-postgresql-datasource",
             "uid": "sdwan-timescale"
           },
-          "rawSql": "SELECT COALESCE((SELECT CASE WHEN payload->>'active'='true' AND updated_at > now()-INTERVAL '25 seconds' THEN 'Natural WAN: Fiber / Broadband / Mobile' WHEN payload->>'active'='true' THEN 'Natural WAN status stale (check runner)' ELSE 'Natural WAN stopped' END FROM state WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND key='wan_environment'), 'Natural WAN not enabled') AS environment",
+          "rawSql": "SELECT COALESCE((SELECT CASE WHEN payload->>'kind'='real_traffic' THEN CASE WHEN payload->>'active'='true' AND updated_at > now()-INTERVAL '25 seconds' THEN 'Real traffic; capacity-emulated WANs (100 / 80 / 30 Mbps)' WHEN payload->>'active'='true' THEN 'Real traffic status stale (check runner)' ELSE 'Real traffic stopped; capacity-emulated WANs' END WHEN payload->>'active'='true' AND updated_at > now()-INTERVAL '25 seconds' THEN 'Natural WAN: Fiber / Broadband / Mobile' WHEN payload->>'active'='true' THEN 'Natural WAN status stale (check runner)' ELSE 'Natural WAN stopped' END FROM state WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND key='wan_environment'), 'Natural WAN not enabled') AS environment",
           "format": "table",
           "rawQuery": true
         }
@@ -1142,6 +1142,458 @@
         }
       },
       "description": "Forecasts combine the experimental XGBoost model with persistence for disabled metrics. Lower decision score is preferred among paths meeting the current SLA. Blank forecasts mean down/stale or insufficient continuous history; they are not zero. RTT/jitter are ICMP round-trip mean/stddev. Sudden-down failover is a policy rule."
+    },
+    {
+      "id": 19,
+      "title": "Real traffic workload session",
+      "type": "table",
+      "gridPos": {
+        "x": 0,
+        "y": 54,
+        "w": 24,
+        "h": 5
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT CASE\nWHEN payload->>'active'='true' AND updated_at > now()-INTERVAL '25 seconds' THEN 'RUNNING'\nWHEN payload->>'active'='true' THEN 'STALE (check runner)' ELSE 'STOPPED' END AS status,\npayload->>'run_id' AS run_id, payload->>'phase' AS phase,\nCOALESCE(payload->>'mode',payload->>'kind') AS traffic_mode,\npayload->>'capacity_emulated' AS capacity_emulated,\n(payload->>'delay_injected_ms')::double precision AS injected_delay_ms,\n(payload->>'loss_injected_pct')::double precision AS injected_loss_pct,\nupdated_at AS last_heartbeat,\nextract(epoch from now()-updated_at)::double precision AS heartbeat_age_seconds,\npayload->'application'->'http'->>'success' AS latest_http_success,\npayload->'application'->'download'->>'success' AS latest_download_success,\npayload->'application'->'udp'->>'success' AS latest_udp_success\nFROM state WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND key='application_workload'",
+          "format": "table",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "noValue": "\u2014",
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "description": "Workload runner heartbeat and latest endpoint measurement outcomes. A stale or stopped session is not a current healthy measurement. Capacity-emulated lab WANs carry real packets; no real ISP behavior is implied."
+    },
+    {
+      "id": 20,
+      "title": "Endpoint HTTP response time",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 59,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT observed_at AS time, 'HTTP response' AS metric,\nCASE WHEN payload->>'success'='true' THEN (payload->>'latency_ms')::double precision END AS value\nFROM events WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND kind='application_measurement'\nAND payload->>'application'='http' AND $__timeFilter(observed_at) ORDER BY observed_at,id",
+          "format": "time_series",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ms",
+          "noValue": "\u2014",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "decimals": 2,
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "spanNulls": false,
+            "showPoints": "auto"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "description": "Measured at the workload endpoint using real packets in the lab. Failed or missing measurements are gaps, not zero. The WAN capacities are emulated; these are not measurements from three real ISPs."
+    },
+    {
+      "id": 21,
+      "title": "Endpoint download goodput",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 59,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT observed_at AS time, 'Received download' AS metric,\nCASE WHEN payload->>'success'='true' THEN (payload->>'received_mbps')::double precision END AS value\nFROM events WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND kind='application_measurement'\nAND payload->>'application'='download' AND $__timeFilter(observed_at) ORDER BY observed_at,id",
+          "format": "time_series",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "Mbits",
+          "noValue": "\u2014",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "decimals": 2,
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "spanNulls": false,
+            "showPoints": "auto"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "description": "Measured at the workload endpoint using real packets in the lab. Failed or missing measurements are gaps, not zero. The WAN capacities are emulated; these are not measurements from three real ISPs."
+    },
+    {
+      "id": 22,
+      "title": "Endpoint UDP packet loss",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 67,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT observed_at AS time, 'UDP received loss' AS metric,\nCASE WHEN payload->>'success'='true' THEN (payload->>'loss_pct')::double precision END AS value\nFROM events WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND kind='application_measurement'\nAND payload->>'application'='udp' AND $__timeFilter(observed_at) ORDER BY observed_at,id",
+          "format": "time_series",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "noValue": "\u2014",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "decimals": 2,
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "spanNulls": false,
+            "showPoints": "auto"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "description": "Measured at the workload endpoint using real packets in the lab. Failed or missing measurements are gaps, not zero. The WAN capacities are emulated; these are not measurements from three real ISPs."
+    },
+    {
+      "id": 23,
+      "title": "Endpoint UDP RTT / RTT variation",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 67,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT observed_at AS time, timing.metric,\nCASE WHEN payload->>'success'='true' THEN timing.value END AS value\nFROM events CROSS JOIN LATERAL (VALUES\n('UDP RTT stddev', (payload->>'jitter_ms')::double precision),\n('Measured RTT', COALESCE(payload->>'rtt_ms',payload->>'latency_ms')::double precision)\n) AS timing(metric,value)\nWHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND kind='application_measurement'\nAND payload->>'application'='udp' AND $__timeFilter(observed_at) ORDER BY observed_at,id,metric",
+          "format": "time_series",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ms",
+          "noValue": "\u2014",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "decimals": 2,
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "spanNulls": false,
+            "showPoints": "auto"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "description": "Measured at the workload endpoint using real packets in the lab. Failed or missing measurements are gaps, not zero. The WAN capacities are emulated; these are not measurements from three real ISPs. UDP echo reports mean round-trip latency and its standard deviation. RTT is shown only when an echo is received; it is not converted into one-way latency."
+    },
+    {
+      "id": 24,
+      "title": "Per-WAN background load: offered and received",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 75,
+        "w": 24,
+        "h": 8
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT observed_at AS time,\nupper(payload->>'link_id') || ' ' || COALESCE(payload->>'direction',payload->>'side','') || ' ' || traffic.metric AS metric,\nCASE WHEN payload->>'success'='true' THEN traffic.value END AS value\nFROM events CROSS JOIN LATERAL (VALUES\n('offered', (payload->>'offered_mbps')::double precision),\n('received', (payload->>'received_mbps')::double precision)\n) AS traffic(metric,value)\nWHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND kind='background_measurement'\nAND payload->>'link_id' IN ('wan1','wan2','wan3') AND $__timeFilter(observed_at)\nORDER BY observed_at,id,metric",
+          "format": "time_series",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "Mbits",
+          "noValue": "\u2014",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "decimals": 2,
+          "custom": {
+            "drawStyle": "line",
+            "lineInterpolation": "linear",
+            "lineWidth": 2,
+            "fillOpacity": 8,
+            "spanNulls": false,
+            "showPoints": "auto"
+          }
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "description": "Real background packets compete for each WAN's shared bottleneck separately. Offered is sender-measured throughput; received is receiver-measured goodput. These external background packets do not enter the edge VPP utilization counters. Failed or missing measurements are gaps, not zero."
+    },
+    {
+      "id": 25,
+      "title": "Endpoint measurement outcomes",
+      "type": "table",
+      "gridPos": {
+        "x": 0,
+        "y": 83,
+        "w": 24,
+        "h": 8
+      },
+      "datasource": {
+        "type": "grafana-postgresql-datasource",
+        "uid": "sdwan-timescale"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "datasource": {
+            "type": "grafana-postgresql-datasource",
+            "uid": "sdwan-timescale"
+          },
+          "rawSql": "SELECT observed_at AS time,\npayload->>'run_id' AS run_id, payload->>'phase' AS phase,\npayload->>'application' AS application,\nCASE WHEN payload->>'success'='true' THEN 'SUCCESS' ELSE 'FAILED / INCOMPLETE' END AS status,\nCASE WHEN payload->>'success'='true' THEN (payload->>'latency_ms')::double precision END AS latency_ms,\nCASE WHEN payload->>'success'='true' THEN (payload->>'received_mbps')::double precision END AS received_mbps,\nCASE WHEN payload->>'success'='true' THEN (payload->>'loss_pct')::double precision END AS loss_pct,\npayload->>'error' AS error\nFROM events WHERE stream=CASE WHEN ${stream:sqlstring}='__latest_live__' THEN (SELECT stream FROM state WHERE key='service_status' AND payload->>'backend' IN ('flexiwan','flexiwan_observe') ORDER BY updated_at DESC LIMIT 1) ELSE ${stream:sqlstring} END AND kind='application_measurement' AND $__timeFilter(observed_at)\nORDER BY id DESC LIMIT 100",
+          "format": "table",
+          "rawQuery": true
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "none",
+          "noValue": "\u2014",
+          "color": {
+            "mode": "palette-classic"
+          },
+          "decimals": 2
+        },
+        "overrides": []
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "textMode": "auto",
+        "colorMode": "value",
+        "graphMode": "none",
+        "legend": {
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "multi",
+          "sort": "none"
+        }
+      },
+      "description": "Individual measurement times, phases and outcomes remain visible even when a test fails. Charts show successful measurements only; failed measurements never become healthy zeros."
     }
   ]
 }

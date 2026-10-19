@@ -1,0 +1,2940 @@
+{
+  "evidence_level": "posthoc_actual_probe_diagnostic",
+  "frozen_model_fingerprint": "b7b72bfa7c1f34be948b397c4aaebdc639093657c15b444992d8bef3b2bbfc7d",
+  "audit": {
+    "model_fingerprint": "b7b72bfa7c1f34be948b397c4aaebdc639093657c15b444992d8bef3b2bbfc7d",
+    "metadata": {
+      "data_kind": "synthetic",
+      "enabled_metrics": {
+        "latency_ms": true,
+        "jitter_ms": true,
+        "loss_pct": false,
+        "utilization_pct": true
+      },
+      "feature_names": [
+        "latency_ms_current",
+        "latency_ms_lag1",
+        "latency_ms_lag3",
+        "latency_ms_mean",
+        "latency_ms_std",
+        "latency_ms_trend",
+        "jitter_ms_current",
+        "jitter_ms_lag1",
+        "jitter_ms_lag3",
+        "jitter_ms_mean",
+        "jitter_ms_std",
+        "jitter_ms_trend",
+        "loss_pct_current",
+        "loss_pct_lag1",
+        "loss_pct_lag3",
+        "loss_pct_mean",
+        "loss_pct_std",
+        "loss_pct_trend",
+        "utilization_pct_current",
+        "utilization_pct_lag1",
+        "utilization_pct_lag3",
+        "utilization_pct_mean",
+        "utilization_pct_std",
+        "utilization_pct_trend",
+        "up",
+        "history_fraction"
+      ],
+      "horizon_seconds": 30,
+      "interval_seconds": 5
+    },
+    "spans": [
+      {
+        "kind": "natural",
+        "run_id": "natural-1",
+        "stream": "live-natural-20261009-231927",
+        "seed": 20261009,
+        "start": 1791562888.399581,
+        "end": 1791562904.5561554,
+        "ended_by": "natural_wan_stopped",
+        "duration_seconds": 16.156574487686157,
+        "rows": [
+          {
+            "link": "wan1",
+            "quality": {
+              "rows": 3,
+              "up_rows": 3,
+              "gap_count_over6": 0,
+              "max_gap_seconds": 4.975332975387573,
+              "median_cadence_seconds": 4.969827771186829,
+              "p95_cadence_seconds": 4.974782454967499,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 0,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 0,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {},
+            "strict_window_counts": {},
+            "metrics": {
+              "latency_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "jitter_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "loss_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "utilization_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              }
+            }
+          },
+          {
+            "link": "wan2",
+            "quality": {
+              "rows": 3,
+              "up_rows": 3,
+              "gap_count_over6": 0,
+              "max_gap_seconds": 4.975332975387573,
+              "median_cadence_seconds": 4.969827771186829,
+              "p95_cadence_seconds": 4.974782454967499,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 0,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 0,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {},
+            "strict_window_counts": {},
+            "metrics": {
+              "latency_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "jitter_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "loss_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "utilization_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              }
+            }
+          },
+          {
+            "link": "wan3",
+            "quality": {
+              "rows": 3,
+              "up_rows": 3,
+              "gap_count_over6": 0,
+              "max_gap_seconds": 4.975332975387573,
+              "median_cadence_seconds": 4.969827771186829,
+              "p95_cadence_seconds": 4.974782454967499,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 1,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 0,
+              "voice_sla_loss_rows": 1
+            },
+            "window_counts": {},
+            "strict_window_counts": {},
+            "metrics": {
+              "latency_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "jitter_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "loss_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "utilization_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "natural",
+        "run_id": "natural-2",
+        "stream": "live-natural-20261009-231927",
+        "seed": 20261009,
+        "start": 1791562995.5317671,
+        "end": 1791563815.252245,
+        "ended_by": "natural_wan_stopped",
+        "duration_seconds": 819.7204778194427,
+        "rows": [
+          {
+            "link": "wan1",
+            "quality": {
+              "rows": 164,
+              "up_rows": 164,
+              "gap_count_over6": 0,
+              "max_gap_seconds": 5.3264100551605225,
+              "median_cadence_seconds": 4.9974141120910645,
+              "p95_cadence_seconds": 5.1844172239303585,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 2,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 0,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {
+              "candidate_windows": 153,
+              "forecast_available_windows": 153,
+              "scored_windows": 147,
+              "future_target_missing": 6
+            },
+            "strict_window_counts": {
+              "candidate_windows": 153,
+              "history_rejected": 150,
+              "forecast_available_windows": 3,
+              "scored_windows": 3
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 147,
+                "forecast_absolute_error_sum": 1400.5430501451588,
+                "persistence_absolute_error_sum": 298.1417272727273,
+                "forecast_mae": 9.527503742484074,
+                "persistence_mae": 2.0281750154607296
+              },
+              "jitter_ms": {
+                "samples": 147,
+                "forecast_absolute_error_sum": 349.4467483164176,
+                "persistence_absolute_error_sum": 81.70430220813603,
+                "forecast_mae": 2.3771887640572626,
+                "persistence_mae": 0.5558115796471839
+              },
+              "loss_pct": {
+                "samples": 147,
+                "forecast_absolute_error_sum": 4.0,
+                "persistence_absolute_error_sum": 4.0,
+                "forecast_mae": 0.027210884353741496,
+                "persistence_mae": 0.027210884353741496
+              },
+              "utilization_pct": {
+                "samples": 147,
+                "forecast_absolute_error_sum": 462.400355453819,
+                "persistence_absolute_error_sum": 159.0468107478908,
+                "forecast_mae": 3.1455806493457072,
+                "persistence_mae": 1.0819510935230665
+              }
+            }
+          },
+          {
+            "link": "wan2",
+            "quality": {
+              "rows": 164,
+              "up_rows": 164,
+              "gap_count_over6": 0,
+              "max_gap_seconds": 5.3264100551605225,
+              "median_cadence_seconds": 4.9974141120910645,
+              "p95_cadence_seconds": 5.1844172239303585,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 12,
+              "voice_sla_latency_rows": 4,
+              "voice_sla_jitter_rows": 0,
+              "voice_sla_loss_rows": 4
+            },
+            "window_counts": {
+              "candidate_windows": 153,
+              "forecast_available_windows": 153,
+              "scored_windows": 147,
+              "future_target_missing": 6
+            },
+            "strict_window_counts": {
+              "candidate_windows": 153,
+              "history_rejected": 150,
+              "forecast_available_windows": 3,
+              "scored_windows": 3
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 147,
+                "forecast_absolute_error_sum": 2807.6673486935197,
+                "persistence_absolute_error_sum": 1776.4836161616163,
+                "forecast_mae": 19.099777882268842,
+                "persistence_mae": 12.08492255892256
+              },
+              "jitter_ms": {
+                "samples": 147,
+                "forecast_absolute_error_sum": 431.42091844712513,
+                "persistence_absolute_error_sum": 225.49481362533837,
+                "forecast_mae": 2.934836179912416,
+                "persistence_mae": 1.5339783239818936
+              },
+              "loss_pct": {
+                "samples": 147,
+                "forecast_absolute_error_sum": 32.0,
+                "persistence_absolute_error_sum": 32.0,
+                "forecast_mae": 0.21768707482993196,
+                "persistence_mae": 0.21768707482993196
+              },
+              "utilization_pct": {
+                "samples": 147,
+                "forecast_absolute_error_sum": 896.2140750732289,
+                "persistence_absolute_error_sum": 568.6378788201428,
+                "forecast_mae": 6.096694388253257,
+                "persistence_mae": 3.868284889932944
+              }
+            }
+          },
+          {
+            "link": "wan3",
+            "quality": {
+              "rows": 164,
+              "up_rows": 164,
+              "gap_count_over6": 0,
+              "max_gap_seconds": 5.3264100551605225,
+              "median_cadence_seconds": 4.9974141120910645,
+              "p95_cadence_seconds": 5.1844172239303585,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 70,
+              "voice_sla_latency_rows": 46,
+              "voice_sla_jitter_rows": 0,
+              "voice_sla_loss_rows": 36
+            },
+            "window_counts": {
+              "candidate_windows": 153,
+              "forecast_available_windows": 153,
+              "scored_windows": 147,
+              "future_target_missing": 6
+            },
+            "strict_window_counts": {
+              "candidate_windows": 153,
+              "history_rejected": 150,
+              "forecast_available_windows": 3,
+              "scored_windows": 3
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 147,
+                "forecast_absolute_error_sum": 3279.308676465252,
+                "persistence_absolute_error_sum": 2239.9783746651615,
+                "forecast_mae": 22.308222288879268,
+                "persistence_mae": 15.237948126973887
+              },
+              "jitter_ms": {
+                "samples": 147,
+                "forecast_absolute_error_sum": 368.7811809692465,
+                "persistence_absolute_error_sum": 277.8214787477174,
+                "forecast_mae": 2.5087155167975954,
+                "persistence_mae": 1.8899420322973972
+              },
+              "loss_pct": {
+                "samples": 147,
+                "forecast_absolute_error_sum": 234.0,
+                "persistence_absolute_error_sum": 234.0,
+                "forecast_mae": 1.5918367346938775,
+                "persistence_mae": 1.5918367346938775
+              },
+              "utilization_pct": {
+                "samples": 147,
+                "forecast_absolute_error_sum": 797.4547503505389,
+                "persistence_absolute_error_sum": 546.5814456896541,
+                "forecast_mae": 5.424862247282578,
+                "persistence_mae": 3.718241127140504
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "natural",
+        "run_id": "natural-3",
+        "stream": "live-natural-20261009-231927",
+        "seed": 20261009,
+        "start": 1791563816.9850507,
+        "end": 1791575423.8690083,
+        "ended_by": "natural_wan_stopped",
+        "duration_seconds": 11606.883957624435,
+        "rows": [
+          {
+            "link": "wan1",
+            "quality": {
+              "rows": 2320,
+              "up_rows": 2320,
+              "gap_count_over6": 4,
+              "max_gap_seconds": 11.361228466033936,
+              "median_cadence_seconds": 5.001368999481201,
+              "p95_cadence_seconds": 5.194013357162476,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 10,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 1,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {
+              "candidate_windows": 2309,
+              "forecast_available_windows": 2258,
+              "scored_windows": 2231,
+              "future_target_missing": 27,
+              "history_rejected": 51
+            },
+            "strict_window_counts": {
+              "candidate_windows": 2309,
+              "history_rejected": 2237,
+              "forecast_available_windows": 72,
+              "scored_windows": 72
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 2231,
+                "forecast_absolute_error_sum": 19107.80312108142,
+                "persistence_absolute_error_sum": 3576.053525252525,
+                "forecast_mae": 8.564680914872891,
+                "persistence_mae": 1.6028926603552331
+              },
+              "jitter_ms": {
+                "samples": 2231,
+                "forecast_absolute_error_sum": 5376.176536225693,
+                "persistence_absolute_error_sum": 1093.8628868213307,
+                "forecast_mae": 2.4097608858026414,
+                "persistence_mae": 0.4903016077191083
+              },
+              "loss_pct": {
+                "samples": 2231,
+                "forecast_absolute_error_sum": 20.0,
+                "persistence_absolute_error_sum": 20.0,
+                "forecast_mae": 0.008964589870013447,
+                "persistence_mae": 0.008964589870013447
+              },
+              "utilization_pct": {
+                "samples": 2231,
+                "forecast_absolute_error_sum": 6152.718704497591,
+                "persistence_absolute_error_sum": 2167.702964646354,
+                "forecast_mae": 2.757829988569068,
+                "persistence_mae": 0.971628401903341
+              }
+            }
+          },
+          {
+            "link": "wan2",
+            "quality": {
+              "rows": 2320,
+              "up_rows": 2320,
+              "gap_count_over6": 4,
+              "max_gap_seconds": 11.361228466033936,
+              "median_cadence_seconds": 5.001368999481201,
+              "p95_cadence_seconds": 5.194013357162476,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 230,
+              "voice_sla_latency_rows": 144,
+              "voice_sla_jitter_rows": 1,
+              "voice_sla_loss_rows": 37
+            },
+            "window_counts": {
+              "candidate_windows": 2309,
+              "forecast_available_windows": 2258,
+              "scored_windows": 2231,
+              "future_target_missing": 27,
+              "history_rejected": 51
+            },
+            "strict_window_counts": {
+              "candidate_windows": 2309,
+              "history_rejected": 2237,
+              "forecast_available_windows": 72,
+              "scored_windows": 72
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 2231,
+                "forecast_absolute_error_sum": 41974.04152250368,
+                "persistence_absolute_error_sum": 26963.761609955134,
+                "forecast_mae": 18.814003371808013,
+                "persistence_mae": 12.085953209303064
+              },
+              "jitter_ms": {
+                "samples": 2231,
+                "forecast_absolute_error_sum": 6326.398349225438,
+                "persistence_absolute_error_sum": 3489.8835608837057,
+                "forecast_mae": 2.835678327756808,
+                "persistence_mae": 1.5642687408712261
+              },
+              "loss_pct": {
+                "samples": 2231,
+                "forecast_absolute_error_sum": 493.0,
+                "persistence_absolute_error_sum": 493.0,
+                "forecast_mae": 0.22097714029583146,
+                "persistence_mae": 0.22097714029583146
+              },
+              "utilization_pct": {
+                "samples": 2231,
+                "forecast_absolute_error_sum": 12442.335502561667,
+                "persistence_absolute_error_sum": 8225.055638061185,
+                "forecast_mae": 5.577021740278649,
+                "persistence_mae": 3.6867125226630146
+              }
+            }
+          },
+          {
+            "link": "wan3",
+            "quality": {
+              "rows": 2320,
+              "up_rows": 2320,
+              "gap_count_over6": 4,
+              "max_gap_seconds": 11.361228466033936,
+              "median_cadence_seconds": 5.001368999481201,
+              "p95_cadence_seconds": 5.194013357162476,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 1069,
+              "voice_sla_latency_rows": 992,
+              "voice_sla_jitter_rows": 1,
+              "voice_sla_loss_rows": 574
+            },
+            "window_counts": {
+              "candidate_windows": 2309,
+              "forecast_available_windows": 2258,
+              "scored_windows": 2231,
+              "future_target_missing": 27,
+              "history_rejected": 51
+            },
+            "strict_window_counts": {
+              "candidate_windows": 2309,
+              "history_rejected": 2237,
+              "forecast_available_windows": 72,
+              "scored_windows": 72
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 2231,
+                "forecast_absolute_error_sum": 59460.47193513055,
+                "persistence_absolute_error_sum": 39187.668669987295,
+                "forecast_mae": 26.651937218794508,
+                "persistence_mae": 17.565068879420572
+              },
+              "jitter_ms": {
+                "samples": 2231,
+                "forecast_absolute_error_sum": 6302.189335755681,
+                "persistence_absolute_error_sum": 4516.916250212779,
+                "forecast_mae": 2.8248271339111075,
+                "persistence_mae": 2.02461508301783
+              },
+              "loss_pct": {
+                "samples": 2231,
+                "forecast_absolute_error_sum": 4239.0,
+                "persistence_absolute_error_sum": 4239.0,
+                "forecast_mae": 1.90004482294935,
+                "persistence_mae": 1.90004482294935
+              },
+              "utilization_pct": {
+                "samples": 2231,
+                "forecast_absolute_error_sum": 12250.207761545566,
+                "persistence_absolute_error_sum": 9146.175966083234,
+                "forecast_mae": 5.490904420235574,
+                "persistence_mae": 4.099585820745511
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "natural",
+        "run_id": "natural-4",
+        "stream": "live-natural-20261009-231927",
+        "seed": 20261009,
+        "start": 1791575615.8721068,
+        "end": 1791616550.0919964,
+        "ended_by": "natural_wan_stopped",
+        "duration_seconds": 40934.21988964081,
+        "rows": [
+          {
+            "link": "wan1",
+            "quality": {
+              "rows": 8178,
+              "up_rows": 8178,
+              "gap_count_over6": 2,
+              "max_gap_seconds": 6.506680250167847,
+              "median_cadence_seconds": 5.0018908977508545,
+              "p95_cadence_seconds": 5.185880327224732,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 41,
+              "voice_sla_latency_rows": 1,
+              "voice_sla_jitter_rows": 12,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {
+              "candidate_windows": 8167,
+              "history_rejected": 27,
+              "forecast_available_windows": 8140,
+              "scored_windows": 8115,
+              "future_target_missing": 25
+            },
+            "strict_window_counts": {
+              "candidate_windows": 8167,
+              "history_rejected": 7945,
+              "forecast_available_windows": 222,
+              "scored_windows": 222
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 8115,
+                "forecast_absolute_error_sum": 64001.34834665148,
+                "persistence_absolute_error_sum": 11255.047929292929,
+                "forecast_mae": 7.886795852945346,
+                "persistence_mae": 1.3869436758216793
+              },
+              "jitter_ms": {
+                "samples": 8115,
+                "forecast_absolute_error_sum": 20038.740390271756,
+                "persistence_absolute_error_sum": 3958.61232584481,
+                "forecast_mae": 2.4693457042848745,
+                "persistence_mae": 0.48781421144113496
+              },
+              "loss_pct": {
+                "samples": 8115,
+                "forecast_absolute_error_sum": 81.0,
+                "persistence_absolute_error_sum": 81.0,
+                "forecast_mae": 0.009981515711645102,
+                "persistence_mae": 0.009981515711645102
+              },
+              "utilization_pct": {
+                "samples": 8115,
+                "forecast_absolute_error_sum": 21477.58190764337,
+                "persistence_absolute_error_sum": 7567.908775359782,
+                "forecast_mae": 2.6466521143121833,
+                "persistence_mae": 0.9325827203154383
+              }
+            }
+          },
+          {
+            "link": "wan2",
+            "quality": {
+              "rows": 8178,
+              "up_rows": 8178,
+              "gap_count_over6": 2,
+              "max_gap_seconds": 6.506680250167847,
+              "median_cadence_seconds": 5.0018908977508545,
+              "p95_cadence_seconds": 5.185880327224732,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 850,
+              "voice_sla_latency_rows": 419,
+              "voice_sla_jitter_rows": 13,
+              "voice_sla_loss_rows": 160
+            },
+            "window_counts": {
+              "candidate_windows": 8167,
+              "history_rejected": 27,
+              "forecast_available_windows": 8140,
+              "scored_windows": 8115,
+              "future_target_missing": 25
+            },
+            "strict_window_counts": {
+              "candidate_windows": 8167,
+              "history_rejected": 7945,
+              "forecast_available_windows": 222,
+              "scored_windows": 222
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 8115,
+                "forecast_absolute_error_sum": 148523.7398978606,
+                "persistence_absolute_error_sum": 94989.36736100624,
+                "forecast_mae": 18.302370905466493,
+                "persistence_mae": 11.705405713001385
+              },
+              "jitter_ms": {
+                "samples": 8115,
+                "forecast_absolute_error_sum": 23450.86517267877,
+                "persistence_absolute_error_sum": 12697.464563384267,
+                "forecast_mae": 2.8898170268242476,
+                "persistence_mae": 1.5646906424379872
+              },
+              "loss_pct": {
+                "samples": 8115,
+                "forecast_absolute_error_sum": 1943.0,
+                "persistence_absolute_error_sum": 1943.0,
+                "forecast_mae": 0.23943314849044978,
+                "persistence_mae": 0.23943314849044978
+              },
+              "utilization_pct": {
+                "samples": 8115,
+                "forecast_absolute_error_sum": 45851.24444671031,
+                "persistence_absolute_error_sum": 29555.268924300188,
+                "forecast_mae": 5.6501841585594965,
+                "persistence_mae": 3.642054088022204
+              }
+            }
+          },
+          {
+            "link": "wan3",
+            "quality": {
+              "rows": 8177,
+              "up_rows": 8177,
+              "gap_count_over6": 2,
+              "max_gap_seconds": 10.069682121276855,
+              "median_cadence_seconds": 5.001896262168884,
+              "p95_cadence_seconds": 5.18588262796402,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 3633,
+              "voice_sla_latency_rows": 3465,
+              "voice_sla_jitter_rows": 11,
+              "voice_sla_loss_rows": 1911
+            },
+            "window_counts": {
+              "candidate_windows": 8166,
+              "history_rejected": 26,
+              "forecast_available_windows": 8140,
+              "scored_windows": 8115,
+              "future_target_missing": 25
+            },
+            "strict_window_counts": {
+              "candidate_windows": 8166,
+              "history_rejected": 7944,
+              "forecast_available_windows": 222,
+              "scored_windows": 222
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 8115,
+                "forecast_absolute_error_sum": 208798.79226302402,
+                "persistence_absolute_error_sum": 135774.28883847472,
+                "forecast_mae": 25.72998056229501,
+                "persistence_mae": 16.731274040477476
+              },
+              "jitter_ms": {
+                "samples": 8115,
+                "forecast_absolute_error_sum": 23223.718479039388,
+                "persistence_absolute_error_sum": 16687.98957301707,
+                "forecast_mae": 2.861826060263634,
+                "persistence_mae": 2.0564374088745616
+              },
+              "loss_pct": {
+                "samples": 8115,
+                "forecast_absolute_error_sum": 14936.0,
+                "persistence_absolute_error_sum": 14936.0,
+                "forecast_mae": 1.8405422057917438,
+                "persistence_mae": 1.8405422057917438
+              },
+              "utilization_pct": {
+                "samples": 8115,
+                "forecast_absolute_error_sum": 43022.83318958127,
+                "persistence_absolute_error_sum": 32130.135442552313,
+                "forecast_mae": 5.301643030139405,
+                "persistence_mae": 3.95935125601384
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "natural",
+        "run_id": "natural-5",
+        "stream": "live-natural-20261009-231927",
+        "seed": 20261009,
+        "start": 1791617224.0047154,
+        "end": 1791648607.9185786,
+        "ended_by": "natural_wan_started",
+        "duration_seconds": 31383.913863182068,
+        "rows": [
+          {
+            "link": "wan1",
+            "quality": {
+              "rows": 2001,
+              "up_rows": 2001,
+              "gap_count_over6": 3,
+              "max_gap_seconds": 21384.809627771378,
+              "median_cadence_seconds": 5.001346588134766,
+              "p95_cadence_seconds": 5.1918436765670775,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 3,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 1,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {
+              "candidate_windows": 1990,
+              "history_rejected": 18,
+              "forecast_available_windows": 1972,
+              "scored_windows": 1958,
+              "future_target_missing": 14
+            },
+            "strict_window_counts": {
+              "candidate_windows": 1990,
+              "history_rejected": 1952,
+              "forecast_available_windows": 38,
+              "scored_windows": 38
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 1958,
+                "forecast_absolute_error_sum": 16549.736482695702,
+                "persistence_absolute_error_sum": 3111.4241333333334,
+                "forecast_mae": 8.452367968690348,
+                "persistence_mae": 1.5890828055839292
+              },
+              "jitter_ms": {
+                "samples": 1958,
+                "forecast_absolute_error_sum": 4979.097395463182,
+                "persistence_absolute_error_sum": 1028.2293685033706,
+                "forecast_mae": 2.5429506616257314,
+                "persistence_mae": 0.5251426805430902
+              },
+              "loss_pct": {
+                "samples": 1958,
+                "forecast_absolute_error_sum": 6.0,
+                "persistence_absolute_error_sum": 6.0,
+                "forecast_mae": 0.0030643513789581204,
+                "persistence_mae": 0.0030643513789581204
+              },
+              "utilization_pct": {
+                "samples": 1958,
+                "forecast_absolute_error_sum": 5313.33485293304,
+                "persistence_absolute_error_sum": 1867.4518601006814,
+                "forecast_mae": 2.7136541639086005,
+                "persistence_mae": 0.9537547804395717
+              }
+            }
+          },
+          {
+            "link": "wan2",
+            "quality": {
+              "rows": 2001,
+              "up_rows": 2001,
+              "gap_count_over6": 3,
+              "max_gap_seconds": 21384.809627771378,
+              "median_cadence_seconds": 5.001346588134766,
+              "p95_cadence_seconds": 5.1918436765670775,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 192,
+              "voice_sla_latency_rows": 132,
+              "voice_sla_jitter_rows": 1,
+              "voice_sla_loss_rows": 32
+            },
+            "window_counts": {
+              "candidate_windows": 1990,
+              "history_rejected": 18,
+              "forecast_available_windows": 1972,
+              "scored_windows": 1958,
+              "future_target_missing": 14
+            },
+            "strict_window_counts": {
+              "candidate_windows": 1990,
+              "history_rejected": 1952,
+              "forecast_available_windows": 38,
+              "scored_windows": 38
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 1958,
+                "forecast_absolute_error_sum": 37721.53951468574,
+                "persistence_absolute_error_sum": 24070.830823882097,
+                "forecast_mae": 19.265341938041747,
+                "persistence_mae": 12.293580604638457
+              },
+              "jitter_ms": {
+                "samples": 1958,
+                "forecast_absolute_error_sum": 5784.792799321755,
+                "persistence_absolute_error_sum": 3188.614051065755,
+                "forecast_mae": 2.954439631931438,
+                "persistence_mae": 1.6285056440580976
+              },
+              "loss_pct": {
+                "samples": 1958,
+                "forecast_absolute_error_sum": 432.0,
+                "persistence_absolute_error_sum": 432.0,
+                "forecast_mae": 0.22063329928498468,
+                "persistence_mae": 0.22063329928498468
+              },
+              "utilization_pct": {
+                "samples": 1958,
+                "forecast_absolute_error_sum": 11177.384873264376,
+                "persistence_absolute_error_sum": 7298.860094432332,
+                "forecast_mae": 5.708572458255555,
+                "persistence_mae": 3.7277119991993524
+              }
+            }
+          },
+          {
+            "link": "wan3",
+            "quality": {
+              "rows": 2001,
+              "up_rows": 2001,
+              "gap_count_over6": 3,
+              "max_gap_seconds": 21384.809627771378,
+              "median_cadence_seconds": 5.001346588134766,
+              "p95_cadence_seconds": 5.1918436765670775,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 880,
+              "voice_sla_latency_rows": 830,
+              "voice_sla_jitter_rows": 1,
+              "voice_sla_loss_rows": 460
+            },
+            "window_counts": {
+              "candidate_windows": 1990,
+              "history_rejected": 18,
+              "forecast_available_windows": 1972,
+              "scored_windows": 1958,
+              "future_target_missing": 14
+            },
+            "strict_window_counts": {
+              "candidate_windows": 1990,
+              "history_rejected": 1952,
+              "forecast_available_windows": 38,
+              "scored_windows": 38
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 1958,
+                "forecast_absolute_error_sum": 49385.725224758935,
+                "persistence_absolute_error_sum": 32791.05350502767,
+                "forecast_mae": 25.222535865556146,
+                "persistence_mae": 16.747218337603506
+              },
+              "jitter_ms": {
+                "samples": 1958,
+                "forecast_absolute_error_sum": 5632.67074555256,
+                "persistence_absolute_error_sum": 4166.9977265354455,
+                "forecast_mae": 2.876747061058509,
+                "persistence_mae": 2.1281908715707076
+              },
+              "loss_pct": {
+                "samples": 1958,
+                "forecast_absolute_error_sum": 3674.0,
+                "persistence_absolute_error_sum": 3674.0,
+                "forecast_mae": 1.8764044943820224,
+                "persistence_mae": 1.8764044943820224
+              },
+              "utilization_pct": {
+                "samples": 1958,
+                "forecast_absolute_error_sum": 10540.411170485262,
+                "persistence_absolute_error_sum": 7747.5936846112845,
+                "forecast_mae": 5.383253917510348,
+                "persistence_mae": 3.9568915651743026
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "natural",
+        "run_id": "natural-6",
+        "stream": "live-natural-20261009-231927",
+        "seed": 20261009,
+        "start": 1791648607.9185786,
+        "end": 1791651040.8530767,
+        "ended_by": "natural_wan_stopped",
+        "duration_seconds": 2432.9344980716705,
+        "rows": [
+          {
+            "link": "wan1",
+            "quality": {
+              "rows": 486,
+              "up_rows": 486,
+              "gap_count_over6": 4,
+              "max_gap_seconds": 7.341545343399048,
+              "median_cadence_seconds": 5.001614570617676,
+              "p95_cadence_seconds": 5.200840997695923,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 1,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 0,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {
+              "candidate_windows": 475,
+              "history_rejected": 57,
+              "forecast_available_windows": 418,
+              "scored_windows": 402,
+              "future_target_missing": 16
+            },
+            "strict_window_counts": {
+              "candidate_windows": 475,
+              "history_rejected": 461,
+              "forecast_available_windows": 14,
+              "scored_windows": 14
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 402,
+                "forecast_absolute_error_sum": 4062.2702540260084,
+                "persistence_absolute_error_sum": 779.9668484848485,
+                "forecast_mae": 10.105149885636838,
+                "persistence_mae": 1.9402160410070857
+              },
+              "jitter_ms": {
+                "samples": 402,
+                "forecast_absolute_error_sum": 937.025858259553,
+                "persistence_absolute_error_sum": 212.7536997119605,
+                "forecast_mae": 2.3309100951730177,
+                "persistence_mae": 0.5292380589849763
+              },
+              "loss_pct": {
+                "samples": 402,
+                "forecast_absolute_error_sum": 2.0,
+                "persistence_absolute_error_sum": 2.0,
+                "forecast_mae": 0.004975124378109453,
+                "persistence_mae": 0.004975124378109453
+              },
+              "utilization_pct": {
+                "samples": 402,
+                "forecast_absolute_error_sum": 1142.0553638258486,
+                "persistence_absolute_error_sum": 434.94333881964343,
+                "forecast_mae": 2.84093374086032,
+                "persistence_mae": 1.0819486040289636
+              }
+            }
+          },
+          {
+            "link": "wan2",
+            "quality": {
+              "rows": 486,
+              "up_rows": 486,
+              "gap_count_over6": 4,
+              "max_gap_seconds": 7.341545343399048,
+              "median_cadence_seconds": 5.001614570617676,
+              "p95_cadence_seconds": 5.200840997695923,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 44,
+              "voice_sla_latency_rows": 16,
+              "voice_sla_jitter_rows": 0,
+              "voice_sla_loss_rows": 12
+            },
+            "window_counts": {
+              "candidate_windows": 475,
+              "history_rejected": 57,
+              "forecast_available_windows": 418,
+              "scored_windows": 402,
+              "future_target_missing": 16
+            },
+            "strict_window_counts": {
+              "candidate_windows": 475,
+              "history_rejected": 461,
+              "forecast_available_windows": 14,
+              "scored_windows": 14
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 402,
+                "forecast_absolute_error_sum": 6459.747310429387,
+                "persistence_absolute_error_sum": 3992.457664399093,
+                "forecast_mae": 16.069023160272106,
+                "persistence_mae": 9.931486727360928
+              },
+              "jitter_ms": {
+                "samples": 402,
+                "forecast_absolute_error_sum": 1050.5239054444792,
+                "persistence_absolute_error_sum": 526.7115910757362,
+                "forecast_mae": 2.613243545881789,
+                "persistence_mae": 1.3102278384968562
+              },
+              "loss_pct": {
+                "samples": 402,
+                "forecast_absolute_error_sum": 86.0,
+                "persistence_absolute_error_sum": 86.0,
+                "forecast_mae": 0.21393034825870647,
+                "persistence_mae": 0.21393034825870647
+              },
+              "utilization_pct": {
+                "samples": 402,
+                "forecast_absolute_error_sum": 2105.7731223502687,
+                "persistence_absolute_error_sum": 1230.4968486978453,
+                "forecast_mae": 5.23824159788624,
+                "persistence_mae": 3.0609374345717546
+              }
+            }
+          },
+          {
+            "link": "wan3",
+            "quality": {
+              "rows": 486,
+              "up_rows": 486,
+              "gap_count_over6": 4,
+              "max_gap_seconds": 7.341545343399048,
+              "median_cadence_seconds": 5.001614570617676,
+              "p95_cadence_seconds": 5.200840997695923,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 203,
+              "voice_sla_latency_rows": 173,
+              "voice_sla_jitter_rows": 0,
+              "voice_sla_loss_rows": 101
+            },
+            "window_counts": {
+              "candidate_windows": 475,
+              "history_rejected": 57,
+              "forecast_available_windows": 418,
+              "scored_windows": 402,
+              "future_target_missing": 16
+            },
+            "strict_window_counts": {
+              "candidate_windows": 475,
+              "history_rejected": 461,
+              "forecast_available_windows": 14,
+              "scored_windows": 14
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 402,
+                "forecast_absolute_error_sum": 9976.506094139608,
+                "persistence_absolute_error_sum": 6439.586269984917,
+                "forecast_mae": 24.81717933865574,
+                "persistence_mae": 16.01887131837044
+              },
+              "jitter_ms": {
+                "samples": 402,
+                "forecast_absolute_error_sum": 1086.535522856177,
+                "persistence_absolute_error_sum": 756.4343633800939,
+                "forecast_mae": 2.7028246837218335,
+                "persistence_mae": 1.8816775208460048
+              },
+              "loss_pct": {
+                "samples": 402,
+                "forecast_absolute_error_sum": 578.0,
+                "persistence_absolute_error_sum": 578.0,
+                "forecast_mae": 1.4378109452736318,
+                "persistence_mae": 1.4378109452736318
+              },
+              "utilization_pct": {
+                "samples": 402,
+                "forecast_absolute_error_sum": 2126.4320611268854,
+                "persistence_absolute_error_sum": 1445.667435804498,
+                "forecast_mae": 5.289631992852949,
+                "persistence_mae": 3.59618765125497
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "natural",
+        "run_id": "natural-7",
+        "stream": "live-natural-20261009-231927",
+        "seed": 20261009,
+        "start": 1791651135.070373,
+        "end": 1791696515.4296286,
+        "ended_by": "natural_wan_stopped",
+        "duration_seconds": 45380.35925555229,
+        "rows": [
+          {
+            "link": "wan1",
+            "quality": {
+              "rows": 9071,
+              "up_rows": 9071,
+              "gap_count_over6": 27,
+              "max_gap_seconds": 15.270352125167847,
+              "median_cadence_seconds": 5.001577019691467,
+              "p95_cadence_seconds": 5.193327832221985,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 36,
+              "voice_sla_latency_rows": 2,
+              "voice_sla_jitter_rows": 4,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {
+              "candidate_windows": 9060,
+              "history_rejected": 362,
+              "forecast_available_windows": 8698,
+              "scored_windows": 8603,
+              "future_target_missing": 95
+            },
+            "strict_window_counts": {
+              "candidate_windows": 9060,
+              "history_rejected": 8792,
+              "forecast_available_windows": 268,
+              "scored_windows": 266,
+              "future_target_missing": 2
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 8603,
+                "forecast_absolute_error_sum": 67350.11023190142,
+                "persistence_absolute_error_sum": 11942.65667070707,
+                "forecast_mae": 7.828677232581822,
+                "persistence_mae": 1.3881967535402848
+              },
+              "jitter_ms": {
+                "samples": 8603,
+                "forecast_absolute_error_sum": 21130.003490620038,
+                "persistence_absolute_error_sum": 3909.372468997443,
+                "forecast_mae": 2.4561203638986444,
+                "persistence_mae": 0.4544196755779894
+              },
+              "loss_pct": {
+                "samples": 8603,
+                "forecast_absolute_error_sum": 67.0,
+                "persistence_absolute_error_sum": 67.0,
+                "forecast_mae": 0.007787980936882483,
+                "persistence_mae": 0.007787980936882483
+              },
+              "utilization_pct": {
+                "samples": 8603,
+                "forecast_absolute_error_sum": 22745.90308577153,
+                "persistence_absolute_error_sum": 7949.690374394312,
+                "forecast_mae": 2.6439501436442554,
+                "persistence_mae": 0.9240602550731503
+              }
+            }
+          },
+          {
+            "link": "wan2",
+            "quality": {
+              "rows": 9070,
+              "up_rows": 9070,
+              "gap_count_over6": 27,
+              "max_gap_seconds": 15.270352125167847,
+              "median_cadence_seconds": 5.001577615737915,
+              "p95_cadence_seconds": 5.1933358669281,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 935,
+              "voice_sla_latency_rows": 482,
+              "voice_sla_jitter_rows": 3,
+              "voice_sla_loss_rows": 170
+            },
+            "window_counts": {
+              "candidate_windows": 9059,
+              "history_rejected": 361,
+              "forecast_available_windows": 8698,
+              "scored_windows": 8603,
+              "future_target_missing": 95
+            },
+            "strict_window_counts": {
+              "candidate_windows": 9059,
+              "history_rejected": 8791,
+              "forecast_available_windows": 268,
+              "scored_windows": 266,
+              "future_target_missing": 2
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 8603,
+                "forecast_absolute_error_sum": 157055.6084773361,
+                "persistence_absolute_error_sum": 100351.05511983347,
+                "forecast_mae": 18.255911714208544,
+                "persistence_mae": 11.664658272676215
+              },
+              "jitter_ms": {
+                "samples": 8603,
+                "forecast_absolute_error_sum": 24178.56711367143,
+                "persistence_absolute_error_sum": 13267.77958670696,
+                "forecast_mae": 2.810480891976221,
+                "persistence_mae": 1.5422270820303337
+              },
+              "loss_pct": {
+                "samples": 8603,
+                "forecast_absolute_error_sum": 2044.0,
+                "persistence_absolute_error_sum": 2044.0,
+                "forecast_mae": 0.23759153783563874,
+                "persistence_mae": 0.23759153783563874
+              },
+              "utilization_pct": {
+                "samples": 8603,
+                "forecast_absolute_error_sum": 48447.69575239376,
+                "persistence_absolute_error_sum": 31352.090780481343,
+                "forecast_mae": 5.631488521724254,
+                "persistence_mae": 3.6443206765641456
+              }
+            }
+          },
+          {
+            "link": "wan3",
+            "quality": {
+              "rows": 9069,
+              "up_rows": 9069,
+              "gap_count_over6": 27,
+              "max_gap_seconds": 15.270352125167847,
+              "median_cadence_seconds": 5.0015809535980225,
+              "p95_cadence_seconds": 5.193343901634217,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 3983,
+              "voice_sla_latency_rows": 3947,
+              "voice_sla_jitter_rows": 2,
+              "voice_sla_loss_rows": 2184
+            },
+            "window_counts": {
+              "candidate_windows": 9058,
+              "history_rejected": 360,
+              "forecast_available_windows": 8698,
+              "scored_windows": 8603,
+              "future_target_missing": 95
+            },
+            "strict_window_counts": {
+              "candidate_windows": 9058,
+              "history_rejected": 8790,
+              "forecast_available_windows": 268,
+              "scored_windows": 266,
+              "future_target_missing": 2
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 8603,
+                "forecast_absolute_error_sum": 226823.3847525009,
+                "persistence_absolute_error_sum": 147989.64815054636,
+                "forecast_mae": 26.36561487300952,
+                "persistence_mae": 17.202097890334343
+              },
+              "jitter_ms": {
+                "samples": 8603,
+                "forecast_absolute_error_sum": 24651.113403582476,
+                "persistence_absolute_error_sum": 17673.387235262533,
+                "forecast_mae": 2.8654089740302773,
+                "persistence_mae": 2.054328401169654
+              },
+              "loss_pct": {
+                "samples": 8603,
+                "forecast_absolute_error_sum": 16169.0,
+                "persistence_absolute_error_sum": 16169.0,
+                "forecast_mae": 1.8794606532604905,
+                "persistence_mae": 1.8794606532604905
+              },
+              "utilization_pct": {
+                "samples": 8603,
+                "forecast_absolute_error_sum": 46203.815092283185,
+                "persistence_absolute_error_sum": 34657.386780325585,
+                "forecast_mae": 5.37066315149171,
+                "persistence_mae": 4.028523396527442
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "real_traffic",
+        "run_id": "real-traffic-20261011-053049-5d2c2f",
+        "stream": "live-natural-20261009-231927",
+        "start": 1791696670.031957,
+        "end": 1791696683.021957,
+        "completed": true,
+        "receiver_coverage": null,
+        "errors": [],
+        "duration_seconds": 12.990000009536743,
+        "rows": [
+          {
+            "link": "wan1",
+            "quality": {
+              "rows": 2,
+              "up_rows": 2,
+              "gap_count_over6": 0,
+              "max_gap_seconds": 4.756256103515625,
+              "median_cadence_seconds": 4.756256103515625,
+              "p95_cadence_seconds": 4.756256103515625,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 0,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 1,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {},
+            "strict_window_counts": {},
+            "metrics": {
+              "latency_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "jitter_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "loss_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "utilization_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              }
+            }
+          },
+          {
+            "link": "wan2",
+            "quality": {
+              "rows": 2,
+              "up_rows": 2,
+              "gap_count_over6": 0,
+              "max_gap_seconds": 4.756256103515625,
+              "median_cadence_seconds": 4.756256103515625,
+              "p95_cadence_seconds": 4.756256103515625,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 0,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 1,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {},
+            "strict_window_counts": {},
+            "metrics": {
+              "latency_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "jitter_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "loss_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "utilization_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              }
+            }
+          },
+          {
+            "link": "wan3",
+            "quality": {
+              "rows": 2,
+              "up_rows": 2,
+              "gap_count_over6": 0,
+              "max_gap_seconds": 4.756256103515625,
+              "median_cadence_seconds": 4.756256103515625,
+              "p95_cadence_seconds": 4.756256103515625,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 0,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 1,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {},
+            "strict_window_counts": {},
+            "metrics": {
+              "latency_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "jitter_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "loss_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "utilization_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "real_traffic",
+        "run_id": "real-traffic-20261011-053957-0cd5fd",
+        "stream": "live-real-traffic-20261011-053846",
+        "start": 1791697204.6152277,
+        "end": 1791697204.6452277,
+        "completed": false,
+        "receiver_coverage": 1,
+        "errors": [
+          "RuntimeError: Receiver evidence unavailable for pinned WAN load"
+        ],
+        "duration_seconds": 0.029999971389770508,
+        "rows": [
+          {
+            "link": "wan1",
+            "quality": {
+              "rows": 0,
+              "up_rows": 0,
+              "gap_count_over6": 0,
+              "max_gap_seconds": null,
+              "median_cadence_seconds": null,
+              "p95_cadence_seconds": null,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 0,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 0,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {},
+            "strict_window_counts": {},
+            "metrics": {
+              "latency_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "jitter_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "loss_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "utilization_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              }
+            }
+          },
+          {
+            "link": "wan2",
+            "quality": {
+              "rows": 0,
+              "up_rows": 0,
+              "gap_count_over6": 0,
+              "max_gap_seconds": null,
+              "median_cadence_seconds": null,
+              "p95_cadence_seconds": null,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 0,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 0,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {},
+            "strict_window_counts": {},
+            "metrics": {
+              "latency_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "jitter_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "loss_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "utilization_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              }
+            }
+          },
+          {
+            "link": "wan3",
+            "quality": {
+              "rows": 0,
+              "up_rows": 0,
+              "gap_count_over6": 0,
+              "max_gap_seconds": null,
+              "median_cadence_seconds": null,
+              "p95_cadence_seconds": null,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 0,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 0,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {},
+            "strict_window_counts": {},
+            "metrics": {
+              "latency_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "jitter_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "loss_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "utilization_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "real_traffic",
+        "run_id": "real-traffic-20261011-054158-1767b9",
+        "stream": "live-real-traffic-20261011-053846",
+        "start": 1791697325.0673213,
+        "end": 1791697534.5173213,
+        "completed": true,
+        "receiver_coverage": 6,
+        "errors": [],
+        "duration_seconds": 209.45000004768372,
+        "rows": [
+          {
+            "link": "wan1",
+            "quality": {
+              "rows": 42,
+              "up_rows": 42,
+              "gap_count_over6": 2,
+              "max_gap_seconds": 7.030000686645508,
+              "median_cadence_seconds": 4.992208242416382,
+              "p95_cadence_seconds": 5.573620557785034,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 18,
+              "voice_sla_latency_rows": 15,
+              "voice_sla_jitter_rows": 8,
+              "voice_sla_loss_rows": 18
+            },
+            "window_counts": {
+              "candidate_windows": 31,
+              "history_rejected": 23,
+              "forecast_available_windows": 8,
+              "scored_windows": 2,
+              "future_target_missing": 6
+            },
+            "strict_window_counts": {
+              "candidate_windows": 31,
+              "history_rejected": 31
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 2,
+                "forecast_absolute_error_sum": 32.439310940511604,
+                "persistence_absolute_error_sum": 0.3182881607243936,
+                "forecast_mae": 16.219655470255802,
+                "persistence_mae": 0.1591440803621968
+              },
+              "jitter_ms": {
+                "samples": 2,
+                "forecast_absolute_error_sum": 1.093747647943503,
+                "persistence_absolute_error_sum": 0.619527880926709,
+                "forecast_mae": 0.5468738239717515,
+                "persistence_mae": 0.3097639404633545
+              },
+              "loss_pct": {
+                "samples": 2,
+                "forecast_absolute_error_sum": 2.0,
+                "persistence_absolute_error_sum": 2.0,
+                "forecast_mae": 1.0,
+                "persistence_mae": 1.0
+              },
+              "utilization_pct": {
+                "samples": 2,
+                "forecast_absolute_error_sum": 0.18671617146707448,
+                "persistence_absolute_error_sum": 2.309594891955349,
+                "forecast_mae": 0.09335808573353724,
+                "persistence_mae": 1.1547974459776744
+              }
+            }
+          },
+          {
+            "link": "wan2",
+            "quality": {
+              "rows": 42,
+              "up_rows": 42,
+              "gap_count_over6": 2,
+              "max_gap_seconds": 7.030000686645508,
+              "median_cadence_seconds": 4.992208242416382,
+              "p95_cadence_seconds": 5.573620557785034,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 1,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 3,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {
+              "candidate_windows": 31,
+              "history_rejected": 23,
+              "forecast_available_windows": 8,
+              "scored_windows": 2,
+              "future_target_missing": 6
+            },
+            "strict_window_counts": {
+              "candidate_windows": 31,
+              "history_rejected": 31
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 2,
+                "forecast_absolute_error_sum": 25.12526065551758,
+                "persistence_absolute_error_sum": 1.2481900000000004,
+                "forecast_mae": 12.56263032775879,
+                "persistence_mae": 0.6240950000000002
+              },
+              "jitter_ms": {
+                "samples": 2,
+                "forecast_absolute_error_sum": 5.287988038512151,
+                "persistence_absolute_error_sum": 2.876337035111532,
+                "forecast_mae": 2.6439940192560756,
+                "persistence_mae": 1.438168517555766
+              },
+              "loss_pct": {
+                "samples": 2,
+                "forecast_absolute_error_sum": 0.0,
+                "persistence_absolute_error_sum": 0.0,
+                "forecast_mae": 0.0,
+                "persistence_mae": 0.0
+              },
+              "utilization_pct": {
+                "samples": 2,
+                "forecast_absolute_error_sum": 11.39209183412133,
+                "persistence_absolute_error_sum": 3.736690069097643,
+                "forecast_mae": 5.696045917060665,
+                "persistence_mae": 1.8683450345488215
+              }
+            }
+          },
+          {
+            "link": "wan3",
+            "quality": {
+              "rows": 42,
+              "up_rows": 42,
+              "gap_count_over6": 2,
+              "max_gap_seconds": 7.030000686645508,
+              "median_cadence_seconds": 4.992208242416382,
+              "p95_cadence_seconds": 5.573620557785034,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 0,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 3,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {
+              "candidate_windows": 31,
+              "history_rejected": 23,
+              "forecast_available_windows": 8,
+              "scored_windows": 2,
+              "future_target_missing": 6
+            },
+            "strict_window_counts": {
+              "candidate_windows": 31,
+              "history_rejected": 31
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 2,
+                "forecast_absolute_error_sum": 21.729096613464357,
+                "persistence_absolute_error_sum": 0.20057999999999987,
+                "forecast_mae": 10.864548306732178,
+                "persistence_mae": 0.10028999999999993
+              },
+              "jitter_ms": {
+                "samples": 2,
+                "forecast_absolute_error_sum": 4.308151297836155,
+                "persistence_absolute_error_sum": 0.2290340445317676,
+                "forecast_mae": 2.1540756489180777,
+                "persistence_mae": 0.1145170222658838
+              },
+              "loss_pct": {
+                "samples": 2,
+                "forecast_absolute_error_sum": 0.0,
+                "persistence_absolute_error_sum": 0.0,
+                "forecast_mae": 0.0,
+                "persistence_mae": 0.0
+              },
+              "utilization_pct": {
+                "samples": 2,
+                "forecast_absolute_error_sum": 4.675197945669101,
+                "persistence_absolute_error_sum": 0.00861748422749116,
+                "forecast_mae": 2.3375989728345505,
+                "persistence_mae": 0.00430874211374558
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "real_traffic",
+        "run_id": "real-traffic-20261011-054807-6d15e9",
+        "stream": "live-real-traffic-20261011-053846",
+        "start": 1791697694.2389252,
+        "end": 1791697696.358925,
+        "completed": false,
+        "receiver_coverage": 1,
+        "errors": [
+          "RuntimeError: Receiver evidence unavailable for pinned WAN load"
+        ],
+        "duration_seconds": 2.119999885559082,
+        "rows": [
+          {
+            "link": "wan1",
+            "quality": {
+              "rows": 0,
+              "up_rows": 0,
+              "gap_count_over6": 0,
+              "max_gap_seconds": null,
+              "median_cadence_seconds": null,
+              "p95_cadence_seconds": null,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 0,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 0,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {},
+            "strict_window_counts": {},
+            "metrics": {
+              "latency_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "jitter_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "loss_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "utilization_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              }
+            }
+          },
+          {
+            "link": "wan2",
+            "quality": {
+              "rows": 0,
+              "up_rows": 0,
+              "gap_count_over6": 0,
+              "max_gap_seconds": null,
+              "median_cadence_seconds": null,
+              "p95_cadence_seconds": null,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 0,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 0,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {},
+            "strict_window_counts": {},
+            "metrics": {
+              "latency_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "jitter_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "loss_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "utilization_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              }
+            }
+          },
+          {
+            "link": "wan3",
+            "quality": {
+              "rows": 0,
+              "up_rows": 0,
+              "gap_count_over6": 0,
+              "max_gap_seconds": null,
+              "median_cadence_seconds": null,
+              "p95_cadence_seconds": null,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 0,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 0,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {},
+            "strict_window_counts": {},
+            "metrics": {
+              "latency_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "jitter_ms": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "loss_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              },
+              "utilization_pct": {
+                "samples": 0,
+                "forecast_mae": null,
+                "persistence_mae": null
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "real_traffic",
+        "run_id": "real-traffic-20261011-055036-dfcea6",
+        "stream": "live-real-traffic-20261011-053846",
+        "start": 1791697845.3834364,
+        "end": 1791698053.4434364,
+        "completed": true,
+        "receiver_coverage": 6,
+        "errors": [],
+        "duration_seconds": 208.05999994277954,
+        "rows": [
+          {
+            "link": "wan1",
+            "quality": {
+              "rows": 42,
+              "up_rows": 42,
+              "gap_count_over6": 0,
+              "max_gap_seconds": 5.655990123748779,
+              "median_cadence_seconds": 5.002445697784424,
+              "p95_cadence_seconds": 5.354932546615601,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 17,
+              "voice_sla_latency_rows": 16,
+              "voice_sla_jitter_rows": 6,
+              "voice_sla_loss_rows": 14
+            },
+            "window_counts": {
+              "candidate_windows": 31,
+              "forecast_available_windows": 31,
+              "future_target_missing": 11,
+              "scored_windows": 20
+            },
+            "strict_window_counts": {
+              "candidate_windows": 31,
+              "history_rejected": 31
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 20,
+                "forecast_absolute_error_sum": 1638.8922282094575,
+                "persistence_absolute_error_sum": 1433.5410829848304,
+                "forecast_mae": 81.94461141047287,
+                "persistence_mae": 71.67705414924151
+              },
+              "jitter_ms": {
+                "samples": 20,
+                "forecast_absolute_error_sum": 577.3350018888586,
+                "persistence_absolute_error_sum": 551.2707037371448,
+                "forecast_mae": 28.86675009444293,
+                "persistence_mae": 27.56353518685724
+              },
+              "loss_pct": {
+                "samples": 20,
+                "forecast_absolute_error_sum": 53.0,
+                "persistence_absolute_error_sum": 53.0,
+                "forecast_mae": 2.65,
+                "persistence_mae": 2.65
+              },
+              "utilization_pct": {
+                "samples": 20,
+                "forecast_absolute_error_sum": 47.642592363381006,
+                "persistence_absolute_error_sum": 21.61424866131814,
+                "forecast_mae": 2.38212961816905,
+                "persistence_mae": 1.080712433065907
+              }
+            }
+          },
+          {
+            "link": "wan2",
+            "quality": {
+              "rows": 42,
+              "up_rows": 42,
+              "gap_count_over6": 0,
+              "max_gap_seconds": 5.655990123748779,
+              "median_cadence_seconds": 5.002445697784424,
+              "p95_cadence_seconds": 5.354932546615601,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 0,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 1,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {
+              "candidate_windows": 31,
+              "forecast_available_windows": 31,
+              "future_target_missing": 11,
+              "scored_windows": 20
+            },
+            "strict_window_counts": {
+              "candidate_windows": 31,
+              "history_rejected": 31
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 20,
+                "forecast_absolute_error_sum": 303.8788563882446,
+                "persistence_absolute_error_sum": 65.14026,
+                "forecast_mae": 15.193942819412232,
+                "persistence_mae": 3.2570129999999997
+              },
+              "jitter_ms": {
+                "samples": 20,
+                "forecast_absolute_error_sum": 184.47910319190348,
+                "persistence_absolute_error_sum": 116.45646437735721,
+                "forecast_mae": 9.223955159595175,
+                "persistence_mae": 5.82282321886786
+              },
+              "loss_pct": {
+                "samples": 20,
+                "forecast_absolute_error_sum": 0.0,
+                "persistence_absolute_error_sum": 0.0,
+                "forecast_mae": 0.0,
+                "persistence_mae": 0.0
+              },
+              "utilization_pct": {
+                "samples": 20,
+                "forecast_absolute_error_sum": 98.23722548080245,
+                "persistence_absolute_error_sum": 33.34451077017785,
+                "forecast_mae": 4.911861274040122,
+                "persistence_mae": 1.6672255385088923
+              }
+            }
+          },
+          {
+            "link": "wan3",
+            "quality": {
+              "rows": 42,
+              "up_rows": 42,
+              "gap_count_over6": 0,
+              "max_gap_seconds": 5.655990123748779,
+              "median_cadence_seconds": 5.002445697784424,
+              "p95_cadence_seconds": 5.354932546615601,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 0,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 1,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {
+              "candidate_windows": 31,
+              "forecast_available_windows": 31,
+              "future_target_missing": 11,
+              "scored_windows": 20
+            },
+            "strict_window_counts": {
+              "candidate_windows": 31,
+              "history_rejected": 31
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 20,
+                "forecast_absolute_error_sum": 218.21027758026122,
+                "persistence_absolute_error_sum": 42.63178,
+                "forecast_mae": 10.910513879013061,
+                "persistence_mae": 2.131589
+              },
+              "jitter_ms": {
+                "samples": 20,
+                "forecast_absolute_error_sum": 124.16733968394524,
+                "persistence_absolute_error_sum": 79.08710583507676,
+                "forecast_mae": 6.208366984197262,
+                "persistence_mae": 3.9543552917538376
+              },
+              "loss_pct": {
+                "samples": 20,
+                "forecast_absolute_error_sum": 0.0,
+                "persistence_absolute_error_sum": 0.0,
+                "forecast_mae": 0.0,
+                "persistence_mae": 0.0
+              },
+              "utilization_pct": {
+                "samples": 20,
+                "forecast_absolute_error_sum": 44.35253472582045,
+                "persistence_absolute_error_sum": 0.1652078127580699,
+                "forecast_mae": 2.2176267362910225,
+                "persistence_mae": 0.008260390637903495
+              }
+            }
+          }
+        ]
+      },
+      {
+        "kind": "real_traffic",
+        "run_id": "real-traffic-20261011-055453-5a2b16",
+        "stream": "live-real-traffic-20261011-053846",
+        "start": 1791698104.9084427,
+        "end": 1791699003.7984428,
+        "completed": true,
+        "receiver_coverage": 6,
+        "errors": [],
+        "duration_seconds": 898.8900001049042,
+        "rows": [
+          {
+            "link": "wan1",
+            "quality": {
+              "rows": 180,
+              "up_rows": 180,
+              "gap_count_over6": 1,
+              "max_gap_seconds": 6.491102933883667,
+              "median_cadence_seconds": 5.002193927764893,
+              "p95_cadence_seconds": 5.28613133430481,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 66,
+              "voice_sla_latency_rows": 60,
+              "voice_sla_jitter_rows": 26,
+              "voice_sla_loss_rows": 58
+            },
+            "window_counts": {
+              "candidate_windows": 169,
+              "forecast_available_windows": 156,
+              "future_target_missing": 16,
+              "scored_windows": 140,
+              "history_rejected": 13
+            },
+            "strict_window_counts": {
+              "candidate_windows": 169,
+              "history_rejected": 140,
+              "forecast_available_windows": 29,
+              "scored_windows": 24,
+              "future_target_missing": 5
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 140,
+                "forecast_absolute_error_sum": 8938.026336025561,
+                "persistence_absolute_error_sum": 8403.53674848614,
+                "forecast_mae": 63.843045257325436,
+                "persistence_mae": 60.025262489186716
+              },
+              "jitter_ms": {
+                "samples": 140,
+                "forecast_absolute_error_sum": 3263.16859815838,
+                "persistence_absolute_error_sum": 3138.721214285586,
+                "forecast_mae": 23.308347129702714,
+                "persistence_mae": 22.419437244897043
+              },
+              "loss_pct": {
+                "samples": 140,
+                "forecast_absolute_error_sum": 357.0,
+                "persistence_absolute_error_sum": 357.0,
+                "forecast_mae": 2.55,
+                "persistence_mae": 2.55
+              },
+              "utilization_pct": {
+                "samples": 140,
+                "forecast_absolute_error_sum": 251.8438132133703,
+                "persistence_absolute_error_sum": 4.850160424570341,
+                "forecast_mae": 1.7988843800955021,
+                "persistence_mae": 0.034644003032645296
+              }
+            }
+          },
+          {
+            "link": "wan2",
+            "quality": {
+              "rows": 180,
+              "up_rows": 180,
+              "gap_count_over6": 1,
+              "max_gap_seconds": 6.491102933883667,
+              "median_cadence_seconds": 5.002193927764893,
+              "p95_cadence_seconds": 5.28613133430481,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 0,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 2,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {
+              "candidate_windows": 169,
+              "forecast_available_windows": 156,
+              "future_target_missing": 16,
+              "scored_windows": 140,
+              "history_rejected": 13
+            },
+            "strict_window_counts": {
+              "candidate_windows": 169,
+              "history_rejected": 140,
+              "forecast_available_windows": 29,
+              "scored_windows": 24,
+              "future_target_missing": 5
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 140,
+                "forecast_absolute_error_sum": 1593.7161468838501,
+                "persistence_absolute_error_sum": 54.10422,
+                "forecast_mae": 11.383686763456073,
+                "persistence_mae": 0.38645871428571427
+              },
+              "jitter_ms": {
+                "samples": 140,
+                "forecast_absolute_error_sum": 466.0290109136846,
+                "persistence_absolute_error_sum": 127.27363762291841,
+                "forecast_mae": 3.3287786493834615,
+                "persistence_mae": 0.9090974115922744
+              },
+              "loss_pct": {
+                "samples": 140,
+                "forecast_absolute_error_sum": 0.0,
+                "persistence_absolute_error_sum": 0.0,
+                "forecast_mae": 0.0,
+                "persistence_mae": 0.0
+              },
+              "utilization_pct": {
+                "samples": 140,
+                "forecast_absolute_error_sum": 326.61834760836854,
+                "persistence_absolute_error_sum": 19.46311172514385,
+                "forecast_mae": 2.3329881972026323,
+                "persistence_mae": 0.13902222660817035
+              }
+            }
+          },
+          {
+            "link": "wan3",
+            "quality": {
+              "rows": 180,
+              "up_rows": 180,
+              "gap_count_over6": 1,
+              "max_gap_seconds": 6.491102933883667,
+              "median_cadence_seconds": 5.002193927764893,
+              "p95_cadence_seconds": 5.28613133430481,
+              "down_sentinel_rows": 0,
+              "nonzero_loss_rows": 0,
+              "voice_sla_latency_rows": 0,
+              "voice_sla_jitter_rows": 2,
+              "voice_sla_loss_rows": 0
+            },
+            "window_counts": {
+              "candidate_windows": 169,
+              "forecast_available_windows": 156,
+              "future_target_missing": 16,
+              "scored_windows": 140,
+              "history_rejected": 13
+            },
+            "strict_window_counts": {
+              "candidate_windows": 169,
+              "history_rejected": 140,
+              "forecast_available_windows": 29,
+              "scored_windows": 24,
+              "future_target_missing": 5
+            },
+            "metrics": {
+              "latency_ms": {
+                "samples": 140,
+                "forecast_absolute_error_sum": 2252.3698376361085,
+                "persistence_absolute_error_sum": 292.77877,
+                "forecast_mae": 16.08835598311506,
+                "persistence_mae": 2.0912769285714288
+              },
+              "jitter_ms": {
+                "samples": 140,
+                "forecast_absolute_error_sum": 867.6049380780977,
+                "persistence_absolute_error_sum": 309.18265243665235,
+                "forecast_mae": 6.197178129129269,
+                "persistence_mae": 2.2084475174046596
+              },
+              "loss_pct": {
+                "samples": 140,
+                "forecast_absolute_error_sum": 0.0,
+                "persistence_absolute_error_sum": 0.0,
+                "forecast_mae": 0.0,
+                "persistence_mae": 0.0
+              },
+              "utilization_pct": {
+                "samples": 140,
+                "forecast_absolute_error_sum": 848.1324335809774,
+                "persistence_absolute_error_sum": 297.9928754712228,
+                "forecast_mae": 6.058088811292696,
+                "persistence_mae": 2.128520539080163
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "episode_manifest": {
+    "episodes": [
+      {
+        "id": "natural-wan-20261009-162315",
+        "kind": "natural",
+        "run_id": "natural-2",
+        "stream": "live-natural-20261009-231927",
+        "seed": 20261009,
+        "start": 1791562995.5317671,
+        "end": 1791563815.252245,
+        "ended_by": "natural_wan_stopped",
+        "duration_seconds": 819.7204778194427,
+        "start_utc": "2026-10-09T16:23:15.531767+00:00",
+        "end_utc": "2026-10-09T16:36:55.252245+00:00",
+        "rows_by_link": {
+          "wan1": 164,
+          "wan2": 164,
+          "wan3": 164
+        },
+        "causal_window_counts_by_link": {
+          "wan1": {
+            "candidate_windows": 153,
+            "forecast_available_windows": 153,
+            "scored_windows": 147,
+            "future_target_missing": 6
+          },
+          "wan2": {
+            "candidate_windows": 153,
+            "forecast_available_windows": 153,
+            "scored_windows": 147,
+            "future_target_missing": 6
+          },
+          "wan3": {
+            "candidate_windows": 153,
+            "forecast_available_windows": 153,
+            "scored_windows": 147,
+            "future_target_missing": 6
+          }
+        },
+        "quality_by_link": {
+          "wan1": {
+            "rows": 164,
+            "up_rows": 164,
+            "gap_count_over6": 0,
+            "max_gap_seconds": 5.3264100551605225,
+            "median_cadence_seconds": 4.9974141120910645,
+            "p95_cadence_seconds": 5.1844172239303585,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 2,
+            "voice_sla_latency_rows": 0,
+            "voice_sla_jitter_rows": 0,
+            "voice_sla_loss_rows": 0
+          },
+          "wan2": {
+            "rows": 164,
+            "up_rows": 164,
+            "gap_count_over6": 0,
+            "max_gap_seconds": 5.3264100551605225,
+            "median_cadence_seconds": 4.9974141120910645,
+            "p95_cadence_seconds": 5.1844172239303585,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 12,
+            "voice_sla_latency_rows": 4,
+            "voice_sla_jitter_rows": 0,
+            "voice_sla_loss_rows": 4
+          },
+          "wan3": {
+            "rows": 164,
+            "up_rows": 164,
+            "gap_count_over6": 0,
+            "max_gap_seconds": 5.3264100551605225,
+            "median_cadence_seconds": 4.9974141120910645,
+            "p95_cadence_seconds": 5.1844172239303585,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 70,
+            "voice_sla_latency_rows": 46,
+            "voice_sla_jitter_rows": 0,
+            "voice_sla_loss_rows": 36
+          }
+        }
+      },
+      {
+        "id": "natural-wan-20261009-163656",
+        "kind": "natural",
+        "run_id": "natural-3",
+        "stream": "live-natural-20261009-231927",
+        "seed": 20261009,
+        "start": 1791563816.9850507,
+        "end": 1791575423.8690083,
+        "ended_by": "natural_wan_stopped",
+        "duration_seconds": 11606.883957624435,
+        "start_utc": "2026-10-09T16:36:56.985051+00:00",
+        "end_utc": "2026-10-09T19:50:23.869008+00:00",
+        "rows_by_link": {
+          "wan1": 2320,
+          "wan2": 2320,
+          "wan3": 2320
+        },
+        "causal_window_counts_by_link": {
+          "wan1": {
+            "candidate_windows": 2309,
+            "forecast_available_windows": 2258,
+            "scored_windows": 2231,
+            "future_target_missing": 27,
+            "history_rejected": 51
+          },
+          "wan2": {
+            "candidate_windows": 2309,
+            "forecast_available_windows": 2258,
+            "scored_windows": 2231,
+            "future_target_missing": 27,
+            "history_rejected": 51
+          },
+          "wan3": {
+            "candidate_windows": 2309,
+            "forecast_available_windows": 2258,
+            "scored_windows": 2231,
+            "future_target_missing": 27,
+            "history_rejected": 51
+          }
+        },
+        "quality_by_link": {
+          "wan1": {
+            "rows": 2320,
+            "up_rows": 2320,
+            "gap_count_over6": 4,
+            "max_gap_seconds": 11.361228466033936,
+            "median_cadence_seconds": 5.001368999481201,
+            "p95_cadence_seconds": 5.194013357162476,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 10,
+            "voice_sla_latency_rows": 0,
+            "voice_sla_jitter_rows": 1,
+            "voice_sla_loss_rows": 0
+          },
+          "wan2": {
+            "rows": 2320,
+            "up_rows": 2320,
+            "gap_count_over6": 4,
+            "max_gap_seconds": 11.361228466033936,
+            "median_cadence_seconds": 5.001368999481201,
+            "p95_cadence_seconds": 5.194013357162476,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 230,
+            "voice_sla_latency_rows": 144,
+            "voice_sla_jitter_rows": 1,
+            "voice_sla_loss_rows": 37
+          },
+          "wan3": {
+            "rows": 2320,
+            "up_rows": 2320,
+            "gap_count_over6": 4,
+            "max_gap_seconds": 11.361228466033936,
+            "median_cadence_seconds": 5.001368999481201,
+            "p95_cadence_seconds": 5.194013357162476,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 1069,
+            "voice_sla_latency_rows": 992,
+            "voice_sla_jitter_rows": 1,
+            "voice_sla_loss_rows": 574
+          }
+        }
+      },
+      {
+        "id": "natural-wan-20261009-195335",
+        "kind": "natural",
+        "run_id": "natural-4",
+        "stream": "live-natural-20261009-231927",
+        "seed": 20261009,
+        "start": 1791575615.8721068,
+        "end": 1791616550.0919964,
+        "ended_by": "natural_wan_stopped",
+        "duration_seconds": 40934.21988964081,
+        "start_utc": "2026-10-09T19:53:35.872107+00:00",
+        "end_utc": "2026-10-10T07:15:50.091996+00:00",
+        "rows_by_link": {
+          "wan1": 8178,
+          "wan2": 8178,
+          "wan3": 8177
+        },
+        "causal_window_counts_by_link": {
+          "wan1": {
+            "candidate_windows": 8167,
+            "history_rejected": 27,
+            "forecast_available_windows": 8140,
+            "scored_windows": 8115,
+            "future_target_missing": 25
+          },
+          "wan2": {
+            "candidate_windows": 8167,
+            "history_rejected": 27,
+            "forecast_available_windows": 8140,
+            "scored_windows": 8115,
+            "future_target_missing": 25
+          },
+          "wan3": {
+            "candidate_windows": 8166,
+            "history_rejected": 26,
+            "forecast_available_windows": 8140,
+            "scored_windows": 8115,
+            "future_target_missing": 25
+          }
+        },
+        "quality_by_link": {
+          "wan1": {
+            "rows": 8178,
+            "up_rows": 8178,
+            "gap_count_over6": 2,
+            "max_gap_seconds": 6.506680250167847,
+            "median_cadence_seconds": 5.0018908977508545,
+            "p95_cadence_seconds": 5.185880327224732,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 41,
+            "voice_sla_latency_rows": 1,
+            "voice_sla_jitter_rows": 12,
+            "voice_sla_loss_rows": 0
+          },
+          "wan2": {
+            "rows": 8178,
+            "up_rows": 8178,
+            "gap_count_over6": 2,
+            "max_gap_seconds": 6.506680250167847,
+            "median_cadence_seconds": 5.0018908977508545,
+            "p95_cadence_seconds": 5.185880327224732,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 850,
+            "voice_sla_latency_rows": 419,
+            "voice_sla_jitter_rows": 13,
+            "voice_sla_loss_rows": 160
+          },
+          "wan3": {
+            "rows": 8177,
+            "up_rows": 8177,
+            "gap_count_over6": 2,
+            "max_gap_seconds": 10.069682121276855,
+            "median_cadence_seconds": 5.001896262168884,
+            "p95_cadence_seconds": 5.18588262796402,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 3633,
+            "voice_sla_latency_rows": 3465,
+            "voice_sla_jitter_rows": 11,
+            "voice_sla_loss_rows": 1911
+          }
+        }
+      },
+      {
+        "id": "natural-wan-20261010-161007",
+        "kind": "natural",
+        "run_id": "natural-6",
+        "stream": "live-natural-20261009-231927",
+        "seed": 20261009,
+        "start": 1791648607.9185786,
+        "end": 1791651040.8530767,
+        "ended_by": "natural_wan_stopped",
+        "duration_seconds": 2432.9344980716705,
+        "start_utc": "2026-10-10T16:10:07.918579+00:00",
+        "end_utc": "2026-10-10T16:50:40.853077+00:00",
+        "rows_by_link": {
+          "wan1": 486,
+          "wan2": 486,
+          "wan3": 486
+        },
+        "causal_window_counts_by_link": {
+          "wan1": {
+            "candidate_windows": 475,
+            "history_rejected": 57,
+            "forecast_available_windows": 418,
+            "scored_windows": 402,
+            "future_target_missing": 16
+          },
+          "wan2": {
+            "candidate_windows": 475,
+            "history_rejected": 57,
+            "forecast_available_windows": 418,
+            "scored_windows": 402,
+            "future_target_missing": 16
+          },
+          "wan3": {
+            "candidate_windows": 475,
+            "history_rejected": 57,
+            "forecast_available_windows": 418,
+            "scored_windows": 402,
+            "future_target_missing": 16
+          }
+        },
+        "quality_by_link": {
+          "wan1": {
+            "rows": 486,
+            "up_rows": 486,
+            "gap_count_over6": 4,
+            "max_gap_seconds": 7.341545343399048,
+            "median_cadence_seconds": 5.001614570617676,
+            "p95_cadence_seconds": 5.200840997695923,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 1,
+            "voice_sla_latency_rows": 0,
+            "voice_sla_jitter_rows": 0,
+            "voice_sla_loss_rows": 0
+          },
+          "wan2": {
+            "rows": 486,
+            "up_rows": 486,
+            "gap_count_over6": 4,
+            "max_gap_seconds": 7.341545343399048,
+            "median_cadence_seconds": 5.001614570617676,
+            "p95_cadence_seconds": 5.200840997695923,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 44,
+            "voice_sla_latency_rows": 16,
+            "voice_sla_jitter_rows": 0,
+            "voice_sla_loss_rows": 12
+          },
+          "wan3": {
+            "rows": 486,
+            "up_rows": 486,
+            "gap_count_over6": 4,
+            "max_gap_seconds": 7.341545343399048,
+            "median_cadence_seconds": 5.001614570617676,
+            "p95_cadence_seconds": 5.200840997695923,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 203,
+            "voice_sla_latency_rows": 173,
+            "voice_sla_jitter_rows": 0,
+            "voice_sla_loss_rows": 101
+          }
+        }
+      },
+      {
+        "id": "natural-wan-20261010-165215",
+        "kind": "natural",
+        "run_id": "natural-7",
+        "stream": "live-natural-20261009-231927",
+        "seed": 20261009,
+        "start": 1791651135.070373,
+        "end": 1791696515.4296286,
+        "ended_by": "natural_wan_stopped",
+        "duration_seconds": 45380.35925555229,
+        "start_utc": "2026-10-10T16:52:15.070373+00:00",
+        "end_utc": "2026-10-11T05:28:35.429629+00:00",
+        "rows_by_link": {
+          "wan1": 9071,
+          "wan2": 9070,
+          "wan3": 9069
+        },
+        "causal_window_counts_by_link": {
+          "wan1": {
+            "candidate_windows": 9060,
+            "history_rejected": 362,
+            "forecast_available_windows": 8698,
+            "scored_windows": 8603,
+            "future_target_missing": 95
+          },
+          "wan2": {
+            "candidate_windows": 9059,
+            "history_rejected": 361,
+            "forecast_available_windows": 8698,
+            "scored_windows": 8603,
+            "future_target_missing": 95
+          },
+          "wan3": {
+            "candidate_windows": 9058,
+            "history_rejected": 360,
+            "forecast_available_windows": 8698,
+            "scored_windows": 8603,
+            "future_target_missing": 95
+          }
+        },
+        "quality_by_link": {
+          "wan1": {
+            "rows": 9071,
+            "up_rows": 9071,
+            "gap_count_over6": 27,
+            "max_gap_seconds": 15.270352125167847,
+            "median_cadence_seconds": 5.001577019691467,
+            "p95_cadence_seconds": 5.193327832221985,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 36,
+            "voice_sla_latency_rows": 2,
+            "voice_sla_jitter_rows": 4,
+            "voice_sla_loss_rows": 0
+          },
+          "wan2": {
+            "rows": 9070,
+            "up_rows": 9070,
+            "gap_count_over6": 27,
+            "max_gap_seconds": 15.270352125167847,
+            "median_cadence_seconds": 5.001577615737915,
+            "p95_cadence_seconds": 5.1933358669281,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 935,
+            "voice_sla_latency_rows": 482,
+            "voice_sla_jitter_rows": 3,
+            "voice_sla_loss_rows": 170
+          },
+          "wan3": {
+            "rows": 9069,
+            "up_rows": 9069,
+            "gap_count_over6": 27,
+            "max_gap_seconds": 15.270352125167847,
+            "median_cadence_seconds": 5.0015809535980225,
+            "p95_cadence_seconds": 5.193343901634217,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 3983,
+            "voice_sla_latency_rows": 3947,
+            "voice_sla_jitter_rows": 2,
+            "voice_sla_loss_rows": 2184
+          }
+        }
+      },
+      {
+        "id": "real-traffic-20261011-054158-1767b9",
+        "kind": "real_traffic",
+        "run_id": "real-traffic-20261011-054158-1767b9",
+        "stream": "live-real-traffic-20261011-053846",
+        "start": 1791697325.0673213,
+        "end": 1791697534.5173213,
+        "completed": true,
+        "receiver_coverage": 6,
+        "errors": [],
+        "duration_seconds": 209.45000004768372,
+        "start_utc": "2026-10-11T05:42:05.067321+00:00",
+        "end_utc": "2026-10-11T05:45:34.517321+00:00",
+        "rows_by_link": {
+          "wan1": 42,
+          "wan2": 42,
+          "wan3": 42
+        },
+        "causal_window_counts_by_link": {
+          "wan1": {
+            "candidate_windows": 31,
+            "history_rejected": 23,
+            "forecast_available_windows": 8,
+            "scored_windows": 2,
+            "future_target_missing": 6
+          },
+          "wan2": {
+            "candidate_windows": 31,
+            "history_rejected": 23,
+            "forecast_available_windows": 8,
+            "scored_windows": 2,
+            "future_target_missing": 6
+          },
+          "wan3": {
+            "candidate_windows": 31,
+            "history_rejected": 23,
+            "forecast_available_windows": 8,
+            "scored_windows": 2,
+            "future_target_missing": 6
+          }
+        },
+        "quality_by_link": {
+          "wan1": {
+            "rows": 42,
+            "up_rows": 42,
+            "gap_count_over6": 2,
+            "max_gap_seconds": 7.030000686645508,
+            "median_cadence_seconds": 4.992208242416382,
+            "p95_cadence_seconds": 5.573620557785034,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 18,
+            "voice_sla_latency_rows": 15,
+            "voice_sla_jitter_rows": 8,
+            "voice_sla_loss_rows": 18
+          },
+          "wan2": {
+            "rows": 42,
+            "up_rows": 42,
+            "gap_count_over6": 2,
+            "max_gap_seconds": 7.030000686645508,
+            "median_cadence_seconds": 4.992208242416382,
+            "p95_cadence_seconds": 5.573620557785034,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 1,
+            "voice_sla_latency_rows": 0,
+            "voice_sla_jitter_rows": 3,
+            "voice_sla_loss_rows": 0
+          },
+          "wan3": {
+            "rows": 42,
+            "up_rows": 42,
+            "gap_count_over6": 2,
+            "max_gap_seconds": 7.030000686645508,
+            "median_cadence_seconds": 4.992208242416382,
+            "p95_cadence_seconds": 5.573620557785034,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 0,
+            "voice_sla_latency_rows": 0,
+            "voice_sla_jitter_rows": 3,
+            "voice_sla_loss_rows": 0
+          }
+        }
+      },
+      {
+        "id": "real-traffic-20261011-055036-dfcea6",
+        "kind": "real_traffic",
+        "run_id": "real-traffic-20261011-055036-dfcea6",
+        "stream": "live-real-traffic-20261011-053846",
+        "start": 1791697845.3834364,
+        "end": 1791698053.4434364,
+        "completed": true,
+        "receiver_coverage": 6,
+        "errors": [],
+        "duration_seconds": 208.05999994277954,
+        "start_utc": "2026-10-11T05:50:45.383436+00:00",
+        "end_utc": "2026-10-11T05:54:13.443436+00:00",
+        "rows_by_link": {
+          "wan1": 42,
+          "wan2": 42,
+          "wan3": 42
+        },
+        "causal_window_counts_by_link": {
+          "wan1": {
+            "candidate_windows": 31,
+            "forecast_available_windows": 31,
+            "future_target_missing": 11,
+            "scored_windows": 20
+          },
+          "wan2": {
+            "candidate_windows": 31,
+            "forecast_available_windows": 31,
+            "future_target_missing": 11,
+            "scored_windows": 20
+          },
+          "wan3": {
+            "candidate_windows": 31,
+            "forecast_available_windows": 31,
+            "future_target_missing": 11,
+            "scored_windows": 20
+          }
+        },
+        "quality_by_link": {
+          "wan1": {
+            "rows": 42,
+            "up_rows": 42,
+            "gap_count_over6": 0,
+            "max_gap_seconds": 5.655990123748779,
+            "median_cadence_seconds": 5.002445697784424,
+            "p95_cadence_seconds": 5.354932546615601,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 17,
+            "voice_sla_latency_rows": 16,
+            "voice_sla_jitter_rows": 6,
+            "voice_sla_loss_rows": 14
+          },
+          "wan2": {
+            "rows": 42,
+            "up_rows": 42,
+            "gap_count_over6": 0,
+            "max_gap_seconds": 5.655990123748779,
+            "median_cadence_seconds": 5.002445697784424,
+            "p95_cadence_seconds": 5.354932546615601,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 0,
+            "voice_sla_latency_rows": 0,
+            "voice_sla_jitter_rows": 1,
+            "voice_sla_loss_rows": 0
+          },
+          "wan3": {
+            "rows": 42,
+            "up_rows": 42,
+            "gap_count_over6": 0,
+            "max_gap_seconds": 5.655990123748779,
+            "median_cadence_seconds": 5.002445697784424,
+            "p95_cadence_seconds": 5.354932546615601,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 0,
+            "voice_sla_latency_rows": 0,
+            "voice_sla_jitter_rows": 1,
+            "voice_sla_loss_rows": 0
+          }
+        }
+      },
+      {
+        "id": "real-traffic-20261011-055453-5a2b16",
+        "kind": "real_traffic",
+        "run_id": "real-traffic-20261011-055453-5a2b16",
+        "stream": "live-real-traffic-20261011-053846",
+        "start": 1791698104.9084427,
+        "end": 1791699003.7984428,
+        "completed": true,
+        "receiver_coverage": 6,
+        "errors": [],
+        "duration_seconds": 898.8900001049042,
+        "start_utc": "2026-10-11T05:55:04.908443+00:00",
+        "end_utc": "2026-10-11T06:10:03.798443+00:00",
+        "rows_by_link": {
+          "wan1": 180,
+          "wan2": 180,
+          "wan3": 180
+        },
+        "causal_window_counts_by_link": {
+          "wan1": {
+            "candidate_windows": 169,
+            "forecast_available_windows": 156,
+            "future_target_missing": 16,
+            "scored_windows": 140,
+            "history_rejected": 13
+          },
+          "wan2": {
+            "candidate_windows": 169,
+            "forecast_available_windows": 156,
+            "future_target_missing": 16,
+            "scored_windows": 140,
+            "history_rejected": 13
+          },
+          "wan3": {
+            "candidate_windows": 169,
+            "forecast_available_windows": 156,
+            "future_target_missing": 16,
+            "scored_windows": 140,
+            "history_rejected": 13
+          }
+        },
+        "quality_by_link": {
+          "wan1": {
+            "rows": 180,
+            "up_rows": 180,
+            "gap_count_over6": 1,
+            "max_gap_seconds": 6.491102933883667,
+            "median_cadence_seconds": 5.002193927764893,
+            "p95_cadence_seconds": 5.28613133430481,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 66,
+            "voice_sla_latency_rows": 60,
+            "voice_sla_jitter_rows": 26,
+            "voice_sla_loss_rows": 58
+          },
+          "wan2": {
+            "rows": 180,
+            "up_rows": 180,
+            "gap_count_over6": 1,
+            "max_gap_seconds": 6.491102933883667,
+            "median_cadence_seconds": 5.002193927764893,
+            "p95_cadence_seconds": 5.28613133430481,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 0,
+            "voice_sla_latency_rows": 0,
+            "voice_sla_jitter_rows": 2,
+            "voice_sla_loss_rows": 0
+          },
+          "wan3": {
+            "rows": 180,
+            "up_rows": 180,
+            "gap_count_over6": 1,
+            "max_gap_seconds": 6.491102933883667,
+            "median_cadence_seconds": 5.002193927764893,
+            "p95_cadence_seconds": 5.28613133430481,
+            "down_sentinel_rows": 0,
+            "nonzero_loss_rows": 0,
+            "voice_sla_latency_rows": 0,
+            "voice_sla_jitter_rows": 2,
+            "voice_sla_loss_rows": 0
+          }
+        }
+      }
+    ],
+    "limitations": [
+      "Natural workload all starts use seed20261009; environmental prefix trajectories replay and are correlated across runs.",
+      "Only3 real cross-traffic workload runs completed; they use the same periodic load plan and same topology.",
+      "All rawvalues are actual measured probes in an emulated WAN, not real ISP circuits.",
+      "No history orfuture target may cross episode boundaries; all3WANs from a run share split.",
+      "Frozen model diagnostic evaluated all available runs, so these are already inspected posthoc diagnostic observations, not unseen promotion holdout."
+    ]
+  },
+  "runtime_promoted": false
+}

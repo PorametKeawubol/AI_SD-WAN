@@ -1,0 +1,226 @@
+{
+  "scope": "ICMP/UDP through isolated Linux veth/NetEm, no flexiEdge/VPP/overlay or ISP circuits",
+  "data_sha256": "a13b40d455bd18d17a8d7479eddbe705707e65825dd8532d13a6a705148adc7c",
+  "model_sha256": "6397fe7394d23e3579e1ee2215dfd671097278ac890ee0b0e83f6bb1e01afc82",
+  "runtime_promoted": false,
+  "partitions": {
+    "train": [
+      "link-20261700",
+      "link-20269619",
+      "link-20277538",
+      "link-20285457",
+      "link-20293376",
+      "link-20301295",
+      "link-20309214",
+      "link-20317133",
+      "link-20325052",
+      "link-20332971",
+      "link-20340890",
+      "link-20348809"
+    ],
+    "tune": [
+      "link-2026181700",
+      "link-2026189619",
+      "link-2026197538"
+    ],
+    "accept": [
+      "link-2026205457",
+      "link-2026213376",
+      "link-2026221295"
+    ],
+    "holdout": [
+      "link-2026229214",
+      "link-2026237133",
+      "link-2026245052"
+    ]
+  },
+  "raw_measurement_audit": {
+    "probe_batches": 675,
+    "icmp_packets_sent": 67500,
+    "icmp_packets_received": 67444,
+    "counter_rows": 675,
+    "maximum_metric_discrepancy": 0.0,
+    "counter_formula_verified": true,
+    "raw_probe_recalculation_verified": true,
+    "pcap_scope": "first 1000 packets per WAN only; not the complete experiment"
+  },
+  "final_window_counters": {
+    "candidate_windows": 126,
+    "forecast_available_windows": 123,
+    "scored_windows": 69,
+    "future_target_missing": 54,
+    "history_rejected": 3
+  },
+  "metrics": {
+    "latency_ms": {
+      "eligible_windows": 69,
+      "mae": {
+        "persistence": 47.51255416870117,
+        "linear_trend": 74.33219909667969,
+        "original_frozen": 60.686927795410156,
+        "previous_optimized": 11.540712356567383,
+        "new_gated_candidate": 10.310433358356493
+      },
+      "gain_pct": 78.29955989790068,
+      "paired_mae_difference_by_episode": {
+        "link-2026229214": -31.377421124952132,
+        "link-2026237133": -35.70241129412536,
+        "link-2026245052": -44.3390766539009
+      },
+      "descriptive_episode_bootstrap_95ci": [
+        -44.3390766539009,
+        -31.377421124952132
+      ],
+      "acceptance": {
+        "accepted": true,
+        "reasons": [],
+        "samples": 72,
+        "episode_groups": 3,
+        "selected_mae": 7.637444754004321,
+        "persistence_mae": 58.98493194580078,
+        "relative_mae_improvement": 0.8705187155081894,
+        "paired_episode_mean_mae_difference": -51.34748899318128,
+        "bootstrap_95_ci_episode_blocks": [
+          -64.8423688663984,
+          -32.06937680337558
+        ]
+      },
+      "selected_parameters": {
+        "family": "ridge",
+        "alpha": 0.1,
+        "tuning_weight": 1.0,
+        "candidate_weight": 1.0,
+        "tuning_mae": 8.44298783916896
+      }
+    },
+    "jitter_ms": {
+      "eligible_windows": 69,
+      "mae": {
+        "persistence": 2.515328884124756,
+        "linear_trend": 3.6805171966552734,
+        "original_frozen": 3.6109962463378906,
+        "previous_optimized": 0.6377801299095154,
+        "new_gated_candidate": 0.6323543493298517
+      },
+      "gain_pct": 74.85997344836724,
+      "paired_mae_difference_by_episode": {
+        "link-2026229214": -1.6779111176729202,
+        "link-2026237133": -1.5970269498370944,
+        "link-2026245052": -2.338241924842199
+      },
+      "descriptive_episode_bootstrap_95ci": [
+        -2.338241924842199,
+        -1.5970269498370944
+      ],
+      "acceptance": {
+        "accepted": true,
+        "reasons": [],
+        "samples": 72,
+        "episode_groups": 3,
+        "selected_mae": 0.3438139259815216,
+        "persistence_mae": 2.803278923034668,
+        "relative_mae_improvement": 0.8773529372491666,
+        "paired_episode_mean_mae_difference": -2.459465185801188,
+        "bootstrap_95_ci_episode_blocks": [
+          -2.88444447517395,
+          -1.9879484176635742
+        ]
+      },
+      "selected_parameters": {
+        "family": "xgboost",
+        "depth": 2,
+        "lambda": 20,
+        "min_child_weight": 10,
+        "best_iteration": 233,
+        "tuning_weight": 1.0,
+        "candidate_weight": 1.0,
+        "tuning_mae": 0.3500464856624603
+      }
+    },
+    "loss_pct": {
+      "eligible_windows": 69,
+      "mae": {
+        "persistence": 0.07246376574039459,
+        "linear_trend": 0.11198945343494415,
+        "original_frozen": 0.07246376574039459,
+        "previous_optimized": 0.07246376574039459,
+        "new_gated_candidate": 0.000380995429837558
+      },
+      "gain_pct": 99.47422628958796,
+      "paired_mae_difference_by_episode": {
+        "link-2026229214": -0.08328902619439008,
+        "link-2026237133": 0.0004979089260470195,
+        "link-2026245052": -0.12438461558845143
+      },
+      "descriptive_episode_bootstrap_95ci": [
+        -0.1243846155884514,
+        0.0004979089260470195
+      ],
+      "acceptance": {
+        "accepted": true,
+        "reasons": [],
+        "samples": 72,
+        "episode_groups": 3,
+        "selected_mae": 0.00031692505056925627,
+        "persistence_mae": 0.125,
+        "relative_mae_improvement": 0.997464599595446,
+        "paired_episode_mean_mae_difference": -0.12468307494943072,
+        "bootstrap_95_ci_episode_blocks": [
+          -0.16661556192439778,
+          -0.08243366292389444
+        ]
+      },
+      "selected_parameters": {
+        "family": "ridge",
+        "alpha": 0.1,
+        "tuning_weight": 1.0,
+        "candidate_weight": 1.0,
+        "tuning_mae": 0.0005535848295789741
+      }
+    },
+    "utilization_pct": {
+      "eligible_windows": 69,
+      "mae": {
+        "persistence": 21.515371322631836,
+        "linear_trend": 31.270854949951172,
+        "original_frozen": 25.57451629638672,
+        "previous_optimized": 5.9010114669799805,
+        "new_gated_candidate": 5.114694609158281
+      },
+      "gain_pct": 76.2277186274811,
+      "paired_mae_difference_by_episode": {
+        "link-2026229214": -15.804475545883179,
+        "link-2026237133": -14.318356786455427,
+        "link-2026245052": -18.818910598754883
+      },
+      "descriptive_episode_bootstrap_95ci": [
+        -18.818910598754883,
+        -14.318356786455427
+      ],
+      "acceptance": {
+        "accepted": true,
+        "reasons": [],
+        "samples": 72,
+        "episode_groups": 3,
+        "selected_mae": 2.768855094909668,
+        "persistence_mae": 27.237632751464844,
+        "relative_mae_improvement": 0.8983445029832573,
+        "paired_episode_mean_mae_difference": -24.468777974446613,
+        "bootstrap_95_ci_episode_blocks": [
+          -29.0801944732666,
+          -21.4688777923584
+        ]
+      },
+      "selected_parameters": {
+        "family": "xgboost",
+        "depth": 3,
+        "lambda": 5,
+        "min_child_weight": 1,
+        "best_iteration": 239,
+        "tuning_weight": 1.0,
+        "candidate_weight": 1.0,
+        "tuning_mae": 2.398592948913574
+      }
+    }
+  }
+}

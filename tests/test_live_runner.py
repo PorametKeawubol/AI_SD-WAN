@@ -247,6 +247,29 @@ def test_cleanup_errors_do_not_replace_primary_failure(tmp_path, monkeypatch):
     assert detail["cleanup_errors"] == [{"action": "terminate_child", "error_type": "OSError"}]
 
 
+def test_candidate_path_reaches_trial_service_and_keeps_stream_identity(tmp_path, monkeypatch):
+    destination = tmp_path / "trial"
+    failure = RuntimeError("fixture stop after configuration; no live activity")
+    virtual_lab(monkeypatch, tmp_path, destination, configure_error=failure)
+    commands = []
+    original_child = runner.child
+
+    def capture(arguments, log):
+        commands.append(arguments)
+        return original_child(arguments, log)
+
+    monkeypatch.setattr(runner, "child", capture)
+    selected = tmp_path / "separate-candidate"
+    with pytest.raises(RuntimeError, match="fixture stop"):
+        runner.trial(None, Path("config.json"), "key", "S01", "voice", "reactive",
+                     destination, model_dir=selected)
+    service_command = next(command for command in commands if "serve" in command)
+    assert service_command[service_command.index("--model") + 1] == str(selected)
+    stream = json.loads((destination / "database-stream.json").read_text())["stream"]
+    assert stream == service_command[service_command.index("--stream") + 1]
+    assert stream.startswith("trial-")
+
+
 def test_persistence_failure_does_not_replace_primary_failure(tmp_path, monkeypatch):
     destination = tmp_path / "trial"
     failure = KeyError("fixture preflight failure")

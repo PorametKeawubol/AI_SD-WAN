@@ -1,0 +1,356 @@
+{
+  "metric": "loss_pct",
+  "parameters": {
+    "family": "ridge",
+    "alpha": 0.1
+  },
+  "tuning_weight": 0.75,
+  "deployed_weight": 0.75,
+  "tuning_mae": 2.9535466356098823,
+  "acceptance": {
+    "accepted": true,
+    "reasons": [],
+    "samples": 69,
+    "episode_groups": 3,
+    "selected_mae": 4.455256519145149,
+    "persistence_mae": 5.840579509735107,
+    "relative_mae_improvement": 0.23718930429435892,
+    "paired_episode_mean_mae_difference": -1.33188746921508,
+    "bootstrap_95_ci_episode_blocks": [
+      -2.5345530556984084,
+      -0.1028658681670348
+    ]
+  },
+  "tuning_candidates": [
+    {
+      "family": "ridge",
+      "alpha": 0.1,
+      "weight": 0.0,
+      "tuning_mae": 4.363636363636363
+    },
+    {
+      "family": "ridge",
+      "alpha": 0.1,
+      "weight": 0.25,
+      "tuning_mae": 3.6785461786689146
+    },
+    {
+      "family": "ridge",
+      "alpha": 0.1,
+      "weight": 0.5,
+      "tuning_mae": 3.2076938083565407
+    },
+    {
+      "family": "ridge",
+      "alpha": 0.1,
+      "weight": 0.75,
+      "tuning_mae": 2.9535466356098823
+    },
+    {
+      "family": "ridge",
+      "alpha": 0.1,
+      "weight": 1.0,
+      "tuning_mae": 3.053397856170721
+    },
+    {
+      "family": "ridge",
+      "alpha": 1.0,
+      "weight": 0.0,
+      "tuning_mae": 4.363636363636363
+    },
+    {
+      "family": "ridge",
+      "alpha": 1.0,
+      "weight": 0.25,
+      "tuning_mae": 3.684171416439238
+    },
+    {
+      "family": "ridge",
+      "alpha": 1.0,
+      "weight": 0.5,
+      "tuning_mae": 3.226802827830395
+    },
+    {
+      "family": "ridge",
+      "alpha": 1.0,
+      "weight": 0.75,
+      "tuning_mae": 3.0002940317821065
+    },
+    {
+      "family": "ridge",
+      "alpha": 1.0,
+      "weight": 1.0,
+      "tuning_mae": 3.1136989527677414
+    },
+    {
+      "family": "ridge",
+      "alpha": 10.0,
+      "weight": 0.0,
+      "tuning_mae": 4.363636363636363
+    },
+    {
+      "family": "ridge",
+      "alpha": 10.0,
+      "weight": 0.25,
+      "tuning_mae": 3.7335385956054
+    },
+    {
+      "family": "ridge",
+      "alpha": 10.0,
+      "weight": 0.5,
+      "tuning_mae": 3.3197166025650167
+    },
+    {
+      "family": "ridge",
+      "alpha": 10.0,
+      "weight": 0.75,
+      "tuning_mae": 3.139422553602845
+    },
+    {
+      "family": "ridge",
+      "alpha": 10.0,
+      "weight": 1.0,
+      "tuning_mae": 3.2435978984904286
+    },
+    {
+      "family": "ridge",
+      "alpha": 100.0,
+      "weight": 0.0,
+      "tuning_mae": 4.363636363636363
+    },
+    {
+      "family": "ridge",
+      "alpha": 100.0,
+      "weight": 0.25,
+      "tuning_mae": 3.8899907151375714
+    },
+    {
+      "family": "ridge",
+      "alpha": 100.0,
+      "weight": 0.5,
+      "tuning_mae": 3.5704325934782672
+    },
+    {
+      "family": "ridge",
+      "alpha": 100.0,
+      "weight": 0.75,
+      "tuning_mae": 3.3986901851415627
+    },
+    {
+      "family": "ridge",
+      "alpha": 100.0,
+      "weight": 1.0,
+      "tuning_mae": 3.4214149201062223
+    },
+    {
+      "family": "ridge",
+      "alpha": 1000.0,
+      "weight": 0.0,
+      "tuning_mae": 4.363636363636363
+    },
+    {
+      "family": "ridge",
+      "alpha": 1000.0,
+      "weight": 0.25,
+      "tuning_mae": 4.097474986550805
+    },
+    {
+      "family": "ridge",
+      "alpha": 1000.0,
+      "weight": 0.5,
+      "tuning_mae": 3.862962123341352
+    },
+    {
+      "family": "ridge",
+      "alpha": 1000.0,
+      "weight": 0.75,
+      "tuning_mae": 3.756811447481921
+    },
+    {
+      "family": "ridge",
+      "alpha": 1000.0,
+      "weight": 1.0,
+      "tuning_mae": 3.710603935942204
+    },
+    {
+      "family": "xgboost",
+      "depth": 2,
+      "lambda": 5,
+      "min_child_weight": 1,
+      "best_iteration": 218,
+      "weight": 0.0,
+      "tuning_mae": 4.363636493682861
+    },
+    {
+      "family": "xgboost",
+      "depth": 2,
+      "lambda": 5,
+      "min_child_weight": 1,
+      "best_iteration": 218,
+      "weight": 0.25,
+      "tuning_mae": 4.0654215812683105
+    },
+    {
+      "family": "xgboost",
+      "depth": 2,
+      "lambda": 5,
+      "min_child_weight": 1,
+      "best_iteration": 218,
+      "weight": 0.5,
+      "tuning_mae": 3.818575620651245
+    },
+    {
+      "family": "xgboost",
+      "depth": 2,
+      "lambda": 5,
+      "min_child_weight": 1,
+      "best_iteration": 218,
+      "weight": 0.75,
+      "tuning_mae": 3.664806365966797
+    },
+    {
+      "family": "xgboost",
+      "depth": 2,
+      "lambda": 5,
+      "min_child_weight": 1,
+      "best_iteration": 218,
+      "weight": 1.0,
+      "tuning_mae": 3.5460398197174072
+    },
+    {
+      "family": "xgboost",
+      "depth": 3,
+      "lambda": 5,
+      "min_child_weight": 1,
+      "best_iteration": 239,
+      "weight": 0.0,
+      "tuning_mae": 4.363636493682861
+    },
+    {
+      "family": "xgboost",
+      "depth": 3,
+      "lambda": 5,
+      "min_child_weight": 1,
+      "best_iteration": 239,
+      "weight": 0.25,
+      "tuning_mae": 4.024393558502197
+    },
+    {
+      "family": "xgboost",
+      "depth": 3,
+      "lambda": 5,
+      "min_child_weight": 1,
+      "best_iteration": 239,
+      "weight": 0.5,
+      "tuning_mae": 3.7700042724609375
+    },
+    {
+      "family": "xgboost",
+      "depth": 3,
+      "lambda": 5,
+      "min_child_weight": 1,
+      "best_iteration": 239,
+      "weight": 0.75,
+      "tuning_mae": 3.6307599544525146
+    },
+    {
+      "family": "xgboost",
+      "depth": 3,
+      "lambda": 5,
+      "min_child_weight": 1,
+      "best_iteration": 239,
+      "weight": 1.0,
+      "tuning_mae": 3.526489496231079
+    },
+    {
+      "family": "xgboost",
+      "depth": 5,
+      "lambda": 5,
+      "min_child_weight": 1,
+      "best_iteration": 239,
+      "weight": 0.0,
+      "tuning_mae": 4.363636493682861
+    },
+    {
+      "family": "xgboost",
+      "depth": 5,
+      "lambda": 5,
+      "min_child_weight": 1,
+      "best_iteration": 239,
+      "weight": 0.25,
+      "tuning_mae": 4.024614334106445
+    },
+    {
+      "family": "xgboost",
+      "depth": 5,
+      "lambda": 5,
+      "min_child_weight": 1,
+      "best_iteration": 239,
+      "weight": 0.5,
+      "tuning_mae": 3.7702319622039795
+    },
+    {
+      "family": "xgboost",
+      "depth": 5,
+      "lambda": 5,
+      "min_child_weight": 1,
+      "best_iteration": 239,
+      "weight": 0.75,
+      "tuning_mae": 3.603551149368286
+    },
+    {
+      "family": "xgboost",
+      "depth": 5,
+      "lambda": 5,
+      "min_child_weight": 1,
+      "best_iteration": 239,
+      "weight": 1.0,
+      "tuning_mae": 3.46307635307312
+    },
+    {
+      "family": "xgboost",
+      "depth": 2,
+      "lambda": 20,
+      "min_child_weight": 10,
+      "best_iteration": 238,
+      "weight": 0.0,
+      "tuning_mae": 4.363636493682861
+    },
+    {
+      "family": "xgboost",
+      "depth": 2,
+      "lambda": 20,
+      "min_child_weight": 10,
+      "best_iteration": 238,
+      "weight": 0.25,
+      "tuning_mae": 4.0368804931640625
+    },
+    {
+      "family": "xgboost",
+      "depth": 2,
+      "lambda": 20,
+      "min_child_weight": 10,
+      "best_iteration": 238,
+      "weight": 0.5,
+      "tuning_mae": 3.7706587314605713
+    },
+    {
+      "family": "xgboost",
+      "depth": 2,
+      "lambda": 20,
+      "min_child_weight": 10,
+      "best_iteration": 238,
+      "weight": 0.75,
+      "tuning_mae": 3.574403762817383
+    },
+    {
+      "family": "xgboost",
+      "depth": 2,
+      "lambda": 20,
+      "min_child_weight": 10,
+      "best_iteration": 238,
+      "weight": 1.0,
+      "tuning_mae": 3.4229235649108887
+    }
+  ]
+}

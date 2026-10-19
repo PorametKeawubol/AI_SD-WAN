@@ -1,0 +1,55 @@
+{
+  "created_at": "2026-10-11T06:31:45.026716+00:00",
+  "evidence_level": "local_same_frame_inference_microbenchmark",
+  "python_version": "3.12.3",
+  "platform": "Linux-6.18.40.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "xgboost_version": "3.4.1",
+  "numpy_version": "2.5.3",
+  "model_sha256": "b7b72bfa7c1f34be948b397c4aaebdc639093657c15b444992d8bef3b2bbfc7d",
+  "source_sha256": {
+    "sdwan/service.py": "787a60b508b1610beda64be8a9f633ed14b2d22e60776db78209157d60656617",
+    "sdwan/model.py": "40b8050063f30c63458de0941bb2a1230f1381a34eb1227bb74e403747116821",
+    "scripts/benchmark_forecast_cache.py": "a82abe3797e8a08ce06ab1780cfda330d45954257d2b928ef7cf5682ff058142"
+  },
+  "wan_histories": 3,
+  "rounds": 5,
+  "calls_per_round": {
+    "uncached": 20,
+    "cached": 2000,
+    "new_frame": 20
+  },
+  "uncached_ms_per_read_median": 2.6251932999002747,
+  "cached_ms_per_read_median": 0.005608555497019552,
+  "same_frame_speedup": 468.06941667873866,
+  "new_frame_inference_ms_median": 2.906727499066619,
+  "predictions_identical": true,
+  "round_timings_ms": {
+    "uncached": [
+      2.4732784000661923,
+      2.294858350069262,
+      2.6251932999002747,
+      3.7028796003141906,
+      3.3051845002773916
+    ],
+    "cached": [
+      0.004937237998092314,
+      0.004998742497264175,
+      0.006395864002115559,
+      0.005608555497019552,
+      0.006442088997573592
+    ],
+    "new_frame": [
+      2.3866340015956666,
+      2.906727499066619,
+      2.6341615011915565,
+      3.0887419961800333,
+      3.2819230000313837
+    ]
+  },
+  "runtime_mutated": false,
+  "limitations": [
+    "Unchanged-frame reads only; newly accepted telemetry still requires inference.",
+    "This is not a whole-service CPU, API latency or forecasting-accuracy benchmark.",
+    "Synthetic fixed histories and inert storage; no database/controller traffic is generated."
+  ]
+}

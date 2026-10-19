@@ -1,0 +1,2212 @@
+[
+  {
+    "second": 0.003203746000508545,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268194.7103193,
+          "up": true,
+          "latency_ms": 27.134,
+          "jitter_ms": 4.4008912733672485,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.031407778992600326,
+          "fresh": true,
+          "age_seconds": 4.683984279632568
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268194.7103193,
+          "up": true,
+          "latency_ms": 43.442,
+          "jitter_ms": 6.865656268704399,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03925972374075041,
+          "fresh": true,
+          "age_seconds": 4.683984279632568
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268194.7103193,
+          "up": true,
+          "latency_ms": 69.775,
+          "jitter_ms": 9.255867058250134,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10509306012642405,
+          "fresh": true,
+          "age_seconds": 4.683984279632568
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.0509881288450555,
+          "wan2": 0.07523874541031005,
+          "wan3": 0.13346188921671098
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 5.00375676800104,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268194.7103193,
+          "up": true,
+          "latency_ms": 27.134,
+          "jitter_ms": 4.4008912733672485,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.031407778992600326,
+          "fresh": true,
+          "age_seconds": 9.6843740940094
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268194.7103193,
+          "up": true,
+          "latency_ms": 43.442,
+          "jitter_ms": 6.865656268704399,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03925972374075041,
+          "fresh": true,
+          "age_seconds": 9.6843740940094
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268194.7103193,
+          "up": true,
+          "latency_ms": 69.775,
+          "jitter_ms": 9.255867058250134,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10509306012642405,
+          "fresh": true,
+          "age_seconds": 9.6843740940094
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.0509881288450555,
+          "wan2": 0.07523874541031005,
+          "wan3": 0.13346188921671098
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 10.003698095999425,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268204.9115057,
+          "up": true,
+          "latency_ms": 37.996,
+          "jitter_ms": 4.863186609621309,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.53487937712785,
+          "fresh": true,
+          "age_seconds": 4.483095169067383
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268204.9115057,
+          "up": true,
+          "latency_ms": 46.366,
+          "jitter_ms": 7.14452545659962,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.0367415447876171,
+          "fresh": true,
+          "age_seconds": 4.483095169067383
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268204.9115057,
+          "up": true,
+          "latency_ms": 73.656,
+          "jitter_ms": 9.266966278130077,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.09696663158883767,
+          "fresh": true,
+          "age_seconds": 4.483095169067383
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.08194717218112237,
+          "wan2": 0.07871628682117861,
+          "wan3": 0.13735154360890822
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 15.003671056001622,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268209.6507213,
+          "up": true,
+          "latency_ms": 35.335,
+          "jitter_ms": 3.4589124013192354,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.483734591447845,
+          "fresh": true,
+          "age_seconds": 4.743952035903931
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268209.6507213,
+          "up": true,
+          "latency_ms": 45.169,
+          "jitter_ms": 6.643804557631117,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.04092193688340766,
+          "fresh": true,
+          "age_seconds": 4.743952035903931
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268209.6507213,
+          "up": true,
+          "latency_ms": 70.282,
+          "jitter_ms": 8.1609114687025,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.11293909732348932,
+          "fresh": true,
+          "age_seconds": 4.743952035903931
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.07639238245505155,
+          "wan2": 0.07652481234340124,
+          "wan3": 0.13179205476627748
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 20.00354871700256,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268214.833299,
+          "up": true,
+          "latency_ms": 58.706,
+          "jitter_ms": 63.565819148344175,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.490952004878377,
+          "fresh": true,
+          "age_seconds": 4.56140923500061
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268214.833299,
+          "up": true,
+          "latency_ms": 69.717,
+          "jitter_ms": 63.161561182415376,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03827392335938498,
+          "fresh": true,
+          "age_seconds": 4.56140923500061
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268214.833299,
+          "up": true,
+          "latency_ms": 91.141,
+          "jitter_ms": 62.65156517597944,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.09990390898877247,
+          "fresh": true,
+          "age_seconds": 4.56140923500061
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.21998922497148565,
+          "wan2": 0.21410391223709638,
+          "wan3": 0.2616106368669402
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 25.00398417299948,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268219.81092,
+          "up": true,
+          "latency_ms": 34.266,
+          "jitter_ms": 3.5517663211422006,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.534970664808323,
+          "fresh": true,
+          "age_seconds": 4.583962917327881
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268219.81092,
+          "up": true,
+          "latency_ms": 46.158,
+          "jitter_ms": 7.843547411726406,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.038939014223962884,
+          "fresh": true,
+          "age_seconds": 4.583962917327881
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268219.81092,
+          "up": true,
+          "latency_ms": 70.129,
+          "jitter_ms": 10.098072043712106,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.1042843039953095,
+          "fresh": true,
+          "age_seconds": 4.583962917327881
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.07559448375029826,
+          "wan2": 0.07990999318049274,
+          "wan3": 0.13549895126074973
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 30.004046292000567,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268224.9055276,
+          "up": true,
+          "latency_ms": 36.359,
+          "jitter_ms": 4.711901845327426,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.554675286071399,
+          "fresh": true,
+          "age_seconds": 4.489635705947876
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268224.9055276,
+          "up": true,
+          "latency_ms": 47.325,
+          "jitter_ms": 6.950746362801623,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03886093504452903,
+          "fresh": true,
+          "age_seconds": 4.489635705947876
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268224.9055276,
+          "up": true,
+          "latency_ms": 72.832,
+          "jitter_ms": 8.166931859639824,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10401576739579037,
+          "fresh": true,
+          "age_seconds": 4.489635705947876
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.08004059583410719,
+          "wan2": 0.07929126095067746,
+          "wan3": 0.13433922333160597
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 35.004023199002404,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268224.9055276,
+          "up": true,
+          "latency_ms": 36.359,
+          "jitter_ms": 4.711901845327426,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.554675286071399,
+          "fresh": true,
+          "age_seconds": 9.489374160766602
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268224.9055276,
+          "up": true,
+          "latency_ms": 47.325,
+          "jitter_ms": 6.950746362801623,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03886093504452903,
+          "fresh": true,
+          "age_seconds": 9.489374160766602
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268224.9055276,
+          "up": true,
+          "latency_ms": 72.832,
+          "jitter_ms": 8.166931859639824,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10401576739579037,
+          "fresh": true,
+          "age_seconds": 9.489374160766602
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.08004059583410719,
+          "wan2": 0.07929126095067746,
+          "wan3": 0.13433922333160597
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 40.00454539700149,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268229.6302686,
+          "up": true,
+          "latency_ms": 36.195,
+          "jitter_ms": 4.399781244562052,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.525960294328204,
+          "fresh": true,
+          "age_seconds": 9.765014171600342
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268229.6302686,
+          "up": true,
+          "latency_ms": 45.809,
+          "jitter_ms": 7.925592659227448,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.04038950205597627,
+          "fresh": true,
+          "age_seconds": 9.765014171600342
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268229.6302686,
+          "up": true,
+          "latency_ms": 72.159,
+          "jitter_ms": 8.946587002874336,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10770533881593672,
+          "fresh": true,
+          "age_seconds": 9.765014171600342
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.07920449631300444,
+          "wan2": 0.07972750115521485,
+          "wan3": 0.13523168290377524
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 45.004382220999105,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268234.9505115,
+          "up": true,
+          "latency_ms": 36.073,
+          "jitter_ms": 4.126980857721538,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.614148654072348,
+          "fresh": true,
+          "age_seconds": 9.445048570632935
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268234.9505115,
+          "up": true,
+          "latency_ms": 47.417,
+          "jitter_ms": 8.14110625160979,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.039035804627731714,
+          "fresh": true,
+          "age_seconds": 9.445048570632935
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268234.9505115,
+          "up": true,
+          "latency_ms": 72.362,
+          "jitter_ms": 9.653598085688051,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10409547900728457,
+          "fresh": true,
+          "age_seconds": 9.445048570632935
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.07868387613889699,
+          "wan2": 0.08176427217759913,
+          "wan3": 0.13684268863638824
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 50.00488430400219,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268244.7571568,
+          "up": true,
+          "latency_ms": 36.534,
+          "jitter_ms": 4.228621997767121,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.47460991108729,
+          "fresh": true,
+          "age_seconds": 4.638625383377075
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268244.7571568,
+          "up": true,
+          "latency_ms": 45.64,
+          "jitter_ms": 8.223527223764751,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.038526747262006264,
+          "fresh": true,
+          "age_seconds": 4.638625383377075
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268244.7571568,
+          "up": true,
+          "latency_ms": 72.232,
+          "jitter_ms": 9.926146079924475,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10052978083375723,
+          "fresh": true,
+          "age_seconds": 4.638625383377075
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.07911559384734639,
+          "wan2": 0.08015126569296618,
+          "wan3": 0.1372518417945719
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 55.0052575180016,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268249.7740693,
+          "up": true,
+          "latency_ms": 36.065,
+          "jitter_ms": 4.6653268910120325,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.493427429767697,
+          "fresh": true,
+          "age_seconds": 4.622008323669434
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268249.7740693,
+          "up": true,
+          "latency_ms": 45.486,
+          "jitter_ms": 6.937982703927706,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03921008714842535,
+          "fresh": true,
+          "age_seconds": 4.622008323669434
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268249.7740693,
+          "up": true,
+          "latency_ms": 70.635,
+          "jitter_ms": 9.62289327593318,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10700270572744322,
+          "fresh": true,
+          "age_seconds": 4.622008323669434
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.07955136616497022,
+          "wan2": 0.07742731555310278,
+          "wan3": 0.13505912439474543
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 60.004619405000994,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268254.8156655,
+          "up": true,
+          "latency_ms": 36.421,
+          "jitter_ms": 4.181394384652086,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.525648839985196,
+          "fresh": true,
+          "age_seconds": 4.580074310302734
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268254.8156655,
+          "up": true,
+          "latency_ms": 45.001,
+          "jitter_ms": 7.534898738536571,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03735993991549252,
+          "fresh": true,
+          "age_seconds": 4.580074310302734
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268254.8156655,
+          "up": true,
+          "latency_ms": 71.787,
+          "jitter_ms": 10.036460083116955,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.09923856714309948,
+          "fresh": true,
+          "age_seconds": 4.580074310302734
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.07899320350261284,
+          "wan2": 0.07813306404359895,
+          "wan3": 0.1370253177781391
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 65.00500590900265,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268254.8156655,
+          "up": true,
+          "latency_ms": 36.421,
+          "jitter_ms": 4.181394384652086,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.525648839985196,
+          "fresh": true,
+          "age_seconds": 9.580312967300415
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268254.8156655,
+          "up": true,
+          "latency_ms": 45.001,
+          "jitter_ms": 7.534898738536571,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03735993991549252,
+          "fresh": true,
+          "age_seconds": 9.580312967300415
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268254.8156655,
+          "up": true,
+          "latency_ms": 71.787,
+          "jitter_ms": 10.036460083116955,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.09923856714309948,
+          "fresh": true,
+          "age_seconds": 9.580312967300415
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.07899320350261284,
+          "wan2": 0.07813306404359895,
+          "wan3": 0.1370253177781391
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 71.00842036800168,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268265.1570497,
+          "up": true,
+          "latency_ms": 46.381,
+          "jitter_ms": 41.09614749584199,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.492580895856056,
+          "fresh": true,
+          "age_seconds": 5.242334604263306
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268265.1570497,
+          "up": true,
+          "latency_ms": 55.349,
+          "jitter_ms": 38.76573356715954,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.035520748143441784,
+          "fresh": true,
+          "age_seconds": 5.242334604263306
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268265.1570497,
+          "up": true,
+          "latency_ms": 81.228,
+          "jitter_ms": 43.90371984240059,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.0947219950491781,
+          "fresh": true,
+          "age_seconds": 5.242334604263306
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.16272759648477741,
+          "wan2": 0.1509396683812248,
+          "wan3": 0.21419330967654981
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 75.00509443000192,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268270.0783904,
+          "up": true,
+          "latency_ms": 36.985,
+          "jitter_ms": 4.602311919025046,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.556557998649078,
+          "fresh": true,
+          "age_seconds": 4.3177714347839355
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268270.0783904,
+          "up": true,
+          "latency_ms": 48.01,
+          "jitter_ms": 8.025440797862757,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03598404680455136,
+          "fresh": true,
+          "age_seconds": 4.3177714347839355
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268270.0783904,
+          "up": true,
+          "latency_ms": 71.131,
+          "jitter_ms": 8.86006427741921,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.09637047446460431,
+          "fresh": true,
+          "age_seconds": 4.3177714347839355
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.08045055383579855,
+          "wan2": 0.08212085500706644,
+          "wan3": 0.13401174601227944
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 80.0062231539996,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268274.6281638,
+          "up": true,
+          "latency_ms": 35.475,
+          "jitter_ms": 5.543363148847458,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.573758141470389,
+          "fresh": true,
+          "age_seconds": 4.7685394287109375
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268274.6281638,
+          "up": true,
+          "latency_ms": 45.419,
+          "jitter_ms": 7.423014145210826,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03994335606975419,
+          "fresh": true,
+          "age_seconds": 4.7685394287109375
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268274.6281638,
+          "up": true,
+          "latency_ms": 73.841,
+          "jitter_ms": 10.3536572765376,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10651561618601117,
+          "fresh": true,
+          "age_seconds": 4.7685394287109375
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.08085132320014556,
+          "wan2": 0.0783316005505379,
+          "wan3": 0.13972584058005189
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 85.00579789300173,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268279.7972329,
+          "up": true,
+          "latency_ms": 37.631,
+          "jitter_ms": 5.437714501516239,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.510329901415233,
+          "fresh": true,
+          "age_seconds": 4.599776983261108
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268279.7972329,
+          "up": true,
+          "latency_ms": 46.12,
+          "jitter_ms": 7.387733075849452,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.0390457853535239,
+          "fresh": true,
+          "age_seconds": 4.599776983261108
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268279.7972329,
+          "up": true,
+          "latency_ms": 72.342,
+          "jitter_ms": 10.722296209301438,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10616443207391807,
+          "fresh": true,
+          "age_seconds": 4.599776983261108
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.08269031217205786,
+          "wan2": 0.07896054246062144,
+          "wan3": 0.13896353313872606
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 90.00569712300057,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268284.8928037,
+          "up": true,
+          "latency_ms": 36.904,
+          "jitter_ms": 4.887615369482341,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.461665874321461,
+          "fresh": true,
+          "age_seconds": 4.503735303878784
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268284.8928037,
+          "up": true,
+          "latency_ms": 47.048,
+          "jitter_ms": 9.565202350185801,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.036964028380369274,
+          "fresh": true,
+          "age_seconds": 4.503735303878784
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268284.8928037,
+          "up": true,
+          "latency_ms": 72.187,
+          "jitter_ms": 9.90899243112033,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10011483776511916,
+          "fresh": true,
+          "age_seconds": 4.503735303878784
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.08078200719616713,
+          "wan2": 0.08424001141433889,
+          "wan3": 0.13717184292518253
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 95.00568744300108,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268289.782662,
+          "up": true,
+          "latency_ms": 36.148,
+          "jitter_ms": 4.18230749706427,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.514140504537473,
+          "fresh": true,
+          "age_seconds": 4.613981008529663
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268289.782662,
+          "up": true,
+          "latency_ms": 45.838,
+          "jitter_ms": 7.667004369373999,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03921264152548263,
+          "fresh": true,
+          "age_seconds": 4.613981008529663
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268289.782662,
+          "up": true,
+          "latency_ms": 73.362,
+          "jitter_ms": 9.664468738632248,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10700967651675931,
+          "fresh": true,
+          "age_seconds": 4.613981008529663
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.07870284916835767,
+          "wan2": 0.07923736314129047,
+          "wan3": 0.13786928693812575
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 100.01445696900191,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268289.782662,
+          "up": true,
+          "latency_ms": 36.148,
+          "jitter_ms": 4.18230749706427,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.514140504537473,
+          "fresh": true,
+          "age_seconds": 9.618041753768921
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268289.782662,
+          "up": true,
+          "latency_ms": 45.838,
+          "jitter_ms": 7.667004369373999,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03921264152548263,
+          "fresh": true,
+          "age_seconds": 9.618041753768921
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268289.782662,
+          "up": true,
+          "latency_ms": 73.362,
+          "jitter_ms": 9.664468738632248,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10700967651675931,
+          "fresh": true,
+          "age_seconds": 9.618041753768921
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.07870284916835767,
+          "wan2": 0.07923736314129047,
+          "wan3": 0.13786928693812575
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 105.01654517300267,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268300.4886835,
+          "up": true,
+          "latency_ms": 71.617,
+          "jitter_ms": 65.84397171343781,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.079009318072579,
+          "fresh": true,
+          "age_seconds": 3.9088547229766846
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268300.4886835,
+          "up": true,
+          "latency_ms": 78.246,
+          "jitter_ms": 60.197990697364645,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.031378385042844924,
+          "fresh": true,
+          "age_seconds": 3.9088547229766846
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268300.4886835,
+          "up": true,
+          "latency_ms": 108.345,
+          "jitter_ms": 58.51585319381407,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.08567232656992413,
+          "fresh": true,
+          "age_seconds": 3.9088547229766846
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.07647856798364934,
+          "wan2": 0.07819082454389222,
+          "wan3": 0.13512601654799816
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 110.00609330299994,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268300.4886835,
+          "up": true,
+          "latency_ms": 71.617,
+          "jitter_ms": 65.84397171343781,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.079009318072579,
+          "fresh": true,
+          "age_seconds": 8.908288478851318
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268300.4886835,
+          "up": true,
+          "latency_ms": 78.246,
+          "jitter_ms": 60.197990697364645,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.031378385042844924,
+          "fresh": true,
+          "age_seconds": 8.908288478851318
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268300.4886835,
+          "up": true,
+          "latency_ms": 108.345,
+          "jitter_ms": 58.51585319381407,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.08567232656992413,
+          "fresh": true,
+          "age_seconds": 8.908288478851318
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.2367699589569966,
+          "wan2": 0.216694278703134,
+          "wan3": 0.270519493598578
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 115.00641251600246,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268304.9373474,
+          "up": true,
+          "latency_ms": 38.708,
+          "jitter_ms": 4.673364526762277,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.514071745986726,
+          "fresh": true,
+          "age_seconds": 9.459954023361206
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268304.9373474,
+          "up": true,
+          "latency_ms": 48.151,
+          "jitter_ms": 8.431648652547139,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03827782559739503,
+          "fresh": true,
+          "age_seconds": 9.459954023361206
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268304.9373474,
+          "up": true,
+          "latency_ms": 72.185,
+          "jitter_ms": 10.898260182249276,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10016310105579063,
+          "fresh": true,
+          "age_seconds": 9.459954023361206
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.08224484863016908,
+          "wan2": 0.08307809368108994,
+          "wan3": 0.1391484588662582
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 120.02287992000129,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268314.9295466,
+          "up": true,
+          "latency_ms": 38.933,
+          "jitter_ms": 6.668388935867494,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.506174114978322,
+          "fresh": true,
+          "age_seconds": 4.46769642829895
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268314.9295466,
+          "up": true,
+          "latency_ms": 49.425,
+          "jitter_ms": 10.231445401310609,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03728362718628715,
+          "fresh": true,
+          "age_seconds": 4.46769642829895
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268314.9295466,
+          "up": true,
+          "latency_ms": 73.785,
+          "jitter_ms": 12.382886375962594,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.09942300583009905,
+          "fresh": true,
+          "age_seconds": 4.46769642829895
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.08694046843859662,
+          "wan2": 0.08358437159429082,
+          "wan3": 0.13916769167959556
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 125.00629568799923,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268319.897695,
+          "up": true,
+          "latency_ms": 36.528999999999996,
+          "jitter_ms": 4.623900842362431,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.526302630058318,
+          "fresh": true,
+          "age_seconds": 4.499608755111694
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268319.897695,
+          "up": true,
+          "latency_ms": 46.508,
+          "jitter_ms": 7.3912878444828545,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03691093684613136,
+          "fresh": true,
+          "age_seconds": 4.499608755111694
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268319.897695,
+          "up": true,
+          "latency_ms": 71.564,
+          "jitter_ms": 9.96843538375005,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10040133398340528,
+          "fresh": true,
+          "age_seconds": 4.499608755111694
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.07998730606815539,
+          "wan2": 0.0793520939170426,
+          "wan3": 0.1366682063241391
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 130.0067842190001,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268319.897695,
+          "up": true,
+          "latency_ms": 36.528999999999996,
+          "jitter_ms": 4.623900842362431,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.526302630058318,
+          "fresh": true,
+          "age_seconds": 9.499959230422974
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268319.897695,
+          "up": true,
+          "latency_ms": 46.508,
+          "jitter_ms": 7.3912878444828545,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03691093684613136,
+          "fresh": true,
+          "age_seconds": 9.499959230422974
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268319.897695,
+          "up": true,
+          "latency_ms": 71.564,
+          "jitter_ms": 9.96843538375005,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10040133398340528,
+          "fresh": true,
+          "age_seconds": 9.499959230422974
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.07998730606815539,
+          "wan2": 0.0793520939170426,
+          "wan3": 0.1366682063241391
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 135.00786314200013,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268324.9651244,
+          "up": true,
+          "latency_ms": 38.06,
+          "jitter_ms": 4.833052865425745,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.467343804199121,
+          "fresh": true,
+          "age_seconds": 9.433506727218628
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268324.9651244,
+          "up": true,
+          "latency_ms": 47.62,
+          "jitter_ms": 7.30967851550258,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03689578536219259,
+          "fresh": true,
+          "age_seconds": 9.433506727218628
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268324.9651244,
+          "up": true,
+          "latency_ms": 72.945,
+          "jitter_ms": 9.317170976213756,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10025900389058408,
+          "fresh": true,
+          "age_seconds": 9.433506727218628
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.08183834540451669,
+          "wan2": 0.08030085000660882,
+          "wan3": 0.13674644029224514
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 140.00727637300224,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268330.156776,
+          "up": true,
+          "latency_ms": 54.39,
+          "jitter_ms": 45.93730836694723,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.447478471227267,
+          "fresh": true,
+          "age_seconds": 9.241409301757812
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268330.156776,
+          "up": true,
+          "latency_ms": 67.045,
+          "jitter_ms": 49.73812094359818,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03394035900335096,
+          "fresh": true,
+          "age_seconds": 9.241409301757812
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268330.156776,
+          "up": true,
+          "latency_ms": 91.912,
+          "jitter_ms": 58.38847536971658,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.09232107367031712,
+          "fresh": true,
+          "age_seconds": 9.241409301757812
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Current path remains preferred",
+        "scores": {
+          "wan1": 0.18034374751927323,
+          "wan2": 0.18457780915220195,
+          "wan3": 0.25384281919555035
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 145.00759318100245,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268334.832121,
+          "up": true,
+          "latency_ms": 41.427,
+          "jitter_ms": 8.619139806268374,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.469276667364515,
+          "fresh": true,
+          "age_seconds": 9.566215753555298
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268334.832121,
+          "up": true,
+          "latency_ms": 53.481,
+          "jitter_ms": 8.54054676235661,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.036867351786758464,
+          "fresh": true,
+          "age_seconds": 9.566215753555298
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268334.832121,
+          "up": true,
+          "latency_ms": 78.092,
+          "jitter_ms": 13.426441673056939,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.10047245535334028,
+          "fresh": true,
+          "age_seconds": 9.566215753555298
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.09278074072481093,
+          "wan2": 0.08862353911102448,
+          "wan3": 0.15011233743836944
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 151.3101478460012,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": false,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268340.1294267,
+          "up": true,
+          "latency_ms": 49.081,
+          "jitter_ms": 22.09159430643248,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.534851472535921,
+          "fresh": false,
+          "age_seconds": 10.571574449539185
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268340.1294267,
+          "up": true,
+          "latency_ms": 57.612,
+          "jitter_ms": 19.366740975187334,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03360155670682985,
+          "fresh": false,
+          "age_seconds": 10.571574449539185
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268340.1294267,
+          "up": true,
+          "latency_ms": 85.149,
+          "jitter_ms": 20.527486426740122,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.09143893465715625,
+          "fresh": false,
+          "age_seconds": 10.571574449539185
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.12748894106709152,
+          "wan2": 0.11440148454488605,
+          "wan3": 0.17135637107790885
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 155.0075180269996,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268350.3540807,
+          "up": true,
+          "latency_ms": 46.466,
+          "jitter_ms": 9.46284544944067,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.558905710001367,
+          "fresh": true,
+          "age_seconds": 4.044219017028809
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268350.3540807,
+          "up": true,
+          "latency_ms": 54.969,
+          "jitter_ms": 12.180506516561616,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03353504155308414,
+          "fresh": true,
+          "age_seconds": 4.044219017028809
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268350.3540807,
+          "up": true,
+          "latency_ms": 76.438,
+          "jitter_ms": 11.119350520601461,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.08980370804380523,
+          "fresh": true,
+          "age_seconds": 4.044219017028809
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.09965653374888361,
+          "wan2": 0.09738590476904505,
+          "wan3": 0.1438263738879426
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 160.00802282299992,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268350.3540807,
+          "up": true,
+          "latency_ms": 46.466,
+          "jitter_ms": 9.46284544944067,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.558905710001367,
+          "fresh": true,
+          "age_seconds": 9.044568061828613
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268350.3540807,
+          "up": true,
+          "latency_ms": 54.969,
+          "jitter_ms": 12.180506516561616,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03353504155308414,
+          "fresh": true,
+          "age_seconds": 9.044568061828613
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268350.3540807,
+          "up": true,
+          "latency_ms": 76.438,
+          "jitter_ms": 11.119350520601461,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.08980370804380523,
+          "fresh": true,
+          "age_seconds": 9.044568061828613
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.09965653374888361,
+          "wan2": 0.09738590476904505,
+          "wan3": 0.1438263738879426
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  },
+  {
+    "second": 165.0077235630015,
+    "state": {
+      "mode": "auto",
+      "profile": "bulk",
+      "backend": "flexiwan",
+      "route_evidence": "agent_configuration",
+      "observing_native_qbr": false,
+      "confirmed_path": "wan1",
+      "network_available": true,
+      "model_loaded": false,
+      "model_error": "Forecast disabled on live probe data; reactive routing until live validation",
+      "forecast_sampling": "strict",
+      "telemetry": {
+        "wan1": {
+          "link_id": "wan1",
+          "timestamp": 1792268355.0089352,
+          "up": true,
+          "latency_ms": 42.351,
+          "jitter_ms": 7.2383353749325545,
+          "loss_pct": 0.0,
+          "utilization_pct": 11.55050369412018,
+          "fresh": true,
+          "age_seconds": 9.389648914337158
+        },
+        "wan2": {
+          "link_id": "wan2",
+          "timestamp": 1792268355.0089352,
+          "up": true,
+          "latency_ms": 51.313,
+          "jitter_ms": 9.352300839900307,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.03685804157679027,
+          "fresh": true,
+          "age_seconds": 9.389648914337158
+        },
+        "wan3": {
+          "link_id": "wan3",
+          "timestamp": 1792268355.0089352,
+          "up": true,
+          "latency_ms": 78.367,
+          "jitter_ms": 12.169790918499793,
+          "loss_pct": 0.0,
+          "utilization_pct": 0.09942469283312791,
+          "fresh": true,
+          "age_seconds": 9.389648914337158
+        }
+      },
+      "pending": null,
+      "apply_inflight": null,
+      "last_decision": {
+        "action": "hold",
+        "source": "wan1",
+        "target": "wan1",
+        "reason": "Improvement below hysteresis margin",
+        "scores": {
+          "wan1": 0.0910785102400654,
+          "wan2": 0.08807903174909527,
+          "wan3": 0.14787228965838814
+        },
+        "predicted": {},
+        "degraded": false
+      }
+    }
+  }
+]

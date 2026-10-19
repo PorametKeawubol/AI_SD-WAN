@@ -1,0 +1,10 @@
+{
+  "probe_batches": 675,
+  "icmp_packets_sent": 67500,
+  "icmp_packets_received": 67444,
+  "counter_rows": 675,
+  "maximum_metric_discrepancy": 0.0,
+  "counter_formula_verified": true,
+  "raw_probe_recalculation_verified": true,
+  "pcap_scope": "first 1000 packets per WAN only; not the complete experiment"
+}

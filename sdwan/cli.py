@@ -23,6 +23,7 @@ def main():
     serve_parser.add_argument("--host", default="127.0.0.1")
     serve_parser.add_argument("--port", type=int, default=8000)
     serve_parser.add_argument("--stream", default="live")
+    serve_parser.add_argument("--model", default="artifacts/model")
     serve_parser.add_argument("--tls-cert", default=os.getenv("SDWAN_TLS_CERT"))
     serve_parser.add_argument("--tls-key", default=os.getenv("SDWAN_TLS_KEY"))
     serve_parser.add_argument("--flexiwan-config")
@@ -80,6 +81,7 @@ def main():
                 stream=args.stream,
                 experimental_forecast=args.experimental_synthetic_forecast,
                 observe_native_qbr=args.observe_native_qbr,
+                model_dir=args.model,
             )
             if args.flexiwan_config
             else None
@@ -87,7 +89,7 @@ def main():
         if not args.flexiwan_config:
             from .service import Service
 
-            service = Service(stream=args.stream)
+            service = Service(stream=args.stream, model_dir=args.model)
         uvicorn.run(
             create_app(service),
             host=args.host,

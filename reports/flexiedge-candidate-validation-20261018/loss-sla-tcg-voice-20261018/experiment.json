@@ -1,0 +1,635 @@
+{
+  "evidence_level": "live_lab_plan",
+  "case_manifest": {
+    "suite": "balanced",
+    "version": 2,
+    "case_count": 1,
+    "full_suite_case_count": 38,
+    "full_suite_fault_count": 37,
+    "fault_case_count": 1,
+    "recoverable_fault_count": 1,
+    "group_counts": {
+      "availability": 0,
+      "quality": 1,
+      "stability": 0,
+      "mixed": 0,
+      "telemetry": 0
+    },
+    "complete_suite_selected": false,
+    "initial_priority": "wan1",
+    "scope": "Balanced v2 covers all 8 binary Up/Down states. Other impairments are selected tests. Legacy v1 retains the original definitions.",
+    "cases": [
+      {
+        "id": "S12",
+        "name": "Progressive degradation",
+        "kind": "ramp",
+        "links": [
+          "wan1"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan1"
+        ]
+      }
+    ],
+    "sha256": "75fb3a321abae192fa083403adc29bb3cd8e135802038f337ce10878f41e51a7"
+  },
+  "created_at": 1792269152.0967045,
+  "configuration": {
+    "base_url": "https://192.168.56.1:3443/api",
+    "organization_id": "6abe7acf789d0c05c1c2f554",
+    "device_ids": [
+      "6abe7c7c789d0cff1fc2f5da",
+      "6abe7cce789d0c1558c2f610"
+    ],
+    "policy_id": "6abe7acf789d0c762ec2f5a5",
+    "rule_id": "6abe7acf789d0c67d2c2f5a6",
+    "links": {
+      "wan1": {
+        "path_label_id": "6abe7acf789d0caf31c2f57b",
+        "capacity_mbps": 100.0
+      },
+      "wan2": {
+        "path_label_id": "6abe7acf789d0c9907c2f586",
+        "capacity_mbps": 80.0
+      },
+      "wan3": {
+        "path_label_id": "6abe7acf789d0cc7ecc2f591",
+        "capacity_mbps": 30.0
+      }
+    },
+    "access_key_env": "FLEXIWAN_ACCESS_KEY",
+    "ca_file": "/opt/ai-sdwan-lab/lab/runtime/certs/certificate.pem",
+    "expected_version": "6.3.37",
+    "request_timeout_seconds": 20.0,
+    "job_timeout_seconds": 180.0,
+    "poll_seconds": 1.0,
+    "journal_dir": "data/flexiwan-journal",
+    "telemetry_device_id": "6abe7c7c789d0cff1fc2f5da",
+    "probe_command": "python3 /opt/ai-sdwan/probe_cache.py --read"
+  },
+  "strategies": [
+    "reactive",
+    "predictive_synthetic_lab"
+  ],
+  "profiles": {
+    "voice": {
+      "name": "voice",
+      "latency_ms": 100,
+      "jitter_ms": 30,
+      "loss_pct": 1,
+      "utilization_pct": 90,
+      "demand_mbps": 2
+    }
+  },
+  "baseline_seconds": 70,
+  "fault_seconds": 80,
+  "restore_seconds": 20,
+  "grace_seconds": 10,
+  "baseline_min_sla_ratio": 0.9,
+  "event_min_sla_ratio": 0.98,
+  "repetitions": 3,
+  "order_seed": 20261018,
+  "flow_source_ports": [
+    42000,
+    42001,
+    42002
+  ],
+  "flow_assignment": "Same fixed UDP source port for each repetition across strategies/cases",
+  "forecast_sampling": "causal_linear_5s; measured intervals 4..6s; no gap/down filling or extrapolation",
+  "routing_evidence": {
+    "observed_at": 1792269151.8844264,
+    "evidence_level": "real_edge_observations",
+    "mode": "inspect",
+    "changes": [
+      {
+        "site": 1,
+        "changed": false,
+        "interfaces": {
+          "wan1": {
+            "interface": "vpp7",
+            "address": "10.100.0.4",
+            "hello_seconds": 10.0,
+            "dead_seconds": 40,
+            "adjacent_neighbors": 1
+          },
+          "wan2": {
+            "interface": "vpp11",
+            "address": "10.100.0.6",
+            "hello_seconds": 10.0,
+            "dead_seconds": 40,
+            "adjacent_neighbors": 1
+          },
+          "wan3": {
+            "interface": "vpp15",
+            "address": "10.100.0.8",
+            "hello_seconds": 10.0,
+            "dead_seconds": 40,
+            "adjacent_neighbors": 1
+          }
+        }
+      },
+      {
+        "site": 2,
+        "changed": false,
+        "interfaces": {
+          "wan1": {
+            "interface": "vpp7",
+            "address": "10.100.0.5",
+            "hello_seconds": 10.0,
+            "dead_seconds": 40,
+            "adjacent_neighbors": 1
+          },
+          "wan2": {
+            "interface": "vpp11",
+            "address": "10.100.0.7",
+            "hello_seconds": 10.0,
+            "dead_seconds": 40,
+            "adjacent_neighbors": 1
+          },
+          "wan3": {
+            "interface": "vpp15",
+            "address": "10.100.0.9",
+            "hello_seconds": 10.0,
+            "dead_seconds": 40,
+            "adjacent_neighbors": 1
+          }
+        }
+      }
+    ],
+    "verified": [
+      {
+        "site": 1,
+        "changed": false,
+        "interfaces": {
+          "wan1": {
+            "interface": "vpp7",
+            "address": "10.100.0.4",
+            "hello_seconds": 10.0,
+            "dead_seconds": 40,
+            "adjacent_neighbors": 1
+          },
+          "wan2": {
+            "interface": "vpp11",
+            "address": "10.100.0.6",
+            "hello_seconds": 10.0,
+            "dead_seconds": 40,
+            "adjacent_neighbors": 1
+          },
+          "wan3": {
+            "interface": "vpp15",
+            "address": "10.100.0.8",
+            "hello_seconds": 10.0,
+            "dead_seconds": 40,
+            "adjacent_neighbors": 1
+          }
+        }
+      },
+      {
+        "site": 2,
+        "changed": false,
+        "interfaces": {
+          "wan1": {
+            "interface": "vpp7",
+            "address": "10.100.0.5",
+            "hello_seconds": 10.0,
+            "dead_seconds": 40,
+            "adjacent_neighbors": 1
+          },
+          "wan2": {
+            "interface": "vpp11",
+            "address": "10.100.0.7",
+            "hello_seconds": 10.0,
+            "dead_seconds": 40,
+            "adjacent_neighbors": 1
+          },
+          "wan3": {
+            "interface": "vpp15",
+            "address": "10.100.0.9",
+            "hello_seconds": 10.0,
+            "dead_seconds": 40,
+            "adjacent_neighbors": 1
+          }
+        }
+      }
+    ],
+    "scope": "Three generated tunnel interfaces per edge; all strategies share these timers",
+    "persistence": "FRR write memory; verify after edge/controller reconfiguration or reboot"
+  },
+  "clock_evidence": {
+    "observed_at": 1792269145.857101,
+    "evidence_level": "real_edge_clock_observations",
+    "applied": false,
+    "source": "Native guest UTC clock with verified identity and bounded SSH RTT",
+    "edges": [
+      {
+        "site": 1,
+        "changed": false,
+        "guest_before_epoch": 1792269145.0089064,
+        "guest_after_epoch": 1792269145.0089064,
+        "host_request_epoch": 1792269145.1606843,
+        "after_offset_upper_bound_seconds": 0.3277866840362549,
+        "clock_offset_bounds_seconds": [
+          -0.3277866840362549,
+          -0.151777982711792
+        ],
+        "round_trip_seconds": 0.1760087013244629,
+        "verification_attempt": 1
+      },
+      {
+        "site": 2,
+        "changed": false,
+        "guest_before_epoch": 1792269145.8196857,
+        "guest_after_epoch": 1792269145.8196857,
+        "host_request_epoch": 1792269145.695383,
+        "after_offset_upper_bound_seconds": 0.03740644454956055,
+        "clock_offset_bounds_seconds": [
+          -0.03740644454956055,
+          0.12430262565612793
+        ],
+        "round_trip_seconds": 0.16170907020568848,
+        "verification_attempt": 1
+      }
+    ]
+  },
+  "model_metadata": {
+    "schema": 2,
+    "feature_names": [
+      "latency_ms_current",
+      "latency_ms_lag1",
+      "latency_ms_lag3",
+      "latency_ms_mean",
+      "latency_ms_std",
+      "latency_ms_trend",
+      "jitter_ms_current",
+      "jitter_ms_lag1",
+      "jitter_ms_lag3",
+      "jitter_ms_mean",
+      "jitter_ms_std",
+      "jitter_ms_trend",
+      "loss_pct_current",
+      "loss_pct_lag1",
+      "loss_pct_lag3",
+      "loss_pct_mean",
+      "loss_pct_std",
+      "loss_pct_trend",
+      "utilization_pct_current",
+      "utilization_pct_lag1",
+      "utilization_pct_lag3",
+      "utilization_pct_mean",
+      "utilization_pct_std",
+      "utilization_pct_trend",
+      "up",
+      "history_fraction"
+    ],
+    "horizon_steps": 6,
+    "horizon_seconds": 30,
+    "window_steps": 12,
+    "interval_seconds": 5,
+    "enabled_metrics": {
+      "latency_ms": true,
+      "jitter_ms": true,
+      "loss_pct": true,
+      "utilization_pct": true
+    },
+    "blend_weights": {
+      "latency_ms": 1.0,
+      "jitter_ms": 1.0,
+      "loss_pct": 0.75,
+      "utilization_pct": 1.0
+    },
+    "linear_heads": {
+      "latency_ms": {
+        "schema": "relative_lags_v1",
+        "center": [
+          79.38112619413552,
+          10.406731531129662,
+          30.05132165191867,
+          27.982089380845956,
+          30.518473320818963,
+          -7.261670538561141,
+          3.338458604423712,
+          0.5340464233506655,
+          1.4946664542171126,
+          1.3661220027199874,
+          1.4788568229117292,
+          -0.4078406646372156,
+          0.09219858156028368,
+          0.03329673878549671,
+          0.19165311442421426,
+          0.12882355583607918,
+          0.4336180666342695,
+          0.013092712795435333,
+          29.21672411167875,
+          4.9433463448328325,
+          13.621943781561885,
+          10.827803388555,
+          14.481571748747047,
+          -0.6212471067494257,
+          1.0,
+          1.0
+        ],
+        "scale": [
+          40.26288700440001,
+          10.11100199152639,
+          27.23922791909968,
+          38.55794784769636,
+          11.40278889105406,
+          38.11855741621729,
+          1.8027934032373374,
+          0.6355368674518876,
+          1.2635020875185148,
+          1.7970095580958434,
+          0.3816991517032947,
+          1.8397950578997302,
+          0.435982777001522,
+          0.4463500092432749,
+          0.9329682998801058,
+          0.481305086603484,
+          0.5156889275233175,
+          0.31778752873917027,
+          17.469206856298513,
+          5.575612124504851,
+          13.889212878755307,
+          17.93075786485694,
+          4.28662461975726,
+          17.38123071187121,
+          1.0,
+          1.0
+        ],
+        "coefficients": [
+          -0.7994042527931415,
+          -0.49559554490314467,
+          -6.455788717405982,
+          -4.330131607378222,
+          -7.116574540011195,
+          -49.96104513027421,
+          -16.835522104560685,
+          0.7519980633317296,
+          2.702343355178943,
+          -19.822942464973025,
+          -2.756362121296452,
+          -2.9872491605090805,
+          1.7305150502708635,
+          -0.4942912068382215,
+          0.057579275825949794,
+          2.330067356879658,
+          -2.0842329979871925,
+          1.1040942040192718,
+          -7.620910454432262,
+          2.2462462512693637,
+          0.3736850190620868,
+          -10.885532620526805,
+          1.3075200068569666,
+          -1.8243621193972808,
+          0.0,
+          0.0
+        ],
+        "intercept": -23.881792778664444
+      },
+      "loss_pct": {
+        "schema": "relative_lags_v1",
+        "center": [
+          20.46863345121726,
+          -0.0002920199663211138,
+          0.0016193536611703726,
+          -0.011719429798615285,
+          0.14990706149584207,
+          0.013271201344580801,
+          1.456302407460335,
+          0.0010031773493840144,
+          0.00800620714823405,
+          0.011344026296566695,
+          0.10889806202971018,
+          -0.008085493908415979,
+          6.589743589743589,
+          0.07213063281124983,
+          -0.1848655180575756,
+          -1.3208286053095109,
+          3.059237588980259,
+          2.002367122403274,
+          15.70437826009897,
+          0.0031255526420397636,
+          0.03148523477407602,
+          0.1264732898809971,
+          0.2209308099335967,
+          -0.16933200522666644,
+          1.0,
+          1.0
+        ],
+        "scale": [
+          6.561801786025763,
+          0.23158711843341798,
+          0.2372169273594745,
+          0.16093155171074824,
+          0.03443944060068381,
+          0.12553361359065454,
+          0.1128271418541667,
+          0.1528901949803092,
+          0.16517017381640528,
+          0.1088899852712226,
+          0.04379511803219247,
+          0.09666277283321409,
+          6.444707423957094,
+          4.193492591159795,
+          5.667285419363178,
+          3.88358609121635,
+          2.5352874469193845,
+          3.772894220377814,
+          3.35148676797773,
+          0.1700730652186379,
+          0.3920372134788721,
+          0.26785606867799644,
+          0.18849465466235113,
+          0.28528257138453916,
+          1.0,
+          1.0
+        ],
+        "coefficients": [
+          3.067586805130754,
+          0.7313357510987956,
+          0.5887431021776135,
+          -1.6090933346679235,
+          -0.772950914627758,
+          -0.1594523455815349,
+          -0.8302173427186625,
+          0.1219440703276521,
+          -0.8667310145941866,
+          -0.07746210185616097,
+          0.4156022268613708,
+          0.08302890261185414,
+          -7.109265930239348,
+          0.32800216891358247,
+          0.16782813977723698,
+          -1.0111578283857992,
+          1.5584962620907827,
+          0.06321122161350637,
+          -3.6152389597281767,
+          -0.6986166040087756,
+          -0.8882546273751233,
+          3.6678542164538666,
+          1.1684094498370365,
+          1.7583969222999303,
+          0.0,
+          0.0
+        ],
+        "intercept": -2.4307692307692284
+      }
+    },
+    "selected_parameters": {
+      "latency_ms": {
+        "family": "ridge",
+        "alpha": 0.1,
+        "tuning_weight": 1.0,
+        "candidate_weight": 1.0,
+        "tuning_mae": 8.44298783916896
+      },
+      "jitter_ms": {
+        "family": "xgboost",
+        "depth": 2,
+        "lambda": 20,
+        "min_child_weight": 10,
+        "best_iteration": 233,
+        "tuning_weight": 1.0,
+        "candidate_weight": 1.0,
+        "tuning_mae": 0.3500464856624603
+      },
+      "loss_pct": {
+        "family": "ridge",
+        "alpha": 0.1,
+        "tuning_weight": 0.75,
+        "candidate_weight": 0.75,
+        "tuning_mae": 2.9535466356098823
+      },
+      "utilization_pct": {
+        "family": "xgboost",
+        "depth": 3,
+        "lambda": 5,
+        "min_child_weight": 1,
+        "best_iteration": 239,
+        "tuning_weight": 1.0,
+        "candidate_weight": 1.0,
+        "tuning_mae": 2.398592948913574
+      }
+    },
+    "data_kind": "real_recorded_probe",
+    "forecast_sampling": "causal_linear_5s",
+    "dataset_sha256": "a13b40d455bd18d17a8d7479eddbe705707e65825dd8532d13a6a705148adc7c",
+    "partition_episodes": {
+      "train": [
+        "link-20261700",
+        "link-20269619",
+        "link-20277538",
+        "link-20285457",
+        "link-20293376",
+        "link-20301295",
+        "link-20309214",
+        "link-20317133",
+        "link-20325052",
+        "link-20332971",
+        "link-20340890",
+        "link-20348809"
+      ],
+      "tune": [
+        "link-2026181700",
+        "link-2026189619",
+        "link-2026197538"
+      ],
+      "accept": [
+        "link-2026205457",
+        "link-2026213376",
+        "link-2026221295"
+      ],
+      "holdout": [
+        "link-2026229214",
+        "link-2026237133",
+        "link-2026245052"
+      ]
+    },
+    "offline_candidate": true,
+    "runtime_promoted": false,
+    "testbed_provenance": "isolated_linux_veth_netem_fresh_confirmation",
+    "loss_adaptation": {
+      "dataset_sha256": "0845be8bfa11ad30bbc7cbccbd6684279f7e08a8d262c09e062526a5689ffe87",
+      "partitions": {
+        "train": [
+          "link-2026101800",
+          "link-2026109719",
+          "link-2026117638",
+          "link-2026125557",
+          "link-2026133476",
+          "link-2026141395",
+          "link-2026101900",
+          "link-2026109819",
+          "link-2026117738"
+        ],
+        "tune": [
+          "link-2026125657",
+          "link-2026133576",
+          "link-2026141495"
+        ],
+        "accept": [
+          "link-2026149414",
+          "link-2026157333",
+          "link-2026165252"
+        ],
+        "holdout": [
+          "link-2026173171",
+          "link-2026181090",
+          "link-2026189009"
+        ]
+      },
+      "acceptance": {
+        "accepted": true,
+        "reasons": [],
+        "samples": 69,
+        "episode_groups": 3,
+        "selected_mae": 4.455256519145149,
+        "persistence_mae": 5.840579509735107,
+        "relative_mae_improvement": 0.23718930429435892,
+        "paired_episode_mean_mae_difference": -1.33188746921508,
+        "bootstrap_95_ci_episode_blocks": [
+          -2.5345530556984084,
+          -0.1028658681670348
+        ]
+      },
+      "source_bundle_sha256": "6397fe7394d23e3579e1ee2215dfd671097278ac890ee0b0e83f6bb1e01afc82",
+      "untouched_heads": [
+        "latency_ms",
+        "jitter_ms",
+        "utilization_pct"
+      ],
+      "scope": "real ICMP/UDP in isolated Linux veth/NetEm, no flexiEdge/VPP/overlay"
+    }
+  },
+  "model_directory": "/opt/ai-sdwan-lab/artifacts/model-search-loss-v3-20261018",
+  "model_files_sha256": {
+    "jitter_ms.json": "76525f6c439a5d9d5fe14ccdb20de4e5694a96b77049890b4fef52637da14441",
+    "metadata.json": "ad235f2d7f3cf5a69838d5351f2a9f7ee903505f6fe396b3a9125dae45890099",
+    "utilization_pct.json": "85e1318b89686f05874f4713eb8a56e5984cd57773c1d27b0e2522347454b2da"
+  },
+  "source_files_sha256": {
+    "lab/run_live_eval.py": "ca06874a9d440ac159d03db3d9deff9e48108024e15c8bbd87bfeea8ce6509e2",
+    "lab/impairments.py": "f6ba1e25806b99fae982b4f6db9c1ada6e8bb07550faf66f5226a0e5333949e6",
+    "lab/traffic.py": "89b5acf5ee64f4ca426e39167030c9f9d248bfe22a6fc4d213c6185d4dc8cb00",
+    "lab/edge/probe.py": "754f765a6a3b8b863a7b2fdde7025790fdb814fa3ec61ba911d2f174e1abd906",
+    "lab/edge/ospf.py": "fc5ac745cfdacbb363f6a39a64fe66aa45b5285ea359ee97dea7fe2e2d6bb32f",
+    "lab/edge/clock.py": "eeb5fdfa0019e8b9aa49dd65999e640e5909c02da40fcac36ad87897d5d2923b",
+    "lab/baselines.py": "7a265071b41a8ad73fa32ab1d53e836d78086da732cbdc7478197946b5f6156a",
+    "sdwan/model.py": "f4438304d7a675d6c92522ea36491ceaeef6175577f2502ac584f827814c3b39",
+    "sdwan/features.py": "809d1ba86299fe297856496c5958cf9930ee650e68a8eb86a05767b96bc12e70",
+    "sdwan/domain.py": "5b6ea60fec9649f80658b48f84488de8b38b16a0ff1a4287ebe7a33a1681057b",
+    "sdwan/scenarios.py": "65d21c8709842a9dc70a456f92221fbc38703cb30cd973315f8773be9f76a296",
+    "sdwan/collector.py": "bd60bfa290d48d39d01f7fba99d6abbdec657743330d09c1270dffee703fbb70",
+    "sdwan/service.py": "787a60b508b1610beda64be8a9f633ed14b2d22e60776db78209157d60656617",
+    "sdwan/api.py": "fea66ce6ed63fcf5651915ba5f7313d3b4422a4190fff2e802280267ebb5b9e2",
+    "sdwan/storage.py": "9b28a03b456201f600051fb807337ca5fbad76f9b557674bcd659308cf64e273",
+    "sdwan/policy.py": "7c5d4ba80c0655f00824874e31aacadcc8677401c7f923b1704d111d3726ff4e",
+    "sdwan/adapters.py": "602ef4f43e6232f0920d7a4999f8d42aeed6531e6a1c92f1126beff1c1f498f7",
+    "sdwan/flexiwan.py": "d48e67e39e54aa70f3a72cb41e99dcc246445782e82dddd79c9da79936c2ef50",
+    "scripts/run_live_lab.py": "929a8f4c399a947bcefd2bc7af80e583c53ec299f727ee8696ce042da9204e87",
+    "scripts/sync_edge_clocks.py": "498d63b6152cf787b4ca78955641f74e6d5202c0b43c084962ee4a3de8f9e43c",
+    "scripts/configure_lab_ospf.py": "9820deebe8a04f0d39e2c1025ebc8f9f335d5267c90666d8cfb6cb92c75a1f73"
+  }
+}

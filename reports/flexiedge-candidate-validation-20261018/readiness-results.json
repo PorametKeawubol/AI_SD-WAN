@@ -1,0 +1,122 @@
+{
+  "tcg-control-readiness-20261018-4": {
+    "profile": "voice",
+    "thresholds": {
+      "name": "voice",
+      "latency_ms": 100,
+      "jitter_ms": 30,
+      "loss_pct": 1,
+      "utilization_pct": 90,
+      "demand_mbps": 2
+    },
+    "valid": false,
+    "reason": "Healthy baseline was not established",
+    "baseline_intervals": 60,
+    "criteria_passed": {
+      "offered_load": 60,
+      "received": 60,
+      "loss": 60,
+      "rtt": 60,
+      "jitter": 56,
+      "goodput": 60
+    },
+    "healthy_intervals": 56,
+    "medians": {
+      "offered_mbps": 2.0,
+      "received_mbps": 2.0,
+      "loss_pct": 0.0,
+      "latency_ms": 28.11654430495764,
+      "jitter_ms": 3.535456927197522
+    },
+    "maxima": {
+      "loss_pct": 0.0,
+      "latency_ms": 70.55169842999027,
+      "jitter_ms": 79.0282537262796
+    },
+    "pcap_files": [
+      "packets.json",
+      "wan1.pcap"
+    ],
+    "ssh_observer_enabled": true
+  },
+  "tcg-control-readiness-20261018-5": {
+    "profile": "voice",
+    "thresholds": {
+      "name": "voice",
+      "latency_ms": 100,
+      "jitter_ms": 30,
+      "loss_pct": 1,
+      "utilization_pct": 90,
+      "demand_mbps": 2
+    },
+    "valid": false,
+    "reason": "Healthy baseline was not established",
+    "baseline_intervals": 60,
+    "criteria_passed": {
+      "offered_load": 60,
+      "received": 60,
+      "loss": 60,
+      "rtt": 60,
+      "jitter": 56,
+      "goodput": 60
+    },
+    "healthy_intervals": 56,
+    "medians": {
+      "offered_mbps": 2.0,
+      "received_mbps": 2.0,
+      "loss_pct": 0.0,
+      "latency_ms": 27.93991788998938,
+      "jitter_ms": 3.5135816859737776
+    },
+    "maxima": {
+      "loss_pct": 0.0,
+      "latency_ms": 75.28751390487741,
+      "jitter_ms": 83.01627811601423
+    },
+    "pcap_files": [
+      "packets.json",
+      "wan1.pcap"
+    ],
+    "ssh_observer_enabled": false
+  },
+  "tcg-bulk-readiness-20261018": {
+    "profile": "bulk",
+    "thresholds": {
+      "name": "bulk",
+      "latency_ms": 300,
+      "jitter_ms": 100,
+      "loss_pct": 3,
+      "utilization_pct": 90,
+      "demand_mbps": 10
+    },
+    "valid": false,
+    "reason": "Traffic generator underdelivered; harness limitation",
+    "baseline_intervals": 60,
+    "criteria_passed": {
+      "offered_load": 60,
+      "received": 60,
+      "loss": 60,
+      "rtt": 60,
+      "jitter": 60,
+      "goodput": 60
+    },
+    "healthy_intervals": 60,
+    "medians": {
+      "offered_mbps": 10.0,
+      "received_mbps": 10.0,
+      "loss_pct": 0.0,
+      "latency_ms": 31.78834078355979,
+      "jitter_ms": 2.733256796684016
+    },
+    "maxima": {
+      "loss_pct": 0.0,
+      "latency_ms": 84.60008205406484,
+      "jitter_ms": 95.10285129453499
+    },
+    "pcap_files": [
+      "packets.json",
+      "wan1.pcap"
+    ],
+    "ssh_observer_enabled": false
+  }
+}

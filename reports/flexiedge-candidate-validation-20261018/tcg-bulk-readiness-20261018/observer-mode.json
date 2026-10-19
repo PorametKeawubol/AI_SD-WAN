@@ -1,0 +1,5 @@
+{
+  "additional_ssh_observer_enabled": false,
+  "required_telemetry_jobs_agent_readback_udp_and_pcap_unchanged": true,
+  "reason": "Avoid optional five-second VPP CLI diagnostic interference in software emulation"
+}

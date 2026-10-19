@@ -188,9 +188,9 @@ def _apply(configuration, *, change=False):
                 f"{values['delay_ms']}ms",
                 f"{values['jitter_ms']}ms",
                 f"{values.get('delay_correlation_pct', 0)}%",
-                "distribution",
-                "normal",
             ]
+            if values["jitter_ms"] > 0:
+                arguments += ["distribution", "normal"]
             if "burst_loss" in values:
                 arguments += ["loss", "gemodel"] + [
                     f"{values['burst_loss'][key]}%"

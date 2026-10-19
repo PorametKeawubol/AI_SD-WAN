@@ -1,0 +1,33 @@
+{
+  "frozen_at_unix": 1792269144.5435367,
+  "model_sha256": "fc33ddc5508a23c0b7f7556e06c04bbe96c6d4114336cf1d0ae703f7d5bc31ef",
+  "protocol": "/mnt/e/Proposal/.codex-review/loss-sla-20261018/predeclared-sla-pragmatic.json",
+  "command": [
+    "/opt/ai-sdwan-lab/.venv/bin/python",
+    "scripts/run_live_lab.py",
+    "--output",
+    "loss-sla-tcg-voice-20261018",
+    "--model",
+    "/opt/ai-sdwan-lab/artifacts/model-search-loss-v3-20261018",
+    "--config",
+    "/opt/ai-sdwan-lab/config/flexiwan.tcg-cache-20261018.local.json",
+    "--verify-clocks-only",
+    "--no-edge-observer",
+    "--baseline-min-sla-ratio",
+    "0.90",
+    "--suite",
+    "balanced",
+    "--scenarios",
+    "S12",
+    "--profiles",
+    "voice",
+    "--strategies",
+    "reactive",
+    "predictive_synthetic_lab",
+    "--repetitions",
+    "3",
+    "--order-seed",
+    "20261018"
+  ],
+  "accelerator": "TCG software emulation"
+}

@@ -12,6 +12,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PID_FILE = ROOT / "lab/runtime/live-dashboard.pid"
+STOP_TIMEOUT_SECONDS = 60
 
 
 def main():
@@ -36,8 +37,14 @@ def main():
         if str(Path(__file__).resolve()).encode() not in process.read_bytes().split(b"\0"):
             raise RuntimeError("Saved PID belongs to another process; it was preserved")
         os.kill(pid, signal.SIGTERM)
-        for _ in range(40):
-            if not process.exists() or b"Z" in Path(f"/proc/{pid}/stat").read_bytes().split()[2:3]:
+        # Drain open HTTP connections and collector threads before restarting.
+        deadline = time.monotonic() + STOP_TIMEOUT_SECONDS
+        while time.monotonic() < deadline:
+            try:
+                exited = not process.exists() or b"Z" in Path(f"/proc/{pid}/stat").read_bytes().split()[2:3]
+            except FileNotFoundError:
+                exited = True
+            if exited:
                 print("Live API stopped; lab VMs/controller remain running.")
                 return
             time.sleep(0.5)

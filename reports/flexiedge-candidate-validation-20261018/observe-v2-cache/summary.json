@@ -1,0 +1,245 @@
+{
+  "scope": "Manual-only actual flexiEdge/TCG readiness; not a randomized SLA comparison",
+  "model_sha256": "6397fe7394d23e3579e1ee2215dfd671097278ac890ee0b0e83f6bb1e01afc82",
+  "stream": "candidate-readiness-tcg-1792266685",
+  "policy_changes_authorized_here": false,
+  "health": {
+    "status": "ok",
+    "backend": "flexiwan",
+    "model_loaded": true,
+    "storage": "timescaledb"
+  },
+  "complete": true,
+  "policy_unchanged": true,
+  "model_unchanged": true,
+  "wans": {
+    "wan1": {
+      "unique_fresh_measurements": 36,
+      "window_counters": {
+        "candidate_windows": 25,
+        "forecast_available_windows": 25,
+        "scored_windows": 19,
+        "future_target_missing": 6
+      },
+      "forecast_metrics": {
+        "latency_ms": {
+          "samples": 19,
+          "forecast_absolute_error_sum": 491.2422952445096,
+          "persistence_absolute_error_sum": 34.822,
+          "forecast_mae": 25.854857644447872,
+          "persistence_mae": 1.8327368421052632
+        },
+        "jitter_ms": {
+          "samples": 19,
+          "forecast_absolute_error_sum": 100.74370182585027,
+          "persistence_absolute_error_sum": 81.58131082470109,
+          "forecast_mae": 5.302300096097382,
+          "persistence_mae": 4.293753201300057
+        },
+        "loss_pct": {
+          "samples": 19,
+          "forecast_absolute_error_sum": 0.15910865473085858,
+          "persistence_absolute_error_sum": 0.0,
+          "forecast_mae": 0.008374139722676768,
+          "persistence_mae": 0.0
+        },
+        "utilization_pct": {
+          "samples": 19,
+          "forecast_absolute_error_sum": 0.5884490873330374,
+          "persistence_absolute_error_sum": 0.02241804092758027,
+          "forecast_mae": 0.03097100459647565,
+          "persistence_mae": 0.0011798968909252773
+        }
+      },
+      "interval_seconds": [
+        4.760252475738525,
+        4.954548120498657,
+        4.965248346328735,
+        5.11310887336731,
+        4.895200490951538,
+        5.106886625289917,
+        4.912628889083862,
+        5.08359432220459,
+        4.967277526855469,
+        5.062060117721558,
+        5.213170528411865,
+        4.757197856903076,
+        4.961334466934204,
+        4.969494819641113,
+        5.060699701309204,
+        5.029476881027222,
+        5.085555553436279,
+        4.967538595199585,
+        4.9534971714019775,
+        4.875811576843262,
+        5.036786794662476,
+        4.990631341934204,
+        5.38852858543396,
+        4.645256042480469,
+        4.996505498886108,
+        5.257326602935791,
+        4.887850999832153,
+        5.034473896026611,
+        5.1438562870025635,
+        4.580496311187744,
+        5.125127077102661,
+        4.974826335906982,
+        4.9409339427948,
+        5.342683553695679,
+        4.720650672912598
+      ]
+    },
+    "wan2": {
+      "unique_fresh_measurements": 36,
+      "window_counters": {
+        "candidate_windows": 25,
+        "forecast_available_windows": 25,
+        "scored_windows": 19,
+        "future_target_missing": 6
+      },
+      "forecast_metrics": {
+        "latency_ms": {
+          "samples": 19,
+          "forecast_absolute_error_sum": 806.4703988026705,
+          "persistence_absolute_error_sum": 40.80200000000001,
+          "forecast_mae": 42.44581046329845,
+          "persistence_mae": 2.1474736842105266
+        },
+        "jitter_ms": {
+          "samples": 19,
+          "forecast_absolute_error_sum": 123.19921509403191,
+          "persistence_absolute_error_sum": 78.8505614832993,
+          "forecast_mae": 6.484169215475364,
+          "persistence_mae": 4.150029551752595
+        },
+        "loss_pct": {
+          "samples": 19,
+          "forecast_absolute_error_sum": 0.1849664657656469,
+          "persistence_absolute_error_sum": 0.0,
+          "forecast_mae": 0.009735077145560364,
+          "persistence_mae": 0.0
+        },
+        "utilization_pct": {
+          "samples": 19,
+          "forecast_absolute_error_sum": 0.7400924558632449,
+          "persistence_absolute_error_sum": 0.02740637186229497,
+          "forecast_mae": 0.038952234519118153,
+          "persistence_mae": 0.0014424406243313142
+        }
+      },
+      "interval_seconds": [
+        4.760252475738525,
+        4.954548120498657,
+        4.965248346328735,
+        5.11310887336731,
+        4.895200490951538,
+        5.106886625289917,
+        4.912628889083862,
+        5.08359432220459,
+        4.967277526855469,
+        5.062060117721558,
+        5.213170528411865,
+        4.757197856903076,
+        4.961334466934204,
+        4.969494819641113,
+        5.060699701309204,
+        5.029476881027222,
+        5.085555553436279,
+        4.967538595199585,
+        4.9534971714019775,
+        4.875811576843262,
+        5.036786794662476,
+        4.990631341934204,
+        5.38852858543396,
+        4.645256042480469,
+        4.996505498886108,
+        5.257326602935791,
+        4.887850999832153,
+        5.034473896026611,
+        5.1438562870025635,
+        4.580496311187744,
+        5.125127077102661,
+        4.974826335906982,
+        4.9409339427948,
+        5.342683553695679,
+        4.720650672912598
+      ]
+    },
+    "wan3": {
+      "unique_fresh_measurements": 36,
+      "window_counters": {
+        "candidate_windows": 25,
+        "forecast_available_windows": 25,
+        "scored_windows": 19,
+        "future_target_missing": 6
+      },
+      "forecast_metrics": {
+        "latency_ms": {
+          "samples": 19,
+          "forecast_absolute_error_sum": 1288.9475816562253,
+          "persistence_absolute_error_sum": 51.06199999999998,
+          "forecast_mae": 67.83934640295922,
+          "persistence_mae": 2.6874736842105253
+        },
+        "jitter_ms": {
+          "samples": 19,
+          "forecast_absolute_error_sum": 125.29467517767036,
+          "persistence_absolute_error_sum": 80.51700701892825,
+          "forecast_mae": 6.594456588298439,
+          "persistence_mae": 4.23773721152254
+        },
+        "loss_pct": {
+          "samples": 19,
+          "forecast_absolute_error_sum": 0.21348266761586665,
+          "persistence_absolute_error_sum": 0.0,
+          "forecast_mae": 0.011235929874519298,
+          "persistence_mae": 0.0
+        },
+        "utilization_pct": {
+          "samples": 19,
+          "forecast_absolute_error_sum": 1.9911444747316007,
+          "persistence_absolute_error_sum": 0.06376630332227053,
+          "forecast_mae": 0.10479707761745267,
+          "persistence_mae": 0.0033561212274879223
+        }
+      },
+      "interval_seconds": [
+        4.760252475738525,
+        4.954548120498657,
+        4.965248346328735,
+        5.11310887336731,
+        4.895200490951538,
+        5.106886625289917,
+        4.912628889083862,
+        5.08359432220459,
+        4.967277526855469,
+        5.062060117721558,
+        5.213170528411865,
+        4.757197856903076,
+        4.961334466934204,
+        4.969494819641113,
+        5.060699701309204,
+        5.029476881027222,
+        5.085555553436279,
+        4.967538595199585,
+        4.9534971714019775,
+        4.875811576843262,
+        5.036786794662476,
+        4.990631341934204,
+        5.38852858543396,
+        4.645256042480469,
+        4.996505498886108,
+        5.257326602935791,
+        4.887850999832153,
+        5.034473896026611,
+        5.1438562870025635,
+        4.580496311187744,
+        5.125127077102661,
+        4.974826335906982,
+        4.9409339427948,
+        5.342683553695679,
+        4.720650672912598
+      ]
+    }
+  }
+}

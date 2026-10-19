@@ -1,0 +1,12 @@
+{
+  "original_runtime_sha256": "b7b72bfa7c1f34be948b397c4aaebdc639093657c15b444992d8bef3b2bbfc7d",
+  "preexisting_windows_original_sha256": "6106291421fa5b4c2b9c4306ef07f42e61bfd133235566b15d2520b538ac2531",
+  "new_offline_model_sha256": "6397fe7394d23e3579e1ee2215dfd671097278ac890ee0b0e83f6bb1e01afc82",
+  "new_windows_and_linux_model_copies_identical": true,
+  "preexisting_original_json_differences": [
+    "loss_pct.json"
+  ],
+  "original_predictions_identical_on_all_final_windows": true,
+  "exact_original_comparator_snapshot": "/mnt/e/Proposal/AI_SD-WAN/reports/forecast-confirmation-20261017/original-linux-comparator",
+  "fresh_collection_cleanup_complete": true
+}

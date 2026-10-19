@@ -1,0 +1,217 @@
+{
+  "dataset_sha256": "0845be8bfa11ad30bbc7cbccbd6684279f7e08a8d262c09e062526a5689ffe87",
+  "bundle_sha256": "fc33ddc5508a23c0b7f7556e06c04bbe96c6d4114336cf1d0ae703f7d5bc31ef",
+  "runtime_promoted": false,
+  "scope": "real ICMP/UDP in isolated Linux veth/NetEm, no flexiEdge/VPP/overlay",
+  "partitions": {
+    "train": [
+      "link-2026101800",
+      "link-2026109719",
+      "link-2026117638",
+      "link-2026125557",
+      "link-2026133476",
+      "link-2026141395",
+      "link-2026101900",
+      "link-2026109819",
+      "link-2026117738"
+    ],
+    "tune": [
+      "link-2026125657",
+      "link-2026133576",
+      "link-2026141495"
+    ],
+    "accept": [
+      "link-2026149414",
+      "link-2026157333",
+      "link-2026165252"
+    ],
+    "holdout": [
+      "link-2026173171",
+      "link-2026181090",
+      "link-2026189009"
+    ]
+  },
+  "acceptance": {
+    "accepted": true,
+    "reasons": [],
+    "samples": 69,
+    "episode_groups": 3,
+    "selected_mae": 4.455256519145149,
+    "persistence_mae": 5.840579509735107,
+    "relative_mae_improvement": 0.23718930429435892,
+    "paired_episode_mean_mae_difference": -1.33188746921508,
+    "bootstrap_95_ci_episode_blocks": [
+      -2.5345530556984084,
+      -0.1028658681670348
+    ]
+  },
+  "selected_parameters": {
+    "family": "ridge",
+    "alpha": 0.1,
+    "tuning_weight": 0.75,
+    "candidate_weight": 0.75,
+    "tuning_mae": 2.9535466356098823
+  },
+  "raw_audit": {
+    "probe_batches": 1350,
+    "icmp_sent": 135000,
+    "icmp_received": 128310,
+    "nonzero_loss_batches": 795,
+    "counter_rows": 1350,
+    "maximum_metric_discrepancy": 0.0,
+    "counters_verified": true,
+    "pcap_scope": "First 1000 frames per WAN in each of two campaigns; not the complete packet stream.",
+    "unused_original_complete_episodes": [
+      "link-2026149314"
+    ]
+  },
+  "window_counters": {
+    "candidate_windows": 126,
+    "history_rejected": 9,
+    "forecast_available_windows": 117,
+    "scored_windows": 63,
+    "future_target_missing": 54
+  },
+  "metrics": {
+    "latency_ms": {
+      "samples": 63,
+      "nonzero_targets": 63,
+      "zero_targets": 0,
+      "mae": {
+        "persistence": 0.22445306181907654,
+        "original_demo": 2.415344476699829,
+        "frozen_v2": 56.942962007874044,
+        "loss_v3_gated": 56.942962007874044
+      },
+      "gain_vs_persistence_pct": -25269.652588554884,
+      "descriptive_episode_bootstrap_95ci": [
+        50.71427828288558,
+        64.05664926658002
+      ]
+    },
+    "jitter_ms": {
+      "samples": 63,
+      "nonzero_targets": 63,
+      "zero_targets": 0,
+      "mae": {
+        "persistence": 0.13052354753017426,
+        "original_demo": 0.951745331287384,
+        "frozen_v2": 0.7099775019146147,
+        "loss_v3_gated": 0.7099775019146147
+      },
+      "gain_vs_persistence_pct": -443.9459127101055,
+      "descriptive_episode_bootstrap_95ci": [
+        0.5431234439214071,
+        0.6044720354534331
+      ]
+    },
+    "loss_pct": {
+      "samples": 63,
+      "nonzero_targets": 41,
+      "zero_targets": 22,
+      "mae": {
+        "persistence": 4.666666507720947,
+        "original_demo": 4.666666507720947,
+        "frozen_v2": 5.610028048960767,
+        "loss_v3_gated": 3.2022849202635766
+      },
+      "gain_vs_persistence_pct": 31.379606514298118,
+      "descriptive_episode_bootstrap_95ci": [
+        -1.9920997452183844,
+        -0.9745256548763231
+      ],
+      "raw_selected_candidate_mae": 3.2022849202635766,
+      "mae_nonzero": {
+        "persistence": 4.97560977935791,
+        "original_demo": 4.97560977935791,
+        "frozen_v2": 8.585506012109285,
+        "loss_v3_gated": 3.9064333896190435
+      },
+      "mae_zero": {
+        "persistence": 4.090909004211426,
+        "original_demo": 4.090909004211426,
+        "frozen_v2": 0.06481911763853006,
+        "loss_v3_gated": 1.8900082273738414
+      },
+      "by_episode": {
+        "link-2026173171": {
+          "samples": 21,
+          "nonzero_targets": 18,
+          "mae": {
+            "persistence": 6.0,
+            "original_demo": 6.0,
+            "frozen_v2": 8.754833184716315,
+            "loss_v3_gated": 4.5734801608854365
+          }
+        },
+        "link-2026181090": {
+          "samples": 21,
+          "nonzero_targets": 9,
+          "mae": {
+            "persistence": 5.095238208770752,
+            "original_demo": 5.095238208770752,
+            "frozen_v2": 2.9575551542917387,
+            "loss_v3_gated": 3.10313835001971
+          }
+        },
+        "link-2026189009": {
+          "samples": 21,
+          "nonzero_targets": 14,
+          "mae": {
+            "persistence": 2.904761791229248,
+            "original_demo": 2.904761791229248,
+            "frozen_v2": 5.117695807874247,
+            "loss_v3_gated": 1.9302362498855814
+          }
+        }
+      },
+      "threshold_1pct": {
+        "persistence": {
+          "true_positive": 38,
+          "false_positive": 7,
+          "false_negative": 3,
+          "precision": 0.8444444444444444,
+          "recall": 0.926829268292683
+        },
+        "original_demo": {
+          "true_positive": 38,
+          "false_positive": 7,
+          "false_negative": 3,
+          "precision": 0.8444444444444444,
+          "recall": 0.926829268292683
+        },
+        "frozen_v2": {
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 41,
+          "precision": null,
+          "recall": 0.0
+        },
+        "loss_v3_gated": {
+          "true_positive": 40,
+          "false_positive": 7,
+          "false_negative": 1,
+          "precision": 0.851063829787234,
+          "recall": 0.975609756097561
+        }
+      }
+    },
+    "utilization_pct": {
+      "samples": 63,
+      "nonzero_targets": 63,
+      "zero_targets": 0,
+      "mae": {
+        "persistence": 0.28938600420951843,
+        "original_demo": 1.516813039779663,
+        "frozen_v2": 1.5347630031525143,
+        "loss_v3_gated": 1.5347630031525143
+      },
+      "gain_vs_persistence_pct": -430.35149621172775,
+      "descriptive_episode_bootstrap_95ci": [
+        1.0259703681582497,
+        1.3769300551641555
+      ]
+    }
+  },
+  "baseline_bundles_preserved": true
+}

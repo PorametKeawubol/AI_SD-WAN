@@ -1,0 +1,36 @@
+{
+  "observed_at": 1792269352.938497,
+  "evidence_level": "real_edge_clock_observations",
+  "applied": false,
+  "source": "Native guest UTC clock with verified identity and bounded SSH RTT",
+  "edges": [
+    {
+      "site": 1,
+      "changed": false,
+      "guest_before_epoch": 1792269352.1482515,
+      "guest_after_epoch": 1792269352.1482515,
+      "host_request_epoch": 1792269352.2404265,
+      "after_offset_upper_bound_seconds": 0.32192158699035645,
+      "clock_offset_bounds_seconds": [
+        -0.32192158699035645,
+        -0.09217500686645508
+      ],
+      "round_trip_seconds": 0.22974658012390137,
+      "verification_attempt": 1
+    },
+    {
+      "site": 2,
+      "changed": false,
+      "guest_before_epoch": 1792269352.9003513,
+      "guest_after_epoch": 1792269352.9003513,
+      "host_request_epoch": 1792269352.8027668,
+      "after_offset_upper_bound_seconds": 0.038137197494506836,
+      "clock_offset_bounds_seconds": [
+        -0.038137197494506836,
+        0.09758448600769043
+      ],
+      "round_trip_seconds": 0.13572168350219727,
+      "verification_attempt": 1
+    }
+  ]
+}

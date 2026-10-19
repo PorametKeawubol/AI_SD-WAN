@@ -1,0 +1,197 @@
+{
+  "scope": "Manual-only actual flexiEdge/TCG readiness; not a randomized SLA comparison",
+  "model_sha256": "fc33ddc5508a23c0b7f7556e06c04bbe96c6d4114336cf1d0ae703f7d5bc31ef",
+  "stream": "candidate-readiness-tcg-1792268470",
+  "policy_changes_authorized_here": false,
+  "health": {
+    "status": "ok",
+    "backend": "flexiwan",
+    "model_loaded": true,
+    "storage": "timescaledb"
+  },
+  "complete": true,
+  "policy_unchanged": true,
+  "model_unchanged": true,
+  "wans": {
+    "wan1": {
+      "unique_fresh_measurements": 30,
+      "window_counters": {
+        "candidate_windows": 19,
+        "history_rejected": 19
+      },
+      "forecast_metrics": {
+        "latency_ms": {
+          "samples": 0,
+          "forecast_mae": null,
+          "persistence_mae": null
+        },
+        "jitter_ms": {
+          "samples": 0,
+          "forecast_mae": null,
+          "persistence_mae": null
+        },
+        "loss_pct": {
+          "samples": 0,
+          "forecast_mae": null,
+          "persistence_mae": null
+        },
+        "utilization_pct": {
+          "samples": 0,
+          "forecast_mae": null,
+          "persistence_mae": null
+        }
+      },
+      "interval_seconds": [
+        5.066829681396484,
+        9.97131609916687,
+        5.076772451400757,
+        5.09293270111084,
+        4.913867950439453,
+        10.203313112258911,
+        4.778676986694336,
+        5.024158239364624,
+        4.9228997230529785,
+        5.168354749679565,
+        4.929116249084473,
+        5.10155987739563,
+        4.819441318511963,
+        5.059656620025635,
+        10.011805057525635,
+        5.006524085998535,
+        4.986490726470947,
+        4.9569761753082275,
+        5.1721510887146,
+        4.758396625518799,
+        5.1375367641448975,
+        5.4285218715667725,
+        9.394166707992554,
+        5.329681158065796,
+        4.83605432510376,
+        4.9537763595581055,
+        9.926701068878174,
+        5.0161356925964355,
+        4.980369329452515
+      ]
+    },
+    "wan2": {
+      "unique_fresh_measurements": 30,
+      "window_counters": {
+        "candidate_windows": 19,
+        "history_rejected": 19
+      },
+      "forecast_metrics": {
+        "latency_ms": {
+          "samples": 0,
+          "forecast_mae": null,
+          "persistence_mae": null
+        },
+        "jitter_ms": {
+          "samples": 0,
+          "forecast_mae": null,
+          "persistence_mae": null
+        },
+        "loss_pct": {
+          "samples": 0,
+          "forecast_mae": null,
+          "persistence_mae": null
+        },
+        "utilization_pct": {
+          "samples": 0,
+          "forecast_mae": null,
+          "persistence_mae": null
+        }
+      },
+      "interval_seconds": [
+        5.066829681396484,
+        9.97131609916687,
+        5.076772451400757,
+        5.09293270111084,
+        4.913867950439453,
+        10.203313112258911,
+        4.778676986694336,
+        5.024158239364624,
+        4.9228997230529785,
+        5.168354749679565,
+        4.929116249084473,
+        5.10155987739563,
+        4.819441318511963,
+        5.059656620025635,
+        10.011805057525635,
+        5.006524085998535,
+        4.986490726470947,
+        4.9569761753082275,
+        5.1721510887146,
+        4.758396625518799,
+        5.1375367641448975,
+        5.4285218715667725,
+        9.394166707992554,
+        5.329681158065796,
+        4.83605432510376,
+        4.9537763595581055,
+        9.926701068878174,
+        5.0161356925964355,
+        4.980369329452515
+      ]
+    },
+    "wan3": {
+      "unique_fresh_measurements": 30,
+      "window_counters": {
+        "candidate_windows": 19,
+        "history_rejected": 19
+      },
+      "forecast_metrics": {
+        "latency_ms": {
+          "samples": 0,
+          "forecast_mae": null,
+          "persistence_mae": null
+        },
+        "jitter_ms": {
+          "samples": 0,
+          "forecast_mae": null,
+          "persistence_mae": null
+        },
+        "loss_pct": {
+          "samples": 0,
+          "forecast_mae": null,
+          "persistence_mae": null
+        },
+        "utilization_pct": {
+          "samples": 0,
+          "forecast_mae": null,
+          "persistence_mae": null
+        }
+      },
+      "interval_seconds": [
+        5.066829681396484,
+        9.97131609916687,
+        5.076772451400757,
+        5.09293270111084,
+        4.913867950439453,
+        10.203313112258911,
+        4.778676986694336,
+        5.024158239364624,
+        4.9228997230529785,
+        5.168354749679565,
+        4.929116249084473,
+        5.10155987739563,
+        4.819441318511963,
+        5.059656620025635,
+        10.011805057525635,
+        5.006524085998535,
+        4.986490726470947,
+        4.9569761753082275,
+        5.1721510887146,
+        4.758396625518799,
+        5.1375367641448975,
+        5.4285218715667725,
+        9.394166707992554,
+        5.329681158065796,
+        4.83605432510376,
+        4.9537763595581055,
+        9.926701068878174,
+        5.0161356925964355,
+        4.980369329452515
+      ]
+    }
+  }
+}

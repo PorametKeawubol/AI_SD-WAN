@@ -1,0 +1,14 @@
+{
+  "edge_install": {
+    "identity": "sdw-edge-a",
+    "started": true,
+    "enabled_for_reboot": false,
+    "original_probe_sha256": "754f765a6a3b8b863a7b2fdde7025790fdb814fa3ec61ba911d2f174e1abd906",
+    "new_cache_sha256": "613506675b7cd5d5358951abca2cd06f19d6dfcdaf4f3225d4da0128caadbefe"
+  },
+  "experiment_config": "/opt/ai-sdwan-lab/config/flexiwan.tcg-cache-20261018.local.json",
+  "original_config_unchanged": true,
+  "original_probe_unchanged": true,
+  "temporary_sampler_started": true,
+  "original_command_retained_as_default": true
+}

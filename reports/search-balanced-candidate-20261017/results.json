@@ -1,0 +1,4080 @@
+{
+  "case_manifest": {
+    "suite": "balanced",
+    "version": 2,
+    "case_count": 38,
+    "full_suite_case_count": 38,
+    "full_suite_fault_count": 37,
+    "fault_case_count": 37,
+    "recoverable_fault_count": 36,
+    "group_counts": {
+      "availability": 8,
+      "quality": 15,
+      "stability": 3,
+      "mixed": 6,
+      "telemetry": 6
+    },
+    "complete_suite_selected": true,
+    "initial_priority": "wan1",
+    "scope": "Balanced v2 covers all 8 binary Up/Down states. Other impairments are selected tests. Legacy v1 retains the original definitions.",
+    "cases": [
+      {
+        "id": "CONTROL",
+        "name": "Normal control",
+        "kind": "normal",
+        "links": [],
+        "recoverable": true,
+        "group": "availability",
+        "affected_links": []
+      },
+      {
+        "id": "S01",
+        "name": "WAN1 down",
+        "kind": "down",
+        "links": [
+          "wan1"
+        ],
+        "recoverable": true,
+        "group": "availability",
+        "affected_links": [
+          "wan1"
+        ]
+      },
+      {
+        "id": "S02",
+        "name": "WAN2 down",
+        "kind": "down",
+        "links": [
+          "wan2"
+        ],
+        "recoverable": true,
+        "group": "availability",
+        "affected_links": [
+          "wan2"
+        ]
+      },
+      {
+        "id": "S03",
+        "name": "WAN3 down",
+        "kind": "down",
+        "links": [
+          "wan3"
+        ],
+        "recoverable": true,
+        "group": "availability",
+        "affected_links": [
+          "wan3"
+        ]
+      },
+      {
+        "id": "S04",
+        "name": "WAN1 + WAN2 down",
+        "kind": "down",
+        "links": [
+          "wan1",
+          "wan2"
+        ],
+        "recoverable": true,
+        "group": "availability",
+        "affected_links": [
+          "wan1",
+          "wan2"
+        ]
+      },
+      {
+        "id": "S05",
+        "name": "WAN1 + WAN3 down",
+        "kind": "down",
+        "links": [
+          "wan1",
+          "wan3"
+        ],
+        "recoverable": true,
+        "group": "availability",
+        "affected_links": [
+          "wan1",
+          "wan3"
+        ]
+      },
+      {
+        "id": "S06",
+        "name": "WAN2 + WAN3 down",
+        "kind": "down",
+        "links": [
+          "wan2",
+          "wan3"
+        ],
+        "recoverable": true,
+        "group": "availability",
+        "affected_links": [
+          "wan2",
+          "wan3"
+        ]
+      },
+      {
+        "id": "S07",
+        "name": "All links down",
+        "kind": "down",
+        "links": [
+          "wan1",
+          "wan2",
+          "wan3"
+        ],
+        "recoverable": false,
+        "group": "availability",
+        "affected_links": [
+          "wan1",
+          "wan2",
+          "wan3"
+        ]
+      },
+      {
+        "id": "S08",
+        "name": "High latency",
+        "kind": "latency",
+        "links": [
+          "wan1"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan1"
+        ]
+      },
+      {
+        "id": "S08-wan2",
+        "name": "WAN2: High latency",
+        "kind": "latency",
+        "links": [
+          "wan2"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan2"
+        ]
+      },
+      {
+        "id": "S08-wan3",
+        "name": "WAN3: High latency",
+        "kind": "latency",
+        "links": [
+          "wan3"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan3"
+        ]
+      },
+      {
+        "id": "S09",
+        "name": "High jitter",
+        "kind": "jitter",
+        "links": [
+          "wan1"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan1"
+        ]
+      },
+      {
+        "id": "S09-wan2",
+        "name": "WAN2: High jitter",
+        "kind": "jitter",
+        "links": [
+          "wan2"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan2"
+        ]
+      },
+      {
+        "id": "S09-wan3",
+        "name": "WAN3: High jitter",
+        "kind": "jitter",
+        "links": [
+          "wan3"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan3"
+        ]
+      },
+      {
+        "id": "S10",
+        "name": "Packet loss",
+        "kind": "loss",
+        "links": [
+          "wan1"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan1"
+        ]
+      },
+      {
+        "id": "S10-wan2",
+        "name": "WAN2: Packet loss",
+        "kind": "loss",
+        "links": [
+          "wan2"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan2"
+        ]
+      },
+      {
+        "id": "S10-wan3",
+        "name": "WAN3: Packet loss",
+        "kind": "loss",
+        "links": [
+          "wan3"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan3"
+        ]
+      },
+      {
+        "id": "S11",
+        "name": "Saturation",
+        "kind": "saturation",
+        "links": [
+          "wan1"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan1"
+        ]
+      },
+      {
+        "id": "S11-wan2",
+        "name": "WAN2: Saturation",
+        "kind": "saturation",
+        "links": [
+          "wan2"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan2"
+        ]
+      },
+      {
+        "id": "S11-wan3",
+        "name": "WAN3: Saturation",
+        "kind": "saturation",
+        "links": [
+          "wan3"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan3"
+        ]
+      },
+      {
+        "id": "S12",
+        "name": "Progressive degradation",
+        "kind": "ramp",
+        "links": [
+          "wan1"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan1"
+        ]
+      },
+      {
+        "id": "S12-wan2",
+        "name": "WAN2: Progressive degradation",
+        "kind": "ramp",
+        "links": [
+          "wan2"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan2"
+        ]
+      },
+      {
+        "id": "S12-wan3",
+        "name": "WAN3: Progressive degradation",
+        "kind": "ramp",
+        "links": [
+          "wan3"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan3"
+        ]
+      },
+      {
+        "id": "S13",
+        "name": "Link flapping",
+        "kind": "flap",
+        "links": [
+          "wan1"
+        ],
+        "recoverable": true,
+        "group": "stability",
+        "affected_links": [
+          "wan1"
+        ]
+      },
+      {
+        "id": "S13-wan2",
+        "name": "WAN2: Link flapping",
+        "kind": "flap",
+        "links": [
+          "wan2"
+        ],
+        "recoverable": true,
+        "group": "stability",
+        "affected_links": [
+          "wan2"
+        ]
+      },
+      {
+        "id": "S13-wan3",
+        "name": "WAN3: Link flapping",
+        "kind": "flap",
+        "links": [
+          "wan3"
+        ],
+        "recoverable": true,
+        "group": "stability",
+        "affected_links": [
+          "wan3"
+        ]
+      },
+      {
+        "id": "S14",
+        "name": "Concurrent mixed impairments",
+        "kind": "mixed",
+        "links": [
+          "wan1",
+          "wan2",
+          "wan3"
+        ],
+        "recoverable": true,
+        "group": "mixed",
+        "affected_links": [
+          "wan1",
+          "wan2"
+        ]
+      },
+      {
+        "id": "S14-wan1-wan3",
+        "name": "WAN1 latency + WAN3 loss",
+        "kind": "mixed",
+        "links": [
+          "wan1",
+          "wan3"
+        ],
+        "recoverable": true,
+        "group": "mixed",
+        "affected_links": [
+          "wan1",
+          "wan3"
+        ]
+      },
+      {
+        "id": "S14-wan2-wan1",
+        "name": "WAN2 latency + WAN1 loss",
+        "kind": "mixed",
+        "links": [
+          "wan2",
+          "wan1"
+        ],
+        "recoverable": true,
+        "group": "mixed",
+        "affected_links": [
+          "wan2",
+          "wan1"
+        ]
+      },
+      {
+        "id": "S14-wan2-wan3",
+        "name": "WAN2 latency + WAN3 loss",
+        "kind": "mixed",
+        "links": [
+          "wan2",
+          "wan3"
+        ],
+        "recoverable": true,
+        "group": "mixed",
+        "affected_links": [
+          "wan2",
+          "wan3"
+        ]
+      },
+      {
+        "id": "S14-wan3-wan1",
+        "name": "WAN3 latency + WAN1 loss",
+        "kind": "mixed",
+        "links": [
+          "wan3",
+          "wan1"
+        ],
+        "recoverable": true,
+        "group": "mixed",
+        "affected_links": [
+          "wan3",
+          "wan1"
+        ]
+      },
+      {
+        "id": "S14-wan3-wan2",
+        "name": "WAN3 latency + WAN2 loss",
+        "kind": "mixed",
+        "links": [
+          "wan3",
+          "wan2"
+        ],
+        "recoverable": true,
+        "group": "mixed",
+        "affected_links": [
+          "wan3",
+          "wan2"
+        ]
+      },
+      {
+        "id": "S15",
+        "name": "Missing/stale telemetry",
+        "kind": "missing",
+        "links": [
+          "wan1"
+        ],
+        "recoverable": true,
+        "group": "telemetry",
+        "affected_links": [
+          "wan1"
+        ]
+      },
+      {
+        "id": "S15-wan2",
+        "name": "WAN2: Missing/stale telemetry",
+        "kind": "missing",
+        "links": [
+          "wan2"
+        ],
+        "recoverable": true,
+        "group": "telemetry",
+        "affected_links": [
+          "wan2"
+        ]
+      },
+      {
+        "id": "S15-wan3",
+        "name": "WAN3: Missing/stale telemetry",
+        "kind": "missing",
+        "links": [
+          "wan3"
+        ],
+        "recoverable": true,
+        "group": "telemetry",
+        "affected_links": [
+          "wan3"
+        ]
+      },
+      {
+        "id": "S16",
+        "name": "Corrupt telemetry",
+        "kind": "corrupt",
+        "links": [
+          "wan1"
+        ],
+        "recoverable": true,
+        "group": "telemetry",
+        "affected_links": [
+          "wan1"
+        ]
+      },
+      {
+        "id": "S16-wan2",
+        "name": "WAN2: Corrupt telemetry",
+        "kind": "corrupt",
+        "links": [
+          "wan2"
+        ],
+        "recoverable": true,
+        "group": "telemetry",
+        "affected_links": [
+          "wan2"
+        ]
+      },
+      {
+        "id": "S16-wan3",
+        "name": "WAN3: Corrupt telemetry",
+        "kind": "corrupt",
+        "links": [
+          "wan3"
+        ],
+        "recoverable": true,
+        "group": "telemetry",
+        "affected_links": [
+          "wan3"
+        ]
+      }
+    ],
+    "sha256": "26bf4eb4283d89ed44fa6c840956aaf9221232fc799bb2256247ba2a97d325bf"
+  },
+  "data_kind": "synthetic exogenous replay; not live flexiWAN or measured packet throughput",
+  "repetitions": 3,
+  "profiles": [
+    "voice",
+    "interactive",
+    "bulk"
+  ],
+  "trial_rows": 1710,
+  "evaluation_seeds": [
+    91000,
+    91001,
+    91002
+  ],
+  "model_sha256": "87417b15e5e341368683f1b99274b810367825ccd9d38da8684aae3617613a7a",
+  "model_metadata": {
+    "schema": 2,
+    "feature_names": [
+      "latency_ms_current",
+      "latency_ms_lag1",
+      "latency_ms_lag3",
+      "latency_ms_mean",
+      "latency_ms_std",
+      "latency_ms_trend",
+      "jitter_ms_current",
+      "jitter_ms_lag1",
+      "jitter_ms_lag3",
+      "jitter_ms_mean",
+      "jitter_ms_std",
+      "jitter_ms_trend",
+      "loss_pct_current",
+      "loss_pct_lag1",
+      "loss_pct_lag3",
+      "loss_pct_mean",
+      "loss_pct_std",
+      "loss_pct_trend",
+      "utilization_pct_current",
+      "utilization_pct_lag1",
+      "utilization_pct_lag3",
+      "utilization_pct_mean",
+      "utilization_pct_std",
+      "utilization_pct_trend",
+      "up",
+      "history_fraction"
+    ],
+    "horizon_steps": 6,
+    "horizon_seconds": 30,
+    "window_steps": 12,
+    "interval_seconds": 5,
+    "enabled_metrics": {
+      "latency_ms": true,
+      "jitter_ms": true,
+      "loss_pct": false,
+      "utilization_pct": true
+    },
+    "blend_weights": {
+      "latency_ms": 1.0,
+      "jitter_ms": 1.0,
+      "loss_pct": 0.0,
+      "utilization_pct": 1.0
+    },
+    "linear_heads": {},
+    "selected_parameters": {
+      "latency_ms": {
+        "family": "xgboost",
+        "depth": 5,
+        "lambda": 5,
+        "min_child_weight": 1,
+        "best_iteration": 197,
+        "tuning_weight": 1.0,
+        "candidate_weight": 1.0,
+        "tuning_mae": 16.764440536499023
+      },
+      "jitter_ms": {
+        "family": "xgboost",
+        "depth": 5,
+        "lambda": 5,
+        "min_child_weight": 1,
+        "best_iteration": 237,
+        "tuning_weight": 1.0,
+        "candidate_weight": 1.0,
+        "tuning_mae": 5.007535457611084
+      },
+      "loss_pct": {
+        "family": "xgboost",
+        "depth": 5,
+        "lambda": 5,
+        "min_child_weight": 1,
+        "best_iteration": 176,
+        "tuning_weight": 0.75,
+        "candidate_weight": 0.0,
+        "tuning_mae": 2.8926429748535156
+      },
+      "utilization_pct": {
+        "family": "xgboost",
+        "depth": 5,
+        "lambda": 5,
+        "min_child_weight": 1,
+        "best_iteration": 239,
+        "tuning_weight": 1.0,
+        "candidate_weight": 1.0,
+        "tuning_mae": 3.0069422721862793
+      }
+    },
+    "data_kind": "synthetic",
+    "forecast_sampling": "strict",
+    "dataset_sha256": "f25ebd707d86eea5ce5fd492d49302a3242e37065b40cc49da5939a9de784c4f",
+    "partition_episodes": {
+      "train": [
+        "synthetic-310000",
+        "synthetic-310001",
+        "synthetic-310002",
+        "synthetic-310003",
+        "synthetic-310004",
+        "synthetic-310005",
+        "synthetic-310006",
+        "synthetic-310007",
+        "synthetic-310008",
+        "synthetic-310009",
+        "synthetic-310010",
+        "synthetic-310011",
+        "synthetic-310012",
+        "synthetic-310013",
+        "synthetic-310014",
+        "synthetic-310015",
+        "synthetic-310016",
+        "synthetic-310017",
+        "synthetic-310018",
+        "synthetic-310019",
+        "synthetic-310020",
+        "synthetic-310021",
+        "synthetic-310022",
+        "synthetic-310023",
+        "synthetic-310024",
+        "synthetic-310025",
+        "synthetic-310026",
+        "synthetic-310027",
+        "synthetic-310028",
+        "synthetic-310029",
+        "synthetic-310030",
+        "synthetic-310031",
+        "synthetic-310032",
+        "synthetic-310033",
+        "synthetic-310034",
+        "synthetic-310035",
+        "synthetic-310036",
+        "synthetic-310037",
+        "synthetic-310038",
+        "synthetic-310039",
+        "synthetic-310040",
+        "synthetic-310041",
+        "synthetic-310042",
+        "synthetic-310043",
+        "synthetic-310044",
+        "synthetic-310045",
+        "synthetic-310046",
+        "synthetic-310047",
+        "synthetic-310048",
+        "synthetic-310049",
+        "synthetic-310050",
+        "synthetic-310051",
+        "synthetic-310052",
+        "synthetic-310053",
+        "synthetic-310054",
+        "synthetic-310055",
+        "synthetic-310056",
+        "synthetic-310057",
+        "synthetic-310058",
+        "synthetic-310059"
+      ],
+      "tune": [
+        "synthetic-310060",
+        "synthetic-310061",
+        "synthetic-310062",
+        "synthetic-310063",
+        "synthetic-310064",
+        "synthetic-310065",
+        "synthetic-310066",
+        "synthetic-310067",
+        "synthetic-310068",
+        "synthetic-310069",
+        "synthetic-310070",
+        "synthetic-310071",
+        "synthetic-310072",
+        "synthetic-310073",
+        "synthetic-310074"
+      ],
+      "accept": [
+        "synthetic-310075",
+        "synthetic-310076",
+        "synthetic-310077",
+        "synthetic-310078",
+        "synthetic-310079",
+        "synthetic-310080",
+        "synthetic-310081",
+        "synthetic-310082",
+        "synthetic-310083",
+        "synthetic-310084",
+        "synthetic-310085",
+        "synthetic-310086",
+        "synthetic-310087",
+        "synthetic-310088",
+        "synthetic-310089",
+        "synthetic-310090",
+        "synthetic-310091",
+        "synthetic-310092",
+        "synthetic-310093",
+        "synthetic-310094",
+        "synthetic-310095",
+        "synthetic-310096",
+        "synthetic-310097",
+        "synthetic-310098",
+        "synthetic-310099",
+        "synthetic-310100",
+        "synthetic-310101",
+        "synthetic-310102",
+        "synthetic-310103",
+        "synthetic-310104"
+      ],
+      "holdout": [
+        "synthetic-310105",
+        "synthetic-310106",
+        "synthetic-310107",
+        "synthetic-310108",
+        "synthetic-310109",
+        "synthetic-310110",
+        "synthetic-310111",
+        "synthetic-310112",
+        "synthetic-310113",
+        "synthetic-310114"
+      ]
+    },
+    "offline_candidate": true,
+    "runtime_promoted": false,
+    "testbed_provenance": "synthetic_new_seed_310000"
+  },
+  "guardrails": {
+    "cooldown_seconds": 30,
+    "confirmations": 3,
+    "improvement": 0.15,
+    "prediction_weight": 0.35
+  },
+  "pass_criteria": {
+    "event_sla_attainment_min": 0.98,
+    "maximum_recovery_seconds": 15,
+    "unsafe_selections_after_grace": 0,
+    "false_no_path_ticks": 0,
+    "all_down_detection_seconds_max": 5,
+    "scenario_trial_pass_rate_min": 0.95,
+    "normal_control_switches_max": 2,
+    "notes": "SLA measured only when a true healthy path exists; first 10s of each incident excluded from SLA/safety. All-down is safe handling, not connectivity restoration."
+  },
+  "counts": {
+    "priority": {
+      "handled_count": 28,
+      "fault_cases_total": 37,
+      "restored_count": 27,
+      "recoverable_cases_total": 36,
+      "normal_control_passed": true,
+      "by_group": {
+        "availability": {
+          "case_count": 8,
+          "passed_case_count": 8
+        },
+        "quality": {
+          "case_count": 15,
+          "passed_case_count": 10
+        },
+        "stability": {
+          "case_count": 3,
+          "passed_case_count": 3
+        },
+        "mixed": {
+          "case_count": 6,
+          "passed_case_count": 2
+        },
+        "telemetry": {
+          "case_count": 6,
+          "passed_case_count": 6
+        }
+      }
+    },
+    "reactive": {
+      "handled_count": 37,
+      "fault_cases_total": 37,
+      "restored_count": 36,
+      "recoverable_cases_total": 36,
+      "normal_control_passed": true,
+      "by_group": {
+        "availability": {
+          "case_count": 8,
+          "passed_case_count": 8
+        },
+        "quality": {
+          "case_count": 15,
+          "passed_case_count": 15
+        },
+        "stability": {
+          "case_count": 3,
+          "passed_case_count": 3
+        },
+        "mixed": {
+          "case_count": 6,
+          "passed_case_count": 6
+        },
+        "telemetry": {
+          "case_count": 6,
+          "passed_case_count": 6
+        }
+      }
+    },
+    "linear_trend": {
+      "handled_count": 37,
+      "fault_cases_total": 37,
+      "restored_count": 36,
+      "recoverable_cases_total": 36,
+      "normal_control_passed": true,
+      "by_group": {
+        "availability": {
+          "case_count": 8,
+          "passed_case_count": 8
+        },
+        "quality": {
+          "case_count": 15,
+          "passed_case_count": 15
+        },
+        "stability": {
+          "case_count": 3,
+          "passed_case_count": 3
+        },
+        "mixed": {
+          "case_count": 6,
+          "passed_case_count": 6
+        },
+        "telemetry": {
+          "case_count": 6,
+          "passed_case_count": 6
+        }
+      }
+    },
+    "predictive_unguarded": {
+      "handled_count": 37,
+      "fault_cases_total": 37,
+      "restored_count": 36,
+      "recoverable_cases_total": 36,
+      "normal_control_passed": true,
+      "by_group": {
+        "availability": {
+          "case_count": 8,
+          "passed_case_count": 8
+        },
+        "quality": {
+          "case_count": 15,
+          "passed_case_count": 15
+        },
+        "stability": {
+          "case_count": 3,
+          "passed_case_count": 3
+        },
+        "mixed": {
+          "case_count": 6,
+          "passed_case_count": 6
+        },
+        "telemetry": {
+          "case_count": 6,
+          "passed_case_count": 6
+        }
+      }
+    },
+    "predictive": {
+      "handled_count": 37,
+      "fault_cases_total": 37,
+      "restored_count": 36,
+      "recoverable_cases_total": 36,
+      "normal_control_passed": true,
+      "by_group": {
+        "availability": {
+          "case_count": 8,
+          "passed_case_count": 8
+        },
+        "quality": {
+          "case_count": 15,
+          "passed_case_count": 15
+        },
+        "stability": {
+          "case_count": 3,
+          "passed_case_count": 3
+        },
+        "mixed": {
+          "case_count": 6,
+          "passed_case_count": 6
+        },
+        "telemetry": {
+          "case_count": 6,
+          "passed_case_count": 6
+        }
+      }
+    }
+  },
+  "summary": [
+    {
+      "scenario": "CONTROL",
+      "name": "Normal control",
+      "group": "availability",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": null,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "CONTROL",
+      "name": "Normal control",
+      "group": "availability",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": null,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "CONTROL",
+      "name": "Normal control",
+      "group": "availability",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": null,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "CONTROL",
+      "name": "Normal control",
+      "group": "availability",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": null,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "CONTROL",
+      "name": "Normal control",
+      "group": "availability",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": null,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S01",
+      "name": "WAN1 down",
+      "group": "availability",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S01",
+      "name": "WAN1 down",
+      "group": "availability",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S01",
+      "name": "WAN1 down",
+      "group": "availability",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S01",
+      "name": "WAN1 down",
+      "group": "availability",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S01",
+      "name": "WAN1 down",
+      "group": "availability",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.1111111111111112,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S02",
+      "name": "WAN2 down",
+      "group": "availability",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S02",
+      "name": "WAN2 down",
+      "group": "availability",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S02",
+      "name": "WAN2 down",
+      "group": "availability",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S02",
+      "name": "WAN2 down",
+      "group": "availability",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S02",
+      "name": "WAN2 down",
+      "group": "availability",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S03",
+      "name": "WAN3 down",
+      "group": "availability",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S03",
+      "name": "WAN3 down",
+      "group": "availability",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S03",
+      "name": "WAN3 down",
+      "group": "availability",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S03",
+      "name": "WAN3 down",
+      "group": "availability",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S03",
+      "name": "WAN3 down",
+      "group": "availability",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S04",
+      "name": "WAN1 + WAN2 down",
+      "group": "availability",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S04",
+      "name": "WAN1 + WAN2 down",
+      "group": "availability",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.6666666666666667,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S04",
+      "name": "WAN1 + WAN2 down",
+      "group": "availability",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.6666666666666667,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S04",
+      "name": "WAN1 + WAN2 down",
+      "group": "availability",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S04",
+      "name": "WAN1 + WAN2 down",
+      "group": "availability",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.6666666666666667,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S05",
+      "name": "WAN1 + WAN3 down",
+      "group": "availability",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S05",
+      "name": "WAN1 + WAN3 down",
+      "group": "availability",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S05",
+      "name": "WAN1 + WAN3 down",
+      "group": "availability",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S05",
+      "name": "WAN1 + WAN3 down",
+      "group": "availability",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S05",
+      "name": "WAN1 + WAN3 down",
+      "group": "availability",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.1111111111111112,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S06",
+      "name": "WAN2 + WAN3 down",
+      "group": "availability",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S06",
+      "name": "WAN2 + WAN3 down",
+      "group": "availability",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S06",
+      "name": "WAN2 + WAN3 down",
+      "group": "availability",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S06",
+      "name": "WAN2 + WAN3 down",
+      "group": "availability",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S06",
+      "name": "WAN2 + WAN3 down",
+      "group": "availability",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S07",
+      "name": "All links down",
+      "group": "availability",
+      "strategy": "priority",
+      "recoverable": false,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": null,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S07",
+      "name": "All links down",
+      "group": "availability",
+      "strategy": "reactive",
+      "recoverable": false,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": null,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S07",
+      "name": "All links down",
+      "group": "availability",
+      "strategy": "linear_trend",
+      "recoverable": false,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": null,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S07",
+      "name": "All links down",
+      "group": "availability",
+      "strategy": "predictive_unguarded",
+      "recoverable": false,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": null,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S07",
+      "name": "All links down",
+      "group": "availability",
+      "strategy": "predictive",
+      "recoverable": false,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": null,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S08",
+      "name": "High latency",
+      "group": "quality",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 0.0,
+      "passed": false,
+      "sla_attainment_mean": 0.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 450,
+      "seed_pass_wilson_95_ci": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ]
+    },
+    {
+      "scenario": "S08",
+      "name": "High latency",
+      "group": "quality",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S08",
+      "name": "High latency",
+      "group": "quality",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S08",
+      "name": "High latency",
+      "group": "quality",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S08",
+      "name": "High latency",
+      "group": "quality",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.1111111111111112,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S08-wan2",
+      "name": "WAN2: High latency",
+      "group": "quality",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S08-wan2",
+      "name": "WAN2: High latency",
+      "group": "quality",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S08-wan2",
+      "name": "WAN2: High latency",
+      "group": "quality",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S08-wan2",
+      "name": "WAN2: High latency",
+      "group": "quality",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S08-wan2",
+      "name": "WAN2: High latency",
+      "group": "quality",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S08-wan3",
+      "name": "WAN3: High latency",
+      "group": "quality",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S08-wan3",
+      "name": "WAN3: High latency",
+      "group": "quality",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S08-wan3",
+      "name": "WAN3: High latency",
+      "group": "quality",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S08-wan3",
+      "name": "WAN3: High latency",
+      "group": "quality",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S08-wan3",
+      "name": "WAN3: High latency",
+      "group": "quality",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S09",
+      "name": "High jitter",
+      "group": "quality",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 0.0,
+      "passed": false,
+      "sla_attainment_mean": 0.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 450,
+      "seed_pass_wilson_95_ci": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ]
+    },
+    {
+      "scenario": "S09",
+      "name": "High jitter",
+      "group": "quality",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S09",
+      "name": "High jitter",
+      "group": "quality",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S09",
+      "name": "High jitter",
+      "group": "quality",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S09",
+      "name": "High jitter",
+      "group": "quality",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.1111111111111112,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S09-wan2",
+      "name": "WAN2: High jitter",
+      "group": "quality",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S09-wan2",
+      "name": "WAN2: High jitter",
+      "group": "quality",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S09-wan2",
+      "name": "WAN2: High jitter",
+      "group": "quality",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S09-wan2",
+      "name": "WAN2: High jitter",
+      "group": "quality",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S09-wan2",
+      "name": "WAN2: High jitter",
+      "group": "quality",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S09-wan3",
+      "name": "WAN3: High jitter",
+      "group": "quality",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S09-wan3",
+      "name": "WAN3: High jitter",
+      "group": "quality",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S09-wan3",
+      "name": "WAN3: High jitter",
+      "group": "quality",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S09-wan3",
+      "name": "WAN3: High jitter",
+      "group": "quality",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S09-wan3",
+      "name": "WAN3: High jitter",
+      "group": "quality",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S10",
+      "name": "Packet loss",
+      "group": "quality",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 0.0,
+      "passed": false,
+      "sla_attainment_mean": 0.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 450,
+      "seed_pass_wilson_95_ci": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ]
+    },
+    {
+      "scenario": "S10",
+      "name": "Packet loss",
+      "group": "quality",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S10",
+      "name": "Packet loss",
+      "group": "quality",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S10",
+      "name": "Packet loss",
+      "group": "quality",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S10",
+      "name": "Packet loss",
+      "group": "quality",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S10-wan2",
+      "name": "WAN2: Packet loss",
+      "group": "quality",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S10-wan2",
+      "name": "WAN2: Packet loss",
+      "group": "quality",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S10-wan2",
+      "name": "WAN2: Packet loss",
+      "group": "quality",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S10-wan2",
+      "name": "WAN2: Packet loss",
+      "group": "quality",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S10-wan2",
+      "name": "WAN2: Packet loss",
+      "group": "quality",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S10-wan3",
+      "name": "WAN3: Packet loss",
+      "group": "quality",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S10-wan3",
+      "name": "WAN3: Packet loss",
+      "group": "quality",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S10-wan3",
+      "name": "WAN3: Packet loss",
+      "group": "quality",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S10-wan3",
+      "name": "WAN3: Packet loss",
+      "group": "quality",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S10-wan3",
+      "name": "WAN3: Packet loss",
+      "group": "quality",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S11",
+      "name": "Saturation",
+      "group": "quality",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 0.0,
+      "passed": false,
+      "sla_attainment_mean": 0.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 450,
+      "seed_pass_wilson_95_ci": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ]
+    },
+    {
+      "scenario": "S11",
+      "name": "Saturation",
+      "group": "quality",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S11",
+      "name": "Saturation",
+      "group": "quality",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S11",
+      "name": "Saturation",
+      "group": "quality",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S11",
+      "name": "Saturation",
+      "group": "quality",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S11-wan2",
+      "name": "WAN2: Saturation",
+      "group": "quality",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S11-wan2",
+      "name": "WAN2: Saturation",
+      "group": "quality",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S11-wan2",
+      "name": "WAN2: Saturation",
+      "group": "quality",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S11-wan2",
+      "name": "WAN2: Saturation",
+      "group": "quality",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S11-wan2",
+      "name": "WAN2: Saturation",
+      "group": "quality",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S11-wan3",
+      "name": "WAN3: Saturation",
+      "group": "quality",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S11-wan3",
+      "name": "WAN3: Saturation",
+      "group": "quality",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S11-wan3",
+      "name": "WAN3: Saturation",
+      "group": "quality",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S11-wan3",
+      "name": "WAN3: Saturation",
+      "group": "quality",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S11-wan3",
+      "name": "WAN3: Saturation",
+      "group": "quality",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S12",
+      "name": "Progressive degradation",
+      "group": "quality",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 0.0,
+      "passed": false,
+      "sla_attainment_mean": 0.13275029944338756,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 415,
+      "seed_pass_wilson_95_ci": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ]
+    },
+    {
+      "scenario": "S12",
+      "name": "Progressive degradation",
+      "group": "quality",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S12",
+      "name": "Progressive degradation",
+      "group": "quality",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S12",
+      "name": "Progressive degradation",
+      "group": "quality",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S12",
+      "name": "Progressive degradation",
+      "group": "quality",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.1111111111111112,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S12-wan2",
+      "name": "WAN2: Progressive degradation",
+      "group": "quality",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S12-wan2",
+      "name": "WAN2: Progressive degradation",
+      "group": "quality",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S12-wan2",
+      "name": "WAN2: Progressive degradation",
+      "group": "quality",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S12-wan2",
+      "name": "WAN2: Progressive degradation",
+      "group": "quality",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S12-wan2",
+      "name": "WAN2: Progressive degradation",
+      "group": "quality",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S12-wan3",
+      "name": "WAN3: Progressive degradation",
+      "group": "quality",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S12-wan3",
+      "name": "WAN3: Progressive degradation",
+      "group": "quality",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S12-wan3",
+      "name": "WAN3: Progressive degradation",
+      "group": "quality",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S12-wan3",
+      "name": "WAN3: Progressive degradation",
+      "group": "quality",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S12-wan3",
+      "name": "WAN3: Progressive degradation",
+      "group": "quality",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S13",
+      "name": "Link flapping",
+      "group": "stability",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 28.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S13",
+      "name": "Link flapping",
+      "group": "stability",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S13",
+      "name": "Link flapping",
+      "group": "stability",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S13",
+      "name": "Link flapping",
+      "group": "stability",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 28.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S13",
+      "name": "Link flapping",
+      "group": "stability",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S13-wan2",
+      "name": "WAN2: Link flapping",
+      "group": "stability",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S13-wan2",
+      "name": "WAN2: Link flapping",
+      "group": "stability",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S13-wan2",
+      "name": "WAN2: Link flapping",
+      "group": "stability",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S13-wan2",
+      "name": "WAN2: Link flapping",
+      "group": "stability",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S13-wan2",
+      "name": "WAN2: Link flapping",
+      "group": "stability",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S13-wan3",
+      "name": "WAN3: Link flapping",
+      "group": "stability",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S13-wan3",
+      "name": "WAN3: Link flapping",
+      "group": "stability",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S13-wan3",
+      "name": "WAN3: Link flapping",
+      "group": "stability",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S13-wan3",
+      "name": "WAN3: Link flapping",
+      "group": "stability",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S13-wan3",
+      "name": "WAN3: Link flapping",
+      "group": "stability",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14",
+      "name": "Concurrent mixed impairments",
+      "group": "mixed",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 0.0,
+      "passed": false,
+      "sla_attainment_mean": 0.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 450,
+      "seed_pass_wilson_95_ci": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ]
+    },
+    {
+      "scenario": "S14",
+      "name": "Concurrent mixed impairments",
+      "group": "mixed",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.6666666666666667,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14",
+      "name": "Concurrent mixed impairments",
+      "group": "mixed",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.6666666666666667,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14",
+      "name": "Concurrent mixed impairments",
+      "group": "mixed",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14",
+      "name": "Concurrent mixed impairments",
+      "group": "mixed",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.6666666666666667,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan1-wan3",
+      "name": "WAN1 latency + WAN3 loss",
+      "group": "mixed",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 0.0,
+      "passed": false,
+      "sla_attainment_mean": 0.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 450,
+      "seed_pass_wilson_95_ci": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ]
+    },
+    {
+      "scenario": "S14-wan1-wan3",
+      "name": "WAN1 latency + WAN3 loss",
+      "group": "mixed",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan1-wan3",
+      "name": "WAN1 latency + WAN3 loss",
+      "group": "mixed",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan1-wan3",
+      "name": "WAN1 latency + WAN3 loss",
+      "group": "mixed",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan1-wan3",
+      "name": "WAN1 latency + WAN3 loss",
+      "group": "mixed",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.1111111111111112,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan2-wan1",
+      "name": "WAN2 latency + WAN1 loss",
+      "group": "mixed",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 0.0,
+      "passed": false,
+      "sla_attainment_mean": 0.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 450,
+      "seed_pass_wilson_95_ci": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ]
+    },
+    {
+      "scenario": "S14-wan2-wan1",
+      "name": "WAN2 latency + WAN1 loss",
+      "group": "mixed",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.6666666666666667,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan2-wan1",
+      "name": "WAN2 latency + WAN1 loss",
+      "group": "mixed",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.6666666666666667,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan2-wan1",
+      "name": "WAN2 latency + WAN1 loss",
+      "group": "mixed",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan2-wan1",
+      "name": "WAN2 latency + WAN1 loss",
+      "group": "mixed",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.6666666666666667,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan2-wan3",
+      "name": "WAN2 latency + WAN3 loss",
+      "group": "mixed",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan2-wan3",
+      "name": "WAN2 latency + WAN3 loss",
+      "group": "mixed",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan2-wan3",
+      "name": "WAN2 latency + WAN3 loss",
+      "group": "mixed",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan2-wan3",
+      "name": "WAN2 latency + WAN3 loss",
+      "group": "mixed",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan2-wan3",
+      "name": "WAN2 latency + WAN3 loss",
+      "group": "mixed",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan3-wan1",
+      "name": "WAN3 latency + WAN1 loss",
+      "group": "mixed",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 0.0,
+      "passed": false,
+      "sla_attainment_mean": 0.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 450,
+      "seed_pass_wilson_95_ci": [
+        5.551115123125783e-17,
+        0.5614970317550454
+      ]
+    },
+    {
+      "scenario": "S14-wan3-wan1",
+      "name": "WAN3 latency + WAN1 loss",
+      "group": "mixed",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan3-wan1",
+      "name": "WAN3 latency + WAN1 loss",
+      "group": "mixed",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan3-wan1",
+      "name": "WAN3 latency + WAN1 loss",
+      "group": "mixed",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan3-wan1",
+      "name": "WAN3 latency + WAN1 loss",
+      "group": "mixed",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan3-wan2",
+      "name": "WAN3 latency + WAN2 loss",
+      "group": "mixed",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan3-wan2",
+      "name": "WAN3 latency + WAN2 loss",
+      "group": "mixed",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan3-wan2",
+      "name": "WAN3 latency + WAN2 loss",
+      "group": "mixed",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan3-wan2",
+      "name": "WAN3 latency + WAN2 loss",
+      "group": "mixed",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S14-wan3-wan2",
+      "name": "WAN3 latency + WAN2 loss",
+      "group": "mixed",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S15",
+      "name": "Missing/stale telemetry",
+      "group": "telemetry",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S15",
+      "name": "Missing/stale telemetry",
+      "group": "telemetry",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S15",
+      "name": "Missing/stale telemetry",
+      "group": "telemetry",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S15",
+      "name": "Missing/stale telemetry",
+      "group": "telemetry",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S15",
+      "name": "Missing/stale telemetry",
+      "group": "telemetry",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.1111111111111112,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S15-wan2",
+      "name": "WAN2: Missing/stale telemetry",
+      "group": "telemetry",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S15-wan2",
+      "name": "WAN2: Missing/stale telemetry",
+      "group": "telemetry",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S15-wan2",
+      "name": "WAN2: Missing/stale telemetry",
+      "group": "telemetry",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S15-wan2",
+      "name": "WAN2: Missing/stale telemetry",
+      "group": "telemetry",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S15-wan2",
+      "name": "WAN2: Missing/stale telemetry",
+      "group": "telemetry",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S15-wan3",
+      "name": "WAN3: Missing/stale telemetry",
+      "group": "telemetry",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S15-wan3",
+      "name": "WAN3: Missing/stale telemetry",
+      "group": "telemetry",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S15-wan3",
+      "name": "WAN3: Missing/stale telemetry",
+      "group": "telemetry",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S15-wan3",
+      "name": "WAN3: Missing/stale telemetry",
+      "group": "telemetry",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S15-wan3",
+      "name": "WAN3: Missing/stale telemetry",
+      "group": "telemetry",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S16",
+      "name": "Corrupt telemetry",
+      "group": "telemetry",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 10,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S16",
+      "name": "Corrupt telemetry",
+      "group": "telemetry",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 10,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S16",
+      "name": "Corrupt telemetry",
+      "group": "telemetry",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.0,
+      "recovery_seconds_max": 10,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S16",
+      "name": "Corrupt telemetry",
+      "group": "telemetry",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 2.0,
+      "recovery_seconds_max": 10,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S16",
+      "name": "Corrupt telemetry",
+      "group": "telemetry",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 1.1111111111111112,
+      "recovery_seconds_max": 10,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S16-wan2",
+      "name": "WAN2: Corrupt telemetry",
+      "group": "telemetry",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S16-wan2",
+      "name": "WAN2: Corrupt telemetry",
+      "group": "telemetry",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S16-wan2",
+      "name": "WAN2: Corrupt telemetry",
+      "group": "telemetry",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S16-wan2",
+      "name": "WAN2: Corrupt telemetry",
+      "group": "telemetry",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S16-wan2",
+      "name": "WAN2: Corrupt telemetry",
+      "group": "telemetry",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S16-wan3",
+      "name": "WAN3: Corrupt telemetry",
+      "group": "telemetry",
+      "strategy": "priority",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S16-wan3",
+      "name": "WAN3: Corrupt telemetry",
+      "group": "telemetry",
+      "strategy": "reactive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S16-wan3",
+      "name": "WAN3: Corrupt telemetry",
+      "group": "telemetry",
+      "strategy": "linear_trend",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S16-wan3",
+      "name": "WAN3: Corrupt telemetry",
+      "group": "telemetry",
+      "strategy": "predictive_unguarded",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    },
+    {
+      "scenario": "S16-wan3",
+      "name": "WAN3: Corrupt telemetry",
+      "group": "telemetry",
+      "strategy": "predictive",
+      "recoverable": true,
+      "pass_rate": 1.0,
+      "passed": true,
+      "sla_attainment_mean": 1.0,
+      "switches_mean": 0.0,
+      "recovery_seconds_max": 0.0,
+      "seed_pass_wilson_95_ci": [
+        0.4385029682449546,
+        1
+      ]
+    }
+  ],
+  "comparisons": {
+    "priority": {
+      "paired_sla_difference": 0.24631249168212813,
+      "bootstrap_95_ci_by_seed": [
+        0.2459795321637428,
+        0.2465277777777778
+      ]
+    },
+    "reactive": {
+      "paired_sla_difference": 0.0,
+      "bootstrap_95_ci_by_seed": [
+        0.0,
+        0.0
+      ]
+    },
+    "linear_trend": {
+      "paired_sla_difference": 0.0,
+      "bootstrap_95_ci_by_seed": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "quarantined_rows": 759,
+  "heldout_prediction_mae": {
+    "latency_ms": 20.423863289739415,
+    "jitter_ms": 3.643316051082176,
+    "loss_pct": 1.1199252784496065,
+    "utilization_pct": 2.362163217361423
+  },
+  "heldout_persistence_mae": {
+    "latency_ms": 17.598077983782595,
+    "jitter_ms": 3.275372905293506,
+    "loss_pct": 1.1199252789365297,
+    "utilization_pct": 2.7247595494282084
+  },
+  "limitations": [
+    "Only the 8 binary Up/Down states are exhaustive; other impairment cases are selected tests.",
+    "Initial priority is WAN1; targeting WAN2/WAN3 also exercises standby handling, not guaranteed active-path failover.",
+    "No real network, controller job latency, traffic feedback, or flow/session migration is modeled.",
+    "Available bandwidth is a capacity proxy, not measured goodput.",
+    "Sudden faults have no guaranteed predictive precursors.",
+    "Safety and failover gains partly come from guardrails, not from ML.",
+    "S07 cannot restore connectivity; it only measures correct no-path detection.",
+    "Scenario pass requires every application profile to pass for >=95% of seeds; uncertainty is resampled by seed."
+  ],
+  "progressive_degradation_analysis": {
+    "priority": {
+      "cases": [
+        "S12",
+        "S12-wan2",
+        "S12-wan3"
+      ],
+      "proactive_trials": 0,
+      "total_trials": 27,
+      "lead_seconds_mean_when_proactive": null,
+      "switches_mean": 0.0
+    },
+    "reactive": {
+      "cases": [
+        "S12",
+        "S12-wan2",
+        "S12-wan3"
+      ],
+      "proactive_trials": 9,
+      "total_trials": 27,
+      "lead_seconds_mean_when_proactive": 35.0,
+      "switches_mean": 0.3333333333333333
+    },
+    "linear_trend": {
+      "cases": [
+        "S12",
+        "S12-wan2",
+        "S12-wan3"
+      ],
+      "proactive_trials": 9,
+      "total_trials": 27,
+      "lead_seconds_mean_when_proactive": 36.666666666666664,
+      "switches_mean": 0.3333333333333333
+    },
+    "predictive_unguarded": {
+      "cases": [
+        "S12",
+        "S12-wan2",
+        "S12-wan3"
+      ],
+      "proactive_trials": 9,
+      "total_trials": 27,
+      "lead_seconds_mean_when_proactive": 57.77777777777778,
+      "switches_mean": 0.6666666666666666
+    },
+    "predictive": {
+      "cases": [
+        "S12",
+        "S12-wan2",
+        "S12-wan3"
+      ],
+      "proactive_trials": 9,
+      "total_trials": 27,
+      "lead_seconds_mean_when_proactive": 36.111111111111114,
+      "switches_mean": 0.37037037037037035
+    }
+  }
+}

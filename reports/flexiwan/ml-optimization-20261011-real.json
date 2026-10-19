@@ -1,0 +1,367 @@
+{
+  "created_at": "2026-10-11T06:29:43.863299+00:00",
+  "data_kind": "real_recorded_probe",
+  "dataset_sha256": "b9eef42e2b668fbfadcf5f34063d51e5dc870449d4edeba312c8c1e6d243f82b",
+  "model_sha256": "47585df18e137b4730fb59ce71db4c775da54acb10351bb1ec8b5db7d86dc96c",
+  "protocol": {
+    "partitions": {
+      "train": 3,
+      "tune": 1,
+      "accept": 1,
+      "holdout": 3
+    },
+    "grouping": "whole chronological episodes; all WANs kept together",
+    "max_depths": [
+      3,
+      5
+    ],
+    "blend_weights": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "selection": "tuning only; ties favor smaller blend weight then shallower trees",
+    "acceptance": {
+      "minimum_relative_mae_improvement": 0.02,
+      "minimum_episode_groups": 3,
+      "minimum_samples_per_metric": 30,
+      "paired_episode_block_95_ci_upper_bound": "strictly below zero",
+      "rejection": "persistence; never retry a different candidate on acceptance"
+    },
+    "holdout": "diagnostic only, evaluated after selection and acceptance are frozen",
+    "runtime_promotion": false,
+    "network_access": false,
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 20261011
+  },
+  "partition_episodes": {
+    "train": [
+      "natural-wan-20261009-162315",
+      "natural-wan-20261009-163656",
+      "natural-wan-20261009-195335"
+    ],
+    "tune": [
+      "natural-wan-20261010-161007"
+    ],
+    "accept": [
+      "natural-wan-20261010-165215"
+    ],
+    "holdout": [
+      "real-traffic-20261011-054158-1767b9",
+      "real-traffic-20261011-055036-dfcea6",
+      "real-traffic-20261011-055453-5a2b16"
+    ]
+  },
+  "window_counters": {
+    "train": {
+      "candidate_windows": 31886,
+      "forecast_available_windows": 31653,
+      "scored_windows": 31479,
+      "future_target_missing": 174,
+      "history_rejected": 233
+    },
+    "tune": {
+      "candidate_windows": 1425,
+      "history_rejected": 171,
+      "forecast_available_windows": 1254,
+      "scored_windows": 1206,
+      "future_target_missing": 48
+    },
+    "accept": {
+      "candidate_windows": 27177,
+      "history_rejected": 1083,
+      "forecast_available_windows": 26094,
+      "scored_windows": 25809,
+      "future_target_missing": 285
+    },
+    "holdout": {
+      "candidate_windows": 693,
+      "history_rejected": 108,
+      "forecast_available_windows": 585,
+      "scored_windows": 486,
+      "future_target_missing": 99
+    }
+  },
+  "metrics": {
+    "latency_ms": {
+      "acceptance_gate": {
+        "accepted": false,
+        "reasons": [
+          "insufficient_acceptance_episode_groups",
+          "episode_block_ci_does_not_exclude_zero"
+        ],
+        "samples": 25809,
+        "episode_groups": 1,
+        "selected_mae": 8.006138801574707,
+        "persistence_mae": 10.084983825683594,
+        "relative_mae_improvement": 0.20613270780015114,
+        "paired_episode_mean_mae_difference": -2.0788447856903076,
+        "bootstrap_95_ci_episode_blocks": null
+      },
+      "partitions": {
+        "train": {
+          "samples": 31479,
+          "episode_groups": 3,
+          "persistence_mae": 10.040369033813477,
+          "selected_mae": 7.480232238769531,
+          "deployed_mae": 10.040369033813477
+        },
+        "tune": {
+          "samples": 1206,
+          "episode_groups": 1,
+          "persistence_mae": 9.296857833862305,
+          "selected_mae": 7.275811672210693,
+          "deployed_mae": 9.296857833862305
+        },
+        "accept": {
+          "samples": 25809,
+          "episode_groups": 1,
+          "persistence_mae": 10.084983825683594,
+          "selected_mae": 8.006138801574707,
+          "deployed_mae": 10.084983825683594
+        },
+        "holdout": {
+          "samples": 486,
+          "episode_groups": 3,
+          "persistence_mae": 21.18004035949707,
+          "selected_mae": 21.919403076171875,
+          "deployed_mae": 21.18004035949707
+        }
+      }
+    },
+    "jitter_ms": {
+      "acceptance_gate": {
+        "accepted": false,
+        "reasons": [
+          "insufficient_acceptance_episode_groups",
+          "episode_block_ci_does_not_exclude_zero"
+        ],
+        "samples": 25809,
+        "episode_groups": 1,
+        "selected_mae": 1.0797741413116455,
+        "persistence_mae": 1.3503249883651733,
+        "relative_mae_improvement": 0.2003598018141406,
+        "paired_episode_mean_mae_difference": -0.270550936460495,
+        "bootstrap_95_ci_episode_blocks": null
+      },
+      "partitions": {
+        "train": {
+          "samples": 31479,
+          "episode_groups": 3,
+          "persistence_mae": 1.366935133934021,
+          "selected_mae": 1.0251929759979248,
+          "deployed_mae": 1.366935133934021
+        },
+        "tune": {
+          "samples": 1206,
+          "episode_groups": 1,
+          "persistence_mae": 1.2403812408447266,
+          "selected_mae": 0.9823605418205261,
+          "deployed_mae": 1.2403812408447266
+        },
+        "accept": {
+          "samples": 25809,
+          "episode_groups": 1,
+          "persistence_mae": 1.3503249883651733,
+          "selected_mae": 1.0797741413116455,
+          "deployed_mae": 1.3503249883651733
+        },
+        "holdout": {
+          "samples": 486,
+          "episode_groups": 3,
+          "persistence_mae": 8.900651931762695,
+          "selected_mae": 9.07548713684082,
+          "deployed_mae": 8.900651931762695
+        }
+      }
+    },
+    "loss_pct": {
+      "acceptance_gate": {
+        "accepted": false,
+        "reasons": [
+          "insufficient_acceptance_episode_groups",
+          "episode_block_ci_does_not_exclude_zero"
+        ],
+        "samples": 25809,
+        "episode_groups": 1,
+        "selected_mae": 0.4811864197254181,
+        "persistence_mae": 0.708280086517334,
+        "relative_mae_improvement": 0.32062692586565916,
+        "paired_episode_mean_mae_difference": -0.22709360718727112,
+        "bootstrap_95_ci_episode_blocks": null
+      },
+      "partitions": {
+        "train": {
+          "samples": 31479,
+          "episode_groups": 3,
+          "persistence_mae": 0.6983067989349365,
+          "selected_mae": 0.4745199978351593,
+          "deployed_mae": 0.6983067989349365
+        },
+        "tune": {
+          "samples": 1206,
+          "episode_groups": 1,
+          "persistence_mae": 0.5522388219833374,
+          "selected_mae": 0.37361860275268555,
+          "deployed_mae": 0.5522388219833374
+        },
+        "accept": {
+          "samples": 25809,
+          "episode_groups": 1,
+          "persistence_mae": 0.708280086517334,
+          "selected_mae": 0.4811864197254181,
+          "deployed_mae": 0.708280086517334
+        },
+        "holdout": {
+          "samples": 486,
+          "episode_groups": 3,
+          "persistence_mae": 0.8477365970611572,
+          "selected_mae": 0.6952958106994629,
+          "deployed_mae": 0.8477365970611572
+        }
+      }
+    },
+    "utilization_pct": {
+      "acceptance_gate": {
+        "accepted": false,
+        "reasons": [
+          "insufficient_acceptance_episode_groups",
+          "episode_block_ci_does_not_exclude_zero"
+        ],
+        "samples": 25809,
+        "episode_groups": 1,
+        "selected_mae": 2.250218629837036,
+        "persistence_mae": 2.8656349182128906,
+        "relative_mae_improvement": 0.21475739441353872,
+        "paired_episode_mean_mae_difference": -0.6154162287712097,
+        "bootstrap_95_ci_episode_blocks": null
+      },
+      "partitions": {
+        "train": {
+          "samples": 31479,
+          "episode_groups": 3,
+          "persistence_mae": 2.861161947250366,
+          "selected_mae": 2.1101508140563965,
+          "deployed_mae": 2.861161947250366
+        },
+        "tune": {
+          "samples": 1206,
+          "episode_groups": 1,
+          "persistence_mae": 2.579691171646118,
+          "selected_mae": 2.0230815410614014,
+          "deployed_mae": 2.579691171646118
+        },
+        "accept": {
+          "samples": 25809,
+          "episode_groups": 1,
+          "persistence_mae": 2.8656349182128906,
+          "selected_mae": 2.250218629837036,
+          "deployed_mae": 2.8656349182128906
+        },
+        "holdout": {
+          "samples": 486,
+          "episode_groups": 3,
+          "persistence_mae": 0.7890638709068298,
+          "selected_mae": 2.013690710067749,
+          "deployed_mae": 0.7890638709068298
+        }
+      }
+    }
+  },
+  "blend_weights": {
+    "latency_ms": 0.0,
+    "jitter_ms": 0.0,
+    "loss_pct": 0.0,
+    "utilization_pct": 0.0
+  },
+  "runtime_promoted": false,
+  "model_validated_on_real_data": false,
+  "limitations": [
+    "Episode groups, not overlapping windows, are the bootstrap resampling unit.",
+    "Acceptance gates forecast MAE; routing and application benefits require separate paired trials.",
+    "Rejected metrics use persistence; no alternative is selected after seeing acceptance.",
+    "Holdout results are diagnostic and never change selected parameters or weights.",
+    "No live controller, model deployment, telemetry mutation, or network access is performed.",
+    "No claim of a globally optimal model; the declared finite search grid was evaluated once."
+  ],
+  "frozen_baseline_diagnostic": {
+    "model_sha256": "b7b72bfa7c1f34be948b397c4aaebdc639093657c15b444992d8bef3b2bbfc7d",
+    "partitions": {
+      "train": {
+        "latency_ms": {
+          "samples": 31479,
+          "mae": 17.451435089111328
+        },
+        "jitter_ms": {
+          "samples": 31479,
+          "mae": 2.727778434753418
+        },
+        "loss_pct": {
+          "samples": 31479,
+          "mae": 0.6983067989349365
+        },
+        "utilization_pct": {
+          "samples": 31479,
+          "mae": 4.553925037384033
+        }
+      },
+      "tune": {
+        "latency_ms": {
+          "samples": 1206,
+          "mae": 16.99711799621582
+        },
+        "jitter_ms": {
+          "samples": 1206,
+          "mae": 2.548992872238159
+        },
+        "loss_pct": {
+          "samples": 1206,
+          "mae": 0.5522388219833374
+        },
+        "utilization_pct": {
+          "samples": 1206,
+          "mae": 4.456269264221191
+        }
+      },
+      "accept": {
+        "latency_ms": {
+          "samples": 25809,
+          "mae": 17.483402252197266
+        },
+        "jitter_ms": {
+          "samples": 25809,
+          "mae": 2.710670232772827
+        },
+        "loss_pct": {
+          "samples": 25809,
+          "mae": 0.708280086517334
+        },
+        "utilization_pct": {
+          "samples": 25809,
+          "mae": 4.54870080947876
+        }
+      },
+      "holdout": {
+        "latency_ms": {
+          "samples": 486,
+          "mae": 30.914377212524414
+        },
+        "jitter_ms": {
+          "samples": 486,
+          "mae": 11.303444862365723
+        },
+        "loss_pct": {
+          "samples": 486,
+          "mae": 0.8477365970611572
+        },
+        "utilization_pct": {
+          "samples": 486,
+          "mae": 3.3602490425109863
+        }
+      }
+    }
+  },
+  "experiment_scope": "Posthoc transfer diagnostic; repeated natural seed, already inspected actual telemetry, insufficient independent acceptance groups"
+}

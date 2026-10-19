@@ -1,0 +1,10 @@
+{
+  "observed_at": 1792269329.810595,
+  "action": "readback-only reconciliation; no policy PUT or replay",
+  "journal": "0cf3e5751cf3e3a810df08f6228be284c301e4588b298e76071f3d03c044a20f.json",
+  "before_phase": "queued",
+  "after_phase": "verified",
+  "all_jobs_complete": true,
+  "both_agents_match_controller": true,
+  "current_wan": "wan2"
+}

@@ -1,0 +1,320 @@
+{
+  "model_sha256": "6397fe7394d23e3579e1ee2215dfd671097278ac890ee0b0e83f6bb1e01afc82",
+  "dataset_sha256": "a13b40d455bd18d17a8d7479eddbe705707e65825dd8532d13a6a705148adc7c",
+  "holdout_episodes": [
+    "link-2026229214",
+    "link-2026237133",
+    "link-2026245052"
+  ],
+  "runtime_promoted": false,
+  "contribution_scope": "Mean absolute exact TreeSHAP contribution to the learned residual on eligible holdout windows. Descriptive, not causal or a selection criterion.",
+  "metrics": {
+    "latency_ms": {
+      "weight": 1.0,
+      "windows": 69,
+      "reason": "Linear head"
+    },
+    "jitter_ms": {
+      "weight": 1.0,
+      "windows": 69,
+      "residual_contributions": {
+        "latency_ms_current": 0.0059149558655917645,
+        "latency_ms_lag1": 0.0010180033277720213,
+        "latency_ms_lag3": 0.008567665703594685,
+        "latency_ms_mean": 0.0,
+        "latency_ms_std": 0.011122032068669796,
+        "latency_ms_trend": 0.05625269189476967,
+        "jitter_ms_current": 1.344011664390564,
+        "jitter_ms_lag1": 0.1295825093984604,
+        "jitter_ms_lag3": 0.17187727987766266,
+        "jitter_ms_mean": 0.14675724506378174,
+        "jitter_ms_std": 0.03191129490733147,
+        "jitter_ms_trend": 0.12152741104364395,
+        "loss_pct_current": 0.0,
+        "loss_pct_lag1": 0.0,
+        "loss_pct_lag3": 0.0,
+        "loss_pct_mean": 0.030802330002188683,
+        "loss_pct_std": 0.0058242385275661945,
+        "loss_pct_trend": 0.0,
+        "utilization_pct_current": 0.00796341523528099,
+        "utilization_pct_lag1": 0.03286067023873329,
+        "utilization_pct_lag3": 0.05613229051232338,
+        "utilization_pct_mean": 0.014217988587915897,
+        "utilization_pct_std": 0.0021579405292868614,
+        "utilization_pct_trend": 0.08086390793323517,
+        "up": 0.0,
+        "history_fraction": 0.0
+      },
+      "contribution_sum_verified": true
+    },
+    "loss_pct": {
+      "weight": 1.0,
+      "windows": 69,
+      "reason": "Linear head"
+    },
+    "utilization_pct": {
+      "weight": 1.0,
+      "windows": 69,
+      "residual_contributions": {
+        "latency_ms_current": 0.14684945344924927,
+        "latency_ms_lag1": 0.2686694860458374,
+        "latency_ms_lag3": 0.03148428723216057,
+        "latency_ms_mean": 0.08346646279096603,
+        "latency_ms_std": 0.25927242636680603,
+        "latency_ms_trend": 0.14187747240066528,
+        "jitter_ms_current": 0.6026492118835449,
+        "jitter_ms_lag1": 1.0580837726593018,
+        "jitter_ms_lag3": 0.6964862942695618,
+        "jitter_ms_mean": 1.346527099609375,
+        "jitter_ms_std": 0.28936922550201416,
+        "jitter_ms_trend": 0.05626983568072319,
+        "loss_pct_current": 0.0,
+        "loss_pct_lag1": 0.0005602915771305561,
+        "loss_pct_lag3": 0.0012481287121772766,
+        "loss_pct_mean": 0.1651339828968048,
+        "loss_pct_std": 0.09776663780212402,
+        "loss_pct_trend": 0.027246784418821335,
+        "utilization_pct_current": 10.536816596984863,
+        "utilization_pct_lag1": 1.3676197528839111,
+        "utilization_pct_lag3": 0.11049847304821014,
+        "utilization_pct_mean": 0.24808579683303833,
+        "utilization_pct_std": 0.2485266923904419,
+        "utilization_pct_trend": 0.271711528301239,
+        "up": 0.0,
+        "history_fraction": 0.0
+      },
+      "contribution_sum_verified": true
+    }
+  },
+  "trace": {
+    "episode": "link-2026229214",
+    "wan": "wan1",
+    "alignment": "Forecast at t compared with measurement at t+30; measured target is never used as an input.",
+    "rows": [
+      {
+        "metric": "latency_ms",
+        "target_offset_seconds": 84.99927520751953,
+        "actual": 24.37299919128418,
+        "candidate": 16.446496141182962,
+        "persistence": 112.822998046875
+      },
+      {
+        "metric": "latency_ms",
+        "target_offset_seconds": 89.80268096923828,
+        "actual": 25.941999435424805,
+        "candidate": 22.798917558066137,
+        "persistence": 93.18900299072266
+      },
+      {
+        "metric": "latency_ms",
+        "target_offset_seconds": 94.82436180114746,
+        "actual": 24.822999954223633,
+        "candidate": 29.10316853608734,
+        "persistence": 74.83999633789062
+      },
+      {
+        "metric": "latency_ms",
+        "target_offset_seconds": 100.08305358886719,
+        "actual": 26.378999710083008,
+        "candidate": 26.17988011476712,
+        "persistence": 55.722999572753906
+      },
+      {
+        "metric": "latency_ms",
+        "target_offset_seconds": 104.87730240821838,
+        "actual": 22.979999542236328,
+        "candidate": 28.54381936456167,
+        "persistence": 40.310001373291016
+      },
+      {
+        "metric": "latency_ms",
+        "target_offset_seconds": 110.02270674705505,
+        "actual": 23.874000549316406,
+        "candidate": 27.740329434598,
+        "persistence": 22.944000244140625
+      },
+      {
+        "metric": "latency_ms",
+        "target_offset_seconds": 114.92718458175659,
+        "actual": 26.033000946044922,
+        "candidate": 44.25135504433834,
+        "persistence": 24.37299919128418
+      },
+      {
+        "metric": "latency_ms",
+        "target_offset_seconds": 120.06464958190918,
+        "actual": 25.860000610351562,
+        "candidate": 51.8348068124879,
+        "persistence": 25.941999435424805
+      },
+      {
+        "metric": "jitter_ms",
+        "target_offset_seconds": 84.99927520751953,
+        "actual": 1.4252617359161377,
+        "candidate": 1.5503311157226562,
+        "persistence": 6.094618320465088
+      },
+      {
+        "metric": "jitter_ms",
+        "target_offset_seconds": 89.80268096923828,
+        "actual": 1.2768069505691528,
+        "candidate": 1.312354326248169,
+        "persistence": 5.102409362792969
+      },
+      {
+        "metric": "jitter_ms",
+        "target_offset_seconds": 94.82436180114746,
+        "actual": 1.4104505777359009,
+        "candidate": 1.4506328105926514,
+        "persistence": 4.353458404541016
+      },
+      {
+        "metric": "jitter_ms",
+        "target_offset_seconds": 100.08305358886719,
+        "actual": 1.6356830596923828,
+        "candidate": 1.4787421226501465,
+        "persistence": 3.805229425430298
+      },
+      {
+        "metric": "jitter_ms",
+        "target_offset_seconds": 104.87730240821838,
+        "actual": 1.2603174448013306,
+        "candidate": 1.2306325435638428,
+        "persistence": 2.215468406677246
+      },
+      {
+        "metric": "jitter_ms",
+        "target_offset_seconds": 110.02270674705505,
+        "actual": 1.4100085496902466,
+        "candidate": 1.68302583694458,
+        "persistence": 1.4811023473739624
+      },
+      {
+        "metric": "jitter_ms",
+        "target_offset_seconds": 114.92718458175659,
+        "actual": 1.3920527696609497,
+        "candidate": 2.1455905437469482,
+        "persistence": 1.4252617359161377
+      },
+      {
+        "metric": "jitter_ms",
+        "target_offset_seconds": 120.06464958190918,
+        "actual": 1.4104609489440918,
+        "candidate": 2.217536449432373,
+        "persistence": 1.2768069505691528
+      },
+      {
+        "metric": "loss_pct",
+        "target_offset_seconds": 84.99927520751953,
+        "actual": 0.0,
+        "candidate": 0.0,
+        "persistence": 0.0
+      },
+      {
+        "metric": "loss_pct",
+        "target_offset_seconds": 89.80268096923828,
+        "actual": 0.0,
+        "candidate": 0.0,
+        "persistence": 0.0
+      },
+      {
+        "metric": "loss_pct",
+        "target_offset_seconds": 94.82436180114746,
+        "actual": 0.0,
+        "candidate": 0.0,
+        "persistence": 0.0
+      },
+      {
+        "metric": "loss_pct",
+        "target_offset_seconds": 100.08305358886719,
+        "actual": 0.0,
+        "candidate": 0.0,
+        "persistence": 0.0
+      },
+      {
+        "metric": "loss_pct",
+        "target_offset_seconds": 104.87730240821838,
+        "actual": 0.0,
+        "candidate": 0.0,
+        "persistence": 0.0
+      },
+      {
+        "metric": "loss_pct",
+        "target_offset_seconds": 110.02270674705505,
+        "actual": 0.0,
+        "candidate": 0.0,
+        "persistence": 0.0
+      },
+      {
+        "metric": "loss_pct",
+        "target_offset_seconds": 114.92718458175659,
+        "actual": 0.0,
+        "candidate": 0.0,
+        "persistence": 0.0
+      },
+      {
+        "metric": "loss_pct",
+        "target_offset_seconds": 120.06464958190918,
+        "actual": 0.0,
+        "candidate": 0.0,
+        "persistence": 0.0
+      },
+      {
+        "metric": "utilization_pct",
+        "target_offset_seconds": 84.99927520751953,
+        "actual": 9.842789649963379,
+        "candidate": 11.04852294921875,
+        "persistence": 54.10404968261719
+      },
+      {
+        "metric": "utilization_pct",
+        "target_offset_seconds": 89.80268096923828,
+        "actual": 9.86253547668457,
+        "candidate": 10.390861511230469,
+        "persistence": 59.33428955078125
+      },
+      {
+        "metric": "utilization_pct",
+        "target_offset_seconds": 94.82436180114746,
+        "actual": 9.83359432220459,
+        "candidate": 9.251346588134766,
+        "persistence": 47.43064498901367
+      },
+      {
+        "metric": "utilization_pct",
+        "target_offset_seconds": 100.08305358886719,
+        "actual": 9.84001350402832,
+        "candidate": 10.468544006347656,
+        "persistence": 36.27275466918945
+      },
+      {
+        "metric": "utilization_pct",
+        "target_offset_seconds": 104.87730240821838,
+        "actual": 9.8565034866333,
+        "candidate": 9.30815315246582,
+        "persistence": 24.838058471679688
+      },
+      {
+        "metric": "utilization_pct",
+        "target_offset_seconds": 110.02270674705505,
+        "actual": 9.84424877166748,
+        "candidate": 13.883977890014648,
+        "persistence": 14.473580360412598
+      },
+      {
+        "metric": "utilization_pct",
+        "target_offset_seconds": 114.92718458175659,
+        "actual": 9.86187744140625,
+        "candidate": 16.734004974365234,
+        "persistence": 9.842789649963379
+      },
+      {
+        "metric": "utilization_pct",
+        "target_offset_seconds": 120.06464958190918,
+        "actual": 9.840119361877441,
+        "candidate": 18.551815032958984,
+        "persistence": 9.86253547668457
+      }
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "run_id": "real-traffic-20261011-055036-dfcea6",
+  "completed": true,
+  "restored_baseline": true,
+  "measurement_count": 432,
+  "receiver_coverage": 6,
+  "endpoint_coverage": [
+    "http",
+    "download",
+    "udp"
+  ],
+  "errors": [],
+  "cleanup_errors": [],
+  "receiver_namespaces_remaining": [],
+  "owned_workload_processes_remaining": [],
+  "qdiscs": [
+    {
+      "link": "wan1",
+      "side": "a",
+      "rate_mbps": 100.0,
+      "delay_seconds": 0.012,
+      "jitter_seconds": 0.0028,
+      "loss_present": false,
+      "matches_control": true
+    },
+    {
+      "link": "wan1",
+      "side": "b",
+      "rate_mbps": 100.0,
+      "delay_seconds": 0.012,
+      "jitter_seconds": 0.0028,
+      "loss_present": false,
+      "matches_control": true
+    },
+    {
+      "link": "wan2",
+      "side": "a",
+      "rate_mbps": 80.0,
+      "delay_seconds": 0.02,
+      "jitter_seconds": 0.005,
+      "loss_present": false,
+      "matches_control": true
+    },
+    {
+      "link": "wan2",
+      "side": "b",
+      "rate_mbps": 80.0,
+      "delay_seconds": 0.02,
+      "jitter_seconds": 0.005,
+      "loss_present": false,
+      "matches_control": true
+    },
+    {
+      "link": "wan3",
+      "side": "a",
+      "rate_mbps": 30.0,
+      "delay_seconds": 0.0325,
+      "jitter_seconds": 0.007,
+      "loss_present": false,
+      "matches_control": true
+    },
+    {
+      "link": "wan3",
+      "side": "b",
+      "rate_mbps": 30.0,
+      "delay_seconds": 0.0325,
+      "jitter_seconds": 0.007,
+      "loss_present": false,
+      "matches_control": true
+    }
+  ],
+  "api": {
+    "mode": "auto",
+    "profile": "voice",
+    "confirmed_path": "wan2",
+    "model_loaded": true,
+    "apply_inflight": null
+  },
+  "classifier_restored": true,
+  "agent_policy_readback_verified": true,
+  "unresolved_intents": 0
+}

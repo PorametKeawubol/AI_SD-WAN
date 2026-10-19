@@ -1,0 +1,13 @@
+{
+  "phase": "controller_apply",
+  "packet_measurement_started": false,
+  "packet_measurement_completed": false,
+  "baseline_journal_id": "trial-baseline-68d09511da8a4d1d82f14809b778bfb5",
+  "evidence_level": "live_lab_attempt",
+  "packet_artifacts": [],
+  "status": "failed",
+  "error_type": "IntegrationError",
+  "cleanup_errors": [],
+  "state_observations": 0,
+  "result": null
+}

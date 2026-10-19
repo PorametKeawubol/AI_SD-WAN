@@ -31,7 +31,14 @@ parser.add_argument(
 )
 parser.add_argument("--repetitions", type=int, default=3)
 parser.add_argument("--order-seed", type=int, default=91002)
+parser.add_argument("--baseline-min-sla-ratio", type=float, default=0.98)
+parser.add_argument("--model", default="artifacts/model")
+parser.add_argument("--config", default="config/flexiwan.local.json")
+parser.add_argument("--verify-clocks-only", action="store_true")
+parser.add_argument("--no-edge-observer", action="store_true")
 args = parser.parse_args()
+if not 0.90 <= args.baseline_min_sla_ratio <= 1:
+    parser.error("Healthy baseline SLA ratio must be 0.90..1.00")
 try:
     manifest(args.suite, args.scenarios, legacy_control="CONTROL" in args.scenarios)
 except ValueError as error:
@@ -44,7 +51,9 @@ if destination.exists():
 os.chdir(root)
 clock_file = root / "reports/flexiwan" / (args.output + "-clock.json")
 subprocess.run(
-    [sys.executable, "scripts/sync_edge_clocks.py", "--apply", "--output", str(clock_file)],
+    [sys.executable,
+     "scripts/verify_edge_clocks.py" if args.verify_clocks_only else "scripts/sync_edge_clocks.py",
+     *([] if args.verify_clocks_only else ["--apply"]), "--output", str(clock_file)],
     cwd=root,
     check=True,
 )
@@ -123,9 +132,11 @@ with log_path.open("ab") as log:
             "--suite",
             args.suite,
             "--config",
-            "config/flexiwan.local.json",
+            str(Path(args.config).resolve()),
             "--ssh-key",
             "lab/runtime/edge-key",
+            "--model",
+            str(Path(args.model).resolve()),
             "--scenarios",
             *args.scenarios,
             "--profiles",
@@ -136,6 +147,8 @@ with log_path.open("ab") as log:
             str(args.repetitions),
             "--order-seed",
             str(args.order_seed),
+            "--baseline-min-sla-ratio",
+            str(args.baseline_min_sla_ratio),
             "--routing-evidence",
             str(routing_file),
             "--clock-evidence",
@@ -157,6 +170,9 @@ with log_path.open("ab") as log:
     try:
         with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
             while runner.poll() is None:
+                if args.no_edge_observer:
+                    time.sleep(1)
+                    continue
                 for file in sorted(destination.glob("S*/states.json")):
                     trial = file.parent
                     try:
@@ -199,6 +215,13 @@ with log_path.open("ab") as log:
         if runner.poll() is None:
             os.killpg(runner.pid, signal.SIGINT)
             runner.wait(timeout=40)
+        if destination.is_dir():
+            (destination / "observer-mode.json").write_text(json.dumps({
+                "additional_ssh_observer_enabled": not args.no_edge_observer,
+                "required_telemetry_jobs_agent_readback_udp_and_pcap_unchanged": True,
+                "reason": "Avoid optional five-second VPP CLI diagnostic interference in software emulation"
+                if args.no_edge_observer else "Original detailed read-only observer",
+            }, indent=2) + "\n")
     if runner.returncode != 0:
         subprocess.run(
             [sys.executable, "-m", "lab.report_live", "--output", str(destination)],

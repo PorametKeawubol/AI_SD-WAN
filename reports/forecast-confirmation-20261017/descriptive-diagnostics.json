@@ -1,0 +1,64 @@
+{
+  "scope": "Descriptive diagnostics only; saved selection and acceptance remain unchanged",
+  "window_counters": {
+    "candidate_windows": 126,
+    "forecast_available_windows": 123,
+    "scored_windows": 69,
+    "future_target_missing": 54,
+    "history_rejected": 3
+  },
+  "metrics": {
+    "latency_ms": {
+      "targets": 69,
+      "target_nonzero": 69,
+      "current_nonzero": 69,
+      "target_min": 22.979999542236328,
+      "target_max": 153.00999450683594,
+      "target_mean": 58.75236129760742,
+      "windows_per_episode": {
+        "link-2026229214": 24,
+        "link-2026237133": 21,
+        "link-2026245052": 24
+      }
+    },
+    "jitter_ms": {
+      "targets": 69,
+      "target_nonzero": 69,
+      "current_nonzero": 69,
+      "target_min": 1.2443387508392334,
+      "target_max": 6.899992942810059,
+      "target_mean": 2.318882703781128,
+      "windows_per_episode": {
+        "link-2026229214": 24,
+        "link-2026237133": 21,
+        "link-2026245052": 24
+      }
+    },
+    "loss_pct": {
+      "targets": 69,
+      "target_nonzero": 0,
+      "current_nonzero": 4,
+      "target_min": 0.0,
+      "target_max": 0.0,
+      "target_mean": 0.0,
+      "windows_per_episode": {
+        "link-2026229214": 24,
+        "link-2026237133": 21,
+        "link-2026245052": 24
+      }
+    },
+    "utilization_pct": {
+      "targets": 69,
+      "target_nonzero": 69,
+      "current_nonzero": 69,
+      "target_min": 9.524685859680176,
+      "target_max": 69.78897857666016,
+      "target_mean": 16.49773597717285,
+      "windows_per_episode": {
+        "link-2026229214": 24,
+        "link-2026237133": 21,
+        "link-2026245052": 24
+      }
+    }
+  }
+}

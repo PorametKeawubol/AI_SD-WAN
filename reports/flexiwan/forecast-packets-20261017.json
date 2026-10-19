@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "raw_probe_batches_recomputed": 900,
+  "icmp_packets_offered": 90000,
+  "dataset_sha256_matches_candidate": true,
+  "captures": {
+    "wan1": {
+      "frames": 1000,
+      "icmp": 90,
+      "udp": 905
+    },
+    "wan2": {
+      "frames": 1000,
+      "icmp": 48,
+      "udp": 949
+    },
+    "wan3": {
+      "frames": 1000,
+      "icmp": 132,
+      "udp": 859
+    }
+  },
+  "pcap_scope": "first1000frames perWAN;128byte headers;not complete workload capture",
+  "utilization_evidence": "derived measured utilization persisted; underlying TX byte counters per sample were not retained"
+}

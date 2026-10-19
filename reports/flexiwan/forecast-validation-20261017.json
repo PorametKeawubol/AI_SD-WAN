@@ -1,0 +1,22 @@
+{
+  "pytest": {
+    "command": ".venv/bin/python -m pytest -q",
+    "exit_code": 0,
+    "passed": 352,
+    "skipped": 7,
+    "warnings": 1,
+    "seconds": 21.86
+  },
+  "ruff": "passed",
+  "frozen_model_preserved": true,
+  "source_sha256": {
+    "sdwan/model.py": "f4438304d7a675d6c92522ea36491ceaeef6175577f2502ac584f827814c3b39",
+    "sdwan/linear.py": "43105ebcc50281c672912372af8b817fb7bd6a77f10d52565cf6ca282c7b4663",
+    "sdwan/forecast_search.py": "9a8ce5d751e365a9057ac5733e019817cde60b0d7c10065fbc1801838e089dec",
+    "lab/link_forecast_campaign.py": "3971d9802b9dc0922039ff0e91684640f6f52c0136e43c2745f47cf90ddfb43d",
+    "scripts/forecast_environment.py": "24a699c46661e5ecaf5a245d852a6edef46ffad28a7865961a7640cdd7d10f9f",
+    "scripts/summarize_forecast_search.py": "da6f7deeb9ce424b6906699086fb24811ac1c48eaae1a91bac179a3b81737d26",
+    "tests/test_forecast_search.py": "e3418e50ecae100add874018ae46f3c175731ce4e0dc705d07eb4b289cb8d550"
+  },
+  "runtime_promoted": false
+}

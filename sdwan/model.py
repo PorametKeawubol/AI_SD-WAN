@@ -1,5 +1,6 @@
 import hashlib
 import json
+import math
 from pathlib import Path
 
 import numpy as np
@@ -9,6 +10,7 @@ from xgboost import XGBRegressor
 
 from .domain import HORIZON, INTERVAL, METRICS, WINDOW
 from .features import FEATURE_NAMES, features, regular_history
+from .linear import LinearHead
 from .simulator import training_episode
 
 MODEL_SCHEMA = 2
@@ -25,17 +27,50 @@ class Forecaster:
             raise ValueError("incompatible model feature schema")
         if self.metadata["horizon_steps"] != HORIZON:
             raise ValueError("incompatible model horizon")
+        default_weights = {
+            metric: 1.0 if self.metadata["enabled_metrics"][metric] else 0.0 for metric in METRICS
+        }
+        self.blend_weights = self.metadata.get("blend_weights", default_weights)
+        if (
+            not isinstance(self.blend_weights, dict)
+            or set(self.blend_weights) != set(METRICS)
+            or any(
+                isinstance(weight, bool)
+                or not isinstance(weight, (int, float))
+                or not math.isfinite(weight)
+                or not 0 <= weight <= 1
+                or bool(weight) != bool(self.metadata["enabled_metrics"][metric])
+                for metric, weight in self.blend_weights.items()
+            )
+        ):
+            raise ValueError("incompatible model blend weights")
+        head_specs = self.metadata.get("linear_heads", {})
+        if not isinstance(head_specs, dict) or not set(head_specs) <= set(METRICS):
+            raise ValueError("incompatible linear head metrics")
+        self.linear_heads = {metric: LinearHead(spec) for metric, spec in head_specs.items()}
         self.models = []
         for metric in METRICS:
+            if metric in self.linear_heads:
+                self.models.append(self.linear_heads[metric])
+                continue
             model = XGBRegressor(n_jobs=2)
             model.load_model(self.directory / f"{metric}.json")
             self.models.append(model)
 
     def predict_matrix(self, matrix: np.ndarray) -> np.ndarray:
+        matrix = np.asarray(matrix, dtype=np.float32)
+        if (
+            matrix.ndim != 2
+            or matrix.shape[1] != len(FEATURE_NAMES)
+            or not np.all(np.isfinite(matrix))
+        ):
+            raise ValueError("Expected a finite matrix with the model feature schema")
+        if not len(matrix):
+            return np.empty((0, len(METRICS)), dtype=np.float32)
         output = np.column_stack(
             [
-                matrix[:, index * 6] + model.predict(matrix)
-                if self.metadata["enabled_metrics"][metric]
+                matrix[:, index * 6] + self.blend_weights[metric] * model.predict(matrix)
+                if self.blend_weights[metric]
                 else matrix[:, index * 6]
                 for index, (metric, model) in enumerate(zip(METRICS, self.models))
             ]
@@ -66,6 +101,8 @@ def train(directory="artifacts/model", train_episodes=60, validation_episodes=15
     if train_episodes < 1 or validation_episodes < 1:
         raise ValueError("training and validation require at least one complete episode each")
     directory = Path(directory)
+    if directory.exists() and (not directory.is_dir() or any(directory.iterdir())):
+        raise ValueError("Existing model preserved; choose an empty model directory")
     directory.mkdir(parents=True, exist_ok=True)
     x_train, y_train, _ = dataset(range(train_episodes), 1000)
     x_val, y_val, persistence = dataset(

@@ -70,6 +70,7 @@ def live_service(
     experimental_forecast=False,
     observe_native_qbr=False,
     stream="live",
+    model_dir="artifacts/model",
 ):
     from .adapters import FlexiWANAdapter
     from .domain import LINK_CONFIG
@@ -98,6 +99,7 @@ def live_service(
         adapter=adapter,
         stream=stream,
         forecast_sampling="causal_linear_5s" if experimental_forecast else "strict",
+        model_dir=model_dir,
     )
     service.observing = observe_native_qbr
     if observe_native_qbr:
@@ -105,15 +107,15 @@ def live_service(
     service.configure(mode="manual")
     service.controller.current = current
     service.store.put("route", {"current": service.controller.current})
-    # A model trained on synthetic traces is not validated for actual RTT probe data.
+    # Forecast use remains explicit until validated with fresh end-to-end traffic.
     if not experimental_forecast:
         service.model = None
         service.model_error = (
-            "Synthetic model disabled on live probe data; reactive routing until live validation"
+            "Forecast disabled on live probe data; reactive routing until live validation"
         )
     elif service.model is not None:
         service.model_error = (
-            "Experimental synthetic forecast enabled on real probes; live validation pending"
+            "Experimental forecast enabled on real probes; live validation pending"
         )
     service.collector = FlexiWANTelemetryCollector(adapter.client)
     return service

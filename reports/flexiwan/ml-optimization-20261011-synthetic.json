@@ -1,0 +1,478 @@
+{
+  "created_at": "2026-10-11T06:29:04.388432+00:00",
+  "data_kind": "synthetic",
+  "dataset_sha256": "ec8a954ba5d9e7ce5858bd707e7b58b8c81dc4a2f643acfe442ea8541ca57fb0",
+  "model_sha256": "e9543710bd4fbb44846bd61b5b643f009678ef6f2b7b114a460c33c5419eab01",
+  "protocol": {
+    "partitions": {
+      "train": 60,
+      "tune": 15,
+      "accept": 30,
+      "holdout": 10
+    },
+    "grouping": "whole chronological episodes; all WANs kept together",
+    "max_depths": [
+      3,
+      5
+    ],
+    "blend_weights": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "selection": "tuning only; ties favor smaller blend weight then shallower trees",
+    "acceptance": {
+      "minimum_relative_mae_improvement": 0.02,
+      "minimum_episode_groups": 3,
+      "minimum_samples_per_metric": 30,
+      "paired_episode_block_95_ci_upper_bound": "strictly below zero",
+      "rejection": "persistence; never retry a different candidate on acceptance"
+    },
+    "holdout": "diagnostic only, evaluated after selection and acceptance are frozen",
+    "runtime_promotion": false,
+    "network_access": false,
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 20261011
+  },
+  "partition_episodes": {
+    "train": [
+      "synthetic-200000",
+      "synthetic-200001",
+      "synthetic-200002",
+      "synthetic-200003",
+      "synthetic-200004",
+      "synthetic-200005",
+      "synthetic-200006",
+      "synthetic-200007",
+      "synthetic-200008",
+      "synthetic-200009",
+      "synthetic-200010",
+      "synthetic-200011",
+      "synthetic-200012",
+      "synthetic-200013",
+      "synthetic-200014",
+      "synthetic-200015",
+      "synthetic-200016",
+      "synthetic-200017",
+      "synthetic-200018",
+      "synthetic-200019",
+      "synthetic-200020",
+      "synthetic-200021",
+      "synthetic-200022",
+      "synthetic-200023",
+      "synthetic-200024",
+      "synthetic-200025",
+      "synthetic-200026",
+      "synthetic-200027",
+      "synthetic-200028",
+      "synthetic-200029",
+      "synthetic-200030",
+      "synthetic-200031",
+      "synthetic-200032",
+      "synthetic-200033",
+      "synthetic-200034",
+      "synthetic-200035",
+      "synthetic-200036",
+      "synthetic-200037",
+      "synthetic-200038",
+      "synthetic-200039",
+      "synthetic-200040",
+      "synthetic-200041",
+      "synthetic-200042",
+      "synthetic-200043",
+      "synthetic-200044",
+      "synthetic-200045",
+      "synthetic-200046",
+      "synthetic-200047",
+      "synthetic-200048",
+      "synthetic-200049",
+      "synthetic-200050",
+      "synthetic-200051",
+      "synthetic-200052",
+      "synthetic-200053",
+      "synthetic-200054",
+      "synthetic-200055",
+      "synthetic-200056",
+      "synthetic-200057",
+      "synthetic-200058",
+      "synthetic-200059"
+    ],
+    "tune": [
+      "synthetic-200060",
+      "synthetic-200061",
+      "synthetic-200062",
+      "synthetic-200063",
+      "synthetic-200064",
+      "synthetic-200065",
+      "synthetic-200066",
+      "synthetic-200067",
+      "synthetic-200068",
+      "synthetic-200069",
+      "synthetic-200070",
+      "synthetic-200071",
+      "synthetic-200072",
+      "synthetic-200073",
+      "synthetic-200074"
+    ],
+    "accept": [
+      "synthetic-200075",
+      "synthetic-200076",
+      "synthetic-200077",
+      "synthetic-200078",
+      "synthetic-200079",
+      "synthetic-200080",
+      "synthetic-200081",
+      "synthetic-200082",
+      "synthetic-200083",
+      "synthetic-200084",
+      "synthetic-200085",
+      "synthetic-200086",
+      "synthetic-200087",
+      "synthetic-200088",
+      "synthetic-200089",
+      "synthetic-200090",
+      "synthetic-200091",
+      "synthetic-200092",
+      "synthetic-200093",
+      "synthetic-200094",
+      "synthetic-200095",
+      "synthetic-200096",
+      "synthetic-200097",
+      "synthetic-200098",
+      "synthetic-200099",
+      "synthetic-200100",
+      "synthetic-200101",
+      "synthetic-200102",
+      "synthetic-200103",
+      "synthetic-200104"
+    ],
+    "holdout": [
+      "synthetic-200105",
+      "synthetic-200106",
+      "synthetic-200107",
+      "synthetic-200108",
+      "synthetic-200109",
+      "synthetic-200110",
+      "synthetic-200111",
+      "synthetic-200112",
+      "synthetic-200113",
+      "synthetic-200114"
+    ]
+  },
+  "window_counters": {
+    "train": {
+      "candidate_windows": 34020,
+      "forecast_available_windows": 28606,
+      "scored_windows": 27629,
+      "future_target_missing": 977,
+      "future_down_windows": 580,
+      "history_rejected": 5414
+    },
+    "tune": {
+      "candidate_windows": 8505,
+      "forecast_available_windows": 6885,
+      "scored_windows": 6635,
+      "future_down_windows": 170,
+      "history_rejected": 1620,
+      "future_target_missing": 250
+    },
+    "accept": {
+      "candidate_windows": 17010,
+      "forecast_available_windows": 13977,
+      "scored_windows": 13492,
+      "future_down_windows": 335,
+      "history_rejected": 3033,
+      "future_target_missing": 485
+    },
+    "holdout": {
+      "candidate_windows": 5670,
+      "forecast_available_windows": 4396,
+      "scored_windows": 4236,
+      "future_down_windows": 144,
+      "history_rejected": 1274,
+      "future_target_missing": 160
+    }
+  },
+  "metrics": {
+    "latency_ms": {
+      "acceptance_gate": {
+        "accepted": true,
+        "reasons": [],
+        "samples": 13157,
+        "episode_groups": 30,
+        "selected_mae": 17.361865997314453,
+        "persistence_mae": 22.25699806213379,
+        "relative_mae_improvement": 0.21993676106516394,
+        "paired_episode_mean_mae_difference": -4.9656682098905245,
+        "bootstrap_95_ci_episode_blocks": [
+          -6.132670845451455,
+          -3.9037983682130775
+        ]
+      },
+      "partitions": {
+        "train": {
+          "samples": 27049,
+          "episode_groups": 60,
+          "persistence_mae": 22.670564651489258,
+          "selected_mae": 16.06781768798828,
+          "deployed_mae": 16.06781768798828
+        },
+        "tune": {
+          "samples": 6465,
+          "episode_groups": 15,
+          "persistence_mae": 24.253787994384766,
+          "selected_mae": 18.684829711914062,
+          "deployed_mae": 18.684829711914062
+        },
+        "accept": {
+          "samples": 13157,
+          "episode_groups": 30,
+          "persistence_mae": 22.25699806213379,
+          "selected_mae": 17.361865997314453,
+          "deployed_mae": 17.361865997314453
+        },
+        "holdout": {
+          "samples": 4092,
+          "episode_groups": 10,
+          "persistence_mae": 21.877668380737305,
+          "selected_mae": 15.845206260681152,
+          "deployed_mae": 15.845206260681152
+        }
+      }
+    },
+    "jitter_ms": {
+      "acceptance_gate": {
+        "accepted": true,
+        "reasons": [],
+        "samples": 13157,
+        "episode_groups": 30,
+        "selected_mae": 5.061966896057129,
+        "persistence_mae": 6.377119064331055,
+        "relative_mae_improvement": 0.20622982807862664,
+        "paired_episode_mean_mae_difference": -1.2386054856081803,
+        "bootstrap_95_ci_episode_blocks": [
+          -1.6406105855743711,
+          -0.8386434966977686
+        ]
+      },
+      "partitions": {
+        "train": {
+          "samples": 27049,
+          "episode_groups": 60,
+          "persistence_mae": 6.767514705657959,
+          "selected_mae": 4.803638935089111,
+          "deployed_mae": 4.803638935089111
+        },
+        "tune": {
+          "samples": 6465,
+          "episode_groups": 15,
+          "persistence_mae": 5.017600059509277,
+          "selected_mae": 3.769869565963745,
+          "deployed_mae": 3.769869565963745
+        },
+        "accept": {
+          "samples": 13157,
+          "episode_groups": 30,
+          "persistence_mae": 6.377119064331055,
+          "selected_mae": 5.061966896057129,
+          "deployed_mae": 5.061966896057129
+        },
+        "holdout": {
+          "samples": 4092,
+          "episode_groups": 10,
+          "persistence_mae": 6.877384662628174,
+          "selected_mae": 5.0852789878845215,
+          "deployed_mae": 5.0852789878845215
+        }
+      }
+    },
+    "loss_pct": {
+      "acceptance_gate": {
+        "accepted": true,
+        "reasons": [],
+        "samples": 13492,
+        "episode_groups": 30,
+        "selected_mae": 2.665513515472412,
+        "persistence_mae": 2.7339019775390625,
+        "relative_mae_improvement": 0.02501496492138707,
+        "paired_episode_mean_mae_difference": -0.06737046017563747,
+        "bootstrap_95_ci_episode_blocks": [
+          -0.09512052609444557,
+          -0.04067397538286364
+        ]
+      },
+      "partitions": {
+        "train": {
+          "samples": 27629,
+          "episode_groups": 60,
+          "persistence_mae": 2.390371561050415,
+          "selected_mae": 2.3062429428100586,
+          "deployed_mae": 2.3062429428100586
+        },
+        "tune": {
+          "samples": 6635,
+          "episode_groups": 15,
+          "persistence_mae": 2.831530809402466,
+          "selected_mae": 2.763676404953003,
+          "deployed_mae": 2.763676404953003
+        },
+        "accept": {
+          "samples": 13492,
+          "episode_groups": 30,
+          "persistence_mae": 2.7339019775390625,
+          "selected_mae": 2.665513515472412,
+          "deployed_mae": 2.665513515472412
+        },
+        "holdout": {
+          "samples": 4236,
+          "episode_groups": 10,
+          "persistence_mae": 3.682494640350342,
+          "selected_mae": 3.639261484146118,
+          "deployed_mae": 3.639261484146118
+        }
+      }
+    },
+    "utilization_pct": {
+      "acceptance_gate": {
+        "accepted": true,
+        "reasons": [],
+        "samples": 13492,
+        "episode_groups": 30,
+        "selected_mae": 3.183823585510254,
+        "persistence_mae": 3.902738332748413,
+        "relative_mae_improvement": 0.1842077756547619,
+        "paired_episode_mean_mae_difference": -0.7199827214082082,
+        "bootstrap_95_ci_episode_blocks": [
+          -0.8394381178667147,
+          -0.6143293476104736
+        ]
+      },
+      "partitions": {
+        "train": {
+          "samples": 27629,
+          "episode_groups": 60,
+          "persistence_mae": 3.6865715980529785,
+          "selected_mae": 2.7584195137023926,
+          "deployed_mae": 2.7584195137023926
+        },
+        "tune": {
+          "samples": 6635,
+          "episode_groups": 15,
+          "persistence_mae": 4.1626458168029785,
+          "selected_mae": 3.198150873184204,
+          "deployed_mae": 3.198150873184204
+        },
+        "accept": {
+          "samples": 13492,
+          "episode_groups": 30,
+          "persistence_mae": 3.902738332748413,
+          "selected_mae": 3.183823585510254,
+          "deployed_mae": 3.183823585510254
+        },
+        "holdout": {
+          "samples": 4236,
+          "episode_groups": 10,
+          "persistence_mae": 4.301599979400635,
+          "selected_mae": 3.417813777923584,
+          "deployed_mae": 3.417813777923584
+        }
+      }
+    }
+  },
+  "blend_weights": {
+    "latency_ms": 1.0,
+    "jitter_ms": 1.0,
+    "loss_pct": 1.0,
+    "utilization_pct": 1.0
+  },
+  "runtime_promoted": false,
+  "model_validated_on_real_data": false,
+  "limitations": [
+    "Episode groups, not overlapping windows, are the bootstrap resampling unit.",
+    "Acceptance gates forecast MAE; routing and application benefits require separate paired trials.",
+    "Rejected metrics use persistence; no alternative is selected after seeing acceptance.",
+    "Holdout results are diagnostic and never change selected parameters or weights.",
+    "No live controller, model deployment, telemetry mutation, or network access is performed.",
+    "No claim of a globally optimal model; the declared finite search grid was evaluated once."
+  ],
+  "frozen_baseline_diagnostic": {
+    "model_sha256": "b7b72bfa7c1f34be948b397c4aaebdc639093657c15b444992d8bef3b2bbfc7d",
+    "partitions": {
+      "train": {
+        "latency_ms": {
+          "samples": 27049,
+          "mae": 17.59543228149414
+        },
+        "jitter_ms": {
+          "samples": 27049,
+          "mae": 5.35338020324707
+        },
+        "loss_pct": {
+          "samples": 27629,
+          "mae": 2.390371561050415
+        },
+        "utilization_pct": {
+          "samples": 27629,
+          "mae": 2.9346389770507812
+        }
+      },
+      "tune": {
+        "latency_ms": {
+          "samples": 6465,
+          "mae": 19.418054580688477
+        },
+        "jitter_ms": {
+          "samples": 6465,
+          "mae": 3.8994195461273193
+        },
+        "loss_pct": {
+          "samples": 6635,
+          "mae": 2.831530809402466
+        },
+        "utilization_pct": {
+          "samples": 6635,
+          "mae": 3.2353968620300293
+        }
+      },
+      "accept": {
+        "latency_ms": {
+          "samples": 13157,
+          "mae": 18.16878318786621
+        },
+        "jitter_ms": {
+          "samples": 13157,
+          "mae": 5.2884979248046875
+        },
+        "loss_pct": {
+          "samples": 13492,
+          "mae": 2.7339019775390625
+        },
+        "utilization_pct": {
+          "samples": 13492,
+          "mae": 3.2180256843566895
+        }
+      },
+      "holdout": {
+        "latency_ms": {
+          "samples": 4092,
+          "mae": 16.604530334472656
+        },
+        "jitter_ms": {
+          "samples": 4092,
+          "mae": 5.343350887298584
+        },
+        "loss_pct": {
+          "samples": 4236,
+          "mae": 3.682494640350342
+        },
+        "utilization_pct": {
+          "samples": 4236,
+          "mae": 3.4516351222991943
+        }
+      }
+    }
+  },
+  "experiment_scope": "Synthetic independent episode split; forecast gate only, not ISP validation"
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "source": "/opt/ai-sdwan-lab/artifacts/model-search-loss-v3-20261018",
+    "destination": "/mnt/e/Proposal/AI_SD-WAN/artifacts/model-search-loss-v3-20261018",
+    "files": 5,
+    "bytes": 505924,
+    "all_bytes_verified": true
+  },
+  {
+    "source": "/opt/ai-sdwan-lab/reports/loss-confirmation-20261018",
+    "destination": "/mnt/e/Proposal/AI_SD-WAN/reports/loss-confirmation-20261018",
+    "files": 8,
+    "bytes": 398458,
+    "all_bytes_verified": true
+  },
+  {
+    "source": "/opt/ai-sdwan-lab/artifacts/loss-campaign-20261018",
+    "destination": "/mnt/e/Proposal/AI_SD-WAN/artifacts/loss-campaign-20261018",
+    "files": 52,
+    "bytes": 3968177,
+    "all_bytes_verified": true
+  },
+  {
+    "source": "/opt/ai-sdwan-lab/artifacts/loss-confirmation-campaign-20261018",
+    "destination": "/mnt/e/Proposal/AI_SD-WAN/artifacts/loss-confirmation-campaign-20261018",
+    "files": 72,
+    "bytes": 6273381,
+    "all_bytes_verified": true
+  }
+]

@@ -1,0 +1,82 @@
+{
+  "declared_at_unix": 1792265907.7870092,
+  "scope": "Two actual flexiEdge guests with QEMU TCG software emulation; not repaired KVM or ISP circuits.",
+  "guests": {
+    "count": 2,
+    "vcpus_each": 4,
+    "ram_gib_each": 4
+  },
+  "candidate_rule": "Use the frozen loss-v3 bundle resulting from predeclared loss selection and acceptance, including Persistence fallback if rejected. Never substitute according to SLA results.",
+  "model_directory": "/opt/ai-sdwan-lab/artifacts/model-search-loss-v3-20261018",
+  "scenarios": [
+    "CONTROL",
+    "S12"
+  ],
+  "manifest": {
+    "suite": "balanced",
+    "version": 2,
+    "case_count": 2,
+    "full_suite_case_count": 38,
+    "full_suite_fault_count": 37,
+    "fault_case_count": 1,
+    "recoverable_fault_count": 1,
+    "group_counts": {
+      "availability": 1,
+      "quality": 1,
+      "stability": 0,
+      "mixed": 0,
+      "telemetry": 0
+    },
+    "complete_suite_selected": false,
+    "initial_priority": "wan1",
+    "scope": "Balanced v2 covers all 8 binary Up/Down states. Other impairments are selected tests. Legacy v1 retains the original definitions.",
+    "cases": [
+      {
+        "id": "CONTROL",
+        "name": "Normal control",
+        "kind": "normal",
+        "links": [],
+        "recoverable": true,
+        "group": "availability",
+        "affected_links": []
+      },
+      {
+        "id": "S12",
+        "name": "Progressive degradation",
+        "kind": "ramp",
+        "links": [
+          "wan1"
+        ],
+        "recoverable": true,
+        "group": "quality",
+        "affected_links": [
+          "wan1"
+        ]
+      }
+    ],
+    "sha256": "3aba5b3c501f381d3fa807d52b4d6333981f101710c66adec6eab3a0beaf01e3"
+  },
+  "profile": "voice",
+  "strategies": [
+    "reactive",
+    "predictive_synthetic_lab"
+  ],
+  "strategy_labels": {
+    "reactive": "Current measured values",
+    "predictive_synthetic_lab": "Frozen selected candidate with 30-second forecasts"
+  },
+  "repetitions_per_case_method": 3,
+  "order_seed": 20261018,
+  "trials": 12,
+  "trial_seconds": 170,
+  "baseline_seconds": 70,
+  "event_seconds": 80,
+  "recovery_seconds": 20,
+  "primary_outcome": "Paired difference in actual endpoint SLA violation fraction after 10-second adaptation; negative favors predictive.",
+  "claim_gate": "All trials must be valid real-packet trials, all predictive trials must have actual forecasts on all WANs before injection; paired repetition-bootstrap 95% CI upper<0 and no worse endpoint delivery gate.",
+  "invalid_policy": "Preserve every attempt and reason. Abort on readiness/freshness/cadence failures; do not turn a setup failure into a measured success.",
+  "clock_policy": "Fresh read-only verification of already aligned guest clocks; unchanged strict <=1 second bound.",
+  "routing": "Verify existing identical OSPF timers on both edges before any paired trials.",
+  "model_sha_policy": "Freeze and record candidate fingerprint after loss acceptance and before any SLA trial.",
+  "promotion": "Experimental trial service only; never overwrite artifacts/model or default demo configuration."
+}

@@ -11,6 +11,7 @@ import select
 import socket
 import struct
 import time
+from contextlib import nullcontext
 from pathlib import Path
 
 HEADER = struct.Struct("!Qd")
@@ -61,7 +62,7 @@ def flood(target, port, duration, mbps, output):
     )
 
 
-def probe(target, port, duration, mbps, output, *, source_port=0):
+def probe(target, port, duration, mbps, output, *, source_port=0, interval_output=None):
     packets_per_second = mbps * 1e6 / (PACKET_BYTES * 8)
     if not 1 <= packets_per_second <= 10000 or not 1 <= duration <= 7200:
         raise ValueError("Traffic rate or duration outside lab limits")
@@ -69,6 +70,11 @@ def probe(target, port, duration, mbps, output, *, source_port=0):
         raise ValueError("Invalid UDP source port")
     output = Path(output)
     output.parent.mkdir(parents=True, exist_ok=True)
+    if interval_output is not None:
+        interval_output = Path(interval_output)
+        if interval_output.resolve() == output.resolve():
+            raise ValueError("Interval JSONL and packet JSON paths must differ")
+        interval_output.parent.mkdir(parents=True, exist_ok=True)
     interval = 1 / packets_per_second
     started_at = time.time()
     started = time.monotonic()
@@ -76,12 +82,51 @@ def probe(target, port, duration, mbps, output, *, source_port=0):
     next_send, sequence = started, 0
     outstanding = {}
     next_expiry = started + 1
-    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as client:
+    emitted = 0
+    interval_context = (
+        interval_output.open("w", encoding="utf-8") if interval_output else nullcontext(None)
+    )
+    with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as client, interval_context as stream:
+
+        def emit_completed(now, *, final=False):
+            nonlocal emitted
+            while emitted < len(bins) and (final or now >= started + emitted + 2):
+                bucket = bins[emitted]
+                if stream is not None:
+                    row = {
+                        "schema": 1,
+                        "application": "udp",
+                        "measurement": "udp_echo_rtt_stddev",
+                        "timestamp": started_at + emitted,
+                        "second": emitted,
+                        "observed_at": time.time(),
+                        "target": target,
+                        "destination_port": port,
+                        "source_port": client.getsockname()[1],
+                        "sent_packets": bucket["sent"],
+                        "received_packets": bucket["received"],
+                        "success": bucket["received"] > 0,
+                        "loss_pct": 100 * (bucket["sent"] - bucket["received"]) / bucket["sent"]
+                        if bucket["sent"]
+                        else None,
+                        "latency_ms": bucket["mean_rtt"] if bucket["received"] else None,
+                        "jitter_ms": math.sqrt(max(0, bucket["m2_rtt"] / bucket["received"]))
+                        if bucket["received"]
+                        else None,
+                        "received_mbps": bucket["received"] * PACKET_BYTES * 8 / 1e6,
+                        "offered_mbps": bucket["sent"] * PACKET_BYTES * 8 / 1e6,
+                    }
+                    stream.write(json.dumps(row, allow_nan=False) + "\n")
+                    stream.flush()
+                emitted += 1
+
         client.bind(("0.0.0.0", source_port))
         client.connect((target, port))
         client.setblocking(False)
         while time.monotonic() < started + duration + 1:
             now = time.monotonic()
+            # A bin closes only after the final packet's one-second echo grace.
+            emit_completed(now)
             if now >= next_expiry:
                 outstanding = {
                     identifier: value
@@ -127,6 +172,7 @@ def probe(target, port, duration, mbps, output, *, source_port=0):
                         bins[bucket]["m2_rtt"] += delta * (
                             elapsed * 1000 - bins[bucket]["mean_rtt"]
                         )
+        emit_completed(time.monotonic(), final=True)
         rows = []
         for index, bucket in enumerate(bins):
             rows.append(
@@ -174,6 +220,7 @@ if __name__ == "__main__":
     parser.add_argument("--duration", type=int, default=120)
     parser.add_argument("--mbps", type=float, default=2)
     parser.add_argument("--output", default="reports/live/packets.json")
+    parser.add_argument("--interval-output", help="Flush completed UDP intervals as JSONL")
     args = parser.parse_args()
     if args.action == "server":
         echo(args.host, args.port)
@@ -187,4 +234,5 @@ if __name__ == "__main__":
             args.mbps,
             args.output,
             source_port=args.source_port,
+            interval_output=args.interval_output,
         )

@@ -124,7 +124,9 @@ def save_results(destination, results, complete, order_seed, case_manifest=None)
     )
 
 
-def assess(packets, states, scenario, profile):
+def assess(packets, states, scenario, profile, baseline_min_sla_ratio=0.98):
+    if not 0.90 <= baseline_min_sla_ratio <= 1:
+        raise ValueError("Healthy baseline SLA ratio must be 0.90..1.00")
     event_start, event_end, grace = BASELINE_SECONDS, EVENT_END, 10
     rows = [row for row in packets if event_start + grace <= row["second"] < event_end]
     if not rows or any(row["offered_mbps"] < profile.demand_mbps * 0.90 for row in rows):
@@ -147,7 +149,7 @@ def assess(packets, states, scenario, profile):
     if (
         not baseline
         or any(row["offered_mbps"] < profile.demand_mbps * 0.90 for row in baseline)
-        or sum(good(row) for row in baseline) / len(baseline) < 0.98
+        or sum(good(row) for row in baseline) / len(baseline) < baseline_min_sla_ratio
     ):
         return {"valid": False, "passed": False, "reason": "Healthy baseline was not established"}
     if scenario == "S07":
@@ -271,6 +273,8 @@ def trial(
     strategy,
     destination,
     source_port=0,
+    model_dir="artifacts/model",
+    baseline_min_sla_ratio=0.98,
 ):
     destination = Path(destination)
     # Refuse reuse before opening a controller client or submitting any mutation.
@@ -298,6 +302,8 @@ def trial(
             progress,
             cleanup_errors,
             source_port,
+            model_dir,
+            baseline_min_sla_ratio,
         )
         return {
             **result,
@@ -379,6 +385,8 @@ def run_trial(
     progress,
     cleanup_errors,
     source_port=0,
+    model_dir="artifacts/model",
+    baseline_min_sla_ratio=0.98,
 ):
     profile = PROFILES[profile_name]
     case = resolve_scenario(scenario)
@@ -431,6 +439,7 @@ def run_trial(
                 json.dumps({"storage": "timescaledb", "stream": command[-1]}) + "\n",
                 encoding="utf-8",
             )
+            command += ["--model", str(model_dir)]
             if strategy == "predictive_synthetic_lab":
                 command += ["--experimental-synthetic-forecast"]
             if strategy == "native_qbr":
@@ -461,7 +470,7 @@ def run_trial(
                                 and not health.json()["model_loaded"]
                             ):
                                 raise RuntimeError(
-                                    "Forecast trial requires the frozen model; reactive fallback is not AI evidence"
+                                    "Forecast trial requires the selected model; reactive fallback is not AI evidence"
                                 )
                             break
                     except httpx.HTTPError:
@@ -651,7 +660,7 @@ def run_trial(
     if packet_evidence(destination)["evidence_level"] != "real_packets":
         raise RuntimeError("No observed UDP/PCAP artifacts; trial cannot claim packet evidence")
     progress["packet_measurement_completed"] = True
-    result = assess(packets, states, scenario, profile)
+    result = assess(packets, states, scenario, profile, baseline_min_sla_ratio)
     if case.kind == "saturation":
         observed = [
             sample.get("utilization_pct", 0)
@@ -673,9 +682,11 @@ def run_trial(
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--config", default="config/flexiwan.local.json")
+    parser.add_argument("--model", default="artifacts/model")
     parser.add_argument("--ssh-key")
     parser.add_argument("--repetitions", type=int, default=3)
     parser.add_argument("--order-seed", type=int, default=91001)
+    parser.add_argument("--baseline-min-sla-ratio", type=float, default=0.98)
     parser.add_argument("--source-port-base", type=int, default=42000)
     parser.add_argument("--routing-evidence", help="Fresh read-only OSPF timer verification JSON")
     parser.add_argument("--clock-evidence", help="Fresh guest/host clock verification JSON")
@@ -691,6 +702,8 @@ def main():
     parser.add_argument("--output", default="reports/live")
     parser.add_argument("--plan", action="store_true")
     args = parser.parse_args()
+    if not 0.90 <= args.baseline_min_sla_ratio <= 1:
+        parser.error("Healthy baseline SLA ratio must be 0.90..1.00")
     if args.scenarios is None:
         args.scenarios = [case.id for case in suite_cases(args.suite, legacy_control=False)]
     if not 1 <= args.repetitions <= 100:
@@ -779,7 +792,7 @@ def main():
     if destination.exists():
         raise RuntimeError("Existing live output was preserved; choose a new --output")
     destination.mkdir(parents=True, exist_ok=False)
-    metadata = ROOT / "artifacts/model/metadata.json"
+    metadata = (ROOT / args.model).resolve() / "metadata.json"
     (destination / "experiment.json").write_text(
         json.dumps(
             {
@@ -793,6 +806,8 @@ def main():
                 "fault_seconds": FAULT_SECONDS,
                 "restore_seconds": RESTORE_SECONDS,
                 "grace_seconds": 10,
+                "baseline_min_sla_ratio": args.baseline_min_sla_ratio,
+                "event_min_sla_ratio": 0.98,
                 "repetitions": args.repetitions,
                 "order_seed": args.order_seed,
                 "flow_source_ports": [args.source_port_base + i for i in range(args.repetitions)],
@@ -803,6 +818,7 @@ def main():
                 "model_metadata": json.loads(metadata.read_text(encoding="utf-8"))
                 if metadata.exists()
                 else None,
+                "model_directory": str(metadata.parent),
                 "model_files_sha256": {
                     file.name: hashlib.sha256(file.read_bytes()).hexdigest()
                     for file in sorted(metadata.parent.glob("*.json"))
@@ -862,6 +878,8 @@ def main():
                     strategy,
                     folder,
                     args.source_port_base + repeat,
+                    args.model,
+                    args.baseline_min_sla_ratio,
                 )
             )
         except Exception as error:
